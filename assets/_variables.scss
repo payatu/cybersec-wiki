@@ -1,1 +1,9 @@
 /* You can override SASS variables here. */
+:root {
+    --color-link: #d21617;
+}
+
+.book-brand {
+    font-size: 20px;
+    font-weight: bold;
+}

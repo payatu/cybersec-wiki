@@ -2,3 +2,20 @@
 
 // @import "plugins/numbered";
 @import "plugins/scrollbars";
+
+.book-btn:hover {
+    background-color: #d21617;
+}
+
+a.book-btn:hover {
+    color: white;
+    transition: 0.3s;
+}
+
+a.book-btn:hover img {
+    filter: invert(100%) sepia(13%) saturate(7456%) hue-rotate(178deg) brightness(111%) contrast(94%);
+}
+
+::marker {
+    color: #d21617;
+}

@@ -15,9 +15,9 @@ Hey There! Looks like you are here for contributing to the wiki...Let me help yo
 * The aim of this open-source project to create a central repository for all the cybersecurity content, which can be consumed by security researchers and newbies in the field.
 * You can add content related to any field and this is also a great place to showcase the content you have created.
 * The scope of the project is whatever you think can help out folks get started in the cyber security.
-* We have hosted everything on to GitLab, click on the button and it will teleport you to GitLab 
+* We have hosted everything on to Github, click on the button and it will take you to Github 
   <br>
-  {{< button href="https://gitlab.com/payatutechteam/cybersecurity-wiki/-/tree/main/" >}}<div class="flex align-center">Contribute</div>{{< /button >}}
+  {{< button href="https://github.com/payatu/cybersec-wiki" >}}<div class="flex align-center">Contribute</div>{{< /button >}}
 
 ## Structure
 The structure is required for uniformity, so here are a few template, to help you curate the content.

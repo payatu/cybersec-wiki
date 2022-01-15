@@ -30,7 +30,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.cybersec-wiki-deployment }}
+          github_token: ${{ secrets.SECRET_TOKEN }}
           publish_dir: ./public
 
           # Please work

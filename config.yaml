@@ -1,6 +1,6 @@
 # hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
-baseURL: /
+baseURL: https://payatu.github.io/cybersec-wiki
 title: Cyber Security Wiki
 theme: hugo-book
 

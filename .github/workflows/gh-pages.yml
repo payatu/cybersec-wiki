@@ -32,3 +32,5 @@ jobs:
         with:
           github_token: ${{ secrets.cybersec-wiki-deployment }}
           publish_dir: ./public
+
+          # Please work

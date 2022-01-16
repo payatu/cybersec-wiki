@@ -76,7 +76,7 @@ Example -
 {{< /details >}}
 
 ## Infrastructure 
-The wiki is built on the Hugo. If you can help with any improvements, feature additions, etc. Hit us up at [wiki@payatu.io](mailto:wiki@payatu.io) or create an Issue and we can discuss it over there.
+The wiki is built on the Hugo. If you can help with any improvements, feature additions, etc. You can [create an Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) and we can discuss it over there.
 
 ## Cool Features
 {{< details title="Linking an external URL" open=false >}}

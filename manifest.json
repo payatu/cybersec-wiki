@@ -1,0 +1,15 @@
+{
+  "name": "Cyber Security Wiki",
+  "short_name": "Cyber Security Wiki",
+  "start_url": "/cybersec-wiki/",
+  "scope": "/cybersec-wiki/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/cybersec-wiki/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}

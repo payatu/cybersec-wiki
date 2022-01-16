@@ -1,0 +1,1 @@
+navigator.serviceWorker&&navigator.serviceWorker.register("/cybersec-wiki/sw.js",{scope:"/cybersec-wiki/"})

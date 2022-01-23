@@ -29,10 +29,9 @@
   {{ $ancestor := .Page.IsAncestor .CurrentPage }}
 
   {{ if .Page.Params.bookCollapseSection }}
-  <b>
     <br>
     <input type="checkbox" id="section-{{ md5 .Page }}" class="toggle" {{ if or $current $ancestor }}checked{{ end }} />
-    <label for="section-{{ md5 .Page }}" class="flex justify-between">
+    <label for="section-{{ md5 .Page }}" class="flex justify-between" style="font-weight: bold;">
       <a {{ if .Page.Content }}href="{{ .Page.Permalink }}"{{ else }}role="button"{{ end }} class="{{ if $current }}active{{ end }}">
         {{- partial "docs/title" .Page -}}
       </a>
@@ -44,5 +43,4 @@
   {{ else }}
     <span>{{- partial "docs/title" .Page -}}</span>
   {{ end }}
-  </b>
 {{ end }}

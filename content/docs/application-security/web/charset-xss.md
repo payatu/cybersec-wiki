@@ -79,6 +79,7 @@ Since this page does not have any charset defines that means it fulfil the requi
 </body>
 </html>
 ```
+
 {{< /details >}}
 
 As soon as we access iframe.html we triage javaScript code execution since xss.html doesn't have any charset defined and hence browser inherit top frame's charset which is UTF-7.

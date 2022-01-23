@@ -9,6 +9,7 @@ Charset XSS is useful in cases where application filters HTML special characters
 For example consider the following codes
 
 ```text
+
 <?php
 if(isset($_GET['xss'])) {
     echo htmlspecialchars($_GET['xss']);

@@ -105,13 +105,14 @@ It will help hugo internally process the document easily.
 {{< /details >}}
 
 Other cool elements to be added can be found in the {{<external title="shortcode" href="https://github.com/alex-shpak/hugo-book#shortcodes">}} section.
-<<<<<<< HEAD
 
 ## Test Locally
 
 1. Clone the repository to make changes locally - 
     ```shell
     git clone git@github.com:payatu/cybersec-wiki.git
+    git submodule init
+    git submodule update
     ```
 
 2. Install [Hugo Extended Latest Version](https://github.com/gohugoio/hugo/releases).
@@ -124,5 +125,4 @@ Other cool elements to be added can be found in the {{<external title="shortcode
 
 4. Once satisfied with the changes made, push the changes to GitHub.
 5. Create a Pull Request and if everything looks fine, we will be merging the content to the Cyber Security Wiki.
-=======
->>>>>>> ee16ef2ea1bc2df20b500868465db024fd6088d9
+

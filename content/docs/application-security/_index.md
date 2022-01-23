@@ -1,7 +1,5 @@
 ---
-bookFlatSection: true
+title: Application Security
 bookCollapseSection: true
 ---
-
-# Application Security
 

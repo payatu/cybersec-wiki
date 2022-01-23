@@ -1,4 +1,4 @@
 ---
-bookFlatSection: true
+title: DevSecOps
 bookCollapseSection: true
 ---

@@ -1,4 +1,4 @@
 ---
-bookFlatSection: true
+title: Machine Learning
 bookCollapseSection: true
 ---

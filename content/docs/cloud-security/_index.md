@@ -1,6 +1,4 @@
 ---
-bookFlatSection: true
+title: Cloud Security 
 bookCollapseSection: true
 ---
-
-# Cloud Security

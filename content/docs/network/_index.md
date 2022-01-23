@@ -1,4 +1,4 @@
 ---
-bookFlatSection: true
+title: Network
 bookCollapseSection: true
 ---

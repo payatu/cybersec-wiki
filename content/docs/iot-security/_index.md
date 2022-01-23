@@ -1,4 +1,4 @@
 ---
-bookFlatSection: true
+title: IoT Security
 bookCollapseSection: true
 ---

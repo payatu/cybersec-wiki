@@ -1,4 +1,4 @@
 ---
-bookFlatSection: true
+title: Threat Modelling
 bookCollapseSection: true
 ---

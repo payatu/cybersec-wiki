@@ -22,15 +22,20 @@ Hey There! Looks like you are here for contributing to the wiki...Let me help yo
 ## Structure
 The structure is required for uniformity, so here are a few template, to help you curate the content.
 
+{{< hint info >}}
+The `_index.md` file acts as the index for that specific directory.
+{{< /hint >}}
+
 {{< details title="To add a new category" open=false >}}
 
 A category is the high level overview. For example - "**Application Security**" is a category.
 
 Steps - 
-Create a new directory in {{< external title="docs" href="" >}} directory. Add a new file inside the newly created directory called **_index.md** with the following content in it.
+Create a new directory in {{< external title="docs" href="https://github.com/payatu/cybersec-wiki/tree/main/content/docs" >}} directory. Add a new file inside the newly created directory called **_index.md** with the following content in it.
+
 ```markdown
 ---
-bookFlatSection: true
+title: <!-- Category Name Here. -->
 bookCollapseSection: true
 ---
 
@@ -39,23 +44,35 @@ bookCollapseSection: true
 
 a new category will be created.
 
-Repeat the same step to create sub categories as well.
-
 Each **Category will contain an `images/` folder.** 
 
-The directory structure will look something like this (example for cloud security) - 
-```shell
-docs/
-├─ cloud-security/
-│  ├─ aws/
-│  │  ├─ labs.md
-│  │  ├─ reports.md
-│  ├─ images/
-│  ├─ _index.md
+Directory Structure - 
+```
+content/
+├─ docs/
+│  ├─ category-name/
+│  │  ├─ images/
+│  │  ├─ _index.md
 ```
 
 {{< /details >}}
 
+<br>
+
+{{< details title="Create a New Sub Category" open=false >}}
+
+To create a sub category in side a category, we need to create a directory inside the main category, which will contain all the different markdown files of different content.
+
+```markdown
+---
+title: <!-- SubCategory Name Here. -->
+bookCollapseSection: true
+---
+
+<!-- Your content here. -->
+```
+
+{{< /details >}}
 <br>
 
 {{< details title="To add a new page" open=false >}}
@@ -68,7 +85,7 @@ title: <!-- Title of the page here. -->
 <!-- Your content here. -->
 ```
 
-Images can be used in each page by using the complete link - `content/docs/cloud-security/images/image.png`
+Images can be used in each page by using the complete link - `content/docs/<category-name>/images/<image-name>.<extension>`
 Example - 
 ```markdown
 ![Alt text](content/docs/cloud-security/images/image.png)
@@ -76,22 +93,33 @@ Example -
 {{< /details >}}
 
 ## Infrastructure 
-The wiki is built on the Hugo. If you can help with any improvements, feature additions, etc. Hit us up at [wiki@payatu.io](mailto:wiki@payatu.io) or create an Issue and we can discuss it over there.
+The wiki is built on the Hugo. If you can help with any improvements, feature additions, etc. Create an Issue over GitHub and we can discuss it over there.
 
-## Cool Features
-{{< details title="Linking an external URL" open=false >}}
-```tpl
-{{</* external title="" href="" */>}}
-```
-It will add a external link symbol after the link for the UX and will open up the link in a new tab.
-{{< /details >}}
+## Additional Features
 
-<br>
-{{< details title="Linking an internal document" open=false >}}
+{{< details title="Linking an Internal Document" open=false >}}
 ```tpl
-{{</* ref "<!-- document/path/here -->" */>}}
+{{</* relref "<!-- document/path/here -->" */>}}
 ```
 It will help hugo internally process the document easily.
 {{< /details >}}
 
 Other cool elements to be added can be found in the {{<external title="shortcode" href="https://github.com/alex-shpak/hugo-book#shortcodes">}} section.
+
+## Test Locally
+
+1. Clone the repository to make changes locally - 
+    ```shell
+    git clone git@github.com:payatu/cybersec-wiki.git
+    ```
+
+2. Install [Hugo Extended Latest Version](https://github.com/gohugoio/hugo/releases).
+   
+3. From the parent location of repository where the source code is, run 
+      ```shell
+      hugo server
+      ```
+   It will start a local server to test the changes that you have made, in terms of look, feel and content.
+
+4. Once satisfied with the changes made, push the changes to GitHub.
+5. Create a Pull Request and if everything looks fine, we will be merging the content to the Cyber Security Wiki.

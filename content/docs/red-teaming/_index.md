@@ -1,4 +1,4 @@
 ---
-bookFlatSection: true
+title: Red Teaming
 bookCollapseSection: true
 ---

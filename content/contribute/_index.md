@@ -124,5 +124,5 @@ Other cool elements to be added can be found in the {{<external title="shortcode
    It will start a local server to test the changes that you have made, in terms of look, feel and content.
 
 4. Once satisfied with the changes made, push the changes to GitHub, it will ask you to create a fork of the repository and make changes there.
-5. Create a Pull Request and if everything looks fine, the payatu team will be merging the content to the Cyber Security Wiki, if everything looks fine.
+5. Create a Pull Request and if everything looks fine, the payatu team will be merging the content to the Cyber Security Wiki.
 

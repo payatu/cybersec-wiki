@@ -93,7 +93,7 @@ Example -
 {{< /details >}}
 
 ## Infrastructure 
-The wiki is built on the Hugo. If you can help with any improvements, feature additions, etc. Create an Issue over GitHub and we can discuss it over there.
+The wiki is built on the Hugo. If you can help with any improvements, feature additions, etc. You can [create an Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) and we can discuss it over there.
 
 ## Additional Features
 
@@ -105,6 +105,7 @@ It will help hugo internally process the document easily.
 {{< /details >}}
 
 Other cool elements to be added can be found in the {{<external title="shortcode" href="https://github.com/alex-shpak/hugo-book#shortcodes">}} section.
+<<<<<<< HEAD
 
 ## Test Locally
 
@@ -123,3 +124,5 @@ Other cool elements to be added can be found in the {{<external title="shortcode
 
 4. Once satisfied with the changes made, push the changes to GitHub.
 5. Create a Pull Request and if everything looks fine, we will be merging the content to the Cyber Security Wiki.
+=======
+>>>>>>> ee16ef2ea1bc2df20b500868465db024fd6088d9

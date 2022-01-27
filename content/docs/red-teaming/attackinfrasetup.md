@@ -1,10 +1,5 @@
 ---
 title: Infra Setup
-description: Setting up Command and Control(C2) Server
-published: true
-date: '2020-07-10T10:20:34.332Z'
-tags: null
-editor: markdown
 ---
 
 # attackInfraSetup

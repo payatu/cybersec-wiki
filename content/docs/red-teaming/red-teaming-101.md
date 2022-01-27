@@ -1,9 +1,5 @@
 ---
 title: Red Team Basics
-description: Resources for Red Teaming
-published: true
-date: '2020-04-27T07:06:10.301Z'
-tags: null
 ---
 
 # What is red teaming?

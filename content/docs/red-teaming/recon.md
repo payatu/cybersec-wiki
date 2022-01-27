@@ -1,10 +1,5 @@
 ---
 title: Recon
-description: Enumerating target for Red Team Assessment
-published: true
-date: '2020-07-10T10:44:38.806Z'
-tags: null
-editor: markdown
 ---
 
 # Reconnaissance

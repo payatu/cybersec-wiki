@@ -1,9 +1,5 @@
 ---
 title: Add Users to AD Domain
-description: Add users in the AD domain
-published: true
-date: '2020-05-26T06:49:29.555Z'
-tags: null
 ---
 
 # Adding users to the AD Domain

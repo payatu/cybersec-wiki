@@ -1,9 +1,5 @@
 ---
 title: Install DHCP Service
-description: Install DHCP
-published: true
-date: '2020-05-26T06:48:33.438Z'
-tags: null
 ---
 
 # DHCP Service

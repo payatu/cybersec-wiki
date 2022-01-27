@@ -1,10 +1,5 @@
 ---
 title: Social Engineering
-description: Resources for Social Engineering
-published: true
-date: '2020-07-10T10:55:06.604Z'
-tags: null
-editor: markdown
 ---
 
 # Social Engineering

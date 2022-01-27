@@ -1,9 +1,5 @@
 ---
 title: Introduction
-description: Introductio to Active Directory
-published: true
-date: '2020-05-26T06:46:28.282Z'
-tags: null
 ---
 
 # Introduction

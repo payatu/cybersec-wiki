@@ -1,10 +1,5 @@
 ---
 title: Action Plan
-description: Sample action plan
-published: true
-date: '2020-07-10T10:53:40.875Z'
-tags: null
-editor: markdown
 ---
 
 # Sample Red Team Activity Action Plan

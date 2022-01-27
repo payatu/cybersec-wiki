@@ -1,10 +1,5 @@
 ---
 title: Physical Security
-description: Breaching Physical security in Red Team
-published: true
-date: '2020-07-10T10:28:48.967Z'
-tags: null
-editor: markdown
 ---
 
 # Physical Security

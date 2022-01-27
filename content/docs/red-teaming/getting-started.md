@@ -1,10 +1,5 @@
 ---
 title: Getting Started
-description: Knowledge Dump
-published: true
-date: '2021-05-17T05:56:52.918Z'
-tags: null
-editor: markdown
 ---
 
 # Getting-Started

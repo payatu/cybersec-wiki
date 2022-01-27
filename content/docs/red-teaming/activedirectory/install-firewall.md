@@ -1,9 +1,5 @@
 ---
 title: Install Firewall
-description: Install Firewall(Proxy)
-published: true
-date: '2020-05-26T06:47:48.222Z'
-tags: null
 ---
 
 # Install Firewall

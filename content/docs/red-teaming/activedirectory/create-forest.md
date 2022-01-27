@@ -1,9 +1,5 @@
 ---
 title: Create Forest
-description: Create AD Forest
-published: true
-date: '2020-05-26T06:47:07.475Z'
-tags: null
 ---
 
 # Create Forest

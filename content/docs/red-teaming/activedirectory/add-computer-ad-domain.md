@@ -1,9 +1,5 @@
 ---
 title: Add Computer to AD Domain
-description: Add Computer to the domain in AD infrastructure
-published: true
-date: '2020-05-26T06:51:58.452Z'
-tags: null
 ---
 
 # Adding Computer to AD Domain

@@ -1,10 +1,5 @@
 ---
 title: Common Use Cases
-description: Common situations that arise in Red Team assessment
-published: true
-date: '2020-07-10T10:19:28.269Z'
-tags: redteam
-editor: markdown
 ---
 
 # Common Red Team Cases

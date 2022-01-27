@@ -1,9 +1,5 @@
 ---
 title: Lab Setup
-description: Active Directory Lab Overview
-published: true
-date: '2020-05-26T06:55:11.122Z'
-tags: null
 ---
 
 # Lab Setup

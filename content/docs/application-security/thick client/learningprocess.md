@@ -30,6 +30,8 @@ https://owasp.org/www-project-desktop-app-security-top-10/
 
 ## Some Common Vulnerabilities
 
+- https://payatu.com/blog/thick-client-penetration-testing/
+
 - **DLL Hijacking**
     - https://book.hacktricks.xyz/windows-hardening/windows-local-privilege-escalation/dll-hijacking
     - https://hackerone.com/reports/1636566
@@ -38,7 +40,7 @@ https://owasp.org/www-project-desktop-app-security-top-10/
     - https://www.mandiant.com/resources/reports/dll-side-loading-thorn-side-anti-virus-industry
 - **Sensitive credentials leaked in source code on Github**
     - https://thehackernews.com/2023/01/github-breach-hackers-stole-code.html
-- **Application login data being stored in System Registry**
+- **Application data being stored in System Registry**
     - https://www.praetorian.com/blog/how-to-detect-and-dump-credentials-from-the-windows-registry/
     - https://medium.com/@rahisul/windows-registry-769191adce1e
 - **Unsigned .exe or .dll files**
@@ -47,9 +49,14 @@ https://owasp.org/www-project-desktop-app-security-top-10/
     - Use of Wireshark or EchoMirage
 - **Unecrypted application data stored in the computer**
     - https://blog.appsecco.com/breaking-bad-tearing-apart-a-thick-client-app-to-steal-data-7e44f8698b2a
+    - https://stackoverflow.com/questions/33288/protecting-api-secret-keys-in-a-thick-client-application
 - **Memory protection checks**
     - https://blog.securelayer7.net/static-analysismemory-forensics-reverse-engineering-thick-client-penetration-testing-part-4/
+    - https://msrc.microsoft.com/blog/2010/12/on-the-effectiveness-of-dep-and-aslr/
+    - https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/windows-10-memory-protection-features/ba-p/259046
 - **Symlink attack**
     - https://www.exploit-db.com/papers/13199
     - https://www.darkrelay.com/post/thick-client-penetration-testing
     - https://nixhacker.com/understanding-and-exploiting-symbolic-link-in-windows/
+- **SQL Injection**
+    - Same payloads as SQLi in web

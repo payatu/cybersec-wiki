@@ -2,6 +2,12 @@
 title: Learning Process
 ---
 
+## Contents
+
+- [Sample vulnerable thick client applications](#Sample-vulnerable-Thick-Client-application)
+- [Vulnerability ranking](#owasp-desktop-app-security-top-10)
+- [Common Vulnerabilities](#some-common-vulnerabilities)
+
 ## Sample vulnerable Thick Client application
 
 ### DVTA - Damn Vulnerable Thick Client Application
@@ -46,7 +52,8 @@ https://owasp.org/www-project-desktop-app-security-top-10/
 - **Unsigned .exe or .dll files**
     - https://abhigowdaa.medium.com/unsigned-dll-exe-files-the-validity-of-the-certificates-86baf8722454
 - **Unencrypted application data in network during transmission**
-    - Use of Wireshark or EchoMirage
+    - Use of Wireshark to analyze traffic
+    - https://www.netspi.com/blog/technical/thick-application-penetration-testing/introduction-to-hacking-thick-clients-part-2-the-network/
 - **Unecrypted application data stored in the computer**
     - https://blog.appsecco.com/breaking-bad-tearing-apart-a-thick-client-app-to-steal-data-7e44f8698b2a
     - https://stackoverflow.com/questions/33288/protecting-api-secret-keys-in-a-thick-client-application
@@ -59,4 +66,6 @@ https://owasp.org/www-project-desktop-app-security-top-10/
     - https://www.darkrelay.com/post/thick-client-penetration-testing
     - https://nixhacker.com/understanding-and-exploiting-symbolic-link-in-windows/
 - **SQL Injection**
-    - Same payloads as SQLi in web
+    - SQLi payload for different languages can be referred from - https://securecode.wiki/docs/lang/dotnet/
+
+

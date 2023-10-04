@@ -7,6 +7,7 @@ title: Learning Process
 - [Sample vulnerable thick client applications](#Sample-vulnerable-Thick-Client-application)
 - [Vulnerability ranking](#owasp-desktop-app-security-top-10)
 - [Common Vulnerabilities](#some-common-vulnerabilities)
+- [Video Reference](#video-reference)
 
 ## Sample vulnerable Thick Client application
 
@@ -69,3 +70,6 @@ https://owasp.org/www-project-desktop-app-security-top-10/
     - SQLi payload for different languages can be referred from - https://securecode.wiki/docs/lang/dotnet/
 
 
+## Video reference
+
+- [Cobalt Core Academy: Thick Client Pentesting with Harsh Bothra](https://www.youtube.com/watch?v=q5PuvOlWrCQ)

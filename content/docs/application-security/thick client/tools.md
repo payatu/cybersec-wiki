@@ -16,6 +16,7 @@ title: Tools
 1. DnSpy
 2. ILSpy
 3. DotPeek
+4. Frida
 
 ## Network sniffing and Proxy
 1. Wireshark

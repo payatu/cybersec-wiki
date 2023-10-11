@@ -8,7 +8,7 @@ title: Learning Process
 - [Prompt Injection Videos](#Prompt-Injection-Videos)
 - [Prompt Injection CTF](#Prompt-Injection-CTF)
 - [LLM Hacker Handbook](#LLM-Hacker-Handbook)
-- [AI Hacking](#AI-Hacking)
+- [AI Hacking Videos](#AI-Hacking-Videos)
 - [AI Attack Surface Map](#AI-Attack-Surface-Map)
 
 ## OWASP Top 10 for Large Language Model Applications
@@ -36,7 +36,7 @@ title: Learning Process
 
 - https://doublespeak.chat/#/handbook
 
-## AI Hacking
+## AI Hacking Videos
 - [AI Hacking 🔥 OWASP Top 10 Vulnerabilities in LLM Applications](https://www.youtube.com/watch?v=engR9tYSsug)
 - [Fredrik Heiding - Devising and Detecting Phishing: Large Language Models vs. Smaller Human Models](https://www.youtube.com/watch?v=WVOoDGzwdLU)
 - [Daniel Miessler and Rez0: Hacking with AI (Ep. 24)](https://www.youtube.com/watch?v=Jt2d3XA07ig)

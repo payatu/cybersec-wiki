@@ -99,7 +99,7 @@ The wiki is built on the Hugo. If you can help with any improvements, feature ad
 
 {{< details title="Linking an Internal Document" open=false >}}
 ```tpl
-{{</* relref "<!-- document/path/here -->" */>}}
+{{ </* relref "<!-- document/path/here -->" */> }}
 ```
 It will help hugo internally process the document easily.
 {{< /details >}}

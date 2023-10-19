@@ -2,6 +2,8 @@
 title: Learning Process
 ---
 
+# Learning Resources
+
 ## Contents
 
 - [Sample vulnerable thick client applications](#Sample-vulnerable-Thick-Client-application)

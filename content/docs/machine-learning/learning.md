@@ -27,6 +27,7 @@ title: Learning Process
 - [Attacking LLM - Prompt Injection](https://www.youtube.com/watch?v=Sv5OLj2nVAQ)
 - [Accidental LLM Backdoor - Prompt Tricks](https://www.youtube.com/watch?v=h74oXb4Kk8k)
 - [Defending LLM - Prompt Injection](https://www.youtube.com/watch?v=VbNPZ1n6_vY)
+- [Prompt Injection 101 - Understanding Security Risks in LLM](https://www.youtube.com/watch?v=TDS6PGfniIU)
 
 ## Prompt Injection CTF
 
@@ -41,6 +42,7 @@ title: Learning Process
 - [AI Hacking 🔥 OWASP Top 10 Vulnerabilities in LLM Applications](https://www.youtube.com/watch?v=engR9tYSsug)
 - [Fredrik Heiding - Devising and Detecting Phishing: Large Language Models vs. Smaller Human Models](https://www.youtube.com/watch?v=WVOoDGzwdLU)
 - [Daniel Miessler and Rez0: Hacking with AI (Ep. 24)](https://www.youtube.com/watch?v=Jt2d3XA07ig)
+- [AI and hacking - opportunities and threats - Joseph “rez0” Thacker](https://www.youtube.com/watch?v=zY7dz4Dx5tc)
 
 ## AI Attack Surface Map
 - [The AI Attack Surface Map v1.0](https://danielmiessler.com/p/the-ai-attack-surface-map-v1-0/)
@@ -49,6 +51,7 @@ title: Learning Process
 
 - [Prompt Injection attack against LLM-integrated Applications](https://arxiv.org/abs/2306.05499)
 - [Exploiting Programmatic Behavior of LLMs: Dual-Use Through Standard Security Attacks](https://arxiv.org/abs/2302.05733)
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://llm-attacks.org/)
 
 
 

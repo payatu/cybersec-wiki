@@ -97,6 +97,7 @@ https://owasp.org/www-project-desktop-app-security-top-10/
     - https://www.exploit-db.com/exploits/50470
     - https://www.exploit-db.com/exploits/51223 (Pops calculator)
     - https://www.exploit-db.com/exploits/51196 (DoS)
+    - https://www.exploit-db.com/exploits/51102
 - **Directory Traversal and Arbitrary File Read**
     - https://www.exploit-db.com/exploits/50437
 - **Denial of Service**
@@ -105,6 +106,7 @@ https://owasp.org/www-project-desktop-app-security-top-10/
     - https://learn.microsoft.com/en-us/archive/msdn-magazine/2007/november/analyze-crashes-to-find-security-vulnerabilities-in-your-apps
 - **Remote code execution**
     - https://www.exploit-db.com/exploits/50972
+    - https://www.exploit-db.com/exploits/50974
 
 
 ## Video reference

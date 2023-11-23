@@ -2,6 +2,8 @@
 title: Checklist
 ---
 
+# Checklist
+
 ## Reconnaisance (Information Gathering)
 - Information Gathering (via tool like CFF Explorer)
 - Identify architecture - Two-tier or Three-tier 

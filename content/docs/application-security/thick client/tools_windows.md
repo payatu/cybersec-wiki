@@ -1,8 +1,8 @@
 ---
-title: Tools
+title: Tools - Windows
 ---
 
-# Tools used in Thick client pentesting
+# Tools used in Windows Thick client pentesting
 
 ## Information Gathering
 1. CFF explorer (https://ntcore.com/?page_id=388)

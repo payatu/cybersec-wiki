@@ -5,6 +5,7 @@ type: post
 # **Categories**
 
 {{< category-button href="application-security" >}}Application Security{{< /category-button >}}
+{{< category-button href="blockchain-smart-contracts" >}}Blockchain & Smart Contracts{{< /category-button >}}
 {{< category-button href="cloud-security" >}}Cloud Security{{< /category-button >}}
 {{< category-button href="devsecops" >}}DevSecOps{{< /category-button >}}
 {{< category-button href="exploit-development" >}}Exploit Development{{< /category-button >}}

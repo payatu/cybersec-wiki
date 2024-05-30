@@ -5,53 +5,53 @@ title: Checklist
 # Checklist
 
 ## Reconnaisance (Information Gathering)
-- Information Gathering (via tool like CFF Explorer)
-- Identify architecture - Two-tier or Three-tier 
-- Is the App - Internet or Intranet based (via tool like Wireshark)
-- Identify - Proxy-aware or Proxy-Unaware
-- Identify technologies used on Client-Side
+- Information Gathering (via tool like CFF Explorer) (https://www.hackingarticles.in/thick-client-penetration-testing-information-gathering/)
+- Identify architecture - Two-tier or Three-tier (https://medium.com/@GacheruEvans/2-tier-vs-3-tier-architecture-26db56fe7e9c)
+- Is the App - Internet or Intranet based (via tool like Wireshark) (https://powell-software.com/resources/blog/difference-between-intranet-and-internet/)
+- Identify - Proxy-aware or Proxy-Unaware (https://www.browserstack.com/docs/app-live/troubleshooting/proxy-aware)
+- Identify technologies used on Client-Side 
 - Identify technologies used on Server-Side
-- Identify the Proccess ID
+- Identify the Proccess ID (https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/finding-the-process-id, https://www.geeksforgeeks.org/get-process-id-of-linux-foreground-and-background-processes/)
 - Identify application entry points
 - Identify user roles
 - Identify Network Communication - Ports and Protocols in use 
-- Port Scanning (via tool like Nmap)
+- Port Scanning (via tool like Nmap) (https://www.freecodecamp.org/news/what-is-nmap-and-how-to-use-it-a-tutorial-for-the-greatest-scanning-tool-of-all-time/)
 - Check for webapp associated with the thick client
 - Check whether thick client app redirects to a web application
 
 ## Injection
-- OS Command Injection
-- SQL Injection
-- NoSQL Injection
-- External XML Entity (XXE)
-- XSS (Cross Site Scripting)
-- HTML Injection
-- XPath Injection
-- LDAP Injection
-- Host Header Injection
-- CSV Injection
-- (HTTP) Parameter Pollution
-- Server-Side Template Injection (SSTI)
+- [OS Command Injection](https://owasp.org/www-community/attacks/Command_Injection)
+- [SQL Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection)
+- [NoSQL Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.6-Testing_for_NoSQL_Injection)
+- [External XML Entity (XXE)](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/07-Testing_for_XML_Injection)
+- [XSS (Cross Site Scripting)](https://owasp.org/www-community/attacks/xss/)
+- [HTML Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/03-Testing_for_HTML_Injection)
+- [XPath Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/09-Testing_for_XPath_Injection)
+- [LDAP Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/06-Testing_for_LDAP_Injection)
+- [Host Header Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/17-Testing_for_Host_Header_Injection)
+- [CSV Injection](https://owasp.org/www-community/attacks/CSV_Injection)
+- [(HTTP) Parameter Pollution](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution)
+- [Server-Side Template Injection (SSTI)](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/07-Input_Validation_Testing/18-Testing_for_Server_Side_Template_Injection)
 
 ## Broken Authentication and Session Management
 - Vulnerable Authentication Flow
-    - via Response Manipulation
-    - via SQL/NoSQL Injection
-    - Via Null (Absence of) Password
-    - Use of Default Credentials 
-    - Use of Hardcoded Credentials
-    - Via Memory Manipulation
-    - Via Registry Manipulation
-- Username Enumeration
-- Weak Lock Out Mechanism
-- Flawed Brute-Force Protection
-- Vulnerable Remember Password
-- Weak Password Policy
-- Flawed User Registration Process
-- OAuth/OpenID
-- SSO
-- MFA
-- Session based weaknesses
+    - via Response Manipulation (https://medium.com/@MAALP/authentication-bypass-using-response-manipulation-6c33eb1257ac)
+    - via SQL/NoSQL Injection (https://portswigger.net/support/using-sql-injection-to-bypass-authentication)
+    - Via Null (Absence of) Password (https://owasp.org/www-community/vulnerabilities/Empty_String_Password)
+    - Use of Default Credentials  (https://rohit443.medium.com/using-default-credential-to-admin-account-takeover-677e782ff2f2)
+    - Use of Hardcoded Credentials (https://infosecwriteups.com/go-code-review-1-hard-coded-credentials-are-security-sensitive-4317a8431eaa)
+    - Via Memory Manipulation (https://abhigowdaa.medium.com/sensitive-information-in-hexdump-bb6a6306532c)
+    - Via Registry Manipulation (https://abhigowdaa.medium.com/passwords-in-registry-entry-30e69fb6524f)
+- Username Enumeration (https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses)
+- Weak Lock Out Mechanism (https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism)
+- Flawed Brute-Force Protection (https://portswigger.net/web-security/authentication/password-based/lab-broken-bruteforce-protection-ip-block)
+- Vulnerable Remember Password (https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/05-Testing_for_Vulnerable_Remember_Password)
+- Weak Password Policy (https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/07-Testing_for_Weak_Password_Policy)
+- Flawed User Registration Process (https://sm4rty.medium.com/hunting-for-bugs-in-sign-up-register-feature-2021-c47035481212)
+- OAuth/OpenID (https://medium.com/a-bugz-life/the-wondeful-world-of-oauth-bug-bounty-edition-af3073b354c1)
+- SSO (https://medium.com/@batuhanaydinn/bug-bounty-hunter-understanding-saml-vulnerabilities-xsw-attacks-8c43c601d2d1)
+- MFA (https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html)
+- Session based weaknesses (https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)
 
 ## Sensitive Data Exposure
 - Improper cryptographic key management

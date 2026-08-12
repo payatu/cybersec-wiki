@@ -553,10 +553,10 @@ ${the_version}
     - Whether some of the user inputs are missing in the response.
 
 ```jsx
-${{<%[%'"}}%\
+${{&lt;%[%'"}}%\
 $<
 $$
-{{%
+&#123;&#123;%
 }}
 {{7*7}}
 ${7*7}

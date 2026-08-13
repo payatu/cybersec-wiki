@@ -553,10 +553,10 @@ ${the_version}
     - Whether some of the user inputs are missing in the response.
 
 ```jsx
-${{<%[%'"}}%\
+${{&lt;%[%'"}}%\
 $<
 $$
-{{%
+&#123;&#123;%
 }}
 {{7*7}}
 ${7*7}
@@ -567,7 +567,7 @@ ${7*7}
 
 - One can follow this tree to identify the template engine used by the application
 
-![image (9).png](image_(9).png)
+![SSTI.png](../ssti.png)
 
 - Starting at very left, including the parameter into my request.
 - Following **`Green arrow`**when ⇒ The expression is evaluated (i.e **49**)

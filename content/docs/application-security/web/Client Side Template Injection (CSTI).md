@@ -258,7 +258,7 @@ The goal is to break out of the template expression and execute arbitrary JavaSc
 - **Mathematical Expression**
     - Submit `{{7*7}}` or `${7*7}`. If the page renders `49`, the application may have an injection attack.
 - **The "Syntax" Test**
-    - Submit `{{<@$%}}`. If the framework throws a console error (viewable in DevTools), it confirms the parser is active.
+    - Submit `&#123;&#123;&lt; @ $ % &#125;&#125;`. If the framework throws a console error (viewable in DevTools), it confirms the parser is active.
 - **Identifier Discovery**
     - Try `{{this}}` to see the current scope object.
 

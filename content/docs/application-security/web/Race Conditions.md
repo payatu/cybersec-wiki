@@ -207,7 +207,7 @@ Using HTTP/2, we can send multiple requests over a single TCP connection, often 
 - He has to send the requests in the race window which is often of a few milli-seconds
 - So that the database will take two simultaneous requests as valid and you can apply the coupon more than once.
 
-![image.png](image.png)
+![Race Condition.png](../rc1.png)
 
 - Here in the image, the 2 requests are generated simultaneously.
 - So to exploit you have to focus on two things
@@ -262,7 +262,7 @@ def handleResponse(req, interesting):
 - The feature like Add to Cart ⇒ Make Payment ⇒ Order confirmed
 - The internal workflow looks like this
     
-    ![image.png](image%201.png)
+    ![Race Condition.png](../rc2.png)
     
 - The race window is the payment validation
 - When the application is validating the payment one can add other items also into the cart, after the payment validation it will send a basket confirmed request, that will also confirmed the other items in the cart that where added later

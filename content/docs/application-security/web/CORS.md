@@ -370,7 +370,7 @@ Access-Control-Allow-Origin: https://target.application}.arbitrary.com
 Access-Control-Allow-Credentials: true
 ```
 
-![image.png](image.png)
+![image.png](../cors.png)
 
 ### XSSI/JSONP Bypass
 

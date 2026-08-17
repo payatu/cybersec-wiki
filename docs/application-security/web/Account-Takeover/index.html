@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Account Takeover (ATO) # Introduction # Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.
+ATO is typically not a single vulnerability but a chain of authentication and logic flaws that result in full account compromise.
+Fundamentals of Account Takeover # Core Concept # Account takeover occurs when the authentication or identity verification process is bypassed, broken, or abused, allowing an attacker to impersonate a legitimate user.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Account Takeover" />
+<meta property="og:description" content="Account Takeover (ATO) # Introduction # Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.
+ATO is typically not a single vulnerability but a chain of authentication and logic flaws that result in full account compromise.
+Fundamentals of Account Takeover # Core Concept # Account takeover occurs when the authentication or identity verification process is bypassed, broken, or abused, allowing an attacker to impersonate a legitimate user." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Account Takeover | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class=" active">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Account Takeover</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#account-takeover-ato">Account Takeover (ATO)</a>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+      </ul>
+    </li>
+    <li><a href="#fundamentals-of-account-takeover">Fundamentals of Account Takeover</a>
+      <ul>
+        <li><a href="#core-concept">Core Concept</a></li>
+        <li><a href="#authentication-lifecycle">Authentication Lifecycle</a></li>
+        <li><a href="#authentication-models">Authentication Models</a>
+          <ul>
+            <li><a href="#1-password-based-authentication">1. Password-Based Authentication</a></li>
+            <li><a href="#2-session-based-authentication">2. Session-Based Authentication</a></li>
+            <li><a href="#3-token-based-authentication-jwtapi">3. Token-Based Authentication (JWT/API)</a></li>
+            <li><a href="#4-federated-authentication-oauth--sso">4. Federated Authentication (OAuth / SSO)</a></li>
+            <li><a href="#5-password-recovery-systems">5. Password Recovery Systems</a></li>
+          </ul>
+        </li>
+        <li><a href="#trust-boundaries-in-ato">Trust Boundaries in ATO</a></li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+      </ul>
+    </li>
+    <li><a href="#types-of-account-takeover-attacks">Types of Account Takeover Attacks</a>
+      <ul>
+        <li><a href="#1-credential-based-attacks">1. Credential-Based Attacks</a></li>
+        <li><a href="#2-session-based-attacks">2. Session-Based Attacks</a></li>
+        <li><a href="#3-password-reset-attacks">3. Password Reset Attacks</a></li>
+        <li><a href="#4-oauth--sso-attacks">4. OAuth / SSO Attacks</a></li>
+        <li><a href="#5-jwt--api-authentication-attacks">5. JWT / API Authentication Attacks</a></li>
+        <li><a href="#6-mfa-bypass-attacks">6. MFA Bypass Attacks</a></li>
+        <li><a href="#7-registration--account-linking-issues">7. Registration / Account Linking Issues</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#credential-stuffing">Credential Stuffing</a></li>
+            <li><a href="#password-spraying">Password Spraying</a></li>
+            <li><a href="#session-hijacking">Session Hijacking</a></li>
+            <li><a href="#session-fixation">Session Fixation</a></li>
+            <li><a href="#password-reset-abuse">Password Reset Abuse</a></li>
+            <li><a href="#oauth-misconfiguration">OAuth Misconfiguration</a></li>
+            <li><a href="#token-replay--jwt-abuse">Token Replay / JWT Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-defenses">Bypassing Defenses</a>
+          <ul>
+            <li><a href="#rate-limiting-issues">Rate Limiting Issues</a></li>
+            <li><a href="#mfa-flaws">MFA Flaws</a></li>
+            <li><a href="#token-reuse">Token Reuse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a>
+      <ul>
+        <li><a href="#chained-account-takeover">Chained Account Takeover</a></li>
+        <li><a href="#oauth-account-takeover">OAuth Account Takeover</a></li>
+        <li><a href="#session-fixation--login-flow-abuse">Session Fixation + Login Flow Abuse</a></li>
+        <li><a href="#pre-account-takeover-registration-abuse">Pre-Account Takeover (Registration Abuse)</a></li>
+        <li><a href="#race-condition-attacks">Race Condition Attacks</a></li>
+        <li><a href="#mfa-bypass-edge-cases">MFA Bypass Edge Cases</a></li>
+      </ul>
+    </li>
+    <li><a href="#detection-techniques">Detection Techniques</a>
+      <ul>
+        <li><a href="#manual-testing">Manual Testing</a></li>
+        <li><a href="#automated-testing">Automated Testing</a>
+          <ul>
+            <li><a href="#burp-suite">Burp Suite</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#quick-testing-checklist">Quick Testing Checklist</a>
+      <ul>
+        <li><a href="#rate-limiting">Rate Limiting</a></li>
+        <li><a href="#mfa">MFA</a></li>
+        <li><a href="#session-security">Session Security</a></li>
+        <li><a href="#password-reset">Password Reset</a></li>
+        <li><a href="#oauth--sso">OAuth / SSO</a></li>
+        <li><a href="#jwt--api-auth">JWT / API Auth</a></li>
+        <li><a href="#race-conditions">Race Conditions</a></li>
+      </ul>
+    </li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+    <li><a href="#good-to-read-real-world-reports">Good To Read (Real-World Reports)</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="account-takeover-ato">
+  Account Takeover (ATO)
+  <a class="anchor" href="#account-takeover-ato">#</a>
+</h1>
+<h2 id="introduction">
+  Introduction
+  <a class="anchor" href="#introduction">#</a>
+</h2>
+<p>Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.</p>
+<p>ATO is typically not a single vulnerability but a <strong>chain of authentication and logic flaws</strong> that result in full account compromise.</p>
+<hr>
+<h1 id="fundamentals-of-account-takeover">
+  Fundamentals of Account Takeover
+  <a class="anchor" href="#fundamentals-of-account-takeover">#</a>
+</h1>
+<h2 id="core-concept">
+  Core Concept
+  <a class="anchor" href="#core-concept">#</a>
+</h2>
+<p>Account takeover occurs when the <strong>authentication or identity verification process is bypassed, broken, or abused</strong>, allowing an attacker to impersonate a legitimate user.</p>
+<hr>
+<h2 id="authentication-lifecycle">
+  Authentication Lifecycle
+  <a class="anchor" href="#authentication-lifecycle">#</a>
+</h2>
+<pre tabindex="0"><code>Registration → Authentication → Session Creation → Session Usage → Session Termination
+</code></pre><p>ATO occurs when any stage is:</p>
+<ul>
+<li>Weakly implemented</li>
+<li>Inconsistently enforced</li>
+<li>Not invalidated properly</li>
+</ul>
+<hr>
+<h2 id="authentication-models">
+  Authentication Models
+  <a class="anchor" href="#authentication-models">#</a>
+</h2>
+<h3 id="1-password-based-authentication">
+  1. Password-Based Authentication
+  <a class="anchor" href="#1-password-based-authentication">#</a>
+</h3>
+<ul>
+<li>Username + password</li>
+<li>Most commonly attacked via credential reuse or brute force</li>
+</ul>
+<h3 id="2-session-based-authentication">
+  2. Session-Based Authentication
+  <a class="anchor" href="#2-session-based-authentication">#</a>
+</h3>
+<ul>
+<li>Cookie/session ID maintained server-side</li>
+<li>Vulnerable to hijacking and fixation</li>
+</ul>
+<h3 id="3-token-based-authentication-jwtapi">
+  3. Token-Based Authentication (JWT/API)
+  <a class="anchor" href="#3-token-based-authentication-jwtapi">#</a>
+</h3>
+<ul>
+<li>Stateless authentication using signed tokens</li>
+<li>Vulnerable to weak signing, replay, or missing validation</li>
+</ul>
+<h3 id="4-federated-authentication-oauth--sso">
+  4. Federated Authentication (OAuth / SSO)
+  <a class="anchor" href="#4-federated-authentication-oauth--sso">#</a>
+</h3>
+<ul>
+<li>Delegated identity (Google, GitHub, Microsoft)</li>
+<li>Vulnerable to misconfigured redirects and account linking issues</li>
+</ul>
+<h3 id="5-password-recovery-systems">
+  5. Password Recovery Systems
+  <a class="anchor" href="#5-password-recovery-systems">#</a>
+</h3>
+<ul>
+<li>Email / SMS / OTP based reset flows</li>
+<li>Most critical ATO vector in real-world attacks</li>
+</ul>
+<hr>
+<h2 id="trust-boundaries-in-ato">
+  Trust Boundaries in ATO
+  <a class="anchor" href="#trust-boundaries-in-ato">#</a>
+</h2>
+<p>Authentication systems assume:</p>
+<ul>
+<li>Credentials prove identity</li>
+<li>Tokens are unforgeable</li>
+<li>Sessions belong to one user</li>
+<li>OAuth providers are fully trusted</li>
+<li>Reset flows are one-time and secure</li>
+</ul>
+<p>Breaking these assumptions leads to ATO.</p>
+<hr>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<ul>
+<li>Login endpoints</li>
+<li>Registration flows</li>
+<li>Password reset / forgot password</li>
+<li>Session cookies / JWT tokens</li>
+<li>OAuth / SSO callback endpoints</li>
+<li>API authentication endpoints</li>
+<li>MFA / OTP verification flows</li>
+<li>Account linking / social login</li>
+<li>Mobile authentication APIs</li>
+</ul>
+<hr>
+<h1 id="types-of-account-takeover-attacks">
+  Types of Account Takeover Attacks
+  <a class="anchor" href="#types-of-account-takeover-attacks">#</a>
+</h1>
+<h2 id="1-credential-based-attacks">
+  1. Credential-Based Attacks
+  <a class="anchor" href="#1-credential-based-attacks">#</a>
+</h2>
+<ul>
+<li>Credential Stuffing: Reuse of leaked username/password pairs from breaches</li>
+<li>Password Spraying: Common passwords used across many accounts to avoid lockouts</li>
+<li>Brute Force (Low and High Entropy): Systematic password guessing attacks</li>
+</ul>
+<hr>
+<h2 id="2-session-based-attacks">
+  2. Session-Based Attacks
+  <a class="anchor" href="#2-session-based-attacks">#</a>
+</h2>
+<ul>
+<li>Session Hijacking: Stealing session cookies via XSS, MITM, or malware</li>
+<li>Session Fixation: Forcing victim to use attacker-controlled session ID</li>
+<li>Session Replay: Reusing valid session tokens due to lack of invalidation</li>
+<li>Session Prediction: Guessing weak or predictable session identifiers</li>
+</ul>
+<hr>
+<h2 id="3-password-reset-attacks">
+  3. Password Reset Attacks
+  <a class="anchor" href="#3-password-reset-attacks">#</a>
+</h2>
+<ul>
+<li>Predictable reset tokens</li>
+<li>Token reuse</li>
+<li>Missing expiration</li>
+<li>Broken identity verification</li>
+<li>Reset link manipulation</li>
+<li>Host header / email injection abuse</li>
+</ul>
+<hr>
+<h2 id="4-oauth--sso-attacks">
+  4. OAuth / SSO Attacks
+  <a class="anchor" href="#4-oauth--sso-attacks">#</a>
+</h2>
+<ul>
+<li>Improper account linking</li>
+<li>Missing state parameter validation</li>
+<li>Open redirect in callback URL</li>
+<li>Token leakage via redirect URI</li>
+<li>Identity confusion (same email different provider)</li>
+</ul>
+<hr>
+<h2 id="5-jwt--api-authentication-attacks">
+  5. JWT / API Authentication Attacks
+  <a class="anchor" href="#5-jwt--api-authentication-attacks">#</a>
+</h2>
+<ul>
+<li>Weak or missing signature verification</li>
+<li>Algorithm confusion (none/HS/RS attacks)</li>
+<li>Token replay</li>
+<li>Missing expiration (<code>exp</code>)</li>
+<li>JWT tampering</li>
+<li>Refresh token abuse</li>
+</ul>
+<hr>
+<h2 id="6-mfa-bypass-attacks">
+  6. MFA Bypass Attacks
+  <a class="anchor" href="#6-mfa-bypass-attacks">#</a>
+</h2>
+<ul>
+<li>MFA not enforced on all endpoints</li>
+<li>MFA bypass via password reset</li>
+<li>Backup code abuse</li>
+<li>Step-skipping logic flaws</li>
+<li>SMS/OTP interception</li>
+</ul>
+<hr>
+<h2 id="7-registration--account-linking-issues">
+  7. Registration / Account Linking Issues
+  <a class="anchor" href="#7-registration--account-linking-issues">#</a>
+</h2>
+<ul>
+<li>Duplicate account creation using same email</li>
+<li>OAuth account takeover via pre-registration</li>
+<li>Email verification bypass</li>
+<li>Account takeover via social login mismatch</li>
+</ul>
+<hr>
+<h2 id="exploitation-techniques">
+  Exploitation Techniques
+  <a class="anchor" href="#exploitation-techniques">#</a>
+</h2>
+<h3 id="credential-stuffing">
+  Credential Stuffing
+  <a class="anchor" href="#credential-stuffing">#</a>
+</h3>
+<pre tabindex="0"><code>POST /login
+{
+  &#34;username&#34;: &#34;victim&#34;,
+  &#34;password&#34;: &#34;password123&#34;
+}
+</code></pre><ul>
+<li>Use breached credential lists</li>
+<li>Rotate IPs to avoid blocking</li>
+</ul>
+<hr>
+<h3 id="password-spraying">
+  Password Spraying
+  <a class="anchor" href="#password-spraying">#</a>
+</h3>
+<pre tabindex="0"><code>Password: Password1
+Target: multiple users
+</code></pre><ul>
+<li>Avoid lockout triggers</li>
+<li>Test common passwords across many accounts</li>
+</ul>
+<hr>
+<h3 id="session-hijacking">
+  Session Hijacking
+  <a class="anchor" href="#session-hijacking">#</a>
+</h3>
+<pre tabindex="0"><code>document.cookie
+</code></pre><ul>
+<li>Steal session via XSS / MITM</li>
+<li>Replay session token in browser or API client</li>
+</ul>
+<hr>
+<h3 id="session-fixation">
+  Session Fixation
+  <a class="anchor" href="#session-fixation">#</a>
+</h3>
+<pre tabindex="0"><code>Set-Cookie: session=attacker_session
+</code></pre><ul>
+<li>Victim logs in using attacker-controlled session ID</li>
+</ul>
+<hr>
+<h3 id="password-reset-abuse">
+  Password Reset Abuse
+  <a class="anchor" href="#password-reset-abuse">#</a>
+</h3>
+<pre tabindex="0"><code>https://target.com/reset?token=12345
+</code></pre><p>Test for:</p>
+<ul>
+<li>Predictable tokens</li>
+<li>Token reuse</li>
+<li>Missing expiration</li>
+<li>Email injection in reset flow</li>
+</ul>
+<hr>
+<h3 id="oauth-misconfiguration">
+  OAuth Misconfiguration
+  <a class="anchor" href="#oauth-misconfiguration">#</a>
+</h3>
+<ul>
+<li>Missing state validation</li>
+<li>Account linking bypass</li>
+<li>Redirect URI manipulation</li>
+</ul>
+<hr>
+<h3 id="token-replay--jwt-abuse">
+  Token Replay / JWT Abuse
+  <a class="anchor" href="#token-replay--jwt-abuse">#</a>
+</h3>
+<ul>
+<li>Reuse of valid tokens</li>
+<li>Missing expiration validation</li>
+<li>Tampered payload without signature verification</li>
+</ul>
+<hr>
+<h2 id="bypassing-defenses">
+  Bypassing Defenses
+  <a class="anchor" href="#bypassing-defenses">#</a>
+</h2>
+<h3 id="rate-limiting-issues">
+  Rate Limiting Issues
+  <a class="anchor" href="#rate-limiting-issues">#</a>
+</h3>
+<ul>
+<li>No throttling on login/reset endpoints</li>
+</ul>
+<h3 id="mfa-flaws">
+  MFA Flaws
+  <a class="anchor" href="#mfa-flaws">#</a>
+</h3>
+<ul>
+<li>MFA only applied after login</li>
+<li>MFA bypass via alternate flows</li>
+</ul>
+<h3 id="token-reuse">
+  Token Reuse
+  <a class="anchor" href="#token-reuse">#</a>
+</h3>
+<ul>
+<li>Reset/session tokens remain valid after use</li>
+</ul>
+<hr>
+<h1 id="advanced-attack-scenarios">
+  Advanced Attack Scenarios
+  <a class="anchor" href="#advanced-attack-scenarios">#</a>
+</h1>
+<h2 id="chained-account-takeover">
+  Chained Account Takeover
+  <a class="anchor" href="#chained-account-takeover">#</a>
+</h2>
+<p>Example chain:</p>
+<ul>
+<li>Weak password policy</li>
+<li>No rate limiting</li>
+<li>Weak reset tokens</li>
+</ul>
+<p>→ Full account compromise</p>
+<hr>
+<h2 id="oauth-account-takeover">
+  OAuth Account Takeover
+  <a class="anchor" href="#oauth-account-takeover">#</a>
+</h2>
+<ul>
+<li>Victim logs in using OAuth</li>
+<li>Attacker links OAuth identity first</li>
+<li>Victim account gets overridden</li>
+</ul>
+<hr>
+<h2 id="session-fixation--login-flow-abuse">
+  Session Fixation + Login Flow Abuse
+  <a class="anchor" href="#session-fixation--login-flow-abuse">#</a>
+</h2>
+<ul>
+<li>Attacker sets session ID</li>
+<li>Victim logs in</li>
+<li>Session becomes authenticated attacker session</li>
+</ul>
+<hr>
+<h2 id="pre-account-takeover-registration-abuse">
+  Pre-Account Takeover (Registration Abuse)
+  <a class="anchor" href="#pre-account-takeover-registration-abuse">#</a>
+</h2>
+<ul>
+<li>Email not verified</li>
+<li>Duplicate account creation allowed</li>
+<li>OAuth mismatch exploited</li>
+</ul>
+<hr>
+<h2 id="race-condition-attacks">
+  Race Condition Attacks
+  <a class="anchor" href="#race-condition-attacks">#</a>
+</h2>
+<ul>
+<li>OTP reuse via parallel requests</li>
+<li>Password reset token race exploitation</li>
+</ul>
+<hr>
+<h2 id="mfa-bypass-edge-cases">
+  MFA Bypass Edge Cases
+  <a class="anchor" href="#mfa-bypass-edge-cases">#</a>
+</h2>
+<ul>
+<li>MFA not required for API endpoints</li>
+<li>MFA skipped in reset flows</li>
+<li>Backup codes reused</li>
+</ul>
+<hr>
+<h1 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h1>
+<h2 id="manual-testing">
+  Manual Testing
+  <a class="anchor" href="#manual-testing">#</a>
+</h2>
+<ul>
+<li>Test weak credentials</li>
+<li>Analyze login response behavior</li>
+<li>Test password reset flow</li>
+<li>Validate session lifecycle</li>
+<li>Check token reuse</li>
+<li>Observe MFA enforcement consistency</li>
+</ul>
+<hr>
+<h2 id="automated-testing">
+  Automated Testing
+  <a class="anchor" href="#automated-testing">#</a>
+</h2>
+<h3 id="burp-suite">
+  Burp Suite
+  <a class="anchor" href="#burp-suite">#</a>
+</h3>
+<ul>
+<li>Intruder → credential stuffing</li>
+<li>Sequencer → token randomness analysis</li>
+<li>Repeater → manual flow testing</li>
+</ul>
+<hr>
+<h1 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h1>
+<ul>
+<li>Full account takeover</li>
+<li>Data theft and leakage</li>
+<li>Financial fraud</li>
+<li>Privilege escalation</li>
+<li>API abuse</li>
+<li>Persistent unauthorized access</li>
+<li>Regulatory violations (GDPR, PCI-DSS)</li>
+</ul>
+<hr>
+<h1 id="quick-testing-checklist">
+  Quick Testing Checklist
+  <a class="anchor" href="#quick-testing-checklist">#</a>
+</h1>
+<h2 id="rate-limiting">
+  Rate Limiting
+  <a class="anchor" href="#rate-limiting">#</a>
+</h2>
+<ul>
+<li>Can login/reset be brute-forced?</li>
+<li>Is credential stuffing possible?</li>
+</ul>
+<h2 id="mfa">
+  MFA
+  <a class="anchor" href="#mfa">#</a>
+</h2>
+<ul>
+<li>Is MFA enforced consistently?</li>
+<li>Can MFA be bypassed via alternate flows?</li>
+</ul>
+<h2 id="session-security">
+  Session Security
+  <a class="anchor" href="#session-security">#</a>
+</h2>
+<ul>
+<li>Is session rotated after login?</li>
+<li>Are cookies secure (HttpOnly, Secure, SameSite)?</li>
+<li>Is logout invalidating sessions?</li>
+</ul>
+<h2 id="password-reset">
+  Password Reset
+  <a class="anchor" href="#password-reset">#</a>
+</h2>
+<ul>
+<li>Are tokens random and single-use?</li>
+<li>Do reset links expire?</li>
+</ul>
+<h2 id="oauth--sso">
+  OAuth / SSO
+  <a class="anchor" href="#oauth--sso">#</a>
+</h2>
+<ul>
+<li>Is state parameter validated?</li>
+<li>Is account linking secure?</li>
+<li>Is email verification enforced?</li>
+</ul>
+<h2 id="jwt--api-auth">
+  JWT / API Auth
+  <a class="anchor" href="#jwt--api-auth">#</a>
+</h2>
+<ul>
+<li>Are tokens properly signed?</li>
+<li>Is expiration enforced?</li>
+<li>Can tokens be replayed?</li>
+</ul>
+<h2 id="race-conditions">
+  Race Conditions
+  <a class="anchor" href="#race-conditions">#</a>
+</h2>
+<ul>
+<li>Can OTP/reset be reused concurrently?</li>
+</ul>
+<hr>
+<h1 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h1>
+<ul>
+<li>Burp Suite (Repeater, Intruder, Sequencer)</li>
+<li>ffuf</li>
+<li>wfuzz</li>
+<li>Nuclei</li>
+<li>jwt_tool</li>
+<li>curl / Postman</li>
+<li>Hydra (credential testing)</li>
+</ul>
+<hr>
+<h1 id="mitigation--prevention">
+  Mitigation &amp; Prevention
+  <a class="anchor" href="#mitigation--prevention">#</a>
+</h1>
+<ul>
+<li>Strong password policies</li>
+<li>Rate limiting and IP throttling</li>
+<li>MFA enforcement across all endpoints</li>
+<li>Secure session management (rotation + invalidation)</li>
+<li>Strong reset token generation (single-use, expiring)</li>
+<li>Proper OAuth state validation</li>
+<li>JWT signature validation + expiration enforcement</li>
+<li>Account linking verification (email binding control)</li>
+<li>Monitoring for anomalous login attempts</li>
+</ul>
+<hr>
+<h1 id="good-to-read-real-world-reports">
+  Good To Read (Real-World Reports)
+  <a class="anchor" href="#good-to-read-real-world-reports">#</a>
+</h1>
+<ul>
+<li><a href="https://hackerone.com/reports/2293343" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2293343</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/317476" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/317476</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/745324" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/745324</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/314808" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/314808</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/534450" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/534450</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<hr>
+<h1 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h1>
+<ul>
+<li><a href="https://owasp.org/www-community/attacks/Session_Prediction" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/Session_Prediction</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/www-community/Authentication_Cheat_Sheet" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/Authentication_Cheat_Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.vaadata.com/blog/account-takeover-techniques-and-security-best-practices/" target="_blank" rel="noreferrer noopener nofollow">https://www.vaadata.com/blog/account-takeover-techniques-and-security-best-practices/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.bluevoyant.com/knowledge-center/account-takeover-5-types-of-attacks-4-protective-measures" target="_blank" rel="noreferrer noopener nofollow">https://www.bluevoyant.com/knowledge-center/account-takeover-5-types-of-attacks-4-protective-measures</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@bughunt789/the-hidden-flaw-exploiting-password-resets-for-account-takeover-39508956982b" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@bughunt789/the-hidden-flaw-exploiting-password-resets-for-account-takeover-39508956982b</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@security.tecno/hacking-your-first-oauth-on-the-web-application-account-takeover-using-redirect-and-state-5e857c7b1d43" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@security.tecno/hacking-your-first-oauth-on-the-web-application-account-takeover-using-redirect-and-state-5e857c7b1d43</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPACCOUNTTAKEOVER.md" target="_blank" rel="noreferrer noopener nofollow">https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPACCOUNTTAKEOVER.md</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Account%20Takeover.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#account-takeover-ato">Account Takeover (ATO)</a>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+      </ul>
+    </li>
+    <li><a href="#fundamentals-of-account-takeover">Fundamentals of Account Takeover</a>
+      <ul>
+        <li><a href="#core-concept">Core Concept</a></li>
+        <li><a href="#authentication-lifecycle">Authentication Lifecycle</a></li>
+        <li><a href="#authentication-models">Authentication Models</a>
+          <ul>
+            <li><a href="#1-password-based-authentication">1. Password-Based Authentication</a></li>
+            <li><a href="#2-session-based-authentication">2. Session-Based Authentication</a></li>
+            <li><a href="#3-token-based-authentication-jwtapi">3. Token-Based Authentication (JWT/API)</a></li>
+            <li><a href="#4-federated-authentication-oauth--sso">4. Federated Authentication (OAuth / SSO)</a></li>
+            <li><a href="#5-password-recovery-systems">5. Password Recovery Systems</a></li>
+          </ul>
+        </li>
+        <li><a href="#trust-boundaries-in-ato">Trust Boundaries in ATO</a></li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+      </ul>
+    </li>
+    <li><a href="#types-of-account-takeover-attacks">Types of Account Takeover Attacks</a>
+      <ul>
+        <li><a href="#1-credential-based-attacks">1. Credential-Based Attacks</a></li>
+        <li><a href="#2-session-based-attacks">2. Session-Based Attacks</a></li>
+        <li><a href="#3-password-reset-attacks">3. Password Reset Attacks</a></li>
+        <li><a href="#4-oauth--sso-attacks">4. OAuth / SSO Attacks</a></li>
+        <li><a href="#5-jwt--api-authentication-attacks">5. JWT / API Authentication Attacks</a></li>
+        <li><a href="#6-mfa-bypass-attacks">6. MFA Bypass Attacks</a></li>
+        <li><a href="#7-registration--account-linking-issues">7. Registration / Account Linking Issues</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#credential-stuffing">Credential Stuffing</a></li>
+            <li><a href="#password-spraying">Password Spraying</a></li>
+            <li><a href="#session-hijacking">Session Hijacking</a></li>
+            <li><a href="#session-fixation">Session Fixation</a></li>
+            <li><a href="#password-reset-abuse">Password Reset Abuse</a></li>
+            <li><a href="#oauth-misconfiguration">OAuth Misconfiguration</a></li>
+            <li><a href="#token-replay--jwt-abuse">Token Replay / JWT Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-defenses">Bypassing Defenses</a>
+          <ul>
+            <li><a href="#rate-limiting-issues">Rate Limiting Issues</a></li>
+            <li><a href="#mfa-flaws">MFA Flaws</a></li>
+            <li><a href="#token-reuse">Token Reuse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a>
+      <ul>
+        <li><a href="#chained-account-takeover">Chained Account Takeover</a></li>
+        <li><a href="#oauth-account-takeover">OAuth Account Takeover</a></li>
+        <li><a href="#session-fixation--login-flow-abuse">Session Fixation + Login Flow Abuse</a></li>
+        <li><a href="#pre-account-takeover-registration-abuse">Pre-Account Takeover (Registration Abuse)</a></li>
+        <li><a href="#race-condition-attacks">Race Condition Attacks</a></li>
+        <li><a href="#mfa-bypass-edge-cases">MFA Bypass Edge Cases</a></li>
+      </ul>
+    </li>
+    <li><a href="#detection-techniques">Detection Techniques</a>
+      <ul>
+        <li><a href="#manual-testing">Manual Testing</a></li>
+        <li><a href="#automated-testing">Automated Testing</a>
+          <ul>
+            <li><a href="#burp-suite">Burp Suite</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#quick-testing-checklist">Quick Testing Checklist</a>
+      <ul>
+        <li><a href="#rate-limiting">Rate Limiting</a></li>
+        <li><a href="#mfa">MFA</a></li>
+        <li><a href="#session-security">Session Security</a></li>
+        <li><a href="#password-reset">Password Reset</a></li>
+        <li><a href="#oauth--sso">OAuth / SSO</a></li>
+        <li><a href="#jwt--api-auth">JWT / API Auth</a></li>
+        <li><a href="#race-conditions">Race Conditions</a></li>
+      </ul>
+    </li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+    <li><a href="#good-to-read-real-world-reports">Good To Read (Real-World Reports)</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

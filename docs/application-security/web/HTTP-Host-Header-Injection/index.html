@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HTTP Host Header Injection # HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.
+Understanding Host Header # HTTP Host Header Structure">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="HTTP Host Header Injection" />
+<meta property="og:description" content="HTTP Host Header Injection # HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.
+Understanding Host Header # HTTP Host Header Structure" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>HTTP Host Header Injection | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class=" active">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>HTTP Host Header Injection</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#http-host-header-injection">HTTP Host Header Injection</a>
+      <ul>
+        <li><a href="#understanding-host-header">Understanding Host Header</a></li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a></li>
+        <li><a href="#bypassing-defenses">Bypassing Defenses</a></li>
+        <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection-techniques">Manual Detection Techniques</a></li>
+            <li><a href="#automated-detection-techniques">Automated Detection Techniques</a></li>
+          </ul>
+        </li>
+        <li><a href="#impacts">Impacts</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--preventions">Mitigation &amp; Preventions</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="http-host-header-injection">
+  HTTP Host Header Injection
+  <a class="anchor" href="#http-host-header-injection">#</a>
+</h1>
+<p>HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.</p>
+<hr>
+<h2 id="understanding-host-header">
+  Understanding Host Header
+  <a class="anchor" href="#understanding-host-header">#</a>
+</h2>
+<ul>
+<li>
+<p>HTTP Host Header Structure</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">host</span>&gt;<span style="color:#f92672">:</span>&lt;<span style="color:#f92672">port</span>&gt;
+</span></span></code></pre></div><p><code>&lt;host&gt;</code>: Domain name of the server</p>
+<p><code>&lt;port&gt;</code>: TCP port number of the server ( default port for HTTP/HTTPS is used, if not included)</p>
+</li>
+<li>
+<p>Mandatory header in HTTP/1.1 request</p>
+</li>
+<li>
+<p>Primary purpose is to route the request to the correct backend service, especially in environments using virtual hosting, reverse proxies, or intermediary servers.</p>
+</li>
+</ul>
+<hr>
+<h2 id="attack-surfaces">
+  Attack Surfaces
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h2>
+<ul>
+<li>Password Reset Links</li>
+<li>Email Verification URLs</li>
+<li>Web Cache</li>
+<li>Virtual Host</li>
+</ul>
+<hr>
+<h2 id="exploitation-techniques">
+  Exploitation Techniques
+  <a class="anchor" href="#exploitation-techniques">#</a>
+</h2>
+<ul>
+<li>
+<p><strong>Inject arbitrary Host header</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">xyz</span>
+</span></span></code></pre></div><p>If vulnerable, this will generate <code>200 OK</code> response or <code>504 Gateway Timeout</code> error.</p>
+</li>
+<li>
+<p><strong>Ambiguous Request</strong></p>
+<p>Identify discrepancies in how the Host header is processed by different components of the application</p>
+<ul>
+<li>
+<p><strong>Inject Duplicate Host Header</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Inject an Absolute URL</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com HTTP/1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Add Line Wrapping</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="bypassing-defenses">
+  Bypassing Defenses
+  <a class="anchor" href="#bypassing-defenses">#</a>
+</h2>
+<ol>
+<li>
+<p><strong>Host Override Header Injection</strong></p>
+<p>If server validates the Host header, try bypassing by Host override headers</p>
+<ul>
+<li>
+<p>X-Forwarded-Host</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+<li>
+<p>X-Host</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Forwarded</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">host</span><span style="color:#f92672">=</span><span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+<li>
+<p>X-Forwarded-Server</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Server</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+<li>
+<p>X-HTTP-Host-Override</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Override</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Domain Validation Bypass</strong></p>
+<ul>
+<li>
+<p>Inject non-numeric port number</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">:</span><span style="color:#a6e22e">abc</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Inject Prefix Sequences into Target Domain</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">-</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Inject Arbitrary Subdomain (use a compromised subdomain for further testing, if applicable)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">subdomain</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="advanced-attack-scenarios">
+  Advanced Attack Scenarios
+  <a class="anchor" href="#advanced-attack-scenarios">#</a>
+</h2>
+<ol>
+<li>
+<p><strong>Password Reset Poisoning</strong></p>
+<p>Attackers inject a malicious host to manipulate password reset links generated by the application.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">forgot</span><span style="color:#f92672">-</span><span style="color:#a6e22e">password</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span>
+</span></span></code></pre></div><p>Resulting Reset Link: <a href="https://attacker.com/reset?token=abc123" target="_blank" rel="noreferrer noopener nofollow"><code>https://attacker.com/reset?token=abc123</code></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</li>
+<li>
+<p><strong>Web Cache Poisoning → Stored XSS</strong>
+Attackers manipulate the <code>Host</code> header so the application generates attacker-controlled absolute URLs. If a CDN or reverse proxy caches the response, the malicious payload is served to all users.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span>
+</span></span></code></pre></div><ul>
+<li>Application reflects Host header value in HTML: <code>&lt;script src=&quot;[https://attacker.com/static/app.js](https://attacker.com/static/app.js)&quot;&gt;&lt;/script&gt;</code></li>
+<li>If page gets cached by CDN/Cache server, the poisoned version gets stored and served.</li>
+</ul>
+</li>
+<li>
+<p><strong>Host Header Injection → SSRF</strong>
+Host Header Injection can be combined with SSRF if the server uses the &ldquo;Host&rdquo; header to perform server-side requests.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">-</span><span style="color:#a6e22e">api</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">127.0.0.1</span>
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="manual-detection-techniques">
+  Manual Detection Techniques
+  <a class="anchor" href="#manual-detection-techniques">#</a>
+</h3>
+<p>Test inputs for <code>Host</code> header:</p>
+<ul>
+<li><code>attacker.com</code></li>
+<li><code>invalid-host.local</code></li>
+<li><code>x\&quot;'&gt;&lt;.test</code></li>
+</ul>
+<p>Example payloads:</p>
+<p><code>Host: attacker.com</code></p>
+<p><code>Host: x\&quot;'&gt;&lt;.test</code></p>
+<p>Indicators of Vulnerability</p>
+<ul>
+<li>Application functions normally with wrong Host value.</li>
+<li>Injected Host appears in HTML, JSON, meta tags, or error pages.</li>
+<li>Different response content or status code when only Host changes.</li>
+<li>Redirects use the supplied Host instead of legitimate domain.</li>
+</ul>
+<h3 id="automated-detection-techniques">
+  Automated Detection Techniques
+  <a class="anchor" href="#automated-detection-techniques">#</a>
+</h3>
+<p><strong>A. Burp Suite Extensions</strong></p>
+<ul>
+<li><strong>Param Miner</strong>: Automatically probes hidden headers like <code>X-Forwarded-Host</code>, <code>X-Host</code>, <code>Forwarded</code> using extensive wordlists to discover headers used for internal routing/URL generation.</li>
+<li><strong>Host Header Inchecktion</strong>: Actively tests injection types (localhost, Collaborator payloads, canary strings) and creates scan issues on success.</li>
+<li><strong>Collaborator Everywhere</strong>: Injects non-invasive headers into all proxy traffic. Detects backend pings to Burp Collaborator revealing hidden host-header-based SSRF.</li>
+</ul>
+<p><strong>B. Automated Security Scanners</strong></p>
+<ul>
+<li><strong>Nessus</strong></li>
+<li><strong>OWASP ZAP</strong></li>
+<li><strong>Nuclei (custom templates)</strong></li>
+</ul>
+<hr>
+<h2 id="impacts">
+  Impacts
+  <a class="anchor" href="#impacts">#</a>
+</h2>
+<ul>
+<li>Bypass password reset protections and gain unauthorized access to user or administrator accounts.</li>
+<li>Inject attacker-controlled domains into verification, activation, or magic login emails to hijack accounts.</li>
+<li>Poison reverse proxy or CDN cache to serve malicious content to legitimate users.</li>
+<li>Abuse server-side URL generation to perform Server-Side Request Forgery (SSRF) against internal services.</li>
+<li>Bypass multi-tenant or subdomain-based access controls to access admin-only areas or restricted functionality.</li>
+<li>Manipulate trusted proxy headers (e.g., X-Forwarded-Host) to bypass host validation mechanisms.</li>
+</ul>
+<hr>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li>Burp Suite (Repeater, Intruder), ffuf, wfuzz</li>
+</ul>
+<hr>
+<h2 id="mitigation--preventions">
+  Mitigation &amp; Preventions
+  <a class="anchor" href="#mitigation--preventions">#</a>
+</h2>
+<ul>
+<li>Always verify the Host header against a whitelist of allowed domains. This ensures that only valid domains are processed.</li>
+<li>Instead of constructing URLs using the Host header, use absolute URLs or pre-defined domain names for sensitive operations like password resets and redirects.</li>
+<li>In reverse proxy setups, ensure that the proxy sanitizes the Host header before forwarding requests to backend servers.</li>
+<li>A WAF can help detect and block malicious Host header injection attempts in real-time.</li>
+</ul>
+<hr>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<p><a href="https://hackerone.com/reports/300164" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/300164</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/1098948" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1098948</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/1444675" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1444675</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<hr>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-27959" target="_blank" rel="noreferrer noopener nofollow">https://nvd.nist.gov/vuln/detail/CVE-2026-27959</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://vulntech.com/tutorial/tutorial/website-penetration-testing/host-header-injection/" target="_blank" rel="noreferrer noopener nofollow">https://vulntech.com/tutorial/tutorial/website-penetration-testing/host-header-injection/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://systemweakness.com/demystifying-host-header-injection-attack-and-its-root-cause-analysis-part-1-ec32500c9306" target="_blank" rel="noreferrer noopener nofollow">https://systemweakness.com/demystifying-host-header-injection-attack-and-its-root-cause-analysis-part-1-ec32500c9306</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.linkedin.com/pulse/understanding-host-header-injection-risks-causes-impact-rahman-wg3pc/" target="_blank" rel="noreferrer noopener nofollow">https://www.linkedin.com/pulse/understanding-host-header-injection-risks-causes-impact-rahman-wg3pc/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://eandrzejewski.medium.com/http-host-header-attacks-ad12131e8379" target="_blank" rel="noreferrer noopener nofollow">https://eandrzejewski.medium.com/http-host-header-attacks-ad12131e8379</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/17-Testing_for_Host_Header_Injection" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/17-Testing_for_Host_Header_Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/HTTP%20Host%20Header%20Injection.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#http-host-header-injection">HTTP Host Header Injection</a>
+      <ul>
+        <li><a href="#understanding-host-header">Understanding Host Header</a></li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a></li>
+        <li><a href="#bypassing-defenses">Bypassing Defenses</a></li>
+        <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection-techniques">Manual Detection Techniques</a></li>
+            <li><a href="#automated-detection-techniques">Automated Detection Techniques</a></li>
+          </ul>
+        </li>
+        <li><a href="#impacts">Impacts</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--preventions">Mitigation &amp; Preventions</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Information Gathering # Information Gathering: Why It Matters # Information gathering is the first and most important phase of web application security testing. In this stage, a tester collects as much information as possible about the target website or application.
+Understanding the Target
+Helps identify the website structure, technologies used, servers, domains, and frameworks.
+Identifying Attack Surface
+Reveals entry points such as subdomains, directories, APIs, login pages, and parameters that could be tested for vulnerabilities.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Information Gathering" />
+<meta property="og:description" content="Information Gathering # Information Gathering: Why It Matters # Information gathering is the first and most important phase of web application security testing. In this stage, a tester collects as much information as possible about the target website or application.
+Understanding the Target
+Helps identify the website structure, technologies used, servers, domains, and frameworks.
+Identifying Attack Surface
+Reveals entry points such as subdomains, directories, APIs, login pages, and parameters that could be tested for vulnerabilities." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Information Gathering | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class=" active">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Information Gathering</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#information-gathering">Information Gathering</a>
+      <ul>
+        <li><a href="#information-gathering-why-it-matters">Information Gathering: Why It Matters</a></li>
+        <li><a href="#types">Types</a></li>
+        <li><a href="#types-of-information">Types of Information</a></li>
+        <li><a href="#passive-recon">Passive Recon</a>
+          <ul>
+            <li><a href="#tech-profiling">Tech Profiling</a></li>
+            <li><a href="#meta-files">Meta Files</a></li>
+            <li><a href="#search-engines">Search Engines</a></li>
+            <li><a href="#dorking">Dorking</a></li>
+            <li><a href="#acquisitions">Acquisitions</a></li>
+            <li><a href="#asn-autonomous-system-numbers">ASN (Autonomous System Numbers)</a></li>
+            <li><a href="#amass-intel">Amass Intel</a></li>
+            <li><a href="#shosubgo">Shosubgo</a></li>
+            <li><a href="#karma-v2">Karma v2</a></li>
+            <li><a href="#cloud">Cloud</a></li>
+            <li><a href="#whoxycom">whoxy.com</a></li>
+            <li><a href="#ad--analytic-tracker-code">Ad / Analytic Tracker Code</a></li>
+            <li><a href="#github-subdomains">Github-Subdomains</a></li>
+            <li><a href="#subrecongpt">SubreconGPT</a></li>
+            <li><a href="#crtsh">Crt.sh</a></li>
+            <li><a href="#amass-enum">Amass enum</a></li>
+            <li><a href="#subfinder">Subfinder</a></li>
+            <li><a href="#bbot">BBOT</a></li>
+            <li><a href="#puredns">Puredns</a></li>
+            <li><a href="#dnsgen">Dnsgen</a></li>
+            <li><a href="#httprobe">httprobe</a></li>
+            <li><a href="#webanalyze">Webanalyze</a></li>
+            <li><a href="#waymore">Waymore</a></li>
+            <li><a href="#xnlinkfinder">xnLinkFinder</a></li>
+            <li><a href="#javascript-analysis">Javascript Analysis</a></li>
+            <li><a href="#ssl--tls-scanner">SSL / TLS Scanner</a></li>
+            <li><a href="#theharvester">theHarvester</a></li>
+            <li><a href="#automated-recon-frame-works">Automated Recon Frame-works</a></li>
+            <li><a href="#breach-databases">Breach Databases</a></li>
+            <li><a href="#rocket-reach">Rocket Reach</a></li>
+            <li><a href="#hunterio">Hunter.io</a></li>
+            <li><a href="#url-scan">URL Scan</a></li>
+            <li><a href="#virus-total">Virus Total</a></li>
+            <li><a href="#employee-enumeration-techniques">Employee Enumeration Techniques</a></li>
+          </ul>
+        </li>
+        <li><a href="#active-recon">Active Recon</a>
+          <ul>
+            <li><a href="#domain-registration-information">Domain Registration Information</a></li>
+            <li><a href="#dns-enumeration">DNS Enumeration</a></li>
+            <li><a href="#firewall-detection">Firewall Detection</a></li>
+            <li><a href="#web-crawlers">Web Crawlers</a></li>
+            <li><a href="#endpoints-finding">Endpoints Finding</a></li>
+            <li><a href="#web-cloning">Web Cloning</a></li>
+            <li><a href="#directory-brute-forcing">Directory Brute-forcing</a></li>
+            <li><a href="#subdomain-brute-forcing">Subdomain Brute-forcing</a></li>
+            <li><a href="#parameters-discovery">Parameters Discovery</a></li>
+            <li><a href="#port-scanning">Port Scanning</a></li>
+            <li><a href="#scanning-network-range">Scanning Network Range</a></li>
+          </ul>
+        </li>
+        <li><a href="#references"><strong>References:</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="information-gathering">
+  Information Gathering
+  <a class="anchor" href="#information-gathering">#</a>
+</h1>
+<h2 id="information-gathering-why-it-matters">
+  Information Gathering: Why It Matters
+  <a class="anchor" href="#information-gathering-why-it-matters">#</a>
+</h2>
+<p>Information gathering is the <strong>first and most important phase of web application security testing</strong>. In this stage, a tester collects as much information as possible about the target website or application.</p>
+<ol>
+<li>
+<p><strong>Understanding the Target</strong></p>
+<p>Helps identify the website structure, technologies used, servers, domains, and frameworks.</p>
+</li>
+<li>
+<p><strong>Identifying Attack Surface</strong></p>
+<p>Reveals entry points such as subdomains, directories, APIs, login pages, and parameters that could be tested for vulnerabilities.</p>
+</li>
+<li>
+<p><strong>Finding Potential Weaknesses</strong></p>
+<p>Information like software versions, plugins, and configurations can expose known vulnerabilities.</p>
+</li>
+<li>
+<p><strong>Planning the Security Testing</strong></p>
+<p>The gathered data helps security testers decide which tools, techniques, and attacks to use.</p>
+</li>
+<li>
+<p><strong>Reducing Time and Effort</strong></p>
+<p>Proper reconnaissance helps focus on the most vulnerable areas instead of testing blindly.</p>
+</li>
+</ol>
+<h2 id="types">
+  Types
+  <a class="anchor" href="#types">#</a>
+</h2>
+<ul>
+<li><strong>Active Recon</strong></li>
+</ul>
+<p>It is a process to gather information by directly interacting with the target.</p>
+<ul>
+<li><strong>Passive Recon</strong></li>
+</ul>
+<p>It is a process to gather information without interacting with the target.</p>
+<h2 id="types-of-information">
+  Types of Information
+  <a class="anchor" href="#types-of-information">#</a>
+</h2>
+<ul>
+<li>Subdomains</li>
+<li>Data Breaches</li>
+<li>Endpoints</li>
+<li>Usernames</li>
+<li>Server side technology</li>
+</ul>
+<h2 id="passive-recon">
+  Passive Recon
+  <a class="anchor" href="#passive-recon">#</a>
+</h2>
+<h3 id="tech-profiling">
+  Tech Profiling
+  <a class="anchor" href="#tech-profiling">#</a>
+</h3>
+<p>These are browser extensions that helps to map the tech profile of the web application.</p>
+<ul>
+<li>
+<p><strong><code>Wappalyzer</code></strong></p>
+</li>
+<li>
+<p><strong><code>WhatRuns</code></strong></p>
+</li>
+<li>
+<p><strong><code>BuiltWith</code></strong></p>
+</li>
+<li>
+<p><strong><code>nuclei</code></strong></p>
+<p>This tool helps to find out the technology stack, CVEs, Missing HTTP headers etc and uses nuclei templates.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">nuclei</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com -f --headless
+</span></span></span></code></pre></div><ul>
+<li><strong><code>-f</code></strong> used for following redirects</li>
+<li><strong><code>--headless</code></strong> helps to run the tool in browser environment</li>
+</ul>
+</li>
+</ul>
+<h3 id="meta-files">
+  Meta Files
+  <a class="anchor" href="#meta-files">#</a>
+</h3>
+<ul>
+<li><strong><code>robots.txt</code></strong></li>
+<li><strong><code>sitemap.xml</code></strong></li>
+<li><strong><code>humans.txt</code></strong></li>
+<li><strong><code>security.txt</code></strong></li>
+</ul>
+<h3 id="search-engines">
+  Search Engines
+  <a class="anchor" href="#search-engines">#</a>
+</h3>
+<ul>
+<li>Google</li>
+<li>Shodan</li>
+<li>DuckDuckGo</li>
+<li>Baidu</li>
+<li>ZoomEye</li>
+<li>Censys</li>
+<li>AlienVault (<a href="https://otx.alienvault.com/" target="_blank" rel="noreferrer noopener nofollow">https://otx.alienvault.com/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
+</ul>
+<h3 id="dorking">
+  Dorking
+  <a class="anchor" href="#dorking">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>Google</code></strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Filter</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>intext</td>
+<td>Searches for the occurrences of keywords all at once or one at a time.</td>
+<td><code>intext:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td>inurl</td>
+<td>Searches for a URL matching one of the keywords.</td>
+<td><code>inurl:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td>allinurl</td>
+<td>Searches for a URL matching all the keywords in the query.</td>
+<td><code>allinurl:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td>intitle</td>
+<td>Searches for occurrences of keywords in title all or one.</td>
+<td><code>intitle:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td>allintitle</td>
+<td>Searches for occurrences of keywords all at a time.</td>
+<td><code>allintitle:&quot;keyword&quot;</code></td>
+</tr>
+<tr>
+<td>site</td>
+<td>Specifically searches that particular site and lists all the results for that site.</td>
+<td><code>site:&quot;www.google.com&quot;</code></td>
+</tr>
+<tr>
+<td>filetype</td>
+<td>Searches for a particular filetype mentioned in the query.</td>
+<td><code>filetype:&quot;pdf&quot;</code></td>
+</tr>
+<tr>
+<td>cache</td>
+<td>Shows the version of the web page that Google has in its cache.</td>
+<td><code>cache:www.google.com</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>site: target.com filetype: env
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>site:target.com intext:password intext:username intext:secret
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>site: target.com inurl: credentials inurl: password
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>Github</code></strong></p>
+<p><a href="https://github.com/RobinRana/githubRecon/blob/main/Gdorklinks.sh" target="_blank" rel="noreferrer noopener nofollow">https://github.com/RobinRana/githubRecon/blob/main/Gdorklinks.sh</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p>This is an automated script that helps to create some of the dorks to search through the public github repositories.</p>
+<pre tabindex="0"><code>bash Gdorklink.sh example.com 
+</code></pre></li>
+</ul>
+<h3 id="acquisitions">
+  Acquisitions
+  <a class="anchor" href="#acquisitions">#</a>
+</h3>
+<p>An acquisition is a business transaction where one company purchases another, gaining control through the purchase of its shares or assets</p>
+<ul>
+<li>One can gather acquisitions from <strong><code>crunchbase</code></strong></li>
+</ul>
+<pre tabindex="0"><code>https://www.crunchbase.com/discover/acquisitions
+</code></pre><h3 id="asn-autonomous-system-numbers">
+  ASN (Autonomous System Numbers)
+  <a class="anchor" href="#asn-autonomous-system-numbers">#</a>
+</h3>
+<p>It is a unique identifier assigned to an Autonomous System (AS), which is a collection of IP networks under a single administrative entity, such as an ISP or a large organization.</p>
+<ul>
+<li>From online at <a href="http://bgp.he.net" target="_blank" rel="noreferrer noopener nofollow">bgp.he.net</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<pre tabindex="0"><code>https://bgp.he.net/
+</code></pre><ul>
+<li><strong><code>BGP View API</code></strong></li>
+</ul>
+<pre tabindex="0"><code>curl -s https://api.bgpview.io/search?query_term=&lt;company_name&gt; | jq -r | grep -i &#39;&#34;asn&#34;&#39; | cut -d : -f2 | tr -d &#39;,&#39;
+</code></pre><ul>
+<li><strong><code>Nmap</code></strong></li>
+</ul>
+<pre tabindex="0"><code>nmap --script=asn-query.nse -T2 -Pn target.com
+</code></pre><h3 id="amass-intel">
+  Amass Intel
+  <a class="anchor" href="#amass-intel">#</a>
+</h3>
+<p><a href="https://github.com/owasp-amass/amass" target="_blank" rel="noreferrer noopener nofollow">https://github.com/owasp-amass/amass</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>Amass intel  scan can be used to extract subdomains, apex domains, IPs from ASN</li>
+</ul>
+<pre tabindex="0"><code>amass intel -asn 1234
+</code></pre><ul>
+<li>Automated bash script</li>
+</ul>
+<pre tabindex="0"><code>#!/bin/bash
+# Save the file with name ASN containing the ASN numbers (eg: ASN1234)
+
+for i in $(cat ASN)
+do
+    x=$(echo &#34;$i&#34; | tr -d &#39;ASN&#39;)
+    output=$(amass intel -asn &#34;$x&#34;)
+    echo &#34;$output&#34;
+done
+</code></pre><h3 id="shosubgo">
+  Shosubgo
+  <a class="anchor" href="#shosubgo">#</a>
+</h3>
+<p><a href="https://github.com/incogbyte/shosubgo" target="_blank" rel="noreferrer noopener nofollow">https://github.com/incogbyte/shosubgo</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>It is shodan based tool to extract subdomains</li>
+</ul>
+<pre tabindex="0"><code>shosubgo -d example.com -s shodan_api_key_here
+</code></pre><ul>
+<li><strong><code>-d</code></strong> is used to specify the domain name</li>
+<li><strong><code>-s</code></strong> is used to specify the shodan API key which one can get from their shodan account</li>
+</ul>
+<h3 id="karma-v2">
+  Karma v2
+  <a class="anchor" href="#karma-v2">#</a>
+</h3>
+<p><a href="https://github.com/Dheerajmadhukar/karma_v2" target="_blank" rel="noreferrer noopener nofollow">https://github.com/Dheerajmadhukar/karma_v2</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>A shodan based tool collect the subdomains through Osint</li>
+</ul>
+<pre tabindex="0"><code>bash karmav2 -d example.com -l -1 -deep
+</code></pre><ul>
+<li><strong><code>-d</code></strong> is used to specify the target domain</li>
+<li><strong><code>-l</code></strong> is used to specify the number of results to download</li>
+<li><strong><code>-deep</code></strong> flag allow to support all modules</li>
+<li>Collecting the  subdomains and apex domains from the output directory</li>
+</ul>
+<pre tabindex="0"><code>awk -F &#39;::&#39; &#39;{for (i=1; i&lt;=NF; i++) if ($i ~ /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/) print $i}&#39; &lt;file_name_here&gt;
+</code></pre><ul>
+<li>Collecting the IPv4 addresses</li>
+</ul>
+<pre tabindex="0"><code>awk -F &#39;::&#39; &#39;{for (i=1; i&lt;=NF; i++) if ($i ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/) print $i}&#39; &lt;file_name_here&gt;
+</code></pre><h3 id="cloud">
+  Cloud
+  <a class="anchor" href="#cloud">#</a>
+</h3>
+<ul>
+<li>One can gather cloud dumped information from <a href="https://kaeferjaeger.gay/" target="_blank" rel="noreferrer noopener nofollow">**<code>https://kaeferjaeger.gay/</code></a><img src="/svg/icons8-external-link.svg" style="height: 15px;">**</li>
+<li>An automated script</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;[*] Extracting domains, ips from cloud&#34;</span>
+</span></span><span style="display:flex;"><span>platforms<span style="color:#f92672">=(</span>amazon google microsoft digitalocean oracle<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>mkdir cloud
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in $platforms; <span style="color:#66d9ef">do</span> mkdir cloud/$i; cd cloud/$i; wget https://kaeferjaeger.gay/sni-ip-ranges/$i/ipv4_merged_sni.txt; cd ../../ ;<span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>cat cloud/*txt | grep -Po <span style="color:#e6db74">&#34;(.+\.</span>$1<span style="color:#e6db74">)&#34;</span> | cut -d <span style="color:#e6db74">&#39;-&#39;</span> -f1 | tr -d <span style="color:#e6db74">&#39;:[],&#39;</span> | sed <span style="color:#e6db74">&#39;s/443/\ /g&#39;</span> &gt; ../assets/ip/cloud.ips 
+</span></span><span style="display:flex;"><span>cat cloud/*txt | cut -d <span style="color:#e6db74">&#39;-&#39;</span> -f3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 | sed <span style="color:#e6db74">&#39;s/\ /\n/g&#39;</span> |  grep -Po <span style="color:#e6db74">&#34;(.+\.</span>$1<span style="color:#e6db74">)&#34;</span> | tr -d <span style="color:#e6db74">&#39;,[]&#39;</span> | sort -u &gt; ../assets/domain/cloud.sub-domains
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;[-]Done&#34;</span>
+</span></span></code></pre></div><h3 id="whoxycom">
+  whoxy.com
+  <a class="anchor" href="#whoxycom">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://api.whoxy.com/?key<span style="color:#f92672">=</span>&lt;your_api_key_here&gt;&amp;reverse<span style="color:#f92672">=</span>whois&amp;keyword<span style="color:#f92672">=</span>&lt;company_name_here&gt;&amp;mode<span style="color:#f92672">=</span>domains
+</span></span></code></pre></div><h3 id="ad--analytic-tracker-code">
+  Ad / Analytic Tracker Code
+  <a class="anchor" href="#ad--analytic-tracker-code">#</a>
+</h3>
+<p>When websites use third-party services like Google Analytics, New Relic, or similar analytics tools, they embed <code>unique tracking codes</code> (usually in the form of JavaScript snippets) into their pages. These codes help track visitor behavior, monitor performance, or manage ads across different domains.</p>
+<ul>
+<li>Same Tracking Codes Across Domains: Often, an organization uses the same analytics tracking codes across multiple domains or subdomains. For example, if a company owns multiple websites or web applications, they might use the same Google Analytics ID on all of them to aggregate data.</li>
+<li>Collect the builtwith cookie from ⇒ <strong><code>https://pro.builtwith.com/</code></strong></li>
+<li><strong><code>getrelationship.py</code></strong></li>
+</ul>
+<p><a href="https://github.com/m4ll0k/BBTz/blob/master/getrelationship.py" target="_blank" rel="noreferrer noopener nofollow">https://github.com/m4ll0k/BBTz/blob/master/getrelationship.py</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 getrelationship.py example.com &lt;the-builwith-cookie&gt;
+</span></span></code></pre></div><h3 id="github-subdomains">
+  Github-Subdomains
+  <a class="anchor" href="#github-subdomains">#</a>
+</h3>
+<p><a href="https://github.com/gwen001/github-subdomains" target="_blank" rel="noreferrer noopener nofollow">https://github.com/gwen001/github-subdomains</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>This Go tool performs searches on GitHub and parses the results to find subdomains of a given domain.</li>
+<li>Get your github api key from ⇒ <a href="https://github.com/settings/tokens" target="_blank" rel="noreferrer noopener nofollow"><strong><code>https://github.com/settings/tokens</code></strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>github-subdomains -d example.com -t github_api_key_here -o outputfile.txt
+</span></span></code></pre></div><h3 id="subrecongpt">
+  SubreconGPT
+  <a class="anchor" href="#subrecongpt">#</a>
+</h3>
+<p><a href="https://github.com/jhaddix/SubreconGPT" target="_blank" rel="noreferrer noopener nofollow">https://github.com/jhaddix/SubreconGPT</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chaos -d example.com --key your_chaos_key_here | python subrecongpt.py --apikey YOUR_OPENAI_API_KEY
+</span></span></code></pre></div><h3 id="crtsh">
+  Crt.sh
+  <a class="anchor" href="#crtsh">#</a>
+</h3>
+<ul>
+<li><a href="http://crt.sh" target="_blank" rel="noreferrer noopener nofollow">crt.sh</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> can be used to get the Certificate Transparency Logs. Certificate transparency is the process to verify the assigned SSL certificates.</li>
+<li>Check certificate transparency from ⇒ <a href="https://crt.sh" target="_blank" rel="noreferrer noopener nofollow"><strong><code>https://crt.sh</code></strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s https://crt.sh/<span style="color:#ae81ff">\?</span>q<span style="color:#f92672">=</span>&lt;company_domain_name&gt;<span style="color:#ae81ff">\&amp;</span>output<span style="color:#f92672">=</span>json | jq . | grep <span style="color:#e6db74">&#39;common_name&#39;</span> | tr -d <span style="color:#e6db74">&#39;,&#34;:&#39;</span> | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span> | sort -u
+</span></span></code></pre></div><h3 id="amass-enum">
+  Amass enum
+  <a class="anchor" href="#amass-enum">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>amass enum -brute -d example.com -w wordlists.txt -r resolvers.txt  
+</span></span></code></pre></div><ul>
+<li><strong><code>enum</code></strong>  s the operational module that carries out the actual asset discovery and network mapping process for a given domain</li>
+<li><strong><code>-brute</code></strong> to brute-force</li>
+<li><strong><code>-r</code></strong> for resolvers that one can download from here ⇒ <a href="https://github.com/blechschmidt/massdns/blob/master/lists/resolvers.txt" target="_blank" rel="noreferrer noopener nofollow">https://github.com/blechschmidt/massdns/blob/master/lists/resolvers.txt</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h3 id="subfinder">
+  Subfinder
+  <a class="anchor" href="#subfinder">#</a>
+</h3>
+<p><code>subfinder</code> is a subdomain discovery tool that returns valid subdomains for websites, using passive online sources. It has a simple, modular architecture and is optimized for speed. </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>subfinder -d example.com -o output.txt
+</span></span></code></pre></div><h3 id="bbot">
+  BBOT
+  <a class="anchor" href="#bbot">#</a>
+</h3>
+<p>This tool is used to scan the target domain and look for CVEs, CNAMEs, s3 buckets etc</p>
+<p><a href="https://github.com/blacklanternsecurity/bbot" target="_blank" rel="noreferrer noopener nofollow">https://github.com/blacklanternsecurity/bbot</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bbot -m otx -t example.com
+</span></span></code></pre></div><h3 id="puredns">
+  Puredns
+  <a class="anchor" href="#puredns">#</a>
+</h3>
+<p><strong>puredns</strong> is a fast domain resolver and subdomain bruteforcing tool that can accurately filter out wildcard subdomains and DNS poisoned entries.</p>
+<p><a href="https://github.com/d3mondev/puredns" target="_blank" rel="noreferrer noopener nofollow">https://github.com/d3mondev/puredns</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>puredns bruteforce wordlists.txt example.com -r resolvers.txt -w output.txt
+</span></span></code></pre></div><h3 id="dnsgen">
+  Dnsgen
+  <a class="anchor" href="#dnsgen">#</a>
+</h3>
+<p>Used for permuted scanning and find the new subdomains</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat sub-domain-file.txt | dnsgen - | puredns resolve -r resolvers.txt 
+</span></span></code></pre></div><h3 id="httprobe">
+  httprobe
+  <a class="anchor" href="#httprobe">#</a>
+</h3>
+<p>This tool is used to look for live URLs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat all_subdomains.txt | httprobe &gt; live_domains.txt
+</span></span></code></pre></div><h3 id="webanalyze">
+  Webanalyze
+  <a class="anchor" href="#webanalyze">#</a>
+</h3>
+<p>This tool helps to look for the technology stack</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://github.com/rverton/webanalyze
+</span></span></code></pre></div><h3 id="waymore">
+  Waymore
+  <a class="anchor" href="#waymore">#</a>
+</h3>
+<p>The idea behind <strong>waymore</strong> is to find even more links from the Wayback Machine (plus other sources) than other existing tools.</p>
+<p><a href="https://github.com/xnl-h4ck3r/waymore" target="_blank" rel="noreferrer noopener nofollow">https://github.com/xnl-h4ck3r/waymore</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>waymore <span style="color:#f92672">-</span>i target.com <span style="color:#f92672">-</span><span style="color:#66d9ef">mode</span> B
+</span></span></code></pre></div><h3 id="xnlinkfinder">
+  xnLinkFinder
+  <a class="anchor" href="#xnlinkfinder">#</a>
+</h3>
+<p>It extracts different URLs and endpoints from the JS and HTML files of the target domain.</p>
+<p><a href="https://github.com/xnl-h4ck3r/xnLinkFinder" target="_blank" rel="noreferrer noopener nofollow">https://github.com/xnl-h4ck3r/xnLinkFinder</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>python3 xnLinkFinder.py <span style="color:#f92672">-</span>i <span style="color:#f92672">~/</span>directory<span style="color:#f92672">/</span><span style="color:#66d9ef">to</span><span style="color:#f92672">/</span>xml<span style="color:#f92672">/</span>files <span style="color:#f92672">-</span>sp https:<span style="color:#f92672">//</span>www.target.com <span style="color:#f92672">-</span>sf target.com <span style="color:#f92672">-</span>o <span style="color:#66d9ef">output</span>.txt
+</span></span></code></pre></div><h3 id="javascript-analysis">
+  Javascript Analysis
+  <a class="anchor" href="#javascript-analysis">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>JS Finder</code></strong></p>
+<p><a href="https://github.com/kacakb/jsfinder?tab=readme-ov-file" target="_blank" rel="noreferrer noopener nofollow">https://github.com/kacakb/jsfinder?tab=readme-ov-file</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>Reading URLs from the JS files</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">echo</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com | jsfinder -read -s -o out.txt 
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">jsfinder</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">l</span> <span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">txt</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">read</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span> <span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">txt</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>Secret Finder</code></strong></p>
+<p>SecretFinder is a python script based on <a href="https://github.com/GerbenJavado/LinkFinder" target="_blank" rel="noreferrer noopener nofollow">LinkFinder</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">, written to discover sensitive data like apikeys, accesstoken, authorizations, jwt,..etc in JavaScript files. It does so by using jsbeautifier for python in combination with a fairly large regular expression. The regular expressions consists of four small regular expressions. These are responsible for finding and search anything on js files.</p>
+<p><a href="https://github.com/m4ll0k/SecretFinder" target="_blank" rel="noreferrer noopener nofollow">https://github.com/m4ll0k/SecretFinder</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">python3</span> <span style="color:#a6e22e">SecretFinder</span>.<span style="color:#a6e22e">py</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com -e -H &#34;Cookie: cookie-here&#34; -o cli
+</span></span></span></code></pre></div><ul>
+<li><strong><code>-o</code></strong> to specify the output method
+<ul>
+<li>cli</li>
+<li>results.html</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ssl--tls-scanner">
+  SSL / TLS Scanner
+  <a class="anchor" href="#ssl--tls-scanner">#</a>
+</h3>
+<p>This tool helps to scan the SSL and TLS flaws from command line</p>
+<p><a href="https://github.com/testssl/testssl.sh" target="_blank" rel="noreferrer noopener nofollow">https://github.com/testssl/testssl.sh</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>.<span style="color:#f92672">/</span><span style="color:#a6e22e">testssl</span>.<span style="color:#a6e22e">sh</span> <span style="color:#a6e22e">HOST_OR_IP</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>BurpExtension - SSL Scanner</code></strong></li>
+</ul>
+<h3 id="theharvester">
+  theHarvester
+  <a class="anchor" href="#theharvester">#</a>
+</h3>
+<ul>
+<li>This helps to find subdomains, URLs, email addresses</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>theHarvester -d target.com -b all
+</span></span></code></pre></div><ul>
+<li><code>-d</code> option is used to specify the target domain</li>
+<li><code>-b</code> stands for <strong>data source (search engine or service)</strong>.</li>
+<li><code>all</code> means the tool will search <strong>all available data sources</strong> such as:
+<ul>
+<li>Google</li>
+<li>Bing</li>
+<li>Yahoo</li>
+<li>DuckDuckGo</li>
+<li>LinkedIn</li>
+<li>Shodan</li>
+<li>other OSINT sources</li>
+</ul>
+</li>
+</ul>
+<h3 id="automated-recon-frame-works">
+  Automated Recon Frame-works
+  <a class="anchor" href="#automated-recon-frame-works">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>Recon-ng</code></strong></p>
+<p><a href="https://github.com/lanmaster53/recon-ng" target="_blank" rel="noreferrer noopener nofollow">https://github.com/lanmaster53/recon-ng</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</li>
+<li>
+<p><strong><code>Recon For the Win</code></strong></p>
+<p><a href="https://github.com/six2dez/reconftw" target="_blank" rel="noreferrer noopener nofollow">https://github.com/six2dez/reconftw</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./reconftw.sh -d target.com &lt;flags&gt; &lt;options&gt;
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>SpiderFoot</code></strong></p>
+<p><a href="https://spiderfoot.org/" target="_blank" rel="noreferrer noopener nofollow">https://spiderfoot.org/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</li>
+</ul>
+<h3 id="breach-databases">
+  Breach Databases
+  <a class="anchor" href="#breach-databases">#</a>
+</h3>
+<p><strong>Breach databases</strong> are online services used in <strong>Cybersecurity</strong> and <strong>Open Source Intelligence</strong> (OSINT) to check whether <strong>emails, usernames, passwords, or other personal data have been exposed in past data breaches</strong>.</p>
+<ul>
+<li>
+<p><strong><code>HaveIBeenPwned</code></strong></p>
+<p><a href="https://haveibeenpwned.com/" target="_blank" rel="noreferrer noopener nofollow">https://haveibeenpwned.com/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>Allows users to <strong>check if their email or phone number was involved in a data breach</strong>.</li>
+<li>Searches through <strong>billions of leaked accounts</strong> from breaches such as websites, apps, or online services.</li>
+<li>Shows:
+<ul>
+<li>Which website was breached</li>
+<li>What type of data was leaked (email, password, name, etc.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Breached</code></strong></p>
+<p><a href="https://dehashed.com/search" target="_blank" rel="noreferrer noopener nofollow">https://dehashed.com/search</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>A <strong>more advanced breach database search engine</strong> used by security researchers and penetration testers.</li>
+<li>Allows searching by:
+<ul>
+<li>Email</li>
+<li>Username</li>
+<li>Domain</li>
+<li>IP address</li>
+<li>Name</li>
+</ul>
+</li>
+</ul>
+<p>It can reveal:</p>
+<ul>
+<li>Emails</li>
+<li>Password hashes</li>
+<li>Usernames</li>
+<li>Phone numbers</li>
+<li>IP addresses</li>
+</ul>
+</li>
+</ul>
+<h3 id="rocket-reach">
+  Rocket Reach
+  <a class="anchor" href="#rocket-reach">#</a>
+</h3>
+<p><a href="https://rocketreach.co/" target="_blank" rel="noreferrer noopener nofollow">https://rocketreach.co/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>Purpose
+<ul>
+<li>Employee contact details</li>
+<li>Role discovery</li>
+<li>Executive targeting</li>
+</ul>
+</li>
+<li>Search
+<ul>
+<li>Company name</li>
+<li>Person name</li>
+</ul>
+</li>
+</ul>
+<h3 id="hunterio">
+  Hunter.io
+  <a class="anchor" href="#hunterio">#</a>
+</h3>
+<p><a href="https://hunter.io/" target="_blank" rel="noreferrer noopener nofollow">https://hunter.io/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>Purpose
+<ul>
+<li>Discover verified corporate emails</li>
+<li>Email pattern recognition</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;https://api.hunter.io/v2/domain-search?domain=target.com&amp;api_key=YOUR_API_KEY&#34;</span>
+</span></span></code></pre></div><h3 id="url-scan">
+  URL Scan
+  <a class="anchor" href="#url-scan">#</a>
+</h3>
+<p><a href="https://urlscan.io/" target="_blank" rel="noreferrer noopener nofollow">https://urlscan.io/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>Purpose
+<ul>
+<li>Technology Stack</li>
+<li>Endpoints</li>
+<li>Analyze JS</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>domain: <span style="color:#e6db74">&#34;linkedin.com&#34;</span>
+</span></span></code></pre></div><h3 id="virus-total">
+  Virus Total
+  <a class="anchor" href="#virus-total">#</a>
+</h3>
+<p><a href="https://www.virustotal.com/" target="_blank" rel="noreferrer noopener nofollow">https://www.virustotal.com/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>Purpose
+<ul>
+<li>Subdomain discovery</li>
+<li>Historical IP mapping</li>
+<li>Infrastructure correlation</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl --request GET --url https://www.virustotal.com/api/v3/domains/target.com --header <span style="color:#e6db74">&#39;x-apikey: YOUR_API_KEY&#39;</span>
+</span></span></code></pre></div><h3 id="employee-enumeration-techniques">
+  Employee Enumeration Techniques
+  <a class="anchor" href="#employee-enumeration-techniques">#</a>
+</h3>
+<ul>
+<li>
+<p>Github Enumeration</p>
+<p><a href="https://github.com/gwen001/github-search/blob/master/github-employees.py" target="_blank" rel="noreferrer noopener nofollow">https://github.com/gwen001/github-search/blob/master/github-employees.py</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 github-employees.py -m github -f facebook-dev-cookie -t <span style="color:#e6db74">&#34;company-name-here&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="active-recon">
+  Active Recon
+  <a class="anchor" href="#active-recon">#</a>
+</h2>
+<h3 id="domain-registration-information">
+  Domain Registration Information
+  <a class="anchor" href="#domain-registration-information">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>whois</code></strong></p>
+<ul>
+<li>Helps to extract the registrar information and nameservers</li>
+</ul>
+<pre tabindex="0"><code>whois target.com
+</code></pre></li>
+</ul>
+<h3 id="dns-enumeration">
+  DNS Enumeration
+  <a class="anchor" href="#dns-enumeration">#</a>
+</h3>
+<p>These tools helps to find different records like</p>
+<ul>
+<li>
+<p>A</p>
+</li>
+<li>
+<p>AAAA</p>
+</li>
+<li>
+<p>TXT</p>
+</li>
+<li>
+<p>MX</p>
+</li>
+<li>
+<p>CNAME</p>
+</li>
+<li>
+<p>NS</p>
+</li>
+<li>
+<p><strong><code>dnsrecon</code></strong></p>
+<pre tabindex="0"><code>dnsrecon -d target.com
+</code></pre></li>
+<li>
+<p><strong><code>fierce</code></strong></p>
+<pre tabindex="0"><code>fierce --domain target.com
+</code></pre></li>
+<li>
+<p><strong><code>dnsenum</code></strong></p>
+<pre tabindex="0"><code>dnsenum target.com
+</code></pre></li>
+<li>
+<p><strong><code>dig</code></strong></p>
+<pre tabindex="0"><code>dig axfr @&lt;name-server-here&gt; example.com
+</code></pre><ul>
+<li>Here we are using the <strong><code>axfr</code></strong> protocol to zone transfer the DNS records of the target domain</li>
+</ul>
+</li>
+<li>
+<p><strong><code>host</code></strong></p>
+<ul>
+<li>It helps to look for the A and AAAA records of the domain.</li>
+</ul>
+<pre tabindex="0"><code>host target.com
+</code></pre></li>
+</ul>
+<h3 id="firewall-detection">
+  Firewall Detection
+  <a class="anchor" href="#firewall-detection">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>wafw00f</code></strong></p>
+<ul>
+<li>It extract the firewall information of the target</li>
+</ul>
+<pre tabindex="0"><code>wafw00f -a target.com
+</code></pre></li>
+</ul>
+<h3 id="web-crawlers">
+  Web Crawlers
+  <a class="anchor" href="#web-crawlers">#</a>
+</h3>
+<p>These helps to find different URLs and endpoints by active crawling and extracting the JS files</p>
+<ul>
+<li>
+<p><strong><code>gospider</code></strong></p>
+<p><a href="https://github.com/jaeles-project/gospider" target="_blank" rel="noreferrer noopener nofollow">https://github.com/jaeles-project/gospider</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<pre tabindex="0"><code>gospider -q -s https://example.com -w -d 0 -H &#34;Cookie: cookie-here&#34;
+</code></pre><ul>
+<li>-q is used to extract extra information like subdomains, URLs, status code etc</li>
+<li>-w is used to include the subdomains while crawling</li>
+<li>-d is used to control the depth level</li>
+<li>-H is used to add any custom header with a value</li>
+</ul>
+</li>
+<li>
+<p><strong><code>hakrawler</code></strong></p>
+<p><a href="https://github.com/hakluke/hakrawler" target="_blank" rel="noreferrer noopener nofollow">https://github.com/hakluke/hakrawler</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<pre tabindex="0"><code>echo https://example.com | hakrawler -subs -d 3
+</code></pre><ul>
+<li>-subs is used to include the subdomains during crawls</li>
+<li>-d is used to control the depth of crawl</li>
+</ul>
+</li>
+<li>
+<p><strong><code>katana</code></strong></p>
+<p><a href="https://github.com/projectdiscovery/katana" target="_blank" rel="noreferrer noopener nofollow">https://github.com/projectdiscovery/katana</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<pre tabindex="0"><code>katana -u https://example.com
+</code></pre></li>
+</ul>
+<h3 id="endpoints-finding">
+  Endpoints Finding
+  <a class="anchor" href="#endpoints-finding">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>LinkFinder</code></strong></p>
+<ul>
+<li>This tool extract all the URLs and endpoints from JS files</li>
+</ul>
+<p><a href="https://github.com/GerbenJavado/LinkFinder" target="_blank" rel="noreferrer noopener nofollow">https://github.com/GerbenJavado/LinkFinder</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<pre tabindex="0"><code>python3 linkfinder.py -i https:/example.com -d
+</code></pre><ul>
+<li>-i flag takes input a domain, URL, JS file</li>
+<li>-d is used to enable the domain filtering mode, so it will extract only the internal endpoints</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Subdomanizer</code></strong></p>
+<ul>
+<li>SubDomainizer is a tool designed to find hidden subdomains and secrets present is either webpage, Github, and external javascripts present in the given URL. This tool also finds S3 buckets</li>
+</ul>
+<p><a href="https://github.com/nsonaniya2010/SubDomainizer" target="_blank" rel="noreferrer noopener nofollow">https://github.com/nsonaniya2010/SubDomainizer</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<pre tabindex="0"><code>python3 SubDomainizer.py -u https://example.com
+</code></pre></li>
+</ul>
+<h3 id="web-cloning">
+  Web Cloning
+  <a class="anchor" href="#web-cloning">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>httrack</code></strong></p>
+<ul>
+<li>This tool is used to clone the target application and create a directory path along with files in the local system</li>
+</ul>
+<pre tabindex="0"><code>httrack 
+</code></pre></li>
+</ul>
+<h3 id="directory-brute-forcing">
+  Directory Brute-forcing
+  <a class="anchor" href="#directory-brute-forcing">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>ffuf</code></strong></p>
+<p><a href="https://github.com/ffuf/ffuf" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ffuf/ffuf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<pre tabindex="0"><code>ffuf -w /path/to/wordlists:FUZZ -u http://target.com -e .php -H &#34;Host: FUZZ.target.com&#34; -mc all -fc 400 -fs 162
+</code></pre><ul>
+<li>-w to specify the wordlists</li>
+<li>-u is used to specify the target URL</li>
+<li>-e used for adding extension</li>
+<li>-H is sued for adding custom HTTP header</li>
+<li>-mc is the match code and with all value it will show every result</li>
+<li>-fc is used for filtering the results on the basis of status code</li>
+<li>-fs is used to filter out the results on the basis of size of the http response.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>gobuster</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gobuster dir -w /usr/share... -u http://evil.com -x .php,.txt -H <span style="color:#e6db74">&#34;User-Agent: ...&#34;</span> -s 200-500 -hl <span style="color:#ae81ff">162</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>dir</code></strong> is a module to start a directory brute-forcing</li>
+<li>-x used for extension</li>
+<li>Simple Host Header Injection</li>
+<li>Via Middleware</li>
+<li>Using Dangling Markup Injection</li>
+<li>-s is used to include all the status code results</li>
+<li>-hl used to filter out the size of the response</li>
+</ul>
+</li>
+<li>
+<p><strong><code>dirsearch</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dirsearch -u http://target.com -i 200-500 -x <span style="color:#ae81ff">404</span> -e php,txt -r -H <span style="color:#e6db74">&#34;Cookie: cookie-here&#34;</span> --exclude-sizes<span style="color:#f92672">=</span><span style="color:#ae81ff">162</span>
+</span></span></code></pre></div><ul>
+<li>-u is used to specify the URL</li>
+<li>-i for including the responses in the results</li>
+<li>-x for excluding the responses in the results</li>
+<li>-e is used for including the extensions</li>
+<li>-r is used for recursive directory bruteforcing</li>
+<li>-H is used to include the custom HTTP headers</li>
+<li><strong><code>--exclude-sizes</code></strong> is used to filter out the HTTP response sizes</li>
+</ul>
+</li>
+<li>
+<p><strong><code>feroxbuster</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>feroxbuster -u http://target.com -w &lt;wordlist&gt; -x pdf,php,txt -r -d <span style="color:#ae81ff">2</span> -H <span style="color:#e6db74">&#34;Cookie: cookie-here&#34;</span>
+</span></span></code></pre></div><ul>
+<li>-x is used to specify the extensions</li>
+<li>-H is used to add the custom headers</li>
+<li>-r is used for recursive mode</li>
+<li>-d is used to specify the recursion depth for brute-forcing the directories</li>
+</ul>
+</li>
+</ul>
+<h3 id="subdomain-brute-forcing">
+  Subdomain Brute-forcing
+  <a class="anchor" href="#subdomain-brute-forcing">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>ffuf</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf -u http://target.com -w /usr/share/...:FUZZ -H <span style="color:#e6db74">&#34;Host: FUZZ.target.com&#34;</span> -mc all -fc <span style="color:#ae81ff">404</span> -fs <span style="color:#ae81ff">162</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>-mc all</code></strong>  is used to list all status code results</li>
+<li>-fc is used to filter out the stratus codes</li>
+<li>-fs is used to filter out the results on the basis of  response size.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>dnsenum</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnsenum --enum example.com -f /usr/sahre/wordlists/.. -r
+</span></span></code></pre></div><ul>
+<li><code>enum</code> enables full DNS enumeration on the target</li>
+<li>-f is used to specify the wordlists</li>
+<li>-r  is sued to enables the recursive enumeration of the target domain</li>
+</ul>
+</li>
+<li>
+<p><strong><code>gobuster</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gobuster dns -d example.com -w wordlist.txt
+</span></span></code></pre></div><ul>
+<li>dns is used to enable the subdomain enumeration mode</li>
+<li>-d is used to specify the target domain name</li>
+<li>-w is used to specify the wordlists</li>
+</ul>
+</li>
+</ul>
+<h3 id="parameters-discovery">
+  Parameters Discovery
+  <a class="anchor" href="#parameters-discovery">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>Arjun</code></strong></p>
+<p>Arjun can find query parameters for URL endpoints. If you don&rsquo;t get what that means, it&rsquo;s okay, read along.</p>
+<p><a href="https://github.com/s0md3v/Arjun" target="_blank" rel="noreferrer noopener nofollow">https://github.com/s0md3v/Arjun</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">arjun</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//example.com/user/profile --headers &#34;Cookie: cookie-here&#34; -t 100 -d 1000
+</span></span></span></code></pre></div><ul>
+<li><strong><code>-u</code></strong> to specify the URL endpoint</li>
+<li><strong><code>--headers</code></strong> to add custom headers</li>
+<li><strong><code>-t</code></strong> for threads</li>
+<li><strong><code>-d</code></strong> for delay between two requests</li>
+<li><strong><code>-i</code></strong> to scan all the endpoints from a list of targets</li>
+</ul>
+</li>
+<li>
+<p><strong><code>x8</code></strong></p>
+<p>The tool aids in identifying hidden parameters that could potentially be vulnerable or reveal interesting functionality that may be missed by other testers. Its high accuracy is achieved through line-by-line comparison of pages, comparison of response codes, and reflections.</p>
+<p><a href="https://github.com/Sh1Yo/x8" target="_blank" rel="noreferrer noopener nofollow">https://github.com/Sh1Yo/x8</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">x8</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//url1.com http://url2.com -w &lt;wordlist&gt; -X GET -H &#34;Cookie: cookie-here&#34; -d 1000
+</span></span></span></code></pre></div><ul>
+<li><strong><code>-d</code></strong> is used for delay between two requests</li>
+</ul>
+</li>
+</ul>
+<h3 id="port-scanning">
+  Port Scanning
+  <a class="anchor" href="#port-scanning">#</a>
+</h3>
+<ul>
+<li>
+<p><strong><code>nmap</code></strong>  <a href="https://nmap.org/" target="_blank" rel="noreferrer noopener nofollow">https://nmap.org/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<ul>
+<li>This tool helps to scan for open ports and the services running one those.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">nmap</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">sV</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">A</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">sC</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">Pn</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">T3</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span><span style="color:#f92672">-</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">oA</span> <span style="color:#a6e22e">nmap</span><span style="color:#f92672">/</span><span style="color:#a6e22e">results</span> <span style="color:#ae81ff">10.10.10.10</span>
+</span></span></code></pre></div><ul>
+<li>-sV is used to specify the version enumeration</li>
+<li>-A is sued to enable the agresive scanning</li>
+<li>-sC is used to enable the nmap by default scripts</li>
+<li>-Pn is used to specify the nmap tool for not sending any ICMP packets</li>
+<li>-T is used to epcify the scanning speed and it has different values like 2,3.4,5 and by default is set to 3</li>
+<li>-p is used to specify the port number and -p- is used to specify the all ports</li>
+<li>-oA is used for saving the output in all formats</li>
+</ul>
+</li>
+<li>
+<p><strong><code>rustscan</code></strong></p>
+<ul>
+<li>The Modern Port Scanner. <strong>Find ports quickly (3 seconds at its fastest)</strong>. Run scripts through our scripting engine (Python, Lua, Shell supported).</li>
+</ul>
+<p><a href="https://github.com/bee-san/RustScan" target="_blank" rel="noreferrer noopener nofollow">https://github.com/bee-san/RustScan</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">rustscan</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">addresses</span> <span style="color:#ae81ff">10.10.10.10</span><span style="color:#f92672">/</span><span style="color:#ae81ff">24</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">t</span> <span style="color:#ae81ff">500</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">b</span> <span style="color:#ae81ff">1500</span> <span style="color:#f92672">--</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">A</span>
+</span></span></code></pre></div><ul>
+<li>-t is used for specifying the number of threads</li>
+<li>-b is used for specifying the batch size, like here in one batch it scan 1500 ports. Rustscan does not scan all the ports at once</li>
+<li>-A option is used for passing the data to nmap inputs</li>
+</ul>
+</li>
+</ul>
+<h3 id="scanning-network-range">
+  Scanning Network Range
+  <a class="anchor" href="#scanning-network-range">#</a>
+</h3>
+<ul>
+<li>
+<p>Scanning an entire subnet</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">nmap</span> <span style="color:#ae81ff">172.162.1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">24</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="references">
+  <strong>References:</strong>
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://medium.com/dvlpr/penetration-testing-methodology-part-1-6-recon-9296c4d07c8a" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/dvlpr/penetration-testing-methodology-part-1-6-recon-9296c4d07c8a</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://blog.fikara.io/information-gathering-in-bug-bounty" target="_blank" rel="noreferrer noopener nofollow">https://blog.fikara.io/information-gathering-in-bug-bounty</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.intigriti.com/researchers/blog/hacking-tools/hunting-for-secrets-in-bug-bounty-targets" target="_blank" rel="noreferrer noopener nofollow">https://www.intigriti.com/researchers/blog/hacking-tools/hunting-for-secrets-in-bug-bounty-targets</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@Land2Cyber/bug-bounty-hunting-101-8-essential-tools-for-website-information-gathering-9b8d0083a83f" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@Land2Cyber/bug-bounty-hunting-101-8-essential-tools-for-website-information-gathering-9b8d0083a83f</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.yeswehack.com/learn-bug-bounty/recon-series-recap-reconnaissance-footprinting" target="_blank" rel="noreferrer noopener nofollow">https://www.yeswehack.com/learn-bug-bounty/recon-series-recap-reconnaissance-footprinting</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.intigriti.com/researchers/blog/hacking-tools/crafting-your-bug-bounty-methodology-a-complete-guide-for-beginners" target="_blank" rel="noreferrer noopener nofollow">https://www.intigriti.com/researchers/blog/hacking-tools/crafting-your-bug-bounty-methodology-a-complete-guide-for-beginners</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.recordedfuture.com/threat-intelligence-101/tools-and-technologies/osint-tools" target="_blank" rel="noreferrer noopener nofollow">https://www.recordedfuture.com/threat-intelligence-101/tools-and-technologies/osint-tools</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Information%20Gathering.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#information-gathering">Information Gathering</a>
+      <ul>
+        <li><a href="#information-gathering-why-it-matters">Information Gathering: Why It Matters</a></li>
+        <li><a href="#types">Types</a></li>
+        <li><a href="#types-of-information">Types of Information</a></li>
+        <li><a href="#passive-recon">Passive Recon</a>
+          <ul>
+            <li><a href="#tech-profiling">Tech Profiling</a></li>
+            <li><a href="#meta-files">Meta Files</a></li>
+            <li><a href="#search-engines">Search Engines</a></li>
+            <li><a href="#dorking">Dorking</a></li>
+            <li><a href="#acquisitions">Acquisitions</a></li>
+            <li><a href="#asn-autonomous-system-numbers">ASN (Autonomous System Numbers)</a></li>
+            <li><a href="#amass-intel">Amass Intel</a></li>
+            <li><a href="#shosubgo">Shosubgo</a></li>
+            <li><a href="#karma-v2">Karma v2</a></li>
+            <li><a href="#cloud">Cloud</a></li>
+            <li><a href="#whoxycom">whoxy.com</a></li>
+            <li><a href="#ad--analytic-tracker-code">Ad / Analytic Tracker Code</a></li>
+            <li><a href="#github-subdomains">Github-Subdomains</a></li>
+            <li><a href="#subrecongpt">SubreconGPT</a></li>
+            <li><a href="#crtsh">Crt.sh</a></li>
+            <li><a href="#amass-enum">Amass enum</a></li>
+            <li><a href="#subfinder">Subfinder</a></li>
+            <li><a href="#bbot">BBOT</a></li>
+            <li><a href="#puredns">Puredns</a></li>
+            <li><a href="#dnsgen">Dnsgen</a></li>
+            <li><a href="#httprobe">httprobe</a></li>
+            <li><a href="#webanalyze">Webanalyze</a></li>
+            <li><a href="#waymore">Waymore</a></li>
+            <li><a href="#xnlinkfinder">xnLinkFinder</a></li>
+            <li><a href="#javascript-analysis">Javascript Analysis</a></li>
+            <li><a href="#ssl--tls-scanner">SSL / TLS Scanner</a></li>
+            <li><a href="#theharvester">theHarvester</a></li>
+            <li><a href="#automated-recon-frame-works">Automated Recon Frame-works</a></li>
+            <li><a href="#breach-databases">Breach Databases</a></li>
+            <li><a href="#rocket-reach">Rocket Reach</a></li>
+            <li><a href="#hunterio">Hunter.io</a></li>
+            <li><a href="#url-scan">URL Scan</a></li>
+            <li><a href="#virus-total">Virus Total</a></li>
+            <li><a href="#employee-enumeration-techniques">Employee Enumeration Techniques</a></li>
+          </ul>
+        </li>
+        <li><a href="#active-recon">Active Recon</a>
+          <ul>
+            <li><a href="#domain-registration-information">Domain Registration Information</a></li>
+            <li><a href="#dns-enumeration">DNS Enumeration</a></li>
+            <li><a href="#firewall-detection">Firewall Detection</a></li>
+            <li><a href="#web-crawlers">Web Crawlers</a></li>
+            <li><a href="#endpoints-finding">Endpoints Finding</a></li>
+            <li><a href="#web-cloning">Web Cloning</a></li>
+            <li><a href="#directory-brute-forcing">Directory Brute-forcing</a></li>
+            <li><a href="#subdomain-brute-forcing">Subdomain Brute-forcing</a></li>
+            <li><a href="#parameters-discovery">Parameters Discovery</a></li>
+            <li><a href="#port-scanning">Port Scanning</a></li>
+            <li><a href="#scanning-network-range">Scanning Network Range</a></li>
+          </ul>
+        </li>
+        <li><a href="#references"><strong>References:</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

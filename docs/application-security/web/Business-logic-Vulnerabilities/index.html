@@ -1,0 +1,2703 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Business logic Vulnerabilities # 1. Description # Business Logic Vulnerabilities are flaws in the design or implementation of an application’s intended functionality. Unlike technical vulnerabilities, business logic flaws abuse legitimate features in unintended ways to manipulate workflows, bypass restrictions, or gain unfair advantage.
+These vulnerabilities occur when:
+Application trusts client-side controls
+Workflow steps are not enforced server-side
+State transitions are not validated
+Financial calculations rely on user-controlled input
+They are especially dangerous because:">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Business Logic" />
+<meta property="og:description" content="Business logic Vulnerabilities # 1. Description # Business Logic Vulnerabilities are flaws in the design or implementation of an application’s intended functionality. Unlike technical vulnerabilities, business logic flaws abuse legitimate features in unintended ways to manipulate workflows, bypass restrictions, or gain unfair advantage.
+These vulnerabilities occur when:
+Application trusts client-side controls
+Workflow steps are not enforced server-side
+State transitions are not validated
+Financial calculations rely on user-controlled input
+They are especially dangerous because:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Business Logic | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class=" active">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Business Logic</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#business-logic-vulnerabilities">Business logic Vulnerabilities</a>
+      <ul>
+        <li><a href="#1-description">1. Description</a></li>
+        <li><a href="#2-fundamentals-of-business-logic-vulnerabilities">2. Fundamentals of Business Logic Vulnerabilities</a>
+          <ul>
+            <li><a href="#21-what-is-business-logic">2.1 What Is “Business Logic”?</a></li>
+            <li><a href="#22-core-principle-attacker-perspective">2.2 Core Principle (Attacker Perspective)</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-types-of-business-logic-vulnerabilities">3. Types of Business Logic Vulnerabilities</a>
+          <ul>
+            <li><a href="#31-price--payment-manipulation">3.1 Price &amp; Payment Manipulation</a></li>
+            <li><a href="#32-workflow-bypass">3.2 Workflow Bypass</a></li>
+            <li><a href="#33-quantity-manipulation">3.3 Quantity Manipulation</a></li>
+            <li><a href="#34-race-conditions">3.4 Race Conditions</a></li>
+            <li><a href="#35-insecure-direct-object-reference-logic-based-variant">3.5 Insecure Direct Object Reference (Logic-Based Variant)</a></li>
+            <li><a href="#36-state-machine-flaws">3.6 State Machine Flaws</a></li>
+            <li><a href="#37-limit--quota-abuse">3.7 Limit &amp; Quota Abuse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-attack-surfaces">4. Attack Surfaces</a></li>
+    <li><a href="#input-vectors">Input Vectors</a>
+      <ul>
+        <li><a href="#1-rest-apis">1. REST APIs</a>
+          <ul>
+            <li><a href="#real-world-scenario-parallel-discount-redemption-race-condition">Real-World Scenario: Parallel Discount Redemption (Race Condition)</a></li>
+            <li><a href="#advanced-scenario-order-workflow-desynchronization">Advanced Scenario: Order Workflow Desynchronization</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-graphql-apis">2. GraphQL APIs</a>
+          <ul>
+            <li><a href="#advanced-scenario-hidden-mutation-abuse">Advanced Scenario: Hidden Mutation Abuse</a></li>
+            <li><a href="#advanced-scenario-logic-bypass-via-nested-mutations">Advanced Scenario: Logic Bypass via Nested Mutations</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-websocket-events">3. WebSocket Events</a>
+          <ul>
+            <li><a href="#advanced-scenario-message-routing-manipulation">Advanced Scenario: Message Routing Manipulation</a></li>
+            <li><a href="#advanced-scenario-event-forgery">Advanced Scenario: Event Forgery</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-hidden-form-fields">4. Hidden Form Fields</a>
+          <ul>
+            <li><a href="#advanced-scenario-threshold-discount-abuse">Advanced Scenario: Threshold Discount Abuse</a></li>
+            <li><a href="#advanced-scenario-shipping-fee-manipulation">Advanced Scenario: Shipping Fee Manipulation</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-mobile-app-apis">5. Mobile App APIs</a>
+          <ul>
+            <li><a href="#advanced-scenario-account-impersonation">Advanced Scenario: Account Impersonation</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-payment-gateway-callbacks">6. Payment Gateway Callbacks</a>
+          <ul>
+            <li><a href="#advanced-scenario-fake-payment-confirmation">Advanced Scenario: Fake Payment Confirmation</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-admin-panels">7. Admin Panels</a>
+          <ul>
+            <li><a href="#advanced-scenario-horizontal-admin-privilege-abuse">Advanced Scenario: Horizontal Admin Privilege Abuse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#common-risk-areas">Common Risk Areas</a>
+      <ul>
+        <li><a href="#1-checkout-flows">1. Checkout Flows</a>
+          <ul>
+            <li><a href="#advanced-exploit-currency-confusion">Advanced Exploit: Currency Confusion</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-wallet-systems">2. Wallet Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-negative-balance-abuse">Advanced Exploit: Negative Balance Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-loyalty-programs">3. Loyalty Programs</a>
+          <ul>
+            <li><a href="#advanced-exploit-referral-loop-farming">Advanced Exploit: Referral Loop Farming</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-coupon-logic">4. Coupon Logic</a>
+          <ul>
+            <li><a href="#advanced-exploit-coupon-stacking-via-parallel-requests">Advanced Exploit: Coupon Stacking via Parallel Requests</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-subscription-systems">5. Subscription Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-trial-reset-abuse">Advanced Exploit: Trial Reset Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-refund-systems">6. Refund Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-duplicate-refund-race-condition">Advanced Exploit: Duplicate Refund Race Condition</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-inventory-systems">7. Inventory Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-stock-reservation-abuse">Advanced Exploit: Stock Reservation Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-exploitation--bypassing-defenses">5. Exploitation &amp; Bypassing Defenses</a>
+          <ul>
+            <li><a href="#51-parameter-tampering">5.1 Parameter Tampering</a></li>
+            <li><a href="#52-skipping-workflow-steps">5.2 Skipping Workflow Steps</a></li>
+            <li><a href="#53-race-condition-exploitation">5.3 Race Condition Exploitation</a></li>
+            <li><a href="#54-abuse-of-hidden-parameters">5.4 Abuse of Hidden Parameters</a></li>
+            <li><a href="#55-currency--precision-manipulation">5.5 Currency &amp; Precision Manipulation</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-advanced-attack-scenarios">6. Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#scenario-1-refund-abuse">Scenario 1: Refund Abuse</a></li>
+            <li><a href="#scenario-2-gift-card-arbitrage">Scenario 2: Gift Card Arbitrage</a></li>
+            <li><a href="#scenario-3-coupon-stacking">Scenario 3: Coupon Stacking</a></li>
+            <li><a href="#scenario-4-otp-brute-force">Scenario 4: OTP Brute Force</a></li>
+            <li><a href="#scenario-5-inventory-lock-bypass">Scenario 5: Inventory Lock Bypass</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-framework-specific-scenarios">7. Framework-Specific Scenarios</a>
+          <ul>
+            <li><a href="#71-nodejs--express">7.1 Node.js / Express</a></li>
+            <li><a href="#72-django">7.2 Django</a></li>
+            <li><a href="#73-laravel">7.3 Laravel</a></li>
+            <li><a href="#74-spring-boot">7.4 Spring Boot</a></li>
+          </ul>
+        </li>
+        <li><a href="#8-detection-techniques">8. Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-testing">Manual Testing</a></li>
+            <li><a href="#map-application-workflow">Map Application Workflow</a></li>
+            <li><a href="#identify-application-assumptions">Identify Application Assumptions</a></li>
+            <li><a href="#modify-parameters">Modify Parameters</a></li>
+            <li><a href="#skip-workflow-steps">Skip Workflow Steps</a></li>
+            <li><a href="#replay-requests">Replay Requests</a></li>
+            <li><a href="#test-boundary-values">Test Boundary Values</a></li>
+            <li><a href="#test-negative-numbers">Test Negative Numbers</a></li>
+            <li><a href="#test-large-numbers">Test Large Numbers</a></li>
+            <li><a href="#key-testing-mindset">Key Testing Mindset</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#9-impact">9. Impact</a></li>
+        <li><a href="#10-prevention-techniques">10. Prevention Techniques</a>
+          <ul>
+            <li><a href="#secure-design">Secure Design</a></li>
+            <li><a href="#technical-controls">Technical Controls</a></li>
+          </ul>
+        </li>
+        <li><a href="#11-good-to-read">11. Good to Read</a></li>
+        <li><a href="#12-references">12. References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="business-logic-vulnerabilities">
+  Business logic Vulnerabilities
+  <a class="anchor" href="#business-logic-vulnerabilities">#</a>
+</h1>
+<hr>
+<h2 id="1-description">
+  1. Description
+  <a class="anchor" href="#1-description">#</a>
+</h2>
+<p>Business Logic Vulnerabilities are flaws in the design or implementation of an application’s intended functionality. Unlike technical vulnerabilities, business logic flaws abuse legitimate features in unintended ways to manipulate workflows, bypass restrictions, or gain unfair advantage.</p>
+<p>These vulnerabilities occur when:</p>
+<ul>
+<li>
+<p>Application trusts client-side controls</p>
+</li>
+<li>
+<p>Workflow steps are not enforced server-side</p>
+</li>
+<li>
+<p>State transitions are not validated</p>
+</li>
+<li>
+<p>Financial calculations rely on user-controlled input</p>
+<p>They are especially dangerous because:</p>
+</li>
+<li>
+<p>Rate limits or quantity checks are missing</p>
+</li>
+<li>
+<p>Assumptions about user behavior are incorrect</p>
+</li>
+</ul>
+<p>Business logic vulnerabilities are context-specific and often require understanding how the application is supposed to work.</p>
+<ul>
+<li>They often bypass traditional security controls</li>
+<li>They may not trigger security alerts</li>
+<li>They can cause financial loss or data integrity damage</li>
+<li>They are hard to detect with automated scanners</li>
+</ul>
+<h2 id="2-fundamentals-of-business-logic-vulnerabilities">
+  2. Fundamentals of Business Logic Vulnerabilities
+  <a class="anchor" href="#2-fundamentals-of-business-logic-vulnerabilities">#</a>
+</h2>
+<h3 id="21-what-is-business-logic">
+  2.1 What Is “Business Logic”?
+  <a class="anchor" href="#21-what-is-business-logic">#</a>
+</h3>
+<p>Business logic defines how an application behaves according to business rules.</p>
+<p>Examples:</p>
+<ul>
+<li>A user must pay before downloading premium content</li>
+<li>A coupon can only be used once</li>
+<li>A refund cannot exceed the original payment</li>
+<li>An order cannot have negative quantity</li>
+</ul>
+<p>If these rules are not enforced strictly, attackers manipulate the flow.</p>
+<hr>
+<h3 id="22-core-principle-attacker-perspective">
+  2.2 Core Principle (Attacker Perspective)
+  <a class="anchor" href="#22-core-principle-attacker-perspective">#</a>
+</h3>
+<p>Business logic flaws arise when:</p>
+<ul>
+<li>The server assumes the client behaves honestly</li>
+<li>The system fails to validate state transitions</li>
+<li>The application relies on implicit trust</li>
+</ul>
+<p>Example: Price Manipulation</p>
+<p>Frontend sends:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;product_id&#34;</span>: <span style="color:#ae81ff">101</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;price&#34;</span>: <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If backend trusts price from client:</p>
+<p>Attacker modifies request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;product_id&#34;</span>: <span style="color:#ae81ff">101</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;price&#34;</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Order processed at ₹1 instead of ₹1000.</p>
+<p>This is not injection — it is logic abuse.</p>
+<h2 id="3-types-of-business-logic-vulnerabilities">
+  3. Types of Business Logic Vulnerabilities
+  <a class="anchor" href="#3-types-of-business-logic-vulnerabilities">#</a>
+</h2>
+<h3 id="31-price--payment-manipulation">
+  3.1 Price &amp; Payment Manipulation
+  <a class="anchor" href="#31-price--payment-manipulation">#</a>
+</h3>
+<p>Occurs when pricing logic is client-controlled or improperly validated.</p>
+<p>Examples:</p>
+<ul>
+<li>Modifying price parameter</li>
+<li>Applying multiple discounts</li>
+<li>Using expired coupons</li>
+<li>Changing currency values</li>
+<li>Rounding manipulation</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Direct financial loss</li>
+</ul>
+<h3 id="32-workflow-bypass">
+  3.2 Workflow Bypass
+  <a class="anchor" href="#32-workflow-bypass">#</a>
+</h3>
+<p>Occurs when required steps can be skipped.</p>
+<p>Example:</p>
+<p>Normal flow:</p>
+<ol>
+<li>Add to cart</li>
+<li>Confirm order</li>
+<li>Make payment</li>
+<li>Download</li>
+</ol>
+<p>Attacker directly accesses:</p>
+<pre tabindex="0"><code>/download?order_id=123
+</code></pre><p>Without completing payment.</p>
+<p>Impact:</p>
+<ul>
+<li>Free access to premium resources</li>
+</ul>
+<hr>
+<h3 id="33-quantity-manipulation">
+  3.3 Quantity Manipulation
+  <a class="anchor" href="#33-quantity-manipulation">#</a>
+</h3>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;item&#34;</span>: <span style="color:#e6db74">&#34;gift_card&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;quantity&#34;</span>: <span style="color:#ae81ff">-5</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If backend logic doesn’t validate quantity &gt; 0:</p>
+<ul>
+<li>System may credit money</li>
+<li>Inventory may corrupt</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Financial exploitation</li>
+</ul>
+<hr>
+<h3 id="34-race-conditions">
+  3.4 Race Conditions
+  <a class="anchor" href="#34-race-conditions">#</a>
+</h3>
+<p>Occurs when multiple simultaneous requests exploit timing flaws.</p>
+<p>Example:</p>
+<ul>
+<li>User has ₹100 in wallet</li>
+<li>Two withdrawal requests sent simultaneously</li>
+<li>Both validated before balance updated</li>
+</ul>
+<p>Result: User withdraws ₹200</p>
+<p>Impact:</p>
+<ul>
+<li>Double spending</li>
+<li>Account draining</li>
+</ul>
+<hr>
+<h3 id="35-insecure-direct-object-reference-logic-based-variant">
+  3.5 Insecure Direct Object Reference (Logic-Based Variant)
+  <a class="anchor" href="#35-insecure-direct-object-reference-logic-based-variant">#</a>
+</h3>
+<p>User modifies:</p>
+<pre tabindex="0"><code>/order/123
+</code></pre><p>to:</p>
+<pre tabindex="0"><code>/order/124
+</code></pre><p>If ownership is not validated → access to other user’s data.</p>
+<p>(This overlaps with access control but often rooted in business logic design.)</p>
+<h3 id="36-state-machine-flaws">
+  3.6 State Machine Flaws
+  <a class="anchor" href="#36-state-machine-flaws">#</a>
+</h3>
+<p>Applications rely on states:</p>
+<ul>
+<li>Pending</li>
+<li>Paid</li>
+<li>Shipped</li>
+<li>Delivered</li>
+</ul>
+<p>If attacker changes state manually:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;order_id&#34;</span>: <span style="color:#ae81ff">200</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;delivered&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Impact:</p>
+<ul>
+<li>Refund fraud</li>
+<li>Inventory abuse</li>
+</ul>
+<hr>
+<h3 id="37-limit--quota-abuse">
+  3.7 Limit &amp; Quota Abuse
+  <a class="anchor" href="#37-limit--quota-abuse">#</a>
+</h3>
+<p>Examples:</p>
+<ul>
+<li>Free trial multiple times</li>
+<li>Coupon reuse</li>
+<li>Referral bonus farming</li>
+<li>OTP brute forcing due to no rate limits</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Revenue abuse</li>
+<li>Account takeover</li>
+</ul>
+<h1 id="4-attack-surfaces">
+  4. Attack Surfaces
+  <a class="anchor" href="#4-attack-surfaces">#</a>
+</h1>
+<p>Business logic vulnerabilities typically occur when an application <strong>fails to enforce intended business rules across complex workflows</strong>. These flaws arise when the system trusts assumptions about user behavior or fails to validate state transitions properly.</p>
+<h1 id="input-vectors">
+  Input Vectors
+  <a class="anchor" href="#input-vectors">#</a>
+</h1>
+<h2 id="1-rest-apis">
+  1. REST APIs
+  <a class="anchor" href="#1-rest-apis">#</a>
+</h2>
+<p>Most modern applications expose REST APIs that handle <strong>financial transactions, account operations, and product management</strong>. Attackers intercept and manipulate these requests to exploit logical flaws.</p>
+<h3 id="real-world-scenario-parallel-discount-redemption-race-condition">
+  Real-World Scenario: Parallel Discount Redemption (Race Condition)
+  <a class="anchor" href="#real-world-scenario-parallel-discount-redemption-race-condition">#</a>
+</h3>
+<p>In a real HackerOne case involving <strong>Stripe</strong>, a user discovered that a discount could be redeemed multiple times by sending parallel API requests. Using tools like <strong>Turbo Intruder</strong>, the attacker triggered the endpoint repeatedly before the backend updated the state, applying the discount multiple times. (<a href="https://www.hackerone.com/blog/how-business-logic-vulnerability-led-unlimited-discount-redemption?utm_source=chatgpt.com" target="_blank" rel="noreferrer noopener nofollow">HackerOne</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</p>
+<p>Example request:</p>
+<pre tabindex="0"><code>POST /api/discount/accept
+{
+ &#34;offer_id&#34;: &#34;promo_20000&#34;
+}
+</code></pre><p>Attack technique:</p>
+<pre tabindex="0"><code>Send 30 concurrent requests
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>$20,000 discount × 30 = $600,000 free transaction fees
+</code></pre><p>Root cause:</p>
+<pre tabindex="0"><code>Lack of atomic transaction validation
+</code></pre><hr>
+<h3 id="advanced-scenario-order-workflow-desynchronization">
+  Advanced Scenario: Order Workflow Desynchronization
+  <a class="anchor" href="#advanced-scenario-order-workflow-desynchronization">#</a>
+</h3>
+<p>Many platforms separate the <strong>checkout flow and payment confirmation</strong>.</p>
+<p>Attackers exploit this by:</p>
+<ol>
+<li>Creating an order</li>
+<li>Modifying the order state</li>
+<li>Skipping payment validation</li>
+</ol>
+<p>Example flow:</p>
+<pre tabindex="0"><code>POST /api/order/create
+POST /api/order/confirm
+POST /api/order/complete
+</code></pre><p>If the system only validates payment in step 2 but trusts the status in step 3, attackers can <strong>complete unpaid orders</strong>.</p>
+<hr>
+<h2 id="2-graphql-apis">
+  2. GraphQL APIs
+  <a class="anchor" href="#2-graphql-apis">#</a>
+</h2>
+<p>GraphQL APIs introduce <strong>over-fetching and flexible mutations</strong>, which can expose unintended functionality.</p>
+<h3 id="advanced-scenario-hidden-mutation-abuse">
+  Advanced Scenario: Hidden Mutation Abuse
+  <a class="anchor" href="#advanced-scenario-hidden-mutation-abuse">#</a>
+</h3>
+<p>GraphQL schemas sometimes expose internal mutations not used by the frontend.</p>
+<p>Example mutation:</p>
+<pre tabindex="0"><code>mutation {
+  updateUserRole(
+    userId: &#34;123&#34;,
+    role: &#34;admin&#34;
+  )
+}
+</code></pre><p>If authorization is missing:</p>
+<pre tabindex="0"><code>role escalation → normal user → admin
+</code></pre><p>Attackers enumerate hidden operations using:</p>
+<pre tabindex="0"><code>GraphQL introspection
+GraphQL Voyager
+Burp GraphQL extensions
+</code></pre><hr>
+<h3 id="advanced-scenario-logic-bypass-via-nested-mutations">
+  Advanced Scenario: Logic Bypass via Nested Mutations
+  <a class="anchor" href="#advanced-scenario-logic-bypass-via-nested-mutations">#</a>
+</h3>
+<p>GraphQL allows nested operations.</p>
+<p>Example:</p>
+<pre tabindex="0"><code>mutation {
+  createOrder(input:{
+     items:[&#34;product1&#34;]
+     paymentStatus:&#34;PAID&#34;
+  })
+}
+</code></pre><p>If payment verification occurs <strong>outside the mutation</strong>, attackers can bypass payment validation.</p>
+<hr>
+<h2 id="3-websocket-events">
+  3. WebSocket Events
+  <a class="anchor" href="#3-websocket-events">#</a>
+</h2>
+<p>WebSockets power <strong>real-time systems</strong> such as:</p>
+<ul>
+<li>Live classes</li>
+<li>Gaming platforms</li>
+<li>Trading dashboards</li>
+<li>Collaborative tools</li>
+</ul>
+<p>These often suffer from <strong>missing authorization or message validation</strong>.</p>
+<h3 id="advanced-scenario-message-routing-manipulation">
+  Advanced Scenario: Message Routing Manipulation
+  <a class="anchor" href="#advanced-scenario-message-routing-manipulation">#</a>
+</h3>
+<p>Example message:</p>
+<pre tabindex="0"><code>{
+ &#34;event&#34;:&#34;send_message&#34;,
+ &#34;message&#34;:&#34;hello&#34;
+}
+</code></pre><p>Attacker modifies payload:</p>
+<pre tabindex="0"><code>{
+ &#34;event&#34;:&#34;send_message&#34;,
+ &#34;message&#34;:&#34;secret&#34;,
+ &#34;to&#34;:&#34;victim_user_id&#34;
+}
+</code></pre><p>Impact:</p>
+<ul>
+<li>Private messaging bypass</li>
+<li>Data leakage</li>
+<li>Unauthorized message routing</li>
+</ul>
+<hr>
+<h3 id="advanced-scenario-event-forgery">
+  Advanced Scenario: Event Forgery
+  <a class="anchor" href="#advanced-scenario-event-forgery">#</a>
+</h3>
+<p>In real-time trading or gaming systems:</p>
+<pre tabindex="0"><code>{
+ &#34;event&#34;:&#34;update_balance&#34;,
+ &#34;amount&#34;:500
+}
+</code></pre><p>If event validation is weak:</p>
+<pre tabindex="0"><code>Attacker sends fake balance update
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>Wallet inflation
+Reward manipulation
+</code></pre><hr>
+<h2 id="4-hidden-form-fields">
+  4. Hidden Form Fields
+  <a class="anchor" href="#4-hidden-form-fields">#</a>
+</h2>
+<p>Hidden parameters frequently store <strong>internal business values</strong>, making them prime targets.</p>
+<h3 id="advanced-scenario-threshold-discount-abuse">
+  Advanced Scenario: Threshold Discount Abuse
+  <a class="anchor" href="#advanced-scenario-threshold-discount-abuse">#</a>
+</h3>
+<p>Suppose a store offers:</p>
+<pre tabindex="0"><code>10% discount for orders above $1000
+</code></pre><p>Attack chain:</p>
+<ol>
+<li>Add items worth $1000</li>
+<li>Apply discount</li>
+<li>Remove expensive items</li>
+<li>Checkout with discount</li>
+</ol>
+<p>Example described in PortSwigger labs:</p>
+<p>The system <strong>fails to revalidate the cart after discount application</strong>, allowing attackers to keep the discount even after reducing the order value. (<a href="https://portswigger.net/web-security/logic-flaws/examples?utm_source=chatgpt.com" target="_blank" rel="noreferrer noopener nofollow">PortSwigger</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</p>
+<hr>
+<h3 id="advanced-scenario-shipping-fee-manipulation">
+  Advanced Scenario: Shipping Fee Manipulation
+  <a class="anchor" href="#advanced-scenario-shipping-fee-manipulation">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;input type=&#34;hidden&#34; name=&#34;shipping_fee&#34; value=&#34;20&#34;&gt;
+</code></pre><p>Modify request:</p>
+<pre tabindex="0"><code>shipping_fee=0
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>Free shipping on large orders
+</code></pre><hr>
+<h2 id="5-mobile-app-apis">
+  5. Mobile App APIs
+  <a class="anchor" href="#5-mobile-app-apis">#</a>
+</h2>
+<p>Mobile apps often expose <strong>internal APIs that are poorly protected</strong> because developers assume users interact only through the official app.</p>
+<p>Attackers reverse engineer mobile apps using:</p>
+<pre tabindex="0"><code>APKTool
+Frida
+Objection
+MobSF
+</code></pre><h3 id="advanced-scenario-account-impersonation">
+  Advanced Scenario: Account Impersonation
+  <a class="anchor" href="#advanced-scenario-account-impersonation">#</a>
+</h3>
+<p>Example API request:</p>
+<pre tabindex="0"><code>POST /api/wallet/transfer
+{
+ &#34;sender_id&#34;:&#34;user_123&#34;,
+ &#34;receiver_id&#34;:&#34;user_456&#34;,
+ &#34;amount&#34;:100
+}
+</code></pre><p>If authentication relies on client-supplied IDs:</p>
+<pre tabindex="0"><code>sender_id = victim_user
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>Unauthorized fund transfers
+</code></pre><hr>
+<h2 id="6-payment-gateway-callbacks">
+  6. Payment Gateway Callbacks
+  <a class="anchor" href="#6-payment-gateway-callbacks">#</a>
+</h2>
+<p>Payment systems rely on <strong>webhooks from payment providers</strong>.</p>
+<h3 id="advanced-scenario-fake-payment-confirmation">
+  Advanced Scenario: Fake Payment Confirmation
+  <a class="anchor" href="#advanced-scenario-fake-payment-confirmation">#</a>
+</h3>
+<p>Legitimate callback:</p>
+<pre tabindex="0"><code>POST /payment/webhook
+{
+ &#34;order_id&#34;:&#34;10001&#34;,
+ &#34;status&#34;:&#34;SUCCESS&#34;
+}
+</code></pre><p>If the system does not validate:</p>
+<ul>
+<li>HMAC signatures</li>
+<li>Source IP</li>
+<li>Payment verification</li>
+</ul>
+<p>Attackers can trigger:</p>
+<pre tabindex="0"><code>status=SUCCESS
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>Free purchases
+</code></pre><hr>
+<h2 id="7-admin-panels">
+  7. Admin Panels
+  <a class="anchor" href="#7-admin-panels">#</a>
+</h2>
+<p>Admin APIs are often exposed through <strong>undocumented endpoints</strong>.</p>
+<p>Attackers find them through:</p>
+<pre tabindex="0"><code>/admin
+/internal
+/api/v1/admin
+/graphql
+</code></pre><h3 id="advanced-scenario-horizontal-admin-privilege-abuse">
+  Advanced Scenario: Horizontal Admin Privilege Abuse
+  <a class="anchor" href="#advanced-scenario-horizontal-admin-privilege-abuse">#</a>
+</h3>
+<p>Example request:</p>
+<pre tabindex="0"><code>POST /admin/api/update-price
+{
+ &#34;product_id&#34;:&#34;100&#34;,
+ &#34;price&#34;:1
+}
+</code></pre><p>The application checks whether the user is an administrator but does not verify whether the selected product belongs to the administrator&rsquo;s organization.</p>
+<p>If access is verified only by checking:</p>
+<pre tabindex="0"><code>role=admin
+</code></pre><p>without validating ownership of the requested resource, an administrator can modify the <code>product_id</code> to a product owned by another organization and update its price.</p>
+<p>Result:</p>
+<ul>
+<li>Administrator privileges remain unchanged.</li>
+<li>Products belonging to other organizations can be modified.</li>
+<li>Missing ownership validation leads to horizontal privilege abuse.</li>
+</ul>
+<hr>
+<h1 id="common-risk-areas">
+  Common Risk Areas
+  <a class="anchor" href="#common-risk-areas">#</a>
+</h1>
+<p>Certain modules are repeatedly exploited because they directly affect <strong>financial transactions and incentives</strong>.</p>
+<hr>
+<h2 id="1-checkout-flows">
+  1. Checkout Flows
+  <a class="anchor" href="#1-checkout-flows">#</a>
+</h2>
+<p>Checkout logic is one of the <strong>most exploited areas in bug bounty programs</strong>.</p>
+<h3 id="advanced-exploit-currency-confusion">
+  Advanced Exploit: Currency Confusion
+  <a class="anchor" href="#advanced-exploit-currency-confusion">#</a>
+</h3>
+<p>Example:</p>
+<pre tabindex="0"><code>price = 1 USD
+currency = USD
+</code></pre><p>Attacker modifies:</p>
+<pre tabindex="0"><code>price = 1
+currency = INR
+</code></pre><p>Payment gateway processes:</p>
+<pre tabindex="0"><code>₹1 instead of $1
+</code></pre><p>This exploit has appeared in several real bug bounty reports involving <strong>payment system miscalculations</strong>. (<a href="https://systemweakness.com/how-i-exploited-a-price-manipulation-vulnerability-via-broken-checkout-logic-7a482eac1812?utm_source=chatgpt.com" target="_blank" rel="noreferrer noopener nofollow">System Weakness</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</p>
+<hr>
+<h2 id="2-wallet-systems">
+  2. Wallet Systems
+  <a class="anchor" href="#2-wallet-systems">#</a>
+</h2>
+<p>Wallet logic flaws can create <strong>infinite money scenarios</strong>.</p>
+<h3 id="advanced-exploit-negative-balance-abuse">
+  Advanced Exploit: Negative Balance Abuse
+  <a class="anchor" href="#advanced-exploit-negative-balance-abuse">#</a>
+</h3>
+<p>Example request:</p>
+<pre tabindex="0"><code>POST /wallet/redeem
+{
+ &#34;amount&#34;: -100
+}
+</code></pre><p>If backend logic performs:</p>
+<pre tabindex="0"><code>balance = balance - amount
+</code></pre><p>Result:</p>
+<pre tabindex="0"><code>balance = balance + 100
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>Unlimited wallet balance
+</code></pre><hr>
+<h2 id="3-loyalty-programs">
+  3. Loyalty Programs
+  <a class="anchor" href="#3-loyalty-programs">#</a>
+</h2>
+<p>Loyalty points have <strong>real monetary value</strong>, making them frequent fraud targets. (<a href="https://antavo.com/blog/fraud-detection-in-loyalty-programs/?utm_source=chatgpt.com" target="_blank" rel="noreferrer noopener nofollow">Antavo</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</p>
+<h3 id="advanced-exploit-referral-loop-farming">
+  Advanced Exploit: Referral Loop Farming
+  <a class="anchor" href="#advanced-exploit-referral-loop-farming">#</a>
+</h3>
+<p>Example referral logic:</p>
+<pre tabindex="0"><code>Invite user → get 100 points
+</code></pre><p>Attack chain:</p>
+<ol>
+<li>Create fake accounts</li>
+<li>Self-refer</li>
+<li>Farm points</li>
+<li>Convert points to money</li>
+</ol>
+<p>Impact:</p>
+<pre tabindex="0"><code>Massive reward abuse
+</code></pre><hr>
+<h2 id="4-coupon-logic">
+  4. Coupon Logic
+  <a class="anchor" href="#4-coupon-logic">#</a>
+</h2>
+<p>Coupon systems often suffer from:</p>
+<ul>
+<li>Stackable coupons</li>
+<li>Reusable one-time coupons</li>
+<li>Discount race conditions</li>
+</ul>
+<h3 id="advanced-exploit-coupon-stacking-via-parallel-requests">
+  Advanced Exploit: Coupon Stacking via Parallel Requests
+  <a class="anchor" href="#advanced-exploit-coupon-stacking-via-parallel-requests">#</a>
+</h3>
+<p>Example:</p>
+<pre tabindex="0"><code>POST /apply-coupon
+coupon=SUMMER20
+</code></pre><p>Send multiple concurrent requests:</p>
+<pre tabindex="0"><code>SUMMER20
+SUMMER20
+SUMMER20
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>80%+ discount stacking
+</code></pre><p>This type of abuse has caused <strong>significant financial losses on e-commerce platforms</strong>. (<a href="https://appsentinels.ai/blog/business-logic-vulnerabilities/?utm_source=chatgpt.com" target="_blank" rel="noreferrer noopener nofollow">AppSentinels</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</p>
+<hr>
+<h2 id="5-subscription-systems">
+  5. Subscription Systems
+  <a class="anchor" href="#5-subscription-systems">#</a>
+</h2>
+<h3 id="advanced-exploit-trial-reset-abuse">
+  Advanced Exploit: Trial Reset Abuse
+  <a class="anchor" href="#advanced-exploit-trial-reset-abuse">#</a>
+</h3>
+<p>Typical flow:</p>
+<pre tabindex="0"><code>Free trial → upgrade → cancel
+</code></pre><p>Attackers:</p>
+<ol>
+<li>Cancel subscription</li>
+<li>Change email</li>
+<li>Re-register</li>
+</ol>
+<p>Result:</p>
+<pre tabindex="0"><code>Unlimited premium access
+</code></pre><hr>
+<h2 id="6-refund-systems">
+  6. Refund Systems
+  <a class="anchor" href="#6-refund-systems">#</a>
+</h2>
+<p>Refund APIs are highly sensitive.</p>
+<h3 id="advanced-exploit-duplicate-refund-race-condition">
+  Advanced Exploit: Duplicate Refund Race Condition
+  <a class="anchor" href="#advanced-exploit-duplicate-refund-race-condition">#</a>
+</h3>
+<p>Example request:</p>
+<pre tabindex="0"><code>POST /api/refund
+{
+ &#34;order_id&#34;:1234
+}
+</code></pre><p>Attack technique:</p>
+<pre tabindex="0"><code>Send 20 parallel requests
+</code></pre><p>If backend checks only:</p>
+<pre tabindex="0"><code>order_exists = true
+</code></pre><p>Instead of:</p>
+<pre tabindex="0"><code>order_already_refunded
+</code></pre><p>Impact:</p>
+<pre tabindex="0"><code>Multiple refunds for same order
+</code></pre><hr>
+<h2 id="7-inventory-systems">
+  7. Inventory Systems
+  <a class="anchor" href="#7-inventory-systems">#</a>
+</h2>
+<h3 id="advanced-exploit-stock-reservation-abuse">
+  Advanced Exploit: Stock Reservation Abuse
+  <a class="anchor" href="#advanced-exploit-stock-reservation-abuse">#</a>
+</h3>
+<p>Typical flow:</p>
+<pre tabindex="0"><code>Add to cart → reserve stock
+</code></pre><p>Attack chain:</p>
+<ol>
+<li>Add items to cart</li>
+<li>Never checkout</li>
+<li>Repeat with multiple accounts</li>
+</ol>
+<p>Impact:</p>
+<pre tabindex="0"><code>Artificial stock depletion
+Denial of inventory
+</code></pre><h2 id="5-exploitation--bypassing-defenses">
+  5. Exploitation &amp; Bypassing Defenses
+  <a class="anchor" href="#5-exploitation--bypassing-defenses">#</a>
+</h2>
+<h3 id="51-parameter-tampering">
+  5.1 Parameter Tampering
+  <a class="anchor" href="#51-parameter-tampering">#</a>
+</h3>
+<p>Modify:</p>
+<ul>
+<li>price</li>
+<li>quantity</li>
+<li>discount</li>
+<li>role</li>
+<li>status</li>
+<li>currency</li>
+</ul>
+<p>Example:</p>
+<pre tabindex="0"><code>discount=100
+</code></pre><p>Change to:</p>
+<pre tabindex="0"><code>discount=1000
+</code></pre><p>If no server validation → full discount.</p>
+<hr>
+<h3 id="52-skipping-workflow-steps">
+  5.2 Skipping Workflow Steps
+  <a class="anchor" href="#52-skipping-workflow-steps">#</a>
+</h3>
+<p>Intercept request in Burp.</p>
+<p>Instead of:</p>
+<p>POST /pay</p>
+<p>Send:</p>
+<p>POST /complete-order</p>
+<p>If backend does not validate payment status → order confirmed.</p>
+<hr>
+<h3 id="53-race-condition-exploitation">
+  5.3 Race Condition Exploitation
+  <a class="anchor" href="#53-race-condition-exploitation">#</a>
+</h3>
+<p>Use:</p>
+<ul>
+<li>Turbo Intruder</li>
+<li>Parallel requests</li>
+<li>Multi-threaded scripts</li>
+</ul>
+<p>Send 50 simultaneous requests to exploit balance check.</p>
+<hr>
+<h3 id="54-abuse-of-hidden-parameters">
+  5.4 Abuse of Hidden Parameters
+  <a class="anchor" href="#54-abuse-of-hidden-parameters">#</a>
+</h3>
+<p>Hidden fields:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;role&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;user&#34;</span>&gt;
+</span></span></code></pre></div><p>Change to:</p>
+<pre tabindex="0"><code>role=admin
+</code></pre><p>If backend trusts this → privilege escalation.</p>
+<hr>
+<h3 id="55-currency--precision-manipulation">
+  5.5 Currency &amp; Precision Manipulation
+  <a class="anchor" href="#55-currency--precision-manipulation">#</a>
+</h3>
+<p>Change:</p>
+<pre tabindex="0"><code>amount=1.00
+</code></pre><p>to:</p>
+<pre tabindex="0"><code>amount=0.0001
+</code></pre><p>If rounding applied incorrectly → micro-payment abuse.</p>
+<hr>
+<h2 id="6-advanced-attack-scenarios">
+  6. Advanced Attack Scenarios
+  <a class="anchor" href="#6-advanced-attack-scenarios">#</a>
+</h2>
+<h3 id="scenario-1-refund-abuse">
+  Scenario 1: Refund Abuse
+  <a class="anchor" href="#scenario-1-refund-abuse">#</a>
+</h3>
+<p>Steps:</p>
+<ol>
+<li>Purchase item</li>
+<li>Cancel before shipping</li>
+<li>System refunds but shipment not stopped</li>
+<li>User receives item + refund</li>
+</ol>
+<hr>
+<h3 id="scenario-2-gift-card-arbitrage">
+  Scenario 2: Gift Card Arbitrage
+  <a class="anchor" href="#scenario-2-gift-card-arbitrage">#</a>
+</h3>
+<ul>
+<li>Buy gift card with discount</li>
+<li>Redeem for full value</li>
+<li>Repeat</li>
+</ul>
+<h3 id="scenario-3-coupon-stacking">
+  Scenario 3: Coupon Stacking
+  <a class="anchor" href="#scenario-3-coupon-stacking">#</a>
+</h3>
+<p>Apply multiple coupons:</p>
+<pre tabindex="0"><code>coupon=NEWUSER
+coupon=FESTIVE
+coupon=REFERRAL
+</code></pre><p>If validation not strict → stacked discounts.</p>
+<h3 id="scenario-4-otp-brute-force">
+  Scenario 4: OTP Brute Force
+  <a class="anchor" href="#scenario-4-otp-brute-force">#</a>
+</h3>
+<p>No rate limiting:</p>
+<ul>
+<li>6-digit OTP</li>
+<li>Unlimited attempts</li>
+<li>Account takeover</li>
+</ul>
+<h3 id="scenario-5-inventory-lock-bypass">
+  Scenario 5: Inventory Lock Bypass
+  <a class="anchor" href="#scenario-5-inventory-lock-bypass">#</a>
+</h3>
+<p>Add limited stock item to cart.</p>
+<p>System reserves stock.</p>
+<p>Attacker repeatedly locks inventory → Denial of inventory (DoI).</p>
+<h2 id="7-framework-specific-scenarios">
+  7. Framework-Specific Scenarios
+  <a class="anchor" href="#7-framework-specific-scenarios">#</a>
+</h2>
+<h3 id="71-nodejs--express">
+  7.1 Node.js / Express
+  <a class="anchor" href="#71-nodejs--express">#</a>
+</h3>
+<p>Common Issues:</p>
+<ul>
+<li>Trusting req.body values</li>
+<li>Missing middleware validation</li>
+<li>Improper state enforcement</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Payment bypass</li>
+<li>Role escalation</li>
+</ul>
+<hr>
+<h3 id="72-django">
+  7.2 Django
+  <a class="anchor" href="#72-django">#</a>
+</h3>
+<p>Common Issue:</p>
+<ul>
+<li>Business rules in frontend forms</li>
+<li>Improper serializer validation</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Logic abuse</li>
+<li>Workflow skipping</li>
+</ul>
+<hr>
+<h3 id="73-laravel">
+  7.3 Laravel
+  <a class="anchor" href="#73-laravel">#</a>
+</h3>
+<p>Common Issue:</p>
+<ul>
+<li>Mass assignment misuse</li>
+<li>Insufficient policy enforcement</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Privilege escalation</li>
+<li>Role manipulation</li>
+</ul>
+<hr>
+<h3 id="74-spring-boot">
+  7.4 Spring Boot
+  <a class="anchor" href="#74-spring-boot">#</a>
+</h3>
+<p>Common Issue:</p>
+<ul>
+<li>Missing transactional integrity</li>
+<li>Race condition vulnerabilities</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Double withdrawal</li>
+<li>Order duplication</li>
+</ul>
+<hr>
+<h2 id="8-detection-techniques">
+  8. Detection Techniques
+  <a class="anchor" href="#8-detection-techniques">#</a>
+</h2>
+<h3 id="manual-testing">
+  Manual Testing
+  <a class="anchor" href="#manual-testing">#</a>
+</h3>
+<p>Business logic vulnerabilities are most effectively discovered through <strong>manual testing</strong>, because they require understanding how the application is intended to function and identifying ways that normal workflows can be manipulated.</p>
+<p>Unlike technical vulnerabilities, business logic flaws arise from <strong>incorrect assumptions, missing validations, or flawed workflows</strong>. Therefore, testers must analyze how different features interact and attempt to abuse those interactions.</p>
+<p>The key approach is to <strong>think like a malicious business user rather than a technical attacker</strong>.</p>
+<h3 id="map-application-workflow">
+  Map Application Workflow
+  <a class="anchor" href="#map-application-workflow">#</a>
+</h3>
+<p>The first step in identifying business logic flaws is understanding the <strong>intended workflow of the application</strong>.</p>
+<p>Testers should observe:</p>
+<ul>
+<li>How users interact with the application</li>
+<li>The sequence of requests between client and server</li>
+<li>State transitions between operations</li>
+</ul>
+<p>Example: E-commerce checkout flow</p>
+<pre tabindex="0"><code>1. Add item to cart
+2. Review cart
+3. Apply coupon
+4. Checkout
+5. Payment
+6. Order confirmation
+</code></pre><p>Each step should be analyzed to determine whether the server <strong>strictly enforces the workflow</strong>.</p>
+<p>Attackers often attempt to <strong>directly access later stages</strong> without completing earlier steps.</p>
+<p>Example test:</p>
+<pre tabindex="0"><code>GET /order/complete?order_id=120
+</code></pre><p>If the system fails to verify whether payment was completed, the attacker may bypass the payment step.</p>
+<h3 id="identify-application-assumptions">
+  Identify Application Assumptions
+  <a class="anchor" href="#identify-application-assumptions">#</a>
+</h3>
+<p>Applications often rely on assumptions about user behavior.</p>
+<p>Common assumptions include:</p>
+<ul>
+<li>Users will follow the intended workflow</li>
+<li>Users will not manipulate request parameters</li>
+<li>Input values will remain within expected ranges</li>
+<li>Operations will not occur simultaneously</li>
+</ul>
+<p>Attackers deliberately break these assumptions.</p>
+<p>Example assumption:</p>
+<p>The system assumes quantity is always positive.</p>
+<p>Example attack:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;product_id&#34;</span>: <span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;quantity&#34;</span>: <span style="color:#ae81ff">-5</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If validation is missing, the system may:</p>
+<ul>
+<li>Add credit instead of subtracting</li>
+<li>Break inventory logic</li>
+</ul>
+<hr>
+<h3 id="modify-parameters">
+  Modify Parameters
+  <a class="anchor" href="#modify-parameters">#</a>
+</h3>
+<p>Many applications expose sensitive parameters in requests that influence business logic.</p>
+<p>Testers should modify parameters such as:</p>
+<ul>
+<li>price</li>
+<li>quantity</li>
+<li>discount</li>
+<li>role</li>
+<li>account balance</li>
+<li>currency</li>
+<li>order status</li>
+<li>user_id</li>
+</ul>
+<p>Example request:</p>
+<pre tabindex="0"><code>POST /checkout
+product_id=100&amp;price=1000
+</code></pre><p>Modified request:</p>
+<pre tabindex="0"><code>POST /checkout
+product_id=100&amp;price=1
+</code></pre><p>If the server accepts the modified value without recalculating the price from the database, the attacker can purchase the item at an incorrect price.</p>
+<hr>
+<h3 id="skip-workflow-steps">
+  Skip Workflow Steps
+  <a class="anchor" href="#skip-workflow-steps">#</a>
+</h3>
+<p>Many business logic flaws occur when <strong>applications fail to enforce mandatory workflow steps</strong>.</p>
+<p>Testers should attempt to skip steps in the process.</p>
+<p>Example normal workflow:</p>
+<pre tabindex="0"><code>1. Register
+2. Verify email
+3. Login
+4. Access dashboard
+</code></pre><p>Attack attempt:</p>
+<p>Direct access to dashboard:</p>
+<pre tabindex="0"><code>GET /dashboard
+</code></pre><p>If the application fails to verify email confirmation status, an unverified user may gain access.</p>
+<p>Similarly, in payment systems:</p>
+<p>Expected flow:</p>
+<pre tabindex="0"><code>Add to cart → Checkout → Payment → Order confirmation
+</code></pre><p>Attack attempt:</p>
+<pre tabindex="0"><code>POST /order/confirm
+</code></pre><p>Without completing payment.</p>
+<hr>
+<h3 id="replay-requests">
+  Replay Requests
+  <a class="anchor" href="#replay-requests">#</a>
+</h3>
+<p>Some systems allow <strong>repeated execution of sensitive actions</strong>, which can lead to abuse.</p>
+<p>Testers should capture requests and replay them multiple times to observe system behavior.</p>
+<p>Example:</p>
+<p>Coupon redemption request:</p>
+<pre tabindex="0"><code>POST /coupon/apply
+coupon=DISCOUNT50
+</code></pre><p>If the system does not enforce a single-use restriction, replaying the request may apply the coupon multiple times.</p>
+<p>Another example is reward systems where repeated requests may grant additional points.</p>
+<h3 id="test-boundary-values">
+  Test Boundary Values
+  <a class="anchor" href="#test-boundary-values">#</a>
+</h3>
+<p>Applications often fail to validate <strong>edge-case values</strong>, leading to unexpected behavior.</p>
+<p>Testers should test values near system limits.</p>
+<p>Examples:</p>
+<ul>
+<li>Minimum values</li>
+<li>Maximum values</li>
+<li>Zero values</li>
+</ul>
+<p>Example request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;quantity&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If the system does not validate the value, it may allow invalid transactions or bypass certain conditions.</p>
+<h3 id="test-negative-numbers">
+  Test Negative Numbers
+  <a class="anchor" href="#test-negative-numbers">#</a>
+</h3>
+<p>Negative numbers frequently expose logical flaws.</p>
+<p>Example request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;quantity&#34;</span>: <span style="color:#ae81ff">-1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Possible impacts:</p>
+<ul>
+<li>Credit manipulation</li>
+<li>Inventory corruption</li>
+<li>Financial balance abuse</li>
+</ul>
+<p>Example scenario:</p>
+<p>If a refund system subtracts the quantity multiplied by price, negative quantities may result in <strong>money being credited instead of deducted</strong>.</p>
+<hr>
+<h3 id="test-large-numbers">
+  Test Large Numbers
+  <a class="anchor" href="#test-large-numbers">#</a>
+</h3>
+<p>Very large values may cause integer overflow, calculation errors, or logic failures.</p>
+<p>Example request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;quantity&#34;</span>: <span style="color:#ae81ff">999999999</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Possible effects:</p>
+<ul>
+<li>System crashes</li>
+<li>Discount calculation errors</li>
+<li>Inventory bypass</li>
+</ul>
+<p>Large numbers may also bypass purchase limits.</p>
+<p>Example:</p>
+<p>If purchase limit is 10 items but validation occurs only on the frontend, attackers can send larger values directly to the API.</p>
+<h3 id="key-testing-mindset">
+  Key Testing Mindset
+  <a class="anchor" href="#key-testing-mindset">#</a>
+</h3>
+<p>Successful identification of business logic vulnerabilities requires thinking beyond traditional vulnerability testing.</p>
+<p>Testers should approach the system with the mindset:</p>
+<ul>
+<li>How can I <strong>abuse this feature</strong>?</li>
+<li>What assumptions does the system make about users?</li>
+<li>Can I <strong>perform actions out of order</strong>?</li>
+<li>Can I <strong>repeat actions that should be one-time operations</strong>?</li>
+<li>Can I manipulate values that influence business rules?</li>
+</ul>
+<p>In essence, effective testing involves <strong>thinking like a malicious business user attempting to exploit the system’s logic rather than its code</strong>.</p>
+<h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<p>Traditional scanners rarely detect logic flaws.</p>
+<p>Helpful tools:</p>
+<ul>
+<li>Burp Suite (manual tampering)</li>
+<li>Turbo Intruder (race testing)</li>
+<li>Postman (workflow replay)</li>
+<li>OWASP ZAP (basic tampering)</li>
+</ul>
+<p>Static Analysis:</p>
+<ul>
+<li>Review transaction boundaries</li>
+<li>Check server-side validations</li>
+<li>Identify trust on client values</li>
+</ul>
+<h2 id="9-impact">
+  9. Impact
+  <a class="anchor" href="#9-impact">#</a>
+</h2>
+<ul>
+<li><strong>Financial loss</strong> – Attackers may manipulate prices, refunds, or payments to obtain goods or services at reduced cost or for free.</li>
+<li><strong>Revenue abuse</strong> – Exploitation of discounts, coupons, referral programs, or free trials to repeatedly gain benefits.</li>
+<li><strong>Free service consumption</strong> – Bypassing payment or subscription checks to access premium features or content without paying.</li>
+<li><strong>Inventory corruption</strong> – Manipulating quantities or order workflows to disrupt stock management or reserve items unfairly.</li>
+<li><strong>Privilege escalation</strong> – Modifying roles or workflow parameters to gain higher privileges such as admin access.</li>
+<li><strong>Data exposure</strong> – Accessing sensitive data belonging to other users due to missing authorization checks in business workflows.</li>
+<li><strong>Reputation damage</strong> – Exploitation may lead to public fraud incidents, financial losses, and loss of customer trust.</li>
+</ul>
+<h2 id="10-prevention-techniques">
+  10. Prevention Techniques
+  <a class="anchor" href="#10-prevention-techniques">#</a>
+</h2>
+<h3 id="secure-design">
+  Secure Design
+  <a class="anchor" href="#secure-design">#</a>
+</h3>
+<ul>
+<li><strong>Enforce rules server-side</strong> – All critical business rules such as pricing, discounts, and access control must be validated on the backend.</li>
+<li><strong>Never trust client input</strong> – Treat all client-provided parameters as untrusted and verify them before processing.</li>
+<li><strong>Validate all state transitions</strong> – Ensure users cannot skip or manipulate workflow steps such as payment, verification, or approval processes.</li>
+<li><strong>Implement proper transaction locking</strong> – Use database transactions or locking mechanisms to prevent race conditions and double-spending issues.</li>
+<li><strong>Use idempotency keys</strong> – Prevent repeated execution of sensitive operations such as payments or withdrawals.</li>
+<li><strong>Apply strict rate limits</strong> – Restrict the number of attempts for sensitive actions like OTP verification, coupon redemption, or login attempts.</li>
+<li><strong>Validate ownership of objects</strong> – Ensure users can only access or modify resources that belong to them.</li>
+</ul>
+<h3 id="technical-controls">
+  Technical Controls
+  <a class="anchor" href="#technical-controls">#</a>
+</h3>
+<ul>
+<li><strong>Atomic database transactions</strong> – Use database transactions to ensure operations such as payments, balance updates, and order processing execute completely or not at all.</li>
+<li><strong>Server-side price calculation</strong> – Always compute product prices, totals, and taxes on the backend rather than trusting client-supplied values.</li>
+<li><strong>Recalculate discounts on backend</strong> – Validate coupon eligibility and discount limits server-side before applying them to orders.</li>
+<li><strong>Enforce role checks</strong> – Verify user roles and permissions on the server before allowing access to restricted actions or resources.</li>
+<li><strong>Implement replay protection</strong> – Prevent duplicate processing of requests such as payments, coupon usage, or reward claims.</li>
+<li><strong>Use consistent state machines</strong> – Implement strict state validation to ensure operations follow the correct workflow sequence.</li>
+</ul>
+<h2 id="11-good-to-read">
+  11. Good to Read
+  <a class="anchor" href="#11-good-to-read">#</a>
+</h2>
+<ul>
+<li><a href="https://hackerone.com/reports/3591764" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/3591764</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/672487" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/672487</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/1675674" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1675674</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h2 id="12-references">
+  12. References
+  <a class="anchor" href="#12-references">#</a>
+</h2>
+<p><a href="https://shahjerry33.medium.com/business-logic-errors-the-failed-logic-4dc500886ccf" target="_blank" rel="noreferrer noopener nofollow">https://shahjerry33.medium.com/business-logic-errors-the-failed-logic-4dc500886ccf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://portswigger.net/web-security/logic-flaws" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/logic-flaws</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://owasp.org/www-community/vulnerabilities/Business_logic_vulnerability" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/vulnerabilities/Business_logic_vulnerability</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.linkedin.com/pulse/why-business-logic-vulnerabilities-most-dangerous-rakesh-joshi-2lbzc" target="_blank" rel="noreferrer noopener nofollow">https://www.linkedin.com/pulse/why-business-logic-vulnerabilities-most-dangerous-rakesh-joshi-2lbzc</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-business-logic-error-vulnerabilities" target="_blank" rel="noreferrer noopener nofollow">https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-business-logic-error-vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.imperva.com/learn/application-security/business-logic/" target="_blank" rel="noreferrer noopener nofollow">https://www.imperva.com/learn/application-security/business-logic/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://suzulabs.com/suzu-labs-blog/the-invisible-threat-business-logic-flaws-in-modern-applications-and-why-scanners-miss-them" target="_blank" rel="noreferrer noopener nofollow">https://suzulabs.com/suzu-labs-blog/the-invisible-threat-business-logic-flaws-in-modern-applications-and-why-scanners-miss-them</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Business%20logic%20Vulnerabilities.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#business-logic-vulnerabilities">Business logic Vulnerabilities</a>
+      <ul>
+        <li><a href="#1-description">1. Description</a></li>
+        <li><a href="#2-fundamentals-of-business-logic-vulnerabilities">2. Fundamentals of Business Logic Vulnerabilities</a>
+          <ul>
+            <li><a href="#21-what-is-business-logic">2.1 What Is “Business Logic”?</a></li>
+            <li><a href="#22-core-principle-attacker-perspective">2.2 Core Principle (Attacker Perspective)</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-types-of-business-logic-vulnerabilities">3. Types of Business Logic Vulnerabilities</a>
+          <ul>
+            <li><a href="#31-price--payment-manipulation">3.1 Price &amp; Payment Manipulation</a></li>
+            <li><a href="#32-workflow-bypass">3.2 Workflow Bypass</a></li>
+            <li><a href="#33-quantity-manipulation">3.3 Quantity Manipulation</a></li>
+            <li><a href="#34-race-conditions">3.4 Race Conditions</a></li>
+            <li><a href="#35-insecure-direct-object-reference-logic-based-variant">3.5 Insecure Direct Object Reference (Logic-Based Variant)</a></li>
+            <li><a href="#36-state-machine-flaws">3.6 State Machine Flaws</a></li>
+            <li><a href="#37-limit--quota-abuse">3.7 Limit &amp; Quota Abuse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-attack-surfaces">4. Attack Surfaces</a></li>
+    <li><a href="#input-vectors">Input Vectors</a>
+      <ul>
+        <li><a href="#1-rest-apis">1. REST APIs</a>
+          <ul>
+            <li><a href="#real-world-scenario-parallel-discount-redemption-race-condition">Real-World Scenario: Parallel Discount Redemption (Race Condition)</a></li>
+            <li><a href="#advanced-scenario-order-workflow-desynchronization">Advanced Scenario: Order Workflow Desynchronization</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-graphql-apis">2. GraphQL APIs</a>
+          <ul>
+            <li><a href="#advanced-scenario-hidden-mutation-abuse">Advanced Scenario: Hidden Mutation Abuse</a></li>
+            <li><a href="#advanced-scenario-logic-bypass-via-nested-mutations">Advanced Scenario: Logic Bypass via Nested Mutations</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-websocket-events">3. WebSocket Events</a>
+          <ul>
+            <li><a href="#advanced-scenario-message-routing-manipulation">Advanced Scenario: Message Routing Manipulation</a></li>
+            <li><a href="#advanced-scenario-event-forgery">Advanced Scenario: Event Forgery</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-hidden-form-fields">4. Hidden Form Fields</a>
+          <ul>
+            <li><a href="#advanced-scenario-threshold-discount-abuse">Advanced Scenario: Threshold Discount Abuse</a></li>
+            <li><a href="#advanced-scenario-shipping-fee-manipulation">Advanced Scenario: Shipping Fee Manipulation</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-mobile-app-apis">5. Mobile App APIs</a>
+          <ul>
+            <li><a href="#advanced-scenario-account-impersonation">Advanced Scenario: Account Impersonation</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-payment-gateway-callbacks">6. Payment Gateway Callbacks</a>
+          <ul>
+            <li><a href="#advanced-scenario-fake-payment-confirmation">Advanced Scenario: Fake Payment Confirmation</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-admin-panels">7. Admin Panels</a>
+          <ul>
+            <li><a href="#advanced-scenario-horizontal-admin-privilege-abuse">Advanced Scenario: Horizontal Admin Privilege Abuse</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#common-risk-areas">Common Risk Areas</a>
+      <ul>
+        <li><a href="#1-checkout-flows">1. Checkout Flows</a>
+          <ul>
+            <li><a href="#advanced-exploit-currency-confusion">Advanced Exploit: Currency Confusion</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-wallet-systems">2. Wallet Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-negative-balance-abuse">Advanced Exploit: Negative Balance Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-loyalty-programs">3. Loyalty Programs</a>
+          <ul>
+            <li><a href="#advanced-exploit-referral-loop-farming">Advanced Exploit: Referral Loop Farming</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-coupon-logic">4. Coupon Logic</a>
+          <ul>
+            <li><a href="#advanced-exploit-coupon-stacking-via-parallel-requests">Advanced Exploit: Coupon Stacking via Parallel Requests</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-subscription-systems">5. Subscription Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-trial-reset-abuse">Advanced Exploit: Trial Reset Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-refund-systems">6. Refund Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-duplicate-refund-race-condition">Advanced Exploit: Duplicate Refund Race Condition</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-inventory-systems">7. Inventory Systems</a>
+          <ul>
+            <li><a href="#advanced-exploit-stock-reservation-abuse">Advanced Exploit: Stock Reservation Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-exploitation--bypassing-defenses">5. Exploitation &amp; Bypassing Defenses</a>
+          <ul>
+            <li><a href="#51-parameter-tampering">5.1 Parameter Tampering</a></li>
+            <li><a href="#52-skipping-workflow-steps">5.2 Skipping Workflow Steps</a></li>
+            <li><a href="#53-race-condition-exploitation">5.3 Race Condition Exploitation</a></li>
+            <li><a href="#54-abuse-of-hidden-parameters">5.4 Abuse of Hidden Parameters</a></li>
+            <li><a href="#55-currency--precision-manipulation">5.5 Currency &amp; Precision Manipulation</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-advanced-attack-scenarios">6. Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#scenario-1-refund-abuse">Scenario 1: Refund Abuse</a></li>
+            <li><a href="#scenario-2-gift-card-arbitrage">Scenario 2: Gift Card Arbitrage</a></li>
+            <li><a href="#scenario-3-coupon-stacking">Scenario 3: Coupon Stacking</a></li>
+            <li><a href="#scenario-4-otp-brute-force">Scenario 4: OTP Brute Force</a></li>
+            <li><a href="#scenario-5-inventory-lock-bypass">Scenario 5: Inventory Lock Bypass</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-framework-specific-scenarios">7. Framework-Specific Scenarios</a>
+          <ul>
+            <li><a href="#71-nodejs--express">7.1 Node.js / Express</a></li>
+            <li><a href="#72-django">7.2 Django</a></li>
+            <li><a href="#73-laravel">7.3 Laravel</a></li>
+            <li><a href="#74-spring-boot">7.4 Spring Boot</a></li>
+          </ul>
+        </li>
+        <li><a href="#8-detection-techniques">8. Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-testing">Manual Testing</a></li>
+            <li><a href="#map-application-workflow">Map Application Workflow</a></li>
+            <li><a href="#identify-application-assumptions">Identify Application Assumptions</a></li>
+            <li><a href="#modify-parameters">Modify Parameters</a></li>
+            <li><a href="#skip-workflow-steps">Skip Workflow Steps</a></li>
+            <li><a href="#replay-requests">Replay Requests</a></li>
+            <li><a href="#test-boundary-values">Test Boundary Values</a></li>
+            <li><a href="#test-negative-numbers">Test Negative Numbers</a></li>
+            <li><a href="#test-large-numbers">Test Large Numbers</a></li>
+            <li><a href="#key-testing-mindset">Key Testing Mindset</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#9-impact">9. Impact</a></li>
+        <li><a href="#10-prevention-techniques">10. Prevention Techniques</a>
+          <ul>
+            <li><a href="#secure-design">Secure Design</a></li>
+            <li><a href="#technical-controls">Technical Controls</a></li>
+          </ul>
+        </li>
+        <li><a href="#11-good-to-read">11. Good to Read</a></li>
+        <li><a href="#12-references">12. References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

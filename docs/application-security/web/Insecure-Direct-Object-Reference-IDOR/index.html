@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Insecure Direct Object Reference (IDOR) # 1. Fundamentals of IDOR # Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.
+Classic Example:
+You&rsquo;re logged in and see:
+https://bank.com/profile?id=123 Change 123 to 124 → resources belonging to other users become accessible.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Insecure Direct Object Reference (IDOR)" />
+<meta property="og:description" content="Insecure Direct Object Reference (IDOR) # 1. Fundamentals of IDOR # Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.
+Classic Example:
+You&rsquo;re logged in and see:
+https://bank.com/profile?id=123 Change 123 to 124 → resources belonging to other users become accessible." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Insecure Direct Object Reference (IDOR) | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class=" active">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Insecure Direct Object Reference (IDOR)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#insecure-direct-object-reference-idor">Insecure Direct Object Reference (IDOR)</a>
+      <ul>
+        <li><a href="#1-fundamentals-of-idor"><strong>1. Fundamentals of IDOR</strong></a></li>
+        <li><a href="#attack-surfaces"><strong>Attack Surfaces</strong></a>
+          <ul>
+            <li><a href="#1-url-parameter-testing"><strong>1. URL Parameter Testing</strong></a></li>
+            <li><a href="#2-post-body-testing"><strong>2. POST Body Testing</strong></a></li>
+            <li><a href="#3-cookie-manipulation"><strong>3. Cookie Manipulation</strong></a></li>
+            <li><a href="#4-http-header-testing"><strong>4. HTTP Header Testing</strong></a></li>
+            <li><a href="#5-file-access-testing"><strong>5. File Access Testing</strong></a></li>
+            <li><a href="#6-api-endpoint-testing"><strong>6. API Endpoint Testing</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-defenses-using-encoding-and-obfuscation"><strong>Bypassing defenses (using encoding and obfuscation)</strong></a>
+          <ul>
+            <li><a href="#1-hashedencoded-ids"><strong>1. Hashed/Encoded IDs</strong></a></li>
+            <li><a href="#2-parameter-pollution"><strong>2. Parameter Pollution</strong></a></li>
+            <li><a href="#3-content-type-switching"><strong>3. Content-Type Switching</strong></a></li>
+            <li><a href="#4-http-method-switching"><strong>4. HTTP Method Switching</strong></a></li>
+            <li><a href="#5-wildcard-attacks"><strong>5. Wildcard Attacks</strong></a></li>
+            <li><a href="#6-boolean-parameter-bypass"><strong>6. Boolean Parameter Bypass</strong></a></li>
+            <li><a href="#7-alternate-data-representation"><strong>7. Alternate Data Representation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#advance-attack-scenarios"><strong>Advance Attack Scenarios</strong></a>
+          <ul>
+            <li><a href="#1-blind-idor"><strong>1. Blind IDOR</strong></a></li>
+            <li><a href="#2-race-conditions"><strong>2. Race Conditions</strong></a></li>
+            <li><a href="#3-hidden-endpoint-discovery"><strong>3. Hidden Endpoint Discovery</strong></a></li>
+            <li><a href="#4-account-takeover-via-email-change"><strong>4. Account Takeover via Email Change</strong></a></li>
+            <li><a href="#5-no-content--no-bug"><strong>5. No Content ≠ No Bug</strong></a></li>
+            <li><a href="#6-auth-header-contains-id"><strong>6. Auth Header Contains ID</strong></a></li>
+            <li><a href="#7-support-ticket-takeover"><strong>7. Support Ticket Takeover</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#framework-specific-scenarios"><strong>Framework specific scenarios:</strong></a>
+          <ul>
+            <li><a href="#graphql-idor"><strong>GraphQL IDOR</strong></a></li>
+            <li><a href="#rest-api-idor"><strong>REST API IDOR</strong></a></li>
+            <li><a href="#soapxml-api"><strong>SOAP/XML API</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-using-manual-and-automated-techniques"><strong>Detection Techniques (using Manual and Automated Techniques)</strong></a>
+          <ul>
+            <li><a href="#manual-testing"><strong>Manual Testing:</strong></a></li>
+            <li><a href="#automated-tools"><strong>Automated Tools:</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#impact"><strong>Impact</strong></a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="insecure-direct-object-reference-idor">
+  Insecure Direct Object Reference (IDOR)
+  <a class="anchor" href="#insecure-direct-object-reference-idor">#</a>
+</h1>
+<h2 id="1-fundamentals-of-idor">
+  <strong>1. Fundamentals of IDOR</strong>
+  <a class="anchor" href="#1-fundamentals-of-idor">#</a>
+</h2>
+<p><strong>Insecure Direct Object Reference (IDOR)</strong> is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.</p>
+<p><strong>Classic Example:</strong></p>
+<p>You&rsquo;re logged in and see:</p>
+<pre tabindex="0"><code>https://bank.com/profile?id=123
+</code></pre><p>Change <code>123</code> to <code>124</code> → <strong>resources belonging to other users become accessible.</strong>.</p>
+<p>Here, <strong><code>123</code></strong> is a <strong>direct object reference</strong> - likely a user ID, account number, or database primary key - that the application uses to fetch and return the corresponding profile. The issue is that the server fails to verify whether the logged-in user actually owns or is authorized to access the resource associated with ID <code>123</code>.</p>
+<p>Changing it to <code>124</code> exploits this missing access control, instantly revealing another user&rsquo;s profile.</p>
+<p><strong>Real Impact:</strong> Unauthorized data access, data modification, data deletion, privilege escalation, account takeover, business logic abuse, and unauthorized transactions.</p>
+<p><strong>Four main types:</strong></p>
+<ol>
+<li><strong>URL Tampering</strong> – Changing IDs in the URL</li>
+<li><strong>Body Manipulation</strong> – Modifying POST/PUT request bodies</li>
+<li><strong>Cookie ID Manipulation</strong> – Editing session/user cookies</li>
+<li><strong>Header/Parameter ID Manipulation</strong> – Modifying IDs passed in custom headers or query parameters</li>
+<li><strong>File / Resource ID Manipulation – Accessing unauthorized files by modifying file identifiers</strong></li>
+</ol>
+<p>Some applications expose file identifiers, document IDs, invoice numbers, or storage object keys in requests. If proper authorization checks are missing, attackers can modify these identifiers to access files belonging to other users.</p>
+<p>Example:</p>
+<pre tabindex="0"><code>GET https://example.com/api/download?fileId=45821
+</code></pre><p>If the application only checks whether the file exists but <strong>does not verify ownership</strong>, an attacker can change the ID:</p>
+<pre tabindex="0"><code>GET https://example.com/api/download?fileId=45822
+</code></pre><p>This may allow access to another user&rsquo;s documents, invoices, medical reports, or private uploads.</p>
+<h2 id="attack-surfaces">
+  <strong>Attack Surfaces</strong>
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h2>
+<h3 id="1-url-parameter-testing">
+  <strong>1. URL Parameter Testing</strong>
+  <a class="anchor" href="#1-url-parameter-testing">#</a>
+</h3>
+<ul>
+<li><strong>Basic increment/decrement:</strong> <code>id=123</code> → <code>id=124</code></li>
+<li><strong>Different formats:</strong>
+<ul>
+<li>Decimal: <code>287789</code>, <code>287790</code></li>
+<li>Hexadecimal: <code>0x4642d</code>, <code>0x4642e</code></li>
+<li>Unix timestamps: <code>1695574808</code>, <code>1695575098</code></li>
+<li>Base64: <code>MTIz</code> → <code>MTI0</code></li>
+</ul>
+</li>
+<li><strong>Names/emails as IDs:</strong> <code>john.doe</code>, <code>john.doe@mail.com</code>, base64 encoded</li>
+<li><strong>UUID-based IDs:</strong> Predictability depends on version and implementation; UUID v1 (e.g., <code>95f6e264-bb00-11ec-8833-00155d01ef00</code>) may be partially predictable due to timestamp/node patterns, while UUID v4 (e.g., <code>3b9f1c2a-7d5e-4c8a-9f3d-91a6d2f4c8b1</code>) is random and harder to enumerate, but still requires proper authorization checks</li>
+<li><strong>MongoDB Object IDs:</strong> <code>5ae9b90a2c144b9def01ec37</code> (timestamp-based structure, may be partially predictable)</li>
+</ul>
+<h3 id="2-post-body-testing">
+  <strong>2. POST Body Testing</strong>
+  <a class="anchor" href="#2-post-body-testing">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Change user_id in JSON/XML:</strong></p>
+<pre tabindex="0"><code>{&#34;user_id&#34;: 123} → {&#34;user_id&#34;: 124}
+</code></pre></li>
+<li>
+<p><strong>Array wrapping trick:</strong> <code>{&quot;id&quot;: 19}</code> → <code>{&quot;id&quot;: [19]}</code></p>
+</li>
+<li>
+<p><strong>Mass assignment:</strong> Add unauthorized fields like <code>role: &quot;admin&quot;</code></p>
+</li>
+</ul>
+<h3 id="3-cookie-manipulation">
+  <strong>3. Cookie Manipulation</strong>
+  <a class="anchor" href="#3-cookie-manipulation">#</a>
+</h3>
+<ul>
+<li><strong>Simple cookies:</strong> <code>user_id=123</code> → <code>user_id=124</code></li>
+<li><strong>Base64 encoded:</strong> <code>eyJ1c2VyX2lkIjoxMjN9</code> → decode → modify → re-encode</li>
+<li><strong>Session tokens:</strong> JWT with embedded user_id</li>
+</ul>
+<h3 id="4-http-header-testing">
+  <strong>4. HTTP Header Testing</strong>
+  <a class="anchor" href="#4-http-header-testing">#</a>
+</h3>
+<ul>
+<li><strong>Custom headers:</strong> <code>X-User-ID: 123</code></li>
+<li><strong>Authorization headers:</strong> <code>Bearer eyJ...</code> (JWT manipulation)</li>
+<li><strong>Referer/Origin header manipulation:</strong> Bypass checks by changing these</li>
+</ul>
+<h3 id="5-file-access-testing">
+  <strong>5. File Access Testing</strong>
+  <a class="anchor" href="#5-file-access-testing">#</a>
+</h3>
+<ul>
+<li><strong>Documents:</strong> <code>/download?file=doc_123.pdf</code></li>
+<li><strong>Images:</strong> <code>/images/user/123/avatar.jpg</code></li>
+<li><strong>Backups:</strong> <code>/backups/user_123.zip</code></li>
+</ul>
+<h3 id="6-api-endpoint-testing">
+  <strong>6. API Endpoint Testing</strong>
+  <a class="anchor" href="#6-api-endpoint-testing">#</a>
+</h3>
+<ul>
+<li><strong>REST patterns:</strong> <code>GET /api/users/123</code>, <code>PUT /api/users/124</code></li>
+<li><strong>Nested resources:</strong> <code>/api/companies/1/employees/123</code></li>
+<li><strong>GraphQL:</strong> <code>query { user(id: &quot;123&quot;) { email } }</code></li>
+</ul>
+<hr>
+<h2 id="bypassing-defenses-using-encoding-and-obfuscation">
+  <strong>Bypassing defenses (using encoding and obfuscation)</strong>
+  <a class="anchor" href="#bypassing-defenses-using-encoding-and-obfuscation">#</a>
+</h2>
+<h3 id="1-hashedencoded-ids">
+  <strong>1. Hashed/Encoded IDs</strong>
+  <a class="anchor" href="#1-hashedencoded-ids">#</a>
+</h3>
+<ul>
+<li><strong>MD5:</strong> <code>md5(&quot;123&quot;) = 202cb962ac59075b964b07152d234b70</code></li>
+<li><strong>SHA1/SHA2:</strong> Generate your own hashes</li>
+<li><strong>Base64:</strong> <code>echo &quot;124&quot; | base64</code> → <code>MTI0Cg==</code></li>
+<li><strong>URL-safe Base64:</strong> <code>dXNlcjoxMjM=</code> → <code>dXNlcjoxMjQ=</code></li>
+</ul>
+<h3 id="2-parameter-pollution">
+  <strong>2. Parameter Pollution</strong>
+  <a class="anchor" href="#2-parameter-pollution">#</a>
+</h3>
+<pre tabindex="0"><code>GET /api/profile?user_id=123&amp;user_id=124
+</code></pre><p>Or in JSON:</p>
+<pre tabindex="0"><code>{&#34;user_id&#34;: 123, &#34;user_id&#34;: 124, &#34;email&#34;: &#34;attacker@evil.com&#34;}
+</code></pre><h3 id="3-content-type-switching">
+  <strong>3. Content-Type Switching</strong>
+  <a class="anchor" href="#3-content-type-switching">#</a>
+</h3>
+<ul>
+<li>JSON → XML → Form-Data</li>
+<li>Example: <code>Content-Type: application/xml</code> with <code>&lt;user_id&gt;124&lt;/user_id&gt;</code></li>
+</ul>
+<h3 id="4-http-method-switching">
+  <strong>4. HTTP Method Switching</strong>
+  <a class="anchor" href="#4-http-method-switching">#</a>
+</h3>
+<ul>
+<li><code>GET</code> → <code>POST</code> → <code>PUT</code> → <code>DELETE</code> → <code>HEAD</code></li>
+<li>Some endpoints check auth differently per method</li>
+</ul>
+<h3 id="5-wildcard-attacks">
+  <strong>5. Wildcard Attacks</strong>
+  <a class="anchor" href="#5-wildcard-attacks">#</a>
+</h3>
+<pre tabindex="0"><code>GET /api/users/*
+GET /api/users/%
+GET /api/users/_
+GET /api/users/.*
+GET /api/users?ids=*
+</code></pre><h3 id="6-boolean-parameter-bypass">
+  <strong>6. Boolean Parameter Bypass</strong>
+  <a class="anchor" href="#6-boolean-parameter-bypass">#</a>
+</h3>
+<p>Found <code>&quot;public&quot;: false</code> in response? Try <code>?public=true</code> in request</p>
+<h3 id="7-alternate-data-representation">
+  <strong>7. Alternate Data Representation</strong>
+  <a class="anchor" href="#7-alternate-data-representation">#</a>
+</h3>
+<ul>
+<li>Decimal → Hex: <code>/user/1001</code> → <code>/user/0x3E9</code></li>
+<li>Different encoding schemes</li>
+</ul>
+<hr>
+<h2 id="advance-attack-scenarios">
+  <strong>Advance Attack Scenarios</strong>
+  <a class="anchor" href="#advance-attack-scenarios">#</a>
+</h2>
+<h3 id="1-blind-idor">
+  <strong>1. Blind IDOR</strong>
+  <a class="anchor" href="#1-blind-idor">#</a>
+</h3>
+<ul>
+<li><strong>No direct response?</strong> Check for:
+<ul>
+<li>Email notifications to victim</li>
+<li>Webhook callbacks</li>
+<li>Time delays (longer response = processing real data)</li>
+<li>State changes (friend requests, profile updates)</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-race-conditions">
+  <strong>2. Race Conditions</strong>
+  <a class="anchor" href="#2-race-conditions">#</a>
+</h3>
+<ul>
+<li>Send multiple concurrent requests with different IDs</li>
+<li>Use <strong>Turbo Intruder</strong> to bypass validation windows</li>
+<li>Example: Changing order_id mid-checkout process</li>
+</ul>
+<h3 id="3-hidden-endpoint-discovery">
+  <strong>3. Hidden Endpoint Discovery</strong>
+  <a class="anchor" href="#3-hidden-endpoint-discovery">#</a>
+</h3>
+<ul>
+<li><strong>Search JS files</strong> for API endpoints</li>
+<li>Pattern: <code>/api/v2/integration/install/{id}</code></li>
+<li><strong>Brute-force:</strong> <code>/api/v1/user</code>, <code>/api/v2/user</code>, <code>/api/user</code>, <code>/users</code></li>
+</ul>
+<h3 id="4-account-takeover-via-email-change">
+  <strong>4. Account Takeover via Email Change</strong>
+  <a class="anchor" href="#4-account-takeover-via-email-change">#</a>
+</h3>
+<p>From reports:</p>
+<ol>
+<li>Change your email to victim&rsquo;s via POST</li>
+<li>Intercept &ldquo;verify email&rdquo; response</li>
+<li>Change <code>&quot;verified&quot;: false</code> → <code>&quot;verified&quot;: true</code></li>
+<li>Access victim&rsquo;s billing info, subscription history</li>
+</ol>
+<h3 id="5-no-content--no-bug">
+  <strong>5. No Content ≠ No Bug</strong>
+  <a class="anchor" href="#5-no-content--no-bug">#</a>
+</h3>
+<p>Got <code>204 No Content</code> when changing ID?</p>
+<ul>
+<li>Switch <code>POST</code> → <code>GET</code></li>
+<li>Might get full PII back</li>
+</ul>
+<h3 id="6-auth-header-contains-id">
+  <strong>6. Auth Header Contains ID</strong>
+  <a class="anchor" href="#6-auth-header-contains-id">#</a>
+</h3>
+<pre tabindex="0"><code>Authorization: ODIxMjIyODY6ODIxMjIyODY=
+</code></pre><p>Base64 decode → <code>82122286:82122286</code></p>
+<p>Change to victim&rsquo;s ID → re-encode → account takeover</p>
+<h3 id="7-support-ticket-takeover">
+  <strong>7. Support Ticket Takeover</strong>
+  <a class="anchor" href="#7-support-ticket-takeover">#</a>
+</h3>
+<p>Ticket: <code>/Issue/9085/855f5bb19e7b...</code> (hashed)</p>
+<p>But comment endpoint: <code>POST /comment {&quot;ticket_id&quot;: 9085}</code></p>
+<p>Change to <code>9084</code> → comment on other tickets</p>
+<hr>
+<h2 id="framework-specific-scenarios">
+  <strong>Framework specific scenarios:</strong>
+  <a class="anchor" href="#framework-specific-scenarios">#</a>
+</h2>
+<h3 id="graphql-idor">
+  <strong>GraphQL IDOR</strong>
+  <a class="anchor" href="#graphql-idor">#</a>
+</h3>
+<pre tabindex="0"><code>query { user(id: &#34;123&#34;) { privateData } }
+</code></pre><p>Batch queries: <code>[{&quot;query&quot;: &quot;user(id: \&quot;123\&quot;)&quot;}, {&quot;query&quot;: &quot;user(id: \&quot;124\&quot;)&quot;}]</code></p>
+<h3 id="rest-api-idor">
+  <strong>REST API IDOR</strong>
+  <a class="anchor" href="#rest-api-idor">#</a>
+</h3>
+<ul>
+<li>Pagination: <code>/api/users?page=1&amp;size=100</code> → change size</li>
+<li>Filters: <code>/api/orders?user_id=123</code> → <code>user_id=124</code></li>
+</ul>
+<h3 id="soapxml-api">
+  <strong>SOAP/XML API</strong>
+  <a class="anchor" href="#soapxml-api">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;userId&gt;123&lt;/userId&gt; → &lt;userId&gt;124&lt;/userId&gt;
+</code></pre><hr>
+<h2 id="detection-techniques-using-manual-and-automated-techniques">
+  <strong>Detection Techniques (using Manual and Automated Techniques)</strong>
+  <a class="anchor" href="#detection-techniques-using-manual-and-automated-techniques">#</a>
+</h2>
+<h3 id="manual-testing">
+  <strong>Manual Testing:</strong>
+  <a class="anchor" href="#manual-testing">#</a>
+</h3>
+<ul>
+<li><strong>Identify all object references:</strong> URLs, headers, cookies, body</li>
+<li><strong>Change values systematically:</strong> +1, -1, different formats</li>
+<li><strong>Check responses:</strong> Data leakage, errors, status codes</li>
+<li><strong>Look for indirect effects:</strong> Emails, notifications, exports</li>
+</ul>
+<h3 id="automated-tools">
+  <strong>Automated Tools:</strong>
+  <a class="anchor" href="#automated-tools">#</a>
+</h3>
+<p><strong>Burp Suite:</strong></p>
+<ol>
+<li><strong>Intruder:</strong> Number fuzzing (1-10000)</li>
+<li><strong>Autorize:</strong> Auto-replay with different sessions</li>
+<li><strong>AuthMatrix:</strong> Role-based testing</li>
+<li><strong>Param Miner:</strong> Find hidden parameters</li>
+<li><strong>InQL:</strong> GraphQL testing</li>
+</ol>
+<p><strong>FFUF:</strong></p>
+<pre tabindex="0"><code>ffuf -u https://target.com/api/user/FUZZ -w ids.txt -mc 200
+ffuf -u https://target.com/api/user -X POST -d &#39;{&#34;user_id&#34;:&#34;FUZZ&#34;}&#39; -w ids.txt
+</code></pre><p><strong>Custom Python Script:</strong></p>
+<pre tabindex="0"><code>import requests
+for uid in range(1,1000):
+    r = requests.get(f&#34;https://target.com/api/user/{uid}&#34;)
+    if r.status_code == 200 and &#34;email&#34; in r.text:
+        print(f&#34;Found:{uid}&#34;)
+</code></pre><hr>
+<h2 id="impact">
+  <strong>Impact</strong>
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li><strong>Unauthorized data access:</strong> PII, messages, financial info</li>
+<li><strong>Data manipulation:</strong> Edit profiles, billing, orders</li>
+<li><strong>Account takeover:</strong> Change email/password</li>
+<li><strong>Privilege escalation:</strong> Grant admin roles</li>
+<li><strong>Financial fraud:</strong> Redirect payments, issue refunds</li>
+<li><strong>Reputation damage:</strong> Leak business/customer data</li>
+</ul>
+<p><strong>Real examples from reports:</strong></p>
+<ul>
+<li>View other users&rsquo; order information</li>
+<li>Delete other users&rsquo; messages</li>
+<li>Access private integrations by changing boolean flags</li>
+<li>Take over accounts via email manipulation</li>
+<li>Access billing information and payment history</li>
+</ul>
+<hr>
+<h2 id="prevention-techniques">
+  <strong>Prevention Techniques</strong>
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h2>
+<ul>
+<li><strong>Use indirect references</strong> – Avoid exposing real database identifiers; use mapping layers or reference tokens instead</li>
+<li><strong>Enforce centralized authorization checks</strong> – Implement a single, consistent authorization layer to validate access across all endpoints and services</li>
+<li><strong>Apply tenant scoping</strong> – Ensure every request is restricted to the correct tenant/context to prevent cross-tenant data access</li>
+<li><strong>Implement RBAC/ABAC enforcement</strong> – Define and enforce Role-Based Access Control or Attribute-Based Access Control for fine-grained permissions</li>
+<li><strong>Validate server-side ownership</strong> – Always verify object ownership on the server before allowing read/write/delete operations</li>
+<li><strong>Use random or non-guessable identifiers</strong> – Prefer UUIDv4 or similarly unpredictable IDs instead of sequential identifiers</li>
+<li><strong>Validate all inputs strictly</strong> – Enforce proper format, type, and scope validation for all user-controlled parameters</li>
+<li><strong>Never trust client-side controls</strong> – Treat all client-side restrictions as untrusted and enforce security rules on the server</li>
+<li><strong>Log and monitor access patterns</strong> – Track object access attempts and alert on abnormal or cross-boundary access behavior</li>
+<li><strong>Use framework-level security guards</strong> – Leverage built-in controls such as <code>@PreAuthorize</code>, <code>@PostAuthorize</code>, or equivalent middleware to enforce authorization consistently</li>
+</ul>
+<hr>
+<h2 id="tools">
+  <strong>Tools</strong>
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>What It&rsquo;s For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autorize(Burp Suite Extension)</strong></td>
+<td>Auto authorization testing</td>
+</tr>
+<tr>
+<td><strong>AuthMatrix(Burp Suite Extension)</strong></td>
+<td>Role-based access testing</td>
+</tr>
+<tr>
+<td><strong>InQL</strong></td>
+<td>GraphQL IDOR testing</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<p><a href="https://www.thebughunter.blog/case-studies/idor-analysis" target="_blank" rel="noreferrer noopener nofollow">IDOR in the Wild: A Comprehensive Analysis of 250 Real-World Vulnerabilities - IDOR Case Study | The Bug Hunter</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://readmedium.com/top-235-idor-bug-bounty-reports-e00c8061fe28" target="_blank" rel="noreferrer noopener nofollow">Top 235 IDOR Bug Bounty Reports</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://infosecwriteups.com/10-hunting-for-idors-the-most-underrated-vulnerability-9567ebf97585" target="_blank" rel="noreferrer noopener nofollow">https://infosecwriteups.com/10-hunting-for-idors-the-most-underrated-vulnerability-9567ebf97585</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<hr>
+<h2 id="references">
+  <strong>References</strong>
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">Insecure Direct Object Reference Prevention - OWASP Cheat Sheet Series</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References" target="_blank" rel="noreferrer noopener nofollow">WSTG - Latest | OWASP Foundation</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings" target="_blank" rel="noreferrer noopener nofollow">swisskyrepo/PayloadsAllTheThings: A list of useful payloads and bypass for Web Application Security and Pentest/CTF</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://book.hacktricks.wiki/en/pentesting-web/idor.html" target="_blank" rel="noreferrer noopener nofollow">IDOR - HackTricks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://ian.sh/mcdonalds" target="_blank" rel="noreferrer noopener nofollow">McHire Chatbot Platform: Default Credentials and IDOR Expose 64M Applicants’ PII</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://infosecwriteups.com/idor-insecure-direct-object-references-my-first-p1-in-bugbounty-fb01f50e25df" target="_blank" rel="noreferrer noopener nofollow">https://infosecwriteups.com/idor-insecure-direct-object-references-my-first-p1-in-bugbounty-fb01f50e25df</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Insecure%20Direct%20Object%20Reference%20%28IDOR%29.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#insecure-direct-object-reference-idor">Insecure Direct Object Reference (IDOR)</a>
+      <ul>
+        <li><a href="#1-fundamentals-of-idor"><strong>1. Fundamentals of IDOR</strong></a></li>
+        <li><a href="#attack-surfaces"><strong>Attack Surfaces</strong></a>
+          <ul>
+            <li><a href="#1-url-parameter-testing"><strong>1. URL Parameter Testing</strong></a></li>
+            <li><a href="#2-post-body-testing"><strong>2. POST Body Testing</strong></a></li>
+            <li><a href="#3-cookie-manipulation"><strong>3. Cookie Manipulation</strong></a></li>
+            <li><a href="#4-http-header-testing"><strong>4. HTTP Header Testing</strong></a></li>
+            <li><a href="#5-file-access-testing"><strong>5. File Access Testing</strong></a></li>
+            <li><a href="#6-api-endpoint-testing"><strong>6. API Endpoint Testing</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-defenses-using-encoding-and-obfuscation"><strong>Bypassing defenses (using encoding and obfuscation)</strong></a>
+          <ul>
+            <li><a href="#1-hashedencoded-ids"><strong>1. Hashed/Encoded IDs</strong></a></li>
+            <li><a href="#2-parameter-pollution"><strong>2. Parameter Pollution</strong></a></li>
+            <li><a href="#3-content-type-switching"><strong>3. Content-Type Switching</strong></a></li>
+            <li><a href="#4-http-method-switching"><strong>4. HTTP Method Switching</strong></a></li>
+            <li><a href="#5-wildcard-attacks"><strong>5. Wildcard Attacks</strong></a></li>
+            <li><a href="#6-boolean-parameter-bypass"><strong>6. Boolean Parameter Bypass</strong></a></li>
+            <li><a href="#7-alternate-data-representation"><strong>7. Alternate Data Representation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#advance-attack-scenarios"><strong>Advance Attack Scenarios</strong></a>
+          <ul>
+            <li><a href="#1-blind-idor"><strong>1. Blind IDOR</strong></a></li>
+            <li><a href="#2-race-conditions"><strong>2. Race Conditions</strong></a></li>
+            <li><a href="#3-hidden-endpoint-discovery"><strong>3. Hidden Endpoint Discovery</strong></a></li>
+            <li><a href="#4-account-takeover-via-email-change"><strong>4. Account Takeover via Email Change</strong></a></li>
+            <li><a href="#5-no-content--no-bug"><strong>5. No Content ≠ No Bug</strong></a></li>
+            <li><a href="#6-auth-header-contains-id"><strong>6. Auth Header Contains ID</strong></a></li>
+            <li><a href="#7-support-ticket-takeover"><strong>7. Support Ticket Takeover</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#framework-specific-scenarios"><strong>Framework specific scenarios:</strong></a>
+          <ul>
+            <li><a href="#graphql-idor"><strong>GraphQL IDOR</strong></a></li>
+            <li><a href="#rest-api-idor"><strong>REST API IDOR</strong></a></li>
+            <li><a href="#soapxml-api"><strong>SOAP/XML API</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-using-manual-and-automated-techniques"><strong>Detection Techniques (using Manual and Automated Techniques)</strong></a>
+          <ul>
+            <li><a href="#manual-testing"><strong>Manual Testing:</strong></a></li>
+            <li><a href="#automated-tools"><strong>Automated Tools:</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#impact"><strong>Impact</strong></a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

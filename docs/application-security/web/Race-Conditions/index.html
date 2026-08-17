@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Race Conditions # Description # A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.
+Types of Race Conditions # Limit Overrun Race Conditions # The most common type.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Race Conditions" />
+<meta property="og:description" content="Race Conditions # Description # A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.
+Types of Race Conditions # Limit Overrun Race Conditions # The most common type." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-13T23:21:07+05:30" />
+<title>Race Conditions | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class=" active">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Race Conditions</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#race-conditions">Race Conditions</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#types-of-race-conditions">Types of Race Conditions</a></li>
+            <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+            <li><a href="#exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses</a></li>
+            <li><a href="#graphql-race-conditions">GraphQL Race Conditions</a></li>
+            <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a></li>
+            <li><a href="#detection-techniques">Detection Techniques</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#prevention-techniques">Prevention Techniques</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#good-to-read">Good to Read</a></li>
+            <li><a href="#references">References</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="race-conditions">
+  Race Conditions
+  <a class="anchor" href="#race-conditions">#</a>
+</h1>
+<hr>
+<h3 id="description">
+  Description
+  <a class="anchor" href="#description">#</a>
+</h3>
+<p>A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.</p>
+<h3 id="types-of-race-conditions">
+  Types of Race Conditions
+  <a class="anchor" href="#types-of-race-conditions">#</a>
+</h3>
+<h4 id="limit-overrun-race-conditions">
+  <strong>Limit Overrun Race Conditions</strong>
+  <a class="anchor" href="#limit-overrun-race-conditions">#</a>
+</h4>
+<p>The most common type. An attacker exceeds a hard limit set by the application (e.g., using a single-use discount code five times or withdrawing more money than is in an account) by triggering requests faster than the server can update the state.</p>
+<h4 id="example">
+  <strong>Example:</strong>
+  <a class="anchor" href="#example">#</a>
+</h4>
+<ul>
+<li>Intended Logic</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>defapply_coupon(user,coupon_code):
+</span></span><span style="display:flex;"><span>		coupon<span style="color:#f92672">=</span>get_coupon(coupon_code)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ifcoupon<span style="color:#f92672">.</span>used<span style="color:#f92672">==</span><span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>		apply_discount(user)
+</span></span><span style="display:flex;"><span>		coupon<span style="color:#f92672">.</span>used<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>		save(coupon)
+</span></span></code></pre></div><ul>
+<li>Coupon can only be used <strong>once</strong></li>
+<li>After use → <code>used = True</code></li>
+<li>The attacker sends <strong>multiple requests at the same time</strong>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example using parallel requests in bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> iin <span style="color:#f92672">{</span>1..10<span style="color:#f92672">}</span>;<span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>	curl-X POST https://target.com/apply-coupon<span style="color:#f92672">=</span>asd-asd-asd &amp;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>wait
+</span></span></code></pre></div><hr>
+<ul>
+<li>Coupon used <strong>multiple times</strong></li>
+<li>Limit completely bypassed</li>
+</ul>
+<h4 id="multi-endpoint-race-conditions">
+  <strong>Multi-Endpoint Race Conditions:</strong>
+  <a class="anchor" href="#multi-endpoint-race-conditions">#</a>
+</h4>
+<p>Occurs when an application transitions through a state machine (e.g., Pending -&gt; Validated -&gt; Completed). An attacker targets the window between two different endpoints to disrupt the logic flow.</p>
+<h4 id="example-1">
+  Example
+  <a class="anchor" href="#example-1">#</a>
+</h4>
+<ul>
+<li>The application flow ⇒ Pending → Paid → Shipped → Cancel</li>
+<li>Endpoint <code>/pay</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def pay_order<span style="color:#f92672">(</span>order_id<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>    order <span style="color:#f92672">=</span> get_order<span style="color:#f92672">(</span>order_id<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> order.status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pending&#34;</span>:
+</span></span><span style="display:flex;"><span>        process_payment<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>        order.status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Paid&#34;</span>
+</span></span><span style="display:flex;"><span>        save<span style="color:#f92672">(</span>order<span style="color:#f92672">)</span>
+</span></span></code></pre></div><ul>
+<li>Endpoint <code>/cancel</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cancel_order</span>(order_id):
+</span></span><span style="display:flex;"><span>    order <span style="color:#f92672">=</span> get_order(order_id)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> order<span style="color:#f92672">.</span>status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pending&#34;</span>:
+</span></span><span style="display:flex;"><span>        order<span style="color:#f92672">.</span>status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cancelled&#34;</span>
+</span></span><span style="display:flex;"><span>        refund_if_needed()
+</span></span><span style="display:flex;"><span>        save(order)
+</span></span></code></pre></div><ul>
+<li>The attacker sends both the requests at the same time</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://target.com/pay -d <span style="color:#e6db74">&#34;order_id=123&#34;</span> &amp;
+</span></span><span style="display:flex;"><span>curl -X POST https://target.com/cancel -d <span style="color:#e6db74">&#34;order_id=123&#34;</span> &amp;
+</span></span><span style="display:flex;"><span>wait
+</span></span></code></pre></div><ul>
+<li>As a result the payment is processed and the refund is also processed</li>
+<li>The attacker gets the product and the service for free</li>
+<li>It happens because both the endpoints trusts the same condition</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> order<span style="color:#f92672">.</span>status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pending&#34;</span>
+</span></span></code></pre></div><ul>
+<li>But there is <strong>no synchronization between endpoints</strong>.</li>
+</ul>
+<h4 id="time-of-check-to-time-of-use-toctou">
+  <strong>Time-of-Check to Time-of-Use (TOCTOU):</strong>
+  <a class="anchor" href="#time-of-check-to-time-of-use-toctou">#</a>
+</h4>
+<p>A specific sub-class where the application checks a condition (e.g., &ldquo;Does the file exist?&rdquo;) and acts on it (&ldquo;Delete the file&rdquo;), but the state changes between the check and the action.</p>
+<h4 id="example-2">
+  Example
+  <a class="anchor" href="#example-2">#</a>
+</h4>
+<ul>
+<li>The demo application logic</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>defdelete_file(path):
+</span></span><span style="display:flex;"><span>ifos<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(path):   <span style="color:#75715e"># Time of Check</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>remove(path)  <span style="color:#75715e"># Time of Use</span>
+</span></span></code></pre></div><ul>
+<li>Between:</li>
+</ul>
+<pre tabindex="0"><code>[CHECK: file exists] → [USE: delete file]
+</code></pre><ul>
+<li>
+<p>There is a <strong>time gap</strong></p>
+</li>
+<li>
+<p>Attacker creates a normal file:</p>
+<pre tabindex="0"><code>/tmp/user_file.txt
+</code></pre></li>
+<li>
+<p>Application checks:</p>
+<pre tabindex="0"><code>os.path.exists(&#34;/tmp/user_file.txt&#34;) → True
+</code></pre></li>
+<li>
+<p><strong>Before deletion happens</strong>, attacker swaps the file:</p>
+</li>
+</ul>
+<pre tabindex="0"><code>rm /tmp/user_file.txt
+ln -s /etc/passwd /tmp/user_file.txt
+</code></pre><ul>
+<li>Application continues:</li>
+</ul>
+<pre tabindex="0"><code>os.remove(&#34;/tmp/user_file.txt&#34;)
+</code></pre><ul>
+<li>The app deletes:</li>
+</ul>
+<pre tabindex="0"><code>/etc/passwd
+</code></pre><ul>
+<li>Because the app assumes:</li>
+</ul>
+<pre tabindex="0"><code>State at CHECK == State at USE
+</code></pre><ul>
+<li>But attacker changes it in between.</li>
+</ul>
+<h3 id="attack-surfaces">
+  Attack Surfaces
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h3>
+<ul>
+<li><strong>Finance Related Functionalities</strong>
+<ul>
+<li>Credits</li>
+<li>Withdrawals</li>
+<li>Currency Conversions</li>
+</ul>
+</li>
+<li><strong>E-commerce Sites Functionalities</strong>
+<ul>
+<li>Discount codes</li>
+<li>Gift cards</li>
+<li>Limited Stock Items</li>
+</ul>
+</li>
+<li><strong>Account Actions</strong>
+<ul>
+<li>Password resets ⇒ Requesting multiple tokens</li>
+<li>Email changes and verification</li>
+<li>Account registration ⇒ Duplicate usernames</li>
+</ul>
+</li>
+<li><strong>Voting/Rating Systems</strong>
+<ul>
+<li>Bypassing &ldquo;one vote per user&rdquo; restrictions.</li>
+</ul>
+</li>
+<li><strong>File Management ⇒</strong>Temporary file creation and processing.</li>
+</ul>
+<h3 id="exploitation-and-bypassing-defenses">
+  Exploitation and Bypassing Defenses
+  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
+</h3>
+<p>To exploit these, we must minimize <strong>network jitter</strong> (the variance in request arrival times).</p>
+<h4 id="how-to-exploit">
+  How to Exploit
+  <a class="anchor" href="#how-to-exploit">#</a>
+</h4>
+<p>Using HTTP/2, we can send multiple requests over a single TCP connection, often within the same packet, ensuring they reach the server logic at virtually the same nanosecond.</p>
+<ul>
+<li><strong>Capture and Grouping</strong></li>
+</ul>
+<ol>
+<li>Capture the target request (e.g., the &ldquo;Redeem Coupon&rdquo; or &ldquo;Withdraw&rdquo; request) in Burp Proxy.</li>
+<li>Send the request to <strong>Repeater</strong> (<code>Ctrl + R</code>).</li>
+<li>In Repeater, click the <strong>+</strong> icon next to the request tab and select <strong>Create tab group</strong>.</li>
+<li>Select the request you just sent and add it to the group (you can duplicate the request 10–20 times within this group).</li>
+</ol>
+<ul>
+<li><strong>Configure the Synchronization</strong></li>
+</ul>
+<ol>
+<li>Look at the <strong>Send</strong> button. By default, it says &ldquo;Send.&rdquo; Click the drop-down arrow next to it.</li>
+<li>Select <strong>&ldquo;Send group in parallel (last-byte sync).&rdquo;</strong>
+<ul>
+<li><strong>HTTP/1.1:</strong> Burp will send all but the last byte of each request, wait for a moment, and then send the final bytes together.</li>
+<li><strong>HTTP/2:</strong> If the server supports HTTP/2, Burp will use <strong>Single-Packet Attack</strong> logic, where it attempts to wrap all requests into a single TCP packet using multiplexing.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>Execution and Analysis</strong></li>
+</ul>
+<ol>
+<li>Click <strong>Send Group</strong>.</li>
+<li>Analyze the <strong>Response</strong> columns (specifically the &ldquo;Time&rdquo; and &ldquo;Status&rdquo; columns):
+<ul>
+<li><strong>Failed Race:</strong> All requests return the same error (e.g., &ldquo;Code already used&rdquo;) except for the very first one.</li>
+<li><strong>Successful Race:</strong> You see multiple <code>200 OK</code> or &ldquo;Success&rdquo; messages for the same action.</li>
+<li><strong>The &ldquo;Jitter&rdquo; Check:</strong> Look at the &ldquo;Received&rdquo; time. In a successful last-byte sync, the gap between the first and last response should be mere milliseconds.</li>
+</ul>
+</li>
+</ol>
+<h4 id="exploiting-limit-overrun-race-conditions">
+  Exploiting Limit Overrun race Conditions
+  <a class="anchor" href="#exploiting-limit-overrun-race-conditions">#</a>
+</h4>
+<ul>
+<li>The attacker has to send more than one request at almost same time</li>
+<li>He has to send the requests in the race window which is often of a few milli-seconds</li>
+<li>So that the database will take two simultaneous requests as valid and you can apply the coupon more than once.</li>
+</ul>
+<p>
+  <img src="../rc1.png" alt="Race Condition.png" /></p>
+<ul>
+<li>Here in the image, the 2 requests are generated simultaneously.</li>
+<li>So to exploit you have to focus on two things
+<ul>
+<li>Identify a single-use or rate-limited endpoint that has some kind of security impact or other useful purpose.</li>
+<li>Issue multiple requests to this endpoint in quick succession to see if you can overrun this limit.</li>
+</ul>
+</li>
+<li>By using Burp Suite Repeater you can easily send the requests in parallel</li>
+</ul>
+<h4 id="bypassing-rate-limiting">
+  Bypassing Rate Limiting
+  <a class="anchor" href="#bypassing-rate-limiting">#</a>
+</h4>
+<ul>
+<li>The user can use Race Condition flaws to bypass the rate limit</li>
+<li>Sending a group of 20 login POST requests (single packet attack), observing that the application is validating the credentials for a user</li>
+<li>One can create the number of request equal to the number of passwords to try ⇒ creating a request group ⇒ send a single packet attack</li>
+<li>Or one can use Turbo Intruder</li>
+<li>It is a burp extension to send all of the requests at once in parallel</li>
+<li>Install this extension from Bapp store first</li>
+<li>Right Click on a Repeater request → Extension → Turbo Intruder → Send to Turbo Intruder</li>
+<li>Here you have to select a python script for attack</li>
+<li>Generally the last byte synchronization for HTTP 1 is not supported by this tool</li>
+<li>Select the <strong><code>race single packet attack</code></strong> and modify the python code as your needs</li>
+<li>By default the code is good enough for <strong><code>Limit overrun Race Condition Attacks</code></strong></li>
+<li>For password brute force attacks you have to add the password word-list as shown in code</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def queueRequests<span style="color:#f92672">(</span>target, wordlists<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># as the target supports HTTP/2, use engine=Engine.BURP2 and concurrentConnections=1 for a single-packet attack</span>
+</span></span><span style="display:flex;"><span>    engine <span style="color:#f92672">=</span> RequestEngine<span style="color:#f92672">(</span>endpoint<span style="color:#f92672">=</span>target.endpoint,
+</span></span><span style="display:flex;"><span>                           concurrentConnections<span style="color:#f92672">=</span>1,
+</span></span><span style="display:flex;"><span>                           engine<span style="color:#f92672">=</span>Engine.BURP2
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># assign the list of candidate passwords from your clipboard</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#passwords = wordlists.clipboard   -&gt; You can use this then you have to copy the passwords and it will take the pasword from your clipboard directly</span>
+</span></span><span style="display:flex;"><span>    password <span style="color:#f92672">=</span> open<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;/path/to/wordlist/race.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># queue a login request using each password from the wordlist</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># the &#39;gate&#39; argument withholds the final part of each request until engine.openGate() is invoked</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i in password:
+</span></span><span style="display:flex;"><span>        engine.queue<span style="color:#f92672">(</span>target.req, i, gate<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Use %s as the value of password in the POST request, then it will brute force each of the password </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># once every request has been queued</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># invoke engine.openGate() to send all requests in the given gate simultaneously</span>
+</span></span><span style="display:flex;"><span>    engine.openGate<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def handleResponse<span style="color:#f92672">(</span>req, interesting<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>    table.add<span style="color:#f92672">(</span>req<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h4 id="exploiting-multiple-endpoint-race-conditions">
+  Exploiting Multiple Endpoint Race Conditions
+  <a class="anchor" href="#exploiting-multiple-endpoint-race-conditions">#</a>
+</h4>
+<ul>
+<li>
+<p>Different application trigger multiple actions after we hit a single GET or POST request.</p>
+</li>
+<li>
+<p>The feature like Add to Cart ⇒ Make Payment ⇒ Order confirmed</p>
+</li>
+<li>
+<p>The internal workflow looks like this</p>
+<p>
+  <img src="../rc2.png" alt="Race Condition.png" /></p>
+</li>
+<li>
+<p>The race window is the payment validation</p>
+</li>
+<li>
+<p>When the application is validating the payment one can add other items also into the cart, after the payment validation it will send a basket confirmed request, that will also confirmed the other items in the cart that where added later</p>
+</li>
+<li>
+<p>First set a request to add an item to the cart which you can purchase</p>
+</li>
+<li>
+<p>Then the send the purchase request</p>
+</li>
+<li>
+<p>Repeat this two to three times</p>
+</li>
+<li>
+<p>Add the item to the cart that is not affordable</p>
+</li>
+<li>
+<p>Next set the purchase request</p>
+</li>
+<li>
+<p>Repeat the first steps again</p>
+</li>
+</ul>
+<h4 id="token-collision-attack">
+  Token Collision Attack
+  <a class="anchor" href="#token-collision-attack">#</a>
+</h4>
+<p><strong>Token Collision via Predictable Seeding</strong> occurs when an application uses a non-random timestamp to generate security tokens, such as password resets. By using high-precision timing to synchronize two requests, an attacker can force the server to issue identical tokens for both their account and a victim&rsquo;s, leading to a full account takeover.</p>
+<ul>
+<li>If a password reset token is generated using a formula like:
+<code>token = md5(timestamp + username)</code>
+an attacker can&rsquo;t do much. But if the formula is simply:
+<code>token = sha256(timestamp)</code>
+then any two requests processed in the same microsecond will result in the <strong>exact same token</strong>.</li>
+<li><strong>T</strong>he admin&rsquo;s email is <code>admin@company.com</code>. User email is <code>attacker@evil.com</code>.</li>
+</ul>
+<ol>
+<li><strong>Prepare the Requests:</strong> Prepare two password reset requests.
+<ul>
+<li>Request A: <code>email=admin@company.com</code></li>
+<li>Request B: <code>email=attacker@evil.com</code></li>
+</ul>
+</li>
+<li><strong>Execute Synchronization:</strong> Use the <strong>Single-Packet Attack (HTTP/2)</strong> to send both requests to the server so they arrive and are processed by the backend at the same internal CPU clock cycle.</li>
+<li><strong>The Collision:</strong> The server processes Request A, sees the time is <code>1711100000.123456</code>, and generates <code>Token_XYZ</code>. It sends this to the Admin.</li>
+<li><strong>The Mirror:</strong> Simultaneously, the server processes Request B. It sees the <em>same</em> time <code>1711100000.123456</code> and generates the <em>same</em> <code>Token_XYZ</code>. It sends this to you.</li>
+<li><strong>The Takeover:</strong> You check your inbox, get <code>Token_XYZ</code>, and instead of using it for your own account, you append it to the admin&rsquo;s reset URL. Since the token matches what was stored for the admin, you can now set their password.</li>
+</ol>
+<h4 id="file-upload-toctou-file-upload-bypasses">
+  File upload TOCTOU: File upload bypasses
+  <a class="anchor" href="#file-upload-toctou-file-upload-bypasses">#</a>
+</h4>
+<ul>
+<li>Imagine a website that allows image uploads.</li>
+</ul>
+<p><strong>Normal Flow</strong></p>
+<ul>
+<li>You upload: <code>cat.jpg</code></li>
+<li>Server stores: <code>/tmp/file_77</code></li>
+<li>Scanner checks it → Safe</li>
+<li>Then server moves it to: <code>/public/uploads/cat.jpg</code></li>
+<li>Everything is fine.</li>
+</ul>
+<p><strong>Vulnerable Flow</strong></p>
+<ul>
+<li>Suppose the app uses predictable temp names or reuses upload IDs.</li>
+<li>Attacker does upload harmless image: <code>cat.jpg</code></li>
+<li>Stored as: <code>/tmp/file_77</code></li>
+<li>Scanner begins checking it.</li>
+<li>During Scan, Before the move happens, attacker quickly triggers another action that replaces: <code>/tmp/file_77</code> with:  <code>malicious.php</code></li>
+<li>Now scanner already approved the old harmless image</li>
+<li>Server later moves the <strong>new swapped file</strong></li>
+<li>Result:</li>
+<li><code>/public/uploads/malicious.php</code></li>
+<li>If the server executes PHP files, that could become serious.</li>
+</ul>
+<h3 id="graphql-race-conditions">
+  GraphQL Race Conditions
+  <a class="anchor" href="#graphql-race-conditions">#</a>
+</h3>
+<h4 id="concurrent-mutations">
+  Concurrent Mutations
+  <a class="anchor" href="#concurrent-mutations">#</a>
+</h4>
+<ul>
+<li>
+<p>By inspecting the Graphql Introspection query one can find out the mutation query</p>
+</li>
+<li>
+<p>Example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>mutation createAdminAction(<span style="color:#960050;background-color:#1e0010">$</span>input: AdminActionInput<span style="color:#960050;background-color:#1e0010">!</span>) {
+</span></span><span style="display:flex;"><span>  createAdminAction(input: <span style="color:#960050;background-color:#1e0010">$</span>input) {
+</span></span><span style="display:flex;"><span>    id
+</span></span><span style="display:flex;"><span>    status
+</span></span><span style="display:flex;"><span>    createdBy
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>One can use this query to create admin functionalities as this to download the sensitive security logs</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>mutation {
+</span></span><span style="display:flex;"><span>  createAdminAction(input: {
+</span></span><span style="display:flex;"><span>    actionType: <span style="color:#e6db74">&#34;exportSensitiveLogs&#34;</span>,
+</span></span><span style="display:flex;"><span>    userId: <span style="color:#e6db74">&#34;all&#34;</span>
+</span></span><span style="display:flex;"><span>  }) {
+</span></span><span style="display:flex;"><span>    id
+</span></span><span style="display:flex;"><span>    status
+</span></span><span style="display:flex;"><span>    createdBy
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>When it is sent once it will export a single file</li>
+<li>But by using Turbo Intruder one can send the mutation query as floods</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>def queueRequests(target, wordlists):
+</span></span><span style="display:flex;"><span>    engine <span style="color:#f92672">=</span> RequestEngine(endpoint<span style="color:#f92672">=</span>target.endpoint,
+</span></span><span style="display:flex;"><span>                           concurrentConnections<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
+</span></span><span style="display:flex;"><span>                           requestsPerConnection<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>                           pipeline<span style="color:#f92672">=</span>False)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> range(<span style="color:#ae81ff">20</span>):
+</span></span><span style="display:flex;"><span>        engine.queue(target.req, target.baseInput)
+</span></span></code></pre></div><ul>
+<li>It will extract more than one file that will reveal a lots of information</li>
+</ul>
+<h4 id="batched-mutations">
+  Batched Mutations
+  <a class="anchor" href="#batched-mutations">#</a>
+</h4>
+<ul>
+<li>A shopping app has a GraphQL mutation:</li>
+</ul>
+<pre tabindex="0"><code>redeemPoints(points: 100)
+</code></pre><p>Normal flow</p>
+<ul>
+<li>User has <strong>100 points</strong></li>
+<li>Redeeming 100 points gives a ₹500 voucher</li>
+<li>After redemption, points become 0</li>
+</ul>
+<p>Normal Single Request</p>
+<ul>
+<li>User sends:</li>
+</ul>
+<pre tabindex="0"><code>mutation {
+  redeemPoints(points:100)
+}
+</code></pre><ul>
+<li>Backend:</li>
+</ul>
+<pre tabindex="0"><code>Current points = 100
+Enough points ?
+Subtract 100
+Create voucher
+</code></pre><ul>
+<li>Result</li>
+</ul>
+<pre tabindex="0"><code>Points = 0
+1 voucher created
+</code></pre><p>Batched Mutation Request</p>
+<ul>
+<li>Now user sends one GraphQL request containing aliases:</li>
+</ul>
+<pre tabindex="0"><code>mutation {
+  first: redeemPoints(points:100)
+  second: redeemPoints(points:100)
+}
+</code></pre><p>Vulnerable Backend Behavior</p>
+<ul>
+<li>Suppose backend resolves both mutations nearly simultaneously.</li>
+<li>Mutation <code>first</code></li>
+</ul>
+<p>Reads</p>
+<pre tabindex="0"><code>points = 100
+</code></pre><ul>
+<li>Mutation <code>second</code></li>
+</ul>
+<p>Also reads:</p>
+<pre tabindex="0"><code>points = 100
+</code></pre><p>Both think redemption is allowed.</p>
+<p>Then both execute:</p>
+<ul>
+<li>subtract points</li>
+<li>create voucher</li>
+</ul>
+<pre tabindex="0"><code>Points = 0 or -100
+2 vouchers created
+</code></pre><ul>
+<li>User had enough points for <strong>one voucher</strong>, but received <strong>two</strong>.</li>
+</ul>
+<h3 id="framework-specific-scenarios">
+  Framework-Specific Scenarios
+  <a class="anchor" href="#framework-specific-scenarios">#</a>
+</h3>
+<ul>
+<li><strong>Node.js:</strong> Despite being single-threaded, asynchronous <code>await</code> calls create &ldquo;yield points.&rdquo; If shared state is modified across these points, race conditions occur.</li>
+<li><strong>Python (Django/Flask):</strong> While the GIL (Global Interpreter Lock) prevents true CPU parallelism for threads, it does not prevent logic races during I/O-bound operations (like database queries).</li>
+<li><strong>Java (Spring):</strong> Misusing &ldquo;Singleton&rdquo; scoped beans to store user-specific data is a classic recipe for race-condition disasters.</li>
+</ul>
+<h3 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h3>
+<h4 id="manual-using-burp-suite-repeater">
+  <strong>Manual:</strong> Using Burp Suite Repeater.
+  <a class="anchor" href="#manual-using-burp-suite-repeater">#</a>
+</h4>
+<ul>
+<li>Group 20+ identical requests.</li>
+<li>Set the &ldquo;Send&rdquo; mode to <strong>&ldquo;Send group in parallel (last-byte sync).&rdquo;</strong></li>
+</ul>
+<h4 id="automated-turbo-intruder">
+  <strong>Automated:</strong> <strong>Turbo Intruder</strong>
+  <a class="anchor" href="#automated-turbo-intruder">#</a>
+</h4>
+<ul>
+<li>Utilizing the <code>gate()</code> method to hold requests until they are all ready to be fired.</li>
+<li>Observe &ldquo;outlier&rdquo; responses: If 19 requests return <code>403 Forbidden</code> but 1 returns <code>200 OK</code>, you’ve won the race.</li>
+</ul>
+<h3 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h3>
+<ul>
+<li><strong>Financial Loss</strong>
+<ul>
+<li>Infinite money glitches</li>
+<li>Unauthorized discounts.</li>
+</ul>
+</li>
+<li><strong>Account Takeover (ATO)</strong>
+<ul>
+<li>Subverting password reset MFA logic.</li>
+</ul>
+</li>
+<li><strong>Data Corruption</strong>
+<ul>
+<li>Inconsistent database states.</li>
+</ul>
+</li>
+<li><strong>Privilege Escalation</strong>
+<ul>
+<li>Gaining administrative rights by racing a &ldquo;Join Group&rdquo; and &ldquo;Promote User&rdquo; request.</li>
+</ul>
+</li>
+</ul>
+<h3 id="prevention-techniques">
+  Prevention Techniques
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h3>
+<ul>
+<li><strong>Atomic Database Operations:</strong> Use <code>UPDATE table SET balance = balance - 10 WHERE id = 1 AND balance &gt;= 10</code> instead of &ldquo;Select, then Update.&rdquo;</li>
+<li><strong>Database Locking:</strong> Use pessimistic locking (<code>SELECT ... FOR UPDATE</code>) to lock the row until the transaction is complete.</li>
+<li><strong>Idempotency Keys:</strong> Require a unique client-side generated key for sensitive operations; the server rejects any subsequent requests with the same key.</li>
+<li><strong>Strict State Machines:</strong> Use session-based locks to ensure a user can only have one active transition at a time.</li>
+</ul>
+<h3 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h3>
+<h4 id="burp-suite-repeater">
+  Burp Suite Repeater
+  <a class="anchor" href="#burp-suite-repeater">#</a>
+</h4>
+<p>Use <strong>Proxy</strong> in Burp Suite:</p>
+<ul>
+<li>Perform any action normally (purchase, redeem coupon, transfer money, etc.)</li>
+<li>Intercept the request</li>
+<li>Send it to Repeater</li>
+<li>Inside <strong>Repeater</strong>, you’ll see the raw HTTP request.</li>
+</ul>
+<p>Example:</p>
+<pre tabindex="0"><code>POST /redeem HTTP/1.1
+Host: target.com
+Cookie: session=abc123
+Content-Type: application/json
+
+{&#34;coupon&#34;:&#34;FREE100&#34;}
+</code></pre><p>Create several identical tabs:</p>
+<ul>
+<li>Right click request tab</li>
+<li>Duplicate tab</li>
+<li>Make 5–20 copies</li>
+<li>Each tab = one concurrent request.</li>
+<li>Modern versions of Burp Suite Repeater support sending grouped requests.</li>
+<li>Select multiple repeater tabs</li>
+<li>Choose <strong>Send group in parallel</strong> / <strong>Send all tabs simultaneously</strong></li>
+<li>This fires requests nearly at the same moment.</li>
+<li>Observe Responses</li>
+<li>Look for:  Successful duplicates</li>
+</ul>
+<h4 id="racepwn">
+  Racepwn
+  <a class="anchor" href="#racepwn">#</a>
+</h4>
+<ul>
+<li>Installation</li>
+</ul>
+<pre tabindex="0"><code>docker build -t racepwn .
+</code></pre><pre tabindex="0"><code>docker run -it racepwn bash
+</code></pre><ul>
+<li>Usage</li>
+<li>Set up the configuration file</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;race&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">//</span> Setting race parameters
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;paralell&#34;</span>, <span style="color:#f92672">//</span> race mode
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;delay_time_usec&#34;</span>: <span style="color:#ae81ff">10000</span>, <span style="color:#f92672">//</span> time delay between two request parts
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;last_chunk_size&#34;</span>: <span style="color:#ae81ff">10</span> <span style="color:#f92672">//</span> last request chunck size
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;raw&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;tcp://localhost:8080&#34;</span>, <span style="color:#f92672">//</span> hostname <span style="color:#f92672">and</span> port
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;ssl&#34;</span>: <span style="color:#66d9ef">false</span>, <span style="color:#f92672">//</span> use ssl flag
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;race_param&#34;</span>: [
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">//</span> race data parameters
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;data&#34;</span>: <span style="color:#e6db74">&#34;GET / HTTP/1.1</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">Host: example.com</span><span style="color:#ae81ff">\r\n\r\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">//</span> raw HTTP request
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;count&#34;</span>: <span style="color:#ae81ff">100</span> <span style="color:#f92672">//</span> packets count
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><ul>
+<li>Launch the tool</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>racepwn <span style="color:#f92672">&lt;</span> config.json
+</span></span></code></pre></div><h4 id="race-the-web">
+  Race-The-Web
+  <a class="anchor" href="#race-the-web">#</a>
+</h4>
+<ul>
+<li><strong>Race-the-Web:</strong> CLI tool for testing race conditions.
+<ul>
+<li>
+<p>Installation</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install github.com/swarley7/race-the-web@latest
+</span></span></code></pre></div></li>
+<li>
+<p>Simple Scan</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>race-the-web -u <span style="color:#e6db74">&#34;https://example.com/api/redeem&#34;</span> -m POST -p <span style="color:#e6db74">&#34;coupon=DISCOUNT10&#34;</span> -n <span style="color:#ae81ff">50</span> -c <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>-u</code></strong>: The target URL.</p>
+</li>
+<li>
+<p><strong><code>-m</code></strong>: The HTTP method (POST, GET, etc.).</p>
+</li>
+<li>
+<p><strong><code>-p</code></strong>: The POST body/parameters (if applicable).</p>
+</li>
+<li>
+<p><strong><code>-n</code></strong>: Total number of requests to send (e.g., 50).</p>
+</li>
+<li>
+<p><strong><code>-c</code></strong>: Number of concurrent workers (how many &ldquo;threads&rdquo; to use).</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="turbo-intruder">
+  Turbo Intruder
+  <a class="anchor" href="#turbo-intruder">#</a>
+</h4>
+<ul>
+<li>It is  a Burp Suite Extension which one can download form the Bapp Store</li>
+<li><strong>Send to Turbo:</strong> Right-click your request in the Proxy or Repeater and select <strong>Extensions -&gt; Turbo Intruder -&gt; Send to Turbo Intruder</strong>.</li>
+<li><strong>The Python Script:</strong> You will see a Python window. To perform a race condition, use a &ldquo;Gate&rdquo; (this synchronizes the threads).</li>
+</ul>
+<p><strong>Copy/Paste this Race Logic:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def queueRequests<span style="color:#f92672">(</span>target, wordlists<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>    engine <span style="color:#f92672">=</span> RequestEngine<span style="color:#f92672">(</span>endpoint<span style="color:#f92672">=</span>target.endpoint,
+</span></span><span style="display:flex;"><span>                           concurrentConnections<span style="color:#f92672">=</span>30,
+</span></span><span style="display:flex;"><span>                           requestsPerConnection<span style="color:#f92672">=</span>1,
+</span></span><span style="display:flex;"><span>                           pipeline<span style="color:#f92672">=</span>False
+</span></span><span style="display:flex;"><span>                           <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Queue 30 requests and assign them to a &#39;gate&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i in range<span style="color:#f92672">(</span>30<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>        engine.queue<span style="color:#f92672">(</span>target.req, gate<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;race_gate&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># This &#39;opens&#39; the gate, firing all queued requests at once</span>
+</span></span><span style="display:flex;"><span>    engine.openGate<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;race_gate&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def handleResponse<span style="color:#f92672">(</span>req, interesting<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>    table.add<span style="color:#f92672">(</span>req<span style="color:#f92672">)</span>
+</span></span></code></pre></div><ul>
+<li><strong>Attack:</strong> Click <strong>Attack</strong>. A table will pop up.</li>
+<li><strong>Sort by &ldquo;Time&rdquo;:</strong> If the &ldquo;Time&rdquo; (milliseconds) for all requests is nearly identical, your synchronization worked perfectly. If you see multiple successful status codes (e.g., <code>200 OK</code>), the race condition is confirmed.</li>
+</ul>
+<h3 id="good-to-read">
+  Good to Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h3>
+<ul>
+<li><a href="https://portswigger.net/research/smashing-the-state-machine" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/research/smashing-the-state-machine</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.yeswehack.com/learn-bug-bounty/ultimate-guide-race-condition-vulnerabilities" target="_blank" rel="noreferrer noopener nofollow">https://www.yeswehack.com/learn-bug-bounty/ultimate-guide-race-condition-vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://book.hacktricks.xyz/pentesting-web/race-condition" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.xyz/pentesting-web/race-condition</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/157996#:~:text=Coupons%20hackerone,times%2C%20and%20stacking%20savings%20added" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/157996#:~:text=Coupons hackerone,times%2C and stacking savings added</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.drupal.org/project/drupal/issues/3367493?source=post_page-----c5f233e32b7f---------------------------------------#:~:text=Race,reuse%20an%20already%20used%20token" target="_blank" rel="noreferrer noopener nofollow">https://www.drupal.org/project/drupal/issues/3367493?source=post_page&mdash;&ndash;c5f233e32b7f&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;#:~:text=Race,reuse an already used token</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@keizobugbounty/race-condition-authentication-bypass-leads-to-full-account-takeover-6b5c9bc0a54d" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@keizobugbounty/race-condition-authentication-bypass-leads-to-full-account-takeover-6b5c9bc0a54d</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h3 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h3>
+<ul>
+<li><a href="https://fdzdev.medium.com/guide-to-identifying-and-exploiting-toctou-race-conditions-in-web-applications-c5f233e32b7f" target="_blank" rel="noreferrer noopener nofollow">https://fdzdev.medium.com/guide-to-identifying-and-exploiting-toctou-race-conditions-in-web-applications-c5f233e32b7f</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPRACECONDITION.md" target="_blank" rel="noreferrer noopener nofollow">https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPRACECONDITION.md</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li></li>
+<li><a href="https://portswigger.net/web-security/race-conditions" target="_blank" rel="noreferrer noopener nofollow">PortSwigger Academy: Race Conditions</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/10-Business_Logic_Testing/01-Test_Business_Logic_Data_Validation" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/10-Business_Logic_Testing/01-Test_Business_Logic_Data_Validation</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@iski/race-to-root-how-a-graphql-race-condition-let-me-execute-admin-actions-twice-7e7aa010a52a" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@iski/race-to-root-how-a-graphql-race-condition-let-me-execute-admin-actions-twice-7e7aa010a52a</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/930cd58c048c49a6cd3c5045ba784f0e26bd6d68" title='Last modified by Suraj Kumar | August 13, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 13, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Race%20Conditions.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#race-conditions">Race Conditions</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#types-of-race-conditions">Types of Race Conditions</a></li>
+            <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+            <li><a href="#exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses</a></li>
+            <li><a href="#graphql-race-conditions">GraphQL Race Conditions</a></li>
+            <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a></li>
+            <li><a href="#detection-techniques">Detection Techniques</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#prevention-techniques">Prevention Techniques</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#good-to-read">Good to Read</a></li>
+            <li><a href="#references">References</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

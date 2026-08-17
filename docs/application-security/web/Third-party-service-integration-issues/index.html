@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Third party service integration issues # Description # Third-party service integration issues arise when web applications incorporate external services (e.g., payment gateways, analytics/CDNs, social login providers, APIs, scripts, or libraries). These integrations expand the attack surface by introducing untrusted code, data flows, and trust boundaries. Without proper controls, they enable supply chain attacks, data leakage, injection flaws, and authentication bypasses - often because developers treat third-party components as inherently safe.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Third party service integration issues" />
+<meta property="og:description" content="Third party service integration issues # Description # Third-party service integration issues arise when web applications incorporate external services (e.g., payment gateways, analytics/CDNs, social login providers, APIs, scripts, or libraries). These integrations expand the attack surface by introducing untrusted code, data flows, and trust boundaries. Without proper controls, they enable supply chain attacks, data leakage, injection flaws, and authentication bypasses - often because developers treat third-party components as inherently safe." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Third party service integration issues | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class=" active">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Third party service integration issues</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#third-party-service-integration-issues">Third party service integration issues</a>
+      <ul>
+        <li><a href="#description"><strong>Description</strong></a></li>
+        <li><a href="#understanding-third-party-integrations">Understanding Third-Party Integrations</a>
+          <ul>
+            <li><a href="#trust-boundaries">Trust Boundaries</a></li>
+            <li><a href="#common-third-party-components">Common Third-Party Components</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a>
+          <ul>
+            <li><a href="#common-third-party-integration-weaknesses">Common Third-Party Integration Weaknesses</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#1-unsafe-consumption-of-third-party-apis-owasp-api102023"><strong>1. Unsafe Consumption of Third-Party APIs (OWASP API10:2023)</strong></a></li>
+            <li><a href="#2-third-party-javascript--script-inclusion-issues"><strong>2. Third-Party JavaScript / Script Inclusion Issues</strong></a></li>
+            <li><a href="#3-oauth-20--federated-authentication-misconfigurations"><strong>3. OAuth 2.0 / Federated Authentication Misconfigurations</strong></a></li>
+            <li><a href="#4-exposed-secrets--misconfigured-integration-endpoints"><strong>4. Exposed Secrets &amp; Misconfigured Integration Endpoints</strong></a></li>
+            <li><a href="#5-webhook-validation-failures">5. Webhook Validation Failures</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact"><strong>Impact</strong></a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#good-to-read"><strong>Good to Read:</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="third-party-service-integration-issues">
+  Third party service integration issues
+  <a class="anchor" href="#third-party-service-integration-issues">#</a>
+</h1>
+<hr>
+<h2 id="description">
+  <strong>Description</strong>
+  <a class="anchor" href="#description">#</a>
+</h2>
+<p>Third-party service integration issues arise when web applications incorporate external services (e.g., payment gateways, analytics/CDNs, social login providers, APIs, scripts, or libraries). These integrations expand the attack surface by introducing untrusted code, data flows, and trust boundaries. Without proper controls, they enable supply chain attacks, data leakage, injection flaws, and authentication bypasses - often because developers treat third-party components as inherently safe.</p>
+<p>Almost every app depends on outside services: a CDN for JS libraries, a &ldquo;Login with Google&rdquo; button, a payment gateway, a Slack/Stripe webhook, an npm package. Each of these is a door into the app that the app&rsquo;s own team doesn&rsquo;t fully control.</p>
+<p><strong>The core problem</strong>: developers trust these doors more than they should. They validate what a user types very carefully, but they often skip validation on data or code that comes back from a third party, on the assumption that partners and vendors are automatically safe. They aren&rsquo;t. If a vendor&rsquo;s CDN gets hacked, or a partner API can be manipulated, or an OAuth login flow has a loose check somewhere - that trust gap becomes your entry point.</p>
+<p><strong>Maps to</strong>: OWASP API10:2023 (Unsafe Consumption of APIs), A08:2021 (Software &amp; Data Integrity Failures) overlap, CWE-829 (Inclusion of Functionality from Untrusted Control Sphere).</p>
+<hr>
+<h2 id="understanding-third-party-integrations">
+  Understanding Third-Party Integrations
+  <a class="anchor" href="#understanding-third-party-integrations">#</a>
+</h2>
+<h3 id="trust-boundaries">
+  Trust Boundaries
+  <a class="anchor" href="#trust-boundaries">#</a>
+</h3>
+<p>Every third-party integration introduces a new trust boundary. Even if the external service itself is legitimate, the application must treat every response, callback, script, or authentication token as untrusted until it is validated.</p>
+<p>Typical trust relationships include:</p>
+<ul>
+<li>Browser ↔ Third-party JavaScript</li>
+<li>Application ↔ External APIs</li>
+<li>Identity Provider ↔ OAuth/OIDC Client</li>
+<li>Payment Gateway ↔ Webhook Endpoint</li>
+<li>CI/CD ↔ Dependency Registries (npm, PyPI, Maven)</li>
+</ul>
+<p>A compromise at any point can directly affect the application.</p>
+<hr>
+<h3 id="common-third-party-components">
+  Common Third-Party Components
+  <a class="anchor" href="#common-third-party-components">#</a>
+</h3>
+<ul>
+<li>CDN-hosted JavaScript</li>
+<li>Analytics platforms</li>
+<li>Payment gateways</li>
+<li>OAuth/OIDC providers</li>
+<li>SAML Identity Providers</li>
+<li>Maps &amp; Geolocation APIs</li>
+<li>SMS / Email providers</li>
+<li>Webhooks</li>
+<li>Chat widgets</li>
+<li>Advertisement scripts</li>
+<li>Feature flag providers</li>
+<li>Package managers (npm, pip, Maven)</li>
+</ul>
+<hr>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<ul>
+<li>Client-side script/tag inclusion: <code>&lt;script src=&quot;cdn.vendor.com/...&quot;&gt;</code>, tag managers (GTM), iframes, dynamic imports</li>
+<li>OAuth/OIDC/SAML login flows and redirect handlers</li>
+<li>Server-side calls to external APIs (address validation, payment, geocoding, enrichment services)</li>
+<li>Webhook receivers (Stripe, GitHub, Slack, Twilio callbacks)</li>
+<li>npm/pip/Maven dependencies and their transitive chain</li>
+<li>Source maps and bundled JS shipping secrets</li>
+<li>Third-party plugin ecosystems (WordPress, Shopify apps, browser extensions)</li>
+</ul>
+<h3 id="common-third-party-integration-weaknesses">
+  Common Third-Party Integration Weaknesses
+  <a class="anchor" href="#common-third-party-integration-weaknesses">#</a>
+</h3>
+<ul>
+<li>Missing validation of third-party responses</li>
+<li>Trusting webhook payloads without signature verification</li>
+<li>Wildcard OAuth redirect URIs</li>
+<li>Missing OAuth state validation</li>
+<li>Third-party JavaScript without SRI</li>
+<li>Exposed API keys in frontend bundles</li>
+<li>Loading outdated third-party libraries</li>
+<li>Package dependency confusion</li>
+<li>Dependency hijacking</li>
+<li>Expired CDN or vendor domains</li>
+<li>Blind trust of partner APIs</li>
+<li>Over-privileged API keys</li>
+<li>Missing certificate validation</li>
+<li>Weak TLS configuration when calling external APIs</li>
+</ul>
+<h2 id="exploitation-techniques">
+  Exploitation Techniques
+  <a class="anchor" href="#exploitation-techniques">#</a>
+</h2>
+<h3 id="1-unsafe-consumption-of-third-party-apis-owasp-api102023">
+  <strong>1. Unsafe Consumption of Third-Party APIs (OWASP API10:2023)</strong>
+  <a class="anchor" href="#1-unsafe-consumption-of-third-party-apis-owasp-api102023">#</a>
+</h3>
+<p><strong>Why this happens:</strong> the app&rsquo;s developers wrote strict validation for anything the <em>user</em> types directly into a form. But data that arrives <em>indirectly</em> - through an address-lookup service, a partner API, a webhook - often skips that same validation, because the developer assumes &ldquo;this came from our trusted partner, not a random user.&rdquo; If you, the attacker, can control what that partner service returns (e.g. you submit your own address to an autocomplete field, or you control a webhook payload), you&rsquo;ve smuggled attacker input in through a channel nobody is filtering.</p>
+<p><strong>Where to look:</strong> any field sourced from a third-party integration that gets rendered, queried, or used in a redirect without re-validation - KYC/identity verification responses, marketplace product feeds, partner-submitted webhook data.</p>
+<h3 id="2-third-party-javascript--script-inclusion-issues">
+  <strong>2. Third-Party JavaScript / Script Inclusion Issues</strong>
+  <a class="anchor" href="#2-third-party-javascript--script-inclusion-issues">#</a>
+</h3>
+<p><strong>Why this happens</strong>: when a browser loads <script src="[https://cdn.vendor.com/lib.js](https://cdn.vendor.com/lib.js)">, that script runs with the same trust and permissions as the target site itself. If anyone other than the target can control what that script contains, they effectively have stored XSS on the target - without ever touching the target&rsquo;s own servers.</p>
+<p><strong>Why this is dangerous</strong>: the browser has no way of knowing the script came from a different company. It executes it as if the target site wrote it. So the security of the whole page becomes dependent on the security of a CDN or vendor the target doesn&rsquo;t control.</p>
+<blockquote>
+<p><strong>Find every script that isn&rsquo;t hosted on the target&rsquo;s own domain</strong></p>
+</blockquote>
+<p>Anything pointing outside <code>target.com</code> is worth checking further.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/ | grep -oP &#39;&lt;script[^&gt;]+src=&#34;[^&#34;]+&#34;&#39;
+</span></span></span></code></pre></div><blockquote>
+<p><strong>Check whether each script has Sub Resource Integrity (SRI)</strong></p>
+</blockquote>
+<p>SRI is a hash the browser checks before running the script - if the CDN&rsquo;s content doesn&rsquo;t match the hash, the browser refuses to run it. No SRI means no such safety net.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/ | grep -E &#39;&lt;script[^&gt;]+src=&#39; | grep -v &#39;integrity=&#39;
+</span></span></span></code></pre></div><blockquote>
+<p><strong>Check if the domain behind the script is still owned by anyone legitimate.</strong></p>
+</blockquote>
+<p>If a domain referenced in a <code>&lt;script src&gt;</code> has expired or is about to, anyone  can register it and serve their own JavaScript from it - which the target site will then load and run automatically. This is exactly what happened with Polyfill.io in 2024, affecting 380,000+ sites.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">whois</span> <span style="color:#a6e22e">cdn</span><span style="color:#f92672">-</span><span style="color:#a6e22e">vendor</span><span style="color:#f92672">-</span><span style="color:#a6e22e">domain</span>.<span style="color:#a6e22e">com</span>
+</span></span></code></pre></div><h3 id="3-oauth-20--federated-authentication-misconfigurations">
+  <strong>3. OAuth 2.0 / Federated Authentication Misconfigurations</strong>
+  <a class="anchor" href="#3-oauth-20--federated-authentication-misconfigurations">#</a>
+</h3>
+<p>This is the highest-impact category here. The entire security of this flow depends on one guarantee: <strong>the authorization code can only ever be delivered back to a URL the target site actually owns and controls.</strong> Everything below is about breaking that guarantee. The goal here is simple: get the identity provider to send the authorization code to a URL <em>you</em> control instead of the real app. If you succeed, you get a valid login code for the victim&rsquo;s account.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">what</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">normal</span>, <span style="color:#a6e22e">legitimate</span> <span style="color:#a6e22e">request</span> <span style="color:#a6e22e">looks</span> <span style="color:#a6e22e">like</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/oauth/authorize?client_id=X&amp;redirect_uri=https://target.com/callback&amp;response_type=code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Different</span> <span style="color:#a6e22e">variations</span> <span style="color:#a6e22e">to</span> <span style="color:#66d9ef">try</span> <span style="color:#a6e22e">here</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">authrorization</span> <span style="color:#a6e22e">code</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com.attacker.com/callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com/target.com/callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com@attacker.com/callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/callback/../../evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/%2e%2e/evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/callback%2f..%2f..%2fevil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/legit-open-redirect?url=https://attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.target.com/callback
+</span></span></span></code></pre></div><p><strong>Putting it together - how to actually test this in Burp, step by step:</strong></p>
+<ol>
+<li>Log in through the normal OAuth flow once with Burp&rsquo;s proxy running, so you capture the real <code>/authorize</code> and <code>/callback</code> requests. Send both to Repeater.</li>
+<li>In Repeater, take the <code>/authorize</code> request and swap in each <code>redirect_uri</code> payload from above, one at a time. Resend.</li>
+<li>Look at the response. It should be a redirect (3xx status code). Check the <code>Location</code> header it returns - did the identity provider actually agree to send the code to your modified URI, or did it reject the request?</li>
+</ol>
+<h3 id="4-exposed-secrets--misconfigured-integration-endpoints">
+  <strong>4. Exposed Secrets &amp; Misconfigured Integration Endpoints</strong>
+  <a class="anchor" href="#4-exposed-secrets--misconfigured-integration-endpoints">#</a>
+</h3>
+<p><strong>Why this happens:</strong> anything shipped to the browser as JavaScript can be read by anyone - there&rsquo;s no such thing as a &ldquo;hidden&rdquo; secret in client-side code. Developers sometimes forget this and hardcode an API key meant for a third-party service (payment processor, cloud storage, email provider) directly into the frontend bundle, assuming minification makes it unreadable. It doesn&rsquo;t - it just makes it harder to read, not impossible.</p>
+<blockquote>
+<p><strong>Search for the keys inside the JS file</strong></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">grep</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">EoP</span> <span style="color:#e6db74">&#39;(AKIA[0-9A-Z]{16})&#39;</span> <span style="color:#a6e22e">bundle</span>.<span style="color:#a6e22e">js</span>                        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">AWS</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">key</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grep</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">EoP</span> <span style="color:#e6db74">&#39;(sk_live_[0-9a-zA-Z]{24,})&#39;</span> <span style="color:#a6e22e">bundle</span>.<span style="color:#a6e22e">js</span>                <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Stripe</span> <span style="color:#a6e22e">secret</span> <span style="color:#a6e22e">key</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grep</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">EoP</span> <span style="color:#e6db74">&#39;(AIza[0-9A-Za-z\-_]{35})&#39;</span> <span style="color:#a6e22e">bundle</span>.<span style="color:#a6e22e">js</span>                  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Google</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">key</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grep</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">EoP</span> <span style="color:#e6db74">&#39;(xox[baprs]-[0-9a-zA-Z-]{10,})&#39;</span> <span style="color:#a6e22e">bundle</span>.<span style="color:#a6e22e">js</span>            <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Slack</span> <span style="color:#a6e22e">token</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grep</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">EoP</span> <span style="color:#e6db74">&#39;(ghp_[0-9a-zA-Z]{36})&#39;</span> <span style="color:#a6e22e">bundle</span>.<span style="color:#a6e22e">js</span>                     <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">GitHub</span> <span style="color:#a6e22e">PAT</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>Automate the search instead of relying only on manual grep patterns using Trufflehog tool</strong></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">trufflehog</span> <span style="color:#a6e22e">url</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com --json | jq &#39;select(.Verified==true)&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">trufflehog</span> <span style="color:#a6e22e">github</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">repo</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//github.com/target-org/target-repo
+</span></span></span></code></pre></div><h3 id="5-webhook-validation-failures">
+  5. Webhook Validation Failures
+  <a class="anchor" href="#5-webhook-validation-failures">#</a>
+</h3>
+<p><strong>What a webhook is:</strong> instead of your app constantly asking Stripe &ldquo;did the payment go through yet?&rdquo;, Stripe just sends your app a POST request the moment it happens - &ldquo;hey, this payment succeeded.&rdquo; Your app&rsquo;s webhook endpoint receives that and updates its own database accordingly (marks the order as paid, upgrades the user&rsquo;s plan, etc.).</p>
+<p><strong>The problem:</strong> that endpoint is just a normal URL. If the app doesn&rsquo;t verify that the request genuinely came from Stripe (and not from anyone else who knows the URL), then anyone can POST a fake &ldquo;payment succeeded&rdquo; message directly, without ever paying.</p>
+<blockquote>
+<p><strong>Test whether a signature is required at all</strong></p>
+</blockquote>
+<p>If this returns a 200 OK and no signature header was required, the endpoint is forgeable - you can fake &ldquo;payment succeeded,&rdquo; &ldquo;subscription upgraded,&rdquo; or any other event the app trusts blindly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/webhooks/stripe \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;type&#34;:&#34;charge.succeeded&#34;,&#34;data&#34;:{&#34;object&#34;:{&#34;amount&#34;:0,&#34;metadata&#34;:{&#34;user_id&#34;:&#34;victim_id&#34;}}}}&#39;</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>Test signature replay</strong></p>
+</blockquote>
+<p>Even with a valid signature, if the app doesn&rsquo;t also check a timestamp or a one-time nonce, a signature that was valid once stays valid forever. Capture a real, legitimately-signed webhook payload (from your own test transaction) and resend it later. If the app re-processes it - for example, applying the same &ldquo;subscription upgraded&rdquo; event a second time - that&rsquo;s a replay vulnerability.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/webhooks/stripe \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Stripe-Signature: t=OLD_TIMESTAMP,v1=CAPTURED_SIG&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">captured_payload</span>.<span style="color:#a6e22e">json</span>
+</span></span></code></pre></div><h2 id="impact">
+  <strong>Impact</strong>
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<p><strong>Account takeover</strong> - OAuth redirect_uri/state flaws are the most direct path to full ATO in this category</p>
+<p><strong>Payment/session skimming at scale</strong> - compromised CDN JS = Magecart-style card/session theft across every page load (Polyfill.io: 380,000+ sites)</p>
+<p><strong>Forged business events</strong> - unsigned webhooks let attackers fake &ldquo;payment succeeded,&rdquo; &ldquo;subscription upgraded,&rdquo; &ldquo;KYC verified&rdquo; without paying/completing the real flow</p>
+<p><strong>Secrets → infrastructure compromise</strong> - a single leaked key in a JS bundle can cascade into cloud account compromise if the key has broader IAM permissions than intended</p>
+<p><strong>Regulatory exposure</strong> - PCI-DSS (payment data via compromised third-party script), GDPR (PII sent to/leaked via third-party integration)</p>
+<h2 id="prevention-techniques">
+  <strong>Prevention Techniques</strong>
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h2>
+<ul>
+<li><strong>SRI on every external script/style:</strong> <code>integrity=&quot;sha384-&lt;hash&gt;&quot;</code> + <code>crossorigin=&quot;anonymous&quot;</code></li>
+<li><strong>Strict CSP:</strong> explicit <code>script-src</code> allowlist, no wildcards, <code>object-src 'none'</code>, <code>frame-ancestors 'none'</code></li>
+<li><strong>OAuth: enforce <code>state</code> + PKCE on every flow</strong>, exact-match <code>redirect_uri</code> validation (no wildcard subdomains, no path-prefix matching)</li>
+<li><strong>Webhook signatures verified with constant-time comparison</strong>, timestamp/nonce to block replay, IP allowlisting where the provider publishes static ranges</li>
+<li><strong>No secrets in client bundles:</strong>  proxy third-party API calls server-side; rotate any key found exposed</li>
+<li><strong>Pin dependency and CDN versions:</strong> no <code>@latest</code>, no floating CDN paths</li>
+<li><strong>Monitor domain/subdomain expiry</strong> for anything referenced in production DNS or script tags</li>
+<li><strong>Treat third-party API responses as untrusted input:</strong> same validation/encoding rules as user input, applied at time of consumption, not just at time of ingestion</li>
+</ul>
+<h2 id="tools">
+  <strong>Tools</strong>
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li><strong>Burp Suite:</strong> Intercept &amp; modify requests</li>
+<li><strong>Retire.js:</strong> Detect vulnerable JS libs</li>
+<li><strong>TruffleHog / Gitleaks</strong>: Secret scanning in JS bundles, source maps, and repos</li>
+<li><strong>wpscan</strong>: WordPress plugin/theme vulnerability + enumeration</li>
+<li><strong>jwt_toolIf:</strong> If OAuth issues JWTs - alg confusion, signature stripping tests</li>
+</ul>
+<h2 id="good-to-read">
+  <strong>Good to Read:</strong>
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<ul>
+<li><a href="https://www.intigriti.com/blog/business-insights/how-to-scope-third-party-assets" target="_blank" rel="noreferrer noopener nofollow">https://www.intigriti.com/blog/business-insights/how-to-scope-third-party-assets</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@omarahmed_13016/leaking-pii-at-scale-how-third-parties-can-unintentionally-put-your-data-at-risk-6101fcb3d5e0" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@omarahmed_13016/leaking-pii-at-scale-how-third-parties-can-unintentionally-put-your-data-at-risk-6101fcb3d5e0</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://mokhansec.medium.com/the-p2-bug-you-could-miss-without-reading-the-documentation-b0eacc3b7587" target="_blank" rel="noreferrer noopener nofollow">https://mokhansec.medium.com/the-p2-bug-you-could-miss-without-reading-the-documentation-b0eacc3b7587</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@ahmedelmorsy312/weakness-of-integration-bce1520ba672" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@ahmedelmorsy312/weakness-of-integration-bce1520ba672</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h2 id="references">
+  <strong>References</strong>
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li>OWASP Third Party JavaScript Management Cheat Sheet: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>OWASP API Security Top 10 (2023) – Unsafe Consumption of APIs: <a href="https://owasp.org/API-Security/editions/2023/en/0xaa-unsafe-consumption-of-apis/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/API-Security/editions/2023/en/0xaa-unsafe-consumption-of-apis/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>PortSwigger – OAuth 2.0 authentication vulnerabilities: <a href="https://portswigger.net/web-security/oauth" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/oauth</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Third%20party%20service%20integration%20issues.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#third-party-service-integration-issues">Third party service integration issues</a>
+      <ul>
+        <li><a href="#description"><strong>Description</strong></a></li>
+        <li><a href="#understanding-third-party-integrations">Understanding Third-Party Integrations</a>
+          <ul>
+            <li><a href="#trust-boundaries">Trust Boundaries</a></li>
+            <li><a href="#common-third-party-components">Common Third-Party Components</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a>
+          <ul>
+            <li><a href="#common-third-party-integration-weaknesses">Common Third-Party Integration Weaknesses</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#1-unsafe-consumption-of-third-party-apis-owasp-api102023"><strong>1. Unsafe Consumption of Third-Party APIs (OWASP API10:2023)</strong></a></li>
+            <li><a href="#2-third-party-javascript--script-inclusion-issues"><strong>2. Third-Party JavaScript / Script Inclusion Issues</strong></a></li>
+            <li><a href="#3-oauth-20--federated-authentication-misconfigurations"><strong>3. OAuth 2.0 / Federated Authentication Misconfigurations</strong></a></li>
+            <li><a href="#4-exposed-secrets--misconfigured-integration-endpoints"><strong>4. Exposed Secrets &amp; Misconfigured Integration Endpoints</strong></a></li>
+            <li><a href="#5-webhook-validation-failures">5. Webhook Validation Failures</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact"><strong>Impact</strong></a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#good-to-read"><strong>Good to Read:</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

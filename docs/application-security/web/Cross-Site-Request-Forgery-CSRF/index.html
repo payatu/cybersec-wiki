@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cross-Site Request Forgery (CSRF) # Description # CSRF is an attack that tricks an authenticated user&rsquo;s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can&rsquo;t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.
+Fundamentals — Types of CSRF Attacks # Classic Form-Based CSRF (POST) Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim&rsquo;s cookies.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Cross-Site Request Forgery (CSRF)" />
+<meta property="og:description" content="Cross-Site Request Forgery (CSRF) # Description # CSRF is an attack that tricks an authenticated user&rsquo;s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can&rsquo;t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.
+Fundamentals — Types of CSRF Attacks # Classic Form-Based CSRF (POST) Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim&rsquo;s cookies." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Cross-Site Request Forgery (CSRF) | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class=" active">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Cross-Site Request Forgery (CSRF)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cross-site-request-forgery-csrf">Cross-Site Request Forgery (CSRF)</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#fundamentals--types-of-csrf-attacks">Fundamentals — Types of CSRF Attacks</a>
+          <ul>
+            <li><a href="#requirements-for-successful-csrf">Requirements for Successful CSRF</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface-injection-points">Attack Surface (Injection Points)</a>
+          <ul>
+            <li><a href="#testing-parameters">Testing Parameters</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses</a>
+          <ul>
+            <li><a href="#1-basic-get-csrf">1. Basic GET CSRF</a></li>
+            <li><a href="#2-auto-submitting-form-post">2. Auto-Submitting Form (POST)</a></li>
+            <li><a href="#3-json-body-csrf">3. JSON Body CSRF</a></li>
+            <li><a href="#4-cors--csrf-attack">4. CORS + CSRF Attack</a></li>
+            <li><a href="#5-login-csrf">5. Login CSRF</a></li>
+            <li><a href="#other-vectors">Other Vectors</a></li>
+            <li><a href="#bypasses--variations">Bypasses &amp; Variations</a></li>
+          </ul>
+        </li>
+        <li><a href="#advance-attack-scenarios">Advance Attack Scenarios</a></li>
+        <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#api-testing-tips">API Testing Tips</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#common-anti-csrf-defenses">Common Anti-CSRF Defenses</a></li>
+        <li><a href="#mitigations">Mitigations</a>
+          <ul>
+            <li><a href="#token-based-protection">Token-Based Protection</a></li>
+            <li><a href="#originreferer-validation">Origin/Referer Validation</a></li>
+            <li><a href="#secure-cookie-settings">Secure Cookie Settings</a></li>
+            <li><a href="#server-side-hardening">Server-Side Hardening</a></li>
+            <li><a href="#cors-configuration">CORS Configuration</a></li>
+            <li><a href="#additional-defenses">Additional Defenses</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="cross-site-request-forgery-csrf">
+  Cross-Site Request Forgery (CSRF)
+  <a class="anchor" href="#cross-site-request-forgery-csrf">#</a>
+</h1>
+<h2 id="description">
+  Description
+  <a class="anchor" href="#description">#</a>
+</h2>
+<p>CSRF is an attack that tricks an authenticated user&rsquo;s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can&rsquo;t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.</p>
+<hr>
+<h2 id="fundamentals--types-of-csrf-attacks">
+  Fundamentals — Types of CSRF Attacks
+  <a class="anchor" href="#fundamentals--types-of-csrf-attacks">#</a>
+</h2>
+<ol>
+<li><strong>Classic Form-Based CSRF (POST)</strong>
+<ul>
+<li>Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim&rsquo;s cookies.</li>
+</ul>
+</li>
+<li><strong>GET-Based CSRF</strong>
+<ul>
+<li>State-changing actions mistakenly exposed via GET, exploitable with a single <code>&lt;img&gt;</code> or <code>&lt;iframe&gt;</code> tag — no user interaction needed beyond page load.</li>
+</ul>
+</li>
+<li><strong>JSON/API CSRF</strong>
+<ul>
+<li>Exploits endpoints that accept <code>Content-Type: application/json</code> (or <code>text/plain</code> mislabeled as JSON) without token validation, often chained with CORS/content-type confusion.</li>
+</ul>
+</li>
+<li><strong>Login CSRF</strong>
+<ul>
+<li>Forces a victim to log into the <em>attacker&rsquo;s</em> account on a target site, so subsequent actions (e.g., saved searches, uploaded data) are attributable to/captured by the attacker.</li>
+</ul>
+</li>
+<li><strong>CORS Misconfiguration + CSRF</strong>
+<ul>
+<li>Combines a CORS misconfiguration (<code>Access-Control-Allow-Origin: *</code> + <code>Access-Control-Allow-Credentials: true</code>) with CSRF to not just trigger an action but also <strong>read the response</strong>, turning CSRF into full account takeover territory.</li>
+</ul>
+</li>
+<li><strong>Click-Based / UI-Driven CSRF</strong>
+<ul>
+<li>Requires a click (e.g., an auto-submit button disguised as something else) — often combined with clickjacking (<code>&lt;iframe&gt;</code> overlay) to mask intent.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="requirements-for-successful-csrf">
+  Requirements for Successful CSRF
+  <a class="anchor" href="#requirements-for-successful-csrf">#</a>
+</h3>
+<p>A CSRF attack is generally possible only when all of the following conditions are met:</p>
+<ul>
+<li>The victim is authenticated to the target application.</li>
+<li>Authentication relies on automatically sent credentials (cookies, client certificates, NTLM, etc.).</li>
+<li>A state-changing action is performed without proper CSRF protection.</li>
+<li>The attacker can cause the victim&rsquo;s browser to send a crafted request.</li>
+<li>The application does not properly validate anti-CSRF tokens, Origin, or Referer headers.</li>
+</ul>
+<hr>
+<h2 id="attack-surface-injection-points">
+  Attack Surface (Injection Points)
+  <a class="anchor" href="#attack-surface-injection-points">#</a>
+</h2>
+<ul>
+<li>State-changing actions without CSRF token:
+<ul>
+<li>Update email/password</li>
+<li>Transfer funds</li>
+<li>Delete account or change role</li>
+</ul>
+</li>
+<li>Forms lacking CSRF tokens</li>
+<li>GET or POST requests with session cookies but no token</li>
+<li>JSON API endpoints using session cookies</li>
+<li>Admin actions, banking, or settings pages</li>
+<li>Misconfigured <code>SameSite</code> or CORS headers</li>
+</ul>
+<h3 id="testing-parameters">
+  Testing Parameters
+  <a class="anchor" href="#testing-parameters">#</a>
+</h3>
+<ul>
+<li>Try submitting requests from another origin</li>
+<li>Remove or tamper with the CSRF token</li>
+<li>Replay request with <code>Origin</code> and <code>Referer</code> modified/absent</li>
+<li>Send requests with:
+<ul>
+<li><code>Content-Type: application/json</code></li>
+<li><code>text/plain</code></li>
+<li><code>multipart/form-data</code></li>
+</ul>
+</li>
+<li>Attempt attack via:
+<ul>
+<li><code>&lt;img&gt;</code></li>
+<li><code>&lt;iframe&gt;</code></li>
+<li><code>&lt;script&gt;</code></li>
+<li>Form with auto-submit</li>
+</ul>
+</li>
+<li>Common Headers to Inspect
+<ul>
+<li>Origin</li>
+<li>Referer</li>
+<li>Cookie</li>
+<li>Set-Cookie</li>
+<li>SameSite</li>
+<li>Access-Control-Allow-Origin</li>
+<li>Access-Control-Allow-Credentials</li>
+<li>X-CSRF-Token</li>
+<li>X-Requested-With</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="exploitation-and-bypassing-defenses">
+  Exploitation and Bypassing Defenses
+  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
+</h2>
+<h3 id="1-basic-get-csrf">
+  1. Basic GET CSRF
+  <a class="anchor" href="#1-basic-get-csrf">#</a>
+</h3>
+<p><strong>Payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/delete_user?id=123&gt;&#34;</span>&gt;
+</span></span></code></pre></div><h3 id="2-auto-submitting-form-post">
+  2. Auto-Submitting Form (POST)
+  <a class="anchor" href="#2-auto-submitting-form-post">#</a>
+</h3>
+<p><strong>Payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/update_email&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;attacker@evil.com&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">forms</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">submit</span>();&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h3 id="3-json-body-csrf">
+  3. JSON Body CSRF
+  <a class="anchor" href="#3-json-body-csrf">#</a>
+</h3>
+<p><strong>Conditions:</strong></p>
+<ul>
+<li><code>Content-Type: application/json</code></li>
+<li>Server accepts cookies for auth</li>
+<li>No CSRF protection in headers</li>
+<li>Depends on CORS misconfig + acceptance of &ldquo;simple&rdquo; content types</li>
+</ul>
+<p><strong>Payload:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;attacker@evil.com&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Headers:</strong></p>
+<pre tabindex="0"><code>POST /api/profile/update HTTP/1.1
+Host: target.com
+Content-Type: application/json
+Cookie: sessionid=abc123
+</code></pre><h3 id="4-cors--csrf-attack">
+  4. CORS + CSRF Attack
+  <a class="anchor" href="#4-cors--csrf-attack">#</a>
+</h3>
+<p><strong>Exploit (in attacker&rsquo;s domain):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;&lt;https://target.com/api/transfer&gt;&#34;</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;include&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span> },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">amount</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span>, <span style="color:#a6e22e">to</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;attacker&#34;</span> })
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="5-login-csrf">
+  5. Login CSRF
+  <a class="anchor" href="#5-login-csrf">#</a>
+</h3>
+<p>Force the victim to authenticate into the attacker&rsquo;s account.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/login&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;attacker&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password123&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">forms</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">submit</span>();&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>If successful, subsequent actions performed by the victim are associated with the attacker&rsquo;s account.</p>
+<h3 id="other-vectors">
+  Other Vectors
+  <a class="anchor" href="#other-vectors">#</a>
+</h3>
+<ul>
+<li><code>&lt;iframe src=&quot;&lt;https://target.com/delete_account&gt;&quot;&gt;</code></li>
+<li><code>&lt;script src=&quot;&lt;https://target.com/delete_user?id=1&gt;&quot;&gt;</code></li>
+<li>Use different <code>Content-Type</code> values to bypass validation:
+<ul>
+<li><code>application/x-www-form-urlencoded</code></li>
+<li><code>multipart/form-data</code></li>
+<li><code>text/plain</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="bypasses--variations">
+  Bypasses &amp; Variations
+  <a class="anchor" href="#bypasses--variations">#</a>
+</h3>
+<ul>
+<li>JSON CSRF (no CSRF token, uses cookies)</li>
+<li>Content-Type confusion bypass</li>
+<li>CORS misconfiguration + credentials</li>
+<li>Omit <code>Origin</code> or <code>Referer</code> headers (may bypass naive checks)</li>
+<li>Replay with removed/invalid/missing token</li>
+<li><strong>Token leakage via Referer:</strong> if the CSRF token appears in a GET URL, it can leak to third parties via the <code>Referer</code> header.</li>
+<li><strong>Method override bypass:</strong> using <code>X-HTTP-Method-Override</code> header to send a GET as a POST/PUT/DELETE where only GET is protected.</li>
+<li><strong>Flash/legacy no-CORS tricks:</strong> older apps sometimes allow multipart form submission to bypass strict JSON-only parsers, re-enabling classic form-based CSRF on endpoints &ldquo;protected&rdquo; by content-type checks.</li>
+<li>SameSite bypasses (Lax+GET behavior, sibling subdomains, browser-specific behavior)</li>
+</ul>
+<hr>
+<h2 id="advance-attack-scenarios">
+  Advance Attack Scenarios
+  <a class="anchor" href="#advance-attack-scenarios">#</a>
+</h2>
+<ul>
+<li><strong>CSRF Chained with Stored XSS:</strong> Use a stored XSS to programmatically read the CSRF token from the DOM and include it in a forged request, defeating token-based protection entirely.</li>
+<li><strong>CSRF Token Fixation:</strong> If the token isn&rsquo;t rotated after login or is set via a value the attacker can predict/plant (e.g., cookie-based double-submit without proper binding), the attacker pre-sets a known token and forges valid requests.</li>
+<li><strong>Double-Submit Cookie Bypass:</strong> When the CSRF defense compares a cookie value to a request parameter without server-side session binding, an attacker who can set cookies on the victim&rsquo;s browser (via a subdomain XSS or cookie injection) can forge both sides.</li>
+<li><strong>CSRF via Clickjacking Overlay:</strong> Wrap a legitimate-looking button in an invisible iframe pointing to the sensitive action, tricking the victim into &ldquo;clicking&rdquo; a hidden auto-submit trigger.</li>
+<li><strong>CSRF on Multi-Step Actions (Chained Requests):</strong> When a &ldquo;wizard&rdquo;-style flow only protects the final step, forge just that last request while relying on the victim&rsquo;s already-established earlier session state.</li>
+<li><strong>Login CSRF Leading to Data Exfiltration:</strong> Force login as attacker&rsquo;s account, then have the victim unknowingly upload/save sensitive data into the attacker-controlled account.</li>
+<li><strong>Client-Side CSRF (JavaScript CSRF):</strong> Single Page Applications (SPAs) may unintentionally construct requests using attacker-controlled URL fragments, query parameters, or postMessage data. Even though the server validates CSRF tokens correctly, vulnerable client-side JavaScript can still trigger authenticated actions.</li>
+</ul>
+<hr>
+<h2 id="framework-specific-scenarios">
+  Framework-Specific Scenarios
+  <a class="anchor" href="#framework-specific-scenarios">#</a>
+</h2>
+<ul>
+<li><strong>Django:</strong> Missing <code>{% csrf_token %}</code> in a form, or <code>@csrf_exempt</code> left on a state-changing view by mistake; <code>CSRF_TRUSTED_ORIGINS</code> misconfigured to include wildcard/staging subdomains.</li>
+<li><strong>Spring (Spring Security):</strong> CSRF protection disabled globally (<code>http.csrf().disable()</code>) for &ldquo;API convenience,&rdquo; inadvertently exposing session-cookie-authenticated endpoints.</li>
+<li><strong>Ruby on Rails:</strong> <code>protect_from_forgery</code> set to <code>:null_session</code> or skipped via <code>skip_before_action :verify_authenticity_token</code> on specific controllers handling sensitive actions.</li>
+<li><strong>Express.js (csurf/csrf-csrf middleware):</strong> Token validation middleware mounted after route handlers, or excluded on JSON API routes under the assumption &ldquo;APIs don&rsquo;t need CSRF protection&rdquo; (false when cookie-based auth is used).</li>
+<li><a href="http://asp.net/" target="_blank" rel="noreferrer noopener nofollow">**ASP.NET</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">:** <code>[ValidateAntiForgeryToken]</code> attribute missing on a POST action, or anti-forgery cookie not scoped correctly across subdomains.</li>
+<li><strong>Laravel:</strong> Routes added to <code>VerifyCsrfToken</code>&rsquo;s <code>$except</code> array for testing and never removed before production.</li>
+</ul>
+<hr>
+<h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="manual-detection">
+  Manual Detection
+  <a class="anchor" href="#manual-detection">#</a>
+</h3>
+<ul>
+<li>Inspect forms/requests for the presence and validation of a CSRF token.</li>
+<li>Strip or tamper with the token and resend — a <code>200 OK</code> or success response indicates no server-side validation.</li>
+<li>Change request <code>Content-Type</code> (JSON → form-urlencoded, etc.) and observe whether the action still succeeds without a token.</li>
+<li>Check whether <code>Origin</code>/<code>Referer</code> are validated by omitting or spoofing them.</li>
+<li>Build a standalone HTML PoC page and load it in a browser with an active victim session to confirm real-world exploitability end-to-end.</li>
+</ul>
+<h3 id="api-testing-tips">
+  API Testing Tips
+  <a class="anchor" href="#api-testing-tips">#</a>
+</h3>
+<ul>
+<li>Check whether cookie-based API endpoints enforce CSRF protection.</li>
+<li>Test endpoints accepting both JSON and form-urlencoded bodies.</li>
+<li>Try removing custom CSRF headers.</li>
+<li>Test mobile/web API endpoints separately, as protections often differ.</li>
+<li>Verify whether bearer-token APIs are actually vulnerable (pure Authorization header-based APIs are generally not affected by CSRF).</li>
+</ul>
+<h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<ul>
+<li><strong>Burp Suite:</strong> Use the built-in &ldquo;Generate CSRF PoC&rdquo; feature on any request, plus Burp Scanner&rsquo;s CSRF checks.</li>
+<li><strong>OWASP ZAP:</strong> Automated active scan rules flag missing/weak anti-CSRF tokens.</li>
+<li>Custom scripts to crawl state-changing endpoints and flag any accepting requests without a valid, session-bound token.</li>
+</ul>
+<hr>
+<h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li>Perform unauthorized actions on behalf of authenticated users.</li>
+<li>Modify account information such as email addresses, passwords, or profile details.</li>
+<li>Transfer funds or abuse business logic in financial applications.</li>
+<li>Change security settings, including MFA, recovery email, or notification preferences.</li>
+<li>Perform privileged administrative actions if an administrator is targeted.</li>
+<li>Force victims to interact with attacker-controlled accounts through Login CSRF.</li>
+<li>Trigger sensitive operations such as account deletion, order placement, or subscription changes.</li>
+<li>Lead to account compromise, financial loss, unauthorized access, and business process abuse depending on the affected functionality.</li>
+</ul>
+<hr>
+<h2 id="common-anti-csrf-defenses">
+  Common Anti-CSRF Defenses
+  <a class="anchor" href="#common-anti-csrf-defenses">#</a>
+</h2>
+<p>Applications commonly defend against CSRF using one or more of the following:</p>
+<ul>
+<li>Synchronizer (stateful) CSRF tokens</li>
+<li>Double-submit cookie pattern</li>
+<li>SameSite cookie attribute</li>
+<li>Origin header validation</li>
+<li>Referer header validation</li>
+<li>Custom request headers (e.g., <code>X-CSRF-Token</code>, <code>X-Requested-With</code>)</li>
+<li>User interaction requirements (password confirmation, CAPTCHA, MFA)</li>
+</ul>
+<hr>
+<h2 id="mitigations">
+  Mitigations
+  <a class="anchor" href="#mitigations">#</a>
+</h2>
+<h3 id="token-based-protection">
+  Token-Based Protection
+  <a class="anchor" href="#token-based-protection">#</a>
+</h3>
+<ul>
+<li>Use <strong>CSRF tokens</strong> in forms and headers</li>
+<li>Bind token to session, rotate frequently</li>
+<li>Verify token on server-side for all state-changing requests</li>
+</ul>
+<h3 id="originreferer-validation">
+  Origin/Referer Validation
+  <a class="anchor" href="#originreferer-validation">#</a>
+</h3>
+<ul>
+<li>Strictly check <code>Origin</code> and <code>Referer</code> headers</li>
+<li>Reject requests without expected values</li>
+</ul>
+<h3 id="secure-cookie-settings">
+  Secure Cookie Settings
+  <a class="anchor" href="#secure-cookie-settings">#</a>
+</h3>
+<ul>
+<li>Use <code>SameSite=Lax</code> or <code>Strict</code> for session cookies</li>
+<li>Set <code>HttpOnly</code> and <code>Secure</code> flags</li>
+</ul>
+<h3 id="server-side-hardening">
+  Server-Side Hardening
+  <a class="anchor" href="#server-side-hardening">#</a>
+</h3>
+<ul>
+<li>Never perform sensitive actions via GET</li>
+<li>Use POST or other non-simple methods</li>
+<li>Require re-authentication for critical actions</li>
+</ul>
+<h3 id="cors-configuration">
+  CORS Configuration
+  <a class="anchor" href="#cors-configuration">#</a>
+</h3>
+<ul>
+<li>Do not allow wildcard origins () with credentials</li>
+<li>Use strict <code>Access-Control-Allow-Origin</code> per origin</li>
+<li>Disable <code>Access-Control-Allow-Credentials</code> unless absolutely needed</li>
+</ul>
+<h3 id="additional-defenses">
+  Additional Defenses
+  <a class="anchor" href="#additional-defenses">#</a>
+</h3>
+<ul>
+<li>CAPTCHA or re-auth for critical flows</li>
+<li>Per-request nonce in headers for APIs</li>
+<li>OAuth/OIDC login flows should always validate the <code>state</code> parameter to prevent CSRF during authorization.</li>
+</ul>
+<hr>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li>Burp Suite (Manual &amp; CSRF PoC Generator)</li>
+<li>OWASP ZAP (Active Scan CSRF rules)</li>
+<li>OWASP CSRFTester</li>
+<li>Postman / curl for crafting test requests</li>
+<li>Web browser DevTools (modify request headers)</li>
+</ul>
+<hr>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<p><strong>HackerOne / Real-World Reports</strong></p>
+<ul>
+<li><a href="https://hackerone.com/reports/1626356" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1626356</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/2736979" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2736979</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/1727221" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1727221</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<hr>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://medium.com/@yadav-ajay/cross-site-request-forgery-csrf-64066cddbfb3" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@yadav-ajay/cross-site-request-forgery-csrf-64066cddbfb3</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@raia39499/a-deep-dive-into-logout-csrf-vulnerability-e40e1fa7f465" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@raia39499/a-deep-dive-into-logout-csrf-vulnerability-e40e1fa7f465</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://owasp.org/www-community/attacks/csrf" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/csrf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.cobalt.io/blog/a-pentesters-guide-to-cross-site-request-forgery-csrf" target="_blank" rel="noreferrer noopener nofollow">https://www.cobalt.io/blog/a-pentesters-guide-to-cross-site-request-forgery-csrf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://infosecwriteups.com/bug-bounty-hunting-web-vulnerability-cross-site-request-forgery-54aefdf60bf8" target="_blank" rel="noreferrer noopener nofollow">https://infosecwriteups.com/bug-bounty-hunting-web-vulnerability-cross-site-request-forgery-54aefdf60bf8</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://portswigger.net/web-security/csrf" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/csrf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Cross-Site%20Request%20Forgery" target="_blank" rel="noreferrer noopener nofollow">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Cross-Site%20Request%20Forgery</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://github.com/tuhin1729/Bug-Bounty-Methodology/blob/main/CSRF.md" target="_blank" rel="noreferrer noopener nofollow">https://github.com/tuhin1729/Bug-Bounty-Methodology/blob/main/CSRF.md</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://bugbase.ai/blog/how-to-bypass-csrf-protection" target="_blank" rel="noreferrer noopener nofollow">https://bugbase.ai/blog/how-to-bypass-csrf-protection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://book.hacktricks.xyz/pentesting-web/csrf-cross-site-request-forgery" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.xyz/pentesting-web/csrf-cross-site-request-forgery</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<hr>
+<p><em>(Mindmap: To be included later)</em></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Cross-Site%20Request%20Forgery%20%28CSRF%29.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cross-site-request-forgery-csrf">Cross-Site Request Forgery (CSRF)</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#fundamentals--types-of-csrf-attacks">Fundamentals — Types of CSRF Attacks</a>
+          <ul>
+            <li><a href="#requirements-for-successful-csrf">Requirements for Successful CSRF</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface-injection-points">Attack Surface (Injection Points)</a>
+          <ul>
+            <li><a href="#testing-parameters">Testing Parameters</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses</a>
+          <ul>
+            <li><a href="#1-basic-get-csrf">1. Basic GET CSRF</a></li>
+            <li><a href="#2-auto-submitting-form-post">2. Auto-Submitting Form (POST)</a></li>
+            <li><a href="#3-json-body-csrf">3. JSON Body CSRF</a></li>
+            <li><a href="#4-cors--csrf-attack">4. CORS + CSRF Attack</a></li>
+            <li><a href="#5-login-csrf">5. Login CSRF</a></li>
+            <li><a href="#other-vectors">Other Vectors</a></li>
+            <li><a href="#bypasses--variations">Bypasses &amp; Variations</a></li>
+          </ul>
+        </li>
+        <li><a href="#advance-attack-scenarios">Advance Attack Scenarios</a></li>
+        <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#api-testing-tips">API Testing Tips</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#common-anti-csrf-defenses">Common Anti-CSRF Defenses</a></li>
+        <li><a href="#mitigations">Mitigations</a>
+          <ul>
+            <li><a href="#token-based-protection">Token-Based Protection</a></li>
+            <li><a href="#originreferer-validation">Origin/Referer Validation</a></li>
+            <li><a href="#secure-cookie-settings">Secure Cookie Settings</a></li>
+            <li><a href="#server-side-hardening">Server-Side Hardening</a></li>
+            <li><a href="#cors-configuration">CORS Configuration</a></li>
+            <li><a href="#additional-defenses">Additional Defenses</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

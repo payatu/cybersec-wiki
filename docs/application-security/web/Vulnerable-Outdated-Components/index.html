@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vulnerable &amp; Outdated Components # Vulnerable and Outdated Components is a security vulnerability that occurs when an application uses libraries, frameworks, or software with known security vulnerabilities, unsupported versions, or missing patches, allowing attackers to exploit publicly disclosed issues to compromise the application.
+Understanding Vulnerable Components # Applications rely on third-party libraries and frameworks Components may contain publicly known vulnerabilities Vulnerabilities are tracked using CVE identifiers Outdated or unsupported versions increase risk Attackers search for known vulnerable component versions Attack Surfaces # JavaScript libraries Backend frameworks Third-party dependencies CMS plugins and themes (e.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Vulnerable &amp; Outdated Components" />
+<meta property="og:description" content="Vulnerable &amp; Outdated Components # Vulnerable and Outdated Components is a security vulnerability that occurs when an application uses libraries, frameworks, or software with known security vulnerabilities, unsupported versions, or missing patches, allowing attackers to exploit publicly disclosed issues to compromise the application.
+Understanding Vulnerable Components # Applications rely on third-party libraries and frameworks Components may contain publicly known vulnerabilities Vulnerabilities are tracked using CVE identifiers Outdated or unsupported versions increase risk Attackers search for known vulnerable component versions Attack Surfaces # JavaScript libraries Backend frameworks Third-party dependencies CMS plugins and themes (e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Vulnerable &amp; Outdated Components | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class=" active">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Vulnerable &amp; Outdated Components</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#vulnerable--outdated-components">Vulnerable &amp; Outdated Components</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#understanding-vulnerable-components"><strong>Understanding Vulnerable Components</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces"><strong>Attack Surfaces</strong></a></li>
+        <li><a href="#exploitation-techniques"><strong>Exploitation Techniques</strong></a></li>
+        <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#impacts"><strong>Impacts</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#mitigation--preventions"><strong>Mitigation &amp; Preventions</strong></a></li>
+        <li><a href="#good-to-read"><strong>Good To Read</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="vulnerable--outdated-components">
+  Vulnerable &amp; Outdated Components
+  <a class="anchor" href="#vulnerable--outdated-components">#</a>
+</h1>
+<p>Vulnerable and Outdated Components is a security vulnerability that occurs when an application uses libraries, frameworks, or software with known security vulnerabilities, unsupported versions, or missing patches, allowing attackers to exploit publicly disclosed issues to compromise the application.</p>
+<hr>
+<h3 id="understanding-vulnerable-components">
+  <strong>Understanding Vulnerable Components</strong>
+  <a class="anchor" href="#understanding-vulnerable-components">#</a>
+</h3>
+<ul>
+<li>Applications rely on third-party libraries and frameworks</li>
+<li>Components may contain publicly known vulnerabilities</li>
+<li>Vulnerabilities are tracked using CVE identifiers</li>
+<li>Outdated or unsupported versions increase risk</li>
+<li>Attackers search for known vulnerable component versions</li>
+</ul>
+<hr>
+<h2 id="attack-surfaces">
+  <strong>Attack Surfaces</strong>
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h2>
+<ul>
+<li>JavaScript libraries</li>
+<li>Backend frameworks</li>
+<li>Third-party dependencies</li>
+<li>CMS plugins and themes (e.g. WordPress, Joomla, Drupal, Shopify)</li>
+<li>Web server software</li>
+<li>Package dependencies</li>
+</ul>
+<hr>
+<h2 id="exploitation-techniques">
+  <strong>Exploitation Techniques</strong>
+  <a class="anchor" href="#exploitation-techniques">#</a>
+</h2>
+<ul>
+<li>
+<p><strong>Identify outdated JavaScript library</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">scriptsrc</span><span style="color:#960050;background-color:#1e0010">=&#34;/</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">jquery</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">1.7.2.min.js</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>Search for known vulnerabilities in that version by using targeted search queries such as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#e6db74">&#34;jquery 1.7.2&#34;</span> (<span style="color:#a6e22e">vulnerability</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">exploit</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">cve</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">poc</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">advisory</span>) (<span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">nvd</span>.<span style="color:#a6e22e">nist</span>.<span style="color:#a6e22e">gov</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">exploit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">com</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">snyk</span>.<span style="color:#a6e22e">io</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span>)
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Version disclosure in Response Headers</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Server</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Apache</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2.4.49</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Powered</span><span style="color:#f92672">-</span><span style="color:#a6e22e">By</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">PHP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">5.6.40</span>
+</span></span></code></pre></div><p>Look for known exploits for disclosed versions by using targeted search queries such as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#e6db74">&#34;PHP 5.6.40&#34;</span> (<span style="color:#a6e22e">vulnerability</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">exploit</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">cve</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">poc</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">advisory</span>) (<span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">nvd</span>.<span style="color:#a6e22e">nist</span>.<span style="color:#a6e22e">gov</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">exploit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">com</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">snyk</span>.<span style="color:#a6e22e">io</span> <span style="color:#a6e22e">OR</span> <span style="color:#a6e22e">site</span><span style="color:#f92672">:</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span>)
+</span></span></code></pre></div><hr>
+<ul>
+<li>
+<p><strong>Check dependency files</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">/package.json</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">/requirements.txt</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">/pom.xml</span>
+</span></span></code></pre></div></li>
+</ul>
+<p>Outdated dependencies may contain CVEs.</p>
+<hr>
+<h2 id="detection-techniques">
+  <strong>Detection Techniques</strong>
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h4 id="manual-detection-techniques">
+  <strong>Manual Detection Techniques</strong>
+  <a class="anchor" href="#manual-detection-techniques">#</a>
+</h4>
+<ul>
+<li>Inspect JavaScript files for version numbers</li>
+<li>Check response headers for software versions</li>
+<li>Review dependency files</li>
+<li>Inspect CMS version disclosure</li>
+<li>Check static file naming patterns</li>
+</ul>
+<p>Indicators of Vulnerability</p>
+<ul>
+<li>Outdated component version</li>
+<li>Public CVE exists</li>
+<li>Unsupported software version</li>
+<li>Version disclosed in responses</li>
+</ul>
+<hr>
+<h4 id="automated-detection-techniques">
+  <strong>Automated Detection Techniques</strong>
+  <a class="anchor" href="#automated-detection-techniques">#</a>
+</h4>
+<p><strong>Dependency Scanners</strong></p>
+<ul>
+<li><a href="https://github.com/dependency-check/DependencyCheck" target="_blank" rel="noreferrer noopener nofollow">OWASP Dependency Check</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://github.com/retirejs/retire.js/" target="_blank" rel="noreferrer noopener nofollow">Retire.js</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> (Burp Extension Available)</li>
+<li><a href="https://docs.npmjs.com/cli/v10/commands/npm-audit" target="_blank" rel="noreferrer noopener nofollow">npm audit</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://portswigger.net/bappstore/ae62baff8fa24150991bad5eaf6d4d38" target="_blank" rel="noreferrer noopener nofollow">Software Version Reporter</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> (Burp Extention)</li>
+</ul>
+<p><strong>Vulnerability Scanners</strong></p>
+<ul>
+<li><a href="https://www.kali.org/tools/nikto/" target="_blank" rel="noreferrer noopener nofollow">Nikto</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.kali.org/tools/nuclei/" target="_blank" rel="noreferrer noopener nofollow">Nuclei</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> → nuclei -u <a href="https://target.com/" target="_blank" rel="noreferrer noopener nofollow">https://target.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> -tags cve, tech</li>
+<li>Scan for an specific CVE using: nuclei -u <a href="https://target.com/" target="_blank" rel="noreferrer noopener nofollow">https://target.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> -id CVE-2021-44228</li>
+</ul>
+<hr>
+<h2 id="impacts">
+  <strong>Impacts</strong>
+  <a class="anchor" href="#impacts">#</a>
+</h2>
+<ul>
+<li>
+<p>Exploitation of publicly known vulnerabilities</p>
+<p>Attackers can easily identify and exploit known issues in outdated software versions by referencing public databases like the <a href="https://nvd.nist.gov/vuln" target="_blank" rel="noreferrer noopener nofollow">National Vulnerability Database</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> and the <a href="https://www.cve.org/" target="_blank" rel="noreferrer noopener nofollow">CVE Program</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">, reducing the effort required to compromise the system.</p>
+</li>
+<li>
+<p>Remote code execution through vulnerable components</p>
+<p>Certain vulnerabilities such as <a href="https://nvd.nist.gov/vuln/detail/CVE-2019-11043" target="_blank" rel="noreferrer noopener nofollow"><strong>CVE-2019-11043 (PHP-FPM RCE)</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;">, <strong>C<a href="https://nvd.nist.gov/vuln/detail/CVE-2021-41773" target="_blank" rel="noreferrer noopener nofollow">VE-2021-41773 (Apache Path Traversal/RCE)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> and</strong> <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228" target="_blank" rel="noreferrer noopener nofollow">**CVE-2021-44228 (Log4Shell)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">** may allow attackers to execute arbitrary code on the server, potentially leading to full system control and unauthorized operations.</p>
+</li>
+<li>
+<p>Known Vulnerable Flows in the Framework Lead to Authentication Bypass</p>
+<p>Weaknesses in outdated frameworks can allow attackers to bypass login mechanisms and gain unauthorized access without valid credentials.</p>
+</li>
+<li>
+<p>Information disclosure from outdated software</p>
+<p>Older versions may expose sensitive information such as configuration details, system paths, or user data, which can aid attackers in further exploitation.</p>
+</li>
+<li>
+<p>Privilege escalation through vulnerable dependencies</p>
+<p>Attackers with limited access can exploit vulnerabilities to gain higher privileges, potentially achieving administrative or root-level control.</p>
+</li>
+<li>
+<p>Full application compromise</p>
+<p>By chaining multiple vulnerabilities, attackers can completely take over the application, including its data, functionality, and underlying infrastructure.</p>
+</li>
+<li>
+<p>Denial of Service (DoS) / Distributed Denial of Service (DDoS)
+Vulnerabilities such as <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-23864" target="_blank" rel="noreferrer noopener nofollow"><strong>CVE-2026-23864</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> may allow attackers to trigger resource exhaustion, leading to denial of service (DoS) and application downtime.</p>
+</li>
+</ul>
+<hr>
+<h2 id="tools">
+  <strong>Tools</strong>
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li><a href="https://github.com/dependency-check/DependencyCheck" target="_blank" rel="noreferrer noopener nofollow">OWASP Dependency Check</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">, <a href="https://github.com/retirejs/retire.js/" target="_blank" rel="noreferrer noopener nofollow">Retire.js</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">, <a href="https://docs.npmjs.com/cli/v10/commands/npm-audit" target="_blank" rel="noreferrer noopener nofollow">npm audit</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li><a href="https://www.kali.org/tools/nikto/" target="_blank" rel="noreferrer noopener nofollow">Nikto</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">, <a href="https://www.kali.org/tools/nuclei/" target="_blank" rel="noreferrer noopener nofollow">Nuclei</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">, <a href="https://portswigger.net/burp/communitydownload" target="_blank" rel="noreferrer noopener nofollow">Burp Suite</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<hr>
+<h2 id="mitigation--preventions">
+  <strong>Mitigation &amp; Preventions</strong>
+  <a class="anchor" href="#mitigation--preventions">#</a>
+</h2>
+<ul>
+<li><strong>Maintain inventory of all components:</strong>
+Keep an up-to-date record of all libraries, frameworks, and dependencies used in the application to easily track and manage their security status.</li>
+<li><strong>Regularly update libraries and frameworks:</strong>
+Ensure all components are updated to the latest stable versions to reduce exposure to known vulnerabilities and security flaws.</li>
+<li><strong>Remove unused dependencies:</strong>
+Eliminate unnecessary or unused libraries from the codebase to minimize the attack surface and reduce potential risks.</li>
+<li><strong>Monitor vulnerability advisories:</strong>
+Continuously monitor trusted sources such as the National Vulnerability Database and the CVE Program for newly disclosed vulnerabilities affecting your components.</li>
+<li><strong>Use supported component versions:</strong>
+Avoid using end-of-life or unsupported software, as they no longer receive security updates or patches.</li>
+<li><strong>Implement automated dependency scanning:</strong>
+Use automated tools to regularly scan for outdated or vulnerable components and receive alerts for required updates.</li>
+</ul>
+<hr>
+<h2 id="good-to-read">
+  <strong>Good To Read</strong>
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<p><a href="https://hackerone.com/reports/1430622" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1430622</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-2621" target="_blank" rel="noreferrer noopener nofollow">https://nvd.nist.gov/vuln/detail/CVE-2023-2621</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://publisher.hitachienergy.com/preview?DocumentId=8DBD000177&amp;languageCode=en&amp;Preview=true" target="_blank" rel="noreferrer noopener nofollow">https://publisher.hitachienergy.com/preview?DocumentId=8DBD000177&amp;languageCode=en&amp;Preview=true</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-25103" target="_blank" rel="noreferrer noopener nofollow">https://nvd.nist.gov/vuln/detail/CVE-2024-25103</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2025-67779" target="_blank" rel="noreferrer noopener nofollow">https://www.cve.org/CVERecord?id=CVE-2025-67779</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-55182" target="_blank" rel="noreferrer noopener nofollow">https://nvd.nist.gov/vuln/detail/CVE-2025-55182</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-55184" target="_blank" rel="noreferrer noopener nofollow">https://nvd.nist.gov/vuln/detail/CVE-2025-55184</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-23864" target="_blank" rel="noreferrer noopener nofollow">https://nvd.nist.gov/vuln/detail/CVE-2026-23864</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<hr>
+<h2 id="references">
+  <strong>References</strong>
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/index.html" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/2021/A06_2021-Vulnerable_and_Outdated_Components/index.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.invicti.com/blog/web-security/vulnerable-and-outdated-components-owasp-top-10" target="_blank" rel="noreferrer noopener nofollow">https://www.invicti.com/blog/web-security/vulnerable-and-outdated-components-owasp-top-10</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.acunetix.com/blog/web-security-zone/vulnerable-and-outdated-components-owasp-top-10/" target="_blank" rel="noreferrer noopener nofollow">https://www.acunetix.com/blog/web-security-zone/vulnerable-and-outdated-components-owasp-top-10/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://blog.securelayer7.net/a06-vulnerable-outdated-components/" target="_blank" rel="noreferrer noopener nofollow">https://blog.securelayer7.net/a06-vulnerable-outdated-components/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://learn.snyk.io/lesson/vulnerable-and-outdated-components/?ecosystem=python" target="_blank" rel="noreferrer noopener nofollow">https://learn.snyk.io/lesson/vulnerable-and-outdated-components/?ecosystem=python</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.geeksforgeeks.org/ethical-hacking/vulnerable-and-outdated-components-in-owasp-top-10/" target="_blank" rel="noreferrer noopener nofollow">https://www.geeksforgeeks.org/ethical-hacking/vulnerable-and-outdated-components-in-owasp-top-10/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://qawerk.com/blog/vulnerable-and-outdated-components/" target="_blank" rel="noreferrer noopener nofollow">https://qawerk.com/blog/vulnerable-and-outdated-components/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Vulnerable%20&amp;%20Outdated%20Components.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#vulnerable--outdated-components">Vulnerable &amp; Outdated Components</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#understanding-vulnerable-components"><strong>Understanding Vulnerable Components</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces"><strong>Attack Surfaces</strong></a></li>
+        <li><a href="#exploitation-techniques"><strong>Exploitation Techniques</strong></a></li>
+        <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#impacts"><strong>Impacts</strong></a></li>
+        <li><a href="#tools"><strong>Tools</strong></a></li>
+        <li><a href="#mitigation--preventions"><strong>Mitigation &amp; Preventions</strong></a></li>
+        <li><a href="#good-to-read"><strong>Good To Read</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

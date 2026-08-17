@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Cache Poisoning # What is Web Cache Poisoning? # It’s when an attacker injects a malicious response into the cache, which is then served to unsuspecting users. If the cache stores and delivers that response without verifying it properly, you’ve got a poisonable cache.
+Fundamentals # Web cache poisoning occurs when a response is cached using one set of request attributes (cache key), while the response content is influenced by other attacker-controlled inputs that are not included in that key.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Web Cache Poisoning" />
+<meta property="og:description" content="Web Cache Poisoning # What is Web Cache Poisoning? # It’s when an attacker injects a malicious response into the cache, which is then served to unsuspecting users. If the cache stores and delivers that response without verifying it properly, you’ve got a poisonable cache.
+Fundamentals # Web cache poisoning occurs when a response is cached using one set of request attributes (cache key), while the response content is influenced by other attacker-controlled inputs that are not included in that key." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Web Cache Poisoning | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class=" active">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Web Cache Poisoning</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#web-cache-poisoning">Web Cache Poisoning</a>
+      <ul>
+        <li><a href="#what-is-web-cache-poisoning">What is Web Cache Poisoning?</a></li>
+        <li><a href="#fundamentals">Fundamentals</a>
+          <ul>
+            <li><a href="#cache-poisoning-flow">Cache Poisoning Flow</a></li>
+            <li><a href="#cache-key-vs-unkeyed-input">Cache Key vs Unkeyed Input</a></li>
+            <li><a href="#typical-requirement">Typical Requirement</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a>
+          <ul>
+            <li><a href="#high-risk-inputs">High-Risk Inputs</a></li>
+          </ul>
+        </li>
+        <li><a href="#common-scenarios--real-world-examples">Common Scenarios &amp; Real-World Examples</a>
+          <ul>
+            <li><a href="#1-converting-reflected-xss-into-stored-xss-via-x-forwarded-headers">1. Converting Reflected XSS into Stored XSS via X-Forwarded Headers</a></li>
+            <li><a href="#2-open-redirect-via-cached-location-header">2. Open Redirect via Cached Location Header</a></li>
+            <li><a href="#3-cache-key-normalization-issues"><strong>3. Cache Key Normalization Issues</strong></a></li>
+            <li><a href="#4-query-parameter-poisoning"><strong>4. Query Parameter Poisoning</strong></a></li>
+            <li><a href="#5-cookie-poisoning"><strong>5. Cookie Poisoning</strong></a></li>
+            <li><a href="#6-dom-based-cache-poisoning"><strong>6. DOM-Based Cache Poisoning</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#header-based-poisoning">Header-Based Poisoning</a></li>
+            <li><a href="#query-parameter-poisoning">Query Parameter Poisoning</a></li>
+            <li><a href="#cookie-based-poisoning">Cookie-Based Poisoning</a></li>
+            <li><a href="#redirect-poisoning">Redirect Poisoning</a></li>
+            <li><a href="#stored-xss-via-cache">Stored XSS via Cache</a></li>
+          </ul>
+        </li>
+        <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#split-cache-key-poisoning">Split Cache Key Poisoning</a></li>
+            <li><a href="#cache-deception">Cache Deception</a></li>
+            <li><a href="#normalization-mismatch">Normalization Mismatch</a></li>
+            <li><a href="#parameter-cloaking">Parameter Cloaking</a></li>
+            <li><a href="#host-header-poisoning">Host Header Poisoning</a></li>
+            <li><a href="#cdn-edge-vs-origin-mismatch">CDN Edge vs Origin Mismatch</a></li>
+          </ul>
+        </li>
+        <li><a href="#payloads">Payloads</a></li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses--tricks">Bypasses &amp; Tricks</a>
+          <ul>
+            <li><a href="#1-path-normalization">1. Path Normalization</a></li>
+            <li><a href="#2-double-encoding">2. Double Encoding</a></li>
+            <li><a href="#3-null-bytes">3. Null Bytes</a></li>
+            <li><a href="#4-header-case-manipulation">4. Header Case Manipulation</a></li>
+            <li><a href="#5-smuggling-via-crlf-less-common-now">5. Smuggling via CRLF (less common now)</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#defense--best-practices">Defense &amp; Best Practices</a>
+          <ul>
+            <li><a href="#application-layer">Application Layer</a></li>
+            <li><a href="#cacheproxy-layer">Cache/Proxy Layer</a></li>
+            <li><a href="#security-config">Security Config</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="web-cache-poisoning">
+  Web Cache Poisoning
+  <a class="anchor" href="#web-cache-poisoning">#</a>
+</h1>
+<h2 id="what-is-web-cache-poisoning">
+  What is Web Cache Poisoning?
+  <a class="anchor" href="#what-is-web-cache-poisoning">#</a>
+</h2>
+<p>It’s when an attacker <strong>injects a malicious response</strong> into the cache, which is then <strong>served to unsuspecting users</strong>. If the cache stores and delivers that response without verifying it properly, you’ve got a poisonable cache.</p>
+<h2 id="fundamentals">
+  Fundamentals
+  <a class="anchor" href="#fundamentals">#</a>
+</h2>
+<p>Web cache poisoning occurs when a response is cached using one set of request attributes (cache key), while the response content is influenced by other attacker-controlled inputs that are not included in that key.</p>
+<h3 id="cache-poisoning-flow">
+  Cache Poisoning Flow
+  <a class="anchor" href="#cache-poisoning-flow">#</a>
+</h3>
+<ol>
+<li>Attacker sends a request containing a manipulated header, cookie, query parameter, or path.</li>
+<li>The backend uses that input when generating the response.</li>
+<li>The caching layer stores the response under a cache key.</li>
+<li>The malicious response is served to subsequent users requesting the same cached resource.</li>
+</ol>
+<h3 id="cache-key-vs-unkeyed-input">
+  Cache Key vs Unkeyed Input
+  <a class="anchor" href="#cache-key-vs-unkeyed-input">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cache Key</td>
+<td>The values used by the cache to identify a unique response (e.g., path, host, method, selected headers).</td>
+</tr>
+<tr>
+<td>Unkeyed Input</td>
+<td>A value that changes the response but is not included in the cache key.</td>
+</tr>
+<tr>
+<td>Poisoned Response</td>
+<td>The cached response containing attacker-controlled content.</td>
+</tr>
+<tr>
+<td>Cache Hit</td>
+<td>The poisoned response is served to other users.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="typical-requirement">
+  Typical Requirement
+  <a class="anchor" href="#typical-requirement">#</a>
+</h3>
+<p>A successful web cache poisoning attack generally requires:</p>
+<ul>
+<li>The response is cacheable.</li>
+<li>User-controlled input influences the response.</li>
+<li>That input is not part of the cache key.</li>
+<li>The poisoned response is served to other users.</li>
+</ul>
+<h3 id="how-it-works">
+  How It Works
+  <a class="anchor" href="#how-it-works">#</a>
+</h3>
+<ol>
+<li>The attacker finds a way to inject malicious input (e.g., headers, query strings).</li>
+<li>The backend reflects that input into the response.</li>
+<li>The caching layer stores that response.</li>
+<li>Other users receive the poisoned response without ever seeing the attacker&rsquo;s original request.</li>
+</ol>
+<p>For example, if a reverse proxy (like Varnish, Cloudflare, Akamai) caches responses <strong>without considering attacker-controlled headers or query params</strong>, that’s a prime opportunity.</p>
+<hr>
+<h2 id="attack-surface">
+  Attack Surface
+  <a class="anchor" href="#attack-surface">#</a>
+</h2>
+<p>Look for cacheable endpoints where request input affects the response:</p>
+<ul>
+<li>Home pages and landing pages</li>
+<li>Login and logout pages</li>
+<li>Password reset flows</li>
+<li>Search results</li>
+<li>Redirect endpoints</li>
+<li>Static asset URLs (JS, CSS, images)</li>
+<li>CDN-backed content</li>
+<li>API endpoints with public caching</li>
+<li>Error pages</li>
+<li>Localization and language selection</li>
+<li>A/B testing or feature flag responses</li>
+<li>User-agent specific responses</li>
+</ul>
+<h3 id="high-risk-inputs">
+  High-Risk Inputs
+  <a class="anchor" href="#high-risk-inputs">#</a>
+</h3>
+<ul>
+<li>Host header</li>
+<li>X-Forwarded-Host</li>
+<li>X-Forwarded-Proto</li>
+<li>X-Original-URL</li>
+<li>X-Rewrite-URL</li>
+<li>Referer</li>
+<li>Origin</li>
+<li>Cookies</li>
+<li>Query parameters</li>
+<li>Path segments</li>
+<li>Accept-Language</li>
+<li>User-Agent</li>
+</ul>
+<hr>
+<h2 id="common-scenarios--real-world-examples">
+  Common Scenarios &amp; Real-World Examples
+  <a class="anchor" href="#common-scenarios--real-world-examples">#</a>
+</h2>
+<h3 id="1-converting-reflected-xss-into-stored-xss-via-x-forwarded-headers">
+  1. Converting Reflected XSS into Stored XSS via X-Forwarded Headers
+  <a class="anchor" href="#1-converting-reflected-xss-into-stored-xss-via-x-forwarded-headers">#</a>
+</h3>
+<pre tabindex="0"><code>GET / HTTP/1.1
+Host: victim.com
+X-Forwarded-Host: attacker.com
+</code></pre><ul>
+<li>Backend reflects this header in HTML (e.g., <code>&lt;base href&gt;</code>, redirect URLs).</li>
+<li>CDN caches it for everyone. Boom, stored XSS.</li>
+</ul>
+<h3 id="2-open-redirect-via-cached-location-header">
+  2. Open Redirect via Cached Location Header
+  <a class="anchor" href="#2-open-redirect-via-cached-location-header">#</a>
+</h3>
+<pre tabindex="0"><code>GET /login HTTP/1.1
+X-Forwarded-Host: evil.com
+</code></pre><ul>
+<li>Location header becomes: <code>Location: https://evil.com/dashboard</code></li>
+<li>Redirect is cached.</li>
+</ul>
+<h3 id="3-cache-key-normalization-issues">
+  <strong>3. Cache Key Normalization Issues</strong>
+  <a class="anchor" href="#3-cache-key-normalization-issues">#</a>
+</h3>
+<ul>
+<li>Some caches normalize keys inconsistently.</li>
+<li><strong>Examples:</strong>
+<ul>
+<li>Case sensitivity (<strong><code>/page</code></strong> vs <strong><code>/Page</code></strong>)</li>
+<li>URL encoding (<strong><code>%41</code></strong> vs <strong><code>A</code></strong>)</li>
+<li>Trailing slashes (<strong><code>/path</code></strong> vs <strong><code>/path/</code></strong>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-query-parameter-poisoning">
+  <strong>4. Query Parameter Poisoning</strong>
+  <a class="anchor" href="#4-query-parameter-poisoning">#</a>
+</h3>
+<ul>
+<li>
+<p>If query parameters are unkeyed but reflected:</p>
+<pre tabindex="0"><code>GET /?utm_source=evil HTTP/1.1
+Host: example.com
+</code></pre><ul>
+<li>If <strong><code>utm_source</code></strong> is unkeyed but embedded in a script, it can poison the cache.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-cookie-poisoning">
+  <strong>5. Cookie Poisoning</strong>
+  <a class="anchor" href="#5-cookie-poisoning">#</a>
+</h3>
+<ul>
+<li>
+<p>If cookies influence the response but are not part of the cache key:</p>
+<p>http</p>
+<pre tabindex="0"><code>GET / HTTP/1.1Host: example.comCookie: lang=en; malicious_payload=alert(1)
+</code></pre></li>
+</ul>
+<h3 id="6-dom-based-cache-poisoning">
+  <strong>6. DOM-Based Cache Poisoning</strong>
+  <a class="anchor" href="#6-dom-based-cache-poisoning">#</a>
+</h3>
+<ul>
+<li>If JavaScript dynamically generates cache keys, attackers can manipulate DOM inputs.</li>
+</ul>
+<hr>
+<h2 id="exploitation-techniques">
+  Exploitation Techniques
+  <a class="anchor" href="#exploitation-techniques">#</a>
+</h2>
+<h3 id="header-based-poisoning">
+  Header-Based Poisoning
+  <a class="anchor" href="#header-based-poisoning">#</a>
+</h3>
+<p>Manipulate headers that are reflected into the response but not included in the cache key.</p>
+<pre tabindex="0"><code>GET / HTTP/1.1
+Host: victim.com
+X-Forwarded-Host: evil.com
+</code></pre><h3 id="query-parameter-poisoning">
+  Query Parameter Poisoning
+  <a class="anchor" href="#query-parameter-poisoning">#</a>
+</h3>
+<p>Use parameters that change the response but are ignored by the cache key.</p>
+<pre tabindex="0"><code>GET /?utm_source=evil HTTP/1.1
+Host: victim.com
+</code></pre><h3 id="cookie-based-poisoning">
+  Cookie-Based Poisoning
+  <a class="anchor" href="#cookie-based-poisoning">#</a>
+</h3>
+<p>Inject values through cookies when the response changes but the cookie is not part of the cache key.</p>
+<pre tabindex="0"><code>GET / HTTP/1.1
+Host: victim.com
+Cookie: theme=dark; payload=evil
+</code></pre><h3 id="redirect-poisoning">
+  Redirect Poisoning
+  <a class="anchor" href="#redirect-poisoning">#</a>
+</h3>
+<p>Influence the Location header and cache the malicious redirect.</p>
+<pre tabindex="0"><code>GET /login HTTP/1.1
+Host: victim.com
+X-Forwarded-Host: evil.com
+</code></pre><h3 id="stored-xss-via-cache">
+  Stored XSS via Cache
+  <a class="anchor" href="#stored-xss-via-cache">#</a>
+</h3>
+<p>Inject a payload that is reflected into HTML or JavaScript, then cached for other users.</p>
+<pre tabindex="0"><code>GET /?q=&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt; HTTP/1.1
+Host: victim.com
+</code></pre><hr>
+<h2 id="advanced-attack-scenarios">
+  Advanced Attack Scenarios
+  <a class="anchor" href="#advanced-attack-scenarios">#</a>
+</h2>
+<h3 id="split-cache-key-poisoning">
+  Split Cache Key Poisoning
+  <a class="anchor" href="#split-cache-key-poisoning">#</a>
+</h3>
+<p>The backend and cache disagree on which request components define a unique response.</p>
+<h3 id="cache-deception">
+  Cache Deception
+  <a class="anchor" href="#cache-deception">#</a>
+</h3>
+<p>A dynamic response is cached as if it were a static resource.</p>
+<h3 id="normalization-mismatch">
+  Normalization Mismatch
+  <a class="anchor" href="#normalization-mismatch">#</a>
+</h3>
+<p>The cache and backend normalize paths differently.</p>
+<p>Examples:</p>
+<ul>
+<li>/page vs /Page</li>
+<li>/path vs /path/</li>
+<li>%2F vs /</li>
+<li>%2e%2e/ vs ../</li>
+</ul>
+<h3 id="parameter-cloaking">
+  Parameter Cloaking
+  <a class="anchor" href="#parameter-cloaking">#</a>
+</h3>
+<p>Duplicate parameters are interpreted differently by the cache and backend.</p>
+<pre tabindex="0"><code>GET /?id=1&amp;id=2 HTTP/1.1
+</code></pre><h3 id="host-header-poisoning">
+  Host Header Poisoning
+  <a class="anchor" href="#host-header-poisoning">#</a>
+</h3>
+<p>The backend generates absolute URLs using attacker-controlled host information.</p>
+<h3 id="cdn-edge-vs-origin-mismatch">
+  CDN Edge vs Origin Mismatch
+  <a class="anchor" href="#cdn-edge-vs-origin-mismatch">#</a>
+</h3>
+<p>The CDN caches a response differently from the origin server.</p>
+<hr>
+<h2 id="payloads">
+  Payloads
+  <a class="anchor" href="#payloads">#</a>
+</h2>
+<ul>
+<li>Common Headers to Play With</li>
+</ul>
+<pre tabindex="0"><code>X-Forwarded-Host: evil.com
+X-Forwarded-Server: evil.com
+X-Forwarded-Scheme: javascript:
+X-Original-URL: /admin
+X-Rewrite-URL: /admin
+</code></pre><ul>
+<li>Useful Query Params</li>
+</ul>
+<pre tabindex="0"><code>?cb=1234
+?debug=true
+?param=&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre><p>Try duplicate query parameters (<code>?id=1&amp;id=2</code>), junk params (<code>?unused=value</code>), and weird encodings (<code>%00</code>, <code>%2F</code>, <code>%2e</code>).</p>
+<hr>
+<h2 id="test-cases">
+  Test Cases
+  <a class="anchor" href="#test-cases">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Test</th>
+<th>Expected Indicator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header reflection</td>
+<td>Add X-Forwarded-Host</td>
+<td>Reflected in response</td>
+</tr>
+<tr>
+<td>Query reflection</td>
+<td>Add random parameter</td>
+<td>Reflected in response</td>
+</tr>
+<tr>
+<td>Cache hit</td>
+<td>Repeat request</td>
+<td>X-Cache: HIT</td>
+</tr>
+<tr>
+<td>Parameter order</td>
+<td>Swap parameter order</td>
+<td>Same cached response</td>
+</tr>
+<tr>
+<td>Path case</td>
+<td>/Page vs /page</td>
+<td>Same cached response</td>
+</tr>
+<tr>
+<td>Trailing slash</td>
+<td>/path vs /path/</td>
+<td>Same cached response</td>
+</tr>
+<tr>
+<td>Duplicate parameter</td>
+<td>id=1&amp;id=2</td>
+<td>Different backend behavior</td>
+</tr>
+<tr>
+<td>Cookie influence</td>
+<td>Add custom cookie</td>
+<td>Response changes</td>
+</tr>
+<tr>
+<td>Redirect poisoning</td>
+<td>Modify host header</td>
+<td>Cached redirect</td>
+</tr>
+<tr>
+<td>Stored XSS</td>
+<td>Inject reflected payload</td>
+<td>Payload served to others</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="detection-techniques">
+  Detection Techniques
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="manual-detection">
+  Manual Detection
+  <a class="anchor" href="#manual-detection">#</a>
+</h3>
+<ul>
+<li>Check Cache-Control headers.</li>
+<li>Check X-Cache, CF-Cache-Status, Age, or similar headers.</li>
+<li>Identify reflected input in the response.</li>
+<li>Repeat requests to confirm caching.</li>
+<li>Compare responses with and without attacker-controlled input.</li>
+<li>Test parameter order, case sensitivity, encoding, and trailing slashes.</li>
+<li>Test duplicate parameters.</li>
+<li>Test unkeyed headers.</li>
+</ul>
+<h3 id="automated-detection">
+  Automated Detection
+  <a class="anchor" href="#automated-detection">#</a>
+</h3>
+<ul>
+<li>Burp Suite Param Miner</li>
+<li>Burp Web Cache Poisoning Scanner</li>
+<li>Nuclei cache poisoning templates</li>
+<li>OWASP ZAP</li>
+<li>autopoisoner</li>
+<li>Custom scripts for repeated request comparison</li>
+</ul>
+<hr>
+<h2 id="bypasses--tricks">
+  Bypasses &amp; Tricks
+  <a class="anchor" href="#bypasses--tricks">#</a>
+</h2>
+<h3 id="1-path-normalization">
+  1. Path Normalization
+  <a class="anchor" href="#1-path-normalization">#</a>
+</h3>
+<ul>
+<li><code>/..;/admin</code> may resolve to <code>/admin</code> but look different to the cache.</li>
+</ul>
+<h3 id="2-double-encoding">
+  2. Double Encoding
+  <a class="anchor" href="#2-double-encoding">#</a>
+</h3>
+<ul>
+<li><code>%252e%252e/</code> → <code>%2e%2e/</code> → <code>../</code></li>
+</ul>
+<h3 id="3-null-bytes">
+  3. Null Bytes
+  <a class="anchor" href="#3-null-bytes">#</a>
+</h3>
+<ul>
+<li><code>%00</code> or <code>%00%00</code> to truncate or confuse backends.</li>
+</ul>
+<h3 id="4-header-case-manipulation">
+  4. Header Case Manipulation
+  <a class="anchor" href="#4-header-case-manipulation">#</a>
+</h3>
+<ul>
+<li><code>x-forwarded-host</code>, <code>X-Forwarded-Host</code>, <code>X-FoRwArDeD-HoSt</code></li>
+</ul>
+<h3 id="5-smuggling-via-crlf-less-common-now">
+  5. Smuggling via CRLF (less common now)
+  <a class="anchor" href="#5-smuggling-via-crlf-less-common-now">#</a>
+</h3>
+<pre tabindex="0"><code>X-Test: injected\r\nSet-Cookie: admin=true
+</code></pre><hr>
+<h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<p>Successful web cache poisoning may lead to:</p>
+<ul>
+<li>Stored XSS affecting many users</li>
+<li>Open redirect attacks</li>
+<li>Session theft</li>
+<li>Credential theft</li>
+<li>Account takeover</li>
+<li>Delivery of malicious JavaScript</li>
+<li>Defacement of cached pages</li>
+<li>Phishing through trusted domains</li>
+<li>CDN-wide impact</li>
+<li>Denial of service</li>
+<li>Cache deception</li>
+<li>Information disclosure</li>
+</ul>
+<hr>
+<h2 id="defense--best-practices">
+  Defense &amp; Best Practices
+  <a class="anchor" href="#defense--best-practices">#</a>
+</h2>
+<h3 id="application-layer">
+  Application Layer
+  <a class="anchor" href="#application-layer">#</a>
+</h3>
+<ul>
+<li>
+<p>Don’t reflect <code>Host</code>, <code>X-Forwarded-*</code> headers unless necessary.</p>
+</li>
+<li>
+<p>Sanitize inputs used in redirects, templates, and JSON.</p>
+</li>
+<li>
+<p>Add <code>Vary:</code> headers properly for all inputs affecting output.</p>
+</li>
+<li>
+<p>Example:</p>
+<pre tabindex="0"><code>Cache-Control: no-store
+Vary: X-Forwarded-Host
+</code></pre></li>
+</ul>
+<h3 id="cacheproxy-layer">
+  Cache/Proxy Layer
+  <a class="anchor" href="#cacheproxy-layer">#</a>
+</h3>
+<ul>
+<li>Whitelist which headers affect routing.</li>
+<li>Normalize and strip unknown or unnecessary headers.</li>
+<li>Use <code>no-store</code>, <code>private</code>, <code>no-cache</code> for dynamic content.</li>
+<li>Avoid wildcard caching rules.</li>
+</ul>
+<h3 id="security-config">
+  Security Config
+  <a class="anchor" href="#security-config">#</a>
+</h3>
+<ul>
+<li>Disable caching for unauthenticated/dynamic pages.</li>
+<li>Log and monitor suspicious cache keys and hit/miss ratios.</li>
+</ul>
+<hr>
+<h2 id="references">
+  References
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p><a href="https://portswigger.net/web-security/web-cache-poisoning" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/web-cache-poisoning</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://owasp.org/www-community/attacks/Cache_Poisoning" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/Cache_Poisoning</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.vaadata.com/blog/web-cache-poisoning-attacks-and-security-best-practices/" target="_blank" rel="noreferrer noopener nofollow">https://www.vaadata.com/blog/web-cache-poisoning-attacks-and-security-best-practices/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.cobalt.io/blog/hacking-web-cache-deep-dive-in-web-cache-poisoning-attacks" target="_blank" rel="noreferrer noopener nofollow">https://www.cobalt.io/blog/hacking-web-cache-deep-dive-in-web-cache-poisoning-attacks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://owasp.org/www-community/attacks/Cache_Poisoning" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/Cache_Poisoning</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://www.jianjunchen.com/p/web-cache-posioning.CCS24.pdf" target="_blank" rel="noreferrer noopener nofollow">https://www.jianjunchen.com/p/web-cache-posioning.CCS24.pdf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> (Research Paper)</p>
+<p><a href="https://bxmbn.medium.com/how-i-test-for-web-cache-vulnerabilities-tips-and-tricks-9b138da08ff9" target="_blank" rel="noreferrer noopener nofollow">https://bxmbn.medium.com/how-i-test-for-web-cache-vulnerabilities-tips-and-tricks-9b138da08ff9</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://infosecwriteups.com/web-cache-poisoning-wwwwwh-ee2b47d6bacc" target="_blank" rel="noreferrer noopener nofollow">https://infosecwriteups.com/web-cache-poisoning-wwwwwh-ee2b47d6bacc</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/1424094" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1424094</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/394016" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/394016</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<p><a href="https://hackerone.com/reports/1424094" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1424094</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Web%20Cache%20Poisoning.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#web-cache-poisoning">Web Cache Poisoning</a>
+      <ul>
+        <li><a href="#what-is-web-cache-poisoning">What is Web Cache Poisoning?</a></li>
+        <li><a href="#fundamentals">Fundamentals</a>
+          <ul>
+            <li><a href="#cache-poisoning-flow">Cache Poisoning Flow</a></li>
+            <li><a href="#cache-key-vs-unkeyed-input">Cache Key vs Unkeyed Input</a></li>
+            <li><a href="#typical-requirement">Typical Requirement</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surface">Attack Surface</a>
+          <ul>
+            <li><a href="#high-risk-inputs">High-Risk Inputs</a></li>
+          </ul>
+        </li>
+        <li><a href="#common-scenarios--real-world-examples">Common Scenarios &amp; Real-World Examples</a>
+          <ul>
+            <li><a href="#1-converting-reflected-xss-into-stored-xss-via-x-forwarded-headers">1. Converting Reflected XSS into Stored XSS via X-Forwarded Headers</a></li>
+            <li><a href="#2-open-redirect-via-cached-location-header">2. Open Redirect via Cached Location Header</a></li>
+            <li><a href="#3-cache-key-normalization-issues"><strong>3. Cache Key Normalization Issues</strong></a></li>
+            <li><a href="#4-query-parameter-poisoning"><strong>4. Query Parameter Poisoning</strong></a></li>
+            <li><a href="#5-cookie-poisoning"><strong>5. Cookie Poisoning</strong></a></li>
+            <li><a href="#6-dom-based-cache-poisoning"><strong>6. DOM-Based Cache Poisoning</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#exploitation-techniques">Exploitation Techniques</a>
+          <ul>
+            <li><a href="#header-based-poisoning">Header-Based Poisoning</a></li>
+            <li><a href="#query-parameter-poisoning">Query Parameter Poisoning</a></li>
+            <li><a href="#cookie-based-poisoning">Cookie-Based Poisoning</a></li>
+            <li><a href="#redirect-poisoning">Redirect Poisoning</a></li>
+            <li><a href="#stored-xss-via-cache">Stored XSS via Cache</a></li>
+          </ul>
+        </li>
+        <li><a href="#advanced-attack-scenarios">Advanced Attack Scenarios</a>
+          <ul>
+            <li><a href="#split-cache-key-poisoning">Split Cache Key Poisoning</a></li>
+            <li><a href="#cache-deception">Cache Deception</a></li>
+            <li><a href="#normalization-mismatch">Normalization Mismatch</a></li>
+            <li><a href="#parameter-cloaking">Parameter Cloaking</a></li>
+            <li><a href="#host-header-poisoning">Host Header Poisoning</a></li>
+            <li><a href="#cdn-edge-vs-origin-mismatch">CDN Edge vs Origin Mismatch</a></li>
+          </ul>
+        </li>
+        <li><a href="#payloads">Payloads</a></li>
+        <li><a href="#test-cases">Test Cases</a></li>
+        <li><a href="#detection-techniques">Detection Techniques</a>
+          <ul>
+            <li><a href="#manual-detection">Manual Detection</a></li>
+            <li><a href="#automated-detection">Automated Detection</a></li>
+          </ul>
+        </li>
+        <li><a href="#bypasses--tricks">Bypasses &amp; Tricks</a>
+          <ul>
+            <li><a href="#1-path-normalization">1. Path Normalization</a></li>
+            <li><a href="#2-double-encoding">2. Double Encoding</a></li>
+            <li><a href="#3-null-bytes">3. Null Bytes</a></li>
+            <li><a href="#4-header-case-manipulation">4. Header Case Manipulation</a></li>
+            <li><a href="#5-smuggling-via-crlf-less-common-now">5. Smuggling via CRLF (less common now)</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#defense--best-practices">Defense &amp; Best Practices</a>
+          <ul>
+            <li><a href="#application-layer">Application Layer</a></li>
+            <li><a href="#cacheproxy-layer">Cache/Proxy Layer</a></li>
+            <li><a href="#security-config">Security Config</a></li>
+          </ul>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

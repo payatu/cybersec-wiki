@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Account Takeover (ATO) # Introduction # Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.
-ATO is typically not a single vulnerability but a chain of authentication and logic flaws that result in full account compromise.
-Fundamentals of Account Takeover # Core Concept # Account takeover occurs when the authentication or identity verification process is bypassed, broken, or abused, allowing an attacker to impersonate a legitimate user.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Account Takeover" />
-<meta property="og:description" content="Account Takeover (ATO) # Introduction # Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.
-ATO is typically not a single vulnerability but a chain of authentication and logic flaws that result in full account compromise.
-Fundamentals of Account Takeover # Core Concept # Account takeover occurs when the authentication or identity verification process is bypassed, broken, or abused, allowing an attacker to impersonate a legitimate user." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Account Takeover | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Account Takeover (ATO)# Introduction# Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.
+ATO is typically not a single vulnerability but a chain of authentication and logic flaws that result in full account compromise.
+Fundamentals of Account Takeover# Core Concept# Account takeover occurs when the authentication or identity verification process is bypassed, broken, or abused, allowing an attacker to impersonate a legitimate user.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Account Takeover">
+	<meta property="og:description" content="Account Takeover (ATO)# Introduction# Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.
+ATO is typically not a single vulnerability but a chain of authentication and logic flaws that result in full account compromise.
+Fundamentals of Account Takeover# Core Concept# Account takeover occurs when the authentication or identity verification process is bypassed, broken, or abused, allowing an attacker to impersonate a legitimate user.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Account Takeover">
+	<meta itemprop="description" content="Account Takeover (ATO)# Introduction# Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.
+ATO is typically not a single vulnerability but a chain of authentication and logic flaws that result in full account compromise.
+Fundamentals of Account Takeover# Core Concept# Account takeover occurs when the authentication or identity verification process is bypassed, broken, or abused, allowing an attacker to impersonate a legitimate user.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="945">
+
+<title>Account Takeover • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Account-Takeover/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -43,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -58,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -75,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -92,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -179,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -227,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -982,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1004,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1026,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1048,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1070,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1105,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1127,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1149,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1171,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1207,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Account Takeover</strong>
+  <h3>Account Takeover</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1334,88 +1333,51 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="account-takeover-ato">
-  Account Takeover (ATO)
-  <a class="anchor" href="#account-takeover-ato">#</a>
-</h1>
-<h2 id="introduction">
-  Introduction
-  <a class="anchor" href="#introduction">#</a>
-</h2>
+  <article class="markdown book-article"><h1 id="account-takeover-ato">Account Takeover (ATO)<a class="anchor" href="#account-takeover-ato">#</a></h1>
+<h2 id="introduction">Introduction<a class="anchor" href="#introduction">#</a></h2>
 <p>Account Takeover (ATO) vulnerabilities occur when an attacker gains unauthorized access to a user account by exploiting weaknesses in authentication, session management, password recovery, or identity federation mechanisms.</p>
 <p>ATO is typically not a single vulnerability but a <strong>chain of authentication and logic flaws</strong> that result in full account compromise.</p>
 <hr>
-<h1 id="fundamentals-of-account-takeover">
-  Fundamentals of Account Takeover
-  <a class="anchor" href="#fundamentals-of-account-takeover">#</a>
-</h1>
-<h2 id="core-concept">
-  Core Concept
-  <a class="anchor" href="#core-concept">#</a>
-</h2>
+<h1 id="fundamentals-of-account-takeover">Fundamentals of Account Takeover<a class="anchor" href="#fundamentals-of-account-takeover">#</a></h1>
+<h2 id="core-concept">Core Concept<a class="anchor" href="#core-concept">#</a></h2>
 <p>Account takeover occurs when the <strong>authentication or identity verification process is bypassed, broken, or abused</strong>, allowing an attacker to impersonate a legitimate user.</p>
 <hr>
-<h2 id="authentication-lifecycle">
-  Authentication Lifecycle
-  <a class="anchor" href="#authentication-lifecycle">#</a>
-</h2>
-<pre tabindex="0"><code>Registration → Authentication → Session Creation → Session Usage → Session Termination
-</code></pre><p>ATO occurs when any stage is:</p>
+<h2 id="authentication-lifecycle">Authentication Lifecycle<a class="anchor" href="#authentication-lifecycle">#</a></h2>
+<pre tabindex="0"><code>Registration → Authentication → Session Creation → Session Usage → Session Termination</code></pre><p>ATO occurs when any stage is:</p>
 <ul>
 <li>Weakly implemented</li>
 <li>Inconsistently enforced</li>
 <li>Not invalidated properly</li>
 </ul>
 <hr>
-<h2 id="authentication-models">
-  Authentication Models
-  <a class="anchor" href="#authentication-models">#</a>
-</h2>
-<h3 id="1-password-based-authentication">
-  1. Password-Based Authentication
-  <a class="anchor" href="#1-password-based-authentication">#</a>
-</h3>
+<h2 id="authentication-models">Authentication Models<a class="anchor" href="#authentication-models">#</a></h2>
+<h3 id="1-password-based-authentication">1. Password-Based Authentication<a class="anchor" href="#1-password-based-authentication">#</a></h3>
 <ul>
 <li>Username + password</li>
 <li>Most commonly attacked via credential reuse or brute force</li>
 </ul>
-<h3 id="2-session-based-authentication">
-  2. Session-Based Authentication
-  <a class="anchor" href="#2-session-based-authentication">#</a>
-</h3>
+<h3 id="2-session-based-authentication">2. Session-Based Authentication<a class="anchor" href="#2-session-based-authentication">#</a></h3>
 <ul>
 <li>Cookie/session ID maintained server-side</li>
 <li>Vulnerable to hijacking and fixation</li>
 </ul>
-<h3 id="3-token-based-authentication-jwtapi">
-  3. Token-Based Authentication (JWT/API)
-  <a class="anchor" href="#3-token-based-authentication-jwtapi">#</a>
-</h3>
+<h3 id="3-token-based-authentication-jwtapi">3. Token-Based Authentication (JWT/API)<a class="anchor" href="#3-token-based-authentication-jwtapi">#</a></h3>
 <ul>
 <li>Stateless authentication using signed tokens</li>
 <li>Vulnerable to weak signing, replay, or missing validation</li>
 </ul>
-<h3 id="4-federated-authentication-oauth--sso">
-  4. Federated Authentication (OAuth / SSO)
-  <a class="anchor" href="#4-federated-authentication-oauth--sso">#</a>
-</h3>
+<h3 id="4-federated-authentication-oauth--sso">4. Federated Authentication (OAuth / SSO)<a class="anchor" href="#4-federated-authentication-oauth--sso">#</a></h3>
 <ul>
 <li>Delegated identity (Google, GitHub, Microsoft)</li>
 <li>Vulnerable to misconfigured redirects and account linking issues</li>
 </ul>
-<h3 id="5-password-recovery-systems">
-  5. Password Recovery Systems
-  <a class="anchor" href="#5-password-recovery-systems">#</a>
-</h3>
+<h3 id="5-password-recovery-systems">5. Password Recovery Systems<a class="anchor" href="#5-password-recovery-systems">#</a></h3>
 <ul>
 <li>Email / SMS / OTP based reset flows</li>
 <li>Most critical ATO vector in real-world attacks</li>
 </ul>
 <hr>
-<h2 id="trust-boundaries-in-ato">
-  Trust Boundaries in ATO
-  <a class="anchor" href="#trust-boundaries-in-ato">#</a>
-</h2>
+<h2 id="trust-boundaries-in-ato">Trust Boundaries in ATO<a class="anchor" href="#trust-boundaries-in-ato">#</a></h2>
 <p>Authentication systems assume:</p>
 <ul>
 <li>Credentials prove identity</li>
@@ -1426,10 +1388,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>Breaking these assumptions leads to ATO.</p>
 <hr>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <ul>
 <li>Login endpoints</li>
 <li>Registration flows</li>
@@ -1442,24 +1401,15 @@ https://github.com/alex-shpak/hugo-book
 <li>Mobile authentication APIs</li>
 </ul>
 <hr>
-<h1 id="types-of-account-takeover-attacks">
-  Types of Account Takeover Attacks
-  <a class="anchor" href="#types-of-account-takeover-attacks">#</a>
-</h1>
-<h2 id="1-credential-based-attacks">
-  1. Credential-Based Attacks
-  <a class="anchor" href="#1-credential-based-attacks">#</a>
-</h2>
+<h1 id="types-of-account-takeover-attacks">Types of Account Takeover Attacks<a class="anchor" href="#types-of-account-takeover-attacks">#</a></h1>
+<h2 id="1-credential-based-attacks">1. Credential-Based Attacks<a class="anchor" href="#1-credential-based-attacks">#</a></h2>
 <ul>
 <li>Credential Stuffing: Reuse of leaked username/password pairs from breaches</li>
 <li>Password Spraying: Common passwords used across many accounts to avoid lockouts</li>
 <li>Brute Force (Low and High Entropy): Systematic password guessing attacks</li>
 </ul>
 <hr>
-<h2 id="2-session-based-attacks">
-  2. Session-Based Attacks
-  <a class="anchor" href="#2-session-based-attacks">#</a>
-</h2>
+<h2 id="2-session-based-attacks">2. Session-Based Attacks<a class="anchor" href="#2-session-based-attacks">#</a></h2>
 <ul>
 <li>Session Hijacking: Stealing session cookies via XSS, MITM, or malware</li>
 <li>Session Fixation: Forcing victim to use attacker-controlled session ID</li>
@@ -1467,10 +1417,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Session Prediction: Guessing weak or predictable session identifiers</li>
 </ul>
 <hr>
-<h2 id="3-password-reset-attacks">
-  3. Password Reset Attacks
-  <a class="anchor" href="#3-password-reset-attacks">#</a>
-</h2>
+<h2 id="3-password-reset-attacks">3. Password Reset Attacks<a class="anchor" href="#3-password-reset-attacks">#</a></h2>
 <ul>
 <li>Predictable reset tokens</li>
 <li>Token reuse</li>
@@ -1480,10 +1427,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Host header / email injection abuse</li>
 </ul>
 <hr>
-<h2 id="4-oauth--sso-attacks">
-  4. OAuth / SSO Attacks
-  <a class="anchor" href="#4-oauth--sso-attacks">#</a>
-</h2>
+<h2 id="4-oauth--sso-attacks">4. OAuth / SSO Attacks<a class="anchor" href="#4-oauth--sso-attacks">#</a></h2>
 <ul>
 <li>Improper account linking</li>
 <li>Missing state parameter validation</li>
@@ -1492,10 +1436,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Identity confusion (same email different provider)</li>
 </ul>
 <hr>
-<h2 id="5-jwt--api-authentication-attacks">
-  5. JWT / API Authentication Attacks
-  <a class="anchor" href="#5-jwt--api-authentication-attacks">#</a>
-</h2>
+<h2 id="5-jwt--api-authentication-attacks">5. JWT / API Authentication Attacks<a class="anchor" href="#5-jwt--api-authentication-attacks">#</a></h2>
 <ul>
 <li>Weak or missing signature verification</li>
 <li>Algorithm confusion (none/HS/RS attacks)</li>
@@ -1505,10 +1446,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Refresh token abuse</li>
 </ul>
 <hr>
-<h2 id="6-mfa-bypass-attacks">
-  6. MFA Bypass Attacks
-  <a class="anchor" href="#6-mfa-bypass-attacks">#</a>
-</h2>
+<h2 id="6-mfa-bypass-attacks">6. MFA Bypass Attacks<a class="anchor" href="#6-mfa-bypass-attacks">#</a></h2>
 <ul>
 <li>MFA not enforced on all endpoints</li>
 <li>MFA bypass via password reset</li>
@@ -1517,10 +1455,7 @@ https://github.com/alex-shpak/hugo-book
 <li>SMS/OTP interception</li>
 </ul>
 <hr>
-<h2 id="7-registration--account-linking-issues">
-  7. Registration / Account Linking Issues
-  <a class="anchor" href="#7-registration--account-linking-issues">#</a>
-</h2>
+<h2 id="7-registration--account-linking-issues">7. Registration / Account Linking Issues<a class="anchor" href="#7-registration--account-linking-issues">#</a></h2>
 <ul>
 <li>Duplicate account creation using same email</li>
 <li>OAuth account takeover via pre-registration</li>
@@ -1528,60 +1463,37 @@ https://github.com/alex-shpak/hugo-book
 <li>Account takeover via social login mismatch</li>
 </ul>
 <hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
-<h3 id="credential-stuffing">
-  Credential Stuffing
-  <a class="anchor" href="#credential-stuffing">#</a>
-</h3>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
+<h3 id="credential-stuffing">Credential Stuffing<a class="anchor" href="#credential-stuffing">#</a></h3>
 <pre tabindex="0"><code>POST /login
 {
   &#34;username&#34;: &#34;victim&#34;,
   &#34;password&#34;: &#34;password123&#34;
-}
-</code></pre><ul>
+}</code></pre><ul>
 <li>Use breached credential lists</li>
 <li>Rotate IPs to avoid blocking</li>
 </ul>
 <hr>
-<h3 id="password-spraying">
-  Password Spraying
-  <a class="anchor" href="#password-spraying">#</a>
-</h3>
+<h3 id="password-spraying">Password Spraying<a class="anchor" href="#password-spraying">#</a></h3>
 <pre tabindex="0"><code>Password: Password1
-Target: multiple users
-</code></pre><ul>
+Target: multiple users</code></pre><ul>
 <li>Avoid lockout triggers</li>
 <li>Test common passwords across many accounts</li>
 </ul>
 <hr>
-<h3 id="session-hijacking">
-  Session Hijacking
-  <a class="anchor" href="#session-hijacking">#</a>
-</h3>
-<pre tabindex="0"><code>document.cookie
-</code></pre><ul>
+<h3 id="session-hijacking">Session Hijacking<a class="anchor" href="#session-hijacking">#</a></h3>
+<pre tabindex="0"><code>document.cookie</code></pre><ul>
 <li>Steal session via XSS / MITM</li>
 <li>Replay session token in browser or API client</li>
 </ul>
 <hr>
-<h3 id="session-fixation">
-  Session Fixation
-  <a class="anchor" href="#session-fixation">#</a>
-</h3>
-<pre tabindex="0"><code>Set-Cookie: session=attacker_session
-</code></pre><ul>
+<h3 id="session-fixation">Session Fixation<a class="anchor" href="#session-fixation">#</a></h3>
+<pre tabindex="0"><code>Set-Cookie: session=attacker_session</code></pre><ul>
 <li>Victim logs in using attacker-controlled session ID</li>
 </ul>
 <hr>
-<h3 id="password-reset-abuse">
-  Password Reset Abuse
-  <a class="anchor" href="#password-reset-abuse">#</a>
-</h3>
-<pre tabindex="0"><code>https://target.com/reset?token=12345
-</code></pre><p>Test for:</p>
+<h3 id="password-reset-abuse">Password Reset Abuse<a class="anchor" href="#password-reset-abuse">#</a></h3>
+<pre tabindex="0"><code>https://target.com/reset?token=12345</code></pre><p>Test for:</p>
 <ul>
 <li>Predictable tokens</li>
 <li>Token reuse</li>
@@ -1589,61 +1501,37 @@ Target: multiple users
 <li>Email injection in reset flow</li>
 </ul>
 <hr>
-<h3 id="oauth-misconfiguration">
-  OAuth Misconfiguration
-  <a class="anchor" href="#oauth-misconfiguration">#</a>
-</h3>
+<h3 id="oauth-misconfiguration">OAuth Misconfiguration<a class="anchor" href="#oauth-misconfiguration">#</a></h3>
 <ul>
 <li>Missing state validation</li>
 <li>Account linking bypass</li>
 <li>Redirect URI manipulation</li>
 </ul>
 <hr>
-<h3 id="token-replay--jwt-abuse">
-  Token Replay / JWT Abuse
-  <a class="anchor" href="#token-replay--jwt-abuse">#</a>
-</h3>
+<h3 id="token-replay--jwt-abuse">Token Replay / JWT Abuse<a class="anchor" href="#token-replay--jwt-abuse">#</a></h3>
 <ul>
 <li>Reuse of valid tokens</li>
 <li>Missing expiration validation</li>
 <li>Tampered payload without signature verification</li>
 </ul>
 <hr>
-<h2 id="bypassing-defenses">
-  Bypassing Defenses
-  <a class="anchor" href="#bypassing-defenses">#</a>
-</h2>
-<h3 id="rate-limiting-issues">
-  Rate Limiting Issues
-  <a class="anchor" href="#rate-limiting-issues">#</a>
-</h3>
+<h2 id="bypassing-defenses">Bypassing Defenses<a class="anchor" href="#bypassing-defenses">#</a></h2>
+<h3 id="rate-limiting-issues">Rate Limiting Issues<a class="anchor" href="#rate-limiting-issues">#</a></h3>
 <ul>
 <li>No throttling on login/reset endpoints</li>
 </ul>
-<h3 id="mfa-flaws">
-  MFA Flaws
-  <a class="anchor" href="#mfa-flaws">#</a>
-</h3>
+<h3 id="mfa-flaws">MFA Flaws<a class="anchor" href="#mfa-flaws">#</a></h3>
 <ul>
 <li>MFA only applied after login</li>
 <li>MFA bypass via alternate flows</li>
 </ul>
-<h3 id="token-reuse">
-  Token Reuse
-  <a class="anchor" href="#token-reuse">#</a>
-</h3>
+<h3 id="token-reuse">Token Reuse<a class="anchor" href="#token-reuse">#</a></h3>
 <ul>
 <li>Reset/session tokens remain valid after use</li>
 </ul>
 <hr>
-<h1 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h1>
-<h2 id="chained-account-takeover">
-  Chained Account Takeover
-  <a class="anchor" href="#chained-account-takeover">#</a>
-</h2>
+<h1 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h1>
+<h2 id="chained-account-takeover">Chained Account Takeover<a class="anchor" href="#chained-account-takeover">#</a></h2>
 <p>Example chain:</p>
 <ul>
 <li>Weak password policy</li>
@@ -1652,63 +1540,42 @@ Target: multiple users
 </ul>
 <p>→ Full account compromise</p>
 <hr>
-<h2 id="oauth-account-takeover">
-  OAuth Account Takeover
-  <a class="anchor" href="#oauth-account-takeover">#</a>
-</h2>
+<h2 id="oauth-account-takeover">OAuth Account Takeover<a class="anchor" href="#oauth-account-takeover">#</a></h2>
 <ul>
 <li>Victim logs in using OAuth</li>
 <li>Attacker links OAuth identity first</li>
 <li>Victim account gets overridden</li>
 </ul>
 <hr>
-<h2 id="session-fixation--login-flow-abuse">
-  Session Fixation + Login Flow Abuse
-  <a class="anchor" href="#session-fixation--login-flow-abuse">#</a>
-</h2>
+<h2 id="session-fixation--login-flow-abuse">Session Fixation + Login Flow Abuse<a class="anchor" href="#session-fixation--login-flow-abuse">#</a></h2>
 <ul>
 <li>Attacker sets session ID</li>
 <li>Victim logs in</li>
 <li>Session becomes authenticated attacker session</li>
 </ul>
 <hr>
-<h2 id="pre-account-takeover-registration-abuse">
-  Pre-Account Takeover (Registration Abuse)
-  <a class="anchor" href="#pre-account-takeover-registration-abuse">#</a>
-</h2>
+<h2 id="pre-account-takeover-registration-abuse">Pre-Account Takeover (Registration Abuse)<a class="anchor" href="#pre-account-takeover-registration-abuse">#</a></h2>
 <ul>
 <li>Email not verified</li>
 <li>Duplicate account creation allowed</li>
 <li>OAuth mismatch exploited</li>
 </ul>
 <hr>
-<h2 id="race-condition-attacks">
-  Race Condition Attacks
-  <a class="anchor" href="#race-condition-attacks">#</a>
-</h2>
+<h2 id="race-condition-attacks">Race Condition Attacks<a class="anchor" href="#race-condition-attacks">#</a></h2>
 <ul>
 <li>OTP reuse via parallel requests</li>
 <li>Password reset token race exploitation</li>
 </ul>
 <hr>
-<h2 id="mfa-bypass-edge-cases">
-  MFA Bypass Edge Cases
-  <a class="anchor" href="#mfa-bypass-edge-cases">#</a>
-</h2>
+<h2 id="mfa-bypass-edge-cases">MFA Bypass Edge Cases<a class="anchor" href="#mfa-bypass-edge-cases">#</a></h2>
 <ul>
 <li>MFA not required for API endpoints</li>
 <li>MFA skipped in reset flows</li>
 <li>Backup codes reused</li>
 </ul>
 <hr>
-<h1 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h1>
-<h2 id="manual-testing">
-  Manual Testing
-  <a class="anchor" href="#manual-testing">#</a>
-</h2>
+<h1 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h1>
+<h2 id="manual-testing">Manual Testing<a class="anchor" href="#manual-testing">#</a></h2>
 <ul>
 <li>Test weak credentials</li>
 <li>Analyze login response behavior</li>
@@ -1718,24 +1585,15 @@ Target: multiple users
 <li>Observe MFA enforcement consistency</li>
 </ul>
 <hr>
-<h2 id="automated-testing">
-  Automated Testing
-  <a class="anchor" href="#automated-testing">#</a>
-</h2>
-<h3 id="burp-suite">
-  Burp Suite
-  <a class="anchor" href="#burp-suite">#</a>
-</h3>
+<h2 id="automated-testing">Automated Testing<a class="anchor" href="#automated-testing">#</a></h2>
+<h3 id="burp-suite">Burp Suite<a class="anchor" href="#burp-suite">#</a></h3>
 <ul>
 <li>Intruder → credential stuffing</li>
 <li>Sequencer → token randomness analysis</li>
 <li>Repeater → manual flow testing</li>
 </ul>
 <hr>
-<h1 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h1>
+<h1 id="impact">Impact<a class="anchor" href="#impact">#</a></h1>
 <ul>
 <li>Full account takeover</li>
 <li>Data theft and leakage</li>
@@ -1746,73 +1604,46 @@ Target: multiple users
 <li>Regulatory violations (GDPR, PCI-DSS)</li>
 </ul>
 <hr>
-<h1 id="quick-testing-checklist">
-  Quick Testing Checklist
-  <a class="anchor" href="#quick-testing-checklist">#</a>
-</h1>
-<h2 id="rate-limiting">
-  Rate Limiting
-  <a class="anchor" href="#rate-limiting">#</a>
-</h2>
+<h1 id="quick-testing-checklist">Quick Testing Checklist<a class="anchor" href="#quick-testing-checklist">#</a></h1>
+<h2 id="rate-limiting">Rate Limiting<a class="anchor" href="#rate-limiting">#</a></h2>
 <ul>
 <li>Can login/reset be brute-forced?</li>
 <li>Is credential stuffing possible?</li>
 </ul>
-<h2 id="mfa">
-  MFA
-  <a class="anchor" href="#mfa">#</a>
-</h2>
+<h2 id="mfa">MFA<a class="anchor" href="#mfa">#</a></h2>
 <ul>
 <li>Is MFA enforced consistently?</li>
 <li>Can MFA be bypassed via alternate flows?</li>
 </ul>
-<h2 id="session-security">
-  Session Security
-  <a class="anchor" href="#session-security">#</a>
-</h2>
+<h2 id="session-security">Session Security<a class="anchor" href="#session-security">#</a></h2>
 <ul>
 <li>Is session rotated after login?</li>
 <li>Are cookies secure (HttpOnly, Secure, SameSite)?</li>
 <li>Is logout invalidating sessions?</li>
 </ul>
-<h2 id="password-reset">
-  Password Reset
-  <a class="anchor" href="#password-reset">#</a>
-</h2>
+<h2 id="password-reset">Password Reset<a class="anchor" href="#password-reset">#</a></h2>
 <ul>
 <li>Are tokens random and single-use?</li>
 <li>Do reset links expire?</li>
 </ul>
-<h2 id="oauth--sso">
-  OAuth / SSO
-  <a class="anchor" href="#oauth--sso">#</a>
-</h2>
+<h2 id="oauth--sso">OAuth / SSO<a class="anchor" href="#oauth--sso">#</a></h2>
 <ul>
 <li>Is state parameter validated?</li>
 <li>Is account linking secure?</li>
 <li>Is email verification enforced?</li>
 </ul>
-<h2 id="jwt--api-auth">
-  JWT / API Auth
-  <a class="anchor" href="#jwt--api-auth">#</a>
-</h2>
+<h2 id="jwt--api-auth">JWT / API Auth<a class="anchor" href="#jwt--api-auth">#</a></h2>
 <ul>
 <li>Are tokens properly signed?</li>
 <li>Is expiration enforced?</li>
 <li>Can tokens be replayed?</li>
 </ul>
-<h2 id="race-conditions">
-  Race Conditions
-  <a class="anchor" href="#race-conditions">#</a>
-</h2>
+<h2 id="race-conditions">Race Conditions<a class="anchor" href="#race-conditions">#</a></h2>
 <ul>
 <li>Can OTP/reset be reused concurrently?</li>
 </ul>
 <hr>
-<h1 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h1>
+<h1 id="tools">Tools<a class="anchor" href="#tools">#</a></h1>
 <ul>
 <li>Burp Suite (Repeater, Intruder, Sequencer)</li>
 <li>ffuf</li>
@@ -1823,10 +1654,7 @@ Target: multiple users
 <li>Hydra (credential testing)</li>
 </ul>
 <hr>
-<h1 id="mitigation--prevention">
-  Mitigation &amp; Prevention
-  <a class="anchor" href="#mitigation--prevention">#</a>
-</h1>
+<h1 id="mitigation--prevention">Mitigation &amp; Prevention<a class="anchor" href="#mitigation--prevention">#</a></h1>
 <ul>
 <li>Strong password policies</li>
 <li>Rate limiting and IP throttling</li>
@@ -1839,10 +1667,7 @@ Target: multiple users
 <li>Monitoring for anomalous login attempts</li>
 </ul>
 <hr>
-<h1 id="good-to-read-real-world-reports">
-  Good To Read (Real-World Reports)
-  <a class="anchor" href="#good-to-read-real-world-reports">#</a>
-</h1>
+<h1 id="good-to-read-real-world-reports">Good To Read (Real-World Reports)<a class="anchor" href="#good-to-read-real-world-reports">#</a></h1>
 <ul>
 <li><a href="https://hackerone.com/reports/2293343" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2293343</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/317476" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/317476</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1851,10 +1676,7 @@ Target: multiple users
 <li><a href="https://hackerone.com/reports/534450" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/534450</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h1 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h1>
+<h1 id="references">References<a class="anchor" href="#references">#</a></h1>
 <ul>
 <li><a href="https://owasp.org/www-community/attacks/Session_Prediction" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/Session_Prediction</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://owasp.org/www-community/Authentication_Cheat_Sheet" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/Authentication_Cheat_Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1872,49 +1694,62 @@ Target: multiple users
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Account%20Takeover.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/Vulnerable-Applications/WebApp/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Web App</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Broken-Access-Control/" class="flex align-center">
+        <span>Broken Access Control</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2009,15 +1844,24 @@ Target: multiple users
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

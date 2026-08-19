@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Insecure Direct Object Reference (IDOR) # 1. Fundamentals of IDOR # Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.
-Classic Example:
-You&rsquo;re logged in and see:
-https://bank.com/profile?id=123 Change 123 to 124 → resources belonging to other users become accessible.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Insecure Direct Object Reference (IDOR)" />
-<meta property="og:description" content="Insecure Direct Object Reference (IDOR) # 1. Fundamentals of IDOR # Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.
-Classic Example:
-You&rsquo;re logged in and see:
-https://bank.com/profile?id=123 Change 123 to 124 → resources belonging to other users become accessible." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Insecure Direct Object Reference (IDOR) | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Insecure Direct Object Reference (IDOR)# 1. Fundamentals of IDOR# Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.
+Classic Example:
+You’re logged in and see:
+https://bank.com/profile?id=123Change 123 to 124 → resources belonging to other users become accessible..
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Insecure Direct Object Reference (IDOR)">
+	<meta property="og:description" content="Insecure Direct Object Reference (IDOR)# 1. Fundamentals of IDOR# Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.
+Classic Example:
+You’re logged in and see:
+https://bank.com/profile?id=123Change 123 to 124 → resources belonging to other users become accessible..">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Insecure Direct Object Reference (IDOR)">
+	<meta itemprop="description" content="Insecure Direct Object Reference (IDOR)# 1. Fundamentals of IDOR# Insecure Direct Object Reference (IDOR) is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.
+Classic Example:
+You’re logged in and see:
+https://bank.com/profile?id=123Change 123 to 124 → resources belonging to other users become accessible..">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1218">
+
+<title>Insecure Direct Object Reference (IDOR) • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -45,11 +65,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -60,9 +84,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -77,8 +98,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -94,8 +115,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -181,8 +202,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -229,8 +250,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -984,8 +1005,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1006,8 +1027,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1028,8 +1049,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1050,8 +1071,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1072,8 +1093,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1107,8 +1128,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1129,8 +1150,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1151,8 +1172,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1173,35 +1194,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1209,30 +1208,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Insecure Direct Object Reference (IDOR)</strong>
+  <h3>Insecure Direct Object Reference (IDOR)</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1304,19 +1304,12 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="insecure-direct-object-reference-idor">
-  Insecure Direct Object Reference (IDOR)
-  <a class="anchor" href="#insecure-direct-object-reference-idor">#</a>
-</h1>
-<h2 id="1-fundamentals-of-idor">
-  <strong>1. Fundamentals of IDOR</strong>
-  <a class="anchor" href="#1-fundamentals-of-idor">#</a>
-</h2>
+  <article class="markdown book-article"><h1 id="insecure-direct-object-reference-idor">Insecure Direct Object Reference (IDOR)<a class="anchor" href="#insecure-direct-object-reference-idor">#</a></h1>
+<h2 id="1-fundamentals-of-idor"><strong>1. Fundamentals of IDOR</strong><a class="anchor" href="#1-fundamentals-of-idor">#</a></h2>
 <p><strong>Insecure Direct Object Reference (IDOR)</strong> is a vulnerability that occurs when an application exposes a direct reference to an internal object (like a database key, filename, or identifier) without proper authorization checks. Attackers can manipulate these references to access, modify, or delete unauthorized data.</p>
 <p><strong>Classic Example:</strong></p>
 <p>You&rsquo;re logged in and see:</p>
-<pre tabindex="0"><code>https://bank.com/profile?id=123
-</code></pre><p>Change <code>123</code> to <code>124</code> → <strong>resources belonging to other users become accessible.</strong>.</p>
+<pre tabindex="0"><code>https://bank.com/profile?id=123</code></pre><p>Change <code>123</code> to <code>124</code> → <strong>resources belonging to other users become accessible.</strong>.</p>
 <p>Here, <strong><code>123</code></strong> is a <strong>direct object reference</strong> - likely a user ID, account number, or database primary key - that the application uses to fetch and return the corresponding profile. The issue is that the server fails to verify whether the logged-in user actually owns or is authorized to access the resource associated with ID <code>123</code>.</p>
 <p>Changing it to <code>124</code> exploits this missing access control, instantly revealing another user&rsquo;s profile.</p>
 <p><strong>Real Impact:</strong> Unauthorized data access, data modification, data deletion, privilege escalation, account takeover, business logic abuse, and unauthorized transactions.</p>
@@ -1330,18 +1323,10 @@ https://github.com/alex-shpak/hugo-book
 </ol>
 <p>Some applications expose file identifiers, document IDs, invoice numbers, or storage object keys in requests. If proper authorization checks are missing, attackers can modify these identifiers to access files belonging to other users.</p>
 <p>Example:</p>
-<pre tabindex="0"><code>GET https://example.com/api/download?fileId=45821
-</code></pre><p>If the application only checks whether the file exists but <strong>does not verify ownership</strong>, an attacker can change the ID:</p>
-<pre tabindex="0"><code>GET https://example.com/api/download?fileId=45822
-</code></pre><p>This may allow access to another user&rsquo;s documents, invoices, medical reports, or private uploads.</p>
-<h2 id="attack-surfaces">
-  <strong>Attack Surfaces</strong>
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
-<h3 id="1-url-parameter-testing">
-  <strong>1. URL Parameter Testing</strong>
-  <a class="anchor" href="#1-url-parameter-testing">#</a>
-</h3>
+<pre tabindex="0"><code>GET https://example.com/api/download?fileId=45821</code></pre><p>If the application only checks whether the file exists but <strong>does not verify ownership</strong>, an attacker can change the ID:</p>
+<pre tabindex="0"><code>GET https://example.com/api/download?fileId=45822</code></pre><p>This may allow access to another user&rsquo;s documents, invoices, medical reports, or private uploads.</p>
+<h2 id="attack-surfaces"><strong>Attack Surfaces</strong><a class="anchor" href="#attack-surfaces">#</a></h2>
+<h3 id="1-url-parameter-testing"><strong>1. URL Parameter Testing</strong><a class="anchor" href="#1-url-parameter-testing">#</a></h3>
 <ul>
 <li><strong>Basic increment/decrement:</strong> <code>id=123</code> → <code>id=124</code></li>
 <li><strong>Different formats:</strong>
@@ -1356,15 +1341,11 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>UUID-based IDs:</strong> Predictability depends on version and implementation; UUID v1 (e.g., <code>95f6e264-bb00-11ec-8833-00155d01ef00</code>) may be partially predictable due to timestamp/node patterns, while UUID v4 (e.g., <code>3b9f1c2a-7d5e-4c8a-9f3d-91a6d2f4c8b1</code>) is random and harder to enumerate, but still requires proper authorization checks</li>
 <li><strong>MongoDB Object IDs:</strong> <code>5ae9b90a2c144b9def01ec37</code> (timestamp-based structure, may be partially predictable)</li>
 </ul>
-<h3 id="2-post-body-testing">
-  <strong>2. POST Body Testing</strong>
-  <a class="anchor" href="#2-post-body-testing">#</a>
-</h3>
+<h3 id="2-post-body-testing"><strong>2. POST Body Testing</strong><a class="anchor" href="#2-post-body-testing">#</a></h3>
 <ul>
 <li>
 <p><strong>Change user_id in JSON/XML:</strong></p>
-<pre tabindex="0"><code>{&#34;user_id&#34;: 123} → {&#34;user_id&#34;: 124}
-</code></pre></li>
+<pre tabindex="0"><code>{&#34;user_id&#34;: 123} → {&#34;user_id&#34;: 124}</code></pre></li>
 <li>
 <p><strong>Array wrapping trick:</strong> <code>{&quot;id&quot;: 19}</code> → <code>{&quot;id&quot;: [19]}</code></p>
 </li>
@@ -1372,111 +1353,66 @@ https://github.com/alex-shpak/hugo-book
 <p><strong>Mass assignment:</strong> Add unauthorized fields like <code>role: &quot;admin&quot;</code></p>
 </li>
 </ul>
-<h3 id="3-cookie-manipulation">
-  <strong>3. Cookie Manipulation</strong>
-  <a class="anchor" href="#3-cookie-manipulation">#</a>
-</h3>
+<h3 id="3-cookie-manipulation"><strong>3. Cookie Manipulation</strong><a class="anchor" href="#3-cookie-manipulation">#</a></h3>
 <ul>
 <li><strong>Simple cookies:</strong> <code>user_id=123</code> → <code>user_id=124</code></li>
 <li><strong>Base64 encoded:</strong> <code>eyJ1c2VyX2lkIjoxMjN9</code> → decode → modify → re-encode</li>
 <li><strong>Session tokens:</strong> JWT with embedded user_id</li>
 </ul>
-<h3 id="4-http-header-testing">
-  <strong>4. HTTP Header Testing</strong>
-  <a class="anchor" href="#4-http-header-testing">#</a>
-</h3>
+<h3 id="4-http-header-testing"><strong>4. HTTP Header Testing</strong><a class="anchor" href="#4-http-header-testing">#</a></h3>
 <ul>
 <li><strong>Custom headers:</strong> <code>X-User-ID: 123</code></li>
 <li><strong>Authorization headers:</strong> <code>Bearer eyJ...</code> (JWT manipulation)</li>
 <li><strong>Referer/Origin header manipulation:</strong> Bypass checks by changing these</li>
 </ul>
-<h3 id="5-file-access-testing">
-  <strong>5. File Access Testing</strong>
-  <a class="anchor" href="#5-file-access-testing">#</a>
-</h3>
+<h3 id="5-file-access-testing"><strong>5. File Access Testing</strong><a class="anchor" href="#5-file-access-testing">#</a></h3>
 <ul>
 <li><strong>Documents:</strong> <code>/download?file=doc_123.pdf</code></li>
 <li><strong>Images:</strong> <code>/images/user/123/avatar.jpg</code></li>
 <li><strong>Backups:</strong> <code>/backups/user_123.zip</code></li>
 </ul>
-<h3 id="6-api-endpoint-testing">
-  <strong>6. API Endpoint Testing</strong>
-  <a class="anchor" href="#6-api-endpoint-testing">#</a>
-</h3>
+<h3 id="6-api-endpoint-testing"><strong>6. API Endpoint Testing</strong><a class="anchor" href="#6-api-endpoint-testing">#</a></h3>
 <ul>
 <li><strong>REST patterns:</strong> <code>GET /api/users/123</code>, <code>PUT /api/users/124</code></li>
 <li><strong>Nested resources:</strong> <code>/api/companies/1/employees/123</code></li>
 <li><strong>GraphQL:</strong> <code>query { user(id: &quot;123&quot;) { email } }</code></li>
 </ul>
 <hr>
-<h2 id="bypassing-defenses-using-encoding-and-obfuscation">
-  <strong>Bypassing defenses (using encoding and obfuscation)</strong>
-  <a class="anchor" href="#bypassing-defenses-using-encoding-and-obfuscation">#</a>
-</h2>
-<h3 id="1-hashedencoded-ids">
-  <strong>1. Hashed/Encoded IDs</strong>
-  <a class="anchor" href="#1-hashedencoded-ids">#</a>
-</h3>
+<h2 id="bypassing-defenses-using-encoding-and-obfuscation"><strong>Bypassing defenses (using encoding and obfuscation)</strong><a class="anchor" href="#bypassing-defenses-using-encoding-and-obfuscation">#</a></h2>
+<h3 id="1-hashedencoded-ids"><strong>1. Hashed/Encoded IDs</strong><a class="anchor" href="#1-hashedencoded-ids">#</a></h3>
 <ul>
 <li><strong>MD5:</strong> <code>md5(&quot;123&quot;) = 202cb962ac59075b964b07152d234b70</code></li>
 <li><strong>SHA1/SHA2:</strong> Generate your own hashes</li>
 <li><strong>Base64:</strong> <code>echo &quot;124&quot; | base64</code> → <code>MTI0Cg==</code></li>
 <li><strong>URL-safe Base64:</strong> <code>dXNlcjoxMjM=</code> → <code>dXNlcjoxMjQ=</code></li>
 </ul>
-<h3 id="2-parameter-pollution">
-  <strong>2. Parameter Pollution</strong>
-  <a class="anchor" href="#2-parameter-pollution">#</a>
-</h3>
-<pre tabindex="0"><code>GET /api/profile?user_id=123&amp;user_id=124
-</code></pre><p>Or in JSON:</p>
-<pre tabindex="0"><code>{&#34;user_id&#34;: 123, &#34;user_id&#34;: 124, &#34;email&#34;: &#34;attacker@evil.com&#34;}
-</code></pre><h3 id="3-content-type-switching">
-  <strong>3. Content-Type Switching</strong>
-  <a class="anchor" href="#3-content-type-switching">#</a>
-</h3>
+<h3 id="2-parameter-pollution"><strong>2. Parameter Pollution</strong><a class="anchor" href="#2-parameter-pollution">#</a></h3>
+<pre tabindex="0"><code>GET /api/profile?user_id=123&amp;user_id=124</code></pre><p>Or in JSON:</p>
+<pre tabindex="0"><code>{&#34;user_id&#34;: 123, &#34;user_id&#34;: 124, &#34;email&#34;: &#34;attacker@evil.com&#34;}</code></pre><h3 id="3-content-type-switching"><strong>3. Content-Type Switching</strong><a class="anchor" href="#3-content-type-switching">#</a></h3>
 <ul>
 <li>JSON → XML → Form-Data</li>
 <li>Example: <code>Content-Type: application/xml</code> with <code>&lt;user_id&gt;124&lt;/user_id&gt;</code></li>
 </ul>
-<h3 id="4-http-method-switching">
-  <strong>4. HTTP Method Switching</strong>
-  <a class="anchor" href="#4-http-method-switching">#</a>
-</h3>
+<h3 id="4-http-method-switching"><strong>4. HTTP Method Switching</strong><a class="anchor" href="#4-http-method-switching">#</a></h3>
 <ul>
 <li><code>GET</code> → <code>POST</code> → <code>PUT</code> → <code>DELETE</code> → <code>HEAD</code></li>
 <li>Some endpoints check auth differently per method</li>
 </ul>
-<h3 id="5-wildcard-attacks">
-  <strong>5. Wildcard Attacks</strong>
-  <a class="anchor" href="#5-wildcard-attacks">#</a>
-</h3>
+<h3 id="5-wildcard-attacks"><strong>5. Wildcard Attacks</strong><a class="anchor" href="#5-wildcard-attacks">#</a></h3>
 <pre tabindex="0"><code>GET /api/users/*
 GET /api/users/%
 GET /api/users/_
 GET /api/users/.*
-GET /api/users?ids=*
-</code></pre><h3 id="6-boolean-parameter-bypass">
-  <strong>6. Boolean Parameter Bypass</strong>
-  <a class="anchor" href="#6-boolean-parameter-bypass">#</a>
-</h3>
+GET /api/users?ids=*</code></pre><h3 id="6-boolean-parameter-bypass"><strong>6. Boolean Parameter Bypass</strong><a class="anchor" href="#6-boolean-parameter-bypass">#</a></h3>
 <p>Found <code>&quot;public&quot;: false</code> in response? Try <code>?public=true</code> in request</p>
-<h3 id="7-alternate-data-representation">
-  <strong>7. Alternate Data Representation</strong>
-  <a class="anchor" href="#7-alternate-data-representation">#</a>
-</h3>
+<h3 id="7-alternate-data-representation"><strong>7. Alternate Data Representation</strong><a class="anchor" href="#7-alternate-data-representation">#</a></h3>
 <ul>
 <li>Decimal → Hex: <code>/user/1001</code> → <code>/user/0x3E9</code></li>
 <li>Different encoding schemes</li>
 </ul>
 <hr>
-<h2 id="advance-attack-scenarios">
-  <strong>Advance Attack Scenarios</strong>
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
-<h3 id="1-blind-idor">
-  <strong>1. Blind IDOR</strong>
-  <a class="anchor" href="#1-blind-idor">#</a>
-</h3>
+<h2 id="advance-attack-scenarios"><strong>Advance Attack Scenarios</strong><a class="anchor" href="#advance-attack-scenarios">#</a></h2>
+<h3 id="1-blind-idor"><strong>1. Blind IDOR</strong><a class="anchor" href="#1-blind-idor">#</a></h3>
 <ul>
 <li><strong>No direct response?</strong> Check for:
 <ul>
@@ -1487,28 +1423,19 @@ GET /api/users?ids=*
 </ul>
 </li>
 </ul>
-<h3 id="2-race-conditions">
-  <strong>2. Race Conditions</strong>
-  <a class="anchor" href="#2-race-conditions">#</a>
-</h3>
+<h3 id="2-race-conditions"><strong>2. Race Conditions</strong><a class="anchor" href="#2-race-conditions">#</a></h3>
 <ul>
 <li>Send multiple concurrent requests with different IDs</li>
 <li>Use <strong>Turbo Intruder</strong> to bypass validation windows</li>
 <li>Example: Changing order_id mid-checkout process</li>
 </ul>
-<h3 id="3-hidden-endpoint-discovery">
-  <strong>3. Hidden Endpoint Discovery</strong>
-  <a class="anchor" href="#3-hidden-endpoint-discovery">#</a>
-</h3>
+<h3 id="3-hidden-endpoint-discovery"><strong>3. Hidden Endpoint Discovery</strong><a class="anchor" href="#3-hidden-endpoint-discovery">#</a></h3>
 <ul>
 <li><strong>Search JS files</strong> for API endpoints</li>
 <li>Pattern: <code>/api/v2/integration/install/{id}</code></li>
 <li><strong>Brute-force:</strong> <code>/api/v1/user</code>, <code>/api/v2/user</code>, <code>/api/user</code>, <code>/users</code></li>
 </ul>
-<h3 id="4-account-takeover-via-email-change">
-  <strong>4. Account Takeover via Email Change</strong>
-  <a class="anchor" href="#4-account-takeover-via-email-change">#</a>
-</h3>
+<h3 id="4-account-takeover-via-email-change"><strong>4. Account Takeover via Email Change</strong><a class="anchor" href="#4-account-takeover-via-email-change">#</a></h3>
 <p>From reports:</p>
 <ol>
 <li>Change your email to victim&rsquo;s via POST</li>
@@ -1516,72 +1443,39 @@ GET /api/users?ids=*
 <li>Change <code>&quot;verified&quot;: false</code> → <code>&quot;verified&quot;: true</code></li>
 <li>Access victim&rsquo;s billing info, subscription history</li>
 </ol>
-<h3 id="5-no-content--no-bug">
-  <strong>5. No Content ≠ No Bug</strong>
-  <a class="anchor" href="#5-no-content--no-bug">#</a>
-</h3>
+<h3 id="5-no-content--no-bug"><strong>5. No Content ≠ No Bug</strong><a class="anchor" href="#5-no-content--no-bug">#</a></h3>
 <p>Got <code>204 No Content</code> when changing ID?</p>
 <ul>
 <li>Switch <code>POST</code> → <code>GET</code></li>
 <li>Might get full PII back</li>
 </ul>
-<h3 id="6-auth-header-contains-id">
-  <strong>6. Auth Header Contains ID</strong>
-  <a class="anchor" href="#6-auth-header-contains-id">#</a>
-</h3>
-<pre tabindex="0"><code>Authorization: ODIxMjIyODY6ODIxMjIyODY=
-</code></pre><p>Base64 decode → <code>82122286:82122286</code></p>
+<h3 id="6-auth-header-contains-id"><strong>6. Auth Header Contains ID</strong><a class="anchor" href="#6-auth-header-contains-id">#</a></h3>
+<pre tabindex="0"><code>Authorization: ODIxMjIyODY6ODIxMjIyODY=</code></pre><p>Base64 decode → <code>82122286:82122286</code></p>
 <p>Change to victim&rsquo;s ID → re-encode → account takeover</p>
-<h3 id="7-support-ticket-takeover">
-  <strong>7. Support Ticket Takeover</strong>
-  <a class="anchor" href="#7-support-ticket-takeover">#</a>
-</h3>
+<h3 id="7-support-ticket-takeover"><strong>7. Support Ticket Takeover</strong><a class="anchor" href="#7-support-ticket-takeover">#</a></h3>
 <p>Ticket: <code>/Issue/9085/855f5bb19e7b...</code> (hashed)</p>
 <p>But comment endpoint: <code>POST /comment {&quot;ticket_id&quot;: 9085}</code></p>
 <p>Change to <code>9084</code> → comment on other tickets</p>
 <hr>
-<h2 id="framework-specific-scenarios">
-  <strong>Framework specific scenarios:</strong>
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
-<h3 id="graphql-idor">
-  <strong>GraphQL IDOR</strong>
-  <a class="anchor" href="#graphql-idor">#</a>
-</h3>
-<pre tabindex="0"><code>query { user(id: &#34;123&#34;) { privateData } }
-</code></pre><p>Batch queries: <code>[{&quot;query&quot;: &quot;user(id: \&quot;123\&quot;)&quot;}, {&quot;query&quot;: &quot;user(id: \&quot;124\&quot;)&quot;}]</code></p>
-<h3 id="rest-api-idor">
-  <strong>REST API IDOR</strong>
-  <a class="anchor" href="#rest-api-idor">#</a>
-</h3>
+<h2 id="framework-specific-scenarios"><strong>Framework specific scenarios:</strong><a class="anchor" href="#framework-specific-scenarios">#</a></h2>
+<h3 id="graphql-idor"><strong>GraphQL IDOR</strong><a class="anchor" href="#graphql-idor">#</a></h3>
+<pre tabindex="0"><code>query { user(id: &#34;123&#34;) { privateData } }</code></pre><p>Batch queries: <code>[{&quot;query&quot;: &quot;user(id: \&quot;123\&quot;)&quot;}, {&quot;query&quot;: &quot;user(id: \&quot;124\&quot;)&quot;}]</code></p>
+<h3 id="rest-api-idor"><strong>REST API IDOR</strong><a class="anchor" href="#rest-api-idor">#</a></h3>
 <ul>
 <li>Pagination: <code>/api/users?page=1&amp;size=100</code> → change size</li>
 <li>Filters: <code>/api/orders?user_id=123</code> → <code>user_id=124</code></li>
 </ul>
-<h3 id="soapxml-api">
-  <strong>SOAP/XML API</strong>
-  <a class="anchor" href="#soapxml-api">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;userId&gt;123&lt;/userId&gt; → &lt;userId&gt;124&lt;/userId&gt;
-</code></pre><hr>
-<h2 id="detection-techniques-using-manual-and-automated-techniques">
-  <strong>Detection Techniques (using Manual and Automated Techniques)</strong>
-  <a class="anchor" href="#detection-techniques-using-manual-and-automated-techniques">#</a>
-</h2>
-<h3 id="manual-testing">
-  <strong>Manual Testing:</strong>
-  <a class="anchor" href="#manual-testing">#</a>
-</h3>
+<h3 id="soapxml-api"><strong>SOAP/XML API</strong><a class="anchor" href="#soapxml-api">#</a></h3>
+<pre tabindex="0"><code>&lt;userId&gt;123&lt;/userId&gt; → &lt;userId&gt;124&lt;/userId&gt;</code></pre><hr>
+<h2 id="detection-techniques-using-manual-and-automated-techniques"><strong>Detection Techniques (using Manual and Automated Techniques)</strong><a class="anchor" href="#detection-techniques-using-manual-and-automated-techniques">#</a></h2>
+<h3 id="manual-testing"><strong>Manual Testing:</strong><a class="anchor" href="#manual-testing">#</a></h3>
 <ul>
 <li><strong>Identify all object references:</strong> URLs, headers, cookies, body</li>
 <li><strong>Change values systematically:</strong> +1, -1, different formats</li>
 <li><strong>Check responses:</strong> Data leakage, errors, status codes</li>
 <li><strong>Look for indirect effects:</strong> Emails, notifications, exports</li>
 </ul>
-<h3 id="automated-tools">
-  <strong>Automated Tools:</strong>
-  <a class="anchor" href="#automated-tools">#</a>
-</h3>
+<h3 id="automated-tools"><strong>Automated Tools:</strong><a class="anchor" href="#automated-tools">#</a></h3>
 <p><strong>Burp Suite:</strong></p>
 <ol>
 <li><strong>Intruder:</strong> Number fuzzing (1-10000)</li>
@@ -1592,18 +1486,13 @@ GET /api/users?ids=*
 </ol>
 <p><strong>FFUF:</strong></p>
 <pre tabindex="0"><code>ffuf -u https://target.com/api/user/FUZZ -w ids.txt -mc 200
-ffuf -u https://target.com/api/user -X POST -d &#39;{&#34;user_id&#34;:&#34;FUZZ&#34;}&#39; -w ids.txt
-</code></pre><p><strong>Custom Python Script:</strong></p>
+ffuf -u https://target.com/api/user -X POST -d &#39;{&#34;user_id&#34;:&#34;FUZZ&#34;}&#39; -w ids.txt</code></pre><p><strong>Custom Python Script:</strong></p>
 <pre tabindex="0"><code>import requests
 for uid in range(1,1000):
     r = requests.get(f&#34;https://target.com/api/user/{uid}&#34;)
     if r.status_code == 200 and &#34;email&#34; in r.text:
-        print(f&#34;Found:{uid}&#34;)
-</code></pre><hr>
-<h2 id="impact">
-  <strong>Impact</strong>
-  <a class="anchor" href="#impact">#</a>
-</h2>
+        print(f&#34;Found:{uid}&#34;)</code></pre><hr>
+<h2 id="impact"><strong>Impact</strong><a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Unauthorized data access:</strong> PII, messages, financial info</li>
 <li><strong>Data manipulation:</strong> Edit profiles, billing, orders</li>
@@ -1621,10 +1510,7 @@ for uid in range(1,1000):
 <li>Access billing information and payment history</li>
 </ul>
 <hr>
-<h2 id="prevention-techniques">
-  <strong>Prevention Techniques</strong>
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques"><strong>Prevention Techniques</strong><a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li><strong>Use indirect references</strong> – Avoid exposing real database identifiers; use mapping layers or reference tokens instead</li>
 <li><strong>Enforce centralized authorization checks</strong> – Implement a single, consistent authorization layer to validate access across all endpoints and services</li>
@@ -1638,45 +1524,36 @@ for uid in range(1,1000):
 <li><strong>Use framework-level security guards</strong> – Leverage built-in controls such as <code>@PreAuthorize</code>, <code>@PostAuthorize</code>, or equivalent middleware to enforce authorization consistently</li>
 </ul>
 <hr>
-<h2 id="tools">
-  <strong>Tools</strong>
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools"><strong>Tools</strong><a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th><strong>Tool</strong></th>
-<th><strong>What It&rsquo;s For</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Autorize(Burp Suite Extension)</strong></td>
-<td>Auto authorization testing</td>
-</tr>
-<tr>
-<td><strong>AuthMatrix(Burp Suite Extension)</strong></td>
-<td>Role-based access testing</td>
-</tr>
-<tr>
-<td><strong>InQL</strong></td>
-<td>GraphQL IDOR testing</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Tool</strong></th>
+					<th><strong>What It&rsquo;s For</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Autorize(Burp Suite Extension)</strong></td>
+					<td>Auto authorization testing</td>
+			</tr>
+			<tr>
+					<td><strong>AuthMatrix(Burp Suite Extension)</strong></td>
+					<td>Role-based access testing</td>
+			</tr>
+			<tr>
+					<td><strong>InQL</strong></td>
+					<td>GraphQL IDOR testing</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://www.thebughunter.blog/case-studies/idor-analysis" target="_blank" rel="noreferrer noopener nofollow">IDOR in the Wild: A Comprehensive Analysis of 250 Real-World Vulnerabilities - IDOR Case Study | The Bug Hunter</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://readmedium.com/top-235-idor-bug-bounty-reports-e00c8061fe28" target="_blank" rel="noreferrer noopener nofollow">Top 235 IDOR Bug Bounty Reports</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://infosecwriteups.com/10-hunting-for-idors-the-most-underrated-vulnerability-9567ebf97585" target="_blank" rel="noreferrer noopener nofollow">https://infosecwriteups.com/10-hunting-for-idors-the-most-underrated-vulnerability-9567ebf97585</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <hr>
-<h2 id="references">
-  <strong>References</strong>
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references"><strong>References</strong><a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">Insecure Direct Object Reference Prevention - OWASP Cheat Sheet Series</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References" target="_blank" rel="noreferrer noopener nofollow">WSTG - Latest | OWASP Foundation</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1693,49 +1570,62 @@ for uid in range(1,1000):
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Insecure%20Direct%20Object%20Reference%20%28IDOR%29.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Insecure-Deserialization/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Insecure Deserialization</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Insufficient-Transport-Layer-Protection/" class="flex align-center">
+        <span>Insufficient Transport Layer Protection</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1798,15 +1688,24 @@ for uid in range(1,1000):
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

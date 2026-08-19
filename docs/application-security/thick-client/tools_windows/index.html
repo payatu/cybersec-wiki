@@ -1,37 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=" Tools used in Windows Thick client pentesting # Information Gathering # CFF explorer (https://ntcore.com/?page_id=388) SysInternal Suite (https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) Strings Process Monitor Process Explorer Sigcheck Decompile and Debug # DnSpy (https://github.com/dnSpy/dnSpy/releases) ILSpy (https://github.com/icsharpcode/ILSpy/releases) DotPeek (https://www.jetbrains.com/decompiler/download/#section=web-installer) Frida (https://github.com/frida/frida/releases) Ghidra (https://github.com/NationalSecurityAgency/ghidra/releases) WinDbg (https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) Network sniffing and Proxy # Wireshark (https://www.wireshark.org/download.html) TCPView (https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) EchoMirage (https://sourceforge.net/projects/echomirage.oldbutgold.p/) Burp Suite NoPE proxy Fiddler (https://www.telerik.com/fiddler/fiddler-classic) MiTM relay (https://github.com/jrmdev/mitm_relay) System Testing # Symbolic Link Testing tools (https://github.com/googleprojectzero/symboliclink-testing-tools) ">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Tools - Windows" />
-<meta property="og:description" content=" Tools used in Windows Thick client pentesting # Information Gathering # CFF explorer (https://ntcore.com/?page_id=388) SysInternal Suite (https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) Strings Process Monitor Process Explorer Sigcheck Decompile and Debug # DnSpy (https://github.com/dnSpy/dnSpy/releases) ILSpy (https://github.com/icsharpcode/ILSpy/releases) DotPeek (https://www.jetbrains.com/decompiler/download/#section=web-installer) Frida (https://github.com/frida/frida/releases) Ghidra (https://github.com/NationalSecurityAgency/ghidra/releases) WinDbg (https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) Network sniffing and Proxy # Wireshark (https://www.wireshark.org/download.html) TCPView (https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) EchoMirage (https://sourceforge.net/projects/echomirage.oldbutgold.p/) Burp Suite NoPE proxy Fiddler (https://www.telerik.com/fiddler/fiddler-classic) MiTM relay (https://github.com/jrmdev/mitm_relay) System Testing # Symbolic Link Testing tools (https://github.com/googleprojectzero/symboliclink-testing-tools) " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2024-01-02T11:03:19+05:30" />
-<title>Tools - Windows | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tools used in Windows Thick client pentesting# Information Gathering# CFF explorer (https://ntcore.com/?page_id=388) SysInternal Suite (https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) Strings Process Monitor Process Explorer Sigcheck Decompile and Debug# DnSpy (https://github.com/dnSpy/dnSpy/releases) ILSpy (https://github.com/icsharpcode/ILSpy/releases) DotPeek (https://www.jetbrains.com/decompiler/download/#section=web-installer) Frida (https://github.com/frida/frida/releases) Ghidra (https://github.com/NationalSecurityAgency/ghidra/releases) WinDbg (https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) Network sniffing and Proxy# Wireshark (https://www.wireshark.org/download.html) TCPView (https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) EchoMirage (https://sourceforge.net/projects/echomirage.oldbutgold.p/) Burp Suite NoPE proxy Fiddler (https://www.telerik.com/fiddler/fiddler-classic) MiTM relay (https://github.com/jrmdev/mitm_relay) System Testing# Symbolic Link Testing tools (https://github.com/googleprojectzero/symboliclink-testing-tools) ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Tools - Windows">
+	<meta property="og:description" content="Tools used in Windows Thick client pentesting# Information Gathering# CFF explorer (https://ntcore.com/?page_id=388) SysInternal Suite (https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) Strings Process Monitor Process Explorer Sigcheck Decompile and Debug# DnSpy (https://github.com/dnSpy/dnSpy/releases) ILSpy (https://github.com/icsharpcode/ILSpy/releases) DotPeek (https://www.jetbrains.com/decompiler/download/#section=web-installer) Frida (https://github.com/frida/frida/releases) Ghidra (https://github.com/NationalSecurityAgency/ghidra/releases) WinDbg (https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) Network sniffing and Proxy# Wireshark (https://www.wireshark.org/download.html) TCPView (https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) EchoMirage (https://sourceforge.net/projects/echomirage.oldbutgold.p/) Burp Suite NoPE proxy Fiddler (https://www.telerik.com/fiddler/fiddler-classic) MiTM relay (https://github.com/jrmdev/mitm_relay) System Testing# Symbolic Link Testing tools (https://github.com/googleprojectzero/symboliclink-testing-tools)">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2024-01-02T11:03:19+05:30">
+
+
+	<meta itemprop="name" content="Tools - Windows">
+	<meta itemprop="description" content="Tools used in Windows Thick client pentesting# Information Gathering# CFF explorer (https://ntcore.com/?page_id=388) SysInternal Suite (https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) Strings Process Monitor Process Explorer Sigcheck Decompile and Debug# DnSpy (https://github.com/dnSpy/dnSpy/releases) ILSpy (https://github.com/icsharpcode/ILSpy/releases) DotPeek (https://www.jetbrains.com/decompiler/download/#section=web-installer) Frida (https://github.com/frida/frida/releases) Ghidra (https://github.com/NationalSecurityAgency/ghidra/releases) WinDbg (https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) Network sniffing and Proxy# Wireshark (https://www.wireshark.org/download.html) TCPView (https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) EchoMirage (https://sourceforge.net/projects/echomirage.oldbutgold.p/) Burp Suite NoPE proxy Fiddler (https://www.telerik.com/fiddler/fiddler-classic) MiTM relay (https://github.com/jrmdev/mitm_relay) System Testing# Symbolic Link Testing tools (https://github.com/googleprojectzero/symboliclink-testing-tools)">
+	<meta itemprop="dateModified" content="2024-01-02T11:03:19+05:30">
+	<meta itemprop="wordCount" content="62">
+
+<title>Tools - Windows • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/thick-client/tools_windows/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -39,11 +55,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -54,9 +74,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -71,8 +88,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -88,8 +105,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle" checked />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle" checked />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -175,8 +192,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -223,8 +240,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle"  />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle"  />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -978,8 +995,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1000,8 +1017,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1022,8 +1039,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1044,8 +1061,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1066,8 +1083,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1101,8 +1118,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1123,8 +1140,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1145,8 +1162,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1167,35 +1184,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1203,30 +1198,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Tools - Windows</strong>
+  <h3>Tools - Windows</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1251,14 +1247,8 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="tools-used-in-windows-thick-client-pentesting">
-  Tools used in Windows Thick client pentesting
-  <a class="anchor" href="#tools-used-in-windows-thick-client-pentesting">#</a>
-</h1>
-<h2 id="information-gathering">
-  Information Gathering
-  <a class="anchor" href="#information-gathering">#</a>
-</h2>
+  <article class="markdown book-article"><h1 id="tools-used-in-windows-thick-client-pentesting">Tools used in Windows Thick client pentesting<a class="anchor" href="#tools-used-in-windows-thick-client-pentesting">#</a></h1>
+<h2 id="information-gathering">Information Gathering<a class="anchor" href="#information-gathering">#</a></h2>
 <ol>
 <li>CFF explorer (<a href="https://ntcore.com/?page_id=388" target="_blank" rel="noreferrer noopener nofollow">https://ntcore.com/?page_id=388</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 <li>SysInternal Suite (<a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite" target="_blank" rel="noreferrer noopener nofollow">https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)
@@ -1270,10 +1260,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ol>
-<h2 id="decompile-and-debug">
-  Decompile and Debug
-  <a class="anchor" href="#decompile-and-debug">#</a>
-</h2>
+<h2 id="decompile-and-debug">Decompile and Debug<a class="anchor" href="#decompile-and-debug">#</a></h2>
 <ol>
 <li>DnSpy (<a href="https://github.com/dnSpy/dnSpy/releases" target="_blank" rel="noreferrer noopener nofollow">https://github.com/dnSpy/dnSpy/releases</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 <li>ILSpy (<a href="https://github.com/icsharpcode/ILSpy/releases" target="_blank" rel="noreferrer noopener nofollow">https://github.com/icsharpcode/ILSpy/releases</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
@@ -1282,10 +1269,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Ghidra (<a href="https://github.com/NationalSecurityAgency/ghidra/releases" target="_blank" rel="noreferrer noopener nofollow">https://github.com/NationalSecurityAgency/ghidra/releases</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 <li>WinDbg (<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools" target="_blank" rel="noreferrer noopener nofollow">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 </ol>
-<h2 id="network-sniffing-and-proxy">
-  Network sniffing and Proxy
-  <a class="anchor" href="#network-sniffing-and-proxy">#</a>
-</h2>
+<h2 id="network-sniffing-and-proxy">Network sniffing and Proxy<a class="anchor" href="#network-sniffing-and-proxy">#</a></h2>
 <ol>
 <li>Wireshark (<a href="https://www.wireshark.org/download.html" target="_blank" rel="noreferrer noopener nofollow">https://www.wireshark.org/download.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 <li>TCPView (<a href="https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview" target="_blank" rel="noreferrer noopener nofollow">https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
@@ -1294,10 +1278,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Fiddler (<a href="https://www.telerik.com/fiddler/fiddler-classic" target="_blank" rel="noreferrer noopener nofollow">https://www.telerik.com/fiddler/fiddler-classic</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 <li>MiTM relay (<a href="https://github.com/jrmdev/mitm_relay" target="_blank" rel="noreferrer noopener nofollow">https://github.com/jrmdev/mitm_relay</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 </ol>
-<h2 id="system-testing">
-  System Testing
-  <a class="anchor" href="#system-testing">#</a>
-</h2>
+<h2 id="system-testing">System Testing<a class="anchor" href="#system-testing">#</a></h2>
 <ol>
 <li>Symbolic Link Testing tools (<a href="https://github.com/googleprojectzero/symboliclink-testing-tools" target="_blank" rel="noreferrer noopener nofollow">https://github.com/googleprojectzero/symboliclink-testing-tools</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 </ol>
@@ -1309,49 +1290,62 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/29a5cefae1cbe892ad33e003ae21e3ab807bafcc" title='Last modified by banditMukund | January 2, 2024' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>January 2, 2024</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/thick%20client/tools_windows.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/thick-client/tools_linux/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Tools - Linux</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/Vulnerable-Applications/Api/" class="flex align-center">
+        <span>API</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1367,15 +1361,24 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

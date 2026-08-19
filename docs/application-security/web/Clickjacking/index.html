@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Clickjacking # Clickjacking (also known as UI Redressing) is a client-side web vulnerability where an attacker tricks a victim into interacting with a hidden or disguised UI element from a legitimate website. The attacker places the target application inside an invisible iframe and overlays it with malicious content, causing the victim to unknowingly perform actions.
-The attack abuses the trust a user has in a website and the browser&rsquo;s ability to render cross-origin frames.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Clickjacking" />
-<meta property="og:description" content="Clickjacking # Clickjacking (also known as UI Redressing) is a client-side web vulnerability where an attacker tricks a victim into interacting with a hidden or disguised UI element from a legitimate website. The attacker places the target application inside an invisible iframe and overlays it with malicious content, causing the victim to unknowingly perform actions.
-The attack abuses the trust a user has in a website and the browser&rsquo;s ability to render cross-origin frames." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Clickjacking/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Clickjacking | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Clickjacking# Clickjacking (also known as UI Redressing) is a client-side web vulnerability where an attacker tricks a victim into interacting with a hidden or disguised UI element from a legitimate website. The attacker places the target application inside an invisible iframe and overlays it with malicious content, causing the victim to unknowingly perform actions.
+The attack abuses the trust a user has in a website and the browser’s ability to render cross-origin frames. Successful exploitation can lead to unauthorized actions such as changing account settings, enabling features, performing transactions, authorizing OAuth applications, or submitting sensitive actions.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Clickjacking/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Clickjacking">
+	<meta property="og:description" content="Clickjacking# Clickjacking (also known as UI Redressing) is a client-side web vulnerability where an attacker tricks a victim into interacting with a hidden or disguised UI element from a legitimate website. The attacker places the target application inside an invisible iframe and overlays it with malicious content, causing the victim to unknowingly perform actions.
+The attack abuses the trust a user has in a website and the browser’s ability to render cross-origin frames. Successful exploitation can lead to unauthorized actions such as changing account settings, enabling features, performing transactions, authorizing OAuth applications, or submitting sensitive actions.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Clickjacking">
+	<meta itemprop="description" content="Clickjacking# Clickjacking (also known as UI Redressing) is a client-side web vulnerability where an attacker tricks a victim into interacting with a hidden or disguised UI element from a legitimate website. The attacker places the target application inside an invisible iframe and overlays it with malicious content, causing the victim to unknowingly perform actions.
+The attack abuses the trust a user has in a website and the browser’s ability to render cross-origin frames. Successful exploitation can lead to unauthorized actions such as changing account settings, enabling features, performing transactions, authorizing OAuth applications, or submitting sensitive actions.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="889">
+
+<title>Clickjacking • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Clickjacking/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Clickjacking</strong>
+  <h3>Clickjacking</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1337,10 +1335,7 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="clickjacking">
-  Clickjacking
-  <a class="anchor" href="#clickjacking">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="clickjacking">Clickjacking<a class="anchor" href="#clickjacking">#</a></h1>
 <p>Clickjacking (also known as <strong>UI Redressing</strong>) is a client-side web vulnerability where an attacker tricks a victim into interacting with a hidden or disguised UI element from a legitimate website. The attacker places the target application inside an invisible iframe and overlays it with malicious content, causing the victim to unknowingly perform actions.</p>
 <p>The attack abuses the trust a user has in a website and the browser&rsquo;s ability to render cross-origin frames. Successful exploitation can lead to unauthorized actions such as changing account settings, enabling features, performing transactions, authorizing OAuth applications, or submitting sensitive actions.</p>
 <p>Common impact includes:</p>
@@ -1353,40 +1348,23 @@ https://github.com/alex-shpak/hugo-book
 <li>Sensitive action execution</li>
 </ul>
 <hr>
-<h1 id="fundamentals-of-clickjacking">
-  Fundamentals of Clickjacking
-  <a class="anchor" href="#fundamentals-of-clickjacking">#</a>
-</h1>
-<h2 id="how-clickjacking-works">
-  How Clickjacking Works
-  <a class="anchor" href="#how-clickjacking-works">#</a>
-</h2>
+<h1 id="fundamentals-of-clickjacking">Fundamentals of Clickjacking<a class="anchor" href="#fundamentals-of-clickjacking">#</a></h1>
+<h2 id="how-clickjacking-works">How Clickjacking Works<a class="anchor" href="#how-clickjacking-works">#</a></h2>
 <p>Clickjacking relies on three main components:</p>
-<h3 id="1-target-website">
-  1. Target Website
-  <a class="anchor" href="#1-target-website">#</a>
-</h3>
+<h3 id="1-target-website">1. Target Website<a class="anchor" href="#1-target-website">#</a></h3>
 <p>The vulnerable website allows itself to be loaded inside an iframe.</p>
 <p>Example:</p>
-<pre tabindex="0"><code>&lt;iframesrc=&#34;https://victim.com/change-email&#34;&gt;&lt;/iframe&gt;
-</code></pre><hr>
-<h3 id="2-transparent-overlay">
-  2. Transparent Overlay
-  <a class="anchor" href="#2-transparent-overlay">#</a>
-</h3>
+<pre tabindex="0"><code>&lt;iframesrc=&#34;https://victim.com/change-email&#34;&gt;&lt;/iframe&gt;</code></pre><hr>
+<h3 id="2-transparent-overlay">2. Transparent Overlay<a class="anchor" href="#2-transparent-overlay">#</a></h3>
 <p>The attacker places invisible UI elements above the iframe.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>&lt;iframesrc=&#34;https://victim.com/delete-account&#34;style=&#34;
 opacity:0;
 position:absolute;
 width:100%;
-height:100%;&#34;&gt;&lt;/iframe&gt;
-</code></pre><p>The victim thinks they are clicking the attacker&rsquo;s page but actually clicks the hidden iframe.</p>
+height:100%;&#34;&gt;&lt;/iframe&gt;</code></pre><p>The victim thinks they are clicking the attacker&rsquo;s page but actually clicks the hidden iframe.</p>
 <hr>
-<h3 id="3-user-interaction">
-  3. User Interaction
-  <a class="anchor" href="#3-user-interaction">#</a>
-</h3>
+<h3 id="3-user-interaction">3. User Interaction<a class="anchor" href="#3-user-interaction">#</a></h3>
 <p>Clickjacking requires victim interaction.</p>
 <p>Examples:</p>
 <ul>
@@ -1396,23 +1374,13 @@ height:100%;&#34;&gt;&lt;/iframe&gt;
 <li>Approving permissions</li>
 </ul>
 <hr>
-<h2 id="browser-security-concepts">
-  Browser Security Concepts
-  <a class="anchor" href="#browser-security-concepts">#</a>
-</h2>
-<h3 id="iframe">
-  iframe
-  <a class="anchor" href="#iframe">#</a>
-</h3>
+<h2 id="browser-security-concepts">Browser Security Concepts<a class="anchor" href="#browser-security-concepts">#</a></h2>
+<h3 id="iframe">iframe<a class="anchor" href="#iframe">#</a></h3>
 <p>An iframe allows embedding another webpage inside the current webpage.</p>
 <p>Example:</p>
-<pre tabindex="0"><code>&lt;iframesrc=&#34;https://example.com&#34;&gt;&lt;/iframe&gt;
-</code></pre><p>Attackers abuse this behavior to embed sensitive pages.</p>
+<pre tabindex="0"><code>&lt;iframesrc=&#34;https://example.com&#34;&gt;&lt;/iframe&gt;</code></pre><p>Attackers abuse this behavior to embed sensitive pages.</p>
 <hr>
-<h3 id="same-origin-policy-sop">
-  Same-Origin Policy (SOP)
-  <a class="anchor" href="#same-origin-policy-sop">#</a>
-</h3>
+<h3 id="same-origin-policy-sop">Same-Origin Policy (SOP)<a class="anchor" href="#same-origin-policy-sop">#</a></h3>
 <p>Browsers prevent scripts from reading cross-origin iframe content.</p>
 <p>However:</p>
 <ul>
@@ -1421,15 +1389,10 @@ height:100%;&#34;&gt;&lt;/iframe&gt;
 </ul>
 <p>Example:</p>
 <p>Attacker cannot:</p>
-<pre tabindex="0"><code>iframe.contentWindow.document.body.innerHTML
-</code></pre><p>But can still:</p>
-<pre tabindex="0"><code>&lt;iframesrc=&#34;https://victim.com&#34;&gt;&lt;/iframe&gt;
-</code></pre><p>This is why clickjacking is possible.</p>
+<pre tabindex="0"><code>iframe.contentWindow.document.body.innerHTML</code></pre><p>But can still:</p>
+<pre tabindex="0"><code>&lt;iframesrc=&#34;https://victim.com&#34;&gt;&lt;/iframe&gt;</code></pre><p>This is why clickjacking is possible.</p>
 <hr>
-<h2 id="conditions-required-for-clickjacking">
-  Conditions Required for Clickjacking
-  <a class="anchor" href="#conditions-required-for-clickjacking">#</a>
-</h2>
+<h2 id="conditions-required-for-clickjacking">Conditions Required for Clickjacking<a class="anchor" href="#conditions-required-for-clickjacking">#</a></h2>
 <p>A successful clickjacking attack usually requires:</p>
 <p>✅ Application can be embedded in iframe</p>
 <p>AND</p>
@@ -1439,33 +1402,21 @@ height:100%;&#34;&gt;&lt;/iframe&gt;
 <p>AND</p>
 <p>✅ User interaction required</p>
 <hr>
-<h2 id="types-of-clickjacking-attacks">
-  Types of Clickjacking Attacks
-  <a class="anchor" href="#types-of-clickjacking-attacks">#</a>
-</h2>
-<h3 id="1-basic-clickjacking">
-  1. Basic Clickjacking
-  <a class="anchor" href="#1-basic-clickjacking">#</a>
-</h3>
+<h2 id="types-of-clickjacking-attacks">Types of Clickjacking Attacks<a class="anchor" href="#types-of-clickjacking-attacks">#</a></h2>
+<h3 id="1-basic-clickjacking">1. Basic Clickjacking<a class="anchor" href="#1-basic-clickjacking">#</a></h3>
 <p>Attacker hides a sensitive button.</p>
 <p>Example:</p>
 <p>Victim sees:</p>
-<pre tabindex="0"><code>Click Here To Win Prize
-</code></pre><p>Actual action:</p>
-<pre tabindex="0"><code>Delete Account
-</code></pre><p>Payload:</p>
+<pre tabindex="0"><code>Click Here To Win Prize</code></pre><p>Actual action:</p>
+<pre tabindex="0"><code>Delete Account</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>&lt;iframe src=&#34;https://victim.com/delete-account&#34;style=&#34;
 opacity:0;
 position:absolute;
 top:0;
 left:0;
 width:100%;
-height:100%;&#34;&gt;&lt;/iframe&gt;
-</code></pre><hr>
-<h3 id="2-likejacking">
-  2. Likejacking
-  <a class="anchor" href="#2-likejacking">#</a>
-</h3>
+height:100%;&#34;&gt;&lt;/iframe&gt;</code></pre><hr>
+<h3 id="2-likejacking">2. Likejacking<a class="anchor" href="#2-likejacking">#</a></h3>
 <p>Used to force users to perform social media actions.</p>
 <p>Examples:</p>
 <ul>
@@ -1474,22 +1425,14 @@ height:100%;&#34;&gt;&lt;/iframe&gt;
 <li>Share content</li>
 </ul>
 <hr>
-<h3 id="3-login-clickjacking">
-  3. Login Clickjacking
-  <a class="anchor" href="#3-login-clickjacking">#</a>
-</h3>
+<h3 id="3-login-clickjacking">3. Login Clickjacking<a class="anchor" href="#3-login-clickjacking">#</a></h3>
 <p>Attempts to trick users into entering credentials into a fake overlay.</p>
 <p>Example:</p>
 <p>Attacker page:</p>
-<pre tabindex="0"><code>Enter username/password
-</code></pre><p>Hidden iframe:</p>
-<pre tabindex="0"><code>https://victim.com/login
-</code></pre><p>However, modern browsers and password managers reduce effectiveness.</p>
+<pre tabindex="0"><code>Enter username/password</code></pre><p>Hidden iframe:</p>
+<pre tabindex="0"><code>https://victim.com/login</code></pre><p>However, modern browsers and password managers reduce effectiveness.</p>
 <hr>
-<h3 id="4-action-clickjacking">
-  4. Action Clickjacking
-  <a class="anchor" href="#4-action-clickjacking">#</a>
-</h3>
+<h3 id="4-action-clickjacking">4. Action Clickjacking<a class="anchor" href="#4-action-clickjacking">#</a></h3>
 <p>Targets sensitive functionality.</p>
 <p>Examples:</p>
 <ul>
@@ -1500,27 +1443,17 @@ height:100%;&#34;&gt;&lt;/iframe&gt;
 <li>Add payment method</li>
 </ul>
 <p>Example:</p>
-<pre tabindex="0"><code>&lt;iframesrc=&#34;https://victim.com/change-password&#34;&gt;&lt;/iframe&gt;
-</code></pre><hr>
-<h3 id="5-oauth-clickjacking">
-  5. OAuth Clickjacking
-  <a class="anchor" href="#5-oauth-clickjacking">#</a>
-</h3>
+<pre tabindex="0"><code>&lt;iframesrc=&#34;https://victim.com/change-password&#34;&gt;&lt;/iframe&gt;</code></pre><hr>
+<h3 id="5-oauth-clickjacking">5. OAuth Clickjacking<a class="anchor" href="#5-oauth-clickjacking">#</a></h3>
 <p>Targets OAuth authorization flows.</p>
 <p>Example:</p>
 <p>Victim visits:</p>
-<pre tabindex="0"><code>https://attacker.com
-</code></pre><p>Hidden iframe:</p>
-<pre tabindex="0"><code>https://oauth-provider.com/authorize
-</code></pre><p>Victim unknowingly clicks:</p>
-<pre tabindex="0"><code>Allow Application
-</code></pre><p>Result:</p>
+<pre tabindex="0"><code>https://attacker.com</code></pre><p>Hidden iframe:</p>
+<pre tabindex="0"><code>https://oauth-provider.com/authorize</code></pre><p>Victim unknowingly clicks:</p>
+<pre tabindex="0"><code>Allow Application</code></pre><p>Result:</p>
 <p>Attacker obtains OAuth authorization.</p>
 <hr>
-<h3 id="6-drag-and-drop-clickjacking">
-  6. Drag-and-Drop Clickjacking
-  <a class="anchor" href="#6-drag-and-drop-clickjacking">#</a>
-</h3>
+<h3 id="6-drag-and-drop-clickjacking">6. Drag-and-Drop Clickjacking<a class="anchor" href="#6-drag-and-drop-clickjacking">#</a></h3>
 <p>Uses drag operations instead of clicks.</p>
 <p>Example:</p>
 <p>Victim drags text/file.</p>
@@ -1531,10 +1464,7 @@ height:100%;&#34;&gt;&lt;/iframe&gt;
 <li>Change settings</li>
 </ul>
 <hr>
-<h3 id="7-doubleclickjacking">
-  7. DoubleClickjacking
-  <a class="anchor" href="#7-doubleclickjacking">#</a>
-</h3>
+<h3 id="7-doubleclickjacking">7. DoubleClickjacking<a class="anchor" href="#7-doubleclickjacking">#</a></h3>
 <p>A modern variation where two clicks are abused.</p>
 <p>Flow:</p>
 <ol>
@@ -1546,83 +1476,44 @@ height:100%;&#34;&gt;&lt;/iframe&gt;
 <pre tabindex="0"><code>window.addEventListener(&#34;click&#34;,
 ()=&gt;{setTimeout(()=&gt;{window.location=&#34;https://victim.com/action&#34;;
 },100);
-});
-</code></pre><hr>
-<h1 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h1>
+});</code></pre><hr>
+<h1 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h1>
 <p>Look for:</p>
-<h2 id="account-management">
-  Account Management
-  <a class="anchor" href="#account-management">#</a>
-</h2>
+<h2 id="account-management">Account Management<a class="anchor" href="#account-management">#</a></h2>
 <pre tabindex="0"><code>/profile
 /settings
 /change-email
 /change-password
-/delete-account
-</code></pre><hr>
-<h2 id="financial-actions">
-  Financial Actions
-  <a class="anchor" href="#financial-actions">#</a>
-</h2>
+/delete-account</code></pre><hr>
+<h2 id="financial-actions">Financial Actions<a class="anchor" href="#financial-actions">#</a></h2>
 <pre tabindex="0"><code>/transfer
 /payment
 /add-card
-/withdraw
-</code></pre><hr>
-<h2 id="security-features">
-  Security Features
-  <a class="anchor" href="#security-features">#</a>
-</h2>
+/withdraw</code></pre><hr>
+<h2 id="security-features">Security Features<a class="anchor" href="#security-features">#</a></h2>
 <pre tabindex="0"><code>/enable-mfa
 /disable-mfa
-/change-security-question
-</code></pre><hr>
-<h2 id="oauth">
-  OAuth
-  <a class="anchor" href="#oauth">#</a>
-</h2>
+/change-security-question</code></pre><hr>
+<h2 id="oauth">OAuth<a class="anchor" href="#oauth">#</a></h2>
 <pre tabindex="0"><code>/authorize
 /oauth/consent
-/connect
-</code></pre><hr>
-<h2 id="file-operations">
-  File Operations
-  <a class="anchor" href="#file-operations">#</a>
-</h2>
+/connect</code></pre><hr>
+<h2 id="file-operations">File Operations<a class="anchor" href="#file-operations">#</a></h2>
 <pre tabindex="0"><code>/upload
 /import
-/export
-</code></pre><hr>
-<h1 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h1>
-<h2 id="1-basic-detection">
-  1. Basic Detection
-  <a class="anchor" href="#1-basic-detection">#</a>
-</h2>
+/export</code></pre><hr>
+<h1 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h1>
+<h2 id="1-basic-detection">1. Basic Detection<a class="anchor" href="#1-basic-detection">#</a></h2>
 <p>Check headers:</p>
-<pre tabindex="0"><code>curl-I https://target.com
-</code></pre><p>Look for:</p>
+<pre tabindex="0"><code>curl-I https://target.com</code></pre><p>Look for:</p>
 <pre tabindex="0"><code>X-Frame-Options
-Content-Security-Policy
-</code></pre><hr>
-<h2 id="2-testing-iframe-loading">
-  2. Testing iframe Loading
-  <a class="anchor" href="#2-testing-iframe-loading">#</a>
-</h2>
+Content-Security-Policy</code></pre><hr>
+<h2 id="2-testing-iframe-loading">2. Testing iframe Loading<a class="anchor" href="#2-testing-iframe-loading">#</a></h2>
 <p>Create:</p>
-<pre tabindex="0"><code>&lt;html&gt;&lt;body&gt;&lt;h1&gt;Click Here&lt;/h1&gt;&lt;iframesrc=&#34;https://target.com&#34;width=&#34;800&#34;height=&#34;600&#34;&gt;&lt;/iframe&gt;&lt;/body&gt;&lt;/html&gt;
-</code></pre><p>If page loads:</p>
+<pre tabindex="0"><code>&lt;html&gt;&lt;body&gt;&lt;h1&gt;Click Here&lt;/h1&gt;&lt;iframesrc=&#34;https://target.com&#34;width=&#34;800&#34;height=&#34;600&#34;&gt;&lt;/iframe&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>If page loads:</p>
 <p>Potential clickjacking.</p>
 <hr>
-<h2 id="3-transparent-overlay-testing">
-  3. Transparent Overlay Testing
-  <a class="anchor" href="#3-transparent-overlay-testing">#</a>
-</h2>
+<h2 id="3-transparent-overlay-testing">3. Transparent Overlay Testing<a class="anchor" href="#3-transparent-overlay-testing">#</a></h2>
 <p>Example:</p>
 <pre tabindex="0"><code>&lt;style&gt;iframe{
 opacity:0.1;
@@ -1631,17 +1522,10 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-}&lt;/style&gt;&lt;iframesrc=&#34;https://target.com&#34;&gt;&lt;/iframe&gt;
-</code></pre><p>Check if sensitive buttons are clickable.</p>
+}&lt;/style&gt;&lt;iframesrc=&#34;https://target.com&#34;&gt;&lt;/iframe&gt;</code></pre><p>Check if sensitive buttons are clickable.</p>
 <hr>
-<h1 id="bypassing-clickjacking-protections">
-  <strong>Bypassing Clickjacking Protections</strong>
-  <a class="anchor" href="#bypassing-clickjacking-protections">#</a>
-</h1>
-<h2 id="a-bypassing-x-frame-options">
-  <strong>A. Bypassing X-Frame-Options</strong>
-  <a class="anchor" href="#a-bypassing-x-frame-options">#</a>
-</h2>
+<h1 id="bypassing-clickjacking-protections"><strong>Bypassing Clickjacking Protections</strong><a class="anchor" href="#bypassing-clickjacking-protections">#</a></h1>
+<h2 id="a-bypassing-x-frame-options"><strong>A. Bypassing X-Frame-Options</strong><a class="anchor" href="#a-bypassing-x-frame-options">#</a></h2>
 <ul>
 <li><strong>Case 1</strong>: <strong><code>X-Frame-Options: DENY</code></strong> (No bypass, strict)</li>
 <li><strong>Case 2</strong>: <strong><code>X-Frame-Options: SAMEORIGIN</code></strong>
@@ -1651,10 +1535,7 @@ height:100%;
 </li>
 <li><strong>Case 3</strong>: <strong><code>X-Frame-Options: ALLOW-FROM uri</code></strong> (Deprecated, rarely used)</li>
 </ul>
-<h2 id="b-bypassing-csp-frame-ancestors">
-  <strong>B. Bypassing CSP frame-ancestors</strong>
-  <a class="anchor" href="#b-bypassing-csp-frame-ancestors">#</a>
-</h2>
+<h2 id="b-bypassing-csp-frame-ancestors"><strong>B. Bypassing CSP frame-ancestors</strong><a class="anchor" href="#b-bypassing-csp-frame-ancestors">#</a></h2>
 <ul>
 <li><strong>Case 1</strong>: <strong><code>Content-Security-Policy: frame-ancestors 'none'</code></strong> (No bypass)</li>
 <li><strong>Case 2</strong>: <strong><code>Content-Security-Policy: frame-ancestors 'self'</code></strong>
@@ -1668,90 +1549,46 @@ height:100%;
 </ul>
 </li>
 </ul>
-<h2 id="c-bypassing-javascript-framebusting">
-  <strong>C. Bypassing JavaScript Framebusting</strong>
-  <a class="anchor" href="#c-bypassing-javascript-framebusting">#</a>
-</h2>
+<h2 id="c-bypassing-javascript-framebusting"><strong>C. Bypassing JavaScript Framebusting</strong><a class="anchor" href="#c-bypassing-javascript-framebusting">#</a></h2>
 <ul>
 <li>
 <p><strong>Example</strong>: Victim site uses:</p>
-<pre tabindex="0"><code>if (top != self) top.location = self.location;
-</code></pre></li>
+<pre tabindex="0"><code>if (top != self) top.location = self.location;</code></pre></li>
 <li>
 <p><strong>Bypass</strong>:</p>
-<pre tabindex="0"><code>&lt;iframe src=&#34;https://victim-site.com&#34; sandbox=&#34;allow-scripts allow-forms&#34;&gt;&lt;/iframe&gt;
-</code></pre><p>(Sandboxing prevents framebusting)</p>
+<pre tabindex="0"><code>&lt;iframe src=&#34;https://victim-site.com&#34; sandbox=&#34;allow-scripts allow-forms&#34;&gt;&lt;/iframe&gt;</code></pre><p>(Sandboxing prevents framebusting)</p>
 </li>
 </ul>
 <hr>
-<h1 id="framework-specific-considerations">
-  Framework Specific Considerations
-  <a class="anchor" href="#framework-specific-considerations">#</a>
-</h1>
-<h2 id="django">
-  Django
-  <a class="anchor" href="#django">#</a>
-</h2>
+<h1 id="framework-specific-considerations">Framework Specific Considerations<a class="anchor" href="#framework-specific-considerations">#</a></h1>
+<h2 id="django">Django<a class="anchor" href="#django">#</a></h2>
 <p>Protection:</p>
-<pre tabindex="0"><code>X_FRAME_OPTIONS=&#39;DENY&#39;
-</code></pre><hr>
-<h2 id="spring-security">
-  Spring Security
-  <a class="anchor" href="#spring-security">#</a>
-</h2>
+<pre tabindex="0"><code>X_FRAME_OPTIONS=&#39;DENY&#39;</code></pre><hr>
+<h2 id="spring-security">Spring Security<a class="anchor" href="#spring-security">#</a></h2>
 <p>Enable:</p>
-<pre tabindex="0"><code>headers().frameOptions().deny();
-</code></pre><hr>
-<h2 id="aspnet">
-  ASP.NET
-  <a class="anchor" href="#aspnet">#</a>
-</h2>
+<pre tabindex="0"><code>headers().frameOptions().deny();</code></pre><hr>
+<h2 id="aspnet">ASP.NET<a class="anchor" href="#aspnet">#</a></h2>
 <p>Add:</p>
-<pre tabindex="0"><code>&lt;addname=&#34;X-Frame-Options&#34;value=&#34;DENY&#34;/&gt;
-</code></pre><hr>
-<h2 id="expressjs">
-  Express.js
-  <a class="anchor" href="#expressjs">#</a>
-</h2>
+<pre tabindex="0"><code>&lt;addname=&#34;X-Frame-Options&#34;value=&#34;DENY&#34;/&gt;</code></pre><hr>
+<h2 id="expressjs">Express.js<a class="anchor" href="#expressjs">#</a></h2>
 <p>Using Helmet:</p>
 <pre tabindex="0"><code>app.use(helmet.frameguard({
 action:&#39;deny&#39;
 })
-);
-</code></pre><hr>
-<h1 id="testing-methodology">
-  Testing Methodology
-  <a class="anchor" href="#testing-methodology">#</a>
-</h1>
-<h2 id="manual-testing-checklist">
-  Manual Testing Checklist
-  <a class="anchor" href="#manual-testing-checklist">#</a>
-</h2>
-<h3 id="step-1">
-  Step 1
-  <a class="anchor" href="#step-1">#</a>
-</h3>
+);</code></pre><hr>
+<h1 id="testing-methodology">Testing Methodology<a class="anchor" href="#testing-methodology">#</a></h1>
+<h2 id="manual-testing-checklist">Manual Testing Checklist<a class="anchor" href="#manual-testing-checklist">#</a></h2>
+<h3 id="step-1">Step 1<a class="anchor" href="#step-1">#</a></h3>
 <p>Check headers:</p>
-<pre tabindex="0"><code>curl-I https://target.com
-</code></pre><hr>
-<h3 id="step-2">
-  Step 2
-  <a class="anchor" href="#step-2">#</a>
-</h3>
+<pre tabindex="0"><code>curl-I https://target.com</code></pre><hr>
+<h3 id="step-2">Step 2<a class="anchor" href="#step-2">#</a></h3>
 <p>Verify:</p>
 <pre tabindex="0"><code>X-Frame-Options
-Content-Security-Policy
-</code></pre><hr>
-<h3 id="step-3">
-  Step 3
-  <a class="anchor" href="#step-3">#</a>
-</h3>
+Content-Security-Policy</code></pre><hr>
+<h3 id="step-3">Step 3<a class="anchor" href="#step-3">#</a></h3>
 <p>Create iframe PoC.</p>
 <hr>
-<h3 id="step-4">
-  Step 4
-  <a class="anchor" href="#step-4">#</a>
-</h3>
+<h3 id="step-4">Step 4<a class="anchor" href="#step-4">#</a></h3>
 <p>Test sensitive actions:</p>
 <ul>
 <li>Change email</li>
@@ -1760,10 +1597,7 @@ Content-Security-Policy
 <li>OAuth consent</li>
 </ul>
 <hr>
-<h3 id="step-5">
-  Step 5
-  <a class="anchor" href="#step-5">#</a>
-</h3>
+<h3 id="step-5">Step 5<a class="anchor" href="#step-5">#</a></h3>
 <p>Check:</p>
 <ul>
 <li>GET based actions</li>
@@ -1771,33 +1605,27 @@ Content-Security-Policy
 <li>Authentication requirements</li>
 </ul>
 <hr>
-<h1 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h1>
+<h1 id="tools">Tools<a class="anchor" href="#tools">#</a></h1>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Burp Suite / OWASP ZAP</td>
-<td>Header analysis and clickjacking detection</td>
-</tr>
-<tr>
-<td>Clickjacking Tester</td>
-<td>iframe testing</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Burp Suite / OWASP ZAP</td>
+					<td>Header analysis and clickjacking detection</td>
+			</tr>
+			<tr>
+					<td>Clickjacking Tester</td>
+					<td>iframe testing</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h1 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h1>
+<h1 id="impact">Impact<a class="anchor" href="#impact">#</a></h1>
 <p>Successful clickjacking can result in:</p>
 <ul>
 <li>Unauthorized account modifications</li>
@@ -1811,34 +1639,18 @@ Content-Security-Policy
 </ul>
 <p>The impact depends on the functionality exposed through the framed page. Critical actions such as password changes, payment approvals, or OAuth authorization can result in severe compromise.</p>
 <hr>
-<h1 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h1>
-<h2 id="1-implement-csp-frame-ancestors">
-  1. Implement CSP frame-ancestors
-  <a class="anchor" href="#1-implement-csp-frame-ancestors">#</a>
-</h2>
+<h1 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h1>
+<h2 id="1-implement-csp-frame-ancestors">1. Implement CSP frame-ancestors<a class="anchor" href="#1-implement-csp-frame-ancestors">#</a></h2>
 <p>Recommended:</p>
 <pre tabindex="0"><code>Content-Security-Policy:
-frame-ancestors &#39;none&#39;;
-</code></pre><p>Allow trusted domains:</p>
+frame-ancestors &#39;none&#39;;</code></pre><p>Allow trusted domains:</p>
 <pre tabindex="0"><code>Content-Security-Policy:
-frame-ancestors &#39;self&#39; https://trusted.com;
-</code></pre><hr>
-<h2 id="2-implement-x-frame-options">
-  2. Implement X-Frame-Options
-  <a class="anchor" href="#2-implement-x-frame-options">#</a>
-</h2>
+frame-ancestors &#39;self&#39; https://trusted.com;</code></pre><hr>
+<h2 id="2-implement-x-frame-options">2. Implement X-Frame-Options<a class="anchor" href="#2-implement-x-frame-options">#</a></h2>
 <p>Legacy browser support:</p>
-<pre tabindex="0"><code>X-Frame-Options: DENY
-</code></pre><p>or</p>
-<pre tabindex="0"><code>X-Frame-Options: SAMEORIGIN
-</code></pre><hr>
-<h2 id="3-protect-sensitive-actions">
-  3. Protect Sensitive Actions
-  <a class="anchor" href="#3-protect-sensitive-actions">#</a>
-</h2>
+<pre tabindex="0"><code>X-Frame-Options: DENY</code></pre><p>or</p>
+<pre tabindex="0"><code>X-Frame-Options: SAMEORIGIN</code></pre><hr>
+<h2 id="3-protect-sensitive-actions">3. Protect Sensitive Actions<a class="anchor" href="#3-protect-sensitive-actions">#</a></h2>
 <p>Use:</p>
 <ul>
 <li>CSRF tokens</li>
@@ -1847,31 +1659,19 @@ frame-ancestors &#39;self&#39; https://trusted.com;
 <li>User confirmation prompts</li>
 </ul>
 <hr>
-<h2 id="4-avoid-sensitive-get-actions">
-  4. Avoid Sensitive GET Actions
-  <a class="anchor" href="#4-avoid-sensitive-get-actions">#</a>
-</h2>
+<h2 id="4-avoid-sensitive-get-actions">4. Avoid Sensitive GET Actions<a class="anchor" href="#4-avoid-sensitive-get-actions">#</a></h2>
 <p>Bad:</p>
-<pre tabindex="0"><code>GET /delete-account
-</code></pre><p>Good:</p>
-<pre tabindex="0"><code>POST /delete-account
-</code></pre><p>with CSRF protection.</p>
+<pre tabindex="0"><code>GET /delete-account</code></pre><p>Good:</p>
+<pre tabindex="0"><code>POST /delete-account</code></pre><p>with CSRF protection.</p>
 <hr>
-<h2 id="5-use-samesite-cookies">
-  5. Use SameSite Cookies
-  <a class="anchor" href="#5-use-samesite-cookies">#</a>
-</h2>
+<h2 id="5-use-samesite-cookies">5. Use SameSite Cookies<a class="anchor" href="#5-use-samesite-cookies">#</a></h2>
 <p>Example:</p>
 <pre tabindex="0"><code>Set-Cookie:
 session=value;
 SameSite=Lax;
 Secure;
-HttpOnly
-</code></pre><hr>
-<h2 id="6-implement-user-interaction-confirmation">
-  6. Implement User Interaction Confirmation
-  <a class="anchor" href="#6-implement-user-interaction-confirmation">#</a>
-</h2>
+HttpOnly</code></pre><hr>
+<h2 id="6-implement-user-interaction-confirmation">6. Implement User Interaction Confirmation<a class="anchor" href="#6-implement-user-interaction-confirmation">#</a></h2>
 <p>For critical operations:</p>
 <ul>
 <li>Transaction confirmation</li>
@@ -1879,10 +1679,7 @@ HttpOnly
 <li>OTP verification</li>
 </ul>
 <hr>
-<h1 id="real-world-examples">
-  Real-World Examples
-  <a class="anchor" href="#real-world-examples">#</a>
-</h1>
+<h1 id="real-world-examples">Real-World Examples<a class="anchor" href="#real-world-examples">#</a></h1>
 <p><strong>Facebook Likejacking</strong></p>
 <p>Attackers forced users to click hidden Like buttons using transparent iframes.</p>
 <hr>
@@ -1896,18 +1693,12 @@ HttpOnly
 <li>Beneficiary addition</li>
 <li>Account changes</li>
 </ul>
-<h2 id="good-to-read">
-  Good to Read:
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read:<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://hackerone.com/reports/1418857" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1418857</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/1416612" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1416612</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/1574017" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1574017</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <hr>
-<h1 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h1>
+<h1 id="references">References<a class="anchor" href="#references">#</a></h1>
 <p><a href="https://portswigger.net/web-security/clickjacking" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/clickjacking</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://owasp.org/www-community/attacks/Clickjacking" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/Clickjacking</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://medium.com/infosecmatrix/clickjacking-a-comprehensive-guide-to-finding-clickjacking-vulnerabilities-3f51d8e63a41" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/infosecmatrix/clickjacking-a-comprehensive-guide-to-finding-clickjacking-vulnerabilities-3f51d8e63a41</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1922,49 +1713,62 @@ HttpOnly
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Clickjacking.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/charset-xss/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Charset XSS</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Client-Side-Template-Injection-CSTI/" class="flex align-center">
+        <span>Client Side Template Injection (CSTI)</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2064,15 +1868,24 @@ HttpOnly
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

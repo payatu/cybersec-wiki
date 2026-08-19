@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Identification and Authentication Failures # Description # Identification and Authentication Failures occur when an application incorrectly implements identity verification, session management, or credential handling — allowing attackers to compromise passwords, session tokens, or assume other users’ identities.
-Fundamentals of Authentication # Authentication vs Authorization # Authentication verifies who the user is (identity verification). Authorization determines what an authenticated user is allowed to access. Example:
-User → Login → Authentication ↓ User Role = Admin ↓ Access Admin Dashboard ↓ Authorization Authentication Factors # Applications generally rely on one or more authentication factors.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Identification and Authentication Failures" />
-<meta property="og:description" content="Identification and Authentication Failures # Description # Identification and Authentication Failures occur when an application incorrectly implements identity verification, session management, or credential handling — allowing attackers to compromise passwords, session tokens, or assume other users’ identities.
-Fundamentals of Authentication # Authentication vs Authorization # Authentication verifies who the user is (identity verification). Authorization determines what an authenticated user is allowed to access. Example:
-User → Login → Authentication ↓ User Role = Admin ↓ Access Admin Dashboard ↓ Authorization Authentication Factors # Applications generally rely on one or more authentication factors." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Identification and Authentication Failures | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Identification and Authentication Failures# Description# Identification and Authentication Failures occur when an application incorrectly implements identity verification, session management, or credential handling — allowing attackers to compromise passwords, session tokens, or assume other users’ identities.
+Fundamentals of Authentication# Authentication vs Authorization# Authentication verifies who the user is (identity verification). Authorization determines what an authenticated user is allowed to access. Example:
+User → Login → Authentication ↓ User Role = Admin ↓ Access Admin Dashboard ↓ Authorization Authentication Factors# Applications generally rely on one or more authentication factors.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Identification and Authentication Failures">
+	<meta property="og:description" content="Identification and Authentication Failures# Description# Identification and Authentication Failures occur when an application incorrectly implements identity verification, session management, or credential handling — allowing attackers to compromise passwords, session tokens, or assume other users’ identities.
+Fundamentals of Authentication# Authentication vs Authorization# Authentication verifies who the user is (identity verification). Authorization determines what an authenticated user is allowed to access. Example:
+User → Login → Authentication ↓ User Role = Admin ↓ Access Admin Dashboard ↓ Authorization Authentication Factors# Applications generally rely on one or more authentication factors.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Identification and Authentication Failures">
+	<meta itemprop="description" content="Identification and Authentication Failures# Description# Identification and Authentication Failures occur when an application incorrectly implements identity verification, session management, or credential handling — allowing attackers to compromise passwords, session tokens, or assume other users’ identities.
+Fundamentals of Authentication# Authentication vs Authorization# Authentication verifies who the user is (identity verification). Authorization determines what an authenticated user is allowed to access. Example:
+User → Login → Authentication ↓ User Role = Admin ↓ Access Admin Dashboard ↓ Authorization Authentication Factors# Applications generally rely on one or more authentication factors.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1928">
+
+<title>Identification and Authentication Failures • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Identification-and-Authentication-Failures/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -43,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -58,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -75,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -92,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -179,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -227,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -982,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1004,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1026,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1048,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1070,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1105,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1127,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1149,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1171,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1207,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Identification and Authentication Failures</strong>
+  <h3>Identification and Authentication Failures</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1307,24 +1306,12 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="identification-and-authentication-failures">
-  Identification and Authentication Failures
-  <a class="anchor" href="#identification-and-authentication-failures">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="identification-and-authentication-failures">Identification and Authentication Failures<a class="anchor" href="#identification-and-authentication-failures">#</a></h1>
 <hr>
-<h3 id="description">
-  Description
-  <a class="anchor" href="#description">#</a>
-</h3>
+<h3 id="description">Description<a class="anchor" href="#description">#</a></h3>
 <p>Identification and Authentication Failures occur when an application incorrectly implements identity verification, session management, or credential handling — allowing attackers to compromise passwords, session tokens, or assume other users’ identities.</p>
-<h2 id="fundamentals-of-authentication">
-  Fundamentals of Authentication
-  <a class="anchor" href="#fundamentals-of-authentication">#</a>
-</h2>
-<h3 id="authentication-vs-authorization">
-  Authentication vs Authorization
-  <a class="anchor" href="#authentication-vs-authorization">#</a>
-</h3>
+<h2 id="fundamentals-of-authentication">Fundamentals of Authentication<a class="anchor" href="#fundamentals-of-authentication">#</a></h2>
+<h3 id="authentication-vs-authorization">Authentication vs Authorization<a class="anchor" href="#authentication-vs-authorization">#</a></h3>
 <ul>
 <li><strong>Authentication</strong> verifies <strong>who the user is</strong> (identity verification).</li>
 <li><strong>Authorization</strong> determines <strong>what an authenticated user is allowed to access</strong>.</li>
@@ -1342,12 +1329,8 @@ Access Admin Dashboard
 
 ↓
 
-Authorization
-</code></pre><hr>
-<h3 id="authentication-factors">
-  Authentication Factors
-  <a class="anchor" href="#authentication-factors">#</a>
-</h3>
+Authorization</code></pre><hr>
+<h3 id="authentication-factors">Authentication Factors<a class="anchor" href="#authentication-factors">#</a></h3>
 <p>Applications generally rely on one or more authentication factors.</p>
 <p><strong>Something You Know</strong></p>
 <ul>
@@ -1370,10 +1353,7 @@ Authorization
 </ul>
 <p>Modern applications usually combine multiple factors (MFA) to improve security.</p>
 <hr>
-<h3 id="typical-authentication-flow">
-  Typical Authentication Flow
-  <a class="anchor" href="#typical-authentication-flow">#</a>
-</h3>
+<h3 id="typical-authentication-flow">Typical Authentication Flow<a class="anchor" href="#typical-authentication-flow">#</a></h3>
 <pre tabindex="0"><code>User
 
 ↓
@@ -1394,13 +1374,9 @@ Session / JWT Creation
 
 ↓
 
-Authenticated Requests
-</code></pre><p>Failures at any step may result in authentication bypass or account compromise.</p>
+Authenticated Requests</code></pre><p>Failures at any step may result in authentication bypass or account compromise.</p>
 <hr>
-<h3 id="session-vs-token-authentication">
-  Session vs Token Authentication
-  <a class="anchor" href="#session-vs-token-authentication">#</a>
-</h3>
+<h3 id="session-vs-token-authentication">Session vs Token Authentication<a class="anchor" href="#session-vs-token-authentication">#</a></h3>
 <p><strong>Session-Based Authentication</strong></p>
 <ul>
 <li>Server stores session information.</li>
@@ -1413,14 +1389,8 @@ Authenticated Requests
 <li>Client stores and sends the token with every request.</li>
 <li>Common in REST APIs and SPAs.</li>
 </ul>
-<h2 id="types-of-attacks">
-  Types of Attacks
-  <a class="anchor" href="#types-of-attacks">#</a>
-</h2>
-<h3 id="credential-based-attacks">
-  Credential-Based Attacks
-  <a class="anchor" href="#credential-based-attacks">#</a>
-</h3>
+<h2 id="types-of-attacks">Types of Attacks<a class="anchor" href="#types-of-attacks">#</a></h2>
+<h3 id="credential-based-attacks">Credential-Based Attacks<a class="anchor" href="#credential-based-attacks">#</a></h3>
 <p><strong>Brute Force Attack</strong></p>
 <ul>
 <li>Automated guessing of passwords</li>
@@ -1438,10 +1408,7 @@ Authenticated Requests
 <li>Avoids lockout thresholds</li>
 </ul>
 <hr>
-<h3 id="session-based-attacks">
-  Session-Based Attacks
-  <a class="anchor" href="#session-based-attacks">#</a>
-</h3>
+<h3 id="session-based-attacks">Session-Based Attacks<a class="anchor" href="#session-based-attacks">#</a></h3>
 <p><strong>Session Hijacking</strong></p>
 <ul>
 <li>Stealing valid session tokens (cookies, URLs)</li>
@@ -1453,10 +1420,7 @@ Authenticated Requests
 <li>After login, attacker uses same session</li>
 </ul>
 <hr>
-<h3 id="authentication-logic-flaws">
-  Authentication Logic Flaws
-  <a class="anchor" href="#authentication-logic-flaws">#</a>
-</h3>
+<h3 id="authentication-logic-flaws">Authentication Logic Flaws<a class="anchor" href="#authentication-logic-flaws">#</a></h3>
 <p><strong>Improper Login Validation</strong></p>
 <ul>
 <li>Bypassing authentication checks</li>
@@ -1468,14 +1432,8 @@ Authenticated Requests
 <li>Backup codes abuse</li>
 </ul>
 <hr>
-<h3 id="token-based-attacks">
-  Token Based Attacks
-  <a class="anchor" href="#token-based-attacks">#</a>
-</h3>
-<h4 id="jwt-attacks">
-  JWT Attacks
-  <a class="anchor" href="#jwt-attacks">#</a>
-</h4>
+<h3 id="token-based-attacks">Token Based Attacks<a class="anchor" href="#token-based-attacks">#</a></h3>
+<h4 id="jwt-attacks">JWT Attacks<a class="anchor" href="#jwt-attacks">#</a></h4>
 <ul>
 <li>Algorithm confusion (alg: none)</li>
 <li>Weak signing key / key confusion</li>
@@ -1483,10 +1441,7 @@ Authenticated Requests
 <li>None / Signature stripping</li>
 <li>JKU header abuse</li>
 </ul>
-<h4 id="oauth--openid-connect-misconfigurations">
-  OAuth / OpenID Connect Misconfigurations
-  <a class="anchor" href="#oauth--openid-connect-misconfigurations">#</a>
-</h4>
+<h4 id="oauth--openid-connect-misconfigurations">OAuth / OpenID Connect Misconfigurations<a class="anchor" href="#oauth--openid-connect-misconfigurations">#</a></h4>
 <ul>
 <li>Open redirect in <code>redirect_uri</code></li>
 <li>Authorization code interception</li>
@@ -1494,29 +1449,20 @@ Authenticated Requests
 <li>Client secret leakage</li>
 <li>ID token misuse</li>
 </ul>
-<h4 id="refresh-token-issues">
-  Refresh Token Issues
-  <a class="anchor" href="#refresh-token-issues">#</a>
-</h4>
+<h4 id="refresh-token-issues">Refresh Token Issues<a class="anchor" href="#refresh-token-issues">#</a></h4>
 <ul>
 <li>Refresh tokens not rotated or not invalidated on logout</li>
 <li>Stored in Local Storage</li>
 <li>Exposed in logs</li>
 </ul>
-<h3 id="identity-enumeration">
-  Identity Enumeration
-  <a class="anchor" href="#identity-enumeration">#</a>
-</h3>
+<h3 id="identity-enumeration">Identity Enumeration<a class="anchor" href="#identity-enumeration">#</a></h3>
 <p><strong>Username Enumeration</strong></p>
 <ul>
 <li>Determining valid users via error messages or timing</li>
 <li>Useful for targeted attacks</li>
 </ul>
 <hr>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
 <ul>
 <li>Login pages</li>
 <li>Password reset / forgot password</li>
@@ -1529,20 +1475,13 @@ Authenticated Requests
 <li>Account recovery mechanisms</li>
 </ul>
 <hr>
-<h2 id="exploitation">
-  Exploitation
-  <a class="anchor" href="#exploitation">#</a>
-</h2>
-<h3 id="credential-bruteforcing">
-  Credential Bruteforcing
-  <a class="anchor" href="#credential-bruteforcing">#</a>
-</h3>
+<h2 id="exploitation">Exploitation<a class="anchor" href="#exploitation">#</a></h2>
+<h3 id="credential-bruteforcing">Credential Bruteforcing<a class="anchor" href="#credential-bruteforcing">#</a></h3>
 <ul>
 <li>One can bruteforce different passwords for a particular username using Burp Suite tools like Intruder, Turbo Intruder</li>
 <li>Usernames mostly are in the format</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firstname.lastname@company.com
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>firstname.lastname@company.com</span></span></code></pre></div><ul>
 <li>
 <p>Some high privileged accounts are created with the username</p>
 <ul>
@@ -1566,8 +1505,7 @@ Authenticated Requests
 </li>
 <li>
 <p><strong><code>cewl</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cewl https://target.com -d <span style="color:#ae81ff">2</span> -m <span style="color:#ae81ff">8</span> --with-numbers -w my-wordlist.txt
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cewl https://target.com -d <span style="color:#ae81ff">2</span> -m <span style="color:#ae81ff">8</span> --with-numbers -w my-wordlist.txt</span></span></code></pre></div><ul>
 <li><code>-d</code> is used to specify the crawling depth</li>
 <li><code>-m</code> is used to specify the minimum length</li>
 <li><code>--with-numbers</code>  is used to include the numbers also while generating wordlist</li>
@@ -1577,49 +1515,33 @@ Authenticated Requests
 <p><strong><code>crunch</code></strong></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crunch &lt;minimum-lenght&gt; &lt;maximum-length&gt; &lt;characters&gt; -o outputfile
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crunch &lt;minimum-lenght&gt; &lt;maximum-length&gt; &lt;characters&gt; -o outputfile</span></span></code></pre></div><ul>
 <li>Example</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crunch <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">8</span> abcd1234 -o wordlist.txt
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crunch <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">8</span> abcd1234 -o wordlist.txt</span></span></code></pre></div><ul>
 <li>
 <p>Different command line tools can be used to bruteforce the credentials</p>
 <ul>
 <li><strong><code>Hydra</code></strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L username.txt -P password.txt &lt;HOST_NAME&gt; http-post-form “&lt;path&gt;:username<span style="color:#f92672">=</span>^USER^&amp;password<span style="color:#f92672">=</span>^PASS^:&lt;invalid_response&gt;”  -o  &lt;file.txt&gt;
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L username.txt -P password.txt &lt;HOST_NAME&gt; http-post-form “&lt;path&gt;:username<span style="color:#f92672">=</span>^USER^&amp;password<span style="color:#f92672">=</span>^PASS^:&lt;invalid_response&gt;”  -o  &lt;file.txt&gt;</span></span></code></pre></div></li>
 </ul>
-<h3 id="username-enumeration">
-  Username Enumeration
-  <a class="anchor" href="#username-enumeration">#</a>
-</h3>
-<h4 id="usernames-enumeration-via-error-messages">
-  <strong>Usernames enumeration via error messages</strong>
-  <a class="anchor" href="#usernames-enumeration-via-error-messages">#</a>
-</h4>
+<h3 id="username-enumeration">Username Enumeration<a class="anchor" href="#username-enumeration">#</a></h3>
+<h4 id="usernames-enumeration-via-error-messages"><strong>Usernames enumeration via error messages</strong><a class="anchor" href="#usernames-enumeration-via-error-messages">#</a></h4>
 <ul>
 <li>For a wrong username and password pair the application throws an error</li>
 <li>If the error messages is not configured correctly one can use the error messages to extract the usernames</li>
 <li>Example</li>
 </ul>
-<pre tabindex="0"><code>Error: The password is not correct for the username
-</code></pre><ul>
+<pre tabindex="0"><code>Error: The password is not correct for the username</code></pre><ul>
 <li>Here the application reveals that the username exists but the password is incorrect</li>
 </ul>
-<h4 id="username-enumeration-via-different-response-timing">
-  Username Enumeration via Different Response Timing
-  <a class="anchor" href="#username-enumeration-via-different-response-timing">#</a>
-</h4>
+<h4 id="username-enumeration-via-different-response-timing">Username Enumeration via Different Response Timing<a class="anchor" href="#username-enumeration-via-different-response-timing">#</a></h4>
 <ul>
 <li>The application may be configured such that first it checks if the username exists and then extract the password of the username</li>
 <li>There is a race window in between the process that will have a late response comparing to the response where the user name does not exists</li>
 </ul>
-<h3 id="bypassing-2fa-using-forced-browsing">
-  Bypassing 2FA using Forced Browsing
-  <a class="anchor" href="#bypassing-2fa-using-forced-browsing">#</a>
-</h3>
+<h3 id="bypassing-2fa-using-forced-browsing">Bypassing 2FA using Forced Browsing<a class="anchor" href="#bypassing-2fa-using-forced-browsing">#</a></h3>
 <ul>
 <li>Log in to your own account. Your 2FA verification code will be sent to you by email. Click the <strong>Email client</strong> button to access your emails.</li>
 <li>Go to your account page and make a note of the URL.</li>
@@ -1627,112 +1549,74 @@ Authenticated Requests
 <li>Log in using the victim&rsquo;s credentials.</li>
 <li>When prompted for the verification code, manually change the URL to navigate to <code>/my-account</code>.</li>
 </ul>
-<h3 id="flawed-2fa-verification-logic">
-  Flawed 2FA Verification Logic
-  <a class="anchor" href="#flawed-2fa-verification-logic">#</a>
-</h3>
-<h4 id="excess-client-side-trust">
-  Excess Client Side Trust
-  <a class="anchor" href="#excess-client-side-trust">#</a>
-</h4>
+<h3 id="flawed-2fa-verification-logic">Flawed 2FA Verification Logic<a class="anchor" href="#flawed-2fa-verification-logic">#</a></h3>
+<h4 id="excess-client-side-trust">Excess Client Side Trust<a class="anchor" href="#excess-client-side-trust">#</a></h4>
 <pre tabindex="0"><code>POST /login-steps/first
-username=spider&amp;password=qwerty
-</code></pre><ul>
+username=spider&amp;password=qwerty</code></pre><ul>
 <li>User logs in with correct credentials</li>
 <li>Server verifies username + password</li>
 <li>Then sets a cookie:</li>
 </ul>
-<pre tabindex="0"><code>Set-Cookie: account=carlos
-</code></pre><ul>
+<pre tabindex="0"><code>Set-Cookie: account=carlos</code></pre><ul>
 <li>The application stores <strong>user identity in a client-controlled cookie</strong></li>
 </ul>
 <pre tabindex="0"><code>GET /login-steps/second
-Cookie: account=carlos
-</code></pre><ul>
+Cookie: account=carlos</code></pre><ul>
 <li>User is asked for OTP / verification code</li>
 <li>Server assumes this request belongs to spider because of the cookie</li>
 <li>No server-side validation of session-user binding</li>
 </ul>
 <pre tabindex="0"><code>POST /login-steps/second
 Cookie: account=carlos
-verification-code=123456
-</code></pre><ul>
+verification-code=123456</code></pre><ul>
 <li>Server checks OTP</li>
 <li>If correct → login successful</li>
 <li>Attacker Logs in with Their Own Account</li>
 </ul>
 <pre tabindex="0"><code>POST /login-steps/first
-username=attacker&amp;password=attackerpass
-</code></pre><p>Server response:</p>
-<pre tabindex="0"><code>Set-Cookie: account=attacker
-</code></pre><ul>
+username=attacker&amp;password=attackerpass</code></pre><p>Server response:</p>
+<pre tabindex="0"><code>Set-Cookie: account=attacker</code></pre><ul>
 <li>Intercept &amp; Modify Request</li>
 </ul>
 <p>Before submitting OTP:</p>
 <pre tabindex="0"><code>POST /login-steps/second
 Cookie: account=victim-use
-verification-code=123456
-</code></pre><ul>
+verification-code=123456</code></pre><ul>
 <li>Attacker changes <code>account=attacker</code> → <code>account=victim-user</code></li>
 </ul>
-<h4 id="the-login-state">
-  The Login State
-  <a class="anchor" href="#the-login-state">#</a>
-</h4>
+<h4 id="the-login-state">The Login State<a class="anchor" href="#the-login-state">#</a></h4>
 <ul>
 <li>If the user is first prompted to enter a password, and then prompted to enter a verification code on a separate page, the user is effectively in a &ldquo;logged in&rdquo; state before they have entered the verification code.</li>
 <li>In this case, it is worth testing to see if you can directly skip to &ldquo;logged-in only&rdquo; pages after completing the first authentication step.</li>
 <li>Occasionally, you will find that a website doesn&rsquo;t actually check whether or not you completed the second step before loading the page.</li>
 </ul>
-<h4 id="no-rate-limiting">
-  No Rate Limiting
-  <a class="anchor" href="#no-rate-limiting">#</a>
-</h4>
+<h4 id="no-rate-limiting">No Rate Limiting<a class="anchor" href="#no-rate-limiting">#</a></h4>
 <p>If the OTP submit field is not protected with ratelimiting or account locking on multiple wrong guesses, one can bruteforce the OTP value using Burp Intruder</p>
-<h4 id="stripping-the-otp-parameter">
-  Stripping the OTP parameter
-  <a class="anchor" href="#stripping-the-otp-parameter">#</a>
-</h4>
+<h4 id="stripping-the-otp-parameter">Stripping the OTP parameter<a class="anchor" href="#stripping-the-otp-parameter">#</a></h4>
 <ul>
 <li>After successful submition of username and password we are redirected to the otp submit section.</li>
 <li>If we edit the request and does not supply any otp value (removing the total OTP validation parameter) the server does not check for the otp</li>
 <li>One can simply logged in to their account</li>
 </ul>
-<h3 id="offline-password-cracking">
-  Offline Password Cracking
-  <a class="anchor" href="#offline-password-cracking">#</a>
-</h3>
+<h3 id="offline-password-cracking">Offline Password Cracking<a class="anchor" href="#offline-password-cracking">#</a></h3>
 <ul>
 <li>Using some command line tools one can crack hashed password</li>
 </ul>
-<h4 id="hashcat">
-  Hashcat
-  <a class="anchor" href="#hashcat">#</a>
-</h4>
+<h4 id="hashcat">Hashcat<a class="anchor" href="#hashcat">#</a></h4>
 <ul>
 <li>Dictionary Attack</li>
 </ul>
-<pre tabindex="0"><code>hashcat -m 0 -a 0 hash.txt wordlist.txt --show
-</code></pre><ul>
+<pre tabindex="0"><code>hashcat -m 0 -a 0 hash.txt wordlist.txt --show</code></pre><ul>
 <li><code>-m</code> is used to specify the type of hash algorithm</li>
 <li><code>-a</code> is used to define the attack mode and <code>0</code> specify the dictionary attack</li>
 <li><code>--show</code> is used to show the cracked password</li>
 <li>Bruteforce Attack</li>
 </ul>
-<pre tabindex="0"><code>hashcat -m 0 -a 3 hashes.txt ?a?a?a?a
-</code></pre><ul>
+<pre tabindex="0"><code>hashcat -m 0 -a 3 hashes.txt ?a?a?a?a</code></pre><ul>
 <li>Mask Attack</li>
 </ul>
-<pre tabindex="0"><code>hashcat -m 0 -a 3 hashes.txt Admin@?d?d?d
-</code></pre><h4 id="john-the-ripper">
-  John The Ripper
-  <a class="anchor" href="#john-the-ripper">#</a>
-</h4>
-<pre tabindex="0"><code>john --wordlist=wordlist.txt hash.txt
-</code></pre><h4 id="wordlists">
-  Wordlists
-  <a class="anchor" href="#wordlists">#</a>
-</h4>
+<pre tabindex="0"><code>hashcat -m 0 -a 3 hashes.txt Admin@?d?d?d</code></pre><h4 id="john-the-ripper">John The Ripper<a class="anchor" href="#john-the-ripper">#</a></h4>
+<pre tabindex="0"><code>john --wordlist=wordlist.txt hash.txt</code></pre><h4 id="wordlists">Wordlists<a class="anchor" href="#wordlists">#</a></h4>
 <ul>
 <li>rockyou.txt ⇒</li>
 </ul>
@@ -1745,14 +1629,8 @@ verification-code=123456
 <li>SecLists</li>
 </ul>
 <p><a href="https://github.com/danielmiessler/seclists" target="_blank" rel="noreferrer noopener nofollow">https://github.com/danielmiessler/seclists</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h3 id="flawed-password-reset-functionality">
-  Flawed Password Reset Functionality
-  <a class="anchor" href="#flawed-password-reset-functionality">#</a>
-</h3>
-<h4 id="via-host-header">
-  Via Host Header
-  <a class="anchor" href="#via-host-header">#</a>
-</h4>
+<h3 id="flawed-password-reset-functionality">Flawed Password Reset Functionality<a class="anchor" href="#flawed-password-reset-functionality">#</a></h3>
+<h4 id="via-host-header">Via Host Header<a class="anchor" href="#via-host-header">#</a></h4>
 <ul>
 <li>Some times the application uses Host header value to create the password reset token link</li>
 <li>One can change the Host header value to an attacker controlled server address</li>
@@ -1760,27 +1638,16 @@ verification-code=123456
 </ul>
 <pre tabindex="0"><code>GET /password-reset HTTP/2
 Host: attacker-server.com
-... 
-</code></pre><h4 id="via-middleware">
-  Via Middleware
-  <a class="anchor" href="#via-middleware">#</a>
-</h4>
+... </code></pre><h4 id="via-middleware">Via Middleware<a class="anchor" href="#via-middleware">#</a></h4>
 <ul>
 <li>One can use http header like X-Forwarded-Host that is used by different proxy server and CDNs</li>
 </ul>
 <pre tabindex="0"><code>GET /password-reset HTTP/2
 Host: example.com 
 X-Forwarded-Host: attacker-server.com
-...
-</code></pre><hr>
-<h2 id="advance-attack-scenarios">
-  Advance Attack Scenarios
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
-<h3 id="bruteforcing-otp-for-a-particular-session">
-  Bruteforcing OTP for a Particular Session
-  <a class="anchor" href="#bruteforcing-otp-for-a-particular-session">#</a>
-</h3>
+...</code></pre><hr>
+<h2 id="advance-attack-scenarios">Advance Attack Scenarios<a class="anchor" href="#advance-attack-scenarios">#</a></h2>
+<h3 id="bruteforcing-otp-for-a-particular-session">Bruteforcing OTP for a Particular Session<a class="anchor" href="#bruteforcing-otp-for-a-particular-session">#</a></h3>
 <ul>
 <li>Some of the application block OTP bruteforcing by using Session Invalidation Rules</li>
 <li>After every two incorrect OTP attempts the application reset the session cookie and regenerate the OTP for the user.</li>
@@ -1797,8 +1664,7 @@ X-Forwarded-Host: attacker-server.com
 <p>Selected Requests:</p>
 <pre tabindex="0"><code>GET /login =&gt; Loads the login page 
 POST /login =&gt; Submit the credentials 
-GET /login2 =&gt; Generate the OTP 
-</code></pre><ol>
+GET /login2 =&gt; Generate the OTP </code></pre><ol>
 <li>Loads login page</li>
 <li>Submits credentials</li>
 <li>Reaches OTP page</li>
@@ -1812,10 +1678,9 @@ GET /login2 =&gt; Generate the OTP
 </li>
 <li>
 <p>Confirm final response shows:</p>
-<blockquote>
+<blockquote class='book-hint '>
 <p>“Enter 4-digit security code”</p>
-</blockquote>
-</li>
+</blockquote></li>
 <li>
 <p>This ensures:</p>
 <ul>
@@ -1845,10 +1710,8 @@ GET /login2 =&gt; Generate the OTP
 </ul>
 <p>Target request:</p>
 <pre tabindex="0"><code>POST /login2
-mfa-code=1234
-</code></pre><p>Add payload position:</p>
-<pre tabindex="0"><code>mfa-code=§1234§
-</code></pre><ul>
+mfa-code=1234</code></pre><p>Add payload position:</p>
+<pre tabindex="0"><code>mfa-code=§1234§</code></pre><ul>
 <li>
 <p>Configure Payloads</p>
 </li>
@@ -1857,8 +1720,7 @@ mfa-code=1234
 </li>
 <li>
 <p>Range:</p>
-<pre tabindex="0"><code>0000 → 9999
-</code></pre></li>
+<pre tabindex="0"><code>0000 → 9999</code></pre></li>
 <li>
 <p>Settings:</p>
 <ul>
@@ -1868,8 +1730,7 @@ mfa-code=1234
 </li>
 </ul>
 <p>Generates:</p>
-<pre tabindex="0"><code>0000, 0001, 0002 ... 9999
-</code></pre><ul>
+<pre tabindex="0"><code>0000, 0001, 0002 ... 9999</code></pre><ul>
 <li>Set Resource Pool (IMPORTANT)</li>
 <li>Max concurrent requests = <strong>1</strong></li>
 <li>It Prevents:
@@ -1883,14 +1744,8 @@ mfa-code=1234
 <li>Intruder starts sending requests:</li>
 </ul>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-testing">
-  Manual Testing
-  <a class="anchor" href="#manual-testing">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-testing">Manual Testing<a class="anchor" href="#manual-testing">#</a></h3>
 <ul>
 <li>Test default and weak credentials using common username/password combinations (e.g., <code>admin/admin</code>, <code>admin/password</code>, <code>test/test</code>) via Burp Suite Intruder with a small controlled wordlist.</li>
 <li>Perform <strong>credential stuffing</strong> using leaked username/password pairs and observe login success or inconsistent error responses.</li>
@@ -1913,10 +1768,7 @@ mfa-code=1234
 <li>Observe whether authentication state is incorrectly trusted on the client side (e.g., cookies or local storage controlling login state).</li>
 </ul>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Account Takeover:</strong> Attackers can gain unauthorized access to user or administrator accounts by bypassing authentication or compromising valid credentials.</li>
 <li><strong>Unauthorized Access to Sensitive Data:</strong> Confidential information such as personal details, financial records, or internal business data can be accessed or disclosed.</li>
@@ -1927,23 +1779,14 @@ mfa-code=1234
 <li><strong>Full System Compromise:</strong> If privileged or administrative accounts are compromised, attackers may gain complete control over the application and potentially the underlying infrastructure.</li>
 </ul>
 <hr>
-<h2 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
-<h3 id="strong-authentication">
-  Strong Authentication
-  <a class="anchor" href="#strong-authentication">#</a>
-</h3>
+<h2 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h2>
+<h3 id="strong-authentication">Strong Authentication<a class="anchor" href="#strong-authentication">#</a></h3>
 <ul>
 <li>Enforce strong password policy</li>
 <li>Use modern hashing (bcrypt, Argon2, PBKDF2)</li>
 <li>Implement MFA (prefer app-based or hardware keys)</li>
 </ul>
-<h3 id="secure-session-management">
-  Secure Session Management
-  <a class="anchor" href="#secure-session-management">#</a>
-</h3>
+<h3 id="secure-session-management">Secure Session Management<a class="anchor" href="#secure-session-management">#</a></h3>
 <ul>
 <li>Regenerate session ID after login</li>
 <li>Set cookies as:
@@ -1956,40 +1799,28 @@ mfa-code=1234
 <li>Short session timeouts</li>
 <li>Invalidate sessions on logout</li>
 </ul>
-<h3 id="anti-automation-controls">
-  Anti-Automation Controls
-  <a class="anchor" href="#anti-automation-controls">#</a>
-</h3>
+<h3 id="anti-automation-controls">Anti-Automation Controls<a class="anchor" href="#anti-automation-controls">#</a></h3>
 <ul>
 <li>Rate limiting</li>
 <li>CAPTCHA (carefully implemented)</li>
 <li>Account lockout with monitoring</li>
 <li>IP reputation filtering</li>
 </ul>
-<h3 id="secure-recovery-mechanisms">
-  Secure Recovery Mechanisms
-  <a class="anchor" href="#secure-recovery-mechanisms">#</a>
-</h3>
+<h3 id="secure-recovery-mechanisms">Secure Recovery Mechanisms<a class="anchor" href="#secure-recovery-mechanisms">#</a></h3>
 <ul>
 <li>Strong password reset tokens</li>
 <li>One-time use links</li>
 <li>Short expiration times</li>
 <li>No user enumeration</li>
 </ul>
-<h3 id="secure-design">
-  Secure Design
-  <a class="anchor" href="#secure-design">#</a>
-</h3>
+<h3 id="secure-design">Secure Design<a class="anchor" href="#secure-design">#</a></h3>
 <ul>
 <li>Centralized authentication</li>
 <li>Use well-tested libraries</li>
 <li>Avoid custom crypto</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <p><strong>Brute Force / Credential Testing</strong></p>
 <ul>
 <li>Burp Suite Intruder</li>
@@ -2012,20 +1843,14 @@ mfa-code=1234
 <li>OWASP ZAP</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://hackerone.com/reports/2529780" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2529780</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/838231" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/838231</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/3160210" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/3160210</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://book.hacktricks.xyz/" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.xyz/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2043,49 +1868,62 @@ mfa-code=1234
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Identification%20and%20Authentication%20Failures.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/HTTP-Request-Smuggling/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>HTTP Request Smuggling</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Information-Disclosure/" class="flex align-center">
+        <span>Information Disclosure</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2153,15 +1991,24 @@ mfa-code=1234
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

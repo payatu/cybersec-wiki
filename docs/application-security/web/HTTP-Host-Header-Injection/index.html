@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HTTP Host Header Injection # HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.
-Understanding Host Header # HTTP Host Header Structure">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="HTTP Host Header Injection" />
-<meta property="og:description" content="HTTP Host Header Injection # HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.
-Understanding Host Header # HTTP Host Header Structure" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>HTTP Host Header Injection | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HTTP Host Header Injection# HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.
+Understanding Host Header# HTTP Host Header Structure
+Host: &lt;host&gt;:&lt;port&gt;&lt;host&gt;: Domain name of the server
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="HTTP Host Header Injection">
+	<meta property="og:description" content="HTTP Host Header Injection# HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.
+Understanding Host Header# HTTP Host Header Structure
+Host: &lt;host&gt;:&lt;port&gt;&lt;host&gt;: Domain name of the server">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="HTTP Host Header Injection">
+	<meta itemprop="description" content="HTTP Host Header Injection# HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.
+Understanding Host Header# HTTP Host Header Structure
+Host: &lt;host&gt;:&lt;port&gt;&lt;host&gt;: Domain name of the server">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="717">
+
+<title>HTTP Host Header Injection • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/HTTP-Host-Header-Injection/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>HTTP Host Header Injection</strong>
+  <h3>HTTP Host Header Injection</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1265,21 +1266,14 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="http-host-header-injection">
-  HTTP Host Header Injection
-  <a class="anchor" href="#http-host-header-injection">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="http-host-header-injection">HTTP Host Header Injection<a class="anchor" href="#http-host-header-injection">#</a></h1>
 <p>HTTP Host Header Injection is a web application security vulnerability that occurs when an attacker modifies the Host header in an HTTP request and the server processes it without validation to generate URLs, perform redirects, route traffic, or make backend requests, which can be manipulated to poison URLs, password-reset emails, caching layers, routing logic, and internal security controls.</p>
 <hr>
-<h2 id="understanding-host-header">
-  Understanding Host Header
-  <a class="anchor" href="#understanding-host-header">#</a>
-</h2>
+<h2 id="understanding-host-header">Understanding Host Header<a class="anchor" href="#understanding-host-header">#</a></h2>
 <ul>
 <li>
 <p>HTTP Host Header Structure</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">host</span>&gt;<span style="color:#f92672">:</span>&lt;<span style="color:#f92672">port</span>&gt;
-</span></span></code></pre></div><p><code>&lt;host&gt;</code>: Domain name of the server</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> &lt;<span style="color:#f92672">host</span>&gt;<span style="color:#f92672">:</span>&lt;<span style="color:#f92672">port</span>&gt;</span></span></code></pre></div><p><code>&lt;host&gt;</code>: Domain name of the server</p>
 <p><code>&lt;port&gt;</code>: TCP port number of the server ( default port for HTTP/HTTPS is used, if not included)</p>
 </li>
 <li>
@@ -1290,10 +1284,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <hr>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
 <ul>
 <li>Password Reset Links</li>
 <li>Email Verification URLs</li>
@@ -1301,15 +1292,11 @@ https://github.com/alex-shpak/hugo-book
 <li>Virtual Host</li>
 </ul>
 <hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
 <ul>
 <li>
 <p><strong>Inject arbitrary Host header</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">xyz</span>
-</span></span></code></pre></div><p>If vulnerable, this will generate <code>200 OK</code> response or <code>504 Gateway Timeout</code> error.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span>.<span style="color:#a6e22e">xyz</span></span></span></code></pre></div><p>If vulnerable, this will generate <code>200 OK</code> response or <code>504 Gateway Timeout</code> error.</p>
 </li>
 <li>
 <p><strong>Ambiguous Request</strong></p>
@@ -1317,29 +1304,23 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <p><strong>Inject Duplicate Host Header</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 <li>
 <p><strong>Inject an Absolute URL</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com HTTP/1.1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//target.com HTTP/1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 <li>
 <p><strong>Add Line Wrapping</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="bypassing-defenses">
-  Bypassing Defenses
-  <a class="anchor" href="#bypassing-defenses">#</a>
-</h2>
+<h2 id="bypassing-defenses">Bypassing Defenses<a class="anchor" href="#bypassing-defenses">#</a></h2>
 <ol>
 <li>
 <p><strong>Host Override Header Injection</strong></p>
@@ -1347,34 +1328,29 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <p>X-Forwarded-Host</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 <li>
 <p>X-Host</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 <li>
 <p>Forwarded</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">host</span><span style="color:#f92672">=</span><span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">host</span><span style="color:#f92672">=</span><span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 <li>
 <p>X-Forwarded-Server</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Server</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Server</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 <li>
 <p>X-HTTP-Host-Override</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Override</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">HTTP</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Host</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Override</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">payload</span></span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -1382,38 +1358,30 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <p>Inject non-numeric port number</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">:</span><span style="color:#a6e22e">abc</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">:</span><span style="color:#a6e22e">abc</span></span></span></code></pre></div></li>
 <li>
 <p>Inject Prefix Sequences into Target Domain</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">-</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">-</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span></span></span></code></pre></div></li>
 <li>
 <p>Inject Arbitrary Subdomain (use a compromised subdomain for further testing, if applicable)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">subdomain</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">subdomain</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">com</span></span></span></code></pre></div></li>
 </ul>
 </li>
 </ol>
 <hr>
-<h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
+<h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
 <ol>
 <li>
 <p><strong>Password Reset Poisoning</strong></p>
 <p>Attackers inject a malicious host to manipulate password reset links generated by the application.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">forgot</span><span style="color:#f92672">-</span><span style="color:#a6e22e">password</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span>
-</span></span></code></pre></div><p>Resulting Reset Link: <a href="https://attacker.com/reset?token=abc123" target="_blank" rel="noreferrer noopener nofollow"><code>https://attacker.com/reset?token=abc123</code></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">forgot</span><span style="color:#f92672">-</span><span style="color:#a6e22e">password</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span></span></span></code></pre></div><p>Resulting Reset Link: <a href="https://attacker.com/reset?token=abc123" target="_blank" rel="noreferrer noopener nofollow"><code>https://attacker.com/reset?token=abc123</code></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 </li>
 <li>
 <p><strong>Web Cache Poisoning → Stored XSS</strong>
 Attackers manipulate the <code>Host</code> header so the application generates attacker-controlled absolute URLs. If a CDN or reverse proxy caches the response, the malicious payload is served to all users.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">attacker</span>.<span style="color:#a6e22e">com</span></span></span></code></pre></div><ul>
 <li>Application reflects Host header value in HTML: <code>&lt;script src=&quot;[https://attacker.com/static/app.js](https://attacker.com/static/app.js)&quot;&gt;&lt;/script&gt;</code></li>
 <li>If page gets cached by CDN/Cache server, the poisoned version gets stored and served.</li>
 </ul>
@@ -1421,19 +1389,12 @@ Attackers manipulate the <code>Host</code> header so the application generates a
 <li>
 <p><strong>Host Header Injection → SSRF</strong>
 Host Header Injection can be combined with SSRF if the server uses the &ldquo;Host&rdquo; header to perform server-side requests.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">-</span><span style="color:#a6e22e">api</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">127.0.0.1</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">-</span><span style="color:#a6e22e">api</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Host</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">127.0.0.1</span></span></span></code></pre></div></li>
 </ol>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection-techniques">
-  Manual Detection Techniques
-  <a class="anchor" href="#manual-detection-techniques">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection-techniques">Manual Detection Techniques<a class="anchor" href="#manual-detection-techniques">#</a></h3>
 <p>Test inputs for <code>Host</code> header:</p>
 <ul>
 <li><code>attacker.com</code></li>
@@ -1450,10 +1411,7 @@ Host Header Injection can be combined with SSRF if the server uses the &ldquo;Ho
 <li>Different response content or status code when only Host changes.</li>
 <li>Redirects use the supplied Host instead of legitimate domain.</li>
 </ul>
-<h3 id="automated-detection-techniques">
-  Automated Detection Techniques
-  <a class="anchor" href="#automated-detection-techniques">#</a>
-</h3>
+<h3 id="automated-detection-techniques">Automated Detection Techniques<a class="anchor" href="#automated-detection-techniques">#</a></h3>
 <p><strong>A. Burp Suite Extensions</strong></p>
 <ul>
 <li><strong>Param Miner</strong>: Automatically probes hidden headers like <code>X-Forwarded-Host</code>, <code>X-Host</code>, <code>Forwarded</code> using extensive wordlists to discover headers used for internal routing/URL generation.</li>
@@ -1467,10 +1425,7 @@ Host Header Injection can be combined with SSRF if the server uses the &ldquo;Ho
 <li><strong>Nuclei (custom templates)</strong></li>
 </ul>
 <hr>
-<h2 id="impacts">
-  Impacts
-  <a class="anchor" href="#impacts">#</a>
-</h2>
+<h2 id="impacts">Impacts<a class="anchor" href="#impacts">#</a></h2>
 <ul>
 <li>Bypass password reset protections and gain unauthorized access to user or administrator accounts.</li>
 <li>Inject attacker-controlled domains into verification, activation, or magic login emails to hijack accounts.</li>
@@ -1480,18 +1435,12 @@ Host Header Injection can be combined with SSRF if the server uses the &ldquo;Ho
 <li>Manipulate trusted proxy headers (e.g., X-Forwarded-Host) to bypass host validation mechanisms.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li>Burp Suite (Repeater, Intruder), ffuf, wfuzz</li>
 </ul>
 <hr>
-<h2 id="mitigation--preventions">
-  Mitigation &amp; Preventions
-  <a class="anchor" href="#mitigation--preventions">#</a>
-</h2>
+<h2 id="mitigation--preventions">Mitigation &amp; Preventions<a class="anchor" href="#mitigation--preventions">#</a></h2>
 <ul>
 <li>Always verify the Host header against a whitelist of allowed domains. This ensures that only valid domains are processed.</li>
 <li>Instead of constructing URLs using the Host header, use absolute URLs or pre-defined domain names for sensitive operations like password resets and redirects.</li>
@@ -1499,18 +1448,12 @@ Host Header Injection can be combined with SSRF if the server uses the &ldquo;Ho
 <li>A WAF can help detect and block malicious Host header injection attempts in real-time.</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://hackerone.com/reports/300164" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/300164</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/1098948" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1098948</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/1444675" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1444675</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <hr>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-27959" target="_blank" rel="noreferrer noopener nofollow">https://nvd.nist.gov/vuln/detail/CVE-2026-27959</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://vulntech.com/tutorial/tutorial/website-penetration-testing/host-header-injection/" target="_blank" rel="noreferrer noopener nofollow">https://vulntech.com/tutorial/tutorial/website-penetration-testing/host-header-injection/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://systemweakness.com/demystifying-host-header-injection-attack-and-its-root-cause-analysis-part-1-ec32500c9306" target="_blank" rel="noreferrer noopener nofollow">https://systemweakness.com/demystifying-host-header-injection-attack-and-its-root-cause-analysis-part-1-ec32500c9306</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1525,49 +1468,62 @@ Host Header Injection can be combined with SSRF if the server uses the &ldquo;Ho
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/HTTP%20Host%20Header%20Injection.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/GraphQL/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>GraphQL</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/HTTP-Request-Smuggling/" class="flex align-center">
+        <span>HTTP Request Smuggling</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1595,15 +1551,24 @@ Host Header Injection can be combined with SSRF if the server uses the &ldquo;Ho
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

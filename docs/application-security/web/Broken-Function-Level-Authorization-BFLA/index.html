@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Broken Function Level Authorization (BFLA) # Description # Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.
-BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Broken Function Level Authorization" />
-<meta property="og:description" content="Broken Function Level Authorization (BFLA) # Description # Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.
-BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Broken Function Level Authorization | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Broken Function Level Authorization (BFLA)# Description# Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.
+BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints. Applications often enforce restrictions in the user interface while failing to validate permissions on the server side, allowing attackers to directly invoke privileged functions through crafted requests.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Broken Function Level Authorization">
+	<meta property="og:description" content="Broken Function Level Authorization (BFLA)# Description# Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.
+BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints. Applications often enforce restrictions in the user interface while failing to validate permissions on the server side, allowing attackers to directly invoke privileged functions through crafted requests.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Broken Function Level Authorization">
+	<meta itemprop="description" content="Broken Function Level Authorization (BFLA)# Description# Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.
+BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints. Applications often enforce restrictions in the user interface while failing to validate permissions on the server side, allowing attackers to directly invoke privileged functions through crafted requests.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1040">
+
+<title>Broken Function Level Authorization • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Broken-Function-Level-Authorization-BFLA/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Broken Function Level Authorization</strong>
+  <h3>Broken Function Level Authorization</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1294,14 +1292,8 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="broken-function-level-authorization-bfla">
-  Broken Function Level Authorization (BFLA)
-  <a class="anchor" href="#broken-function-level-authorization-bfla">#</a>
-</h1>
-<h2 id="description">
-  Description
-  <a class="anchor" href="#description">#</a>
-</h2>
+  <article class="markdown book-article"><h1 id="broken-function-level-authorization-bfla">Broken Function Level Authorization (BFLA)<a class="anchor" href="#broken-function-level-authorization-bfla">#</a></h1>
+<h2 id="description">Description<a class="anchor" href="#description">#</a></h2>
 <p>Broken Function Level Authorization (BFLA) occurs when an application fails to properly verify whether an authenticated user has permission to execute a specific function or action. As a result, low-privileged users may gain access to administrative, management, or other privileged functionalities that should be restricted.</p>
 <p>BFLA is one of the most common API security issues and is frequently caused by missing or inconsistent authorization checks on backend endpoints. Applications often enforce restrictions in the user interface while failing to validate permissions on the server side, allowing attackers to directly invoke privileged functions through crafted requests.</p>
 <p><strong>BFLA differs from BOLA (IDOR).</strong> BOLA focuses on unauthorized access to specific objects or resources (e.g., another user&rsquo;s record), whereas BFLA focuses on unauthorized execution of privileged functions (e.g., creating users, exporting data, approving transactions, changing roles).</p>
@@ -1313,14 +1305,8 @@ https://github.com/alex-shpak/hugo-book
 <li>CWE-862 – Missing Authorization</li>
 </ul>
 <hr>
-<h2 id="fundamentals">
-  Fundamentals
-  <a class="anchor" href="#fundamentals">#</a>
-</h2>
-<h3 id="authorization-models">
-  Authorization Models
-  <a class="anchor" href="#authorization-models">#</a>
-</h3>
+<h2 id="fundamentals">Fundamentals<a class="anchor" href="#fundamentals">#</a></h2>
+<h3 id="authorization-models">Authorization Models<a class="anchor" href="#authorization-models">#</a></h3>
 <p><strong>Role-Based Access Control (RBAC)</strong></p>
 <ul>
 <li>Permissions are assigned based on predefined roles.</li>
@@ -1338,10 +1324,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>Users should only have access to the minimum functionality required for their role.</li>
 </ul>
-<h3 id="the-authorization-gap">
-  The Authorization Gap
-  <a class="anchor" href="#the-authorization-gap">#</a>
-</h3>
+<h3 id="the-authorization-gap">The Authorization Gap<a class="anchor" href="#the-authorization-gap">#</a></h3>
 <p>Many applications properly authenticate users but fail to verify whether they are authorized to perform specific actions.</p>
 <p>Example:</p>
 <ol>
@@ -1351,10 +1334,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Backend verifies authentication but skips authorization checks.</li>
 <li>Privileged action is executed.</li>
 </ol>
-<h3 id="common-naming-conventions">
-  Common Naming Conventions
-  <a class="anchor" href="#common-naming-conventions">#</a>
-</h3>
+<h3 id="common-naming-conventions">Common Naming Conventions<a class="anchor" href="#common-naming-conventions">#</a></h3>
 <p>Administrative functionality often uses predictable naming patterns:</p>
 <pre tabindex="0"><code>admin
 administrator
@@ -1374,12 +1354,8 @@ backup
 sync
 approve
 upgrade
-invite
-</code></pre><hr>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+invite</code></pre><hr>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <ul>
 <li>Administrative APIs</li>
 <li>User management endpoints</li>
@@ -1401,20 +1377,12 @@ invite
 <li>Subdomains exposing management functions</li>
 </ul>
 <hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
-<h3 id="1-vertical-privilege-escalation">
-  1. Vertical Privilege Escalation
-  <a class="anchor" href="#1-vertical-privilege-escalation">#</a>
-</h3>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
+<h3 id="1-vertical-privilege-escalation">1. Vertical Privilege Escalation<a class="anchor" href="#1-vertical-privilege-escalation">#</a></h3>
 <p>A lower-privileged user accesses functions intended for higher roles.</p>
 <p><strong>Example</strong></p>
-<pre tabindex="0"><code>GET /api/v1/profile
-</code></pre><p>Allowed for normal users.</p>
-<pre tabindex="0"><code>POST /api/v1/admin/create-user
-</code></pre><p>Attempt using a regular user token.</p>
+<pre tabindex="0"><code>GET /api/v1/profile</code></pre><p>Allowed for normal users.</p>
+<pre tabindex="0"><code>POST /api/v1/admin/create-user</code></pre><p>Attempt using a regular user token.</p>
 <p>Potential impact:</p>
 <ul>
 <li>User creation</li>
@@ -1422,10 +1390,7 @@ invite
 <li>Administrative access</li>
 </ul>
 <hr>
-<h3 id="2-hidden-function-discovery">
-  2. Hidden Function Discovery
-  <a class="anchor" href="#2-hidden-function-discovery">#</a>
-</h3>
+<h3 id="2-hidden-function-discovery">2. Hidden Function Discovery<a class="anchor" href="#2-hidden-function-discovery">#</a></h3>
 <p>Administrative endpoints may exist even when no UI element exposes them.</p>
 <p>Common locations:</p>
 <pre tabindex="0"><code>/admin
@@ -1436,8 +1401,7 @@ invite
 /console
 /api/admin
 /api/system
-/api/manage
-</code></pre><p>Sources for discovery:</p>
+/api/manage</code></pre><p>Sources for discovery:</p>
 <ul>
 <li>JavaScript files</li>
 <li>Swagger/OpenAPI documentation</li>
@@ -1447,26 +1411,17 @@ invite
 <li>robots.txt</li>
 </ul>
 <hr>
-<h3 id="3-http-method-abuse">
-  3. HTTP Method Abuse
-  <a class="anchor" href="#3-http-method-abuse">#</a>
-</h3>
+<h3 id="3-http-method-abuse">3. HTTP Method Abuse<a class="anchor" href="#3-http-method-abuse">#</a></h3>
 <p>Authorization may only be implemented for certain HTTP methods.</p>
 <p>Example:</p>
-<pre tabindex="0"><code>GET /api/users
-</code></pre><p>Blocked.</p>
+<pre tabindex="0"><code>GET /api/users</code></pre><p>Blocked.</p>
 <pre tabindex="0"><code>POST /api/users
 PUT /api/users
 PATCH /api/users
-DELETE /api/users
-</code></pre><p>Unexpectedly allowed.</p>
+DELETE /api/users</code></pre><p>Unexpectedly allowed.</p>
 <p>Test:</p>
-<pre tabindex="0"><code>X-HTTP-Method-Override: DELETE
-</code></pre><hr>
-<h3 id="4-workflow-and-approval-bypass">
-  4. Workflow and Approval Bypass
-  <a class="anchor" href="#4-workflow-and-approval-bypass">#</a>
-</h3>
+<pre tabindex="0"><code>X-HTTP-Method-Override: DELETE</code></pre><hr>
+<h3 id="4-workflow-and-approval-bypass">4. Workflow and Approval Bypass<a class="anchor" href="#4-workflow-and-approval-bypass">#</a></h3>
 <p>Applications often expose privileged approval actions through APIs.</p>
 <p>Examples:</p>
 <pre tabindex="0"><code>Approve Refund
@@ -1474,15 +1429,10 @@ Approve Withdrawal
 Approve Loan
 Approve KYC
 Approve User
-Approve Transaction
-</code></pre><p>Example request:</p>
-<pre tabindex="0"><code>POST /api/approval/refund/123
-</code></pre><p>Executed using a standard user account.</p>
+Approve Transaction</code></pre><p>Example request:</p>
+<pre tabindex="0"><code>POST /api/approval/refund/123</code></pre><p>Executed using a standard user account.</p>
 <hr>
-<h3 id="5-role-manipulation-functions">
-  5. Role Manipulation Functions
-  <a class="anchor" href="#5-role-manipulation-functions">#</a>
-</h3>
+<h3 id="5-role-manipulation-functions">5. Role Manipulation Functions<a class="anchor" href="#5-role-manipulation-functions">#</a></h3>
 <p>Look for functionality involving:</p>
 <pre tabindex="0"><code>role
 permission
@@ -1490,124 +1440,98 @@ group
 membership
 tier
 plan
-access
-</code></pre><p>Examples:</p>
+access</code></pre><p>Examples:</p>
 <pre tabindex="0"><code>POST /api/users/promote
 POST /api/users/change-role
-POST /api/permissions/grant
-</code></pre><hr>
-<h3 id="6-feature-flag-abuse">
-  6. Feature Flag Abuse
-  <a class="anchor" href="#6-feature-flag-abuse">#</a>
-</h3>
+POST /api/permissions/grant</code></pre><hr>
+<h3 id="6-feature-flag-abuse">6. Feature Flag Abuse<a class="anchor" href="#6-feature-flag-abuse">#</a></h3>
 <p>Feature management APIs frequently suffer from authorization weaknesses.</p>
 <p>Examples:</p>
 <pre tabindex="0"><code>POST /api/features/enable
 POST /api/feature/premium
-POST /api/feature/beta
-</code></pre><p>Potential impact:</p>
+POST /api/feature/beta</code></pre><p>Potential impact:</p>
 <ul>
 <li>Premium feature access</li>
 <li>Internal feature access</li>
 <li>Administrative functionality exposure</li>
 </ul>
 <hr>
-<h3 id="7-graphql-mutation-abuse">
-  7. GraphQL Mutation Abuse
-  <a class="anchor" href="#7-graphql-mutation-abuse">#</a>
-</h3>
+<h3 id="7-graphql-mutation-abuse">7. GraphQL Mutation Abuse<a class="anchor" href="#7-graphql-mutation-abuse">#</a></h3>
 <p>GraphQL often exposes privileged functionality through mutations.</p>
 <p>Examples:</p>
 <pre tabindex="0"><code>mutation {
   deleteUser(id: 10)
-}
-</code></pre><pre tabindex="0"><code>mutation {
+}</code></pre><pre tabindex="0"><code>mutation {
   promoteUser(id: 10, role: &#34;ADMIN&#34;)
-}
-</code></pre><pre tabindex="0"><code>mutation {
+}</code></pre><pre tabindex="0"><code>mutation {
   exportAllUsers
-}
-</code></pre><hr>
-<h3 id="8-api-version-abuse">
-  8. API Version Abuse
-  <a class="anchor" href="#8-api-version-abuse">#</a>
-</h3>
+}</code></pre><hr>
+<h3 id="8-api-version-abuse">8. API Version Abuse<a class="anchor" href="#8-api-version-abuse">#</a></h3>
 <p>Legacy versions may lack authorization checks.</p>
 <p>Examples:</p>
 <pre tabindex="0"><code>/api/v1/admin/export
 /api/v2/admin/export
-/api/v3/admin/export
-</code></pre><p>Test:</p>
+/api/v3/admin/export</code></pre><p>Test:</p>
 <pre tabindex="0"><code>v1
 v2
 legacy
 beta
 internal
-old
-</code></pre><hr>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+old</code></pre><hr>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Admin Panel Access</td>
-<td>Access administrative endpoints using a low-privileged account</td>
-</tr>
-<tr>
-<td>User Management</td>
-<td>Create, delete, or modify users</td>
-</tr>
-<tr>
-<td>Role Modification</td>
-<td>Promote or demote accounts</td>
-</tr>
-<tr>
-<td>Export Functions</td>
-<td>Export reports, logs, or databases</td>
-</tr>
-<tr>
-<td>Billing Actions</td>
-<td>Modify subscriptions or payments</td>
-</tr>
-<tr>
-<td>Workflow Actions</td>
-<td>Approve or reject business operations</td>
-</tr>
-<tr>
-<td>Feature Management</td>
-<td>Enable restricted features</td>
-</tr>
-<tr>
-<td>Backup Access</td>
-<td>Download backups or configuration files</td>
-</tr>
-<tr>
-<td>GraphQL Mutations</td>
-<td>Execute privileged mutations</td>
-</tr>
-<tr>
-<td>API Versions</td>
-<td>Test legacy endpoints</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Test</th>
+					<th>Action</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Admin Panel Access</td>
+					<td>Access administrative endpoints using a low-privileged account</td>
+			</tr>
+			<tr>
+					<td>User Management</td>
+					<td>Create, delete, or modify users</td>
+			</tr>
+			<tr>
+					<td>Role Modification</td>
+					<td>Promote or demote accounts</td>
+			</tr>
+			<tr>
+					<td>Export Functions</td>
+					<td>Export reports, logs, or databases</td>
+			</tr>
+			<tr>
+					<td>Billing Actions</td>
+					<td>Modify subscriptions or payments</td>
+			</tr>
+			<tr>
+					<td>Workflow Actions</td>
+					<td>Approve or reject business operations</td>
+			</tr>
+			<tr>
+					<td>Feature Management</td>
+					<td>Enable restricted features</td>
+			</tr>
+			<tr>
+					<td>Backup Access</td>
+					<td>Download backups or configuration files</td>
+			</tr>
+			<tr>
+					<td>GraphQL Mutations</td>
+					<td>Execute privileged mutations</td>
+			</tr>
+			<tr>
+					<td>API Versions</td>
+					<td>Test legacy endpoints</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="bypass-techniques">
-  Bypass Techniques
-  <a class="anchor" href="#bypass-techniques">#</a>
-</h2>
-<h3 id="header-based-authorization-bypass">
-  Header-Based Authorization Bypass
-  <a class="anchor" href="#header-based-authorization-bypass">#</a>
-</h3>
+<h2 id="bypass-techniques">Bypass Techniques<a class="anchor" href="#bypass-techniques">#</a></h2>
+<h3 id="header-based-authorization-bypass">Header-Based Authorization Bypass<a class="anchor" href="#header-based-authorization-bypass">#</a></h3>
 <p>Applications sometimes trust client-controlled headers.</p>
 <p>Examples:</p>
 <pre tabindex="0"><code>X-User-Role: admin
@@ -1616,75 +1540,38 @@ X-Admin: true
 X-Original-URL: /admin
 X-Rewrite-URL: /admin
 X-Forwarded-Prefix: /admin
-X-Custom-IP-Authorization: 127.0.0.1
-</code></pre><hr>
-<h3 id="case-manipulation">
-  Case Manipulation
-  <a class="anchor" href="#case-manipulation">#</a>
-</h3>
+X-Custom-IP-Authorization: 127.0.0.1</code></pre><hr>
+<h3 id="case-manipulation">Case Manipulation<a class="anchor" href="#case-manipulation">#</a></h3>
 <pre tabindex="0"><code>/Admin
 /ADMIN
-/aDmIn
-</code></pre><hr>
-<h3 id="path-traversal--normalization">
-  Path Traversal &amp; Normalization
-  <a class="anchor" href="#path-traversal--normalization">#</a>
-</h3>
+/aDmIn</code></pre><hr>
+<h3 id="path-traversal--normalization">Path Traversal &amp; Normalization<a class="anchor" href="#path-traversal--normalization">#</a></h3>
 <pre tabindex="0"><code>/admin/..
 /api/user/../admin
 /admin/%2e%2e/
-/admin/./
-</code></pre><hr>
-<h3 id="url-encoding">
-  URL Encoding
-  <a class="anchor" href="#url-encoding">#</a>
-</h3>
+/admin/./</code></pre><hr>
+<h3 id="url-encoding">URL Encoding<a class="anchor" href="#url-encoding">#</a></h3>
 <pre tabindex="0"><code>%2fadmin
-%252fadmin
-</code></pre><hr>
-<h3 id="double-slash-bypass">
-  Double Slash Bypass
-  <a class="anchor" href="#double-slash-bypass">#</a>
-</h3>
+%252fadmin</code></pre><hr>
+<h3 id="double-slash-bypass">Double Slash Bypass<a class="anchor" href="#double-slash-bypass">#</a></h3>
 <pre tabindex="0"><code>//admin
-/api//admin
-</code></pre><hr>
-<h3 id="trailing-slash--dot">
-  Trailing Slash / Dot
-  <a class="anchor" href="#trailing-slash--dot">#</a>
-</h3>
+/api//admin</code></pre><hr>
+<h3 id="trailing-slash--dot">Trailing Slash / Dot<a class="anchor" href="#trailing-slash--dot">#</a></h3>
 <pre tabindex="0"><code>/admin/
 /admin.
-/admin..
-</code></pre><hr>
-<h3 id="alternate-api-versions">
-  Alternate API Versions
-  <a class="anchor" href="#alternate-api-versions">#</a>
-</h3>
+/admin..</code></pre><hr>
+<h3 id="alternate-api-versions">Alternate API Versions<a class="anchor" href="#alternate-api-versions">#</a></h3>
 <pre tabindex="0"><code>v1
 v2
 legacy
 beta
 internal
-old
-</code></pre><hr>
-<h3 id="parameter-based-overrides">
-  Parameter-Based Overrides
-  <a class="anchor" href="#parameter-based-overrides">#</a>
-</h3>
+old</code></pre><hr>
+<h3 id="parameter-based-overrides">Parameter-Based Overrides<a class="anchor" href="#parameter-based-overrides">#</a></h3>
 <p>Examples:</p>
-<pre tabindex="0"><code>POST /api/user/update?admin=true
-</code></pre><pre tabindex="0"><code>POST /api/user/update?role=admin
-</code></pre><pre tabindex="0"><code>POST /api/user/update?isAdmin=1
-</code></pre><hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-testing">
-  Manual Testing
-  <a class="anchor" href="#manual-testing">#</a>
-</h3>
+<pre tabindex="0"><code>POST /api/user/update?admin=true</code></pre><pre tabindex="0"><code>POST /api/user/update?role=admin</code></pre><pre tabindex="0"><code>POST /api/user/update?isAdmin=1</code></pre><hr>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-testing">Manual Testing<a class="anchor" href="#manual-testing">#</a></h3>
 <p><strong>Build a Role Matrix</strong></p>
 <p>Compare functionality across:</p>
 <pre tabindex="0"><code>Anonymous
@@ -1692,15 +1579,13 @@ User
 Manager
 Support
 Admin
-Super Admin
-</code></pre><p>Attempt privileged requests using lower-privileged accounts.</p>
+Super Admin</code></pre><p>Attempt privileged requests using lower-privileged accounts.</p>
 <p><strong>Review API Documentation</strong></p>
 <p>Look for:</p>
 <pre tabindex="0"><code>swagger.json
 openapi.json
 api-docs
-Postman collections
-</code></pre><p><strong>Analyze Client-Side Code</strong></p>
+Postman collections</code></pre><p><strong>Analyze Client-Side Code</strong></p>
 <p>Review:</p>
 <ul>
 <li>JavaScript files</li>
@@ -1714,13 +1599,9 @@ Postman collections
 <pre tabindex="0"><code>Status Codes
 Response Bodies
 Response Lengths
-Error Messages
-</code></pre><p>Across different roles.</p>
+Error Messages</code></pre><p>Across different roles.</p>
 <hr>
-<h2 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h2>
+<h2 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h2>
 <p><strong>Autorize:</strong> Replay requests using different sessions to identify authorization issues.</p>
 <p><strong>AuthMatrix</strong>: Build role-based testing matrices and automatically compare results.</p>
 <p><strong>Kiterunner:</strong> Discover hidden API endpoints and administrative functionality.</p>
@@ -1728,13 +1609,9 @@ Error Messages
 <p>Enumerate:</p>
 <pre tabindex="0"><code>Query
 Mutation
-Subscription
-</code></pre><p>and test authorization controls.</p>
+Subscription</code></pre><p>and test authorization controls.</p>
 <hr>
-<h1 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h1>
+<h1 id="impact">Impact<a class="anchor" href="#impact">#</a></h1>
 <ul>
 <li>Vertical privilege escalation.</li>
 <li>Unauthorized administrative access.</li>
@@ -1750,10 +1627,7 @@ Subscription
 <li>Loss of confidentiality, integrity, and availability.</li>
 </ul>
 <hr>
-<h1 id="prevention">
-  Prevention
-  <a class="anchor" href="#prevention">#</a>
-</h1>
+<h1 id="prevention">Prevention<a class="anchor" href="#prevention">#</a></h1>
 <ul>
 <li>Enforce authorization checks on every request and function.</li>
 <li>Implement centralized authorization middleware.</li>
@@ -1771,30 +1645,21 @@ Subscription
 <li>Implement least privilege principles for all users and roles.</li>
 </ul>
 <hr>
-<h1 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h1>
+<h1 id="tools">Tools<a class="anchor" href="#tools">#</a></h1>
 <ul>
 <li><strong>Autorize</strong> – Automated authorization testing using multiple user sessions.</li>
 <li><strong>AuthMatrix</strong> – Build and test role-based access control matrices.</li>
 <li><strong>InQL</strong> – GraphQL endpoint enumeration and testing.</li>
 </ul>
 <hr>
-<h1 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h1>
+<h1 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h1>
 <ul>
 <li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwitmsPGrIuTAxW9TWwGHVkxHA4QFnoECBkQAQ&amp;url=https%3A%2F%2Fhackerone.com%2Freports%2F1801427&amp;usg=AOvVaw09Q5FGF3qCFQw8NB3JvKgo&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow">Information Disclosure via GIF</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwi7p4aXrIuTAxV1VmwGHe2HN2YQFnoECBsQAQ&amp;url=https%3A%2F%2Fhackerone.com%2Freports%2F2632876&amp;usg=AOvVaw30UoTqXAzAjDru3EV26vkq&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow">Accessing restricted analytics functions via BFLA.</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwitmsPGrIuTAxW9TWwGHVkxHA4QFnoECCAQAQ&amp;url=https%3A%2F%2Fhackerone.com%2Freports%2F1675674&amp;usg=AOvVaw3L0UdF6WEfQ642t9kp7-lx&amp;opi=89978449" target="_blank" rel="noreferrer noopener nofollow">Linkedin Draft Post Disclosure</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h1 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h1>
+<h1 id="references">References<a class="anchor" href="#references">#</a></h1>
 <ul>
 <li>OWASP API Security Top 10 (API5:2023): <a href="https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li>OWASP Broken Access Control: <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/A01_2021-Broken_Access_Control/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1810,49 +1675,62 @@ Subscription
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Broken%20Function%20Level%20Authorization%20%28BFLA%29.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Broken-Access-Control/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Broken Access Control</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Buffer-Overflow/" class="flex align-center">
+        <span>Buffer Overflow</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1909,15 +1787,24 @@ Subscription
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

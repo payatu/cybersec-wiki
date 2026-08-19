@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Weak SSL/TLS Configurations # Weak SSL/TLS configurations mean the server accepts outdated protocols, broken ciphers, or skips certificate validation entirely — so even if your app logic is airtight, everything flowing over the wire can be read or tampered with. You&rsquo;re not exploiting application code here; you&rsquo;re breaking the channel itself.
-Understanding SSL/TLS Basics # The Encryption Handshake Gap # TLS 1.2/1.3 negotiates a secure session before any data moves.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Weak SSL/TLS Configurations" />
-<meta property="og:description" content="Weak SSL/TLS Configurations # Weak SSL/TLS configurations mean the server accepts outdated protocols, broken ciphers, or skips certificate validation entirely — so even if your app logic is airtight, everything flowing over the wire can be read or tampered with. You&rsquo;re not exploiting application code here; you&rsquo;re breaking the channel itself.
-Understanding SSL/TLS Basics # The Encryption Handshake Gap # TLS 1.2/1.3 negotiates a secure session before any data moves." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Weak SSL/TLS Configurations | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Weak SSL/TLS Configurations# Weak SSL/TLS configurations mean the server accepts outdated protocols, broken ciphers, or skips certificate validation entirely — so even if your app logic is airtight, everything flowing over the wire can be read or tampered with. You’re not exploiting application code here; you’re breaking the channel itself.
+Understanding SSL/TLS Basics# The Encryption Handshake Gap# TLS 1.2/1.3 negotiates a secure session before any data moves. The problem: if a server still supports old protocol versions or weak ciphers, an attacker can intervene during that negotiation, before your app ever sends a byte — and drag the session down to something breakable.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Weak SSL/TLS Configurations">
+	<meta property="og:description" content="Weak SSL/TLS Configurations# Weak SSL/TLS configurations mean the server accepts outdated protocols, broken ciphers, or skips certificate validation entirely — so even if your app logic is airtight, everything flowing over the wire can be read or tampered with. You’re not exploiting application code here; you’re breaking the channel itself.
+Understanding SSL/TLS Basics# The Encryption Handshake Gap# TLS 1.2/1.3 negotiates a secure session before any data moves. The problem: if a server still supports old protocol versions or weak ciphers, an attacker can intervene during that negotiation, before your app ever sends a byte — and drag the session down to something breakable.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Weak SSL/TLS Configurations">
+	<meta itemprop="description" content="Weak SSL/TLS Configurations# Weak SSL/TLS configurations mean the server accepts outdated protocols, broken ciphers, or skips certificate validation entirely — so even if your app logic is airtight, everything flowing over the wire can be read or tampered with. You’re not exploiting application code here; you’re breaking the channel itself.
+Understanding SSL/TLS Basics# The Encryption Handshake Gap# TLS 1.2/1.3 negotiates a secure session before any data moves. The problem: if a server still supports old protocol versions or weak ciphers, an attacker can intervene during that negotiation, before your app ever sends a byte — and drag the session down to something breakable.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2063">
+
+<title>Weak SSL/TLS Configurations • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Weak-SSL-TLS-Configurations/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Weak SSL/TLS Configurations</strong>
+  <h3>Weak SSL/TLS Configurations</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1380,19 +1378,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="weak-ssltls-configurations">
-  Weak SSL/TLS Configurations
-  <a class="anchor" href="#weak-ssltls-configurations">#</a>
-</h2>
+  <article class="markdown book-article"><h2 id="weak-ssltls-configurations">Weak SSL/TLS Configurations<a class="anchor" href="#weak-ssltls-configurations">#</a></h2>
 <p>Weak SSL/TLS configurations mean the server accepts outdated protocols, broken ciphers, or skips certificate validation entirely — so even if your app logic is airtight, everything flowing over the wire can be read or tampered with. You&rsquo;re not exploiting application code here; you&rsquo;re breaking the channel itself.</p>
-<h3 id="understanding-ssltls-basics">
-  Understanding SSL/TLS Basics
-  <a class="anchor" href="#understanding-ssltls-basics">#</a>
-</h3>
-<h3 id="the-encryption-handshake-gap">
-  The Encryption Handshake Gap
-  <a class="anchor" href="#the-encryption-handshake-gap">#</a>
-</h3>
+<h3 id="understanding-ssltls-basics">Understanding SSL/TLS Basics<a class="anchor" href="#understanding-ssltls-basics">#</a></h3>
+<h3 id="the-encryption-handshake-gap">The Encryption Handshake Gap<a class="anchor" href="#the-encryption-handshake-gap">#</a></h3>
 <p>TLS 1.2/1.3 negotiates a secure session before any data moves. The problem: if a server still supports old protocol versions or weak ciphers, an attacker can intervene during that negotiation, before your app ever sends a byte — and drag the session down to something breakable.</p>
 <p>Here&rsquo;s the usual flow:</p>
 <ol>
@@ -1400,10 +1389,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Force a weak negotiation.</strong> Intercept or emulate the handshake, advertising only legacy capabilities to bait the server into a vulnerable mode.</li>
 <li><strong>Decrypt or inject.</strong> Once you&rsquo;ve downgraded the session, captured traffic becomes readable, or you can inject payloads mid-stream.</li>
 </ol>
-<h3 id="common-weak-configuration-signatures">
-  Common Weak Configuration Signatures
-  <a class="anchor" href="#common-weak-configuration-signatures">#</a>
-</h3>
+<h3 id="common-weak-configuration-signatures">Common Weak Configuration Signatures<a class="anchor" href="#common-weak-configuration-signatures">#</a></h3>
 <ul>
 <li><strong>Legacy Protocols:</strong> SSLv2, SSLv3, TLS 1.0, TLS 1.1 still accepted</li>
 <li><strong>Weak Cipher Suites:</strong> RC4, DES, 3DES, EXPORT-grade, NULL ciphers</li>
@@ -1413,10 +1399,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Missing HSTS:</strong> No <code>Strict-Transport-Security</code> header, or max-age too short</li>
 <li><strong>Wildcard Certs:</strong> <code>*.example.com</code> applied broadly across sensitive subdomains</li>
 </ul>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <p>Think about where TLS gets configured (and misconfigured) in a real environment:</p>
 <ul>
 <li><strong>HTTPS Endpoints:</strong> The obvious target — web servers still accepting TLS 1.0 or EXPORT ciphers &ldquo;for compatibility&rdquo;</li>
@@ -1427,137 +1410,62 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>VPNs &amp; Tunnels:</strong> OpenVPN/IPSec endpoints with weak DH groups (Logjam territory)</li>
 <li><strong>Third-Party Integrations:</strong> Webhook receivers or payment callbacks still mandating TLS 1.0 on their end</li>
 </ul>
-<h3 id="exploiting-weak-ssltls-configurations">
-  Exploiting Weak SSL/TLS Configurations
-  <a class="anchor" href="#exploiting-weak-ssltls-configurations">#</a>
-</h3>
-<h3 id="1-protocol-downgrade-attack-poodle--drown">
-  1. Protocol Downgrade Attack (POODLE / DROWN)
-  <a class="anchor" href="#1-protocol-downgrade-attack-poodle--drown">#</a>
-</h3>
+<h3 id="exploiting-weak-ssltls-configurations">Exploiting Weak SSL/TLS Configurations<a class="anchor" href="#exploiting-weak-ssltls-configurations">#</a></h3>
+<h3 id="1-protocol-downgrade-attack-poodle--drown">1. Protocol Downgrade Attack (POODLE / DROWN)<a class="anchor" href="#1-protocol-downgrade-attack-poodle--drown">#</a></h3>
 <p>The goal: force a modern TLS session to fall back to SSLv3 or SSLv2 by simulating handshake failures so the server retries with legacy protocols.</p>
 <p><strong>POODLE (SSLv3):</strong></p>
 <p>bash</p>
 <p>`# Attempt an SSLv3 handshake — if it completes, the server is vulnerable
 openssl s_client -connect target.com:443 -ssl3</p>
-<h1 id="a-successful-connection-means-poodle-is-viable">
-  A successful connection means POODLE is viable.
-  <a class="anchor" href="#a-successful-connection-means-poodle-is-viable">#</a>
-</h1>
-<h1 id="from-here-controlling-one-chosen-plaintext-block-per-256-requests">
-  From here, controlling one chosen-plaintext block per ~256 requests
-  <a class="anchor" href="#from-here-controlling-one-chosen-plaintext-block-per-256-requests">#</a>
-</h1>
-<h1 id="lets-you-decrypt-session-cookies-byte-by-byte">
-  lets you decrypt session cookies byte by byte.`
-  <a class="anchor" href="#lets-you-decrypt-session-cookies-byte-by-byte">#</a>
-</h1>
+<h1 id="a-successful-connection-means-poodle-is-viable">A successful connection means POODLE is viable.<a class="anchor" href="#a-successful-connection-means-poodle-is-viable">#</a></h1>
+<h1 id="from-here-controlling-one-chosen-plaintext-block-per-256-requests">From here, controlling one chosen-plaintext block per ~256 requests<a class="anchor" href="#from-here-controlling-one-chosen-plaintext-block-per-256-requests">#</a></h1>
+<h1 id="lets-you-decrypt-session-cookies-byte-by-byte">lets you decrypt session cookies byte by byte.`<a class="anchor" href="#lets-you-decrypt-session-cookies-byte-by-byte">#</a></h1>
 <p><strong>DROWN (SSLv2 cross-protocol):</strong></p>
 <p>bash</p>
 <p>`# Check if SSLv2 is accepted
 openssl s_client -connect target.com:443 -ssl2</p>
-<h1 id="watch-the-shared-key-angle-even-if-targetcom-looks-clean">
-  Watch the shared key angle: even if target.com looks clean,
-  <a class="anchor" href="#watch-the-shared-key-angle-even-if-targetcom-looks-clean">#</a>
-</h1>
-<h1 id="if-mailtargetcom-shares-the-same-private-key-and-accepts-sslv2">
-  if mail.target.com shares the same private key and accepts SSLv2,
-  <a class="anchor" href="#if-mailtargetcom-shares-the-same-private-key-and-accepts-sslv2">#</a>
-</h1>
-<h1 id="drown-works-against-the-main-domain-through-the-mail-server">
-  DROWN works against the main domain through the mail server.`
-  <a class="anchor" href="#drown-works-against-the-main-domain-through-the-mail-server">#</a>
-</h1>
-<h3 id="2-beast-attack-cbc--tls-10">
-  2. BEAST Attack (CBC + TLS 1.0)
-  <a class="anchor" href="#2-beast-attack-cbc--tls-10">#</a>
-</h3>
+<h1 id="watch-the-shared-key-angle-even-if-targetcom-looks-clean">Watch the shared key angle: even if target.com looks clean,<a class="anchor" href="#watch-the-shared-key-angle-even-if-targetcom-looks-clean">#</a></h1>
+<h1 id="if-mailtargetcom-shares-the-same-private-key-and-accepts-sslv2">if mail.target.com shares the same private key and accepts SSLv2,<a class="anchor" href="#if-mailtargetcom-shares-the-same-private-key-and-accepts-sslv2">#</a></h1>
+<h1 id="drown-works-against-the-main-domain-through-the-mail-server">DROWN works against the main domain through the mail server.`<a class="anchor" href="#drown-works-against-the-main-domain-through-the-mail-server">#</a></h1>
+<h3 id="2-beast-attack-cbc--tls-10">2. BEAST Attack (CBC + TLS 1.0)<a class="anchor" href="#2-beast-attack-cbc--tls-10">#</a></h3>
 <p>TLS 1.0&rsquo;s CBC mode uses predictable IV chaining. With JavaScript injection (requiring a MITM position), you can run a chosen-plaintext attack that recovers one byte of session data per ~256 requests — enough to steal cookies or CSRF tokens.</p>
 <p><strong>Check if TLS 1.0 is enabled:</strong></p>
 <p>bash</p>
 <p>`sslscan target.com | grep &ldquo;TLSv1.0&rdquo;</p>
-<h1 id="or-with-nmap">
-  or with nmap
-  <a class="anchor" href="#or-with-nmap">#</a>
-</h1>
+<h1 id="or-with-nmap">or with nmap<a class="anchor" href="#or-with-nmap">#</a></h1>
 <p>nmap &ndash;script ssl-enum-ciphers -p 443 target.com | grep &ldquo;TLSv1.0&rdquo;`</p>
 <p>If TLS 1.0 shows up and the app sets cookies without <code>HttpOnly</code>/<code>Secure</code>, this is worth pursuing in a MITM scenario.</p>
-<h3 id="3-crime--breach-compression-oracle">
-  3. CRIME / BREACH (Compression Oracle)
-  <a class="anchor" href="#3-crime--breach-compression-oracle">#</a>
-</h3>
+<h3 id="3-crime--breach-compression-oracle">3. CRIME / BREACH (Compression Oracle)<a class="anchor" href="#3-crime--breach-compression-oracle">#</a></h3>
 <p>When TLS compression or HTTP-level compression is on and secrets appear in responses, varying your request slightly changes the compressed response size — and that size difference leaks the secret character by character.</p>
 <p>bash</p>
 <p>`# Check for TLS-level compression
 openssl s_client -connect target.com:443 | grep -i &ldquo;compression&rdquo;</p>
-<h1 id="compression-zlib-compression--crime-vulnerable">
-  &ldquo;Compression: zlib compression&rdquo; → CRIME-vulnerable.
-  <a class="anchor" href="#compression-zlib-compression--crime-vulnerable">#</a>
-</h1>
-<h1 id="control-a-portion-of-the-request-guess-the-next-character-of-the-target-secret">
-  Control a portion of the request, guess the next character of the target secret,
-  <a class="anchor" href="#control-a-portion-of-the-request-guess-the-next-character-of-the-target-secret">#</a>
-</h1>
-<h1 id="and-watch-response-size--a-smaller-response-confirms-a-correct-guess">
-  and watch response size — a smaller response confirms a correct guess.`
-  <a class="anchor" href="#and-watch-response-size--a-smaller-response-confirms-a-correct-guess">#</a>
-</h1>
-<h3 id="4-mitm-via-certificate-validation-failure">
-  4. MITM via Certificate Validation Failure
-  <a class="anchor" href="#4-mitm-via-certificate-validation-failure">#</a>
-</h3>
+<h1 id="compression-zlib-compression--crime-vulnerable">&ldquo;Compression: zlib compression&rdquo; → CRIME-vulnerable.<a class="anchor" href="#compression-zlib-compression--crime-vulnerable">#</a></h1>
+<h1 id="control-a-portion-of-the-request-guess-the-next-character-of-the-target-secret">Control a portion of the request, guess the next character of the target secret,<a class="anchor" href="#control-a-portion-of-the-request-guess-the-next-character-of-the-target-secret">#</a></h1>
+<h1 id="and-watch-response-size--a-smaller-response-confirms-a-correct-guess">and watch response size — a smaller response confirms a correct guess.`<a class="anchor" href="#and-watch-response-size--a-smaller-response-confirms-a-correct-guess">#</a></h1>
+<h3 id="4-mitm-via-certificate-validation-failure">4. MITM via Certificate Validation Failure<a class="anchor" href="#4-mitm-via-certificate-validation-failure">#</a></h3>
 <p>When clients disable cert validation, you don&rsquo;t need to break any crypto — you just present any certificate and the client accepts it. This is common in internal services and mobile apps.</p>
 <p><strong>The vulnerable code you&rsquo;re looking for:</strong></p>
 <p><code># Python — skips all certificate validation import requests requests.get(&quot;https://internal-api.company.com/data&quot;, verify=False)</code></p>
 <p><strong>Setting up interception:</strong></p>
 <p>`mitmproxy &ndash;mode transparent &ndash;ssl-insecure</p>
-<h1 id="any-host-with-cert-validation-disabled-will-hand-you-its-full-plaintext-traffic">
-  Any host with cert validation disabled will hand you its full plaintext traffic.
-  <a class="anchor" href="#any-host-with-cert-validation-disabled-will-hand-you-its-full-plaintext-traffic">#</a>
-</h1>
-<h1 id="credentials-tokens-api-keys--all-visible">
-  Credentials, tokens, API keys — all visible.`
-  <a class="anchor" href="#credentials-tokens-api-keys--all-visible">#</a>
-</h1>
-<h3 id="5-weak-diffie-hellman--logjam">
-  5. Weak Diffie-Hellman / Logjam
-  <a class="anchor" href="#5-weak-diffie-hellman--logjam">#</a>
-</h3>
+<h1 id="any-host-with-cert-validation-disabled-will-hand-you-its-full-plaintext-traffic">Any host with cert validation disabled will hand you its full plaintext traffic.<a class="anchor" href="#any-host-with-cert-validation-disabled-will-hand-you-its-full-plaintext-traffic">#</a></h1>
+<h1 id="credentials-tokens-api-keys--all-visible">Credentials, tokens, API keys — all visible.`<a class="anchor" href="#credentials-tokens-api-keys--all-visible">#</a></h1>
+<h3 id="5-weak-diffie-hellman--logjam">5. Weak Diffie-Hellman / Logjam<a class="anchor" href="#5-weak-diffie-hellman--logjam">#</a></h3>
 <p>Servers using DH groups under 1024-bit, or the common 512-bit &ldquo;export&rdquo; primes, are vulnerable to precomputed discrete log attacks. Logjam lets you passively decrypt sessions by breaking the key exchange offline.</p>
 <p>`# Detect weak DH parameters
 nmap &ndash;script ssl-dh-params -p 443 target.com</p>
-<h1 id="look-for-vulnerable-logjam-in-the-output--flags-dh--2048-bit-or-export-suites">
-  Look for &ldquo;VULNERABLE: Logjam&rdquo; in the output — flags DH &lt; 2048-bit or EXPORT suites
-  <a class="anchor" href="#look-for-vulnerable-logjam-in-the-output--flags-dh--2048-bit-or-export-suites">#</a>
-</h1>
-<h1 id="actively-try-to-negotiate-an-export-grade-dhe-cipher">
-  Actively try to negotiate an EXPORT-grade DHE cipher
-  <a class="anchor" href="#actively-try-to-negotiate-an-export-grade-dhe-cipher">#</a>
-</h1>
+<h1 id="look-for-vulnerable-logjam-in-the-output--flags-dh--2048-bit-or-export-suites">Look for &ldquo;VULNERABLE: Logjam&rdquo; in the output — flags DH &lt; 2048-bit or EXPORT suites<a class="anchor" href="#look-for-vulnerable-logjam-in-the-output--flags-dh--2048-bit-or-export-suites">#</a></h1>
+<h1 id="actively-try-to-negotiate-an-export-grade-dhe-cipher">Actively try to negotiate an EXPORT-grade DHE cipher<a class="anchor" href="#actively-try-to-negotiate-an-export-grade-dhe-cipher">#</a></h1>
 <p>openssl s_client -connect target.com:443 -cipher &ldquo;EXP-EDH-RSA-DES-CBC-SHA&rdquo;</p>
-<h1 id="success-here-confirms-export-cipher-negotiation-is-possible">
-  Success here confirms EXPORT cipher negotiation is possible`
-  <a class="anchor" href="#success-here-confirms-export-cipher-negotiation-is-possible">#</a>
-</h1>
-<h3 id="6-sweet32-birthday-attack-on-64-bit-block-ciphers">
-  6. SWEET32 (Birthday Attack on 64-bit Block Ciphers)
-  <a class="anchor" href="#6-sweet32-birthday-attack-on-64-bit-block-ciphers">#</a>
-</h3>
+<h1 id="success-here-confirms-export-cipher-negotiation-is-possible">Success here confirms EXPORT cipher negotiation is possible`<a class="anchor" href="#success-here-confirms-export-cipher-negotiation-is-possible">#</a></h1>
+<h3 id="6-sweet32-birthday-attack-on-64-bit-block-ciphers">6. SWEET32 (Birthday Attack on 64-bit Block Ciphers)<a class="anchor" href="#6-sweet32-birthday-attack-on-64-bit-block-ciphers">#</a></h3>
 <p>3DES uses a 64-bit block size. After enough traffic — around 32GB — birthday-bound collisions between blocks start leaking plaintext. Long-lived sessions (WebSockets, persistent HTTPS connections) are the real risk here.</p>
 <p>`# First, confirm 3DES is offered
 sslscan target.com | grep &ldquo;3DES|DES-CBC3&rdquo;</p>
-<h1 id="if-it-is-a-long-lived-session-websocket-keep-alive-gives-you-enough">
-  If it is, a long-lived session (WebSocket, keep-alive) gives you enough
-  <a class="anchor" href="#if-it-is-a-long-lived-session-websocket-keep-alive-gives-you-enough">#</a>
-</h1>
-<h1 id="ciphertext-volume-to-trigger-collisions-and-recover-session-secrets">
-  ciphertext volume to trigger collisions and recover session secrets.`
-  <a class="anchor" href="#ciphertext-volume-to-trigger-collisions-and-recover-session-secrets">#</a>
-</h1>
-<h3 id="7-ssl-stripping">
-  7. SSL Stripping
-  <a class="anchor" href="#7-ssl-stripping">#</a>
-</h3>
+<h1 id="if-it-is-a-long-lived-session-websocket-keep-alive-gives-you-enough">If it is, a long-lived session (WebSocket, keep-alive) gives you enough<a class="anchor" href="#if-it-is-a-long-lived-session-websocket-keep-alive-gives-you-enough">#</a></h1>
+<h1 id="ciphertext-volume-to-trigger-collisions-and-recover-session-secrets">ciphertext volume to trigger collisions and recover session secrets.`<a class="anchor" href="#ciphertext-volume-to-trigger-collisions-and-recover-session-secrets">#</a></h1>
+<h3 id="7-ssl-stripping">7. SSL Stripping<a class="anchor" href="#7-ssl-stripping">#</a></h3>
 <p>SSL stripping downgrades HTTPS traffic to HTTP when HSTS is absent. The attacker intercepts the victim&rsquo;s initial HTTP request, prevents redirection to HTTPS, and keeps the communication unencrypted.</p>
 <pre tabindex="0"><code>Victim
    │
@@ -1568,147 +1476,104 @@ Attacker (MITM)
    ▼
 HTTP Session
    │
-Credentials transmitted in plaintext
-</code></pre><p>Common indicators:</p>
+Credentials transmitted in plaintext</code></pre><p>Common indicators:</p>
 <ul>
 <li>Missing HSTS</li>
 <li>HTTP still accessible</li>
 <li>Credentials accepted over HTTP</li>
 <li>No automatic HTTPS enforcement</li>
 </ul>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Payload / Action</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Legacy Protocol Check</td>
-<td><code>openssl s_client -connect target.com:443 -tls1</code></td>
-<td>Server accepts TLS 1.0 — protocol downgrade possible</td>
-</tr>
-<tr>
-<td>SSLv3 POODLE Test</td>
-<td><code>openssl s_client -connect target.com:443 -ssl3</code></td>
-<td>Connection succeeds — POODLE vulnerable</td>
-</tr>
-<tr>
-<td>EXPORT Cipher Negotiation</td>
-<td><code>openssl s_client -cipher &quot;EXP-RC4-MD5&quot; -connect target.com:443</code></td>
-<td>Handshake succeeds — FREAK/Logjam vulnerable</td>
-</tr>
-<tr>
-<td>NULL Cipher Test</td>
-<td><code>openssl s_client -cipher &quot;NULL-SHA&quot; -connect target.com:443</code></td>
-<td>Handshake succeeds — traffic sent unencrypted</td>
-</tr>
-<tr>
-<td>Weak DH Group Detection</td>
-<td><code>nmap --script ssl-dh-params -p 443 target.com</code></td>
-<td>DH &lt; 2048-bit flagged — Logjam vulnerable</td>
-</tr>
-<tr>
-<td>Certificate Validation Bypass</td>
-<td>Present self-signed cert via MITM proxy</td>
-<td>Client accepts it — no cert pinning or validation</td>
-</tr>
-<tr>
-<td>HSTS Missing</td>
-<td>Check response headers for <code>Strict-Transport-Security</code></td>
-<td>Header absent — SSL stripping possible</td>
-</tr>
-<tr>
-<td>TLS Compression</td>
-<td>`openssl s_client -connect target.com:443</td>
-<td>grep Compression`</td>
-</tr>
-<tr>
-<td>RC4 Cipher Support</td>
-<td>`sslscan target.com</td>
-<td>grep RC4`</td>
-</tr>
-<tr>
-<td>3DES / SWEET32</td>
-<td>`sslscan target.com</td>
-<td>grep 3DES`</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Payload / Action</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Legacy Protocol Check</td>
+					<td><code>openssl s_client -connect target.com:443 -tls1</code></td>
+					<td>Server accepts TLS 1.0 — protocol downgrade possible</td>
+			</tr>
+			<tr>
+					<td>SSLv3 POODLE Test</td>
+					<td><code>openssl s_client -connect target.com:443 -ssl3</code></td>
+					<td>Connection succeeds — POODLE vulnerable</td>
+			</tr>
+			<tr>
+					<td>EXPORT Cipher Negotiation</td>
+					<td><code>openssl s_client -cipher &quot;EXP-RC4-MD5&quot; -connect target.com:443</code></td>
+					<td>Handshake succeeds — FREAK/Logjam vulnerable</td>
+			</tr>
+			<tr>
+					<td>NULL Cipher Test</td>
+					<td><code>openssl s_client -cipher &quot;NULL-SHA&quot; -connect target.com:443</code></td>
+					<td>Handshake succeeds — traffic sent unencrypted</td>
+			</tr>
+			<tr>
+					<td>Weak DH Group Detection</td>
+					<td><code>nmap --script ssl-dh-params -p 443 target.com</code></td>
+					<td>DH &lt; 2048-bit flagged — Logjam vulnerable</td>
+			</tr>
+			<tr>
+					<td>Certificate Validation Bypass</td>
+					<td>Present self-signed cert via MITM proxy</td>
+					<td>Client accepts it — no cert pinning or validation</td>
+			</tr>
+			<tr>
+					<td>HSTS Missing</td>
+					<td>Check response headers for <code>Strict-Transport-Security</code></td>
+					<td>Header absent — SSL stripping possible</td>
+			</tr>
+			<tr>
+					<td>TLS Compression</td>
+					<td>`openssl s_client -connect target.com:443</td>
+					<td>grep Compression`</td>
+			</tr>
+			<tr>
+					<td>RC4 Cipher Support</td>
+					<td>`sslscan target.com</td>
+					<td>grep RC4`</td>
+			</tr>
+			<tr>
+					<td>3DES / SWEET32</td>
+					<td>`sslscan target.com</td>
+					<td>grep 3DES`</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="bypasses--obfuscation">
-  Bypasses &amp; Obfuscation
-  <a class="anchor" href="#bypasses--obfuscation">#</a>
-</h2>
-<h3 id="1-sni-based-configuration-splits">
-  1. SNI-Based Configuration Splits
-  <a class="anchor" href="#1-sni-based-configuration-splits">#</a>
-</h3>
+<h2 id="bypasses--obfuscation">Bypasses &amp; Obfuscation<a class="anchor" href="#bypasses--obfuscation">#</a></h2>
+<h3 id="1-sni-based-configuration-splits">1. SNI-Based Configuration Splits<a class="anchor" href="#1-sni-based-configuration-splits">#</a></h3>
 <p>Strong TLS on the default vhost doesn&rsquo;t mean all vhosts are clean. Legacy internal hostnames often have their own, weaker config hiding behind the same IP.</p>
 <p>`# Try alternate SNI values to hit secondary vhosts
 openssl s_client -connect 192.168.1.10:443 -servername legacy.internal.target.com -tls1</p>
-<h1 id="you-may-land-on-a-vhost-with-tls-10-and-weak-ciphers-that-the-main-domain-doesnt-expose">
-  You may land on a vhost with TLS 1.0 and weak ciphers that the main domain doesn&rsquo;t expose`
-  <a class="anchor" href="#you-may-land-on-a-vhost-with-tls-10-and-weak-ciphers-that-the-main-domain-doesnt-expose">#</a>
-</h1>
-<h3 id="2-non-standard-ports">
-  2. Non-Standard Ports
-  <a class="anchor" href="#2-non-standard-ports">#</a>
-</h3>
+<h1 id="you-may-land-on-a-vhost-with-tls-10-and-weak-ciphers-that-the-main-domain-doesnt-expose">You may land on a vhost with TLS 1.0 and weak ciphers that the main domain doesn&rsquo;t expose`<a class="anchor" href="#you-may-land-on-a-vhost-with-tls-10-and-weak-ciphers-that-the-main-domain-doesnt-expose">#</a></h1>
+<h3 id="2-non-standard-ports">2. Non-Standard Ports<a class="anchor" href="#2-non-standard-ports">#</a></h3>
 <p>Port 443 is what automated scanners hit. Everything else gets missed, and auxiliary services often have the worst configs.</p>
 <p><code># Cast a wider net across common TLS ports nmap --script ssl-enum-ciphers -p 443,8443,8080,9443,4433 target.com</code></p>
-<h3 id="3-shared-certificate--key-reuse-across-hosts">
-  3. Shared Certificate / Key Reuse Across Hosts
-  <a class="anchor" href="#3-shared-certificate--key-reuse-across-hosts">#</a>
-</h3>
+<h3 id="3-shared-certificate--key-reuse-across-hosts">3. Shared Certificate / Key Reuse Across Hosts<a class="anchor" href="#3-shared-certificate--key-reuse-across-hosts">#</a></h3>
 <p>A hardened public endpoint shares a private key with a legacy internal server, that&rsquo;s a DROWN-style attack waiting to happen, even if the public endpoint looks clean.</p>
 <p>`# Compare certificate fingerprints across subdomains to spot shared keys
 echo | openssl s_client -connect mail.target.com:465 2&gt;/dev/null | openssl x509 -fingerprint -noout
 echo | openssl s_client -connect target.com:443 2&gt;/dev/null | openssl x509 -fingerprint -noout</p>
-<h1 id="matching-fingerprints--shared-key--shared-risk">
-  Matching fingerprints = shared key = shared risk`
-  <a class="anchor" href="#matching-fingerprints--shared-key--shared-risk">#</a>
-</h1>
-<h3 id="4-waf--cdn-tls-termination-gaps">
-  4. WAF / CDN TLS Termination Gaps
-  <a class="anchor" href="#4-waf--cdn-tls-termination-gaps">#</a>
-</h3>
+<h1 id="matching-fingerprints--shared-key--shared-risk">Matching fingerprints = shared key = shared risk`<a class="anchor" href="#matching-fingerprints--shared-key--shared-risk">#</a></h1>
+<h3 id="4-waf--cdn-tls-termination-gaps">4. WAF / CDN TLS Termination Gaps<a class="anchor" href="#4-waf--cdn-tls-termination-gaps">#</a></h3>
 <p>Cloudflare or another CDN enforces modern TLS at the edge — but what about the backend origin? The CDN-to-origin leg is often running deprecated TLS with self-signed certs and nobody&rsquo;s watching it.</p>
 <p>`# Bypass the CDN and hit the origin IP directly
 openssl s_client -connect <origin-ip>:443 -servername target.com</p>
-<h1 id="the-origin-may-expose-tls-10-or-a-self-signed-cert-thats-invisible-through-the-cdn">
-  The origin may expose TLS 1.0 or a self-signed cert that&rsquo;s invisible through the CDN`
-  <a class="anchor" href="#the-origin-may-expose-tls-10-or-a-self-signed-cert-thats-invisible-through-the-cdn">#</a>
-</h1>
-<h3 id="5-renegotiation-abuse">
-  5. Renegotiation Abuse
-  <a class="anchor" href="#5-renegotiation-abuse">#</a>
-</h3>
+<h1 id="the-origin-may-expose-tls-10-or-a-self-signed-cert-thats-invisible-through-the-cdn">The origin may expose TLS 1.0 or a self-signed cert that&rsquo;s invisible through the CDN`<a class="anchor" href="#the-origin-may-expose-tls-10-or-a-self-signed-cert-thats-invisible-through-the-cdn">#</a></h1>
+<h3 id="5-renegotiation-abuse">5. Renegotiation Abuse<a class="anchor" href="#5-renegotiation-abuse">#</a></h3>
 <p>Insecure TLS renegotiation lets an attacker inject a prefix into an already-authenticated session — effectively prepending attacker-controlled data to a legitimate request.</p>
 <p>`# Connect, then trigger renegotiation manually
 openssl s_client -connect target.com:443</p>
-<h1 id="once-connected-press-r--watch-whether-the-server-renegotiates-without-objection">
-  Once connected, press &lsquo;R&rsquo; — watch whether the server renegotiates without objection
-  <a class="anchor" href="#once-connected-press-r--watch-whether-the-server-renegotiates-without-objection">#</a>
-</h1>
-<h1 id="or-detect-it-via-nmap">
-  Or detect it via nmap
-  <a class="anchor" href="#or-detect-it-via-nmap">#</a>
-</h1>
+<h1 id="once-connected-press-r--watch-whether-the-server-renegotiates-without-objection">Once connected, press &lsquo;R&rsquo; — watch whether the server renegotiates without objection<a class="anchor" href="#once-connected-press-r--watch-whether-the-server-renegotiates-without-objection">#</a></h1>
+<h1 id="or-detect-it-via-nmap">Or detect it via nmap<a class="anchor" href="#or-detect-it-via-nmap">#</a></h1>
 <p>nmap &ndash;script ssl-enum-ciphers -p 443 target.com | grep &ldquo;renegotiation&rdquo;`</p>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  Manual Detection
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection">Manual Detection<a class="anchor" href="#manual-detection">#</a></h3>
 <ul>
 <li>
 <p><strong>testssl.sh</strong> — your first stop. Runs a full audit: protocol versions, cipher suites, key lengths, known CVEs, certificate health. Use it before anything else.</p>
@@ -1729,10 +1594,7 @@ openssl s_client -connect target.com:443</p>
 <p><strong>Header Analysis</strong> — manually check for <code>Strict-Transport-Security</code>, <code>Expect-CT</code>, and <code>Public-Key-Pins</code> in responses. Their absence is a finding on its own.</p>
 </li>
 </ul>
-<h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
 <ul>
 <li><strong>Qualys SSL Labs</strong> — the standard for web-facing TLS audits. Gives you an A–F grade with CVE-level detail. Aim for A+; anything below B warrants a report.</li>
 <li><strong>Nmap SSL Scripts</strong> — <code>ssl-enum-ciphers</code>, <code>ssl-dh-params</code>, <code>ssl-heartbleed</code>, <code>ssl-poodle</code> - slot these into existing network scans with no extra setup.</li>
@@ -1745,10 +1607,7 @@ openssl s_client -connect target.com:443</p>
 <li><strong>Burp Suite</strong> — passive scanner flags weak cipher negotiation during manual browsing without any extra configuration.</li>
 <li><strong>OWASP ZAP (TLS Add-on)</strong> — active and passive checks for weak ciphers and missing HSTS; good for CI/CD integration.</li>
 </ul>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <p>These aren&rsquo;t theoretical risks - weak TLS configs have concrete, immediate consequences:</p>
 <ul>
 <li><strong>Full Traffic Decryption:</strong> POODLE/DROWN let you capture and decrypt session tokens, credentials, and sensitive data from live traffic.</li>
@@ -1758,10 +1617,7 @@ openssl s_client -connect target.com:443</p>
 <li><strong>Compliance Failures:</strong> PCI-DSS 4.0, HIPAA, and GDPR all require current TLS standards. A weak config is a direct audit failure, not just a finding.</li>
 <li><strong>Reputational Damage:</strong> A public TLS CVE disclosure moves fast — user trust is hard to recover once it&rsquo;s in the news.</li>
 </ul>
-<h2 id="mitigation--prevention">
-  Mitigation &amp; Prevention
-  <a class="anchor" href="#mitigation--prevention">#</a>
-</h2>
+<h2 id="mitigation--prevention">Mitigation &amp; Prevention<a class="anchor" href="#mitigation--prevention">#</a></h2>
 <ul>
 <li><strong>Disable Legacy Protocols:</strong> Accept only TLS 1.2 and TLS 1.3. Explicitly disable SSLv2, SSLv3, TLS 1.0, and TLS 1.1 at the server level — don&rsquo;t rely on &ldquo;not enabling&rdquo; them.</li>
 <li><strong>Enforce Strong Cipher Suites:</strong> Prioritize <code>ECDHE-ECDSA-AES256-GCM-SHA384</code>, <code>ECDHE-RSA-AES128-GCM-SHA256</code>, and TLS 1.3 cipher groups. Explicitly remove RC4, 3DES, DES, EXPORT, NULL, and anon suites.</li>
@@ -1774,22 +1630,13 @@ openssl s_client -connect target.com:443</p>
 <li><strong>Never Disable Certificate Validation:</strong> Hunt down every instance of <code>verify=False</code>, <code>InsecureSkipVerify: true</code>, or equivalent in internal HTTP clients and remove them. There is no safe use of this in production.</li>
 <li><strong>Scan Regularly:</strong> Run <code>testssl.sh</code> or Qualys SSL Labs checks in CI/CD and after any infrastructure change — TLS configs drift silently.</li>
 </ul>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
-<h3 id="hackerone-reports">
-  HackerOne Reports
-  <a class="anchor" href="#hackerone-reports">#</a>
-</h3>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
+<h3 id="hackerone-reports">HackerOne Reports<a class="anchor" href="#hackerone-reports">#</a></h3>
 <ul>
 <li><a href="https://hackerone.com/reports/134760" target="_blank" rel="noreferrer noopener nofollow"><strong>SSL/TLS BEAST ATTACK VULNERABILITY</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/168538" target="_blank" rel="noreferrer noopener nofollow"><strong>Twitter (#168538):</strong> TLS 1.0 and RC4 cipher support identified on core API endpoints; reported for deprecation.</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">OWASP Transport Layer Security Cheat Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://csrc.nist.gov/publications/detail/sp/800-52/rev-2/final" target="_blank" rel="noreferrer noopener nofollow">NIST SP 800-52 Rev. 2 — Guidelines for TLS Implementations</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1808,49 +1655,62 @@ openssl s_client -connect target.com:443</p>
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Weak%20SSL%20TLS%20Configurations.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Weak-Cryptography-Implementation/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Weak Cryptography Implementation</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Web-Cache-Deception/" class="flex align-center">
+        <span>Web Cache Deception</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1993,15 +1853,24 @@ openssl s_client -connect target.com:443</p>
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

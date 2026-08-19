@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cross-Site Request Forgery (CSRF) # Description # CSRF is an attack that tricks an authenticated user&rsquo;s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can&rsquo;t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.
-Fundamentals — Types of CSRF Attacks # Classic Form-Based CSRF (POST) Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim&rsquo;s cookies.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Cross-Site Request Forgery (CSRF)" />
-<meta property="og:description" content="Cross-Site Request Forgery (CSRF) # Description # CSRF is an attack that tricks an authenticated user&rsquo;s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can&rsquo;t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.
-Fundamentals — Types of CSRF Attacks # Classic Form-Based CSRF (POST) Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim&rsquo;s cookies." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Cross-Site Request Forgery (CSRF) | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cross-Site Request Forgery (CSRF)# Description# CSRF is an attack that tricks an authenticated user’s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can’t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.
+Fundamentals — Types of CSRF Attacks# Classic Form-Based CSRF (POST) Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim’s cookies. GET-Based CSRF State-changing actions mistakenly exposed via GET, exploitable with a single &lt;img&gt; or &lt;iframe&gt; tag — no user interaction needed beyond page load. JSON/API CSRF Exploits endpoints that accept Content-Type: application/json (or text/plain mislabeled as JSON) without token validation, often chained with CORS/content-type confusion. Login CSRF Forces a victim to log into the attacker’s account on a target site, so subsequent actions (e.g., saved searches, uploaded data) are attributable to/captured by the attacker. CORS Misconfiguration &#43; CSRF Combines a CORS misconfiguration (Access-Control-Allow-Origin: * &#43; Access-Control-Allow-Credentials: true) with CSRF to not just trigger an action but also read the response, turning CSRF into full account takeover territory. Click-Based / UI-Driven CSRF Requires a click (e.g., an auto-submit button disguised as something else) — often combined with clickjacking (&lt;iframe&gt; overlay) to mask intent. Requirements for Successful CSRF# A CSRF attack is generally possible only when all of the following conditions are met:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Cross-Site Request Forgery (CSRF)">
+	<meta property="og:description" content="Cross-Site Request Forgery (CSRF)# Description# CSRF is an attack that tricks an authenticated user’s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can’t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.
+Fundamentals — Types of CSRF Attacks# Classic Form-Based CSRF (POST) Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim’s cookies. GET-Based CSRF State-changing actions mistakenly exposed via GET, exploitable with a single &lt;img&gt; or &lt;iframe&gt; tag — no user interaction needed beyond page load. JSON/API CSRF Exploits endpoints that accept Content-Type: application/json (or text/plain mislabeled as JSON) without token validation, often chained with CORS/content-type confusion. Login CSRF Forces a victim to log into the attacker’s account on a target site, so subsequent actions (e.g., saved searches, uploaded data) are attributable to/captured by the attacker. CORS Misconfiguration &#43; CSRF Combines a CORS misconfiguration (Access-Control-Allow-Origin: * &#43; Access-Control-Allow-Credentials: true) with CSRF to not just trigger an action but also read the response, turning CSRF into full account takeover territory. Click-Based / UI-Driven CSRF Requires a click (e.g., an auto-submit button disguised as something else) — often combined with clickjacking (&lt;iframe&gt; overlay) to mask intent. Requirements for Successful CSRF# A CSRF attack is generally possible only when all of the following conditions are met:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Cross-Site Request Forgery (CSRF)">
+	<meta itemprop="description" content="Cross-Site Request Forgery (CSRF)# Description# CSRF is an attack that tricks an authenticated user’s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can’t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.
+Fundamentals — Types of CSRF Attacks# Classic Form-Based CSRF (POST) Auto-submitting HTML forms hosted on an attacker page trigger state-changing POST requests using the victim’s cookies. GET-Based CSRF State-changing actions mistakenly exposed via GET, exploitable with a single &lt;img&gt; or &lt;iframe&gt; tag — no user interaction needed beyond page load. JSON/API CSRF Exploits endpoints that accept Content-Type: application/json (or text/plain mislabeled as JSON) without token validation, often chained with CORS/content-type confusion. Login CSRF Forces a victim to log into the attacker’s account on a target site, so subsequent actions (e.g., saved searches, uploaded data) are attributable to/captured by the attacker. CORS Misconfiguration &#43; CSRF Combines a CORS misconfiguration (Access-Control-Allow-Origin: * &#43; Access-Control-Allow-Credentials: true) with CSRF to not just trigger an action but also read the response, turning CSRF into full account takeover territory. Click-Based / UI-Driven CSRF Requires a click (e.g., an auto-submit button disguised as something else) — often combined with clickjacking (&lt;iframe&gt; overlay) to mask intent. Requirements for Successful CSRF# A CSRF attack is generally possible only when all of the following conditions are met:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1465">
+
+<title>Cross-Site Request Forgery (CSRF) • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Cross-Site-Request-Forgery-CSRF/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Cross-Site Request Forgery (CSRF)</strong>
+  <h3>Cross-Site Request Forgery (CSRF)</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1295,20 +1293,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="cross-site-request-forgery-csrf">
-  Cross-Site Request Forgery (CSRF)
-  <a class="anchor" href="#cross-site-request-forgery-csrf">#</a>
-</h1>
-<h2 id="description">
-  Description
-  <a class="anchor" href="#description">#</a>
-</h2>
+  <article class="markdown book-article"><h1 id="cross-site-request-forgery-csrf">Cross-Site Request Forgery (CSRF)<a class="anchor" href="#cross-site-request-forgery-csrf">#</a></h1>
+<h2 id="description">Description<a class="anchor" href="#description">#</a></h2>
 <p>CSRF is an attack that tricks an authenticated user&rsquo;s browser into sending a forged, state-changing request to a target application without their knowledge or consent. Because the browser automatically attaches session cookies to requests, the server can&rsquo;t distinguish a legitimate user action from a request silently triggered by a malicious page the victim happened to visit while logged in.</p>
 <hr>
-<h2 id="fundamentals--types-of-csrf-attacks">
-  Fundamentals — Types of CSRF Attacks
-  <a class="anchor" href="#fundamentals--types-of-csrf-attacks">#</a>
-</h2>
+<h2 id="fundamentals--types-of-csrf-attacks">Fundamentals — Types of CSRF Attacks<a class="anchor" href="#fundamentals--types-of-csrf-attacks">#</a></h2>
 <ol>
 <li><strong>Classic Form-Based CSRF (POST)</strong>
 <ul>
@@ -1342,10 +1331,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ol>
 <hr>
-<h3 id="requirements-for-successful-csrf">
-  Requirements for Successful CSRF
-  <a class="anchor" href="#requirements-for-successful-csrf">#</a>
-</h3>
+<h3 id="requirements-for-successful-csrf">Requirements for Successful CSRF<a class="anchor" href="#requirements-for-successful-csrf">#</a></h3>
 <p>A CSRF attack is generally possible only when all of the following conditions are met:</p>
 <ul>
 <li>The victim is authenticated to the target application.</li>
@@ -1355,10 +1341,7 @@ https://github.com/alex-shpak/hugo-book
 <li>The application does not properly validate anti-CSRF tokens, Origin, or Referer headers.</li>
 </ul>
 <hr>
-<h2 id="attack-surface-injection-points">
-  Attack Surface (Injection Points)
-  <a class="anchor" href="#attack-surface-injection-points">#</a>
-</h2>
+<h2 id="attack-surface-injection-points">Attack Surface (Injection Points)<a class="anchor" href="#attack-surface-injection-points">#</a></h2>
 <ul>
 <li>State-changing actions without CSRF token:
 <ul>
@@ -1373,10 +1356,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Admin actions, banking, or settings pages</li>
 <li>Misconfigured <code>SameSite</code> or CORS headers</li>
 </ul>
-<h3 id="testing-parameters">
-  Testing Parameters
-  <a class="anchor" href="#testing-parameters">#</a>
-</h3>
+<h3 id="testing-parameters">Testing Parameters<a class="anchor" href="#testing-parameters">#</a></h3>
 <ul>
 <li>Try submitting requests from another origin</li>
 <li>Remove or tamper with the CSRF token</li>
@@ -1411,29 +1391,15 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <hr>
-<h2 id="exploitation-and-bypassing-defenses">
-  Exploitation and Bypassing Defenses
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h2>
-<h3 id="1-basic-get-csrf">
-  1. Basic GET CSRF
-  <a class="anchor" href="#1-basic-get-csrf">#</a>
-</h3>
+<h2 id="exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses<a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h2>
+<h3 id="1-basic-get-csrf">1. Basic GET CSRF<a class="anchor" href="#1-basic-get-csrf">#</a></h3>
 <p><strong>Payload:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/delete_user?id=123&gt;&#34;</span>&gt;
-</span></span></code></pre></div><h3 id="2-auto-submitting-form-post">
-  2. Auto-Submitting Form (POST)
-  <a class="anchor" href="#2-auto-submitting-form-post">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/delete_user?id=123&gt;&#34;</span>&gt;</span></span></code></pre></div><h3 id="2-auto-submitting-form-post">2. Auto-Submitting Form (POST)<a class="anchor" href="#2-auto-submitting-form-post">#</a></h3>
 <p><strong>Payload:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/update_email&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/update_email&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;attacker@evil.com&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">forms</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">submit</span>();&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><h3 id="3-json-body-csrf">
-  3. JSON Body CSRF
-  <a class="anchor" href="#3-json-body-csrf">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">forms</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">submit</span>();&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><h3 id="3-json-body-csrf">3. JSON Body CSRF<a class="anchor" href="#3-json-body-csrf">#</a></h3>
 <p><strong>Conditions:</strong></p>
 <ul>
 <li><code>Content-Type: application/json</code></li>
@@ -1442,40 +1408,27 @@ https://github.com/alex-shpak/hugo-book
 <li>Depends on CORS misconfig + acceptance of &ldquo;simple&rdquo; content types</li>
 </ul>
 <p><strong>Payload:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;attacker@evil.com&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>Headers:</strong></p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Headers:</strong></p>
 <pre tabindex="0"><code>POST /api/profile/update HTTP/1.1
 Host: target.com
 Content-Type: application/json
-Cookie: sessionid=abc123
-</code></pre><h3 id="4-cors--csrf-attack">
-  4. CORS + CSRF Attack
-  <a class="anchor" href="#4-cors--csrf-attack">#</a>
-</h3>
+Cookie: sessionid=abc123</code></pre><h3 id="4-cors--csrf-attack">4. CORS + CSRF Attack<a class="anchor" href="#4-cors--csrf-attack">#</a></h3>
 <p><strong>Exploit (in attacker&rsquo;s domain):</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;&lt;https://target.com/api/transfer&gt;&#34;</span>, {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;&lt;https://target.com/api/transfer&gt;&#34;</span>, {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;include&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span> },
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">amount</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span>, <span style="color:#a6e22e">to</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;attacker&#34;</span> })
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><h3 id="5-login-csrf">
-  5. Login CSRF
-  <a class="anchor" href="#5-login-csrf">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div><h3 id="5-login-csrf">5. Login CSRF<a class="anchor" href="#5-login-csrf">#</a></h3>
 <p>Force the victim to authenticate into the attacker&rsquo;s account.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/login&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;https://target.com/login&gt;&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;attacker&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password123&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">forms</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">submit</span>();&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>If successful, subsequent actions performed by the victim are associated with the attacker&rsquo;s account.</p>
-<h3 id="other-vectors">
-  Other Vectors
-  <a class="anchor" href="#other-vectors">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">forms</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">submit</span>();&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><p>If successful, subsequent actions performed by the victim are associated with the attacker&rsquo;s account.</p>
+<h3 id="other-vectors">Other Vectors<a class="anchor" href="#other-vectors">#</a></h3>
 <ul>
 <li><code>&lt;iframe src=&quot;&lt;https://target.com/delete_account&gt;&quot;&gt;</code></li>
 <li><code>&lt;script src=&quot;&lt;https://target.com/delete_user?id=1&gt;&quot;&gt;</code></li>
@@ -1487,10 +1440,7 @@ Cookie: sessionid=abc123
 </ul>
 </li>
 </ul>
-<h3 id="bypasses--variations">
-  Bypasses &amp; Variations
-  <a class="anchor" href="#bypasses--variations">#</a>
-</h3>
+<h3 id="bypasses--variations">Bypasses &amp; Variations<a class="anchor" href="#bypasses--variations">#</a></h3>
 <ul>
 <li>JSON CSRF (no CSRF token, uses cookies)</li>
 <li>Content-Type confusion bypass</li>
@@ -1503,10 +1453,7 @@ Cookie: sessionid=abc123
 <li>SameSite bypasses (Lax+GET behavior, sibling subdomains, browser-specific behavior)</li>
 </ul>
 <hr>
-<h2 id="advance-attack-scenarios">
-  Advance Attack Scenarios
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
+<h2 id="advance-attack-scenarios">Advance Attack Scenarios<a class="anchor" href="#advance-attack-scenarios">#</a></h2>
 <ul>
 <li><strong>CSRF Chained with Stored XSS:</strong> Use a stored XSS to programmatically read the CSRF token from the DOM and include it in a forged request, defeating token-based protection entirely.</li>
 <li><strong>CSRF Token Fixation:</strong> If the token isn&rsquo;t rotated after login or is set via a value the attacker can predict/plant (e.g., cookie-based double-submit without proper binding), the attacker pre-sets a known token and forges valid requests.</li>
@@ -1517,10 +1464,7 @@ Cookie: sessionid=abc123
 <li><strong>Client-Side CSRF (JavaScript CSRF):</strong> Single Page Applications (SPAs) may unintentionally construct requests using attacker-controlled URL fragments, query parameters, or postMessage data. Even though the server validates CSRF tokens correctly, vulnerable client-side JavaScript can still trigger authenticated actions.</li>
 </ul>
 <hr>
-<h2 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
+<h2 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h2>
 <ul>
 <li><strong>Django:</strong> Missing <code>{% csrf_token %}</code> in a form, or <code>@csrf_exempt</code> left on a state-changing view by mistake; <code>CSRF_TRUSTED_ORIGINS</code> misconfigured to include wildcard/staging subdomains.</li>
 <li><strong>Spring (Spring Security):</strong> CSRF protection disabled globally (<code>http.csrf().disable()</code>) for &ldquo;API convenience,&rdquo; inadvertently exposing session-cookie-authenticated endpoints.</li>
@@ -1530,14 +1474,8 @@ Cookie: sessionid=abc123
 <li><strong>Laravel:</strong> Routes added to <code>VerifyCsrfToken</code>&rsquo;s <code>$except</code> array for testing and never removed before production.</li>
 </ul>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  Manual Detection
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection">Manual Detection<a class="anchor" href="#manual-detection">#</a></h3>
 <ul>
 <li>Inspect forms/requests for the presence and validation of a CSRF token.</li>
 <li>Strip or tamper with the token and resend — a <code>200 OK</code> or success response indicates no server-side validation.</li>
@@ -1545,10 +1483,7 @@ Cookie: sessionid=abc123
 <li>Check whether <code>Origin</code>/<code>Referer</code> are validated by omitting or spoofing them.</li>
 <li>Build a standalone HTML PoC page and load it in a browser with an active victim session to confirm real-world exploitability end-to-end.</li>
 </ul>
-<h3 id="api-testing-tips">
-  API Testing Tips
-  <a class="anchor" href="#api-testing-tips">#</a>
-</h3>
+<h3 id="api-testing-tips">API Testing Tips<a class="anchor" href="#api-testing-tips">#</a></h3>
 <ul>
 <li>Check whether cookie-based API endpoints enforce CSRF protection.</li>
 <li>Test endpoints accepting both JSON and form-urlencoded bodies.</li>
@@ -1556,20 +1491,14 @@ Cookie: sessionid=abc123
 <li>Test mobile/web API endpoints separately, as protections often differ.</li>
 <li>Verify whether bearer-token APIs are actually vulnerable (pure Authorization header-based APIs are generally not affected by CSRF).</li>
 </ul>
-<h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
 <ul>
 <li><strong>Burp Suite:</strong> Use the built-in &ldquo;Generate CSRF PoC&rdquo; feature on any request, plus Burp Scanner&rsquo;s CSRF checks.</li>
 <li><strong>OWASP ZAP:</strong> Automated active scan rules flag missing/weak anti-CSRF tokens.</li>
 <li>Custom scripts to crawl state-changing endpoints and flag any accepting requests without a valid, session-bound token.</li>
 </ul>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Perform unauthorized actions on behalf of authenticated users.</li>
 <li>Modify account information such as email addresses, passwords, or profile details.</li>
@@ -1581,10 +1510,7 @@ Cookie: sessionid=abc123
 <li>Lead to account compromise, financial loss, unauthorized access, and business process abuse depending on the affected functionality.</li>
 </ul>
 <hr>
-<h2 id="common-anti-csrf-defenses">
-  Common Anti-CSRF Defenses
-  <a class="anchor" href="#common-anti-csrf-defenses">#</a>
-</h2>
+<h2 id="common-anti-csrf-defenses">Common Anti-CSRF Defenses<a class="anchor" href="#common-anti-csrf-defenses">#</a></h2>
 <p>Applications commonly defend against CSRF using one or more of the following:</p>
 <ul>
 <li>Synchronizer (stateful) CSRF tokens</li>
@@ -1596,67 +1522,43 @@ Cookie: sessionid=abc123
 <li>User interaction requirements (password confirmation, CAPTCHA, MFA)</li>
 </ul>
 <hr>
-<h2 id="mitigations">
-  Mitigations
-  <a class="anchor" href="#mitigations">#</a>
-</h2>
-<h3 id="token-based-protection">
-  Token-Based Protection
-  <a class="anchor" href="#token-based-protection">#</a>
-</h3>
+<h2 id="mitigations">Mitigations<a class="anchor" href="#mitigations">#</a></h2>
+<h3 id="token-based-protection">Token-Based Protection<a class="anchor" href="#token-based-protection">#</a></h3>
 <ul>
 <li>Use <strong>CSRF tokens</strong> in forms and headers</li>
 <li>Bind token to session, rotate frequently</li>
 <li>Verify token on server-side for all state-changing requests</li>
 </ul>
-<h3 id="originreferer-validation">
-  Origin/Referer Validation
-  <a class="anchor" href="#originreferer-validation">#</a>
-</h3>
+<h3 id="originreferer-validation">Origin/Referer Validation<a class="anchor" href="#originreferer-validation">#</a></h3>
 <ul>
 <li>Strictly check <code>Origin</code> and <code>Referer</code> headers</li>
 <li>Reject requests without expected values</li>
 </ul>
-<h3 id="secure-cookie-settings">
-  Secure Cookie Settings
-  <a class="anchor" href="#secure-cookie-settings">#</a>
-</h3>
+<h3 id="secure-cookie-settings">Secure Cookie Settings<a class="anchor" href="#secure-cookie-settings">#</a></h3>
 <ul>
 <li>Use <code>SameSite=Lax</code> or <code>Strict</code> for session cookies</li>
 <li>Set <code>HttpOnly</code> and <code>Secure</code> flags</li>
 </ul>
-<h3 id="server-side-hardening">
-  Server-Side Hardening
-  <a class="anchor" href="#server-side-hardening">#</a>
-</h3>
+<h3 id="server-side-hardening">Server-Side Hardening<a class="anchor" href="#server-side-hardening">#</a></h3>
 <ul>
 <li>Never perform sensitive actions via GET</li>
 <li>Use POST or other non-simple methods</li>
 <li>Require re-authentication for critical actions</li>
 </ul>
-<h3 id="cors-configuration">
-  CORS Configuration
-  <a class="anchor" href="#cors-configuration">#</a>
-</h3>
+<h3 id="cors-configuration">CORS Configuration<a class="anchor" href="#cors-configuration">#</a></h3>
 <ul>
 <li>Do not allow wildcard origins () with credentials</li>
 <li>Use strict <code>Access-Control-Allow-Origin</code> per origin</li>
 <li>Disable <code>Access-Control-Allow-Credentials</code> unless absolutely needed</li>
 </ul>
-<h3 id="additional-defenses">
-  Additional Defenses
-  <a class="anchor" href="#additional-defenses">#</a>
-</h3>
+<h3 id="additional-defenses">Additional Defenses<a class="anchor" href="#additional-defenses">#</a></h3>
 <ul>
 <li>CAPTCHA or re-auth for critical flows</li>
 <li>Per-request nonce in headers for APIs</li>
 <li>OAuth/OIDC login flows should always validate the <code>state</code> parameter to prevent CSRF during authorization.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li>Burp Suite (Manual &amp; CSRF PoC Generator)</li>
 <li>OWASP ZAP (Active Scan CSRF rules)</li>
@@ -1665,10 +1567,7 @@ Cookie: sessionid=abc123
 <li>Web browser DevTools (modify request headers)</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
 <p><strong>HackerOne / Real-World Reports</strong></p>
 <ul>
 <li><a href="https://hackerone.com/reports/1626356" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1626356</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1676,10 +1575,7 @@ Cookie: sessionid=abc123
 <li><a href="https://hackerone.com/reports/1727221" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1727221</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://medium.com/@yadav-ajay/cross-site-request-forgery-csrf-64066cddbfb3" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@yadav-ajay/cross-site-request-forgery-csrf-64066cddbfb3</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://medium.com/@raia39499/a-deep-dive-into-logout-csrf-vulnerability-e40e1fa7f465" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@raia39499/a-deep-dive-into-logout-csrf-vulnerability-e40e1fa7f465</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://owasp.org/www-community/attacks/csrf" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/csrf</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1700,49 +1596,62 @@ Cookie: sessionid=abc123
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Cross-Site%20Request%20Forgery%20%28CSRF%29.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/CRLF-Injection/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>CRLF Injection</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Cross-Site-Scripting-XSS/" class="flex align-center">
+        <span>Cross-Site Scripting (XSS)</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1800,15 +1709,24 @@ Cookie: sessionid=abc123
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

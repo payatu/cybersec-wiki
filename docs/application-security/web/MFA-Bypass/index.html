@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Multi-Factor Authentication (MFA) Bypass # MFA Bypass occurs when an attacker circumvents the secondary authentication factor (OTP, TOTP, push approval, email/SMS verification) due to flaws in implementation, session handling, or API/UI inconsistencies. These issues allow attackers to complete authentication using only primary credentials or by abusing logic gaps in the verification flow.
-Fundamentals of MFA Flow # A secure MFA implementation follows a strict, server-controlled sequence:
-User submits primary credentials (username/password) Server validates credentials and marks session as partially authenticated Server triggers second factor (OTP / push / TOTP) User submits second factor Server validates second factor and upgrades session to fully authenticated Key Security Principle # MFA must act as a hard gate No sensitive action should be accessible until MFA is fully verified Session must explicitly track authentication stage MFA Types (Important for Testing) # TOTP (Authenticator Apps) # Time-based 6-digit codes (Google Authenticator, Authy) Risk: brute force, replay, clock skew abuse SMS / Email OTP # OTP delivered via SMS/email Risk: SIM swap, email compromise, interception Push-Based MFA # “Approve/Deny” notification (Duo, Microsoft Authenticator) Risk: MFA fatigue attacks, lack of context prompts Backup Codes # Static recovery codes Risk: leakage, reuse, insecure storage Device-Based MFA (“Remember this device”) # Trusted device cookies / fingerprinting Risk: cookie theft, device spoofing, reuse across sessions MFA Attack Surface # Login Flow Redirection: Forcing the browser to skip the /mfa-verify page and go straight to /dashboard.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Multi-Factor Authentication (MFA) Bypass" />
-<meta property="og:description" content="Multi-Factor Authentication (MFA) Bypass # MFA Bypass occurs when an attacker circumvents the secondary authentication factor (OTP, TOTP, push approval, email/SMS verification) due to flaws in implementation, session handling, or API/UI inconsistencies. These issues allow attackers to complete authentication using only primary credentials or by abusing logic gaps in the verification flow.
-Fundamentals of MFA Flow # A secure MFA implementation follows a strict, server-controlled sequence:
-User submits primary credentials (username/password) Server validates credentials and marks session as partially authenticated Server triggers second factor (OTP / push / TOTP) User submits second factor Server validates second factor and upgrades session to fully authenticated Key Security Principle # MFA must act as a hard gate No sensitive action should be accessible until MFA is fully verified Session must explicitly track authentication stage MFA Types (Important for Testing) # TOTP (Authenticator Apps) # Time-based 6-digit codes (Google Authenticator, Authy) Risk: brute force, replay, clock skew abuse SMS / Email OTP # OTP delivered via SMS/email Risk: SIM swap, email compromise, interception Push-Based MFA # “Approve/Deny” notification (Duo, Microsoft Authenticator) Risk: MFA fatigue attacks, lack of context prompts Backup Codes # Static recovery codes Risk: leakage, reuse, insecure storage Device-Based MFA (“Remember this device”) # Trusted device cookies / fingerprinting Risk: cookie theft, device spoofing, reuse across sessions MFA Attack Surface # Login Flow Redirection: Forcing the browser to skip the /mfa-verify page and go straight to /dashboard." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Multi-Factor Authentication (MFA) Bypass | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Multi-Factor Authentication (MFA) Bypass# MFA Bypass occurs when an attacker circumvents the secondary authentication factor (OTP, TOTP, push approval, email/SMS verification) due to flaws in implementation, session handling, or API/UI inconsistencies. These issues allow attackers to complete authentication using only primary credentials or by abusing logic gaps in the verification flow.
+Fundamentals of MFA Flow# A secure MFA implementation follows a strict, server-controlled sequence:
+User submits primary credentials (username/password) Server validates credentials and marks session as partially authenticated Server triggers second factor (OTP / push / TOTP) User submits second factor Server validates second factor and upgrades session to fully authenticated Key Security Principle# MFA must act as a hard gate No sensitive action should be accessible until MFA is fully verified Session must explicitly track authentication stage MFA Types (Important for Testing)# TOTP (Authenticator Apps)# Time-based 6-digit codes (Google Authenticator, Authy) Risk: brute force, replay, clock skew abuse SMS / Email OTP# OTP delivered via SMS/email Risk: SIM swap, email compromise, interception Push-Based MFA# “Approve/Deny” notification (Duo, Microsoft Authenticator) Risk: MFA fatigue attacks, lack of context prompts Backup Codes# Static recovery codes Risk: leakage, reuse, insecure storage Device-Based MFA (“Remember this device”)# Trusted device cookies / fingerprinting Risk: cookie theft, device spoofing, reuse across sessions MFA Attack Surface# Login Flow Redirection: Forcing the browser to skip the /mfa-verify page and go straight to /dashboard. API Endpoints: Direct interaction with REST/GraphQL endpoints that might not enforce MFA as strictly as the Web UI. Account Recovery: “I lost my phone” flows that revert to weaker security (e.g., security questions). Remember Me Features: Exploiting long-lived “Trusted Device” cookies to impersonate a verified machine. OAuth/SSO: Bypassing MFA by logging in via a third-party provider (Google/GitHub) that isn’t configured to require MFA for your app. Mobile App Deep Links: MFA callback URIs handled by mobile apps that don’t validate the calling context. Password Reset Flow: Resetting a password sometimes re-issues a session without re-triggering MFA. Multiple Enrolled Factors: Endpoints for managing/adding a second device or factor, which may not require re-verification of the existing factor. Common MFA Bypass Classes# 1. Broken Authentication Flow (Step Skipping)# Application allows direct access to authenticated pages after password step only MFA step is cosmetic or frontend-only 2. Missing Session State Upgrade# Session is not marked as “MFA verified” Password authentication grants full access prematurely POST /login → session=authenticated (no MFA requirement enforced)3. API vs UI Enforcement Mismatch# UI enforces MFA API endpoints allow direct access GET /api/user/profile Cookie: session=login_only 4. MFA Not Bound to Session/User# OTP validated but not linked to correct session OTP reuse across sessions possible 5. Missing MFA on Sensitive Actions (Step-Up Failure)# MFA enforced only at login Sensitive actions not protected Examples:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Multi-Factor Authentication (MFA) Bypass">
+	<meta property="og:description" content="Multi-Factor Authentication (MFA) Bypass# MFA Bypass occurs when an attacker circumvents the secondary authentication factor (OTP, TOTP, push approval, email/SMS verification) due to flaws in implementation, session handling, or API/UI inconsistencies. These issues allow attackers to complete authentication using only primary credentials or by abusing logic gaps in the verification flow.
+Fundamentals of MFA Flow# A secure MFA implementation follows a strict, server-controlled sequence:
+User submits primary credentials (username/password) Server validates credentials and marks session as partially authenticated Server triggers second factor (OTP / push / TOTP) User submits second factor Server validates second factor and upgrades session to fully authenticated Key Security Principle# MFA must act as a hard gate No sensitive action should be accessible until MFA is fully verified Session must explicitly track authentication stage MFA Types (Important for Testing)# TOTP (Authenticator Apps)# Time-based 6-digit codes (Google Authenticator, Authy) Risk: brute force, replay, clock skew abuse SMS / Email OTP# OTP delivered via SMS/email Risk: SIM swap, email compromise, interception Push-Based MFA# “Approve/Deny” notification (Duo, Microsoft Authenticator) Risk: MFA fatigue attacks, lack of context prompts Backup Codes# Static recovery codes Risk: leakage, reuse, insecure storage Device-Based MFA (“Remember this device”)# Trusted device cookies / fingerprinting Risk: cookie theft, device spoofing, reuse across sessions MFA Attack Surface# Login Flow Redirection: Forcing the browser to skip the /mfa-verify page and go straight to /dashboard. API Endpoints: Direct interaction with REST/GraphQL endpoints that might not enforce MFA as strictly as the Web UI. Account Recovery: “I lost my phone” flows that revert to weaker security (e.g., security questions). Remember Me Features: Exploiting long-lived “Trusted Device” cookies to impersonate a verified machine. OAuth/SSO: Bypassing MFA by logging in via a third-party provider (Google/GitHub) that isn’t configured to require MFA for your app. Mobile App Deep Links: MFA callback URIs handled by mobile apps that don’t validate the calling context. Password Reset Flow: Resetting a password sometimes re-issues a session without re-triggering MFA. Multiple Enrolled Factors: Endpoints for managing/adding a second device or factor, which may not require re-verification of the existing factor. Common MFA Bypass Classes# 1. Broken Authentication Flow (Step Skipping)# Application allows direct access to authenticated pages after password step only MFA step is cosmetic or frontend-only 2. Missing Session State Upgrade# Session is not marked as “MFA verified” Password authentication grants full access prematurely POST /login → session=authenticated (no MFA requirement enforced)3. API vs UI Enforcement Mismatch# UI enforces MFA API endpoints allow direct access GET /api/user/profile Cookie: session=login_only 4. MFA Not Bound to Session/User# OTP validated but not linked to correct session OTP reuse across sessions possible 5. Missing MFA on Sensitive Actions (Step-Up Failure)# MFA enforced only at login Sensitive actions not protected Examples:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Multi-Factor Authentication (MFA) Bypass">
+	<meta itemprop="description" content="Multi-Factor Authentication (MFA) Bypass# MFA Bypass occurs when an attacker circumvents the secondary authentication factor (OTP, TOTP, push approval, email/SMS verification) due to flaws in implementation, session handling, or API/UI inconsistencies. These issues allow attackers to complete authentication using only primary credentials or by abusing logic gaps in the verification flow.
+Fundamentals of MFA Flow# A secure MFA implementation follows a strict, server-controlled sequence:
+User submits primary credentials (username/password) Server validates credentials and marks session as partially authenticated Server triggers second factor (OTP / push / TOTP) User submits second factor Server validates second factor and upgrades session to fully authenticated Key Security Principle# MFA must act as a hard gate No sensitive action should be accessible until MFA is fully verified Session must explicitly track authentication stage MFA Types (Important for Testing)# TOTP (Authenticator Apps)# Time-based 6-digit codes (Google Authenticator, Authy) Risk: brute force, replay, clock skew abuse SMS / Email OTP# OTP delivered via SMS/email Risk: SIM swap, email compromise, interception Push-Based MFA# “Approve/Deny” notification (Duo, Microsoft Authenticator) Risk: MFA fatigue attacks, lack of context prompts Backup Codes# Static recovery codes Risk: leakage, reuse, insecure storage Device-Based MFA (“Remember this device”)# Trusted device cookies / fingerprinting Risk: cookie theft, device spoofing, reuse across sessions MFA Attack Surface# Login Flow Redirection: Forcing the browser to skip the /mfa-verify page and go straight to /dashboard. API Endpoints: Direct interaction with REST/GraphQL endpoints that might not enforce MFA as strictly as the Web UI. Account Recovery: “I lost my phone” flows that revert to weaker security (e.g., security questions). Remember Me Features: Exploiting long-lived “Trusted Device” cookies to impersonate a verified machine. OAuth/SSO: Bypassing MFA by logging in via a third-party provider (Google/GitHub) that isn’t configured to require MFA for your app. Mobile App Deep Links: MFA callback URIs handled by mobile apps that don’t validate the calling context. Password Reset Flow: Resetting a password sometimes re-issues a session without re-triggering MFA. Multiple Enrolled Factors: Endpoints for managing/adding a second device or factor, which may not require re-verification of the existing factor. Common MFA Bypass Classes# 1. Broken Authentication Flow (Step Skipping)# Application allows direct access to authenticated pages after password step only MFA step is cosmetic or frontend-only 2. Missing Session State Upgrade# Session is not marked as “MFA verified” Password authentication grants full access prematurely POST /login → session=authenticated (no MFA requirement enforced)3. API vs UI Enforcement Mismatch# UI enforces MFA API endpoints allow direct access GET /api/user/profile Cookie: session=login_only 4. MFA Not Bound to Session/User# OTP validated but not linked to correct session OTP reuse across sessions possible 5. Missing MFA on Sensitive Actions (Step-Up Failure)# MFA enforced only at login Sensitive actions not protected Examples:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1436">
+
+<title>Multi-Factor Authentication (MFA) Bypass • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/MFA-Bypass/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -43,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -58,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -75,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -92,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -179,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -227,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -982,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1004,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1026,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1048,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1070,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1105,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1127,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1149,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1171,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1207,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Multi-Factor Authentication (MFA) Bypass</strong>
+  <h3>Multi-Factor Authentication (MFA) Bypass</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1302,16 +1301,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="multi-factor-authentication-mfa-bypass">
-  Multi-Factor Authentication (MFA) Bypass
-  <a class="anchor" href="#multi-factor-authentication-mfa-bypass">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="multi-factor-authentication-mfa-bypass">Multi-Factor Authentication (MFA) Bypass<a class="anchor" href="#multi-factor-authentication-mfa-bypass">#</a></h1>
 <p>MFA Bypass occurs when an attacker circumvents the secondary authentication factor (OTP, TOTP, push approval, email/SMS verification) due to flaws in implementation, session handling, or API/UI inconsistencies. These issues allow attackers to complete authentication using only primary credentials or by abusing logic gaps in the verification flow.</p>
 <hr>
-<h2 id="fundamentals-of-mfa-flow">
-  Fundamentals of MFA Flow
-  <a class="anchor" href="#fundamentals-of-mfa-flow">#</a>
-</h2>
+<h2 id="fundamentals-of-mfa-flow">Fundamentals of MFA Flow<a class="anchor" href="#fundamentals-of-mfa-flow">#</a></h2>
 <p>A secure MFA implementation follows a strict, server-controlled sequence:</p>
 <ol>
 <li>User submits primary credentials (username/password)</li>
@@ -1320,65 +1313,41 @@ https://github.com/alex-shpak/hugo-book
 <li>User submits second factor</li>
 <li>Server validates second factor and upgrades session to <strong>fully authenticated</strong></li>
 </ol>
-<h3 id="key-security-principle">
-  Key Security Principle
-  <a class="anchor" href="#key-security-principle">#</a>
-</h3>
+<h3 id="key-security-principle">Key Security Principle<a class="anchor" href="#key-security-principle">#</a></h3>
 <ul>
 <li>MFA must act as a <strong>hard gate</strong></li>
 <li>No sensitive action should be accessible until MFA is fully verified</li>
 <li>Session must explicitly track authentication stage</li>
 </ul>
 <hr>
-<h2 id="mfa-types-important-for-testing">
-  MFA Types (Important for Testing)
-  <a class="anchor" href="#mfa-types-important-for-testing">#</a>
-</h2>
-<h3 id="totp-authenticator-apps">
-  TOTP (Authenticator Apps)
-  <a class="anchor" href="#totp-authenticator-apps">#</a>
-</h3>
+<h2 id="mfa-types-important-for-testing">MFA Types (Important for Testing)<a class="anchor" href="#mfa-types-important-for-testing">#</a></h2>
+<h3 id="totp-authenticator-apps">TOTP (Authenticator Apps)<a class="anchor" href="#totp-authenticator-apps">#</a></h3>
 <ul>
 <li>Time-based 6-digit codes (Google Authenticator, Authy)</li>
 <li>Risk: brute force, replay, clock skew abuse</li>
 </ul>
-<h3 id="sms--email-otp">
-  SMS / Email OTP
-  <a class="anchor" href="#sms--email-otp">#</a>
-</h3>
+<h3 id="sms--email-otp">SMS / Email OTP<a class="anchor" href="#sms--email-otp">#</a></h3>
 <ul>
 <li>OTP delivered via SMS/email</li>
 <li>Risk: SIM swap, email compromise, interception</li>
 </ul>
-<h3 id="push-based-mfa">
-  Push-Based MFA
-  <a class="anchor" href="#push-based-mfa">#</a>
-</h3>
+<h3 id="push-based-mfa">Push-Based MFA<a class="anchor" href="#push-based-mfa">#</a></h3>
 <ul>
 <li>“Approve/Deny” notification (Duo, Microsoft Authenticator)</li>
 <li>Risk: MFA fatigue attacks, lack of context prompts</li>
 </ul>
-<h3 id="backup-codes">
-  Backup Codes
-  <a class="anchor" href="#backup-codes">#</a>
-</h3>
+<h3 id="backup-codes">Backup Codes<a class="anchor" href="#backup-codes">#</a></h3>
 <ul>
 <li>Static recovery codes</li>
 <li>Risk: leakage, reuse, insecure storage</li>
 </ul>
-<h3 id="device-based-mfa-remember-this-device">
-  Device-Based MFA (“Remember this device”)
-  <a class="anchor" href="#device-based-mfa-remember-this-device">#</a>
-</h3>
+<h3 id="device-based-mfa-remember-this-device">Device-Based MFA (“Remember this device”)<a class="anchor" href="#device-based-mfa-remember-this-device">#</a></h3>
 <ul>
 <li>Trusted device cookies / fingerprinting</li>
 <li>Risk: cookie theft, device spoofing, reuse across sessions</li>
 </ul>
 <hr>
-<h2 id="mfa-attack-surface">
-  MFA Attack Surface
-  <a class="anchor" href="#mfa-attack-surface">#</a>
-</h2>
+<h2 id="mfa-attack-surface">MFA Attack Surface<a class="anchor" href="#mfa-attack-surface">#</a></h2>
 <ul>
 <li><strong>Login Flow Redirection:</strong> Forcing the browser to skip the <code>/mfa-verify</code> page and go straight to <code>/dashboard</code>.</li>
 <li><strong>API Endpoints:</strong> Direct interaction with REST/GraphQL endpoints that might not enforce MFA as strictly as the Web UI.</li>
@@ -1390,54 +1359,34 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Multiple Enrolled Factors:</strong> Endpoints for managing/adding a second device or factor, which may not require re-verification of the <em>existing</em> factor.</li>
 </ul>
 <hr>
-<h2 id="common-mfa-bypass-classes">
-  Common MFA Bypass Classes
-  <a class="anchor" href="#common-mfa-bypass-classes">#</a>
-</h2>
-<h3 id="1-broken-authentication-flow-step-skipping">
-  1. Broken Authentication Flow (Step Skipping)
-  <a class="anchor" href="#1-broken-authentication-flow-step-skipping">#</a>
-</h3>
+<h2 id="common-mfa-bypass-classes">Common MFA Bypass Classes<a class="anchor" href="#common-mfa-bypass-classes">#</a></h2>
+<h3 id="1-broken-authentication-flow-step-skipping">1. Broken Authentication Flow (Step Skipping)<a class="anchor" href="#1-broken-authentication-flow-step-skipping">#</a></h3>
 <ul>
 <li>Application allows direct access to authenticated pages after password step only</li>
 <li>MFA step is cosmetic or frontend-only</li>
 </ul>
 <hr>
-<h3 id="2-missing-session-state-upgrade">
-  2. Missing Session State Upgrade
-  <a class="anchor" href="#2-missing-session-state-upgrade">#</a>
-</h3>
+<h3 id="2-missing-session-state-upgrade">2. Missing Session State Upgrade<a class="anchor" href="#2-missing-session-state-upgrade">#</a></h3>
 <ul>
 <li>Session is not marked as “MFA verified”</li>
 <li>Password authentication grants full access prematurely</li>
 </ul>
 <pre tabindex="0"><code>POST /login
 → session=authenticated
-(no MFA requirement enforced)
-</code></pre><h3 id="3-api-vs-ui-enforcement-mismatch">
-  3. API vs UI Enforcement Mismatch
-  <a class="anchor" href="#3-api-vs-ui-enforcement-mismatch">#</a>
-</h3>
+(no MFA requirement enforced)</code></pre><h3 id="3-api-vs-ui-enforcement-mismatch">3. API vs UI Enforcement Mismatch<a class="anchor" href="#3-api-vs-ui-enforcement-mismatch">#</a></h3>
 <ul>
 <li>UI enforces MFA</li>
 <li>API endpoints allow direct access</li>
 </ul>
 <pre tabindex="0"><code>GET /api/user/profile
-Cookie: session=login_only
-</code></pre><hr>
-<h3 id="4-mfa-not-bound-to-sessionuser">
-  4. MFA Not Bound to Session/User
-  <a class="anchor" href="#4-mfa-not-bound-to-sessionuser">#</a>
-</h3>
+Cookie: session=login_only</code></pre><hr>
+<h3 id="4-mfa-not-bound-to-sessionuser">4. MFA Not Bound to Session/User<a class="anchor" href="#4-mfa-not-bound-to-sessionuser">#</a></h3>
 <ul>
 <li>OTP validated but not linked to correct session</li>
 <li>OTP reuse across sessions possible</li>
 </ul>
 <hr>
-<h3 id="5-missing-mfa-on-sensitive-actions-step-up-failure">
-  5. Missing MFA on Sensitive Actions (Step-Up Failure)
-  <a class="anchor" href="#5-missing-mfa-on-sensitive-actions-step-up-failure">#</a>
-</h3>
+<h3 id="5-missing-mfa-on-sensitive-actions-step-up-failure">5. Missing MFA on Sensitive Actions (Step-Up Failure)<a class="anchor" href="#5-missing-mfa-on-sensitive-actions-step-up-failure">#</a></h3>
 <ul>
 <li>MFA enforced only at login</li>
 <li>Sensitive actions not protected</li>
@@ -1449,43 +1398,27 @@ Cookie: session=login_only
 <li>fund transfer</li>
 </ul>
 <hr>
-<h3 id="6-oauth--sso-mfa-bypass">
-  6. OAuth / SSO MFA Bypass
-  <a class="anchor" href="#6-oauth--sso-mfa-bypass">#</a>
-</h3>
+<h3 id="6-oauth--sso-mfa-bypass">6. OAuth / SSO MFA Bypass<a class="anchor" href="#6-oauth--sso-mfa-bypass">#</a></h3>
 <ul>
 <li>Identity provider login bypasses MFA requirement</li>
 <li>No step-up authentication after OAuth callback</li>
 </ul>
 <pre tabindex="0"><code>/oauth/callback?code=xyz
-→ session issued without MFA verification
-</code></pre><hr>
-<h3 id="7-push-notification-fatigue-attack">
-  7. Push Notification Fatigue Attack
-  <a class="anchor" href="#7-push-notification-fatigue-attack">#</a>
-</h3>
+→ session issued without MFA verification</code></pre><hr>
+<h3 id="7-push-notification-fatigue-attack">7. Push Notification Fatigue Attack<a class="anchor" href="#7-push-notification-fatigue-attack">#</a></h3>
 <ul>
 <li>Repeated push prompts overwhelm user</li>
 <li>User approves due to annoyance or confusion</li>
 </ul>
 <hr>
-<h3 id="8-trusted-device-abuse">
-  8. Trusted Device Abuse
-  <a class="anchor" href="#8-trusted-device-abuse">#</a>
-</h3>
+<h3 id="8-trusted-device-abuse">8. Trusted Device Abuse<a class="anchor" href="#8-trusted-device-abuse">#</a></h3>
 <ul>
 <li>“Remember this device” cookie reused</li>
 <li>Device trust not invalidated after logout/password change</li>
 </ul>
 <hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
-<h3 id="1-otp-brute-force">
-  1. OTP Brute Force
-  <a class="anchor" href="#1-otp-brute-force">#</a>
-</h3>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
+<h3 id="1-otp-brute-force">1. OTP Brute Force<a class="anchor" href="#1-otp-brute-force">#</a></h3>
 <ul>
 <li>No rate limiting on <code>/verify-otp</code></li>
 <li>0000–9999 tested via Intruder</li>
@@ -1495,59 +1428,35 @@ Cookie: session=login_only
 <li>Valid OTP returns <code>200 OK</code> or session upgrade</li>
 </ul>
 <hr>
-<h3 id="2-response-manipulation">
-  2. Response Manipulation
-  <a class="anchor" href="#2-response-manipulation">#</a>
-</h3>
+<h3 id="2-response-manipulation">2. Response Manipulation<a class="anchor" href="#2-response-manipulation">#</a></h3>
 <ul>
 <li>Client trusts server response instead of enforcing logic</li>
 </ul>
 <pre tabindex="0"><code>HTTP/1.1 401 Unauthorized
-{&#34;success&#34;: false}
-</code></pre><p>→ Modified to:</p>
+{&#34;success&#34;: false}</code></pre><p>→ Modified to:</p>
 <pre tabindex="0"><code>HTTP/1.1 200 OK
-{&#34;success&#34;: true}
-</code></pre><hr>
-<h3 id="3-empty-or-null-otp-handling">
-  3. Empty or Null OTP Handling
-  <a class="anchor" href="#3-empty-or-null-otp-handling">#</a>
-</h3>
+{&#34;success&#34;: true}</code></pre><hr>
+<h3 id="3-empty-or-null-otp-handling">3. Empty or Null OTP Handling<a class="anchor" href="#3-empty-or-null-otp-handling">#</a></h3>
 <ul>
 <li>Backend incorrectly accepts missing parameters</li>
 </ul>
 <pre tabindex="0"><code>{&#34;otp&#34;:&#34;&#34;}
-{&#34;otp&#34;:null}
-</code></pre><hr>
-<h3 id="4-otp-reuse--race-condition">
-  4. OTP Reuse / Race Condition
-  <a class="anchor" href="#4-otp-reuse--race-condition">#</a>
-</h3>
+{&#34;otp&#34;:null}</code></pre><hr>
+<h3 id="4-otp-reuse--race-condition">4. OTP Reuse / Race Condition<a class="anchor" href="#4-otp-reuse--race-condition">#</a></h3>
 <ul>
 <li>OTP not invalidated after use</li>
 </ul>
-<pre tabindex="0"><code>engine.queue(target.req,&#34;123456&#34;)# reused OTP in parallel requests
-</code></pre><hr>
-<h3 id="5-direct-navigation--step-skipping">
-  5. Direct Navigation / Step Skipping
-  <a class="anchor" href="#5-direct-navigation--step-skipping">#</a>
-</h3>
+<pre tabindex="0"><code>engine.queue(target.req,&#34;123456&#34;)# reused OTP in parallel requests</code></pre><hr>
+<h3 id="5-direct-navigation--step-skipping">5. Direct Navigation / Step Skipping<a class="anchor" href="#5-direct-navigation--step-skipping">#</a></h3>
 <ul>
 <li>Access restricted page after password login only</li>
 </ul>
-<pre tabindex="0"><code>/login → /dashboard (no MFA completed)
-</code></pre><hr>
-<h3 id="6-parameter-tampering">
-  6. Parameter Tampering
-  <a class="anchor" href="#6-parameter-tampering">#</a>
-</h3>
+<pre tabindex="0"><code>/login → /dashboard (no MFA completed)</code></pre><hr>
+<h3 id="6-parameter-tampering">6. Parameter Tampering<a class="anchor" href="#6-parameter-tampering">#</a></h3>
 <pre tabindex="0"><code>POST /verify-mfa
-mfa_enabled=false
-</code></pre><p>→ MFA bypass due to logic trust in client input</p>
+mfa_enabled=false</code></pre><p>→ MFA bypass due to logic trust in client input</p>
 <hr>
-<h2 id="advance-attack-scenarios">
-  Advance Attack Scenarios
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
+<h2 id="advance-attack-scenarios">Advance Attack Scenarios<a class="anchor" href="#advance-attack-scenarios">#</a></h2>
 <ul>
 <li><strong>MFA Fatigue / Push Bombing:</strong> Repeatedly trigger push notifications (via automated login attempts) at odd hours until the victim taps &ldquo;Approve&rdquo; just to stop the noise. Notably used in real-world breaches (e.g., Uber 2022).</li>
 <li><strong>Adversary-in-the-Middle (AiTM) Phishing:</strong> Deploy a reverse-proxy phishing page that relays the victim&rsquo;s credentials and OTP to the real site in real time, capturing the resulting authenticated session cookie — bypassing MFA regardless of its strength.</li>
@@ -1559,10 +1468,7 @@ mfa_enabled=false
 <li><strong>Cross-Device/Cross-Session Token Leakage:</strong> OTP or session validation tokens leaked via Referer headers, logs, or third-party analytics scripts embedded on the MFA page.</li>
 </ul>
 <hr>
-<h2 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
+<h2 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h2>
 <ul>
 <li><strong>Auth0 / Okta:</strong> Misconfigured &ldquo;Adaptive MFA&rdquo; rules that skip MFA based on spoofable signals (IP reputation, device fingerprint headers that can be forged client-side).</li>
 <li><strong>AWS Cognito:</strong> Custom Lambda triggers (<code>Define Auth Challenge</code>, <code>Verify Auth Challenge Response</code>) with flawed logic that can return a success response regardless of the actual challenge answer.</li>
@@ -1572,60 +1478,51 @@ mfa_enabled=false
 <li><strong>Spring Security (spring-security-mfa extensions):</strong> Custom <code>AuthenticationProvider</code> chains where a partial-authentication token is mistakenly granted full <code>GrantedAuthority</code> before the second factor step completes.</li>
 </ul>
 <hr>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Action</th>
-<th>Expected Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Direct access</td>
-<td>Open <code>/dashboard</code> after login</td>
-<td>Should require MFA</td>
-</tr>
-<tr>
-<td>API bypass</td>
-<td>Call API before OTP</td>
-<td>Should deny access</td>
-</tr>
-<tr>
-<td>Empty OTP</td>
-<td>Submit blank OTP</td>
-<td>Should reject request</td>
-</tr>
-<tr>
-<td>Replay OTP</td>
-<td>Reuse old OTP</td>
-<td>Should fail</td>
-</tr>
-<tr>
-<td>Parameter tampering</td>
-<td>mfa=false</td>
-<td>Should not bypass</td>
-</tr>
-<tr>
-<td>Session reuse</td>
-<td>Same session before/after MFA</td>
-<td>Should be invalid</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Action</th>
+					<th>Expected Behavior</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Direct access</td>
+					<td>Open <code>/dashboard</code> after login</td>
+					<td>Should require MFA</td>
+			</tr>
+			<tr>
+					<td>API bypass</td>
+					<td>Call API before OTP</td>
+					<td>Should deny access</td>
+			</tr>
+			<tr>
+					<td>Empty OTP</td>
+					<td>Submit blank OTP</td>
+					<td>Should reject request</td>
+			</tr>
+			<tr>
+					<td>Replay OTP</td>
+					<td>Reuse old OTP</td>
+					<td>Should fail</td>
+			</tr>
+			<tr>
+					<td>Parameter tampering</td>
+					<td>mfa=false</td>
+					<td>Should not bypass</td>
+			</tr>
+			<tr>
+					<td>Session reuse</td>
+					<td>Same session before/after MFA</td>
+					<td>Should be invalid</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-testing">
-  Manual Testing
-  <a class="anchor" href="#manual-testing">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-testing">Manual Testing<a class="anchor" href="#manual-testing">#</a></h3>
 <ul>
 <li>Compare session before and after MFA</li>
 <li>Check if session upgrades after OTP</li>
@@ -1635,26 +1532,15 @@ mfa_enabled=false
 <li>Check trusted device bypass behavior</li>
 </ul>
 <hr>
-<h3 id="mfa-state-validation-check">
-  MFA State Validation Check
-  <a class="anchor" href="#mfa-state-validation-check">#</a>
-</h3>
+<h3 id="mfa-state-validation-check">MFA State Validation Check<a class="anchor" href="#mfa-state-validation-check">#</a></h3>
 <pre tabindex="0"><code>Before MFA → auth_state = password_only
-After MFA  → auth_state = fully_authenticated
-</code></pre><p>If unchanged → MFA is not enforced server-side</p>
+After MFA  → auth_state = fully_authenticated</code></pre><p>If unchanged → MFA is not enforced server-side</p>
 <hr>
-<h3 id="api-enumeration">
-  API Enumeration
-  <a class="anchor" href="#api-enumeration">#</a>
-</h3>
+<h3 id="api-enumeration">API Enumeration<a class="anchor" href="#api-enumeration">#</a></h3>
 <pre tabindex="0"><code>GET /api/user
-GET /api/admin
-</code></pre><p>If accessible before MFA → broken enforcement</p>
+GET /api/admin</code></pre><p>If accessible before MFA → broken enforcement</p>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Full account takeover even when MFA is implemented, if it can be bypassed through logic flaws or API/UI inconsistencies</li>
 <li>Unauthorized access to sensitive user data, including personal information, financial records, and internal application data</li>
@@ -1666,10 +1552,7 @@ GET /api/admin
 <li>Breakdown of security assumptions, where MFA gives a false sense of protection while the underlying system remains exploitable</li>
 </ul>
 <hr>
-<h2 id="prevention--mitigation">
-  Prevention &amp; Mitigation
-  <a class="anchor" href="#prevention--mitigation">#</a>
-</h2>
+<h2 id="prevention--mitigation">Prevention &amp; Mitigation<a class="anchor" href="#prevention--mitigation">#</a></h2>
 <ul>
 <li>Enforce MFA strictly on the server side as a mandatory authentication checkpoint before granting full session access</li>
 <li>Maintain clear authentication states such as <code>PASSWORD_VERIFIED</code> and <code>MFA_VERIFIED</code> to prevent premature access escalation</li>
@@ -1683,10 +1566,7 @@ GET /api/admin
 <li>Include contextual information (device, location, IP, login history) in push-based MFA prompts to reduce approval-based abuse</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_Multi-Factor_Authentication" target="_blank" rel="noreferrer noopener nofollow">OWASP MFA Testing Guide</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://pages.nist.gov/800-63-4/" target="_blank" rel="noreferrer noopener nofollow">NIST Digital Identity Guidelines</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1695,10 +1575,7 @@ GET /api/admin
 <li><a href="https://hackerone.com/reports/2486086" target="_blank" rel="noreferrer noopener nofollow">Two-factor authentication bypass lead to information disclosure</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
 <hr>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/" target="_blank" rel="noreferrer noopener nofollow">https://cheatsheetseries.owasp.org/cheatsheets/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1714,49 +1591,62 @@ GET /api/admin
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/MFA%20Bypass.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Mass-Assignment/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Mass Assignment</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/NoSQL-Injection/" class="flex align-center">
+        <span>NoSQL Injection</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1819,15 +1709,24 @@ GET /api/admin
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

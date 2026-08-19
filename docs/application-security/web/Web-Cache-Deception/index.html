@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Web Cache Deception # Web Cache Deception is an attack where a malicious actor tricks a web cache into storing sensitive user-specific content (e.g., account details, billing info) in a publicly accessible cached page.
-It exploits the misconfiguration of caching systems when paired with poor cache key design on web servers and CDNs.
-Fundamentals # Component Role Caching Proxy/CDN Stores content to reduce backend load and improve performance Web Server Delivers user-specific content but may misinterpret cacheable paths Attacker Crafts deceptive URLs to force cache storage of user-sensitive data How Web Cache Deception Works # Attacker lures victim to visit a malicious link (e.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Web Cache Deception" />
-<meta property="og:description" content="Web Cache Deception # Web Cache Deception is an attack where a malicious actor tricks a web cache into storing sensitive user-specific content (e.g., account details, billing info) in a publicly accessible cached page.
-It exploits the misconfiguration of caching systems when paired with poor cache key design on web servers and CDNs.
-Fundamentals # Component Role Caching Proxy/CDN Stores content to reduce backend load and improve performance Web Server Delivers user-specific content but may misinterpret cacheable paths Attacker Crafts deceptive URLs to force cache storage of user-sensitive data How Web Cache Deception Works # Attacker lures victim to visit a malicious link (e." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Web Cache Deception | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Cache Deception# Web Cache Deception is an attack where a malicious actor tricks a web cache into storing sensitive user-specific content (e.g., account details, billing info) in a publicly accessible cached page.
+It exploits the misconfiguration of caching systems when paired with poor cache key design on web servers and CDNs.
+Fundamentals# Component Role Caching Proxy/CDN Stores content to reduce backend load and improve performance Web Server Delivers user-specific content but may misinterpret cacheable paths Attacker Crafts deceptive URLs to force cache storage of user-sensitive data How Web Cache Deception Works# Attacker lures victim to visit a malicious link (e.g., https://example.com/profile/nonexistent.css). Server processes the request as /profile (due to path confusion or misconfiguration). Caching server stores the response (thinking it’s a static file). Another user requests the same URL and gets the cached sensitive data. Attack Surface# Look for cacheable endpoints that return user-specific or dynamic content, such as:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Web Cache Deception">
+	<meta property="og:description" content="Web Cache Deception# Web Cache Deception is an attack where a malicious actor tricks a web cache into storing sensitive user-specific content (e.g., account details, billing info) in a publicly accessible cached page.
+It exploits the misconfiguration of caching systems when paired with poor cache key design on web servers and CDNs.
+Fundamentals# Component Role Caching Proxy/CDN Stores content to reduce backend load and improve performance Web Server Delivers user-specific content but may misinterpret cacheable paths Attacker Crafts deceptive URLs to force cache storage of user-sensitive data How Web Cache Deception Works# Attacker lures victim to visit a malicious link (e.g., https://example.com/profile/nonexistent.css). Server processes the request as /profile (due to path confusion or misconfiguration). Caching server stores the response (thinking it’s a static file). Another user requests the same URL and gets the cached sensitive data. Attack Surface# Look for cacheable endpoints that return user-specific or dynamic content, such as:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Web Cache Deception">
+	<meta itemprop="description" content="Web Cache Deception# Web Cache Deception is an attack where a malicious actor tricks a web cache into storing sensitive user-specific content (e.g., account details, billing info) in a publicly accessible cached page.
+It exploits the misconfiguration of caching systems when paired with poor cache key design on web servers and CDNs.
+Fundamentals# Component Role Caching Proxy/CDN Stores content to reduce backend load and improve performance Web Server Delivers user-specific content but may misinterpret cacheable paths Attacker Crafts deceptive URLs to force cache storage of user-sensitive data How Web Cache Deception Works# Attacker lures victim to visit a malicious link (e.g., https://example.com/profile/nonexistent.css). Server processes the request as /profile (due to path confusion or misconfiguration). Caching server stores the response (thinking it’s a static file). Another user requests the same URL and gets the cached sensitive data. Attack Surface# Look for cacheable endpoints that return user-specific or dynamic content, such as:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="956">
+
+<title>Web Cache Deception • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Web-Cache-Deception/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -43,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -58,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -75,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -92,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -179,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -227,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -982,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1004,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1026,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1048,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1070,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1105,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1127,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1149,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1171,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1207,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Web Cache Deception</strong>
+  <h3>Web Cache Deception</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1263,8 +1262,8 @@ https://github.com/alex-shpak/hugo-book
         </li>
         <li><a href="#bypassing-cache-protections"><strong>Bypassing Cache Protections</strong></a>
           <ul>
-            <li><a href="#a-bypassingvary-cookie"><strong>A. Bypassing <code>Vary: Cookie</code></strong></a></li>
-            <li><a href="#b-bypassingcache-control-private"><strong>B. Bypassing <code>Cache-Control: private</code></strong></a></li>
+            <li><a href="#a-bypassing"><strong>A. Bypassing <code>Vary: Cookie</code></strong></a></li>
+            <li><a href="#b-bypassing"><strong>B. Bypassing <code>Cache-Control: private</code></strong></a></li>
             <li><a href="#c-exploiting-cache-hierarchies"><strong>C. Exploiting Cache Hierarchies</strong></a></li>
             <li><a href="#d-bypassing-cache-deception-armor">D. <strong>Bypassing Cache Deception Armor</strong></a></li>
           </ul>
@@ -1296,44 +1295,35 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="web-cache-deception">
-  Web Cache Deception
-  <a class="anchor" href="#web-cache-deception">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="web-cache-deception">Web Cache Deception<a class="anchor" href="#web-cache-deception">#</a></h1>
 <p><strong>Web Cache Deception</strong> is an attack where a malicious actor tricks a web cache into storing sensitive user-specific content (e.g., account details, billing info) in a publicly accessible cached page.</p>
 <p>It exploits the misconfiguration of caching systems when paired with poor cache key design on web servers and CDNs.</p>
 <hr>
-<h2 id="fundamentals">
-  Fundamentals
-  <a class="anchor" href="#fundamentals">#</a>
-</h2>
+<h2 id="fundamentals">Fundamentals<a class="anchor" href="#fundamentals">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Caching Proxy/CDN</strong></td>
-<td>Stores content to reduce backend load and improve performance</td>
-</tr>
-<tr>
-<td><strong>Web Server</strong></td>
-<td>Delivers user-specific content but may misinterpret cacheable paths</td>
-</tr>
-<tr>
-<td><strong>Attacker</strong></td>
-<td>Crafts deceptive URLs to force cache storage of user-sensitive data</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Component</th>
+					<th>Role</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Caching Proxy/CDN</strong></td>
+					<td>Stores content to reduce backend load and improve performance</td>
+			</tr>
+			<tr>
+					<td><strong>Web Server</strong></td>
+					<td>Delivers user-specific content but may misinterpret cacheable paths</td>
+			</tr>
+			<tr>
+					<td><strong>Attacker</strong></td>
+					<td>Crafts deceptive URLs to force cache storage of user-sensitive data</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="how-web-cache-deception-works">
-  <strong>How Web Cache Deception Works</strong>
-  <a class="anchor" href="#how-web-cache-deception-works">#</a>
-</h2>
+<h2 id="how-web-cache-deception-works"><strong>How Web Cache Deception Works</strong><a class="anchor" href="#how-web-cache-deception-works">#</a></h2>
 <ol>
 <li><strong>Attacker lures victim</strong> to visit a malicious link (e.g., <strong><code>https://example.com/profile/nonexistent.css</code></strong>).</li>
 <li><strong>Server processes</strong> the request as <strong><code>/profile</code></strong> (due to path confusion or misconfiguration).</li>
@@ -1341,10 +1331,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Another user requests</strong> the same URL and gets the cached sensitive data.</li>
 </ol>
 <hr>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <p>Look for cacheable endpoints that return user-specific or dynamic content, such as:</p>
 <ul>
 <li>Account/Profile pages</li>
@@ -1361,92 +1348,51 @@ https://github.com/alex-shpak/hugo-book
 <li>Reverse proxies (Cloudflare, Akamai, Fastly, Varnish, Nginx)</li>
 </ul>
 <hr>
-<h2 id="exploitation-techniques">
-  Exploitation Techniques
-  <a class="anchor" href="#exploitation-techniques">#</a>
-</h2>
-<h3 id="1-static-extension-abuse">
-  1. Static Extension Abuse
-  <a class="anchor" href="#1-static-extension-abuse">#</a>
-</h3>
+<h2 id="exploitation-techniques">Exploitation Techniques<a class="anchor" href="#exploitation-techniques">#</a></h2>
+<h3 id="1-static-extension-abuse">1. Static Extension Abuse<a class="anchor" href="#1-static-extension-abuse">#</a></h3>
 <p>Append cacheable extensions to dynamic resources.</p>
 <pre tabindex="0"><code>/profile.css
 /account.js
-/dashboard.jpg
-</code></pre><hr>
-<h3 id="2-path-confusion">
-  2. Path Confusion
-  <a class="anchor" href="#2-path-confusion">#</a>
-</h3>
+/dashboard.jpg</code></pre><hr>
+<h3 id="2-path-confusion">2. Path Confusion<a class="anchor" href="#2-path-confusion">#</a></h3>
 <p>Exploit differences between the cache and origin server when parsing URLs.</p>
 <pre tabindex="0"><code>/account.php/anything.css
 /profile/..;/style.css
-/account%2Ftest.css
-</code></pre><hr>
-<h3 id="3-delimiter-abuse">
-  3. Delimiter Abuse
-  <a class="anchor" href="#3-delimiter-abuse">#</a>
-</h3>
+/account%2Ftest.css</code></pre><hr>
+<h3 id="3-delimiter-abuse">3. Delimiter Abuse<a class="anchor" href="#3-delimiter-abuse">#</a></h3>
 <p>Use delimiters interpreted differently by the cache and backend.</p>
 <pre tabindex="0"><code>/account;.css
 /account;.js
-/account?.css
-</code></pre><hr>
-<h3 id="4-encoded-path-traversal">
-  4. Encoded Path Traversal
-  <a class="anchor" href="#4-encoded-path-traversal">#</a>
-</h3>
+/account?.css</code></pre><hr>
+<h3 id="4-encoded-path-traversal">4. Encoded Path Traversal<a class="anchor" href="#4-encoded-path-traversal">#</a></h3>
 <p>Attempt alternate URL encodings.</p>
 <pre tabindex="0"><code>/account%2Fsecret.css
-/account%252fsecret.css
-</code></pre><hr>
-<h3 id="5-query-normalization-abuse">
-  5. Query Normalization Abuse
-  <a class="anchor" href="#5-query-normalization-abuse">#</a>
-</h3>
+/account%252fsecret.css</code></pre><hr>
+<h3 id="5-query-normalization-abuse">5. Query Normalization Abuse<a class="anchor" href="#5-query-normalization-abuse">#</a></h3>
 <p>Some caches ignore query parameters.</p>
 <pre tabindex="0"><code>/account.css?random=123
-/account.css?cachebuster=1
-</code></pre><hr>
-<h3 id="6-header-manipulation">
-  6. Header Manipulation
-  <a class="anchor" href="#6-header-manipulation">#</a>
-</h3>
+/account.css?cachebuster=1</code></pre><hr>
+<h3 id="6-header-manipulation">6. Header Manipulation<a class="anchor" href="#6-header-manipulation">#</a></h3>
 <p>Test headers that may affect routing or cache behavior.</p>
 <pre tabindex="0"><code>X-Forwarded-Host
 X-Forwarded-Proto
 X-Rewrite-URL
 X-Original-URL
-Forwarded
-</code></pre><hr>
-<h3 id="7-cache-rule-confusion">
-  7. Cache Rule Confusion
-  <a class="anchor" href="#7-cache-rule-confusion">#</a>
-</h3>
+Forwarded</code></pre><hr>
+<h3 id="7-cache-rule-confusion">7. Cache Rule Confusion<a class="anchor" href="#7-cache-rule-confusion">#</a></h3>
 <p>Test requests using different methods.</p>
 <pre tabindex="0"><code>GET
 HEAD
-OPTIONS
-</code></pre><p>Some CDNs cache GET responses but normalize HEAD requests differently.</p>
+OPTIONS</code></pre><p>Some CDNs cache GET responses but normalize HEAD requests differently.</p>
 <hr>
-<h2 id="common-scenarios">
-  Common Scenarios
-  <a class="anchor" href="#common-scenarios">#</a>
-</h2>
-<h3 id="1-cacheable-extension-added-to-sensitive-path">
-  1. Cacheable Extension Added to Sensitive Path
-  <a class="anchor" href="#1-cacheable-extension-added-to-sensitive-path">#</a>
-</h3>
+<h2 id="common-scenarios">Common Scenarios<a class="anchor" href="#common-scenarios">#</a></h2>
+<h3 id="1-cacheable-extension-added-to-sensitive-path">1. Cacheable Extension Added to Sensitive Path<a class="anchor" href="#1-cacheable-extension-added-to-sensitive-path">#</a></h3>
 <p><strong>Condition:</strong> Web cache stores <code>/account.js</code> or <code>/account.html</code>, but backend serves sensitive data based on session cookies.</p>
 <p><strong>Payload:</strong></p>
 <pre tabindex="0"><code>https://victim.com/account/secret.js
-https://victim.com/profile/secret.html
-</code></pre><p><strong>Result:</strong> Cache stores sensitive user data; next user hitting same URL sees it.</p>
+https://victim.com/profile/secret.html</code></pre><p><strong>Result:</strong> Cache stores sensitive user data; next user hitting same URL sees it.</p>
 <hr>
-<h3 id="2-authenticated-content-served-via-cacheable-route">
-  2. Authenticated Content Served via Cacheable Route
-  <a class="anchor" href="#2-authenticated-content-served-via-cacheable-route">#</a>
-</h3>
+<h3 id="2-authenticated-content-served-via-cacheable-route">2. Authenticated Content Served via Cacheable Route<a class="anchor" href="#2-authenticated-content-served-via-cacheable-route">#</a></h3>
 <p><strong>Condition:</strong> Authenticated pages (like <code>/account</code>) are served with no-cache header, but URL with fake extensions trick cache.</p>
 <p><strong>Example Flow:</strong></p>
 <ol>
@@ -1455,86 +1401,50 @@ https://victim.com/profile/secret.html
 <li>Anyone accessing same URL gets attacker’s content</li>
 </ol>
 <hr>
-<h3 id="3-user-specific-data-cached-without-session-separation">
-  3. User-Specific Data Cached Without Session Separation
-  <a class="anchor" href="#3-user-specific-data-cached-without-session-separation">#</a>
-</h3>
+<h3 id="3-user-specific-data-cached-without-session-separation">3. User-Specific Data Cached Without Session Separation<a class="anchor" href="#3-user-specific-data-cached-without-session-separation">#</a></h3>
 <p><strong>Condition:</strong> Cache key is based only on URL, not on headers like <code>Cookie</code>, <code>Authorization</code>, or session tokens.</p>
 <p><strong>Result:</strong> Response for authenticated user gets served to anonymous visitors.</p>
 <hr>
-<h3 id="4-cdn-ignores-query-strings-or-they-are-normalized">
-  4. CDN ignores Query Strings, or They Are Normalized
-  <a class="anchor" href="#4-cdn-ignores-query-strings-or-they-are-normalized">#</a>
-</h3>
+<h3 id="4-cdn-ignores-query-strings-or-they-are-normalized">4. CDN ignores Query Strings, or They Are Normalized<a class="anchor" href="#4-cdn-ignores-query-strings-or-they-are-normalized">#</a></h3>
 <p><strong>Payload:</strong></p>
 <pre tabindex="0"><code>/account.css?ignoreme
 /account%2F.css
 /account.php/..;/index.html
-//account/test
-</code></pre><p><strong>Cache Key Bypass:</strong> Query string removed/ignored in caching key.</p>
+//account/test</code></pre><p><strong>Cache Key Bypass:</strong> Query string removed/ignored in caching key.</p>
 <hr>
-<h3 id="5-caching-javascript-with-embedded-sensitive-data">
-  5. Caching JavaScript with Embedded Sensitive Data
-  <a class="anchor" href="#5-caching-javascript-with-embedded-sensitive-data">#</a>
-</h3>
+<h3 id="5-caching-javascript-with-embedded-sensitive-data">5. Caching JavaScript with Embedded Sensitive Data<a class="anchor" href="#5-caching-javascript-with-embedded-sensitive-data">#</a></h3>
 <p><strong>If:</strong> User data is embedded in JavaScript as <code>var email = &quot;user@domain.com&quot;;</code></p>
 <p><strong>Payload:</strong></p>
-<pre tabindex="0"><code>/account.js
-</code></pre><p>If cached, all users can see other users&rsquo; data by loading the cached JavaScript.</p>
+<pre tabindex="0"><code>/account.js</code></pre><p>If cached, all users can see other users&rsquo; data by loading the cached JavaScript.</p>
 <hr>
-<h3 id="6-prefixessuffixes-that-fool-the-cache">
-  6. Prefixes/Suffixes That Fool the Cache
-  <a class="anchor" href="#6-prefixessuffixes-that-fool-the-cache">#</a>
-</h3>
+<h3 id="6-prefixessuffixes-that-fool-the-cache">6. Prefixes/Suffixes That Fool the Cache<a class="anchor" href="#6-prefixessuffixes-that-fool-the-cache">#</a></h3>
 <ul>
 <li>Using suffixes like <code>.jpg</code>, <code>.css</code>, <code>.html</code>, etc.</li>
 <li>Path manipulation: <code>/account.php/anything.jpg</code></li>
 </ul>
 <hr>
 <hr>
-<h2 id="bypassing-cache-protections">
-  <strong>Bypassing Cache Protections</strong>
-  <a class="anchor" href="#bypassing-cache-protections">#</a>
-</h2>
-<h3 id="a-bypassingvary-cookie">
-  <strong>A. Bypassing <code>Vary: Cookie</code></strong>
-  <a class="anchor" href="#a-bypassingvary-cookie">#</a>
-</h3>
+<h2 id="bypassing-cache-protections"><strong>Bypassing Cache Protections</strong><a class="anchor" href="#bypassing-cache-protections">#</a></h2>
+<h3 id="a-bypassing"><strong>A. Bypassing <code>Vary: Cookie</code></strong><a class="anchor" href="#a-bypassing">#</a></h3>
 <p>If the cache keys on <strong><code>Cookie</code></strong>, try:</p>
 <ul>
 <li>Removing cookies</li>
 <li>Using fake session IDs</li>
 <li>Manipulating <strong><code>Vary</code></strong> headers</li>
 </ul>
-<h3 id="b-bypassingcache-control-private">
-  <strong>B. Bypassing <code>Cache-Control: private</code></strong>
-  <a class="anchor" href="#b-bypassingcache-control-private">#</a>
-</h3>
+<h3 id="b-bypassing"><strong>B. Bypassing <code>Cache-Control: private</code></strong><a class="anchor" href="#b-bypassing">#</a></h3>
 <p>Some CDNs ignore <strong><code>private</code></strong> directives. Test with:</p>
 <p>text</p>
 <pre tabindex="0"><code>GET /account HTTP/1.1
 Host: example.com
-X-Forwarded-For: 1.2.3.4
-</code></pre><h3 id="c-exploiting-cache-hierarchies">
-  <strong>C. Exploiting Cache Hierarchies</strong>
-  <a class="anchor" href="#c-exploiting-cache-hierarchies">#</a>
-</h3>
+X-Forwarded-For: 1.2.3.4</code></pre><h3 id="c-exploiting-cache-hierarchies"><strong>C. Exploiting Cache Hierarchies</strong><a class="anchor" href="#c-exploiting-cache-hierarchies">#</a></h3>
 <p>Some setups have multiple cache layers (e.g., Cloudflare → Origin Cache). Poisoning one layer may affect others.</p>
-<h3 id="d-bypassing-cache-deception-armor">
-  D. <strong>Bypassing Cache Deception Armor</strong>
-  <a class="anchor" href="#d-bypassing-cache-deception-armor">#</a>
-</h3>
+<h3 id="d-bypassing-cache-deception-armor">D. <strong>Bypassing Cache Deception Armor</strong><a class="anchor" href="#d-bypassing-cache-deception-armor">#</a></h3>
 <p>Cloudflare Deception Armor could be bypassed by using <code>.avif</code> extension making Cache deception attack possible on vulnerable origin servers.</p>
 <p>Reference: <a href="https://hackerone.com/reports/1391635" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/1391635</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <hr>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  Manual Detection
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection">Manual Detection<a class="anchor" href="#manual-detection">#</a></h3>
 <ul>
 <li>Identify authenticated pages returning sensitive information.</li>
 <li>Append static extensions to dynamic endpoints.</li>
@@ -1552,10 +1462,7 @@ X-Forwarded-For: 1.2.3.4
 </li>
 <li>Verify whether another browser or user receives identical cached content.</li>
 </ul>
-<h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
 <ul>
 <li>Burp Suite Repeater</li>
 <li>Param Miner</li>
@@ -1564,60 +1471,57 @@ X-Forwarded-For: 1.2.3.4
 <li>Custom scripts using curl</li>
 </ul>
 <hr>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Payload</th>
-<th>Expected Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Static extension</td>
-<td><code>/profile.css</code></td>
-<td>Sensitive response cached</td>
-</tr>
-<tr>
-<td>Fake JavaScript</td>
-<td><code>/account.js</code></td>
-<td>User-specific JS cached</td>
-</tr>
-<tr>
-<td>Fake image</td>
-<td><code>/dashboard.jpg</code></td>
-<td>Cached authenticated content</td>
-</tr>
-<tr>
-<td>Encoded path</td>
-<td><code>/account%2Ftest.css</code></td>
-<td>Cache/origin mismatch</td>
-</tr>
-<tr>
-<td>Path confusion</td>
-<td><code>/account.php/test.css</code></td>
-<td>Dynamic content cached</td>
-</tr>
-<tr>
-<td>Query normalization</td>
-<td><code>/account.css?x=1</code></td>
-<td>Same cached response</td>
-</tr>
-<tr>
-<td>Semicolon path</td>
-<td><code>/account;.css</code></td>
-<td>Cache confusion</td>
-</tr>
-<tr>
-<td>Alternate session</td>
-<td>Incognito request</td>
-<td>Cached victim data returned</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Payload</th>
+					<th>Expected Result</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Static extension</td>
+					<td><code>/profile.css</code></td>
+					<td>Sensitive response cached</td>
+			</tr>
+			<tr>
+					<td>Fake JavaScript</td>
+					<td><code>/account.js</code></td>
+					<td>User-specific JS cached</td>
+			</tr>
+			<tr>
+					<td>Fake image</td>
+					<td><code>/dashboard.jpg</code></td>
+					<td>Cached authenticated content</td>
+			</tr>
+			<tr>
+					<td>Encoded path</td>
+					<td><code>/account%2Ftest.css</code></td>
+					<td>Cache/origin mismatch</td>
+			</tr>
+			<tr>
+					<td>Path confusion</td>
+					<td><code>/account.php/test.css</code></td>
+					<td>Dynamic content cached</td>
+			</tr>
+			<tr>
+					<td>Query normalization</td>
+					<td><code>/account.css?x=1</code></td>
+					<td>Same cached response</td>
+			</tr>
+			<tr>
+					<td>Semicolon path</td>
+					<td><code>/account;.css</code></td>
+					<td>Cache confusion</td>
+			</tr>
+			<tr>
+					<td>Alternate session</td>
+					<td>Incognito request</td>
+					<td>Cached victim data returned</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Tips:</strong></p>
 <ul>
@@ -1626,10 +1530,7 @@ X-Forwarded-For: 1.2.3.4
 <li>Percent-encode components: <code>%2F</code>, <code>%3B</code></li>
 </ul>
 <hr>
-<h2 id="indicators-of-a-vulnerable-system">
-  Indicators of a Vulnerable System
-  <a class="anchor" href="#indicators-of-a-vulnerable-system">#</a>
-</h2>
+<h2 id="indicators-of-a-vulnerable-system">Indicators of a Vulnerable System<a class="anchor" href="#indicators-of-a-vulnerable-system">#</a></h2>
 <ul>
 <li>Presence of CDN or reverse proxy (Akamai, Cloudflare, Varnish, etc.)</li>
 <li>Inconsistent cache headers across similar routes</li>
@@ -1640,10 +1541,7 @@ X-Forwarded-For: 1.2.3.4
 <li>Increasing <code>Age</code> header values</li>
 </ul>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <p>Successful exploitation of Web Cache Deception may lead to:</p>
 <ul>
 <li>Disclosure of authenticated user data</li>
@@ -1655,87 +1553,75 @@ X-Forwarded-For: 1.2.3.4
 <li>Increased risk of account takeover when sensitive tokens are cached</li>
 </ul>
 <hr>
-<h2 id="mitigation-strategies">
-  Mitigation Strategies
-  <a class="anchor" href="#mitigation-strategies">#</a>
-</h2>
+<h2 id="mitigation-strategies">Mitigation Strategies<a class="anchor" href="#mitigation-strategies">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Level</th>
-<th>Mitigation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🔹 CDN/Cache</td>
-<td>- Do not cache URLs containing cookies or authorization headers- Use <code>Vary: Cookie, Authorization</code> headers- Enforce strict cache key rules</td>
-</tr>
-<tr>
-<td>🔸 Application</td>
-<td>- Do not embed sensitive data in pages likely to be cached- Serve authenticated content from clearly uncacheable paths</td>
-</tr>
-<tr>
-<td>🔻 Headers</td>
-<td>- Set <code>Cache-Control: no-store, private</code> for authenticated pages- Use <code>X-Accel-Expires: 0</code> or <code>Pragma: no-cache</code> where applicable</td>
-</tr>
-<tr>
-<td>⚙️ DevOps</td>
-<td>- Monitor cache hits/misses with logging- Regularly test cache behavior on production replicas</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Level</th>
+					<th>Mitigation</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>🔹 CDN/Cache</td>
+					<td>- Do not cache URLs containing cookies or authorization headers- Use <code>Vary: Cookie, Authorization</code> headers- Enforce strict cache key rules</td>
+			</tr>
+			<tr>
+					<td>🔸 Application</td>
+					<td>- Do not embed sensitive data in pages likely to be cached- Serve authenticated content from clearly uncacheable paths</td>
+			</tr>
+			<tr>
+					<td>🔻 Headers</td>
+					<td>- Set <code>Cache-Control: no-store, private</code> for authenticated pages- Use <code>X-Accel-Expires: 0</code> or <code>Pragma: no-cache</code> where applicable</td>
+			</tr>
+			<tr>
+					<td>⚙️ DevOps</td>
+					<td>- Monitor cache hits/misses with logging- Regularly test cache behavior on production replicas</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="tools--techniques">
-  Tools &amp; Techniques
-  <a class="anchor" href="#tools--techniques">#</a>
-</h2>
+<h2 id="tools--techniques">Tools &amp; Techniques<a class="anchor" href="#tools--techniques">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Burp Suite</td>
-<td>Modify requests, analyze cache headers</td>
-</tr>
-<tr>
-<td>curl/wget</td>
-<td>Reproduce caching behavior with headers</td>
-</tr>
-<tr>
-<td>browser dev tools</td>
-<td>Track caching via network tab</td>
-</tr>
-<tr>
-<td>CDN configuration panel</td>
-<td>Review caching rules, behavior</td>
-</tr>
-<tr>
-<td>Param Miner</td>
-<td>Discover cache key discrepancies</td>
-</tr>
-<tr>
-<td>Web Cache Vulnerability Scanner</td>
-<td>Detect cache poisoning/deception</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Burp Suite</td>
+					<td>Modify requests, analyze cache headers</td>
+			</tr>
+			<tr>
+					<td>curl/wget</td>
+					<td>Reproduce caching behavior with headers</td>
+			</tr>
+			<tr>
+					<td>browser dev tools</td>
+					<td>Track caching via network tab</td>
+			</tr>
+			<tr>
+					<td>CDN configuration panel</td>
+					<td>Review caching rules, behavior</td>
+			</tr>
+			<tr>
+					<td>Param Miner</td>
+					<td>Discover cache key discrepancies</td>
+			</tr>
+			<tr>
+					<td>Web Cache Vulnerability Scanner</td>
+					<td>Detect cache poisoning/deception</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  Good to Read:
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read:<a class="anchor" href="#good-to-read">#</a></h2>
 <p><a href="https://hackerone.com/reports/631589" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/631589</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/397508" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/397508</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://hackerone.com/reports/394016" target="_blank" rel="noreferrer noopener nofollow">https://hackerone.com/reports/394016</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://portswigger.net/web-security/web-cache-deception" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/web-cache-deception</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://swisskyrepo.github.io/PayloadsAllTheThings/Web%20Cache%20Deception/#caching-custom-javascript" target="_blank" rel="noreferrer noopener nofollow">https://swisskyrepo.github.io/PayloadsAllTheThings/Web%20Cache%20Deception/#caching-custom-javascript</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://medium.com/@kunal94/web-cache-deception-attack-leads-to-user-info-disclosure-805318f7bb29" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@kunal94/web-cache-deception-attack-leads-to-user-info-disclosure-805318f7bb29</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1751,49 +1637,62 @@ X-Forwarded-For: 1.2.3.4
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Web%20Cache%20Deception.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Weak-SSL-TLS-Configurations/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Weak SSL/TLS Configurations</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Web-Cache-Poisoning/" class="flex align-center">
+        <span>Web Cache Poisoning</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1825,8 +1724,8 @@ X-Forwarded-For: 1.2.3.4
         </li>
         <li><a href="#bypassing-cache-protections"><strong>Bypassing Cache Protections</strong></a>
           <ul>
-            <li><a href="#a-bypassingvary-cookie"><strong>A. Bypassing <code>Vary: Cookie</code></strong></a></li>
-            <li><a href="#b-bypassingcache-control-private"><strong>B. Bypassing <code>Cache-Control: private</code></strong></a></li>
+            <li><a href="#a-bypassing"><strong>A. Bypassing <code>Vary: Cookie</code></strong></a></li>
+            <li><a href="#b-bypassing"><strong>B. Bypassing <code>Cache-Control: private</code></strong></a></li>
             <li><a href="#c-exploiting-cache-hierarchies"><strong>C. Exploiting Cache Hierarchies</strong></a></li>
             <li><a href="#d-bypassing-cache-deception-armor">D. <strong>Bypassing Cache Deception Armor</strong></a></li>
           </ul>
@@ -1850,15 +1749,24 @@ X-Forwarded-For: 1.2.3.4
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Race Conditions # Description # A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.
-Types of Race Conditions # Limit Overrun Race Conditions # The most common type.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Race Conditions" />
-<meta property="og:description" content="Race Conditions # Description # A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.
-Types of Race Conditions # Limit Overrun Race Conditions # The most common type." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-13T23:21:07+05:30" />
-<title>Race Conditions | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Race Conditions# Description# A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.
+Types of Race Conditions# Limit Overrun Race Conditions# The most common type. An attacker exceeds a hard limit set by the application (e.g., using a single-use discount code five times or withdrawing more money than is in an account) by triggering requests faster than the server can update the state.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Race Conditions">
+	<meta property="og:description" content="Race Conditions# Description# A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.
+Types of Race Conditions# Limit Overrun Race Conditions# The most common type. An attacker exceeds a hard limit set by the application (e.g., using a single-use discount code five times or withdrawing more money than is in an account) by triggering requests faster than the server can update the state.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-13T23:21:07+05:30">
+
+
+	<meta itemprop="name" content="Race Conditions">
+	<meta itemprop="description" content="Race Conditions# Description# A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.
+Types of Race Conditions# Limit Overrun Race Conditions# The most common type. An attacker exceeds a hard limit set by the application (e.g., using a single-use discount code five times or withdrawing more money than is in an account) by triggering requests faster than the server can update the state.">
+	<meta itemprop="dateModified" content="2026-08-13T23:21:07+05:30">
+	<meta itemprop="wordCount" content="2549">
+
+<title>Race Conditions • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Race-Conditions/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Race Conditions</strong>
+  <h3>Race Conditions</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1265,157 +1263,113 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="race-conditions">
-  Race Conditions
-  <a class="anchor" href="#race-conditions">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="race-conditions">Race Conditions<a class="anchor" href="#race-conditions">#</a></h1>
 <hr>
-<h3 id="description">
-  Description
-  <a class="anchor" href="#description">#</a>
-</h3>
+<h3 id="description">Description<a class="anchor" href="#description">#</a></h3>
 <p>A Race Condition occurs when a system’s behavior is dependent on the sequence or timing of uncontrollable events. In web applications, this usually happens when multiple concurrent requests attempt to access or modify the same shared resource (like a database record or a session variable) simultaneously, leading to unintended logic flaws.</p>
-<h3 id="types-of-race-conditions">
-  Types of Race Conditions
-  <a class="anchor" href="#types-of-race-conditions">#</a>
-</h3>
-<h4 id="limit-overrun-race-conditions">
-  <strong>Limit Overrun Race Conditions</strong>
-  <a class="anchor" href="#limit-overrun-race-conditions">#</a>
-</h4>
+<h3 id="types-of-race-conditions">Types of Race Conditions<a class="anchor" href="#types-of-race-conditions">#</a></h3>
+<h4 id="limit-overrun-race-conditions"><strong>Limit Overrun Race Conditions</strong><a class="anchor" href="#limit-overrun-race-conditions">#</a></h4>
 <p>The most common type. An attacker exceeds a hard limit set by the application (e.g., using a single-use discount code five times or withdrawing more money than is in an account) by triggering requests faster than the server can update the state.</p>
-<h4 id="example">
-  <strong>Example:</strong>
-  <a class="anchor" href="#example">#</a>
-</h4>
+<h4 id="example"><strong>Example:</strong><a class="anchor" href="#example">#</a></h4>
 <ul>
 <li>Intended Logic</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>defapply_coupon(user,coupon_code):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>defapply_coupon(user,coupon_code):
 </span></span><span style="display:flex;"><span>		coupon<span style="color:#f92672">=</span>get_coupon(coupon_code)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>ifcoupon<span style="color:#f92672">.</span>used<span style="color:#f92672">==</span><span style="color:#66d9ef">False</span>:
 </span></span><span style="display:flex;"><span>		apply_discount(user)
 </span></span><span style="display:flex;"><span>		coupon<span style="color:#f92672">.</span>used<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
-</span></span><span style="display:flex;"><span>		save(coupon)
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>		save(coupon)</span></span></code></pre></div><ul>
 <li>Coupon can only be used <strong>once</strong></li>
 <li>After use → <code>used = True</code></li>
 <li>The attacker sends <strong>multiple requests at the same time</strong>:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example using parallel requests in bash</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Example using parallel requests in bash</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> iin <span style="color:#f92672">{</span>1..10<span style="color:#f92672">}</span>;<span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>	curl-X POST https://target.com/apply-coupon<span style="color:#f92672">=</span>asd-asd-asd &amp;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>wait
-</span></span></code></pre></div><hr>
+</span></span><span style="display:flex;"><span>wait</span></span></code></pre></div><hr>
 <ul>
 <li>Coupon used <strong>multiple times</strong></li>
 <li>Limit completely bypassed</li>
 </ul>
-<h4 id="multi-endpoint-race-conditions">
-  <strong>Multi-Endpoint Race Conditions:</strong>
-  <a class="anchor" href="#multi-endpoint-race-conditions">#</a>
-</h4>
+<h4 id="multi-endpoint-race-conditions"><strong>Multi-Endpoint Race Conditions:</strong><a class="anchor" href="#multi-endpoint-race-conditions">#</a></h4>
 <p>Occurs when an application transitions through a state machine (e.g., Pending -&gt; Validated -&gt; Completed). An attacker targets the window between two different endpoints to disrupt the logic flow.</p>
-<h4 id="example-1">
-  Example
-  <a class="anchor" href="#example-1">#</a>
-</h4>
+<h4 id="example-1">Example<a class="anchor" href="#example-1">#</a></h4>
 <ul>
 <li>The application flow ⇒ Pending → Paid → Shipped → Cancel</li>
 <li>Endpoint <code>/pay</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def pay_order<span style="color:#f92672">(</span>order_id<span style="color:#f92672">)</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def pay_order<span style="color:#f92672">(</span>order_id<span style="color:#f92672">)</span>:
 </span></span><span style="display:flex;"><span>    order <span style="color:#f92672">=</span> get_order<span style="color:#f92672">(</span>order_id<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> order.status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pending&#34;</span>:
 </span></span><span style="display:flex;"><span>        process_payment<span style="color:#f92672">()</span>
 </span></span><span style="display:flex;"><span>        order.status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Paid&#34;</span>
-</span></span><span style="display:flex;"><span>        save<span style="color:#f92672">(</span>order<span style="color:#f92672">)</span>
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>        save<span style="color:#f92672">(</span>order<span style="color:#f92672">)</span></span></span></code></pre></div><ul>
 <li>Endpoint <code>/cancel</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cancel_order</span>(order_id):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cancel_order</span>(order_id):
 </span></span><span style="display:flex;"><span>    order <span style="color:#f92672">=</span> get_order(order_id)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> order<span style="color:#f92672">.</span>status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pending&#34;</span>:
 </span></span><span style="display:flex;"><span>        order<span style="color:#f92672">.</span>status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cancelled&#34;</span>
 </span></span><span style="display:flex;"><span>        refund_if_needed()
-</span></span><span style="display:flex;"><span>        save(order)
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>        save(order)</span></span></code></pre></div><ul>
 <li>The attacker sends both the requests at the same time</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://target.com/pay -d <span style="color:#e6db74">&#34;order_id=123&#34;</span> &amp;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://target.com/pay -d <span style="color:#e6db74">&#34;order_id=123&#34;</span> &amp;
 </span></span><span style="display:flex;"><span>curl -X POST https://target.com/cancel -d <span style="color:#e6db74">&#34;order_id=123&#34;</span> &amp;
-</span></span><span style="display:flex;"><span>wait
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>wait</span></span></code></pre></div><ul>
 <li>As a result the payment is processed and the refund is also processed</li>
 <li>The attacker gets the product and the service for free</li>
 <li>It happens because both the endpoints trusts the same condition</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> order<span style="color:#f92672">.</span>status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pending&#34;</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> order<span style="color:#f92672">.</span>status <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pending&#34;</span></span></span></code></pre></div><ul>
 <li>But there is <strong>no synchronization between endpoints</strong>.</li>
 </ul>
-<h4 id="time-of-check-to-time-of-use-toctou">
-  <strong>Time-of-Check to Time-of-Use (TOCTOU):</strong>
-  <a class="anchor" href="#time-of-check-to-time-of-use-toctou">#</a>
-</h4>
+<h4 id="time-of-check-to-time-of-use-toctou"><strong>Time-of-Check to Time-of-Use (TOCTOU):</strong><a class="anchor" href="#time-of-check-to-time-of-use-toctou">#</a></h4>
 <p>A specific sub-class where the application checks a condition (e.g., &ldquo;Does the file exist?&rdquo;) and acts on it (&ldquo;Delete the file&rdquo;), but the state changes between the check and the action.</p>
-<h4 id="example-2">
-  Example
-  <a class="anchor" href="#example-2">#</a>
-</h4>
+<h4 id="example-2">Example<a class="anchor" href="#example-2">#</a></h4>
 <ul>
 <li>The demo application logic</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>defdelete_file(path):
 </span></span><span style="display:flex;"><span>ifos<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(path):   <span style="color:#75715e"># Time of Check</span>
-</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>remove(path)  <span style="color:#75715e"># Time of Use</span>
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>remove(path)  <span style="color:#75715e"># Time of Use</span></span></span></code></pre></div><ul>
 <li>Between:</li>
 </ul>
-<pre tabindex="0"><code>[CHECK: file exists] → [USE: delete file]
-</code></pre><ul>
+<pre tabindex="0"><code>[CHECK: file exists] → [USE: delete file]</code></pre><ul>
 <li>
 <p>There is a <strong>time gap</strong></p>
 </li>
 <li>
 <p>Attacker creates a normal file:</p>
-<pre tabindex="0"><code>/tmp/user_file.txt
-</code></pre></li>
+<pre tabindex="0"><code>/tmp/user_file.txt</code></pre></li>
 <li>
 <p>Application checks:</p>
-<pre tabindex="0"><code>os.path.exists(&#34;/tmp/user_file.txt&#34;) → True
-</code></pre></li>
+<pre tabindex="0"><code>os.path.exists(&#34;/tmp/user_file.txt&#34;) → True</code></pre></li>
 <li>
 <p><strong>Before deletion happens</strong>, attacker swaps the file:</p>
 </li>
 </ul>
 <pre tabindex="0"><code>rm /tmp/user_file.txt
-ln -s /etc/passwd /tmp/user_file.txt
-</code></pre><ul>
+ln -s /etc/passwd /tmp/user_file.txt</code></pre><ul>
 <li>Application continues:</li>
 </ul>
-<pre tabindex="0"><code>os.remove(&#34;/tmp/user_file.txt&#34;)
-</code></pre><ul>
+<pre tabindex="0"><code>os.remove(&#34;/tmp/user_file.txt&#34;)</code></pre><ul>
 <li>The app deletes:</li>
 </ul>
-<pre tabindex="0"><code>/etc/passwd
-</code></pre><ul>
+<pre tabindex="0"><code>/etc/passwd</code></pre><ul>
 <li>Because the app assumes:</li>
 </ul>
-<pre tabindex="0"><code>State at CHECK == State at USE
-</code></pre><ul>
+<pre tabindex="0"><code>State at CHECK == State at USE</code></pre><ul>
 <li>But attacker changes it in between.</li>
 </ul>
-<h3 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h3>
+<h3 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h3>
 <ul>
 <li><strong>Finance Related Functionalities</strong>
 <ul>
@@ -1443,17 +1397,11 @@ ln -s /etc/passwd /tmp/user_file.txt
 <li>Bypassing &ldquo;one vote per user&rdquo; restrictions.</li>
 </ul>
 </li>
-<li><strong>File Management ⇒</strong>Temporary file creation and processing.</li>
+<li>**File Management ⇒**Temporary file creation and processing.</li>
 </ul>
-<h3 id="exploitation-and-bypassing-defenses">
-  Exploitation and Bypassing Defenses
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h3>
+<h3 id="exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses<a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h3>
 <p>To exploit these, we must minimize <strong>network jitter</strong> (the variance in request arrival times).</p>
-<h4 id="how-to-exploit">
-  How to Exploit
-  <a class="anchor" href="#how-to-exploit">#</a>
-</h4>
+<h4 id="how-to-exploit">How to Exploit<a class="anchor" href="#how-to-exploit">#</a></h4>
 <p>Using HTTP/2, we can send multiple requests over a single TCP connection, often within the same packet, ensuring they reach the server logic at virtually the same nanosecond.</p>
 <ul>
 <li><strong>Capture and Grouping</strong></li>
@@ -1489,17 +1437,13 @@ ln -s /etc/passwd /tmp/user_file.txt
 </ul>
 </li>
 </ol>
-<h4 id="exploiting-limit-overrun-race-conditions">
-  Exploiting Limit Overrun race Conditions
-  <a class="anchor" href="#exploiting-limit-overrun-race-conditions">#</a>
-</h4>
+<h4 id="exploiting-limit-overrun-race-conditions">Exploiting Limit Overrun race Conditions<a class="anchor" href="#exploiting-limit-overrun-race-conditions">#</a></h4>
 <ul>
 <li>The attacker has to send more than one request at almost same time</li>
 <li>He has to send the requests in the race window which is often of a few milli-seconds</li>
 <li>So that the database will take two simultaneous requests as valid and you can apply the coupon more than once.</li>
 </ul>
-<p>
-  <img src="../rc1.png" alt="Race Condition.png" /></p>
+<p><img src="../rc1.png" alt="Race Condition.png" /></p>
 <ul>
 <li>Here in the image, the 2 requests are generated simultaneously.</li>
 <li>So to exploit you have to focus on two things
@@ -1510,10 +1454,7 @@ ln -s /etc/passwd /tmp/user_file.txt
 </li>
 <li>By using Burp Suite Repeater you can easily send the requests in parallel</li>
 </ul>
-<h4 id="bypassing-rate-limiting">
-  Bypassing Rate Limiting
-  <a class="anchor" href="#bypassing-rate-limiting">#</a>
-</h4>
+<h4 id="bypassing-rate-limiting">Bypassing Rate Limiting<a class="anchor" href="#bypassing-rate-limiting">#</a></h4>
 <ul>
 <li>The user can use Race Condition flaws to bypass the rate limit</li>
 <li>Sending a group of 20 login POST requests (single packet attack), observing that the application is validating the credentials for a user</li>
@@ -1528,7 +1469,7 @@ ln -s /etc/passwd /tmp/user_file.txt
 <li>By default the code is good enough for <strong><code>Limit overrun Race Condition Attacks</code></strong></li>
 <li>For password brute force attacks you have to add the password word-list as shown in code</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def queueRequests<span style="color:#f92672">(</span>target, wordlists<span style="color:#f92672">)</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def queueRequests<span style="color:#f92672">(</span>target, wordlists<span style="color:#f92672">)</span>:
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># as the target supports HTTP/2, use engine=Engine.BURP2 and concurrentConnections=1 for a single-packet attack</span>
 </span></span><span style="display:flex;"><span>    engine <span style="color:#f92672">=</span> RequestEngine<span style="color:#f92672">(</span>endpoint<span style="color:#f92672">=</span>target.endpoint,
@@ -1549,11 +1490,7 @@ ln -s /etc/passwd /tmp/user_file.txt
 </span></span><span style="display:flex;"><span>    engine.openGate<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>def handleResponse<span style="color:#f92672">(</span>req, interesting<span style="color:#f92672">)</span>:
-</span></span><span style="display:flex;"><span>    table.add<span style="color:#f92672">(</span>req<span style="color:#f92672">)</span>
-</span></span></code></pre></div><h4 id="exploiting-multiple-endpoint-race-conditions">
-  Exploiting Multiple Endpoint Race Conditions
-  <a class="anchor" href="#exploiting-multiple-endpoint-race-conditions">#</a>
-</h4>
+</span></span><span style="display:flex;"><span>    table.add<span style="color:#f92672">(</span>req<span style="color:#f92672">)</span></span></span></code></pre></div><h4 id="exploiting-multiple-endpoint-race-conditions">Exploiting Multiple Endpoint Race Conditions<a class="anchor" href="#exploiting-multiple-endpoint-race-conditions">#</a></h4>
 <ul>
 <li>
 <p>Different application trigger multiple actions after we hit a single GET or POST request.</p>
@@ -1563,8 +1500,7 @@ ln -s /etc/passwd /tmp/user_file.txt
 </li>
 <li>
 <p>The internal workflow looks like this</p>
-<p>
-  <img src="../rc2.png" alt="Race Condition.png" /></p>
+<p><img src="../rc2.png" alt="Race Condition.png" /></p>
 </li>
 <li>
 <p>The race window is the payment validation</p>
@@ -1591,10 +1527,7 @@ ln -s /etc/passwd /tmp/user_file.txt
 <p>Repeat the first steps again</p>
 </li>
 </ul>
-<h4 id="token-collision-attack">
-  Token Collision Attack
-  <a class="anchor" href="#token-collision-attack">#</a>
-</h4>
+<h4 id="token-collision-attack">Token Collision Attack<a class="anchor" href="#token-collision-attack">#</a></h4>
 <p><strong>Token Collision via Predictable Seeding</strong> occurs when an application uses a non-random timestamp to generate security tokens, such as password resets. By using high-precision timing to synchronize two requests, an attacker can force the server to issue identical tokens for both their account and a victim&rsquo;s, leading to a full account takeover.</p>
 <ul>
 <li>If a password reset token is generated using a formula like:
@@ -1616,10 +1549,7 @@ then any two requests processed in the same microsecond will result in the <stro
 <li><strong>The Mirror:</strong> Simultaneously, the server processes Request B. It sees the <em>same</em> time <code>1711100000.123456</code> and generates the <em>same</em> <code>Token_XYZ</code>. It sends this to you.</li>
 <li><strong>The Takeover:</strong> You check your inbox, get <code>Token_XYZ</code>, and instead of using it for your own account, you append it to the admin&rsquo;s reset URL. Since the token matches what was stored for the admin, you can now set their password.</li>
 </ol>
-<h4 id="file-upload-toctou-file-upload-bypasses">
-  File upload TOCTOU: File upload bypasses
-  <a class="anchor" href="#file-upload-toctou-file-upload-bypasses">#</a>
-</h4>
+<h4 id="file-upload-toctou-file-upload-bypasses">File upload TOCTOU: File upload bypasses<a class="anchor" href="#file-upload-toctou-file-upload-bypasses">#</a></h4>
 <ul>
 <li>Imagine a website that allows image uploads.</li>
 </ul>
@@ -1644,33 +1574,26 @@ then any two requests processed in the same microsecond will result in the <stro
 <li><code>/public/uploads/malicious.php</code></li>
 <li>If the server executes PHP files, that could become serious.</li>
 </ul>
-<h3 id="graphql-race-conditions">
-  GraphQL Race Conditions
-  <a class="anchor" href="#graphql-race-conditions">#</a>
-</h3>
-<h4 id="concurrent-mutations">
-  Concurrent Mutations
-  <a class="anchor" href="#concurrent-mutations">#</a>
-</h4>
+<h3 id="graphql-race-conditions">GraphQL Race Conditions<a class="anchor" href="#graphql-race-conditions">#</a></h3>
+<h4 id="concurrent-mutations">Concurrent Mutations<a class="anchor" href="#concurrent-mutations">#</a></h4>
 <ul>
 <li>
 <p>By inspecting the Graphql Introspection query one can find out the mutation query</p>
 </li>
 <li>
 <p>Example</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>mutation createAdminAction(<span style="color:#960050;background-color:#1e0010">$</span>input: AdminActionInput<span style="color:#960050;background-color:#1e0010">!</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>mutation createAdminAction(<span style="color:#960050;background-color:#1e0010">$</span>input: AdminActionInput<span style="color:#960050;background-color:#1e0010">!</span>) {
 </span></span><span style="display:flex;"><span>  createAdminAction(input: <span style="color:#960050;background-color:#1e0010">$</span>input) {
 </span></span><span style="display:flex;"><span>    id
 </span></span><span style="display:flex;"><span>    status
 </span></span><span style="display:flex;"><span>    createdBy
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></li>
 <li>
 <p>One can use this query to create admin functionalities as this to download the sensitive security logs</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>mutation {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>mutation {
 </span></span><span style="display:flex;"><span>  createAdminAction(input: {
 </span></span><span style="display:flex;"><span>    actionType: <span style="color:#e6db74">&#34;exportSensitiveLogs&#34;</span>,
 </span></span><span style="display:flex;"><span>    userId: <span style="color:#e6db74">&#34;all&#34;</span>
@@ -1679,30 +1602,24 @@ then any two requests processed in the same microsecond will result in the <stro
 </span></span><span style="display:flex;"><span>    status
 </span></span><span style="display:flex;"><span>    createdBy
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ul>
 <li>When it is sent once it will export a single file</li>
 <li>But by using Turbo Intruder one can send the mutation query as floods</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>def queueRequests(target, wordlists):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>def queueRequests(target, wordlists):
 </span></span><span style="display:flex;"><span>    engine <span style="color:#f92672">=</span> RequestEngine(endpoint<span style="color:#f92672">=</span>target.endpoint,
 </span></span><span style="display:flex;"><span>                           concurrentConnections<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
 </span></span><span style="display:flex;"><span>                           requestsPerConnection<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>,
 </span></span><span style="display:flex;"><span>                           pipeline<span style="color:#f92672">=</span>False)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> range(<span style="color:#ae81ff">20</span>):
-</span></span><span style="display:flex;"><span>        engine.queue(target.req, target.baseInput)
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>        engine.queue(target.req, target.baseInput)</span></span></code></pre></div><ul>
 <li>It will extract more than one file that will reveal a lots of information</li>
 </ul>
-<h4 id="batched-mutations">
-  Batched Mutations
-  <a class="anchor" href="#batched-mutations">#</a>
-</h4>
+<h4 id="batched-mutations">Batched Mutations<a class="anchor" href="#batched-mutations">#</a></h4>
 <ul>
 <li>A shopping app has a GraphQL mutation:</li>
 </ul>
-<pre tabindex="0"><code>redeemPoints(points: 100)
-</code></pre><p>Normal flow</p>
+<pre tabindex="0"><code>redeemPoints(points: 100)</code></pre><p>Normal flow</p>
 <ul>
 <li>User has <strong>100 points</strong></li>
 <li>Redeeming 100 points gives a ₹500 voucher</li>
@@ -1714,83 +1631,61 @@ then any two requests processed in the same microsecond will result in the <stro
 </ul>
 <pre tabindex="0"><code>mutation {
   redeemPoints(points:100)
-}
-</code></pre><ul>
+}</code></pre><ul>
 <li>Backend:</li>
 </ul>
 <pre tabindex="0"><code>Current points = 100
 Enough points ?
 Subtract 100
-Create voucher
-</code></pre><ul>
+Create voucher</code></pre><ul>
 <li>Result</li>
 </ul>
 <pre tabindex="0"><code>Points = 0
-1 voucher created
-</code></pre><p>Batched Mutation Request</p>
+1 voucher created</code></pre><p>Batched Mutation Request</p>
 <ul>
 <li>Now user sends one GraphQL request containing aliases:</li>
 </ul>
 <pre tabindex="0"><code>mutation {
   first: redeemPoints(points:100)
   second: redeemPoints(points:100)
-}
-</code></pre><p>Vulnerable Backend Behavior</p>
+}</code></pre><p>Vulnerable Backend Behavior</p>
 <ul>
 <li>Suppose backend resolves both mutations nearly simultaneously.</li>
 <li>Mutation <code>first</code></li>
 </ul>
 <p>Reads</p>
-<pre tabindex="0"><code>points = 100
-</code></pre><ul>
+<pre tabindex="0"><code>points = 100</code></pre><ul>
 <li>Mutation <code>second</code></li>
 </ul>
 <p>Also reads:</p>
-<pre tabindex="0"><code>points = 100
-</code></pre><p>Both think redemption is allowed.</p>
+<pre tabindex="0"><code>points = 100</code></pre><p>Both think redemption is allowed.</p>
 <p>Then both execute:</p>
 <ul>
 <li>subtract points</li>
 <li>create voucher</li>
 </ul>
 <pre tabindex="0"><code>Points = 0 or -100
-2 vouchers created
-</code></pre><ul>
+2 vouchers created</code></pre><ul>
 <li>User had enough points for <strong>one voucher</strong>, but received <strong>two</strong>.</li>
 </ul>
-<h3 id="framework-specific-scenarios">
-  Framework-Specific Scenarios
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h3>
+<h3 id="framework-specific-scenarios">Framework-Specific Scenarios<a class="anchor" href="#framework-specific-scenarios">#</a></h3>
 <ul>
 <li><strong>Node.js:</strong> Despite being single-threaded, asynchronous <code>await</code> calls create &ldquo;yield points.&rdquo; If shared state is modified across these points, race conditions occur.</li>
 <li><strong>Python (Django/Flask):</strong> While the GIL (Global Interpreter Lock) prevents true CPU parallelism for threads, it does not prevent logic races during I/O-bound operations (like database queries).</li>
 <li><strong>Java (Spring):</strong> Misusing &ldquo;Singleton&rdquo; scoped beans to store user-specific data is a classic recipe for race-condition disasters.</li>
 </ul>
-<h3 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h3>
-<h4 id="manual-using-burp-suite-repeater">
-  <strong>Manual:</strong> Using Burp Suite Repeater.
-  <a class="anchor" href="#manual-using-burp-suite-repeater">#</a>
-</h4>
+<h3 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h3>
+<h4 id="manual-using-burp-suite-repeater"><strong>Manual:</strong> Using Burp Suite Repeater.<a class="anchor" href="#manual-using-burp-suite-repeater">#</a></h4>
 <ul>
 <li>Group 20+ identical requests.</li>
 <li>Set the &ldquo;Send&rdquo; mode to <strong>&ldquo;Send group in parallel (last-byte sync).&rdquo;</strong></li>
 </ul>
-<h4 id="automated-turbo-intruder">
-  <strong>Automated:</strong> <strong>Turbo Intruder</strong>
-  <a class="anchor" href="#automated-turbo-intruder">#</a>
-</h4>
+<h4 id="automated-turbo-intruder"><strong>Automated:</strong> <strong>Turbo Intruder</strong><a class="anchor" href="#automated-turbo-intruder">#</a></h4>
 <ul>
 <li>Utilizing the <code>gate()</code> method to hold requests until they are all ready to be fired.</li>
 <li>Observe &ldquo;outlier&rdquo; responses: If 19 requests return <code>403 Forbidden</code> but 1 returns <code>200 OK</code>, you’ve won the race.</li>
 </ul>
-<h3 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h3>
+<h3 id="impact">Impact<a class="anchor" href="#impact">#</a></h3>
 <ul>
 <li><strong>Financial Loss</strong>
 <ul>
@@ -1814,24 +1709,15 @@ Create voucher
 </ul>
 </li>
 </ul>
-<h3 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h3>
+<h3 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h3>
 <ul>
 <li><strong>Atomic Database Operations:</strong> Use <code>UPDATE table SET balance = balance - 10 WHERE id = 1 AND balance &gt;= 10</code> instead of &ldquo;Select, then Update.&rdquo;</li>
 <li><strong>Database Locking:</strong> Use pessimistic locking (<code>SELECT ... FOR UPDATE</code>) to lock the row until the transaction is complete.</li>
 <li><strong>Idempotency Keys:</strong> Require a unique client-side generated key for sensitive operations; the server rejects any subsequent requests with the same key.</li>
 <li><strong>Strict State Machines:</strong> Use session-based locks to ensure a user can only have one active transition at a time.</li>
 </ul>
-<h3 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h3>
-<h4 id="burp-suite-repeater">
-  Burp Suite Repeater
-  <a class="anchor" href="#burp-suite-repeater">#</a>
-</h4>
+<h3 id="tools">Tools<a class="anchor" href="#tools">#</a></h3>
+<h4 id="burp-suite-repeater">Burp Suite Repeater<a class="anchor" href="#burp-suite-repeater">#</a></h4>
 <p>Use <strong>Proxy</strong> in Burp Suite:</p>
 <ul>
 <li>Perform any action normally (purchase, redeem coupon, transfer money, etc.)</li>
@@ -1845,8 +1731,7 @@ Host: target.com
 Cookie: session=abc123
 Content-Type: application/json
 
-{&#34;coupon&#34;:&#34;FREE100&#34;}
-</code></pre><p>Create several identical tabs:</p>
+{&#34;coupon&#34;:&#34;FREE100&#34;}</code></pre><p>Create several identical tabs:</p>
 <ul>
 <li>Right click request tab</li>
 <li>Duplicate tab</li>
@@ -1859,20 +1744,15 @@ Content-Type: application/json
 <li>Observe Responses</li>
 <li>Look for:  Successful duplicates</li>
 </ul>
-<h4 id="racepwn">
-  Racepwn
-  <a class="anchor" href="#racepwn">#</a>
-</h4>
+<h4 id="racepwn">Racepwn<a class="anchor" href="#racepwn">#</a></h4>
 <ul>
 <li>Installation</li>
 </ul>
-<pre tabindex="0"><code>docker build -t racepwn .
-</code></pre><pre tabindex="0"><code>docker run -it racepwn bash
-</code></pre><ul>
+<pre tabindex="0"><code>docker build -t racepwn .</code></pre><pre tabindex="0"><code>docker run -it racepwn bash</code></pre><ul>
 <li>Usage</li>
 <li>Set up the configuration file</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>[
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;race&#34;</span>: {
 </span></span><span style="display:flex;"><span>            <span style="color:#f92672">//</span> Setting race parameters
@@ -1892,26 +1772,19 @@ Content-Type: application/json
 </span></span><span style="display:flex;"><span>            ]
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>]</span></span></code></pre></div><ul>
 <li>Launch the tool</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>racepwn <span style="color:#f92672">&lt;</span> config.json
-</span></span></code></pre></div><h4 id="race-the-web">
-  Race-The-Web
-  <a class="anchor" href="#race-the-web">#</a>
-</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>racepwn <span style="color:#f92672">&lt;</span> config.json</span></span></code></pre></div><h4 id="race-the-web">Race-The-Web<a class="anchor" href="#race-the-web">#</a></h4>
 <ul>
 <li><strong>Race-the-Web:</strong> CLI tool for testing race conditions.
 <ul>
 <li>
 <p>Installation</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install github.com/swarley7/race-the-web@latest
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go install github.com/swarley7/race-the-web@latest</span></span></code></pre></div></li>
 <li>
 <p>Simple Scan</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>race-the-web -u <span style="color:#e6db74">&#34;https://example.com/api/redeem&#34;</span> -m POST -p <span style="color:#e6db74">&#34;coupon=DISCOUNT10&#34;</span> -n <span style="color:#ae81ff">50</span> -c <span style="color:#ae81ff">10</span>
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>race-the-web -u <span style="color:#e6db74">&#34;https://example.com/api/redeem&#34;</span> -m POST -p <span style="color:#e6db74">&#34;coupon=DISCOUNT10&#34;</span> -n <span style="color:#ae81ff">50</span> -c <span style="color:#ae81ff">10</span></span></span></code></pre></div></li>
 <li>
 <p><strong><code>-u</code></strong>: The target URL.</p>
 </li>
@@ -1930,17 +1803,14 @@ Content-Type: application/json
 </ul>
 </li>
 </ul>
-<h4 id="turbo-intruder">
-  Turbo Intruder
-  <a class="anchor" href="#turbo-intruder">#</a>
-</h4>
+<h4 id="turbo-intruder">Turbo Intruder<a class="anchor" href="#turbo-intruder">#</a></h4>
 <ul>
 <li>It is  a Burp Suite Extension which one can download form the Bapp Store</li>
 <li><strong>Send to Turbo:</strong> Right-click your request in the Proxy or Repeater and select <strong>Extensions -&gt; Turbo Intruder -&gt; Send to Turbo Intruder</strong>.</li>
 <li><strong>The Python Script:</strong> You will see a Python window. To perform a race condition, use a &ldquo;Gate&rdquo; (this synchronizes the threads).</li>
 </ul>
 <p><strong>Copy/Paste this Race Logic:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def queueRequests<span style="color:#f92672">(</span>target, wordlists<span style="color:#f92672">)</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>def queueRequests<span style="color:#f92672">(</span>target, wordlists<span style="color:#f92672">)</span>:
 </span></span><span style="display:flex;"><span>    engine <span style="color:#f92672">=</span> RequestEngine<span style="color:#f92672">(</span>endpoint<span style="color:#f92672">=</span>target.endpoint,
 </span></span><span style="display:flex;"><span>                           concurrentConnections<span style="color:#f92672">=</span>30,
 </span></span><span style="display:flex;"><span>                           requestsPerConnection<span style="color:#f92672">=</span>1,
@@ -1955,15 +1825,11 @@ Content-Type: application/json
 </span></span><span style="display:flex;"><span>    engine.openGate<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;race_gate&#39;</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>def handleResponse<span style="color:#f92672">(</span>req, interesting<span style="color:#f92672">)</span>:
-</span></span><span style="display:flex;"><span>    table.add<span style="color:#f92672">(</span>req<span style="color:#f92672">)</span>
-</span></span></code></pre></div><ul>
+</span></span><span style="display:flex;"><span>    table.add<span style="color:#f92672">(</span>req<span style="color:#f92672">)</span></span></span></code></pre></div><ul>
 <li><strong>Attack:</strong> Click <strong>Attack</strong>. A table will pop up.</li>
 <li><strong>Sort by &ldquo;Time&rdquo;:</strong> If the &ldquo;Time&rdquo; (milliseconds) for all requests is nearly identical, your synchronization worked perfectly. If you see multiple successful status codes (e.g., <code>200 OK</code>), the race condition is confirmed.</li>
 </ul>
-<h3 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h3>
+<h3 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h3>
 <ul>
 <li><a href="https://portswigger.net/research/smashing-the-state-machine" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/research/smashing-the-state-machine</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://www.yeswehack.com/learn-bug-bounty/ultimate-guide-race-condition-vulnerabilities" target="_blank" rel="noreferrer noopener nofollow">https://www.yeswehack.com/learn-bug-bounty/ultimate-guide-race-condition-vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1972,10 +1838,7 @@ Content-Type: application/json
 <li><a href="https://www.drupal.org/project/drupal/issues/3367493?source=post_page-----c5f233e32b7f---------------------------------------#:~:text=Race,reuse%20an%20already%20used%20token" target="_blank" rel="noreferrer noopener nofollow">https://www.drupal.org/project/drupal/issues/3367493?source=post_page&mdash;&ndash;c5f233e32b7f&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;#:~:text=Race,reuse an already used token</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://medium.com/@keizobugbounty/race-condition-authentication-bypass-leads-to-full-account-takeover-6b5c9bc0a54d" target="_blank" rel="noreferrer noopener nofollow">https://medium.com/@keizobugbounty/race-condition-authentication-bypass-leads-to-full-account-takeover-6b5c9bc0a54d</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h3 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h3>
+<h3 id="references">References<a class="anchor" href="#references">#</a></h3>
 <ul>
 <li><a href="https://fdzdev.medium.com/guide-to-identifying-and-exploiting-toctou-race-conditions-in-web-applications-c5f233e32b7f" target="_blank" rel="noreferrer noopener nofollow">https://fdzdev.medium.com/guide-to-identifying-and-exploiting-toctou-race-conditions-in-web-applications-c5f233e32b7f</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPRACECONDITION.md" target="_blank" rel="noreferrer noopener nofollow">https://github.com/reddelexc/hackerone-reports/blob/master/tops_by_bug_type/TOPRACECONDITION.md</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1992,49 +1855,62 @@ Content-Type: application/json
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/930cd58c048c49a6cd3c5045ba784f0e26bd6d68" title='Last modified by Suraj Kumar | August 13, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 13, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Race%20Conditions.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Prototype-Pollution/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Prototype Pollution</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Rate-Limiting/" class="flex align-center">
+        <span>Rate Limiting</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2062,15 +1938,24 @@ Content-Type: application/json
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Web application # This Cheat sheet focus on Installing different Vulnerable Web applications that build with different technology stacks like Java, Nodejs, PHP and Python [Contains 30&#43; Vulnerable Applications]
-Easier for peoples to download and install in different ways through Docker, Vagrant, VM, Manual, and Host in local machine.
-Java Vulnerable Applications # Web Goat Host in local machine download jar file: https://github.com/WebGoat/WebGoat/releases/download/v2023.4/webgoat-2023.4.jar java -jar webgoat&lt;branchname&gt; Browse localhost:8080/WebGoat Register &amp; start practicing Docker docker pull webgoat/goatandwolf docker run -it -p 127.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="Web application # This Cheat sheet focus on Installing different Vulnerable Web applications that build with different technology stacks like Java, Nodejs, PHP and Python [Contains 30&#43; Vulnerable Applications]
-Easier for peoples to download and install in different ways through Docker, Vagrant, VM, Manual, and Host in local machine.
-Java Vulnerable Applications # Web Goat Host in local machine download jar file: https://github.com/WebGoat/WebGoat/releases/download/v2023.4/webgoat-2023.4.jar java -jar webgoat&lt;branchname&gt; Browse localhost:8080/WebGoat Register &amp; start practicing Docker docker pull webgoat/goatandwolf docker run -it -p 127." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2024-01-23T18:33:15+05:30" />
-<title>Web App | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web application# This Cheat sheet focus on Installing different Vulnerable Web applications that build with different technology stacks like Java, Nodejs, PHP and Python [Contains 30&#43; Vulnerable Applications]
+Easier for peoples to download and install in different ways through Docker, Vagrant, VM, Manual, and Host in local machine.
+Java Vulnerable Applications# Web Goat Host in local machine download jar file: https://github.com/WebGoat/WebGoat/releases/download/v2023.4/webgoat-2023.4.jar java -jar webgoat&lt;branchname&gt; Browse localhost:8080/WebGoat Register &amp; start practicing Docker docker pull webgoat/goatandwolf docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat Browse http://127.0.0.1:8080/WebGoat As long as we don’t remove the container we can use: docker start webgoat Bodgelt Store Docker docker pull psiinon/bodgeit docker run --rm -p 8080:8080 -i -t psiinon/bodgeit Browse http://127.0.0.1:8080/bodgeit As long as we don’t remove the container we can use: docker start bodgeit EasyBuggy Docker Download easybuggy locally docker build . -t easybuggy:local docker run -p 8080:8080 easybuggy:local Browse http://127.0.0.1:8080 To stop https://127.0.0.1:8080/exit Marathon Docker Download locally docker build -f Dockerfile-local -t marathon:latest . If any issues, run npm audit docker run --rm --name marathon-8080 -p 127.0.0.1:8080:8080 --cpu-shares=&#34;256&#34; --memory-reservation=&#34;512m&#34; --memory=&#34;1g&#34; marathon:latest Browse [http://localhost:8080/marathon](http://localhost:8080/marathon) Access the page http://localhost:8080/marathon/showMarathons.page Create account and start hacking OWASP Vulnerable App Docker Clone the repo git clone https://github.com/SasanLabs/VulnerableApp.git cd VulnerableApp docker-compose pull &amp;&amp; docker-compose up Browse http://localhost Host in local machine Download Jar file https://github.com/SasanLabs/VulnerableApp/releases/download/1.11.0/VulnerableApp-1.11.0.jar Navigate to the project directory java -jar VulnerableApp-* Browse http://localhost:9090/VulnerableApp Security Shepherd Docker git clone https://github.com/OWASP/SecurityShepherd.git cd SecurityShepherd sudo gpasswd -a $USER docker mvn -Pdocker clean install -DskipTests docker-compose up Browse http://localhost [admin:password] Virtual Box Download file - https://github.com/OWASP/SecurityShepherd/releases/download/v3.1/owaspSecurityShepherd_v3.1_VM.zip Import the file in VM Start the machine Login with default credentials included in the VM Download .txt file {(user: securityshepherd pass: shepherd3.1)} Check your IP address with ifconfig Browse http://&lt;yourip&gt; Start hacking Vulnerable Java Web application Docker git clone https://github.com/CSPF-Founder/JavaVulnerableLab.git cd JavaVulnerableLab sudo docker-compose up Browse [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp) Click on the Install button Virtual Box Download file - https://sourceforge.net/projects/javavulnerablelab/files/v0.1/JavaVulnerableLab.ova/download Import the JavaVulnerable.ova into VirtualBox Change the Network Settings to Host-Only Network Start the Machine and Log into the Machine( Credentials→ Username: root, Password: cspf) Start Tomcat by entering “service tomcat start” in the Terminal Start MySQL by entering “service mysql start” in the Terminal Find the IP Address of Machine - ifconfig In your Browser, go to “http://[IP_ADDRESS_OF_VM]:8080/JavaVulnerableLab/install.jsp Click the Install Button Host in local machine Download Jar file http://sourceforge.net/projects/javavulnerablelab/files/v0.2/JavaVulnerableLab.jar/download Navigate to the project directory Run java -jar JavaVulnerableLab.jar Browse http://localhost:8080/JavaVulnerableLab/install.jsp Nodejs Vulnerable Applications# Juice shop Host it in local Machine
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Cyber Security Wiki">
+	<meta property="og:description" content="Web application# This Cheat sheet focus on Installing different Vulnerable Web applications that build with different technology stacks like Java, Nodejs, PHP and Python [Contains 30&#43; Vulnerable Applications]
+Easier for peoples to download and install in different ways through Docker, Vagrant, VM, Manual, and Host in local machine.
+Java Vulnerable Applications# Web Goat Host in local machine download jar file: https://github.com/WebGoat/WebGoat/releases/download/v2023.4/webgoat-2023.4.jar java -jar webgoat&lt;branchname&gt; Browse localhost:8080/WebGoat Register &amp; start practicing Docker docker pull webgoat/goatandwolf docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat Browse http://127.0.0.1:8080/WebGoat As long as we don’t remove the container we can use: docker start webgoat Bodgelt Store Docker docker pull psiinon/bodgeit docker run --rm -p 8080:8080 -i -t psiinon/bodgeit Browse http://127.0.0.1:8080/bodgeit As long as we don’t remove the container we can use: docker start bodgeit EasyBuggy Docker Download easybuggy locally docker build . -t easybuggy:local docker run -p 8080:8080 easybuggy:local Browse http://127.0.0.1:8080 To stop https://127.0.0.1:8080/exit Marathon Docker Download locally docker build -f Dockerfile-local -t marathon:latest . If any issues, run npm audit docker run --rm --name marathon-8080 -p 127.0.0.1:8080:8080 --cpu-shares=&#34;256&#34; --memory-reservation=&#34;512m&#34; --memory=&#34;1g&#34; marathon:latest Browse [http://localhost:8080/marathon](http://localhost:8080/marathon) Access the page http://localhost:8080/marathon/showMarathons.page Create account and start hacking OWASP Vulnerable App Docker Clone the repo git clone https://github.com/SasanLabs/VulnerableApp.git cd VulnerableApp docker-compose pull &amp;&amp; docker-compose up Browse http://localhost Host in local machine Download Jar file https://github.com/SasanLabs/VulnerableApp/releases/download/1.11.0/VulnerableApp-1.11.0.jar Navigate to the project directory java -jar VulnerableApp-* Browse http://localhost:9090/VulnerableApp Security Shepherd Docker git clone https://github.com/OWASP/SecurityShepherd.git cd SecurityShepherd sudo gpasswd -a $USER docker mvn -Pdocker clean install -DskipTests docker-compose up Browse http://localhost [admin:password] Virtual Box Download file - https://github.com/OWASP/SecurityShepherd/releases/download/v3.1/owaspSecurityShepherd_v3.1_VM.zip Import the file in VM Start the machine Login with default credentials included in the VM Download .txt file {(user: securityshepherd pass: shepherd3.1)} Check your IP address with ifconfig Browse http://&lt;yourip&gt; Start hacking Vulnerable Java Web application Docker git clone https://github.com/CSPF-Founder/JavaVulnerableLab.git cd JavaVulnerableLab sudo docker-compose up Browse [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp) Click on the Install button Virtual Box Download file - https://sourceforge.net/projects/javavulnerablelab/files/v0.1/JavaVulnerableLab.ova/download Import the JavaVulnerable.ova into VirtualBox Change the Network Settings to Host-Only Network Start the Machine and Log into the Machine( Credentials→ Username: root, Password: cspf) Start Tomcat by entering “service tomcat start” in the Terminal Start MySQL by entering “service mysql start” in the Terminal Find the IP Address of Machine - ifconfig In your Browser, go to “http://[IP_ADDRESS_OF_VM]:8080/JavaVulnerableLab/install.jsp Click the Install Button Host in local machine Download Jar file http://sourceforge.net/projects/javavulnerablelab/files/v0.2/JavaVulnerableLab.jar/download Navigate to the project directory Run java -jar JavaVulnerableLab.jar Browse http://localhost:8080/JavaVulnerableLab/install.jsp Nodejs Vulnerable Applications# Juice shop Host it in local Machine">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2024-01-23T18:33:15+05:30">
+
+
+	<meta itemprop="name" content="Cyber Security Wiki">
+	<meta itemprop="description" content="Web application# This Cheat sheet focus on Installing different Vulnerable Web applications that build with different technology stacks like Java, Nodejs, PHP and Python [Contains 30&#43; Vulnerable Applications]
+Easier for peoples to download and install in different ways through Docker, Vagrant, VM, Manual, and Host in local machine.
+Java Vulnerable Applications# Web Goat Host in local machine download jar file: https://github.com/WebGoat/WebGoat/releases/download/v2023.4/webgoat-2023.4.jar java -jar webgoat&lt;branchname&gt; Browse localhost:8080/WebGoat Register &amp; start practicing Docker docker pull webgoat/goatandwolf docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat Browse http://127.0.0.1:8080/WebGoat As long as we don’t remove the container we can use: docker start webgoat Bodgelt Store Docker docker pull psiinon/bodgeit docker run --rm -p 8080:8080 -i -t psiinon/bodgeit Browse http://127.0.0.1:8080/bodgeit As long as we don’t remove the container we can use: docker start bodgeit EasyBuggy Docker Download easybuggy locally docker build . -t easybuggy:local docker run -p 8080:8080 easybuggy:local Browse http://127.0.0.1:8080 To stop https://127.0.0.1:8080/exit Marathon Docker Download locally docker build -f Dockerfile-local -t marathon:latest . If any issues, run npm audit docker run --rm --name marathon-8080 -p 127.0.0.1:8080:8080 --cpu-shares=&#34;256&#34; --memory-reservation=&#34;512m&#34; --memory=&#34;1g&#34; marathon:latest Browse [http://localhost:8080/marathon](http://localhost:8080/marathon) Access the page http://localhost:8080/marathon/showMarathons.page Create account and start hacking OWASP Vulnerable App Docker Clone the repo git clone https://github.com/SasanLabs/VulnerableApp.git cd VulnerableApp docker-compose pull &amp;&amp; docker-compose up Browse http://localhost Host in local machine Download Jar file https://github.com/SasanLabs/VulnerableApp/releases/download/1.11.0/VulnerableApp-1.11.0.jar Navigate to the project directory java -jar VulnerableApp-* Browse http://localhost:9090/VulnerableApp Security Shepherd Docker git clone https://github.com/OWASP/SecurityShepherd.git cd SecurityShepherd sudo gpasswd -a $USER docker mvn -Pdocker clean install -DskipTests docker-compose up Browse http://localhost [admin:password] Virtual Box Download file - https://github.com/OWASP/SecurityShepherd/releases/download/v3.1/owaspSecurityShepherd_v3.1_VM.zip Import the file in VM Start the machine Login with default credentials included in the VM Download .txt file {(user: securityshepherd pass: shepherd3.1)} Check your IP address with ifconfig Browse http://&lt;yourip&gt; Start hacking Vulnerable Java Web application Docker git clone https://github.com/CSPF-Founder/JavaVulnerableLab.git cd JavaVulnerableLab sudo docker-compose up Browse [http://localhost:8080/JavaVulnerableLab/install.jsp](http://localhost:8080/JavaVulnerableLab/install.jsp) Click on the Install button Virtual Box Download file - https://sourceforge.net/projects/javavulnerablelab/files/v0.1/JavaVulnerableLab.ova/download Import the JavaVulnerable.ova into VirtualBox Change the Network Settings to Host-Only Network Start the Machine and Log into the Machine( Credentials→ Username: root, Password: cspf) Start Tomcat by entering “service tomcat start” in the Terminal Start MySQL by entering “service mysql start” in the Terminal Find the IP Address of Machine - ifconfig In your Browser, go to “http://[IP_ADDRESS_OF_VM]:8080/JavaVulnerableLab/install.jsp Click the Install Button Host in local machine Download Jar file http://sourceforge.net/projects/javavulnerablelab/files/v0.2/JavaVulnerableLab.jar/download Navigate to the project directory Run java -jar JavaVulnerableLab.jar Browse http://localhost:8080/JavaVulnerableLab/install.jsp Nodejs Vulnerable Applications# Juice shop Host it in local Machine">
+	<meta itemprop="dateModified" content="2024-01-23T18:33:15+05:30">
+	<meta itemprop="wordCount" content="1556">
+
+<title>Web App • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/Vulnerable-Applications/WebApp/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -43,11 +62,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -58,9 +81,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -75,8 +95,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -92,8 +112,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -179,8 +199,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle" checked />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle" checked />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -227,8 +247,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle"  />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle"  />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -982,8 +1002,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1004,8 +1024,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1026,8 +1046,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1048,8 +1068,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1070,8 +1090,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1105,8 +1125,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1127,8 +1147,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1149,8 +1169,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1171,35 +1191,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1207,30 +1205,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Web App</strong>
+  <h3>Web App</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1256,16 +1255,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="web-application">
-  Web application
-  <a class="anchor" href="#web-application">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="web-application">Web application<a class="anchor" href="#web-application">#</a></h1>
 <p>This Cheat sheet focus on Installing different Vulnerable Web applications that build with different  technology stacks like Java, Nodejs, PHP and Python [Contains 30+ Vulnerable Applications]</p>
 <p>Easier for peoples to download and install in different ways through Docker, Vagrant, VM, Manual, and Host in local machine.</p>
-<h2 id="java-vulnerable-applications">
-  Java Vulnerable Applications
-  <a class="anchor" href="#java-vulnerable-applications">#</a>
-</h2>
+<h2 id="java-vulnerable-applications">Java Vulnerable Applications<a class="anchor" href="#java-vulnerable-applications">#</a></h2>
 <ul>
 <li><a href="https://github.com/WebGoat/WebGoat" target="_blank" rel="noreferrer noopener nofollow">Web Goat</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
 <ul>
@@ -1407,10 +1400,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h2 id="nodejs-vulnerable-applications">
-  Nodejs Vulnerable Applications
-  <a class="anchor" href="#nodejs-vulnerable-applications">#</a>
-</h2>
+<h2 id="nodejs-vulnerable-applications">Nodejs Vulnerable Applications<a class="anchor" href="#nodejs-vulnerable-applications">#</a></h2>
 <ul>
 <li><a href="https://github.com/juice-shop/juice-shop" target="_blank" rel="noreferrer noopener nofollow">Juice shop</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
 <ul>
@@ -1461,11 +1451,10 @@ https://github.com/alex-shpak/hugo-book
 <li><code>git clone https://github.com/appsecco/dvna; cd dvna</code></li>
 <li>Create one ‘vars.env’ file with this cred</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">MYSQL_USER</span><span style="color:#f92672">=</span><span style="color:#a6e22e">dvna</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">MYSQL_USER</span><span style="color:#f92672">=</span><span style="color:#a6e22e">dvna</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">MYSQL_DATABASE</span><span style="color:#f92672">=</span><span style="color:#a6e22e">dvna</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">MYSQL_PASSWORD</span><span style="color:#f92672">=</span><span style="color:#a6e22e">passw0rd</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MYSQL_RANDOM_ROOT_PASSWORD</span><span style="color:#f92672">=</span><span style="color:#a6e22e">yes</span>
-</span></span></code></pre></div><ol>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MYSQL_RANDOM_ROOT_PASSWORD</span><span style="color:#f92672">=</span><span style="color:#a6e22e">yes</span></span></span></code></pre></div><ol>
 <li><code>docker-compose up</code></li>
 <li>Browse [<code>http://127.0.0.1:9090/](http://127.0.0.1:9090/)</code></li>
 </ol>
@@ -1476,12 +1465,11 @@ https://github.com/alex-shpak/hugo-book
 <li><code>git clone https://github.com/appsecco/dvna; cd dvna</code></li>
 <li>Configure the environment variables with your database information</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">MYSQL_USER</span><span style="color:#f92672">=</span><span style="color:#a6e22e">dvna</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">MYSQL_USER</span><span style="color:#f92672">=</span><span style="color:#a6e22e">dvna</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">MYSQL_DATABASE</span><span style="color:#f92672">=</span><span style="color:#a6e22e">dvna</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">MYSQL_PASSWORD</span><span style="color:#f92672">=</span><span style="color:#a6e22e">passw0rd</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">MYSQL_HOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">127.0.0.1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">MYSQL_PORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
-</span></span></code></pre></div><ol>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#a6e22e">MYSQL_PORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span></span></span></code></pre></div><ol>
 <li><code>npm install</code></li>
 <li><code>npm start</code></li>
 <li>Access the application at <a href="http://localhost:9090/" target="_blank" rel="noreferrer noopener nofollow">http://localhost:9090</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1584,7 +1572,7 @@ mysql&gt; <code>create database vuln_nodejs_app;</code></p>
 </li>
 <li>
 <p>Update your MySQL and MongoDB database username and password inside <strong>.env</strong> file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">DB_PORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a6e22e">DB_PORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3306</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">DB_NAME</span><span style="color:#f92672">=</span><span style="color:#a6e22e">vuln_nodejs_app</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">DB_USER</span><span style="color:#f92672">=</span><span style="color:#a6e22e">vuln_nodejs_user</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">DB_PASS</span><span style="color:#f92672">=</span><span style="color:#a6e22e">passw0rd</span>
@@ -1592,8 +1580,7 @@ mysql&gt; <code>create database vuln_nodejs_app;</code></p>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">JWT_SECRET</span><span style="color:#f92672">=</span><span style="color:#a6e22e">secret</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">MONGODB_SERVER</span><span style="color:#f92672">=</span><span style="color:#a6e22e">localhost</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">MONGODB_ADMINUSERNAME</span><span style="color:#f92672">=</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MONGODB_ADMINPASSWORD</span><span style="color:#f92672">=</span>
-</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">MONGODB_ADMINPASSWORD</span><span style="color:#f92672">=</span></span></span></code></pre></div></li>
 <li>
 <p><code>npm install</code></p>
 </li>
@@ -1611,10 +1598,7 @@ mysql&gt; <code>create database vuln_nodejs_app;</code></p>
 </ul>
 </li>
 </ul>
-<h2 id="php-vulnerable-applications">
-  PHP Vulnerable Applications
-  <a class="anchor" href="#php-vulnerable-applications">#</a>
-</h2>
+<h2 id="php-vulnerable-applications">PHP Vulnerable Applications<a class="anchor" href="#php-vulnerable-applications">#</a></h2>
 <ul>
 <li><a href="https://github.com/webpwnized/mutillidae" target="_blank" rel="noreferrer noopener nofollow">Mutillidae</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
 <ul>
@@ -1897,10 +1881,7 @@ mysql&gt; <code>create database vuln_nodejs_app;</code></p>
 </ul>
 </li>
 </ul>
-<h2 id="python-vulnerable-applications">
-  Python Vulnerable Applications
-  <a class="anchor" href="#python-vulnerable-applications">#</a>
-</h2>
+<h2 id="python-vulnerable-applications">Python Vulnerable Applications<a class="anchor" href="#python-vulnerable-applications">#</a></h2>
 <ul>
 <li><a href="https://github.com/stamparm/DSVW" target="_blank" rel="noreferrer noopener nofollow">Damn Small Vulnerable Web [DSVW]</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">
 <ul>
@@ -1979,10 +1960,7 @@ mysql&gt; <code>create database vuln_nodejs_app;</code></p>
 </ul>
 </li>
 </ul>
-<h2 id="direct-online-practice">
-  Direct Online Practice
-  <a class="anchor" href="#direct-online-practice">#</a>
-</h2>
+<h2 id="direct-online-practice">Direct Online Practice<a class="anchor" href="#direct-online-practice">#</a></h2>
 <ol>
 <li><a href="http://testphp.vulnweb.com/" target="_blank" rel="noreferrer noopener nofollow">Acunetix</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="http://demo.testfire.net/" target="_blank" rel="noreferrer noopener nofollow">Altoro Mutual</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2010,49 +1988,62 @@ mysql&gt; <code>create database vuln_nodejs_app;</code></p>
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/655b2fe4e9c9468fcc683693d8256ef37af65cf5" title='Last modified by 0xaluvi | January 23, 2024' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>January 23, 2024</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/Vulnerable%20Applications/WebApp.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/Vulnerable-Applications/Api/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>API</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Account-Takeover/" class="flex align-center">
+        <span>Account Takeover</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2069,15 +2060,24 @@ mysql&gt; <code>create database vuln_nodejs_app;</code></p>
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

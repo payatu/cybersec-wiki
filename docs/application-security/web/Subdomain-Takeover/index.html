@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Subdomain Takeover # Subdomain Takeover is a web application security vulnerability that occurs when a subdomain points to a third-party service (e.g., GitHub Pages, Heroku, AWS S3) that has been removed or deleted. An attacker can claim the abandoned resource on that service and effectively &ldquo;take over&rdquo; the subdomain, leading to phishing, session hijacking, OAuth token theft, and reputational damage.
-Fundamentals of Subdomain Takeover # Types of Takeovers : # 1.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Subdomain Takeover" />
-<meta property="og:description" content="Subdomain Takeover # Subdomain Takeover is a web application security vulnerability that occurs when a subdomain points to a third-party service (e.g., GitHub Pages, Heroku, AWS S3) that has been removed or deleted. An attacker can claim the abandoned resource on that service and effectively &ldquo;take over&rdquo; the subdomain, leading to phishing, session hijacking, OAuth token theft, and reputational damage.
-Fundamentals of Subdomain Takeover # Types of Takeovers : # 1." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Subdomain Takeover | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Subdomain Takeover# Subdomain Takeover is a web application security vulnerability that occurs when a subdomain points to a third-party service (e.g., GitHub Pages, Heroku, AWS S3) that has been removed or deleted. An attacker can claim the abandoned resource on that service and effectively “take over” the subdomain, leading to phishing, session hijacking, OAuth token theft, and reputational damage.
+Fundamentals of Subdomain Takeover# Types of Takeovers :# 1. CNAME-Based Subdomain Takeover
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Subdomain Takeover">
+	<meta property="og:description" content="Subdomain Takeover# Subdomain Takeover is a web application security vulnerability that occurs when a subdomain points to a third-party service (e.g., GitHub Pages, Heroku, AWS S3) that has been removed or deleted. An attacker can claim the abandoned resource on that service and effectively “take over” the subdomain, leading to phishing, session hijacking, OAuth token theft, and reputational damage.
+Fundamentals of Subdomain Takeover# Types of Takeovers :# 1. CNAME-Based Subdomain Takeover">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Subdomain Takeover">
+	<meta itemprop="description" content="Subdomain Takeover# Subdomain Takeover is a web application security vulnerability that occurs when a subdomain points to a third-party service (e.g., GitHub Pages, Heroku, AWS S3) that has been removed or deleted. An attacker can claim the abandoned resource on that service and effectively “take over” the subdomain, leading to phishing, session hijacking, OAuth token theft, and reputational damage.
+Fundamentals of Subdomain Takeover# Types of Takeovers :# 1. CNAME-Based Subdomain Takeover">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1818">
+
+<title>Subdomain Takeover • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Subdomain-Takeover/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Subdomain Takeover</strong>
+  <h3>Subdomain Takeover</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1295,19 +1293,10 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="subdomain-takeover">
-  Subdomain Takeover
-  <a class="anchor" href="#subdomain-takeover">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="subdomain-takeover">Subdomain Takeover<a class="anchor" href="#subdomain-takeover">#</a></h1>
 <p>Subdomain Takeover is a web application security vulnerability that occurs when a subdomain points to a third-party service (e.g., GitHub Pages, Heroku, AWS S3) that has been removed or deleted. An attacker can claim the abandoned resource on that service and effectively &ldquo;take over&rdquo; the subdomain, leading to phishing, session hijacking, OAuth token theft, and reputational damage.</p>
-<h2 id="fundamentals-of-subdomain-takeover">
-  Fundamentals of Subdomain Takeover
-  <a class="anchor" href="#fundamentals-of-subdomain-takeover">#</a>
-</h2>
-<h3 id="types-of-takeovers-">
-  Types of Takeovers :
-  <a class="anchor" href="#types-of-takeovers-">#</a>
-</h3>
+<h2 id="fundamentals-of-subdomain-takeover">Fundamentals of Subdomain Takeover<a class="anchor" href="#fundamentals-of-subdomain-takeover">#</a></h2>
+<h3 id="types-of-takeovers-">Types of Takeovers :<a class="anchor" href="#types-of-takeovers-">#</a></h3>
 <p><strong>1. CNAME-Based Subdomain Takeover</strong></p>
 <ul>
 <li>Subdomain has a CNAME record pointing to a third-party service (e.g., <code>sub.victim.com</code> → <code>custom.gohire.io</code>)</li>
@@ -1343,19 +1332,13 @@ https://github.com/alex-shpak/hugo-book
 <li>Attacker creates a GitHub Page matching the wildcard target</li>
 <li>Can generate arbitrary subdomains for the victim domain</li>
 </ul>
-<h3 id="base-concepts">
-  Base Concepts
-  <a class="anchor" href="#base-concepts">#</a>
-</h3>
+<h3 id="base-concepts">Base Concepts<a class="anchor" href="#base-concepts">#</a></h3>
 <ul>
 <li><strong>Dangling DNS Record:</strong> A DNS record (CNAME, A, etc.) that points to a resource that no longer exists or has been released</li>
 <li><strong>Claiming:</strong> Registering the same resource name on the third-party service to &ldquo;claim&rdquo; the subdomain</li>
 <li><strong>Ownership Verification:</strong> Secure services (e.g., Okta) require DNS TXT record verification before allowing custom domains—these are typically not vulnerable</li>
 </ul>
-<h2 id="important-points">
-  Important Points
-  <a class="anchor" href="#important-points">#</a>
-</h2>
+<h2 id="important-points">Important Points<a class="anchor" href="#important-points">#</a></h2>
 <ul>
 <li>Subdomain takeover happens because DNS records get messy—forgotten CNAMEs, decommissioned services, or outdated entries</li>
 <li>Microsoft found <strong>670+ vulnerable subdomains</strong> in a single audit</li>
@@ -1364,10 +1347,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Vulnerable services (GitHub Pages, Heroku, S3, Netlify, etc.) only require a CNAME pointing to them—no TXT verification</li>
 <li>Secure services (Okta, Statuspage) use domain ownership challenges (e.g., random TXT record) before allowing custom domains</li>
 </ul>
-<h2 id="attack-surfaces">
-  Attack Surfaces
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
+<h2 id="attack-surfaces">Attack Surfaces<a class="anchor" href="#attack-surfaces">#</a></h2>
 <ul>
 <li><strong>Subdomains pointing to:</strong>
 <ul>
@@ -1387,14 +1367,8 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>CORS</strong> policies trusting subdomains</li>
 <li><strong>Cookie scoping</strong> (e.g., <code>domain=.example.com</code>) making cookies accessible to any subdomain</li>
 </ul>
-<h2 id="exploitation-and-bypassing-defenses">
-  Exploitation and Bypassing Defenses
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h2>
-<h3 id="step-1-enumerate-subdomains">
-  Step 1: Enumerate Subdomains
-  <a class="anchor" href="#step-1-enumerate-subdomains">#</a>
-</h3>
+<h2 id="exploitation-and-bypassing-defenses">Exploitation and Bypassing Defenses<a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h2>
+<h3 id="step-1-enumerate-subdomains">Step 1: Enumerate Subdomains<a class="anchor" href="#step-1-enumerate-subdomains">#</a></h3>
 <p><strong>Passive Enumeration</strong> (no direct interaction with target):</p>
 <ul>
 <li>Certificate Transparency logs, search engines, VirusTotal</li>
@@ -1405,63 +1379,41 @@ https://github.com/alex-shpak/hugo-book
 <li>Brute-force subdomains using wordlists</li>
 <li>Tools: <strong>MassDNS</strong>, <strong>puredns</strong>, <strong>dnsgen</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sublist3r</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Sublist3r</span>
 </span></span><span style="display:flex;"><span>python sublist3r.py -d example.com -o subdomains.txt
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Amass (passive + active)</span>
-</span></span><span style="display:flex;"><span>amass enum -passive -d example.com -o subdomains.txt
-</span></span></code></pre></div><h3 id="step-2-identify-dangling-cnames">
-  Step 2: Identify Dangling CNAMEs
-  <a class="anchor" href="#step-2-identify-dangling-cnames">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>amass enum -passive -d example.com -o subdomains.txt</span></span></code></pre></div><h3 id="step-2-identify-dangling-cnames">Step 2: Identify Dangling CNAMEs<a class="anchor" href="#step-2-identify-dangling-cnames">#</a></h3>
 <ul>
 <li>For each subdomain, resolve CNAME and check if target host exists</li>
 <li>If CNAME points to a third-party (e.g., <code>s3.amazonaws.com</code>, <code>github.io</code>) and that resource returns 404 / &ldquo;not found&rdquo; → potential takeover</li>
 </ul>
-<h3 id="step-3-fingerprint-and-claim">
-  Step 3: Fingerprint and Claim
-  <a class="anchor" href="#step-3-fingerprint-and-claim">#</a>
-</h3>
+<h3 id="step-3-fingerprint-and-claim">Step 3: Fingerprint and Claim<a class="anchor" href="#step-3-fingerprint-and-claim">#</a></h3>
 <ul>
 <li>Match HTTP response against known error signatures (see <a href="https://github.com/EdOverflow/can-i-take-over-xyz" target="_blank" rel="noreferrer noopener nofollow">Can I Take Over XYZ?</a><img src="/svg/icons8-external-link.svg" style="height: 15px;">)</li>
 <li>Register the resource on the third-party service (S3 bucket, GitHub Page, Heroku app) with the same name as the CNAME target</li>
 <li>Serve PoC content on a hidden path (e.g., <code>/random-string.html</code> with HTML comment)</li>
 </ul>
-<h3 id="bypassing-ownership-verification">
-  Bypassing Ownership Verification
-  <a class="anchor" href="#bypassing-ownership-verification">#</a>
-</h3>
+<h3 id="bypassing-ownership-verification">Bypassing Ownership Verification<a class="anchor" href="#bypassing-ownership-verification">#</a></h3>
 <ul>
 <li>Some services have weak or no verification—adding a CNAME is enough</li>
 <li>For services with TXT verification, subdomain takeover is <strong>not</strong> possible unless there is a bypass</li>
 <li>Check <a href="https://github.com/EdOverflow/can-i-take-over-xyz" target="_blank" rel="noreferrer noopener nofollow">can-i-take-over-xyz</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> for per-service status (Vulnerable / Edge case / Not vulnerable)</li>
 </ul>
-<h3 id="wildcard-cname-bypass">
-  Wildcard CNAME Bypass
-  <a class="anchor" href="#wildcard-cname-bypass">#</a>
-</h3>
+<h3 id="wildcard-cname-bypass">Wildcard CNAME Bypass<a class="anchor" href="#wildcard-cname-bypass">#</a></h3>
 <ul>
 <li>If <code>.example.com</code> CNAME points to <code>something.github.io</code></li>
 <li>Create a GitHub Page for <code>something</code> → all non-existent subdomains resolve to attacker content</li>
 <li>Example: <a href="https://ctf.zeyu2001.com/2022/nitectf-2022/undocumented-js-api" target="_blank" rel="noreferrer noopener nofollow">NITECTF 2022 CTF write-up</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="advanced-attack-scenarios">
-  Advanced Attack Scenarios
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-cookie-theft-and-session-hijacking">
-  1. Cookie Theft and Session Hijacking
-  <a class="anchor" href="#1-cookie-theft-and-session-hijacking">#</a>
-</h3>
+<h2 id="advanced-attack-scenarios">Advanced Attack Scenarios<a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-cookie-theft-and-session-hijacking">1. Cookie Theft and Session Hijacking<a class="anchor" href="#1-cookie-theft-and-session-hijacking">#</a></h3>
 <ul>
 <li>If cookies are scoped to <code>domain=.example.com</code>, any subdomain can read them (unless HttpOnly)</li>
 <li>From <code>evil.example.com</code> (taken over), attacker loads <code>https://example.com</code> in iframe or sends requests → browser sends cookies</li>
 <li>Steal session cookies and replay for account takeover</li>
 </ul>
-<h3 id="2-cors-bypass">
-  2. CORS Bypass
-  <a class="anchor" href="#2-cors-bypass">#</a>
-</h3>
+<h3 id="2-cors-bypass">2. CORS Bypass<a class="anchor" href="#2-cors-bypass">#</a></h3>
 <ul>
 <li>Main app may allow <code>Access-Control-Allow-Origin: https://*.example.com</code></li>
 <li>After takeover, attacker’s page at <code>taken-over.example.com</code> sends requests to main domain</li>
@@ -1469,170 +1421,145 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <pre tabindex="0"><code>GET /api/user HTTP/1.1
 Host: example.com
-Origin: &lt;https://vulnerable.example.com&gt;
-</code></pre><p>If server responds with <code>Access-Control-Allow-Origin: &lt;https://vulnerable.example.com</code>&gt; and attacker controls that subdomain → data stolen</p>
-<h3 id="3-oauth-token-theft-via-redirect-uri">
-  3. OAuth Token Theft via Redirect URI
-  <a class="anchor" href="#3-oauth-token-theft-via-redirect-uri">#</a>
-</h3>
+Origin: &lt;https://vulnerable.example.com&gt;</code></pre><p>If server responds with <code>Access-Control-Allow-Origin: &lt;https://vulnerable.example.com</code>&gt; and attacker controls that subdomain → data stolen</p>
+<h3 id="3-oauth-token-theft-via-redirect-uri">3. OAuth Token Theft via Redirect URI<a class="anchor" href="#3-oauth-token-theft-via-redirect-uri">#</a></h3>
 <ul>
 <li>OAuth whitelist: <code>.example.com</code></li>
 <li>Attacker uses <code>redirect_uri=https://taken-over.example.com/callback</code></li>
 <li>Victim authenticates → OAuth provider redirects with <code>code</code> or <code>access_token</code></li>
 <li>Attacker captures token → account takeover</li>
 </ul>
-<h3 id="4-csp-bypass">
-  4. CSP Bypass
-  <a class="anchor" href="#4-csp-bypass">#</a>
-</h3>
+<h3 id="4-csp-bypass">4. CSP Bypass<a class="anchor" href="#4-csp-bypass">#</a></h3>
 <ul>
 <li>CSP: <code>script-src 'self' vulnerable.example.com</code></li>
 <li>Attacker hosts malicious script on taken-over subdomain</li>
 <li>Page loads script from <code>https://vulnerable.example.com/evil.js</code> → XSS, keylogging, etc.</li>
 </ul>
-<h3 id="5-csrf-with-same-site-cookies">
-  5. CSRF with Same-Site Cookies
-  <a class="anchor" href="#5-csrf-with-same-site-cookies">#</a>
-</h3>
+<h3 id="5-csrf-with-same-site-cookies">5. CSRF with Same-Site Cookies<a class="anchor" href="#5-csrf-with-same-site-cookies">#</a></h3>
 <ul>
 <li>Modern browsers use SameSite; subdomains are still &ldquo;same site&rdquo;</li>
 <li>From taken-over subdomain, attacker sends POST to main domain</li>
 <li>Cookies sent automatically (unless SameSite=Strict and cross-site)</li>
 <li>Enables CSRF if no other protections (e.g., anti-CSRF tokens) exist</li>
 </ul>
-<h3 id="6-phishing-with-legitimate-domain">
-  6. Phishing with Legitimate Domain
-  <a class="anchor" href="#6-phishing-with-legitimate-domain">#</a>
-</h3>
+<h3 id="6-phishing-with-legitimate-domain">6. Phishing with Legitimate Domain<a class="anchor" href="#6-phishing-with-legitimate-domain">#</a></h3>
 <ul>
 <li>Subdomain under victim’s domain + valid SSL (Let’s Encrypt)</li>
 <li>Phishing emails/links look legitimate → higher success</li>
 <li>Harder for spam filters to block</li>
 </ul>
-<h3 id="7-email-abuse-mx-takeover">
-  7. Email Abuse (MX Takeover)
-  <a class="anchor" href="#7-email-abuse-mx-takeover">#</a>
-</h3>
+<h3 id="7-email-abuse-mx-takeover">7. Email Abuse (MX Takeover)<a class="anchor" href="#7-email-abuse-mx-takeover">#</a></h3>
 <ul>
 <li>MX points to defunct mail service</li>
 <li>Attacker claims it → receives password reset, 2FA codes, support tickets</li>
 <li>Can send emails from <code>@sub.victim.com</code></li>
 </ul>
-<h3 id="8-second-order-subdomain-takeover">
-  8. Second-Order Subdomain Takeover
-  <a class="anchor" href="#8-second-order-subdomain-takeover">#</a>
-</h3>
+<h3 id="8-second-order-subdomain-takeover">8. Second-Order Subdomain Takeover<a class="anchor" href="#8-second-order-subdomain-takeover">#</a></h3>
 <ul>
 <li>Subdomain used internally (admin panels, APIs) and not public</li>
 <li>Takeover still allows internal abuse if that subdomain is trusted</li>
 </ul>
 <hr>
-<h2 id="service-specific-scenarios">
-  Service-Specific Scenarios
-  <a class="anchor" href="#service-specific-scenarios">#</a>
-</h2>
+<h2 id="service-specific-scenarios">Service-Specific Scenarios<a class="anchor" href="#service-specific-scenarios">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Service</th>
-<th>Status</th>
-<th>Fingerprint / Indicator</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>AWS S3</strong></td>
-<td>Vulnerable</td>
-<td><code>The specified bucket does not exist</code></td>
-</tr>
-<tr>
-<td><strong>GitHub Pages</strong></td>
-<td>Edge case</td>
-<td><code>There isn't a GitHub Pages site here.</code></td>
-</tr>
-<tr>
-<td><strong>Heroku</strong></td>
-<td>Edge case</td>
-<td><code>No such app</code></td>
-</tr>
-<tr>
-<td><strong>Netlify</strong></td>
-<td>Edge case</td>
-<td><code>Not Found - Request ID:</code></td>
-</tr>
-<tr>
-<td><strong>Vercel</strong></td>
-<td>Edge case</td>
-<td><code>DEPLOYMENT_NOT_FOUND</code></td>
-</tr>
-<tr>
-<td><a href="http://readme.io/" target="_blank" rel="noreferrer noopener nofollow"><strong>ReadMe.io</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Vulnerable</td>
-<td><code>The creators of this project are still working...</code></td>
-</tr>
-<tr>
-<td><strong>GoHire</strong></td>
-<td>Vulnerable</td>
-<td><code>You may have followed an invalid link, or the job has been archived</code></td>
-</tr>
-<tr>
-<td><strong>Azure</strong> (multiple)</td>
-<td>Vulnerable</td>
-<td><code>NXDOMAIN</code> on various <code>*.azure*.net</code></td>
-</tr>
-<tr>
-<td><strong>Bitbucket</strong></td>
-<td>Vulnerable</td>
-<td><code>Repository not found</code></td>
-</tr>
-<tr>
-<td><a href="http://surge.sh/" target="_blank" rel="noreferrer noopener nofollow"><strong>Surge.sh</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Vulnerable</td>
-<td><code>project not found</code></td>
-</tr>
-<tr>
-<td><strong>Pantheon</strong></td>
-<td>Vulnerable</td>
-<td><code>404 error unknown site!</code></td>
-</tr>
-<tr>
-<td><strong>Help Scout</strong></td>
-<td>Vulnerable</td>
-<td><code>No settings were found for this company:</code></td>
-</tr>
-<tr>
-<td><strong>Ngrok</strong></td>
-<td>Vulnerable</td>
-<td><code>Tunnel *.ngrok.io not found</code></td>
-</tr>
-<tr>
-<td><strong>Shopify</strong></td>
-<td>Edge case</td>
-<td><code>Sorry, this shop is currently unavailable.</code></td>
-</tr>
-<tr>
-<td><strong>Fastly</strong></td>
-<td>Not vulnerable</td>
-<td><code>Fastly error: unknown domain:</code></td>
-</tr>
-<tr>
-<td><strong>CloudFront</strong></td>
-<td>Not vulnerable</td>
-<td>Domain verification in place</td>
-</tr>
-<tr>
-<td><strong>Okta</strong></td>
-<td>Not vulnerable</td>
-<td>TXT-based domain ownership verification</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Service</th>
+					<th>Status</th>
+					<th>Fingerprint / Indicator</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>AWS S3</strong></td>
+					<td>Vulnerable</td>
+					<td><code>The specified bucket does not exist</code></td>
+			</tr>
+			<tr>
+					<td><strong>GitHub Pages</strong></td>
+					<td>Edge case</td>
+					<td><code>There isn't a GitHub Pages site here.</code></td>
+			</tr>
+			<tr>
+					<td><strong>Heroku</strong></td>
+					<td>Edge case</td>
+					<td><code>No such app</code></td>
+			</tr>
+			<tr>
+					<td><strong>Netlify</strong></td>
+					<td>Edge case</td>
+					<td><code>Not Found - Request ID:</code></td>
+			</tr>
+			<tr>
+					<td><strong>Vercel</strong></td>
+					<td>Edge case</td>
+					<td><code>DEPLOYMENT_NOT_FOUND</code></td>
+			</tr>
+			<tr>
+					<td><a href="http://readme.io/" target="_blank" rel="noreferrer noopener nofollow"><strong>ReadMe.io</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Vulnerable</td>
+					<td><code>The creators of this project are still working...</code></td>
+			</tr>
+			<tr>
+					<td><strong>GoHire</strong></td>
+					<td>Vulnerable</td>
+					<td><code>You may have followed an invalid link, or the job has been archived</code></td>
+			</tr>
+			<tr>
+					<td><strong>Azure</strong> (multiple)</td>
+					<td>Vulnerable</td>
+					<td><code>NXDOMAIN</code> on various <code>*.azure*.net</code></td>
+			</tr>
+			<tr>
+					<td><strong>Bitbucket</strong></td>
+					<td>Vulnerable</td>
+					<td><code>Repository not found</code></td>
+			</tr>
+			<tr>
+					<td><a href="http://surge.sh/" target="_blank" rel="noreferrer noopener nofollow"><strong>Surge.sh</strong></a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Vulnerable</td>
+					<td><code>project not found</code></td>
+			</tr>
+			<tr>
+					<td><strong>Pantheon</strong></td>
+					<td>Vulnerable</td>
+					<td><code>404 error unknown site!</code></td>
+			</tr>
+			<tr>
+					<td><strong>Help Scout</strong></td>
+					<td>Vulnerable</td>
+					<td><code>No settings were found for this company:</code></td>
+			</tr>
+			<tr>
+					<td><strong>Ngrok</strong></td>
+					<td>Vulnerable</td>
+					<td><code>Tunnel *.ngrok.io not found</code></td>
+			</tr>
+			<tr>
+					<td><strong>Shopify</strong></td>
+					<td>Edge case</td>
+					<td><code>Sorry, this shop is currently unavailable.</code></td>
+			</tr>
+			<tr>
+					<td><strong>Fastly</strong></td>
+					<td>Not vulnerable</td>
+					<td><code>Fastly error: unknown domain:</code></td>
+			</tr>
+			<tr>
+					<td><strong>CloudFront</strong></td>
+					<td>Not vulnerable</td>
+					<td>Domain verification in place</td>
+			</tr>
+			<tr>
+					<td><strong>Okta</strong></td>
+					<td>Not vulnerable</td>
+					<td>TXT-based domain ownership verification</td>
+			</tr>
+	</tbody>
 </table>
 <p>Full list: <a href="https://github.com/EdOverflow/can-i-take-over-xyz" target="_blank" rel="noreferrer noopener nofollow">can-i-take-over-xyz</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
-<h3 id="example-aws-s3-takeover">
-  Example: AWS S3 Takeover
-  <a class="anchor" href="#example-aws-s3-takeover">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create bucket with same name as CNAME target</span>
+<h3 id="example-aws-s3-takeover">Example: AWS S3 Takeover<a class="anchor" href="#example-aws-s3-takeover">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create bucket with same name as CNAME target</span>
 </span></span><span style="display:flex;"><span>aws s3 mb s3://vulnerable-sub.example.com
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Enable static website hosting</span>
@@ -1640,75 +1567,65 @@ Origin: &lt;https://vulnerable.example.com&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Host PoC</span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&lt;!-- PoC by username --&gt;&#34;</span> &gt; index.html
-</span></span><span style="display:flex;"><span>aws s3 cp index.html s3://vulnerable-sub.example.com/
-</span></span></code></pre></div><h3 id="test-cases-quick-reference">
-  Test Cases Quick Reference
-  <a class="anchor" href="#test-cases-quick-reference">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>aws s3 cp index.html s3://vulnerable-sub.example.com/</span></span></code></pre></div><h3 id="test-cases-quick-reference">Test Cases Quick Reference<a class="anchor" href="#test-cases-quick-reference">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Action</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CNAME to S3</td>
-<td>Create bucket with CNAME target name</td>
-<td>Subdomain serves attacker content</td>
-</tr>
-<tr>
-<td>CNAME to GitHub Pages</td>
-<td>Add CNAME file with subdomain in GitHub repo</td>
-<td>Subdomain serves attacker page</td>
-</tr>
-<tr>
-<td>CNAME to Heroku</td>
-<td>Create Heroku app with same subdomain</td>
-<td>Subdomain points to attacker app</td>
-</tr>
-<tr>
-<td>Wildcard CNAME</td>
-<td>Create resource matching wildcard target</td>
-<td>Arbitrary subdomains resolve to attacker</td>
-</tr>
-<tr>
-<td>OAuth redirect</td>
-<td>Use taken-over subdomain in <code>redirect_uri</code></td>
-<td>OAuth token sent to attacker</td>
-</tr>
-<tr>
-<td>Cookie scope</td>
-<td>Load main domain from subdomain</td>
-<td>Cookies (if not HttpOnly) readable by attacker</td>
-</tr>
-<tr>
-<td>CORS misconfig</td>
-<td>Send request from subdomain to main API</td>
-<td>Sensitive data returned if subdomain in Allow-Origin</td>
-</tr>
-<tr>
-<td>MX takeover</td>
-<td>Claim abandoned mail service</td>
-<td>Receive/send emails from victim domain</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Action</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>CNAME to S3</td>
+					<td>Create bucket with CNAME target name</td>
+					<td>Subdomain serves attacker content</td>
+			</tr>
+			<tr>
+					<td>CNAME to GitHub Pages</td>
+					<td>Add CNAME file with subdomain in GitHub repo</td>
+					<td>Subdomain serves attacker page</td>
+			</tr>
+			<tr>
+					<td>CNAME to Heroku</td>
+					<td>Create Heroku app with same subdomain</td>
+					<td>Subdomain points to attacker app</td>
+			</tr>
+			<tr>
+					<td>Wildcard CNAME</td>
+					<td>Create resource matching wildcard target</td>
+					<td>Arbitrary subdomains resolve to attacker</td>
+			</tr>
+			<tr>
+					<td>OAuth redirect</td>
+					<td>Use taken-over subdomain in <code>redirect_uri</code></td>
+					<td>OAuth token sent to attacker</td>
+			</tr>
+			<tr>
+					<td>Cookie scope</td>
+					<td>Load main domain from subdomain</td>
+					<td>Cookies (if not HttpOnly) readable by attacker</td>
+			</tr>
+			<tr>
+					<td>CORS misconfig</td>
+					<td>Send request from subdomain to main API</td>
+					<td>Sensitive data returned if subdomain in Allow-Origin</td>
+			</tr>
+			<tr>
+					<td>MX takeover</td>
+					<td>Claim abandoned mail service</td>
+					<td>Receive/send emails from victim domain</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-detection">
-  Manual Detection
-  <a class="anchor" href="#manual-detection">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-detection">Manual Detection<a class="anchor" href="#manual-detection">#</a></h3>
 <ol>
 <li><strong>DNS Reconnaissance</strong>
 <ul>
@@ -1723,8 +1640,7 @@ Run: <strong>dig sub.target.com</strong></li>
 <ul>
 <li>Observe result like :</li>
 </ul>
-<pre tabindex="0"><code>sub.target.com CNAME target.herokuapp.com
-</code></pre><ol>
+<pre tabindex="0"><code>sub.target.com CNAME target.herokuapp.com</code></pre><ol>
 <li><strong>HTTP Fingerprinting</strong>
 <ul>
 <li>Visit each subdomain</li>
@@ -1745,10 +1661,7 @@ Run: <strong>dig sub.target.com</strong></li>
 </ul>
 </li>
 </ol>
-<h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
+<h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
 <ol>
 <li><strong>Subzy</strong>
 Subdomain takeover tool which works based on matching response fingerprints from <a href="https://github.com/EdOverflow/can-i-take-over-xyz/blob/master/README.md" target="_blank" rel="noreferrer noopener nofollow">can-i-take-over-xyz</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1821,10 +1734,7 @@ Crawling + takeover checks during reconnaissance</li>
 <li><code>go install -v github.com/edoardottt/cariddi/cmd/cariddi@latest</code></li>
 <li><code>echo &quot;https://example.com&quot; | cariddi -intensive</code></li>
 </ul>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Phishing:</strong> Host content on trusted subdomain + valid SSL → higher success</li>
 <li><strong>Session hijacking:</strong> Read cookies scoped to parent domain from subdomain</li>
@@ -1836,10 +1746,7 @@ Crawling + takeover checks during reconnaissance</li>
 <li><strong>Reputational damage:</strong> Defacement, malware hosting</li>
 <li><strong>Account takeover:</strong> Combined with OAuth, cookies, or password reset flows</li>
 </ul>
-<h2 id="prevention-techniques">
-  Prevention Techniques
-  <a class="anchor" href="#prevention-techniques">#</a>
-</h2>
+<h2 id="prevention-techniques">Prevention Techniques<a class="anchor" href="#prevention-techniques">#</a></h2>
 <ul>
 <li><strong>Remove unused DNS records</strong> before decommissioning services.</li>
 <li><strong>Claim or reclaim</strong> resources (re-create bucket/page) if subdomain is still needed.</li>
@@ -1851,72 +1758,66 @@ Crawling + takeover checks during reconnaissance</li>
 <li><strong>Asset inventory:</strong> Track all subdomains and linked third-party services.</li>
 <li><strong>Least privilege:</strong> Limit who can create/modify DNS and cloud resources.</li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/haccer/subjack" target="_blank" rel="noreferrer noopener nofollow">Subjack</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Fast takeover detection with fingerprint list</td>
-</tr>
-<tr>
-<td><a href="https://github.com/anshumanbh/tko-subs" target="_blank" rel="noreferrer noopener nofollow">tko-subs</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Subdomain takeover checker</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Ice3man543/SubOver" target="_blank" rel="noreferrer noopener nofollow">SubOver</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Takeover detection</td>
-</tr>
-<tr>
-<td><a href="https://github.com/projectdiscovery/nuclei" target="_blank" rel="noreferrer noopener nofollow">Nuclei</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Use <code>-tags takeover</code> for takeover templates</td>
-</tr>
-<tr>
-<td><a href="https://github.com/PentestPad/subzy" target="_blank" rel="noreferrer noopener nofollow">Subzy</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Subdomain takeover verification</td>
-</tr>
-<tr>
-<td><a href="https://github.com/punk-security/dnsReaper" target="_blank" rel="noreferrer noopener nofollow">dnsReaper</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Dangling DNS / takeover scanning</td>
-</tr>
-<tr>
-<td><a href="https://github.com/Stratus-Security/Subdominator" target="_blank" rel="noreferrer noopener nofollow">Subdominator</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Subdomain enumeration + takeover</td>
-</tr>
-<tr>
-<td><a href="https://github.com/aboul3la/Sublist3r" target="_blank" rel="noreferrer noopener nofollow">Sublist3r</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Subdomain enumeration</td>
-</tr>
-<tr>
-<td><a href="https://github.com/OWASP/Amass" target="_blank" rel="noreferrer noopener nofollow">Amass</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Passive/active subdomain enumeration</td>
-</tr>
-<tr>
-<td><a href="https://github.com/blacklanternsecurity/bbot" target="_blank" rel="noreferrer noopener nofollow">BBot</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Recon + takeover checks</td>
-</tr>
-<tr>
-<td><a href="https://github.com/edoardottt/cariddi" target="_blank" rel="noreferrer noopener nofollow">Cariddi</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Crawling with takeover checks</td>
-</tr>
-<tr>
-<td><a href="https://github.com/michenriksen/aquatone" target="_blank" rel="noreferrer noopener nofollow">Aquatone</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Visual recon, orphaned page detection</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="https://github.com/haccer/subjack" target="_blank" rel="noreferrer noopener nofollow">Subjack</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Fast takeover detection with fingerprint list</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/anshumanbh/tko-subs" target="_blank" rel="noreferrer noopener nofollow">tko-subs</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Subdomain takeover checker</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/Ice3man543/SubOver" target="_blank" rel="noreferrer noopener nofollow">SubOver</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Takeover detection</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/projectdiscovery/nuclei" target="_blank" rel="noreferrer noopener nofollow">Nuclei</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Use <code>-tags takeover</code> for takeover templates</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/PentestPad/subzy" target="_blank" rel="noreferrer noopener nofollow">Subzy</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Subdomain takeover verification</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/punk-security/dnsReaper" target="_blank" rel="noreferrer noopener nofollow">dnsReaper</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Dangling DNS / takeover scanning</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/Stratus-Security/Subdominator" target="_blank" rel="noreferrer noopener nofollow">Subdominator</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Subdomain enumeration + takeover</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/aboul3la/Sublist3r" target="_blank" rel="noreferrer noopener nofollow">Sublist3r</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Subdomain enumeration</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/OWASP/Amass" target="_blank" rel="noreferrer noopener nofollow">Amass</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Passive/active subdomain enumeration</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/blacklanternsecurity/bbot" target="_blank" rel="noreferrer noopener nofollow">BBot</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Recon + takeover checks</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/edoardottt/cariddi" target="_blank" rel="noreferrer noopener nofollow">Cariddi</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Crawling with takeover checks</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/michenriksen/aquatone" target="_blank" rel="noreferrer noopener nofollow">Aquatone</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Visual recon, orphaned page detection</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://readmedium.com/top-25-subdomain-takeover-bug-bounty-reports-f6e386ba4413" target="_blank" rel="noreferrer noopener nofollow">Top 25 Subdomain Takeover Bug Bounty Reports</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/661751" target="_blank" rel="noreferrer noopener nofollow">HackerOne: Subdomain Takeover Reports</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"> (and similar reports)</li>
@@ -1924,10 +1825,7 @@ Crawling + takeover checks during reconnaissance</li>
 <li><a href="https://0xpatrik.com/subdomain-takeover/" target="_blank" rel="noreferrer noopener nofollow">0xpatrik - Subdomain Takeover</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://www.hackerone.com/blog/guide-subdomain-takeovers-20" target="_blank" rel="noreferrer noopener nofollow">HackerOne Blog - Guide to Subdomain Takeovers</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://0xpatrik.com/subdomain-takeover/" target="_blank" rel="noreferrer noopener nofollow">https://0xpatrik.com/subdomain-takeover/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://github.com/EdOverflow/can-i-take-over-xyz" target="_blank" rel="noreferrer noopener nofollow">https://github.com/EdOverflow/can-i-take-over-xyz</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1954,49 +1852,62 @@ Crawling + takeover checks during reconnaissance</li>
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Subdomain%20Takeover.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Software-Data-Integrity-Failures/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Software &amp; Data Integrity Failures</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Third-party-service-integration-issues/" class="flex align-center">
+        <span>Third party service integration issues</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2054,15 +1965,24 @@ Crawling + takeover checks during reconnaissance</li>
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

